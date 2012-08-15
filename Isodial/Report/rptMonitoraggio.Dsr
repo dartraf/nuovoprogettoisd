@@ -13,7 +13,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
    _ExtentY        =   16616
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   9615
+   ReportWidth     =   9639
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -41,14 +41,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Intestazione"
-      Object.Height          =   3555
+      Object.Height          =   3139
       NumControls     =   13
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lbllavbel23"
          Object.Left            =   57
-         Object.Top             =   3120
+         Object.Top             =   2782
          Object.Width           =   915
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -67,7 +67,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label22"
          Object.Left            =   5329
-         Object.Top             =   3120
+         Object.Top             =   2782
          Object.Width           =   1530
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -86,7 +86,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "lblPaziente"
          Object.Left            =   1020
-         Object.Top             =   3132
+         Object.Top             =   2794
          Object.Width           =   4080
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -104,7 +104,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "lblDataNascita"
          Object.Left            =   6917
-         Object.Top             =   3132
+         Object.Top             =   2794
          Object.Width           =   1425
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -122,7 +122,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label70"
          Object.Left            =   8334
-         Object.Top             =   3120
+         Object.Top             =   2782
          Object.Width           =   570
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -141,7 +141,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "lblEta"
          Object.Left            =   8958
-         Object.Top             =   3132
+         Object.Top             =   2794
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -179,7 +179,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "lbl"
          Object.Left            =   2438
-         Object.Top             =   2154
+         Object.Top             =   1872
          Object.Width           =   4545
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -271,14 +271,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   11235
-      NumControls     =   43
+      Object.Height          =   12161
+      NumControls     =   44
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   57
-         Object.Top             =   794
+         Object.Top             =   737
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -304,8 +304,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label2"
          Object.Left            =   57
-         Object.Top             =   57
-         Object.Width           =   9524
+         Object.Width           =   9525
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -324,7 +323,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Line1"
          Object.Left            =   57
-         Object.Top             =   2439
+         Object.Top             =   2382
          Object.Width           =   9525
       EndProperty
       ItemType4       =   3
@@ -332,7 +331,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label7"
          Object.Left            =   57
-         Object.Top             =   2495
+         Object.Top             =   2438
          Object.Width           =   9525
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -352,7 +351,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtDataProtocolloMonitoraggio"
          Object.Left            =   680
-         Object.Top             =   3270
+         Object.Top             =   3213
          Object.Width           =   1200
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -380,7 +379,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label9"
          Object.Left            =   57
-         Object.Top             =   3231
+         Object.Top             =   3174
          Object.Width           =   615
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -399,7 +398,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtEsitoProtocolloVaccinazione"
          Object.Left            =   624
-         Object.Top             =   840
+         Object.Top             =   783
          Object.Width           =   2715
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -427,7 +426,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Line2"
          Object.Left            =   57
-         Object.Top             =   4876
+         Object.Top             =   4820
          Object.Width           =   9525
       EndProperty
       ItemType9       =   3
@@ -435,7 +434,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label3"
          Object.Left            =   57
-         Object.Top             =   4932
+         Object.Top             =   4876
          Object.Width           =   9525
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -455,7 +454,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Line3"
          Object.Left            =   57
-         Object.Top             =   7879
+         Object.Top             =   7766
          Object.Width           =   9525
       EndProperty
       ItemType11      =   3
@@ -463,7 +462,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label13"
          Object.Left            =   57
-         Object.Top             =   7935
+         Object.Top             =   7822
          Object.Width           =   9525
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -483,7 +482,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtDataSchedaPaziente"
          Object.Left            =   1984
-         Object.Top             =   10640
+         Object.Top             =   10131
          Object.Width           =   1305
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -511,7 +510,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label14"
          Object.Left            =   57
-         Object.Top             =   10601
+         Object.Top             =   10092
          Object.Width           =   1920
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -530,7 +529,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtCognomeMedico"
          Object.Left            =   1077
-         Object.Top             =   9110
+         Object.Top             =   8601
          Object.Width           =   3285
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -558,7 +557,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label15"
          Object.Left            =   57
-         Object.Top             =   9070
+         Object.Top             =   8561
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -577,7 +576,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtNomeMedico"
          Object.Left            =   6179
-         Object.Top             =   9110
+         Object.Top             =   8601
          Object.Width           =   3285
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -605,7 +604,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label16"
          Object.Left            =   5216
-         Object.Top             =   9070
+         Object.Top             =   8561
          Object.Width           =   900
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -624,7 +623,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label4"
          Object.Left            =   57
-         Object.Top             =   1304
+         Object.Top             =   1247
          Object.Width           =   9525
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -636,14 +635,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Note sulla vaccinazione"
+         Object.Caption         =   "Note sulla vaccinazione:"
       EndProperty
       ItemType19      =   4
       BeginProperty Item19 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteVaccinazione"
          Object.Left            =   57
-         Object.Top             =   1645
+         Object.Top             =   1588
          Object.Width           =   9525
          Object.Height          =   735
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -671,7 +670,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label5"
          Object.Left            =   2438
-         Object.Top             =   3232
+         Object.Top             =   3175
          Object.Width           =   555
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -690,7 +689,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtEsitoProtocolloMonitoraggio"
          Object.Left            =   3005
-         Object.Top             =   3270
+         Object.Top             =   3213
          Object.Width           =   2730
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -718,7 +717,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   57
-         Object.Top             =   3742
+         Object.Top             =   3685
          Object.Width           =   9525
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -730,14 +729,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Note sul monitoraggio dell'accesso vascolare"
+         Object.Caption         =   "Note sul monitoraggio dell'accesso vascolare:"
       EndProperty
       ItemType23      =   4
       BeginProperty Item23 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteProtocolloMonitoraggio"
          Object.Left            =   57
-         Object.Top             =   4083
+         Object.Top             =   4026
          Object.Width           =   9525
          Object.Height          =   735
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -765,7 +764,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtDataValutazionePsicoSociale"
          Object.Left            =   680
-         Object.Top             =   5710
+         Object.Top             =   5654
          Object.Width           =   1200
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -793,7 +792,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label10"
          Object.Left            =   57
-         Object.Top             =   5669
+         Object.Top             =   5556
          Object.Width           =   615
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -812,7 +811,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label11"
          Object.Left            =   2438
-         Object.Top             =   5669
+         Object.Top             =   5613
          Object.Width           =   555
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -831,7 +830,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtEsitoValutazionePsicoSociale"
          Object.Left            =   3005
-         Object.Top             =   5710
+         Object.Top             =   5654
          Object.Width           =   2730
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -859,7 +858,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label12"
          Object.Left            =   57
-         Object.Top             =   6691
+         Object.Top             =   6635
          Object.Width           =   9525
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -871,14 +870,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Note sulla valutazione psico-sociale"
+         Object.Caption         =   "Note sulla valutazione psico-sociale:"
       EndProperty
       ItemType29      =   4
       BeginProperty Item29 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteValutazionePsicoSociale"
          Object.Left            =   57
-         Object.Top             =   7031
+         Object.Top             =   6975
          Object.Width           =   9525
          Object.Height          =   735
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -906,7 +905,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label17"
          Object.Left            =   57
-         Object.Top             =   6180
+         Object.Top             =   6124
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -925,7 +924,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtPsicologo"
          Object.Left            =   1077
-         Object.Top             =   6220
+         Object.Top             =   6164
          Object.Width           =   4710
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -953,7 +952,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "txtRiunionePeriodica"
          Object.Left            =   7313
-         Object.Top             =   10640
+         Object.Top             =   10131
          Object.Width           =   1200
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -981,7 +980,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          _Version        =   393216
          Name            =   "Label19"
          Object.Left            =   5215
-         Object.Top             =   10601
+         Object.Top             =   10092
          Object.Width           =   2100
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -995,32 +994,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          EndProperty
          Object.Caption         =   "Riunione periodica del"
       EndProperty
-      ItemType34      =   3
-      BeginProperty Item34 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label25"
-         Object.Left            =   2778
-         Object.Top             =   8447
-         Object.Width           =   3735
-         Object.Height          =   450
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   15.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Dati medico di base"
-         Alignment       =   2
-      EndProperty
-      ItemType35      =   4
-      BeginProperty Item35 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType34      =   4
+      BeginProperty Item34 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtIndirizzoMedico"
          Object.Left            =   1077
-         Object.Top             =   9620
+         Object.Top             =   9111
          Object.Width           =   3285
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1043,12 +1022,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType36      =   3
-      BeginProperty Item36 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType35      =   3
+      BeginProperty Item35 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label20"
          Object.Left            =   57
-         Object.Top             =   9581
+         Object.Top             =   9072
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1062,12 +1041,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          EndProperty
          Object.Caption         =   "Indirizzo"
       EndProperty
-      ItemType37      =   4
-      BeginProperty Item37 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType36      =   4
+      BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtStudioMedico"
          Object.Left            =   6179
-         Object.Top             =   9620
+         Object.Top             =   9111
          Object.Width           =   3285
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1090,12 +1069,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType38      =   3
-      BeginProperty Item38 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType37      =   3
+      BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label21"
          Object.Left            =   5215
-         Object.Top             =   9581
+         Object.Top             =   9072
          Object.Width           =   900
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1109,12 +1088,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          EndProperty
          Object.Caption         =   "Studio"
       EndProperty
-      ItemType39      =   4
-      BeginProperty Item39 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType38      =   4
+      BeginProperty Item38 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTelefonoMedico"
          Object.Left            =   1077
-         Object.Top             =   10130
+         Object.Top             =   9621
          Object.Width           =   3285
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1137,12 +1116,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType40      =   3
-      BeginProperty Item40 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType39      =   3
+      BeginProperty Item39 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label23"
          Object.Left            =   57
-         Object.Top             =   10091
+         Object.Top             =   9582
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1156,12 +1135,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          EndProperty
          Object.Caption         =   "Telefono"
       EndProperty
-      ItemType41      =   4
-      BeginProperty Item41 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType40      =   4
+      BeginProperty Item40 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCellulareMedico"
          Object.Left            =   6179
-         Object.Top             =   10130
+         Object.Top             =   9621
          Object.Width           =   3285
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1184,12 +1163,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType42      =   3
-      BeginProperty Item42 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType41      =   3
+      BeginProperty Item41 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label24"
          Object.Left            =   5215
-         Object.Top             =   10091
+         Object.Top             =   9582
          Object.Width           =   900
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1202,6 +1181,53 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Cellulare"
+      EndProperty
+      ItemType42      =   3
+      BeginProperty Item42 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label26"
+         Object.Left            =   57
+         Object.Top             =   10605
+         Object.Width           =   9525
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Note sui collegamenti funzionali tra nefrologo e medici di base:"
+      EndProperty
+      ItemType43      =   4
+      BeginProperty Item43 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtNoteCollegamenti"
+         Object.Left            =   57
+         Object.Top             =   10945
+         Object.Width           =   9525
+         Object.Height          =   735
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "0,00"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -1352,6 +1378,7 @@ Private Sub DataReport_Initialize()
             .Item("txtCellulareMedico").DataField = "CELLULARE_MEDICO"
             .Item("txtDataSchedaPaziente").DataField = "DATA_SCHEDA_PAZIENTE"
             .Item("txtRiunionePeriodica").DataField = "RIUNIONE_PERIODICA"
+            .Item("txtNoteCollegamenti").DataField = "NOTE_COLLEGAMENTI"
 
         End With
         

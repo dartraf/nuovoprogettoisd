@@ -42,7 +42,7 @@ Begin VB.Form frmImpostaDicitura
          Height          =   1275
          Left            =   120
          MultiLine       =   -1  'True
-         TabIndex        =   1
+         TabIndex        =   0
          Top             =   360
          Width           =   4815
       End
@@ -50,7 +50,7 @@ Begin VB.Form frmImpostaDicitura
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
-      TabIndex        =   2
+      TabIndex        =   1
       Top             =   1800
       Width           =   5055
       Begin VB.CommandButton cmdMemorizza 
@@ -66,7 +66,7 @@ Begin VB.Form frmImpostaDicitura
          EndProperty
          Height          =   495
          Left            =   2040
-         TabIndex        =   0
+         TabIndex        =   2
          Top             =   240
          Width           =   1380
       End

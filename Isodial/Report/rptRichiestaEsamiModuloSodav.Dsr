@@ -538,7 +538,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Per quanto possibile, si suggerisce prescrivere su un unica ricetta gli esami NON esenti dal pagamento dei tickets."
       EndProperty
       ItemType7       =   3
       BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 

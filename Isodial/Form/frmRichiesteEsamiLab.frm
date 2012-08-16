@@ -5,7 +5,7 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmRichiesteEsamiLab 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "RICHIESTA ESAMI DI LABORATORIO"
-   ClientHeight    =   8445
+   ClientHeight    =   8640
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   12705
@@ -13,7 +13,7 @@ Begin VB.Form frmRichiesteEsamiLab
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8445
+   ScaleHeight     =   8640
    ScaleWidth      =   12705
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
@@ -127,7 +127,7 @@ Begin VB.Form frmRichiesteEsamiLab
          Height          =   495
          Index           =   2
          Left            =   10800
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   180
          Width           =   1455
       End
@@ -208,12 +208,12 @@ Begin VB.Form frmRichiesteEsamiLab
       End
    End
    Begin VB.Frame Frame3 
-      Height          =   6255
+      Height          =   6375
       Left            =   120
       TabIndex        =   9
       Top             =   1320
       Width           =   12495
-      Begin VB.CheckBox chkDicitura 
+      Begin VB.OptionButton optStampaDicitura 
          Caption         =   "Stampa dicitura ""Prescrizione Esami su Unica Ricetta...."""
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -224,20 +224,37 @@ Begin VB.Form frmRichiesteEsamiLab
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   255
+         Height          =   195
          Left            =   120
-         TabIndex        =   20
-         Top             =   5860
-         Width           =   6255
+         TabIndex        =   25
+         Top             =   5640
+         Width           =   7095
+      End
+      Begin VB.OptionButton optStampaDicituraImpostata 
+         Caption         =   "Stampa dicitura impostata"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   120
+         TabIndex        =   23
+         Top             =   6000
+         Width           =   6015
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   5535
+         Height          =   5295
          Left            =   120
          TabIndex        =   10
          Top             =   240
          Width           =   12255
          _ExtentX        =   21616
-         _ExtentY        =   9763
+         _ExtentY        =   9340
          _Version        =   393216
          Cols            =   9
          FixedCols       =   0
@@ -258,8 +275,8 @@ Begin VB.Form frmRichiesteEsamiLab
          Height          =   375
          Index           =   0
          Left            =   10320
-         TabIndex        =   23
-         Top             =   5805
+         TabIndex        =   22
+         Top             =   5565
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -282,8 +299,8 @@ Begin VB.Form frmRichiesteEsamiLab
          Height          =   240
          Index           =   2
          Left            =   8640
-         TabIndex        =   22
-         Top             =   5865
+         TabIndex        =   21
+         Top             =   5625
          Width           =   1545
       End
    End
@@ -291,8 +308,25 @@ Begin VB.Form frmRichiesteEsamiLab
       Height          =   975
       Left            =   120
       TabIndex        =   11
-      Top             =   7440
+      Top             =   7560
       Width           =   12495
+      Begin VB.CommandButton cmdImpostaDicitura 
+         Caption         =   "&Imposta dicitura"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   8160
+         TabIndex        =   24
+         Top             =   240
+         Width           =   1455
+      End
       Begin VB.CommandButton cmdCopiaPerPazienteSingolo 
          Caption         =   "Duplica per p&aziente"
          Enabled         =   0   'False
@@ -306,7 +340,7 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   1440
+         Left            =   120
          TabIndex        =   19
          Top             =   240
          Width           =   1695
@@ -324,7 +358,7 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   3360
+         Left            =   2040
          TabIndex        =   16
          Top             =   240
          Width           =   2055
@@ -342,7 +376,7 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   5640
+         Left            =   4320
          TabIndex        =   15
          Top             =   240
          Width           =   1695
@@ -360,7 +394,7 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   7560
+         Left            =   6240
          TabIndex        =   14
          Top             =   240
          Width           =   1695
@@ -378,10 +412,10 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   11040
+         Left            =   11280
          TabIndex        =   13
          Top             =   240
-         Width           =   1215
+         Width           =   1095
       End
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
@@ -395,10 +429,10 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   9480
+         Left            =   9840
          TabIndex        =   12
          Top             =   240
-         Width           =   1335
+         Width           =   1215
       End
    End
    Begin MSComDlg.CommonDialog cdlStampa 
@@ -430,12 +464,18 @@ Option Explicit
 
 '' rs della scheda
 Dim rsEsami As Recordset
+Dim rsDataset As Recordset
 Dim stoPulendo As Boolean
 Dim periodo As Integer
 Dim intPazientiKey  As Integer
 Dim intMedicoKey As Integer
+Dim dicitura As String
 
 Const ICS As String = "       X"
+
+Private Sub cmdImpostaDicitura_Click()
+    frmImpostaDicitura.Show 1
+End Sub
 
 '' Ricarica le cbo
 Private Sub Form_Activate()
@@ -485,12 +525,17 @@ Private Sub Form_Load()
         .ColAlignment(7) = vbLeftJustify
     End With
     
-    chkDicitura.Value = GetSetting(appName, "Default", Me.Name & "." & chkDicitura.Name, 0)
+    optStampaDicitura.Value = GetSetting(appName, "Default", Me.Name & "." & optStampaDicitura.Name, 0)
+    optStampaDicituraImpostata.Value = GetSetting(appName, "Default", Me.Name & "." & optStampaDicituraImpostata.Name, 0)
+    
     oData(0).txtBox = date
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-    Call SaveSetting(appName, "Default", Me.Name & "." & chkDicitura.Name, chkDicitura.Value)
+    
+    Call SaveSetting(appName, "Default", Me.Name & "." & optStampaDicitura.Name, optStampaDicitura.Value)
+    Call SaveSetting(appName, "Default", Me.Name & "." & optStampaDicituraImpostata.Name, optStampaDicituraImpostata.Value)
+    
     intPazientiKey = 0
 End Sub
 
@@ -731,7 +776,7 @@ Private Sub Stampa(codicePaziente As Integer)
     Dim numEsami As Integer
     Dim nomePaziente As String
     Dim nomeMese As String
-
+   
     If intPazientiKey = 0 Then
         MsgBox "Selezionare il paziente", vbInformation, "Impossibile stampare"
         Exit Sub
@@ -787,12 +832,22 @@ Private Sub Stampa(codicePaziente As Integer)
         Loop
         rsMain.UpdateBatch
         
+        If optStampaDicituraImpostata.Value = True Then
+            Set rsDataset = New Recordset
+                rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+                If Not (rsDataset.EOF And rsDataset.BOF) Then
+                dicitura = rsDataset("DICITURA_ESAMI_PERIODICI") & ""
+                End If
+        ElseIf optStampaDicitura = True Then
+            dicitura = "Per quanto possibile, si suggerisce prescrivere su un unica ricetta gli esami NON esenti dal pagamento dei tickets."
+        End If
+        
         nomeMese = MonthName(Month(Now))
 
         Set rptRichiestaEsamiLaboratorio.DataSource = rsMain
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di " & UCase(Left(nomeMese, 1)) & Right(nomeMese, Len(nomeMese) - 1) & " " & Year(Now)
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblPaziente").Caption = nomePaziente
-        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Visible = IIf(chkDicitura.Value = Unchecked, False, True)
+        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Caption = dicitura
         rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblData").Caption = "Data, " & oData(0).txtBox
         rptRichiestaEsamiLaboratorio.PrintReport False, rptRangeAllPages
     Else
@@ -800,6 +855,7 @@ Private Sub Stampa(codicePaziente As Integer)
     End If
     
     Set rsEsami = Nothing
+    Set rsDataset = Nothing
     
 End Sub
 
@@ -921,7 +977,15 @@ Private Sub StampaModuloSodav(codicePaziente As Integer)
         Loop
         rsMain.UpdateBatch
         
-        Set rsDataset = Nothing
+        If optStampaDicituraImpostata.Value = True Then
+            Set rsDataset = New Recordset
+                rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+                If Not (rsDataset.EOF And rsDataset.BOF) Then
+                dicitura = rsDataset("DICITURA_ESAMI_PERIODICI") & ""
+                End If
+        ElseIf optStampaDicitura = True Then
+            dicitura = "Per quanto possibile, si suggerisce prescrivere su un unica ricetta gli esami NON esenti dal pagamento dei tickets."
+        End If
         
         nomeMese = MonthName(Month(Now))
 
@@ -933,18 +997,17 @@ Private Sub StampaModuloSodav(codicePaziente As Integer)
         rptRichiestaEsamiModuloSodav.Sections("intestazione").Controls.Item("lblDataNascita").Caption = dataNascita
         rptRichiestaEsamiModuloSodav.Sections("pie").Controls.Item("lblDataSintesiStatoClinico").Caption = DataSintesiStatoClinico
         rptRichiestaEsamiModuloSodav.Sections("pie").Controls.Item("lblSintesiStatoClinico").Caption = SintesiStatoClinico
-        rptRichiestaEsamiModuloSodav.Sections("pie").Controls.Item("lblDicitura").Visible = IIf(chkDicitura.Value = Unchecked, False, True)
+        rptRichiestaEsamiModuloSodav.Sections("pie").Controls.Item("lblDicitura").Caption = dicitura
         rptRichiestaEsamiModuloSodav.Sections("pie").Controls.Item("lblMedico").Caption = MedicoDiTurno
-        
         rptRichiestaEsamiModuloSodav.PrintReport False, rptRangeAllPages
     Else
         MsgBox "Nessun esame assegnato per il paziente " & nomePaziente, vbInformation, "Stampa richiesta esami"
     End If
     
     Set rsEsami = Nothing
+    Set rsDataset = Nothing
     
 End Sub
-
 
 '' Carica i dati del paziente
 Private Sub CaricaPaziente()
@@ -1299,6 +1362,8 @@ Private Sub cmdStampa_Click()
         Exit Sub
     End If
     
+    dicitura = ""           ' azzero la variabile per evitare problemi
+    
     On Error GoTo gestione
     cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
     cdlStampa.CancelError = True
@@ -1362,4 +1427,10 @@ Private Sub oData_OnDataClick(Index As Integer)
     oData(Index).Pulisci
 End Sub
 
+Private Sub optStampaDicitura_DblClick()
+    optStampaDicitura.Value = False
+End Sub
 
+Private Sub optStampaDicituraImpostata_DblClick()
+    optStampaDicituraImpostata.Value = False
+End Sub

@@ -153,6 +153,7 @@ Begin VB.Form frmMonitoraggio
       _ExtentY        =   7646
       _Version        =   393216
       Tabs            =   4
+      Tab             =   1
       TabsPerRow      =   4
       TabHeight       =   882
       ShowFocusRect   =   0   'False
@@ -168,7 +169,7 @@ Begin VB.Form frmMonitoraggio
       EndProperty
       TabCaption(0)   =   "Attuazione protocollo di vaccinazione epatite"
       TabPicture(0)   =   "frmMonitoraggio.frx":0459
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Label1(2)"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Label1(4)"
@@ -180,7 +181,7 @@ Begin VB.Form frmMonitoraggio
       Tab(0).ControlCount=   4
       TabCaption(1)   =   "Attuazione protocollo di monitoraggio accessi vascolari"
       TabPicture(1)   =   "frmMonitoraggio.frx":0475
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "lblData(0)"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Label1(7)"
@@ -201,46 +202,46 @@ Begin VB.Form frmMonitoraggio
       TabCaption(2)   =   "Valutazione psico-sociale"
       TabPicture(2)   =   "frmMonitoraggio.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "cmdTrova(1)"
-      Tab(2).Control(1)=   "picElenca(1)"
-      Tab(2).Control(2)=   "picData(1)"
-      Tab(2).Control(3)=   "txtNote(2)"
-      Tab(2).Control(4)=   "cboEsito(2)"
-      Tab(2).Control(5)=   "lblCognomePsicologo"
-      Tab(2).Control(6)=   "lblNomePsicologo"
-      Tab(2).Control(7)=   "Label1(19)"
-      Tab(2).Control(8)=   "Label1(18)"
-      Tab(2).Control(9)=   "Label1(17)"
-      Tab(2).Control(10)=   "Label1(14)"
-      Tab(2).Control(11)=   "lblData(1)"
-      Tab(2).Control(12)=   "Label1(16)"
-      Tab(2).Control(13)=   "Label1(15)"
+      Tab(2).Control(0)=   "Label1(15)"
+      Tab(2).Control(1)=   "Label1(16)"
+      Tab(2).Control(2)=   "lblData(1)"
+      Tab(2).Control(3)=   "Label1(14)"
+      Tab(2).Control(4)=   "Label1(17)"
+      Tab(2).Control(5)=   "Label1(18)"
+      Tab(2).Control(6)=   "Label1(19)"
+      Tab(2).Control(7)=   "lblNomePsicologo"
+      Tab(2).Control(8)=   "lblCognomePsicologo"
+      Tab(2).Control(9)=   "cboEsito(2)"
+      Tab(2).Control(10)=   "txtNote(2)"
+      Tab(2).Control(11)=   "picData(1)"
+      Tab(2).Control(12)=   "picElenca(1)"
+      Tab(2).Control(13)=   "cmdTrova(1)"
       Tab(2).ControlCount=   14
       TabCaption(3)   =   "Collegamenti funzionali tra nefrologo e medici di base"
       TabPicture(3)   =   "frmMonitoraggio.frx":04AD
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "txtNote(3)"
-      Tab(3).Control(1)=   "cmdTrova(2)"
-      Tab(3).Control(2)=   "picData(3)"
-      Tab(3).Control(3)=   "picData(2)"
-      Tab(3).Control(4)=   "Label1(8)"
-      Tab(3).Control(5)=   "lblCellulare"
-      Tab(3).Control(6)=   "lblStudio"
-      Tab(3).Control(7)=   "lblTelefono"
-      Tab(3).Control(8)=   "lblIndirizzo"
-      Tab(3).Control(9)=   "lblNomeMedico"
-      Tab(3).Control(10)=   "lblCognomeMedico"
-      Tab(3).Control(11)=   "Label1(34)"
-      Tab(3).Control(12)=   "lblData(3)"
-      Tab(3).Control(13)=   "lblData(2)"
-      Tab(3).Control(14)=   "Label1(31)"
-      Tab(3).Control(15)=   "Label1(30)"
-      Tab(3).Control(16)=   "Label1(32)"
-      Tab(3).Control(17)=   "Label1(33)"
-      Tab(3).Control(18)=   "Label1(35)"
-      Tab(3).Control(19)=   "Label1(40)"
-      Tab(3).Control(20)=   "Label1(41)"
-      Tab(3).Control(21)=   "Label1(42)"
+      Tab(3).Control(0)=   "Label1(42)"
+      Tab(3).Control(1)=   "Label1(41)"
+      Tab(3).Control(2)=   "Label1(40)"
+      Tab(3).Control(3)=   "Label1(35)"
+      Tab(3).Control(4)=   "Label1(33)"
+      Tab(3).Control(5)=   "Label1(32)"
+      Tab(3).Control(6)=   "Label1(30)"
+      Tab(3).Control(7)=   "Label1(31)"
+      Tab(3).Control(8)=   "lblData(2)"
+      Tab(3).Control(9)=   "lblData(3)"
+      Tab(3).Control(10)=   "Label1(34)"
+      Tab(3).Control(11)=   "lblCognomeMedico"
+      Tab(3).Control(12)=   "lblNomeMedico"
+      Tab(3).Control(13)=   "lblIndirizzo"
+      Tab(3).Control(14)=   "lblTelefono"
+      Tab(3).Control(15)=   "lblStudio"
+      Tab(3).Control(16)=   "lblCellulare"
+      Tab(3).Control(17)=   "Label1(8)"
+      Tab(3).Control(18)=   "picData(2)"
+      Tab(3).Control(19)=   "picData(3)"
+      Tab(3).Control(20)=   "cmdTrova(2)"
+      Tab(3).Control(21)=   "txtNote(3)"
       Tab(3).ControlCount=   22
       Begin VB.TextBox txtNote 
          BeginProperty Font 
@@ -387,7 +388,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   2085
          Index           =   0
-         Left            =   240
+         Left            =   -74760
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   6
@@ -407,7 +408,7 @@ Begin VB.Form frmMonitoraggio
          Height          =   315
          Index           =   0
          ItemData        =   "frmMonitoraggio.frx":0D9D
-         Left            =   960
+         Left            =   -74040
          List            =   "frmMonitoraggio.frx":0DA7
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -427,7 +428,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   1485
          Index           =   1
-         Left            =   -74760
+         Left            =   240
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   4
@@ -447,20 +448,20 @@ Begin VB.Form frmMonitoraggio
          Height          =   315
          Index           =   1
          ItemData        =   "frmMonitoraggio.frx":0DBF
-         Left            =   -74040
-         List            =   "frmMonitoraggio.frx":0DC9
+         Left            =   960
+         List            =   "frmMonitoraggio.frx":0DD8
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   3
          Top             =   1680
-         Width           =   2535
+         Width           =   3615
       End
       Begin VB.PictureBox picElenca 
          AutoSize        =   -1  'True
          BorderStyle     =   0  'None
          Height          =   330
          Index           =   0
-         Left            =   -72120
+         Left            =   2880
          ScaleHeight     =   330
          ScaleWidth      =   360
          TabIndex        =   2
@@ -473,7 +474,7 @@ Begin VB.Form frmMonitoraggio
          BorderStyle     =   0  'None
          Height          =   360
          Index           =   0
-         Left            =   -72600
+         Left            =   2400
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   1
@@ -1003,7 +1004,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   12
          Top             =   1680
          Width           =   2490
@@ -1022,7 +1023,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   11
          Top             =   1080
          Width           =   540
@@ -1041,7 +1042,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   5
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   10
          Top             =   2280
          Width           =   4785
@@ -1060,7 +1061,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   9
          Top             =   1695
          Width           =   540
@@ -1079,7 +1080,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   7
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   8
          Top             =   1080
          Width           =   510
@@ -1099,7 +1100,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   -74040
+         Left            =   960
          TabIndex        =   7
          Top             =   1110
          Width           =   1215
@@ -1507,7 +1508,7 @@ Private Sub cmdStampa_Click()
                     "       NEW adLongVarChar  AS NOTE_VACCINAZIONE, "
     strSql = strSql & _
                     "       NEW adVarChar(15)  AS DATA_PROTOCOLLO_MONITORAGGIO, " & _
-                    "       NEW adVarChar(15)  AS ESITO_PROTOCOLLO_MONITORAGGIO, " & _
+                    "       NEW adVarChar(40)  AS ESITO_PROTOCOLLO_MONITORAGGIO, " & _
                     "       NEW adLongVarChar  AS NOTE_PROTOCOLLO_MONITORAGGIO, "
     strSql = strSql & _
                     "       NEW adVarChar(15)  AS DATA_VALUTAZIONE_PSICOSOCIALE, " & _

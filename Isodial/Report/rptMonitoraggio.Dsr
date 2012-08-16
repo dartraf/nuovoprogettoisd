@@ -690,7 +690,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          Name            =   "txtEsitoProtocolloMonitoraggio"
          Object.Left            =   3005
          Object.Top             =   3213
-         Object.Width           =   2730
+         Object.Width           =   3458
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

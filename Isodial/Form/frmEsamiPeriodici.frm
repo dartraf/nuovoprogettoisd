@@ -676,7 +676,7 @@ Public Sub StampaStandard()
 
 End Sub
 
-Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String, blnDicitura As Boolean)
+Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String, blnDicitura As Boolean, blnStampaDicituraImpostata As Boolean)
     Const numMaxEsami As Integer = 19
     Dim strSql As String
     Dim strSqlShape As String
@@ -691,6 +691,7 @@ Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String
     Dim strPaziente As String
     Dim strNomeEsame As String
     Dim strNomeMese  As String
+    Dim dicitura As String
         
     strSqlShape = "SHAPE APPEND " & _
                 "       NEW adInteger AS INDEX, " & _
@@ -753,12 +754,24 @@ Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String
         Loop
         rsMain.UpdateBatch
         
+        ' controllo per stampare la dicitura impostata
+        
+        If blnStampaDicituraImpostata = True Then
+            Set rsDataset = New Recordset
+                rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+                If Not (rsDataset.EOF And rsDataset.BOF) Then
+                dicitura = rsDataset("DICITURA_ESAMI_PERIODICI") & ""
+                End If
+        ElseIf blnDicitura = True Then
+        dicitura = "Per quanto possibile, si suggerisce prescrivere su un unica ricetta gli esami NON esenti dal pagamento dei tickets."
+        End If
+                
         strNomeMese = MonthName(Month(Now))
 
         Set rptRichiestaEsamiLaboratorio.DataSource = rsMain
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di " & UCase(Left(strNomeMese, 1)) & Right(strNomeMese, Len(strNomeMese) - 1) & " " & Year(Now)
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblPaziente").Caption = strPaziente
-        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Visible = IIf(blnDicitura, False, True)
+        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Caption = dicitura
         rptRichiestaEsamiLaboratorio.PrintReport False, rptRangeAllPages
         
     Else
@@ -985,14 +998,14 @@ Private Sub cmdStampa_Click()
                 Call StartProgressBar(rsPazienti.RecordCount, 0, Me)
                 Do While Not rsPazienti.EOF
                     frmBarra.prgBar.Value = frmBarra.prgBar.Value + 1
-                    Call StampaPrescrizioni(rsPazienti("KEY"), strPeriodo, lfrmEsamiPeriodiciStampa.blnDicitura)
+                    Call StampaPrescrizioni(rsPazienti("KEY"), strPeriodo, lfrmEsamiPeriodiciStampa.blnDicitura, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
                     rsPazienti.MoveNext
                 Loop
                 rsPazienti.Close
                 Set rsPazienti = Nothing
                 Call StopProgressBar(Me)
             Else
-                Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnDicitura)
+                Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnDicitura, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
             End If
         Else
             Call StampaStandard

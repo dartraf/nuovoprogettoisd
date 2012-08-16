@@ -276,7 +276,7 @@ Private Sub cmdScansione_Click()
         MsgBox "Scansione non riuscita", vbInformation, "Impossibile aggiornare"
         Exit Sub
     Else
-        nome = nomeFile & Format(numPag + 1, "00")
+        nome = nomeFile & Format(numPag + 1, "00") & tTrova.keyReturn
         imgAppo = Clipboard.getData(2)
         SavePicture imgAppo.Picture, "C:\temp.bmp"
         ' converte in jpg e lo salva sul disco
@@ -381,7 +381,7 @@ Private Sub cmdImporta_Click()
     cdlApri.FilterIndex = 1
     cdlApri.ShowOpen
     nomePathFile = cdlApri.FileName
-    nome = nomeFile & Format(numPag + 1, "00")
+    nome = nomeFile & Format(numPag + 1, "00") & tTrova.keyReturn
     Select Case Mid(nomePathFile, Len(nomePathFile) - 2, 3)
         Case Is = "jpg"
             FileCopy nomePathFile, structApri.pathDB & "\" & nome & ".jpg"

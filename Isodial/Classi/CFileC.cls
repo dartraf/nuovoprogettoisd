@@ -203,10 +203,13 @@ Public Function CreaFiles(percorso As String) As Boolean
                             IIf(rsDataset("SESSO") = "F", 2, 1) & _
                             sistemaData(rsDataset("DATA_NASCITA")) & "0"
         If blnPazienteEstero Then
-            mNodo(i).Paziente = mNodo(i).Paziente & _
+           ' mNodo(i).Paziente = mNodo(i).Paziente & _
                             "999" & CompletaNumeri(rsDataset("NazioniCODICE_ISTAT"), 3) & _
                             CompletaNumeri(rsDataset("NazioniCODICE_ISTAT"), 3) & _
                             "   "
+            mNodo(i).Paziente = mNodo(i).Paziente & _
+                            "999" & CompletaNumeri(rsDataset("NazioniCODICE_ISTAT"), 3) & _
+                            "   " & "   "
         Else
             mNodo(i).Paziente = mNodo(i).Paziente & _
                             rsDataset("COMUNICODICE") & _

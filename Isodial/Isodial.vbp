@@ -172,6 +172,7 @@ Form=Form\frmTabSingoloInput.frm
 Class=clsLista; Classi\clsLista.cls
 Designer=Report\rptRichiestaEsamiModuloSodav.Dsr
 Form=Form\frmStampaFiltri.frm
+Form=Form\frmImpostaDicitura.frm
 ResFile32="Risorse.res"
 IconForm="frmCalendario"
 Startup="Sub Main"

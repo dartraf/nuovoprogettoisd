@@ -328,7 +328,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          EndProperty
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   1
-            Format          =   "dd/MM/yyyy"
+            Format          =   "d/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0

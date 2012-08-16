@@ -70,10 +70,11 @@ Option Explicit
 
 '' rs della scheda
 Dim rsElenca As Recordset
+Dim nomeTabella As String
 
 '' Setta le impostazioni iniziali e carica i dati nel form
 Private Sub Form_Load()
-    Dim nomeTabella As String
+    'Dim nomeTabella As String
     Dim PuntoX As Integer
     Dim PuntoY As Integer
     
@@ -113,6 +114,19 @@ Private Sub Form_Load()
     End Select
     flxGriglia.Rows = 1
     
+            If nomeTabella = "MON_TRAT_ACQUE" Then
+        Set rsElenca = New Recordset
+        rsElenca.Open "SELECT DISTINCT DATA, KEY FROM " & nomeTabella & " " & tElenca.condizione & " ORDER BY DATA DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        Do While Not rsElenca.EOF
+        flxGriglia.Rows = flxGriglia.Rows + 1
+        flxGriglia.TextMatrix(flxGriglia.Rows - 1, 0) = rsElenca("KEY")
+        flxGriglia.TextMatrix(flxGriglia.Rows - 1, 1) = rsElenca("DATA")
+        rsElenca.MoveNext
+        Loop
+    Set rsElenca = Nothing
+    
+    Else
+    
     Set rsElenca = New Recordset
     rsElenca.Open "SELECT DISTINCT DATA FROM " & nomeTabella & " " & tElenca.condizione & " ORDER BY DATA DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsElenca.EOF
@@ -121,6 +135,8 @@ Private Sub Form_Load()
         rsElenca.MoveNext
     Loop
     Set rsElenca = Nothing
+    
+    End If
     
     With flxGriglia
         .ColAlignment(1) = vbLeftJustify
@@ -176,7 +192,12 @@ End Sub
 
 Private Sub flxGriglia_DblClick()
     If VerificaClickFlx(flxGriglia) Then
-        laData = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+        If nomeTabella = "MON_TRAT_ACQUE" Then
+            tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+            laData = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+        Else
+            laData = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+        End If
         If Not IsDate(laData) Then
             laData = ""
         End If

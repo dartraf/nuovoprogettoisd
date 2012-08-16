@@ -3,23 +3,23 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmTrattamentoAcque 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Attuazione protocollo di trattamento delle acque"
-   ClientHeight    =   3600
+   ClientHeight    =   2865
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   6720
+   ClientWidth     =   8010
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   3600
-   ScaleWidth      =   6720
+   ScaleHeight     =   2865
+   ScaleWidth      =   8010
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
-      Height          =   2775
+      Height          =   1935
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   6495
+      Width           =   7815
       Begin VB.ComboBox cboAttivita 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -32,13 +32,13 @@ Begin VB.Form frmTrattamentoAcque
          EndProperty
          Height          =   315
          ItemData        =   "frmTrattamentoAcque.frx":0000
-         Left            =   1800
+         Left            =   1560
          List            =   "frmTrattamentoAcque.frx":0010
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
-         Top             =   720
-         Width           =   3495
+         Top             =   240
+         Width           =   3135
       End
       Begin VB.ComboBox cboEsito 
          BeginProperty Font 
@@ -52,13 +52,13 @@ Begin VB.Form frmTrattamentoAcque
          EndProperty
          Height          =   315
          ItemData        =   "frmTrattamentoAcque.frx":006B
-         Left            =   1800
+         Left            =   5640
          List            =   "frmTrattamentoAcque.frx":0075
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   3
-         Top             =   1680
-         Width           =   2535
+         Top             =   840
+         Width           =   2055
       End
       Begin VB.TextBox txtEseguitoDa 
          BeginProperty Font 
@@ -71,11 +71,11 @@ Begin VB.Form frmTrattamentoAcque
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   1800
+         Left            =   1560
          MaxLength       =   30
          TabIndex        =   2
-         Top             =   1200
-         Width           =   4455
+         Top             =   840
+         Width           =   3135
       End
       Begin VB.TextBox txtNumero 
          Alignment       =   1  'Right Justify
@@ -92,13 +92,13 @@ Begin VB.Form frmTrattamentoAcque
          Left            =   2400
          MaxLength       =   6
          TabIndex        =   4
-         Top             =   2235
+         Top             =   1395
          Width           =   735
       End
       Begin DataTimeBox.uDataTimeBox oDataTime 
          Height          =   375
          Index           =   0
-         Left            =   1800
+         Left            =   5640
          TabIndex        =   16
          Top             =   240
          Width           =   2100
@@ -111,9 +111,9 @@ Begin VB.Form frmTrattamentoAcque
       Begin DataTimeBox.uDataTimeBox oDataTime 
          Height          =   375
          Index           =   1
-         Left            =   4320
+         Left            =   5640
          TabIndex        =   17
-         Top             =   2160
+         Top             =   1320
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -137,7 +137,7 @@ Begin VB.Form frmTrattamentoAcque
          Index           =   8
          Left            =   120
          TabIndex        =   12
-         Top             =   750
+         Top             =   270
          Width           =   1245
       End
       Begin VB.Label Label1 
@@ -154,7 +154,7 @@ Begin VB.Form frmTrattamentoAcque
          EndProperty
          Height          =   240
          Index           =   9
-         Left            =   120
+         Left            =   4920
          TabIndex        =   11
          Top             =   285
          Width           =   510
@@ -173,9 +173,9 @@ Begin VB.Form frmTrattamentoAcque
          EndProperty
          Height          =   240
          Index           =   10
-         Left            =   120
+         Left            =   4920
          TabIndex        =   10
-         Top             =   1725
+         Top             =   840
          Width           =   540
       End
       Begin VB.Label Label1 
@@ -194,7 +194,7 @@ Begin VB.Form frmTrattamentoAcque
          Index           =   11
          Left            =   120
          TabIndex        =   9
-         Top             =   1215
+         Top             =   855
          Width           =   1260
       End
       Begin VB.Label Label1 
@@ -213,12 +213,12 @@ Begin VB.Form frmTrattamentoAcque
          Index           =   12
          Left            =   120
          TabIndex        =   8
-         Top             =   2235
+         Top             =   1395
          Width           =   2145
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "data"
+         Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -230,18 +230,36 @@ Begin VB.Form frmTrattamentoAcque
          EndProperty
          Height          =   240
          Index           =   13
-         Left            =   3720
+         Left            =   4920
          TabIndex        =   7
-         Top             =   2235
-         Width           =   480
+         Top             =   1395
+         Width           =   510
       End
    End
    Begin VB.Frame Frame4 
-      Height          =   855
+      Height          =   975
       Left            =   120
       TabIndex        =   13
-      Top             =   2640
-      Width           =   6495
+      Top             =   1800
+      Width           =   7815
+      Begin VB.CommandButton cmdPulisci 
+         Caption         =   "&Nuovo"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   5160
+         TabIndex        =   18
+         Top             =   240
+         Width           =   1215
+      End
       Begin VB.CommandButton cmdGestioneReferti 
          Caption         =   "&Gestione Referti"
          BeginProperty Font 
@@ -290,7 +308,7 @@ Begin VB.Form frmTrattamentoAcque
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   5160
+         Left            =   6480
          TabIndex        =   6
          Top             =   240
          Width           =   1215
@@ -315,8 +333,8 @@ Begin VB.Form frmTrattamentoAcque
    End
    Begin VB.Image imgAppo 
       Height          =   495
-      Left            =   -120
-      Top             =   1320
+      Left            =   7920
+      Top             =   0
       Visible         =   0   'False
       Width           =   255
    End
@@ -331,6 +349,11 @@ Option Explicit
 Dim rsTrattamento As Recordset
 Dim modifica As Integer
 Dim keyId As Integer
+Dim chiavericerca As Integer
+
+Private Sub cmdPulisci_Click()
+    Call Pulisci
+End Sub
 
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
@@ -356,11 +379,11 @@ End Sub
 
 Private Sub CaricaScheda()
     Dim data As Date
-    If oDataTime(0).data <> "" Then
+    
+        If chiavericerca > 0 Then
         Set rsTrattamento = New Recordset
-        ' la data americana
-        data = oDataTime(0).DataAmericana
-        rsTrattamento.Open "SELECT * FROM MON_TRAT_ACQUE WHERE (DATA=#" & data & "#)", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        
+        rsTrattamento.Open "SELECT * FROM MON_TRAT_ACQUE WHERE (KEY=" & chiavericerca & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsTrattamento.EOF And rsTrattamento.BOF) Then
             cboAttivita.ListIndex = rsTrattamento("TIPO_ATTIVITA")
             txtEseguitoDa = rsTrattamento("ESEGUITA_DA") & ""
@@ -377,11 +400,13 @@ Private Sub CaricaScheda()
 End Sub
 
 Private Sub Pulisci()
+    oDataTime(0).Pulisci
     oDataTime(1).Pulisci
     modifica = False
     keyId = 0
     Call PulisciForm(Me)
     Call EliminaScansioniSospese("SCAN_TRATT_ACQUE")
+    cmdStampa.Enabled = False
 End Sub
 
 Private Sub cmdChiudi_Click()
@@ -461,7 +486,7 @@ Private Sub cmdStampa_Click()
     Dim rsMain As Recordset         ' recordset padre per lo shape
     
         
-    strSql = "SHAPE APPEND  NEW adVarChar (10) as DATA, " & _
+    strSql = "SHAPE APPEND  NEW adDate as DATA, " & _
                     "       NEW adVarChar (40) as TIPO_ATTIVITA, " & _
                     "       NEW adVarChar (40) as ESEGUITO, " & _
                     "       NEW adVarChar (10) as ESITO, " & _
@@ -508,16 +533,6 @@ Private Sub Form_Unload(Cancel As Integer)
     Call EliminaScansioniSospese("SCAN_TRATT_ACQUE")
 End Sub
 
-Private Sub oDataTime_OnDataChange(Index As Integer)
-    If Index = 0 Then
-        Call Pulisci
-        If oDataTime(Index).data <> "" Then
-            Call CaricaScheda
-        End If
-    End If
-    cmdStampa.Enabled = True
-End Sub
-
 Private Sub oDataTime_OnDataClick(Index As Integer)
     oDataTime(Index).Pulisci
     laData = ""
@@ -529,6 +544,9 @@ Private Sub oDataTime_OnElencaClick(Index As Integer)
     tElenca.condizione = ""
     frmElencaDate.Show 1
     If laData <> "" Then oDataTime(0).data = laData
+    chiavericerca = tTrova.keyReturn
+    Call CaricaScheda
+    cmdStampa.Enabled = True
 End Sub
 
 Private Sub txtNumero_LostFocus()

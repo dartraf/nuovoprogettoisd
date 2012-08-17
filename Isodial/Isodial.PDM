@@ -1,0 +1,201 @@
+[Root]
+Most Recent Package=Pacchetto di installazione standard 1
+
+
+[Package|Pacchetto di installazione standard 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Nuova cartella
+
+[Package|Pacchetto di installazione standard 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Pacchetto di installazione standard 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Pacchetto di installazione standard 1|Files Found]
+
+[Package|Pacchetto di installazione standard 1|Files Released]
+zip32.dll=
+PicFormat32.dll=
+EZTW32.DLL=
+
+[Package|Pacchetto di installazione standard 1|Missing Dependency Information]
+C:\WINDOWS\system32\MSDBRPT.DLL=
+C:\Programmi\File comuni\System\ado\msado27.tlb=
+C:\Programmi\File comuni\System\ado\msjro.dll=
+C:\WINDOWS\system32\MenuExtended.dll=
+C:\WINDOWS\system32\msjro.dll=
+C:\WINDOWS\system32\zip32.dll=
+C:\WINDOWS\system32\msxml6.dll=
+C:\Programmi\Menu Creator\MenuExtended\MenuExtended.dll=
+C:\Documents and Settings\Raffaele\Desktop\Isodial\Isodial\Librerie\DataTimeBox.ocx=
+C:\WINDOWS\system32\WheelCatcher2.0.ocx=
+C:\Programmi\MATLAB\R2009a\toolbox\rtw\targets\xpc\xpc\xpcmngr\ocx\TABCTL32.ocx=
+C:\WINDOWS\system32\wiaaut.dll=
+C:\Programmi\Microsoft Office\Office12\MSWORD.OLB=
+
+[Package|Pacchetto di installazione standard 1|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+
+[Package|Pacchetto di installazione standard 1|Files Added]
+
+[Package|Pacchetto di installazione standard 1|Files Removed]
+
+[Package|Pacchetto di installazione standard 1|Files In Project]
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\VB6IT.DLL=Yes
+C:\Programmi\File comuni\System\ado\msado27.tlb=Yes
+C:\WINDOWS\system32\msstdfmt.dll=Yes
+C:\WINDOWS\system32\STDFTIT.DLL=Yes
+C:\WINDOWS\system32\MSDBRPT.DLL=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\MSCMCIT.DLL=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\FLXGDIT.DLL=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSCC2IT.DLL=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\MSCH2IT.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\CMDLGIT.DLL=Yes
+C:\WINDOWS\system32\MSWINSCK.OCX=Yes
+C:\WINDOWS\system32\WINSKIT.DLL=Yes
+C:\WINDOWS\system32\msxml6.dll=Yes
+C:\Programmi\File comuni\Microsoft Shared\DAO\dao360.dll=Yes
+C:\WINDOWS\system32\msjet40.dll=Yes
+C:\WINDOWS\system32\msjter40.dll=Yes
+C:\WINDOWS\system32\msjint40.dll=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\mswstr10.dll=Yes
+C:\WINDOWS\system32\mswdat10.dll=Yes
+C:\WINDOWS\system32\msrd2x40.dll=Yes
+C:\WINDOWS\system32\msrd3x40.dll=Yes
+C:\WINDOWS\system32\msrepl40.dll=Yes
+C:\WINDOWS\system32\msjtes40.dll=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\Programmi\File comuni\System\ado\msjro.dll=Yes
+C:\Programmi\Menu Creator\MenuExtended\MenuExtended.dll=Yes
+C:\Programmi\Isodial\IsoDial.exe=Yes
+C:\WINDOWS\system32\zip32.dll=Yes
+C:\Programmi\Microsoft Office\Office12\MSWORD.OLB=Yes
+C:\WINDOWS\system32\wiaaut.dll=Yes
+C:\Programmi\MATLAB\R2009a\toolbox\rtw\targets\xpc\xpc\xpcmngr\ocx\TABCTL32.ocx=Yes
+C:\WINDOWS\system32\WheelCatcher2.0.ocx=Yes
+C:\Documents and Settings\Raffaele\Desktop\Isodial\Isodial\Librerie\DataTimeBox.ocx=Yes
+
+[Package|Pacchetto di installazione standard 1|Configure Registry Files]
+Applicable=No
+
+[Package|Pacchetto di installazione standard 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Pacchetto di installazione standard 1|Install Locations]
+C:\Documents and Settings\acer\Desktop\IsoDial 1.7 (0.9)\IsoDial.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB6IT.DLL=$(WinSysPath)
+C:\Programmi\File comuni\System\ado\msjro.dll=$(WinSysPath)
+C:\Programmi\File comuni\System\ado\msado27.tlb=$(WinSysPath)
+C:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINDOWS\system32\STDFTIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSDBRPT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCMCIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\FLXGDIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCC2IT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCH2IT.DLL=$(WinSysPath)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.2 (0.8)\Isodial\IsoDial.exe=$(AppPath)
+C:\WINDOWS\system32\eztw32.dll=$(AppPath)
+C:\WINDOWS\system32\PicFormat32.dll=$(AppPath)
+C:\WINDOWS\system32\msjro.dll=$(WinSysPath)
+C:\WINDOWS\system32\MenuExtended.dll=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\CMDLGIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSWINSCK.OCX=$(WinSysPath)
+C:\WINDOWS\system32\WINSKIT.DLL=$(WinSysPath)
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.9 (0.5)\Isodial\IsoDial.exe=$(AppPath)
+C:\WINDOWS\system32\msxml6.dll=$(WinSysPath)
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.9.18\Isodial\IsoDial.exe=$(AppPath)
+C:\WINDOWS\system32\zip32.dll=$(WinSysPath)
+C:\Programmi\File comuni\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINDOWS\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.9.33\Isodial\IsoDial.exe=$(AppPath)
+C:\Programmi\Menu Creator\MenuExtended\MenuExtended.dll=$(WinSysPath)
+C:\Programmi\Isodial\IsoDial.exe=$(AppPath)
+C:\Programmi\Microsoft Office\Office12\MSWORD.OLB=$(WinSysPath)
+C:\WINDOWS\system32\wiaaut.dll=$(WinSysPath)
+C:\Programmi\MATLAB\R2009a\toolbox\rtw\targets\xpc\xpc\xpcmngr\ocx\TABCTL32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\WheelCatcher2.0.ocx=$(WinSysPath)
+C:\Documents and Settings\Raffaele\Desktop\Isodial\Isodial\Librerie\DataTimeBox.ocx=$(WinSysPath)
+
+[Package|Pacchetto di installazione standard 1|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\acer\Desktop\IsoDial 1.7 (0.9)\IsoDial.exe=No
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.2 (0.8)\Isodial\IsoDial.exe=Yes
+C:\WINDOWS\system32\eztw32.dll=Yes
+C:\WINDOWS\system32\PicFormat32.dll=Yes
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.9 (0.5)\Isodial\IsoDial.exe=No
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.9.18\Isodial\IsoDial.exe=No
+C:\Documents and Settings\Raffaele\Desktop\IsoDial 2.9.33\Isodial\IsoDial.exe=Yes
+C:\Programmi\Isodial\IsoDial.exe=No
+
+[Package|Pacchetto di installazione standard 1|Distribution]
+Type=single
+Size=
+Title=Isodial
+
+[Package|Pacchetto di installazione standard 1|IconGroups]
+Group0=Isodial
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Pacchetto di installazione standard 1|Isodial]
+Icon1=IsoDial.exe
+Title1=Isodial
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Pacchetto di installazione standard 1|Package]
+PackageFolder=C:\Nuova cartella
+ProjectFolder=C:\Documents and Settings\Raffaele\Desktop\Isodial\Isodial
+ServerSideCab=
+File1=C:\Nuova cartella\setup.exe
+File2=C:\Nuova cartella\Setup.Lst
+File3=C:\Nuova cartella\IsoDial.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

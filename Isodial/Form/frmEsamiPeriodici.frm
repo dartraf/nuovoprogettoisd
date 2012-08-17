@@ -676,7 +676,7 @@ Public Sub StampaStandard()
 
 End Sub
 
-Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String, blnDicitura As Boolean, blnStampaDicituraImpostata As Boolean)
+Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String, blnStampaDicituraImpostata As Boolean)
     Const numMaxEsami As Integer = 19
     Dim strSql As String
     Dim strSqlShape As String
@@ -762,8 +762,6 @@ Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String
                 If Not (rsDataset.EOF And rsDataset.BOF) Then
                 dicitura = rsDataset("DICITURA_ESAMI_PERIODICI") & ""
                 End If
-        ElseIf blnDicitura = True Then
-        dicitura = "Per quanto possibile, si suggerisce prescrivere su un unica ricetta gli esami NON esenti dal pagamento dei tickets."
         End If
                 
         strNomeMese = MonthName(Month(Now))
@@ -998,14 +996,14 @@ Private Sub cmdStampa_Click()
                 Call StartProgressBar(rsPazienti.RecordCount, 0, Me)
                 Do While Not rsPazienti.EOF
                     frmBarra.prgBar.Value = frmBarra.prgBar.Value + 1
-                    Call StampaPrescrizioni(rsPazienti("KEY"), strPeriodo, lfrmEsamiPeriodiciStampa.blnDicitura, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
+                    Call StampaPrescrizioni(rsPazienti("KEY"), strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
                     rsPazienti.MoveNext
                 Loop
                 rsPazienti.Close
                 Set rsPazienti = Nothing
                 Call StopProgressBar(Me)
             Else
-                Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnDicitura, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
+                Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
             End If
         Else
             Call StampaStandard

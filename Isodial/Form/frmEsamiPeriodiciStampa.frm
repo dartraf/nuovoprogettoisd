@@ -2,14 +2,14 @@ VERSION 5.00
 Begin VB.Form frmEsamiPeriodiciStampa 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Esami Periodici"
-   ClientHeight    =   5385
+   ClientHeight    =   4905
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   5010
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5385
+   ScaleHeight     =   4905
    ScaleWidth      =   5010
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -92,7 +92,7 @@ Begin VB.Form frmEsamiPeriodiciStampa
       End
    End
    Begin VB.Frame fraFrequenza 
-      Height          =   2895
+      Height          =   2415
       Left            =   120
       TabIndex        =   11
       Top             =   1680
@@ -111,27 +111,9 @@ Begin VB.Form frmEsamiPeriodiciStampa
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   18
-         Top             =   2280
-         Width           =   3495
-      End
-      Begin VB.OptionButton optStampaDicitura 
-         Caption         =   "Stampa dicitura"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Left            =   120
          TabIndex        =   17
          Top             =   1920
-         Width           =   2175
+         Width           =   3495
       End
       Begin VB.CheckBox chkFrequenzaSeProblemiClinici 
          Caption         =   "Se problemi clinici"
@@ -265,7 +247,7 @@ Begin VB.Form frmEsamiPeriodiciStampa
       Height          =   855
       Left            =   120
       TabIndex        =   13
-      Top             =   4440
+      Top             =   3960
       Width           =   4815
       Begin VB.CommandButton cmdImpostaDicitura 
          Caption         =   "&Imposta dicitura"
@@ -331,7 +313,6 @@ Option Explicit
 Public blnStampa As Boolean
 Public intPeriodo As tipoPeriodo
 Public intTipoStampa As Integer
-Public blnDicitura As Boolean
 Public blnStampaDicituraImpostata As Boolean
 
 
@@ -342,7 +323,6 @@ Private Sub AbilitaFrequenza(inStato)
     chkFrequenzaSemestrale.Enabled = inStato
     chkFrequenzaSeProblemiClinici.Enabled = inStato
     chkFrequenzaTrimestrale.Enabled = inStato
-    optStampaDicitura.Enabled = inStato
     optStampaDicituraImpostata.Enabled = inStato
 End Sub
 
@@ -373,11 +353,6 @@ Private Sub cmdStampa_Click()
         If optStampaPrescrizioni.Value Then intTipoStampa = 2
         If optStampaPrescrizioniTuttiPazienti.Value Then intTipoStampa = 3
         If optStampaStandard.Value Then intTipoStampa = 1
-        If optStampaDicitura.Value = True Then
-            blnDicitura = True
-        Else
-            blnDicitura = False
-        End If
         If optStampaDicituraImpostata.Value = True Then
             blnStampaDicituraImpostata = True
         Else

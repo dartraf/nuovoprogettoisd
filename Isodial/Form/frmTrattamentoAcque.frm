@@ -541,7 +541,7 @@ End Sub
 Private Sub oDataTime_OnElencaClick(Index As Integer)
     ' setta le variabili che saranno viste dal frmElencaDate
     tElenca.Tipo = tpMON_TRAT_ACQUE
-    tElenca.condizione = ""
+    tElenca.condizione = "WHERE TIPO_ATTIVITA=" & cboAttivita.ListIndex
     frmElencaDate.Show 1
     If laData <> "" Then oDataTime(0).data = laData
     chiavericerca = tTrova.keyReturn

@@ -214,7 +214,7 @@ Begin VB.Form frmRichiesteEsamiLab
       Top             =   1320
       Width           =   12495
       Begin VB.CheckBox chkStampaDicituraImpostata 
-         Caption         =   "Stampa dicitura impostata"
+         Caption         =   "Stampa dicitura"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75

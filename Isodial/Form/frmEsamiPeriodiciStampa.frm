@@ -98,7 +98,7 @@ Begin VB.Form frmEsamiPeriodiciStampa
       Top             =   1680
       Width           =   4815
       Begin VB.OptionButton optStampaDicituraImpostata 
-         Caption         =   "Stampa dicitura impostata"
+         Caption         =   "Stampa dicitura"
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"

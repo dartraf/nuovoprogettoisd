@@ -1369,6 +1369,7 @@ Dim stoCaricando As Boolean
 Dim intPazientiKey As Integer
 Dim intMedicoKey As Integer
 Dim blnPazienteEstero As Boolean
+Dim ControlloCodiceFiscalePazienteEstero As String
 
 
 Private Sub Form_Activate()
@@ -1914,6 +1915,10 @@ Private Function Completo() As Boolean
                 MsgBox "Inserire il numero di identificazione tessera", vbCritical, "Attenzione"
                 Exit Function
             End If
+        End If
+        If UCase(Mid(ControlloCodiceFiscalePazienteEstero, 1, 3)) <> "STP" And cboTipoRicetta.ListIndex = 0 Then
+            MsgBox "Opzione ST ammessa solo in presenza del codice STP", vbCritical, "Attenzione"
+            Exit Function
         End If
     End If
     Completo = True
@@ -2555,7 +2560,7 @@ Private Sub CaricaPaziente()
     End If
     Set rsDataset = New Recordset
     
-    strSql = "SELECT    PAZIENTI.COGNOME, PAZIENTI.NOME, DATA_NASCITA, CODICE_MEDICO, CODICE_REGIONE, CODICE_DISTRETTO, ESENZIONE_REDDITO, CODICE_ESENZIONE, Nazioni.Nome as NazioniNome, " & _
+    strSql = "SELECT    PAZIENTI.COGNOME, PAZIENTI.NOME, DATA_NASCITA, CODICE_FISCALE, CODICE_MEDICO, CODICE_REGIONE, CODICE_DISTRETTO, ESENZIONE_REDDITO, CODICE_ESENZIONE, Nazioni.Nome as NazioniNome, " & _
              "          MEDICI_BASE.KEY AS MEDICI_BASEKEY, MEDICI_BASE.CODICE AS MEDICI_BASECODICE, CODICE_TIPO_MEDICO, PRESENZA_BARCODE  " & _
              "FROM      ((PAZIENTI " & _
              "          LEFT OUTER JOIN MEDICI_BASE ON MEDICI_BASE.KEY=PAZIENTI.CODICE_MEDICO) " & _
@@ -2573,6 +2578,7 @@ Private Sub CaricaPaziente()
         somma = 0
     End If
     lblEta = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
+    ControlloCodiceFiscalePazienteEstero = rsDataset("CODICE_FISCALE")
     
     If rsDataset("CODICE_MEDICO") = 0 Then
         nome = "Al paziente non è stato definito il campo MEDICO DI BASE"

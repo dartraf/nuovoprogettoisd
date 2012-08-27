@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "24/08/2012"
+            TextSave        =   "27/08/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1628,7 +1628,6 @@ Private Sub StampaTurni()
     Dim giorni() As Variant
     Dim i As Integer
     Dim condizione As String
-    Dim lblTipoRene As String
     
     frmPannelloSceltaTurno.Show 1
     intSessione = frmPannelloSceltaTurno.GetSessione
@@ -1646,9 +1645,9 @@ Private Sub StampaTurni()
     End Select
     
     Select Case intSessione
-        Case tpPariMattina, tpPariPomeriggio, tpPariSera:  strGiorni = "Martedì       Giovedì       Sabato"
+        Case tpPariMattina, tpPariPomeriggio, tpPariSera:  strGiorni = "Martedì             Giovedì             Sabato"
             giorni = Array(2, 4, 6)
-        Case tpDispariMattina, tpDispariPomeriggio, tpDispariSera: strGiorni = "Lunedì       Mercoledì      Venerdì"
+        Case tpDispariMattina, tpDispariPomeriggio, tpDispariSera: strGiorni = "Lunedì             Mercoledì            Venerdì"
             giorni = Array(1, 3, 5)
     End Select
     
@@ -1679,15 +1678,10 @@ SQLString = "SELECT COGNOME, NOME, TURNI." & strGiornoIni(0) & " AS GGINI1, TURN
 '   Debug.Print SQLString
       
     rsDataset.Open SQLString, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-
-' associa tipo di rene
-'    lblTipoRene = Choose(rsDataset("TIPO") + 1, "NEG", "HCV+", "HBV+")
-
-    
+   
 If rsDataset.RecordCount <> 0 Then
         numPazienti = rsDataset.RecordCount
         
-    
         Set rptStampaTurni.DataSource = rsDataset
 '        rptStampaTurni.Orientation = rptOrientLandscape
         rptStampaTurni.LeftMargin = 0
@@ -1695,16 +1689,6 @@ If rsDataset.RecordCount <> 0 Then
         rptStampaTurni.TopMargin = 0
         rptStampaTurni.Sections("intestazione").Controls("lblTurno").Caption = strNomeSessione
         rptStampaTurni.Sections("intestazione").Controls("lblGiorni").Caption = strGiorni
-        
-'        Select Case rsDataset("TIPO")
-'        Case Is = 0
-'           rptStampaTurni.Sections("corpo").Controls("lblTipoRene").Caption = "NEG"
-'        Case Is = 1
-'           rptStampaTurni.Sections("corpo").Controls("lblTipoRene").Caption = "HCV+"
-'        Case Is = 2
-'           rptStampaTurni.Sections("corpo").Controls("lblTipoRene").Caption = "HBV+"
-'        End Select
-        
         rptStampaTurni.Sections("Section5").Controls.Item("lblPazienti").Caption = numPazienti
         rptStampaTurni.PrintReport True, rptRangeAllPages
     Else
@@ -1714,128 +1698,6 @@ End If
 rsDataset.Close
 Set rsDataset = Nothing
 End Sub
-
-      
-' reni
-'    strSql = "SELECT    PAZIENTI.KEY, COGNOME, NOME, DATA_NASCITA, STATO, MAX(DATA_ARRIVO) AS MAX_ARRIVO, MAX(DATA_PARTENZA) AS MAX_PARTENZA " & _
-'            " FROM      ((TURNI " & _
-'            "           INNER JOIN PAZIENTI ON PAZIENTI.KEY=TURNI.CODICE_PAZIENTE) " & _
-'           "           LEFT OUTER JOIN PAZIENTI_OSPITI ON PAZIENTI_OSPITI.CODICE_PAZIENTE=PAZIENTI.KEY) " & _
-'           "           WHERE (" & condizione & ") AND " & _
-'           "           (STATO=0 OR STATO=4) " & _
-'          "GROUP BY   PAZIENTI.KEY, COGNOME, NOME, DATA_NASCITA, STATO " & _
-'         "ORDER BY   COGNOME, NOME"
-'       Set rsTurni = New Recordset
-'    Set rsDataset = New Recordset
-'    rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    
-'    Do While Not rsDataset.EOF
-'        If rsDataset("STATO") = 4 Then
-'            If Not (rsDataset("MAX_ARRIVO") <= date And rsDataset("MAX_PARTENZA") >= date) Then
-'                continua = False
-'            End If
-'        Else
-'            continua = True
-'        End If
-'        If continua Then
-'            With rsMain
-'                strSql = "SELECT    * " & _
-'                        "FROM       (TURNI " & _
-'                        "           INNER JOIN RENI ON RENI.KEY=TURNI.CODICE_RENE) " & _
-'                        "WHERE      CODICE_PAZIENTE=" & rsDataset("KEY") ' & " AND " & _
-'                '   "           SOSPESA=FALSE " & _
-'                '   "ORDER BY   DATA DESC"
-'                rsTurni.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-                
-'                If Not (rsTurni.EOF And rsTurni.BOF) Then
-'                    .AddNew
-'                    .Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
-'                    .Fields("DATA_NASCITA") = rsDataset("DATA_NASCITA")
-'                    If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
-'                        somma = -1
-'                    ElseIf Month(rsDataset("DATA_NASCITA")) = Month(date) And Day(rsDataset("DATA_NASCITA")) > Day(date) Then
-'                        somma = -1
-'                    Else
-'                        somma = 0
-'                    End If
-'                    .Fields("ANNI") = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
-'                    .Fields("LINK1") = rsDataset("KEY")
-'                    Do While Not rsTurni.EOF
-'                        Set rsFiglio = .Fields("Res1").Value
-'                        With rsFiglio
-'                            .AddNew
-'                            .Fields("LINK1") = rsDataset("KEY")
-'                            .Fields("MONITOR") = rsTurni("TIPO_RENE")
-'                           .Fields("DATA") = rsTerapia("DATA")
-'                           If CBool(rsTerapia("TUTTI_GIORNI")) Then
-'                               .Fields("GIORNI") = "Tutti"
-'                           Else
-'                               For i = 1 To 7
-'                                   If CBool(rsTurni("GIORNO" & i)) Then
-'                                      .Fields("GIORNI") = .Fields("GIORNI") & " " & UCase(Mid(WeekdayName(i, False, vbMonday), 1, 1)) & Mid(WeekdayName(i, False, vbMonday), 2, 2)
-'                               End If
-'                             Next i
-'                           End If
-'                            .Update
-'                        End With
-'                        rsTurni.MoveNext
-'                    Loop
-'                    .Update
-'                Else
-'                    .AddNew
-'                    .Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
-'                    .Fields("DATA_NASCITA") = rsDataset("DATA_NASCITA")
-'                    If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
-'                        somma = -1
-'                    ElseIf Month(rsDataset("DATA_NASCITA")) = Month(date) And Day(rsDataset("DATA_NASCITA")) > Day(date) Then
-'                        somma = -1
-'                    Else
-'                        somma = 0
-'                    End If
-'                    .Fields("ANNI") = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
-'                    .Fields("LINK1") = rsDataset("KEY")
-'                    Set rsFiglio = .Fields("Res1").Value
-'                    With rsFiglio
-'                        .AddNew
-'                        .Fields("LINK1") = rsDataset("KEY")
-'                        .Fields("DATA") = Null
-'                        .Fields("MONITOR") = ""
-'                      .Fields("POSOLOGIAENOTE") = "NESSUNA TERAPIA"
-'                      .Fields("SOMMINISTRAZIONE") = 0
-'                        .Fields("GIORNI") = ""
-'                        .Update
-'                    End With
-'                    .Update
-'                End If
-'                rsTurni.Close
-'            End With
-'        End If
-'        rsDataset.MoveNext
-'    Loop
-'    rsDataset.Close
-'    Set rsDataset = Nothing
-'    Set rsTurni = Nothing
-    
-'    If rsMain.RecordCount <> 0 Then
-'        Set rptStampaTurni.DataSource = rsMain
-'        rptStampaTurni.LeftMargin = 0
-'        rptStampaTurni.RightMargin = 0
-'        rptStampaTurni.Sections("intestazione").Controls("lblTurno").Caption = strNomeSessione
-'        rptStampaTurni.PrintReport True, rptRangeAllPages
-'    Else
-'        MsgBox "Non risultano assegnati turni ai pazienti", vbInformation, "Stampa Riepiloghi"
-'    End If
-
-    
-'        strSql = "SELECT    PAZIENTI.KEY, COGNOME, NOME, DATA_NASCITA, STATO, MAX(DATA_ARRIVO) AS MAX_ARRIVO, MAX(DATA_PARTENZA) AS MAX_PARTENZA " & _
-'            " FROM      ((TURNI " & _
-'            "           INNER JOIN PAZIENTI ON PAZIENTI.KEY=TURNI.CODICE_PAZIENTE) " & _
-'            "           LEFT OUTER JOIN PAZIENTI_OSPITI ON PAZIENTI_OSPITI.CODICE_PAZIENTE=PAZIENTI.KEY) " & _
-'            "           WHERE (" & condizione & ") AND " & _
-'            "           (STATO=0 OR STATO=4) " & _
-'            "GROUP BY   PAZIENTI.KEY, COGNOME, NOME, DATA_NASCITA, STATO " & _
-'            "ORDER BY   COGNOME, NOME"
-'End Sub
 
 Private Sub mnuStampaMediciBase_Click()
     ' stampa il report

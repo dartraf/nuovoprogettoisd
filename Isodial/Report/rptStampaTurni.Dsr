@@ -13,7 +13,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
    _ExtentY        =   16960
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   10455
+   ReportWidth     =   10480
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -171,7 +171,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Cognome"
-         Alignment       =   2
       EndProperty
       ItemType8       =   3
       BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -237,9 +236,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   9694
+         Object.Left            =   9850
          Object.Top             =   3061
-         Object.Width           =   630
+         Object.Width           =   567
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -251,13 +250,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Tipo"
-         Alignment       =   2
       EndProperty
       ItemType12      =   3
       BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   1730
+         Object.Left            =   1531
          Object.Top             =   3061
          Object.Width           =   615
          Object.Height          =   225
@@ -271,7 +269,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Nome"
-         Alignment       =   2
       EndProperty
       ItemType13      =   3
       BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -279,7 +276,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
          Name            =   "lblGiorni"
          Object.Left            =   3385
          Object.Top             =   3061
-         Object.Width           =   2880
+         Object.Width           =   3248
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -297,7 +294,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   482
+      Object.Height          =   485
       NumControls     =   16
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -501,9 +498,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGGIni2"
-         Object.Left            =   4395
+         Object.Left            =   4565
          Object.Top             =   57
-         Object.Width           =   440
+         Object.Width           =   435
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -528,9 +525,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGGFin2"
-         Object.Left            =   4865
+         Object.Left            =   5035
          Object.Top             =   57
-         Object.Width           =   440
+         Object.Width           =   450
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -556,9 +553,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGGIni3"
-         Object.Left            =   5395
+         Object.Left            =   5735
          Object.Top             =   57
-         Object.Width           =   440
+         Object.Width           =   435
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -583,9 +580,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGGFin3"
-         Object.Left            =   5850
+         Object.Left            =   6190
          Object.Top             =   57
-         Object.Width           =   440
+         Object.Width           =   435
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -611,9 +608,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item12 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTipo"
-         Object.Left            =   9751
+         Object.Left            =   9850
          Object.Top             =   57
-         Object.Width           =   630
+         Object.Width           =   567
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -624,7 +621,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -659,7 +655,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label14"
-         Object.Left            =   4819
+         Object.Left            =   4989
          Object.Top             =   57
          Object.Width           =   105
          Object.Height          =   240
@@ -679,7 +675,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaTurni
       BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
-         Object.Left            =   5810
+         Object.Left            =   6150
          Object.Top             =   57
          Object.Width           =   105
          Object.Height          =   240
@@ -867,8 +863,15 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Explicit
+
+Dim WithEvents sdfTipo  As StdDataFormat
+Attribute sdfTipo.VB_VarHelpID = -1
+
 Private Sub DataReport_Initialize()
-     
+
+Set sdfTipo = New StdDataFormat
+
     With Me
          With .Sections("intestazione").Controls
             .Item("lblRagione").Caption = structIntestazione.sRagione
@@ -903,8 +906,14 @@ Private Sub DataReport_Initialize()
            .Item("txtNRene").DataField = "NUMERO_RENE"
            .Item("txtMonitor").DataField = "MONITOR"
            .Item("txtTipo").DataField = "TIPO"
-  '         .Item("lblTipoRene").Caption = lblTipoRene
+            Set .Item("txtTipo").DataFormat = sdfTipo
          End With
     End With
 End Sub
+
+Private Sub sdfTipo_Format(ByVal DataValue As StdFormat.StdDataValue)
+     DataValue = Choose(DataValue + 1, "NEG", "HCV+", "HBV+")
+End Sub
+
+
 

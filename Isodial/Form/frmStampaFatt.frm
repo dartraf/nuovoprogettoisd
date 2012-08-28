@@ -789,6 +789,12 @@ Private Sub CaricaFlx()
     
     rsPazienti.Open "SELECT NOME, COGNOME, KEY FROM PAZIENTI WHERE (STATO=0) " & strSingoloPaziente & " ORDER BY COGNOME, NOME", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
     Do While Not rsPazienti.EOF
+    
+ '    elimina paziente con zero dialisi
+        If GetNumeroDialisiFuture(rsPazienti("KEY")) = 0 Then
+            rsPazienti.MoveNext
+        End If
+    
         With flxGriglia
             .Rows = .Rows + 1
             .TextMatrix(.Rows - 1, 0) = rsPazienti("KEY")

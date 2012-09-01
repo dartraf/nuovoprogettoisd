@@ -272,12 +272,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   12161
-      NumControls     =   44
+      NumControls     =   46
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   57
+         Object.Left            =   2438
          Object.Top             =   737
          Object.Width           =   570
          Object.Height          =   345
@@ -397,7 +397,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsitoProtocolloVaccinazione"
-         Object.Left            =   624
+         Object.Left            =   3005
          Object.Top             =   783
          Object.Width           =   2715
          Object.Height          =   345
@@ -690,7 +690,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
          Name            =   "txtEsitoProtocolloMonitoraggio"
          Object.Left            =   3005
          Object.Top             =   3213
-         Object.Width           =   3458
+         Object.Width           =   3685
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1229,6 +1229,53 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMonitoraggio
             SubFormatType   =   0
          EndProperty
       EndProperty
+      ItemType44      =   4
+      BeginProperty Item44 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataProtocolloVaccinazione"
+         Object.Left            =   680
+         Object.Top             =   783
+         Object.Width           =   1200
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType45      =   3
+      BeginProperty Item45 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label25"
+         Object.Left            =   57
+         Object.Top             =   737
+         Object.Width           =   615
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Data"
+      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -1351,6 +1398,7 @@ Private Sub DataReport_Initialize()
         
             '                       Attuazione protocollo di vaccinazione epatite
             
+            .Item("txtDataProtocolloVaccinazione").DataField = "DATA_PROTOCOLLO_VACCINAZIONE"
             .Item("txtEsitoProtocolloVaccinazione").DataField = "ESITO_PROTOCOLLO_VACCINAZIONE"
             .Item("txtNoteVaccinazione").DataField = "NOTE_VACCINAZIONE"
             

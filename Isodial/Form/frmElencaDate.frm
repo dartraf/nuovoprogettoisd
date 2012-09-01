@@ -105,6 +105,8 @@ Private Sub Form_Load()
             nomeTabella = "MON_ACCESSI"
         Case tpMON_TRAT_ACQUE
             nomeTabella = "MON_TRAT_ACQUE"
+        Case tpMON_VACC_EPATITE
+            nomeTabella = "MON_VACC_EPATITE"
         Case tpMON_VAL_PSICO
             nomeTabella = "MON_VALUTAZIONI"
         Case tpESPORTAESAMI

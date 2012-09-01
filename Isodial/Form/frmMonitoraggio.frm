@@ -153,7 +153,6 @@ Begin VB.Form frmMonitoraggio
       _ExtentY        =   7646
       _Version        =   393216
       Tabs            =   4
-      Tab             =   1
       TabsPerRow      =   4
       TabHeight       =   882
       ShowFocusRect   =   0   'False
@@ -169,35 +168,35 @@ Begin VB.Form frmMonitoraggio
       EndProperty
       TabCaption(0)   =   "Attuazione protocollo di vaccinazione epatite"
       TabPicture(0)   =   "frmMonitoraggio.frx":0459
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label1(2)"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Label1(4)"
       Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "cboEsito(0)"
+      Tab(0).Control(2)=   "Label1(9)"
       Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "txtNote(0)"
+      Tab(0).Control(3)=   "lblData(4)"
       Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).ControlCount=   4
+      Tab(0).Control(4)=   "cboEsito(0)"
+      Tab(0).Control(4).Enabled=   0   'False
+      Tab(0).Control(5)=   "txtNote(0)"
+      Tab(0).Control(5).Enabled=   0   'False
+      Tab(0).Control(6)=   "picElenca(2)"
+      Tab(0).Control(6).Enabled=   0   'False
+      Tab(0).Control(7)=   "picData(4)"
+      Tab(0).Control(7).Enabled=   0   'False
+      Tab(0).ControlCount=   8
       TabCaption(1)   =   "Attuazione protocollo di monitoraggio accessi vascolari"
       TabPicture(1)   =   "frmMonitoraggio.frx":0475
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "lblData(0)"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Label1(7)"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "Label1(6)"
-      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "Label1(5)"
-      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "picData(0)"
-      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "picElenca(0)"
-      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "cboEsito(1)"
-      Tab(1).Control(6).Enabled=   0   'False
       Tab(1).Control(7)=   "txtNote(1)"
-      Tab(1).Control(7).Enabled=   0   'False
       Tab(1).ControlCount=   8
       TabCaption(2)   =   "Valutazione psico-sociale"
       TabPicture(2)   =   "frmMonitoraggio.frx":0491
@@ -243,6 +242,32 @@ Begin VB.Form frmMonitoraggio
       Tab(3).Control(20)=   "cmdTrova(2)"
       Tab(3).Control(21)=   "txtNote(3)"
       Tab(3).ControlCount=   22
+      Begin VB.PictureBox picData 
+         AutoSize        =   -1  'True
+         BorderStyle     =   0  'None
+         Height          =   360
+         Index           =   4
+         Left            =   2400
+         ScaleHeight     =   360
+         ScaleWidth      =   360
+         TabIndex        =   63
+         ToolTipText     =   "Cerca data"
+         Top             =   1065
+         Width           =   360
+      End
+      Begin VB.PictureBox picElenca 
+         AutoSize        =   -1  'True
+         BorderStyle     =   0  'None
+         Height          =   330
+         Index           =   2
+         Left            =   2880
+         ScaleHeight     =   330
+         ScaleWidth      =   360
+         TabIndex        =   62
+         ToolTipText     =   "Elenca date"
+         Top             =   1065
+         Width           =   360
+      End
       Begin VB.TextBox txtNote 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -386,13 +411,13 @@ Begin VB.Form frmMonitoraggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2085
+         Height          =   1605
          Index           =   0
-         Left            =   -74760
+         Left            =   240
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   6
-         Top             =   1920
+         Top             =   2520
          Width           =   11535
       End
       Begin VB.ComboBox cboEsito 
@@ -408,12 +433,12 @@ Begin VB.Form frmMonitoraggio
          Height          =   315
          Index           =   0
          ItemData        =   "frmMonitoraggio.frx":0D9D
-         Left            =   -74040
+         Left            =   960
          List            =   "frmMonitoraggio.frx":0DA7
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   5
-         Top             =   1080
+         Top             =   1680
          Width           =   2535
       End
       Begin VB.TextBox txtNote 
@@ -426,9 +451,9 @@ Begin VB.Form frmMonitoraggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1485
+         Height          =   1605
          Index           =   1
-         Left            =   240
+         Left            =   -74760
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
          TabIndex        =   4
@@ -448,7 +473,7 @@ Begin VB.Form frmMonitoraggio
          Height          =   315
          Index           =   1
          ItemData        =   "frmMonitoraggio.frx":0DBF
-         Left            =   960
+         Left            =   -74040
          List            =   "frmMonitoraggio.frx":0DD8
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -461,7 +486,7 @@ Begin VB.Form frmMonitoraggio
          BorderStyle     =   0  'None
          Height          =   330
          Index           =   0
-         Left            =   2880
+         Left            =   -72120
          ScaleHeight     =   330
          ScaleWidth      =   360
          TabIndex        =   2
@@ -474,13 +499,52 @@ Begin VB.Form frmMonitoraggio
          BorderStyle     =   0  'None
          Height          =   360
          Index           =   0
-         Left            =   2400
+         Left            =   -72600
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   1
          ToolTipText     =   "Cerca data"
          Top             =   1065
          Width           =   360
+      End
+      Begin VB.Label lblData 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   4
+         Left            =   960
+         TabIndex        =   65
+         Top             =   1110
+         Width           =   1215
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   9
+         Left            =   240
+         TabIndex        =   64
+         Top             =   1080
+         Width           =   510
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -1004,9 +1068,9 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   12
-         Top             =   1680
+         Top             =   2280
          Width           =   2490
       End
       Begin VB.Label Label1 
@@ -1023,9 +1087,9 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   11
-         Top             =   1080
+         Top             =   1695
          Width           =   540
       End
       Begin VB.Label Label1 
@@ -1042,7 +1106,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   5
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   10
          Top             =   2280
          Width           =   4785
@@ -1061,7 +1125,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   9
          Top             =   1695
          Width           =   540
@@ -1080,7 +1144,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   240
          Index           =   7
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   8
          Top             =   1080
          Width           =   510
@@ -1100,7 +1164,7 @@ Begin VB.Form frmMonitoraggio
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   960
+         Left            =   -74040
          TabIndex        =   7
          Top             =   1110
          Width           =   1215
@@ -1243,12 +1307,13 @@ Private Sub Form_Load()
     Me.Top = intTop
     Me.Left = intLeft
     
-    For i = 0 To 3
+    For i = 0 To 4
         lblData(i).BackColor = vbWhite
         picData(i).Picture = LoadResPicture("cal1", 0)
     Next i
     picElenca(0).Picture = LoadResPicture("elenca1", 0)
     picElenca(1).Picture = LoadResPicture("elenca1", 0)
+    picElenca(2).Picture = LoadResPicture("elenca1", 0)
     tabSchede.Tab = 0
     Call EliminaScansioniSospese("SCAN_PSICO_SOCIALE")
 End Sub
@@ -1265,7 +1330,7 @@ Private Sub PulisciTutto()
     lblStudio = ""
     lblTelefono = ""
     lblCellulare = ""
-    For i = 0 To 3
+    For i = 0 To 4
         lblData(i) = ""
     Next i
     For i = 1 To 4
@@ -1287,6 +1352,8 @@ Private Sub CaricaScheda(Index As Integer)
             nomeTabella = "MON_ACCESSI"
         Case 1
             nomeTabella = "MON_VALUTAZIONI"
+        Case 2
+            nomeTabella = "MON_VACC_EPATITE"
     End Select
     If intPazientiKey <> 0 And lblData(Index) <> "" Then
         Set rsMonitoraggi = New Recordset
@@ -1306,10 +1373,16 @@ Private Sub CaricaScheda(Index As Integer)
                     Call CaricaMedico(0)
                     modifica.v_modifica(3) = True
                     modifica.v_numKey(3) = rsMonitoraggi("KEY")
+                Case 2
+                    lblData(4).Caption = rsMonitoraggi("DATA")
+                    cboEsito(0).ListIndex = rsMonitoraggi("ESITO")
+                    txtNote(0) = rsMonitoraggi("NOTE") & ""
+                    modifica.v_modifica(1) = True
+                    modifica.v_numKey(1) = rsMonitoraggi("KEY")
             End Select
         Else
-            modifica.v_modifica(2 + Index) = False
-            modifica.v_numKey(2 + Index) = 0
+            modifica.v_modifica(1 + Index) = False
+            modifica.v_numKey(1 + Index) = 0
         End If
         Set rsMonitoraggi = Nothing
     End If
@@ -1331,6 +1404,11 @@ Private Sub Pulisci(Index As Integer)
             lblNomePsicologo = ""
             modifica.v_modifica(3) = False
             modifica.v_numKey(3) = 0
+        Case 2, 4
+            cboEsito(0).ListIndex = -1
+            txtNote(0) = ""
+            modifica.v_modifica(1) = False
+            modifica.v_numKey(1) = 0
     End Select
 End Sub
 
@@ -1365,6 +1443,27 @@ Private Sub cmdMemorizza_Click()
         Exit Sub
     End If
     
+    If tabSchede.Tab = 0 Then
+        If lblData(4).Caption = "" Then
+            MsgBox "Selezionare la data", vbInformation, "Attenzione"
+            Exit Sub
+        End If
+    End If
+    
+    If tabSchede.Tab = 1 Then
+        If lblData(0).Caption = "" Then
+            MsgBox "Selezionare la data", vbInformation, "Attenzione"
+            Exit Sub
+        End If
+    End If
+    
+    If tabSchede.Tab = 2 Then
+        If lblData(1).Caption = "" Then
+            MsgBox "Selezionare la data", vbInformation, "Attenzione"
+            Exit Sub
+        End If
+    End If
+    
     numScheda = tabSchede.Tab + 1       '(1 la prima scheda)
     If numScheda = 2 Or numScheda = 3 Then
         If lblData(numScheda - 2) = "" Then
@@ -1374,7 +1473,7 @@ Private Sub cmdMemorizza_Click()
     
     If numScheda <> 4 Then
         If cboEsito(numScheda - 1).ListIndex = -1 Then
-            MsgBox "Selezionare un esito", vbCritical, "Attenzione"
+            MsgBox "Selezionare un esito", vbInformation, "Attenzione"
             Exit Sub
         End If
     End If
@@ -1393,8 +1492,8 @@ Private Sub cmdMemorizza_Click()
     End If
     Select Case numScheda
         Case 1
-            v_Nomi = Array("KEY", "CODICE_PAZIENTE", "ESITO", "NOTE")
-            v_Val = Array(numKey, intPazientiKey, cboEsito(0).ListIndex, CStr(txtNote(0) & ""))
+            v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "ESITO", "NOTE")
+            v_Val = Array(numKey, intPazientiKey, lblData(4), cboEsito(0).ListIndex, CStr(txtNote(0) & ""))
         Case 2
             v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "ESITO", "NOTE")
             v_Val = Array(numKey, intPazientiKey, lblData(0), cboEsito(1).ListIndex, txtNote(1) & "")
@@ -1497,6 +1596,9 @@ Private Sub cmdStampa_Click()
         Exit Sub
     End If
       
+    
+      
+      
     Set rsDialisi = New Recordset
     rsDialisi.Open "SELECT COGNOME, NOME, DATA_NASCITA, CODICE_ID FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     structIntestazione.sPaziente = rsDialisi("COGNOME") & " " & rsDialisi("NOME")
@@ -1505,6 +1607,7 @@ Private Sub cmdStampa_Click()
     Set rsDialisi = Nothing
 
     strSql = "SHAPE APPEND  NEW adVarChar(15)  AS ESITO_PROTOCOLLO_VACCINAZIONE, " & _
+                    "       NEW adVarChar(15)  AS DATA_PROTOCOLLO_VACCINAZIONE, " & _
                     "       NEW adLongVarChar  AS NOTE_VACCINAZIONE, "
     strSql = strSql & _
                     "       NEW adVarChar(15)  AS DATA_PROTOCOLLO_MONITORAGGIO, " & _
@@ -1540,6 +1643,7 @@ Private Sub cmdStampa_Click()
                             
                             'Attuazione protocollo di vaccinazione epatite
                             
+        .Fields("DATA_PROTOCOLLO_VACCINAZIONE") = lblData(4)
         .Fields("ESITO_PROTOCOLLO_VACCINAZIONE") = cboEsito(0)
         .Fields("NOTE_VACCINAZIONE") = txtNote(0)
             
@@ -1628,18 +1732,7 @@ Private Sub CaricaPaziente()
     End If
     lblEta = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
     rsDataset.Close
-    ' carica le tab vaccinazione epatite, collegamenti
-    rsDataset.Open "SELECT * FROM MON_VACC_EPATITE WHERE CODICE_PAZIENTE=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If Not (rsDataset.EOF And rsDataset.BOF) Then
-        cboEsito(0).ListIndex = rsDataset("ESITO")
-        txtNote(0) = rsDataset("NOTE") & ""
-        modifica.v_modifica(1) = True
-        modifica.v_numKey(1) = rsDataset("KEY")
-    Else
-        modifica.v_modifica(1) = False
-        modifica.v_numKey(1) = 0
-    End If
-    rsDataset.Close
+
     rsDataset.Open "SELECT * FROM MON_COLLEGAMENTI WHERE CODICE_PAZIENTE=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         intMedicoKey(1) = rsDataset("CODICE_MEDICO")
@@ -1657,12 +1750,14 @@ Private Sub CaricaPaziente()
 End Sub
 
 Private Sub lblData_Change(Index As Integer)
-    If Index = 0 Or Index = 1 Then
-        Call Pulisci(Index)
+    Call Pulisci(Index)
+
+    If Index = 0 Or Index = 1 Or Index = 2 Then
         If lblData(Index) <> "" Then
             Call CaricaScheda(Index)
         End If
     End If
+    
 End Sub
 
 Private Sub lblData_Click(Index As Integer)

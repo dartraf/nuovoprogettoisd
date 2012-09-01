@@ -233,6 +233,7 @@ Enum tipoElenca
     tpCOLTURE
     tpMON_ACC_VASCOLARE
     tpMON_VAL_PSICO
+    tpMON_VACC_EPATITE
     tpMON_TRAT_ACQUE
     tpPRESCRIZIONI
     tpESPORTAESAMI                  ' KTV O TSAT

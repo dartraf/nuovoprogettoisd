@@ -31,9 +31,31 @@ Public Const M_PS As String = "m_ps"            ' monit psicosociale
 Public Const S_DP As String = "s_dp"            ' docum pazienti
 Public Const M_TR As String = "m_tr"            ' monit trapianti
 
+Public Const CODICESTS_MOSCATI As String = "AD0112"         'ASL NAPOLI 1
+
+Public Const CODICESTS_GAMMADIAL As String = "AD0143"       'ASL NAPOLI 2 NORD
+Public Const CODICESTS_CGA As String = "AD0145"
+Public Const CODICESTS_DIALIFE As String = "AD0151"
+Public Const CODICESTS_CAMPANO As String = "AD0152"
+Public Const CODICESTS_DIALGEST As String = "AD0153"
+Public Const CODICESTS_SBIAGIO As String = "AD0155"
+Public Const CODICESTS_SPIOX As String = "AD0156"
+
+Public Const CODICESTS_NEPHRON As String = "AD0169"         'ASL NAPOLI 3 SUD
+Public Const CODICESTS_DELTA As String = "AD0171"
+Public Const CODICESTS_POGGIOMARINO As String = "AD0163"
+
+Public Const CODICESTS_EM_IRPINA As String = "AD0094"       'AVELLINO
 Public Const CODICESTS_BARTOLI As String = "AD0099"
+
+Public Const CODICESTS_LA_PECCERELLA As String = "AD0133"   'BENEVENTO
+Public Const CODICESTS_SANNIOMEDICA As String = "AD0137"
+
+Public Const CODICESTS_SANT_ANDREA As String = "AD0082"     'CASERTA
 Public Const CODICESTS_HELIOS As String = "AD0089"
 Public Const CODICESTS_SODAV As String = "AD0078"
+
+
 
 Public Const colArancione As Long = &HC0FFFF
 

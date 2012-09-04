@@ -1895,7 +1895,7 @@ Public Sub StampaSecondaParte(formPazienti As Boolean, codicePaziente As Integer
 End Sub
 
 '' Stampa esami di laboratorio
-Public Sub StampaSestaParte(formPazienti As Boolean, codicePaziente As Integer, condizione As String, Optional codiceId As Integer)
+Public Sub StampaSestaParte(formPazienti As Boolean, codicePaziente As Integer, condizione As String, quantimesi As Integer, Optional codiceId As Integer)
     Dim valoreAppo As Variant
     Dim i As Integer
     Dim k As Integer
@@ -2033,10 +2033,15 @@ Public Sub StampaSestaParte(formPazienti As Boolean, codicePaziente As Integer, 
                     "           CODICE_GRUPPO=" & vett(i).esami(k).righe(numRigaGruppo).codice & " ) " & _
                     "ORDER BY   DATA DESC"
             rsEsami.Open strSql, cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
-            For j = 1 To IIf(rsEsami.RecordCount > 12, 12, rsEsami.RecordCount)
-                vett(i).esami(k).righe(numRigaGruppo).valori(j) = Format(rsEsami("DATA"), "dd/mm")
-                rsEsami.MoveNext
-            Next j
+       ' controlla e limita la stampa ad una sola data
+            If quantimesi = 12 Then
+                For j = 1 To IIf(rsEsami.RecordCount > 12, 12, rsEsami.RecordCount)
+                    vett(i).esami(k).righe(numRigaGruppo).valori(j) = Format(rsEsami("DATA"), "dd/mm")
+                    rsEsami.MoveNext
+                Next j
+            Else
+                vett(i).esami(k).righe(numRigaGruppo).valori(1) = Format(rsEsami("DATA"), "dd/mm")
+            End If
             rsEsami.Close
         Next k
     Next i
@@ -2162,12 +2167,20 @@ Public Sub StampaSestaParte(formPazienti As Boolean, codicePaziente As Integer, 
                 rsFiglio2.Fields("CODICE_ESAME") = vett(i).esami(k).righe(j).codice
                 rsFiglio2.Fields("V_MINMAX") = vett(i).esami(k).righe(j).minmax
                 rsFiglio2.Fields("UNITA") = vett(i).esami(k).righe(j).unita
-                For p = 1 To 12
+                
+                For p = 1 To quantimesi
                     rsFiglio2.Fields("VALORE" & p) = vett(i).esami(k).righe(j).valori(p)
+                 ' elimina gli esami non valorizzati
+                    If quantimesi = 1 And rsFiglio2.Fields("VALORE" & p) = "" Then
+                      rsFiglio2.Delete
+                      peso = peso - pesoLivello3
+                    Else
+                      rsFiglio2.Fields("LEGENDA") = ""
+                      rsFiglio2.Update
+                    End If
                 Next p
-                rsFiglio2.Fields("LEGENDA") = ""
-                rsFiglio2.Update
                 peso = peso + pesoLivello3
+         
                 If peso > pesoTotale And Not j = UBound(vett(i).esami(k).righe) Then
                     rsMain.AddNew
                     numPag = numPag + 1

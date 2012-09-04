@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmControlloFileEsterni 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Controllo configurazione sistema"
@@ -44,43 +44,6 @@ Begin VB.Form frmControlloFileEsterni
       TabIndex        =   1
       Top             =   2040
       Width           =   7575
-      Begin VB.CommandButton cmdDownload 
-         Caption         =   "&Download"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   3240
-         TabIndex        =   5
-         ToolTipText     =   "Esporta in un file di testo"
-         Top             =   240
-         Width           =   1215
-      End
-      Begin VB.CommandButton cmdEsporta 
-         Caption         =   "&Esporta"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   4680
-         TabIndex        =   4
-         ToolTipText     =   "Esporta in un file di testo"
-         Top             =   240
-         Width           =   1215
-      End
       Begin VB.CommandButton cmdIndietro 
          Caption         =   "&Chiudi"
          BeginProperty Font 
@@ -116,21 +79,21 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub cmdEsporta_Click()
-    On Error GoTo gestione
-    oCommonDialog.DefaultExt = "*.txt"
-    oCommonDialog.DialogTitle = "Salva file"
-    oCommonDialog.Filter = "File di testo|*.txt"
-    oCommonDialog.ShowSave
+ '   On Error GoTo gestione
+ '   oCommonDialog.DefaultExt = "*.txt"
+ '   oCommonDialog.DialogTitle = "Salva file"
+ '   oCommonDialog.Filter = "File di testo|*.txt"
+ '   oCommonDialog.ShowSave
     
-    If oCommonDialog.FileName <> "" Then
-        Open oCommonDialog.FileName For Output As 1
-        Print #1, lblTesto.Caption
-        Close #1
-    End If
+ '   If oCommonDialog.FileName <> "" Then
+ '       Open oCommonDialog.FileName For Output As 1
+ '       Print #1, lblTesto.Caption
+ '       Close #1
+ '   End If
     
-    Exit Sub
-gestione:
-    MsgBox Err.Description, vbCritical, Me.Caption
+'    Exit Sub
+'gestione:
+'    MsgBox Err.Description, vbCritical, Me.Caption
 End Sub
 
 Private Sub cmdIndietro_Click()

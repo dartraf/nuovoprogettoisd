@@ -371,7 +371,7 @@ Private Sub ControlloFileEsterni()
     If blnBloccaProgramma Then
         Beep
         Load frmControlloFileEsterni
-        strTesto = "Impossibile avviare Isodial. " & vbCrLf & "Si prega di contattare l'amministratore." & vbCrLf & vbCrLf & strTesto
+        strTesto = "Impossibile avviare Isodial. " & vbCrLf & "Si prega di contattare l'autore." & vbCrLf & vbCrLf & strTesto
         frmControlloFileEsterni.lblTesto.Caption = strTesto
         frmControlloFileEsterni.Show 1
         Unload frmControlloFileEsterni

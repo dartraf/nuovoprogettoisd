@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "03/09/2012"
+            TextSave        =   "04/09/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -993,7 +993,7 @@ Private Sub mnuGestioneFileC_Click()
         tFileRicette = tpFILEC
         frmGestioneFileRicette.Show
     Else
-        MsgBox "MODULO DI FATTURAZIONE OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        MsgBox "MODULO PER GENERARE I FILE 'C' OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
     End If
 End Sub
 
@@ -1002,7 +1002,7 @@ Private Sub mnuGestioneFileXml_Click()
         tFileRicette = tpFILEXML
         frmGestioneFileRicette.Show
     Else
-        MsgBox "MODULO DI FATTURAZIONE OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        MsgBox "MODULO PER GENERARE IL FILE 'XML' OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
     End If
 End Sub
 

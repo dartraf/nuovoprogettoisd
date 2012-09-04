@@ -37,7 +37,7 @@ Begin VB.Form frmEsitoEsami
          Left            =   360
          Picture         =   "frmEsitoEsami.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   23
+         TabIndex        =   24
          Top             =   240
          Width           =   450
       End
@@ -55,7 +55,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   285
          Left            =   2280
-         TabIndex        =   26
+         TabIndex        =   27
          Top             =   360
          Width           =   3255
       End
@@ -73,7 +73,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   285
          Left            =   7320
-         TabIndex        =   25
+         TabIndex        =   26
          Top             =   360
          Width           =   3135
       End
@@ -91,7 +91,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   285
          Left            =   11880
-         TabIndex        =   24
+         TabIndex        =   25
          Top             =   360
          Width           =   615
       End
@@ -191,7 +191,7 @@ Begin VB.Form frmEsitoEsami
          Height          =   375
          Index           =   0
          Left            =   2280
-         TabIndex        =   27
+         TabIndex        =   28
          Top             =   150
          Width           =   2100
          _ExtentX        =   3704
@@ -204,7 +204,7 @@ Begin VB.Form frmEsitoEsami
          Height          =   375
          Index           =   1
          Left            =   10200
-         TabIndex        =   28
+         TabIndex        =   29
          Top             =   150
          Width           =   2100
          _ExtentX        =   3704
@@ -420,6 +420,24 @@ Begin VB.Form frmEsitoEsami
       TabIndex        =   4
       Top             =   7680
       Width           =   7815
+      Begin VB.CommandButton cmdGiroVisite 
+         Caption         =   "Stampa Esami &Giro Visite"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   120
+         TabIndex        =   23
+         Top             =   240
+         Width           =   1365
+      End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
@@ -434,7 +452,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   6600
-         TabIndex        =   22
+         TabIndex        =   19
          Top             =   240
          Width           =   975
       End
@@ -452,7 +470,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   2760
-         TabIndex        =   21
+         TabIndex        =   22
          Top             =   240
          Width           =   1215
       End
@@ -469,7 +487,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   4200
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   240
          Width           =   975
       End
@@ -487,7 +505,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   5400
-         TabIndex        =   19
+         TabIndex        =   20
          Top             =   240
          Width           =   1005
       End
@@ -514,6 +532,35 @@ Dim rsDisco As Recordset
 Dim intPazientiKey As Integer
 
 Const icsPN As String = "  X"
+
+Private Sub cmdGiroVisite_Click()
+If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
+    Dim quantimesi As Integer
+    Dim condizione As String
+    Dim data_min As Date
+    Dim data_max As Date
+    
+    quantimesi = 1
+    data_min = oData(0).DataAmericana
+    data_max = oData(1).DataAmericana
+    condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & " # AND #" & data_max & "# "
+    
+    If intPazientiKey = 0 Then
+        MsgBox "Selezionare il paziente", vbInformation, "Impossibile stampare"
+        Exit Sub
+    End If
+      
+    Set rsEsami = New Recordset
+    rsEsami.Open "SELECT COGNOME, NOME, DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    structIntestazione.sPaziente = rsEsami("COGNOME") & " " & rsEsami("NOME")
+    structIntestazione.sDataPaziente = rsEsami("DATA_NASCITA")
+    Set rsEsami = Nothing
+    
+    Call StampaSestaParte(False, intPazientiKey, condizione, quantimesi)
+Else
+   MsgBox "MODULO DI STAMPA OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
+End If
+End Sub
 
 '' Ricarica la cbo
 Private Sub Form_Activate()
@@ -1156,10 +1203,12 @@ Private Sub cmdElimina_Click()
 End Sub
 
 Private Sub cmdStampa_Click()
+    Dim quantimesi As Integer
     Dim condizione As String
     Dim data_min As Date
     Dim data_max As Date
     
+    quantimesi = 12
     data_min = oData(0).DataAmericana
     data_max = oData(1).DataAmericana
     condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & "# AND #" & data_max & "# "
@@ -1175,7 +1224,7 @@ Private Sub cmdStampa_Click()
     structIntestazione.sDataPaziente = rsEsami("DATA_NASCITA")
     Set rsEsami = Nothing
     
-    Call StampaSestaParte(False, intPazientiKey, condizione)
+    Call StampaSestaParte(False, intPazientiKey, condizione, quantimesi)
 End Sub
 
 Private Sub cmdTrova_Click()

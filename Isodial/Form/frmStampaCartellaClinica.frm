@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmStampaCartellaClinica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa cartella clinica"
@@ -348,7 +348,7 @@ Public Property Get getCodicePaziente() As Integer
     getCodicePaziente = codicePaziente
 End Property
 
-Public Property Let letCodicePaziente(ByVal vCodicePaziente As Integer)
+Public Property Let LetCodicePaziente(ByVal vCodicePaziente As Integer)
     codicePaziente = vCodicePaziente
 End Property
 
@@ -499,10 +499,12 @@ End Sub
 Private Sub cmdStampaCartella_Click()
     On Error GoTo gestione
     
+    Dim quantimesi As Integer
     Dim condizione As String
     Dim data_min As Date
     Dim data_max As Date
     
+    quantimesi = 12
     data_min = DateValue("01/01/" & cboAnno.Text)
     data_max = DateValue(Month(date) & "/" & Day(date) & "/" & Year(date))
     condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & "# AND #" & data_max & "# "
@@ -528,7 +530,7 @@ Private Sub cmdStampaCartella_Click()
         Call StampaQuintaParte(True, codicePaziente, codiceId)
     End If
     If chkSezioni(5).Value = Checked Then
-        Call StampaSestaParte(True, codicePaziente, condizione, codiceId)
+        Call StampaSestaParte(True, codicePaziente, condizione, quantimesi, codiceId)
     End If
     If chkSezioni(6).Value = Checked Then
         Call StampaSettimaParte(True, codicePaziente, codiceId)

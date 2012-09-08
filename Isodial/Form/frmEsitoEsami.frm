@@ -1063,7 +1063,7 @@ Private Sub SalvaModifiche(ByRef outRefresh As Boolean)
             Dim blnEliminaAnamnesi As Boolean
             
             ' verifica se esisteva un record con valore
-            strSql = "SELECT    ANAMNESI_ESAMI.*, ESAMI_LAB.KEY AS ESAMI_LABKEY, VALORE, CODICE_ESAME " & _
+            strSql = "SELECT    ANAMNESI_ESAMI.*, ESAMI_LAB.KEY AS ESAMI_LABKEY, ESAMI_LAB.CODICE_ANAMNESI_ESAMI AS ESAMI_LABCODICEANAMNESIESAMI, ANAMNESI_ESAMI.KEY AS ANAMNESI_ESAMIKEY, VALORE, CODICE_ESAME " & _
                      "FROM      (ANAMNESI_ESAMI " & _
                      "          INNER JOIN ESAMI_LAB ON ESAMI_LAB.CODICE_ANAMNESI_ESAMI=ANAMNESI_ESAMI.KEY) " & _
                      "WHERE     (CODICE_PAZIENTE=" & intPazientiKey & ") AND " & _
@@ -1073,7 +1073,7 @@ Private Sub SalvaModifiche(ByRef outRefresh As Boolean)
             rsEsami.Open strSql, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
             If Not (rsEsami.EOF And rsEsami.BOF) Then
                 intEsamiLabKey = rsEsami("ESAMI_LABKEY")
-                intAnamnesiEsamiKey = rsEsami("ANAMNESI_ESAMI.KEY")
+                intAnamnesiEsamiKey = rsEsami("ANAMNESI_ESAMIKEY")
             End If
             rsEsami.Close
             If intEsamiLabKey <> 0 Then

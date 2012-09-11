@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
 Begin VB.Form frmTsat 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -962,6 +962,7 @@ Private Sub cmdStampa_Click()
     rptCalcoloTsat.BottomMargin = 0
     rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
     rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
+    rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
     rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
     rptCalcoloTsat.PrintReport True, rptRangeAllPages
 End Sub

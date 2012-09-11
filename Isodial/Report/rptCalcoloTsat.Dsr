@@ -1998,18 +1998,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Function CalcolaEta() As Integer
-    Dim somma As Integer
-    If Month(structIntestazione.sDataPaziente) > Month(date) Then
-        somma = -1
-    ElseIf Month(structIntestazione.sDataPaziente) = Month(date) And Day(structIntestazione.sDataPaziente) > Day(date) Then
-        somma = -1
-    Else
-        somma = 0
-    End If
-    CalcolaEta = Year(date) - Year(structIntestazione.sDataPaziente) + somma
-End Function
-
 Private Sub DataReport_Initialize()
     
     With Me
@@ -2033,7 +2021,6 @@ Private Sub DataReport_Initialize()
             End If
             .Item("lblPaziente").Caption = structIntestazione.sPaziente
             .Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
-            .Item("lblEta").Caption = CalcolaEta
         End With
         
         With .Sections("corpo").Controls

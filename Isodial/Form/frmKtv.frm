@@ -1106,6 +1106,7 @@ Private Sub cmdStampa_Click()
     rptCalcoloKtV.BottomMargin = 0
     rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
     rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
+    rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
     rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
     rptCalcoloKtV.PrintReport True, rptRangeAllPages
 

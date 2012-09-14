@@ -76,3 +76,7 @@ Public strConnectionStringCentro As String
 Public strConnectionStringTracciatura As String
 Public strNomeTabella As String
 Public intValore As Integer
+
+Public dt_rott_rene As Date             ' data rottamazione del rene selezionato nella flex
+Public cod_rene As Integer
+Public sostituito As Boolean

@@ -99,11 +99,11 @@ Begin VB.Form frmReniDaRottamare
       TabIndex        =   5
       Top             =   3240
       Width           =   9255
-      Begin VB.CommandButton cmdSostituisci 
-         Caption         =   "Sostituisci"
+      Begin VB.CommandButton cmdSostParco 
+         Caption         =   "Sostituisci da Parco Reni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -111,10 +111,27 @@ Begin VB.Form frmReniDaRottamare
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   6480
+         Left            =   4800
+         TabIndex        =   8
+         Top             =   240
+         Width           =   1410
+      End
+      Begin VB.CommandButton cmdSostituisci 
+         Caption         =   "Sostituisci con Rene Nuovo"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   6240
          TabIndex        =   7
          Top             =   240
-         Width           =   1335
+         Width           =   1410
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
@@ -128,10 +145,10 @@ Begin VB.Form frmReniDaRottamare
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   7920
+         Left            =   7680
          TabIndex        =   6
          Top             =   240
-         Width           =   1215
+         Width           =   1380
       End
    End
 End
@@ -271,6 +288,21 @@ Private Sub cmdChiudi_Click()
         Unload Me
     End If
 End Sub
+Private Sub cmdSostParco_Click()
+    If flxGriglia.Row <> 0 Then
+        sostituito = False
+        frmTabellaReni.Show 1
+        If sostituito And flxGriglia.Rows > 2 Then
+           flxGriglia.RemoveItem vRow
+           flxGriglia.Row = 0
+        ElseIf sostituito And flxGriglia.Rows = 2 Then
+           flxGriglia.Row = 0
+           Unload Me
+        End If
+     Else
+        MsgBox "Selezionare il rene da sostituire", vbCritical, "Attenzione"
+    End If
+End Sub
 
 '' Effettua la sostituzione del rene da rottamare
 Private Sub cmdSostituisci_Click()
@@ -329,6 +361,8 @@ Private Sub flxGriglia_Click()
     Else
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col
+        dt_rott_rene = flxGriglia.TextMatrix(vRow, 6)
+        cod_rene = flxGriglia.TextMatrix(vRow, 0)
         Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
     End If
 End Sub

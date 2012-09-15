@@ -431,14 +431,14 @@ Private Sub Form_Load()
     
     With flxGriglia
         .ColWidth(0) = 0
-        .Row = 0
-        .MousePointer = flexCustom
-        For i = 0 To flxGriglia.Cols - 1
+         .Row = 0
+         .MousePointer = flexCustom
+         For i = 0 To flxGriglia.Cols - 1
             .Col = i
             .ColAlignment(i) = vbLeftJustify
             .CellFontBold = True
-        Next i
-    End With
+         Next i
+     End With
 End Sub
 
 Private Sub CaricaFlx()

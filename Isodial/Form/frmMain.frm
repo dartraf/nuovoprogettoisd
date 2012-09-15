@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "04/09/2012"
+            TextSave        =   "10/09/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -356,10 +356,10 @@ Begin VB.MDIForm frmMain
       EndProperty
    End
    Begin VB.Menu mnuPaziente 
-      Caption         =   "&Gestione pazienti"
+      Caption         =   "&Gestione Pazienti"
       Tag             =   "&Gestione pazienti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       Begin VB.Menu mnuSottoPaz 
-         Caption         =   "&Informazioni generali"
+         Caption         =   "&Informazioni Generali"
          Index           =   1
          Tag             =   "&Informazioni generali|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -368,7 +368,7 @@ Begin VB.MDIForm frmMain
          Index           =   2
          Tag             =   "&Anamnesi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
          Begin VB.Menu mnuSottoPazAne 
-            Caption         =   "&Patologica remota e familiare"
+            Caption         =   "&Patologica Remota e Familiare"
             Index           =   1
             Tag             =   "&Patologica remota e familiare|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
          End
@@ -427,17 +427,17 @@ Begin VB.MDIForm frmMain
             Tag             =   "&Domiciliare|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
          End
          Begin VB.Menu mnuSottoPazTerapia 
-            Caption         =   "Stampa riepiloghi"
+            Caption         =   "Stampa Riepiloghi"
             Index           =   3
          End
       End
       Begin VB.Menu mnuSottoPaz 
-         Caption         =   "&Accessi vascolari"
+         Caption         =   "&Accessi Vascolari"
          Index           =   5
          Tag             =   "&Accessi vascolari|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoPaz 
-         Caption         =   "&Diario clinico"
+         Caption         =   "&Diario Clinico"
          Index           =   6
          Tag             =   "&Diario clinico|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -459,7 +459,7 @@ Begin VB.MDIForm frmMain
          End
       End
       Begin VB.Menu mnuSottoDialisi 
-         Caption         =   "&Seduta dialitica giornaliera"
+         Caption         =   "&Seduta Dialitica Giornaliera"
          Index           =   2
          Tag             =   "&Scheda dialitica giornaliera|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
          Begin VB.Menu mnuSottoDialisiScheda 
@@ -474,7 +474,7 @@ Begin VB.MDIForm frmMain
          End
       End
       Begin VB.Menu mnuSottoDialisi 
-         Caption         =   "S&eduta supplementare"
+         Caption         =   "S&eduta Supplementare"
          Index           =   3
          Tag             =   "S&eduta straordinaria|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -521,12 +521,12 @@ Begin VB.MDIForm frmMain
          Tag             =   "&Monitoraggi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "&Trattamento acque"
+         Caption         =   "&Trattamento Acque"
          Index           =   7
          Tag             =   "&Trattamento acque|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "&Pazienti candidati ai trapianti"
+         Caption         =   "&Pazienti Candidati ai Trapianti"
          Index           =   8
          Tag             =   "&Pazienti candidati al trapianto|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -549,11 +549,11 @@ Begin VB.MDIForm frmMain
          Index           =   1
          Tag             =   "&Organigramma|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
          Begin VB.Menu mnuSottoTabOrgan 
-            Caption         =   "&Direttore sanitario"
+            Caption         =   "&Direttore Sanitario"
             Index           =   1
          End
          Begin VB.Menu mnuSottoTabOrgan 
-            Caption         =   "&Medici in dialisi"
+            Caption         =   "&Medici in Dialisi"
             Index           =   2
             Tag             =   "&Medici dialisi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
          End
@@ -564,12 +564,12 @@ Begin VB.MDIForm frmMain
          End
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Medici &refertanti"
+         Caption         =   "Medici &Refertanti"
          Index           =   2
          Tag             =   "Medici &refertanti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Medici di &base"
+         Caption         =   "Medici di &Base"
          Index           =   3
          Tag             =   "Medici di &base|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -579,61 +579,61 @@ Begin VB.MDIForm frmMain
          Tag             =   "&Psicologi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Or&gano/apparato"
+         Caption         =   "Or&gano/Apparato"
          Index           =   5
          Tag             =   "Or&gano/apparato|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Esami &strumentali per Organo/Apparato"
+         Caption         =   "Esami &Strumentali per Organo/Apparato"
          Index           =   6
          Tag             =   "Tipo di &esame|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Tipo di &filtro"
+         Caption         =   "&Filtri"
          Index           =   7
          Tag             =   "Tipo di &filtro|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Tipo di &linee"
+         Caption         =   "&Linee"
          Index           =   8
          Tag             =   "Tipo di &linee|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Tipo di a&go"
+         Caption         =   "&Aghi"
          Index           =   9
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "&Farmaci in uso"
+         Caption         =   "Far&maci in Uso"
          Index           =   10
          Tag             =   "&Medicinali in dialisi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "&Anticoagulanti"
+         Caption         =   "A&nticoagulanti"
          Index           =   11
          Tag             =   "&Anticoagulanti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Titoli per &diario clinico"
+         Caption         =   "Titoli per Diario &Clinico"
          Index           =   12
          Tag             =   "Titoli per &diario clinico|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "&Voci per esami di laboratorio"
+         Caption         =   "&Voci per Esami di Laboratorio"
          Index           =   13
          Tag             =   "&Voci per esami di lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Raggruppamento esami di &laboratorio"
+         Caption         =   "Raggruppamento &Esami di Laboratorio"
          Index           =   14
          Tag             =   "Raggruppamento esami di &lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "E.&D.T.A."
+         Caption         =   "E.D.&T.A."
          Index           =   15
          Tag             =   "E.&D.T.A.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Ges&tione reni artficiali"
+         Caption         =   "Parco Ren&i Artificiali"
          Index           =   16
          Tag             =   "&Gestione reni art.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -643,7 +643,7 @@ Begin VB.MDIForm frmMain
       Tag             =   "&Strumenti|(Checked=0)(Enabled=-1)(Visible=0)(WindowList=0)"
       Visible         =   0   'False
       Begin VB.Menu mnuGesPass 
-         Caption         =   "&Gestione utenti"
+         Caption         =   "&Gestione Utenti"
          Tag             =   "&Gestione password|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuImpostaStampa 
@@ -653,10 +653,10 @@ Begin VB.MDIForm frmMain
          Caption         =   "&N° Backup"
       End
       Begin VB.Menu mnuRipristina 
-         Caption         =   "&Ripristino archivi"
+         Caption         =   "&Ripristino Archivi"
       End
       Begin VB.Menu mnuBarra 
-         Caption         =   "&Barra degli strumenti"
+         Caption         =   "&Barra degli Strumenti"
          Checked         =   -1  'True
          Tag             =   "&Barra degli strumenti|(Checked=-1)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -665,20 +665,20 @@ Begin VB.MDIForm frmMain
       Caption         =   "Stam&pe"
       Tag             =   "Stam&pe|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       Begin VB.Menu mnuStampaPaz 
-         Caption         =   "Lista &pazienti"
+         Caption         =   "Lista &Pazienti"
          Tag             =   "Lista pazienti in dialisi |(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuStampaMediciBase 
-         Caption         =   "Lista &medici di base"
+         Caption         =   "Lista &Medici di Base"
       End
       Begin VB.Menu mnuMostraFattElaborazione 
-         Caption         =   "&Visualizza giorni dialisi"
+         Caption         =   "&Visualizza Giorni Dialisi"
       End
       Begin VB.Menu mnuImpegnativeDialisi 
          Caption         =   "Richieste &Impegnative Dialisi"
       End
       Begin VB.Menu mnuEtichettePerProvetta 
-         Caption         =   "&Etichette per provette"
+         Caption         =   "&Etichette per Provette"
       End
       Begin VB.Menu mnuModuloFirmePaziente 
          Caption         =   "&Modulo Firme Paziente"
@@ -2001,9 +2001,9 @@ Public Sub SubClassMenuXP()
 
     '/ prepare the caption for subclassing. Warning! Don't remove this comment!!!
     mnuPaziente.Caption = "&Gestione pazienti"
-          mnuSottoPaz(1).Caption = "&Informazioni generali"
+          mnuSottoPaz(1).Caption = "&Anagrafica Generale"
           mnuSottoPaz(2).Caption = "&Anamnesi"
-          mnuSottoPazAne(1).Caption = "&Patologica remota e familiare"
+          mnuSottoPazAne(1).Caption = "&Patologica Remota e Familiare"
           mnuSottoPazAne(2).Caption = "&Nefrologica"
           mnuSottoPazAne(3).Caption = "&Dialitica"
           mnuSottoPaz(3).Caption = "&Esami"
@@ -2016,15 +2016,15 @@ Public Sub SubClassMenuXP()
           mnuSottoPazTerapia(1).Caption = "&Dialitica"
           mnuSottoPazTerapia(2).Caption = "&Domiciliare"
           mnuSottoPazTerapia(3).Caption = "&Stampa Riepiloghi"
-          mnuSottoPaz(5).Caption = "&Accessi vascolari"
-          mnuSottoPaz(6).Caption = "&Diario clinico"
+          mnuSottoPaz(5).Caption = "&Accessi Vascolari"
+          mnuSottoPaz(6).Caption = "&Diario Clinico"
     mnuDialisi.Caption = "Gestione &Emodialisi"
           mnuSottoDialisi(1).Caption = "&Turni Pazienti"
           mnuSottoDialisiTurni(1).Caption = "&Associa Turni/Reni"
-          mnuSottoDialisi(2).Caption = "&Seduta dialitica giornaliera"
+          mnuSottoDialisi(2).Caption = "&Seduta Dialitica Giornaliera"
           mnuSottoDialisiScheda(1).Caption = "&Compilazione"
           mnuSottoDialisiScheda(2).Caption = "C&onsultazione"
-          mnuSottoDialisi(3).Caption = "S&eduta supplementare"
+          mnuSottoDialisi(3).Caption = "S&eduta Supplementare"
           mnuSottoDialisi(4).Caption = "&Piano di Lavoro"
           mnuSottoDialisi(5).Caption = "C&onsumi e Previsioni"
           
@@ -2035,44 +2035,44 @@ Public Sub SubClassMenuXP()
           mnuGestioneIndicatoriSotto(4).Caption = "&Colture"
           mnuGestioneIndicatoriSotto(5).Caption = "E&ritropoietina per Paziente"
           mnuGestioneIndicatoriSotto(6).Caption = "&Monitoraggi"
-          mnuGestioneIndicatoriSotto(7).Caption = "&Trattamento acque"
-          mnuGestioneIndicatoriSotto(8).Caption = "&Pazienti candidati al trapianto"
+          mnuGestioneIndicatoriSotto(7).Caption = "&Trattamento Acque"
+          mnuGestioneIndicatoriSotto(8).Caption = "&Pazienti Candidati al Trapianto"
           mnuGestioneIndicatoriSotto(9).Caption = "Esami Periodici in &ED"
           mnuGestioneIndicatoriSotto(10).Caption = "&Scansione Documenti Pazienti"
     mnuArchivi.Caption = "&Setup Tabelle"
           mnuSottoTab(1).Caption = "&Organigramma"
-          mnuSottoTabOrgan(2).Caption = "&Medici in dialisi"
+          mnuSottoTabOrgan(2).Caption = "&Medici in Dialisi"
           mnuSottoTabOrgan(3).Caption = "&Infermieri"
-          mnuSottoTabOrgan(1).Caption = "&Direttore sanitario"
-          mnuSottoTab(2).Caption = "Medici &refertanti"
-          mnuSottoTab(3).Caption = "Medici di &base"
+          mnuSottoTabOrgan(1).Caption = "&Direttore Sanitario"
+          mnuSottoTab(2).Caption = "Medici &Refertanti"
+          mnuSottoTab(3).Caption = "Medici di &Base"
           mnuSottoTab(4).Caption = "&Psicologi"
           mnuSottoTab(5).Caption = "Or&gano/apparato"
-          mnuSottoTab(6).Caption = "Esami &strumentali per Organo/Apparato"
-          mnuSottoTab(7).Caption = "Tipo di &filtro"
-          mnuSottoTab(8).Caption = "Tipo di &linee"
-          mnuSottoTab(9).Caption = "Tipo di a&go"
-          mnuSottoTab(10).Caption = "&Farmaci in uso"
-          mnuSottoTab(11).Caption = "&Anticoagulanti"
-          mnuSottoTab(12).Caption = "Titoli per &diario clinico"
-          mnuSottoTab(13).Caption = "&Voci per esami di laboratorio"
-          mnuSottoTab(14).Caption = "&Raggruppamento esami di &laboratorio"
-          mnuSottoTab(15).Caption = "E.&D.T.A."
-          mnuSottoTab(16).Caption = "Ges&tione reni artificiali"
+          mnuSottoTab(6).Caption = "Esami &Strumentali per Organo/Apparato"
+          mnuSottoTab(7).Caption = "&Filtri"
+          mnuSottoTab(8).Caption = "&Linee"
+          mnuSottoTab(9).Caption = "&Aghi"
+          mnuSottoTab(10).Caption = "Far&maci in uso"
+          mnuSottoTab(11).Caption = "A&nticoagulanti"
+          mnuSottoTab(12).Caption = "Titoli per Diario &Clinico"
+          mnuSottoTab(13).Caption = "&Voci per Esami di Laboratorio"
+          mnuSottoTab(14).Caption = "Raggruppamento &Esami di Laboratorio"
+          mnuSottoTab(15).Caption = "E.D.&T.A."
+          mnuSottoTab(16).Caption = "Parco Ren&i Artificiali"
     mnuStrumenti.Caption = "&Strumenti"
-          mnuGesPass.Caption = "&Gestione utenti"
+          mnuGesPass.Caption = "&Gestione Utenti"
           mnuImpostaStampa.Caption = "&Intestazione Centro"
           mnuIntestazioneFattura.Caption = "Parametri Fattura"
-          mnuRipristina.Caption = "&Ripristino archivi"
+          mnuRipristina.Caption = "&Ripristino Archivi"
           mnuImpostaBackup.Caption = "&N° Backup"
-          mnuBarra.Caption = "&Barra degli strumenti"
+          mnuBarra.Caption = "&Barra degli Strumenti"
     mnuStampe.Caption = "Stam&pe"
-          mnuStampaPaz.Caption = "Lista &pazienti"
-          mnuStampaMediciBase.Caption = "Lista &medici di base"
-          mnuMostraFattElaborazione.Caption = "&Visualizza giorni dialisi"
+          mnuStampaPaz.Caption = "Lista &Pazienti"
+          mnuStampaMediciBase.Caption = "Lista &Medici di Base"
+          mnuMostraFattElaborazione.Caption = "&Visualizza Giorni Dialisi"
           mnuImpegnativeDialisi.Caption = "Richieste &Impegnative Dialisi"
-          mnuEtichettePerProvetta.Caption = "&Etichette per provette"
-          mnuModuloFirmePaziente.Caption = "&Modulo Firme Paziente"
+          mnuEtichettePerProvetta.Caption = "&Etichette per Provette"
+          mnuModuloFirmePaziente.Caption = "&Modulo Firme Pazienti"
           mnuKtvAnnuale.Caption = "&KT/V Annuale"
           mnuTsatAnnuale.Caption = "&TSAT %  Annuale"
           mnuSchedaDialiticaSettimanale.Caption = "&Scheda Dialitica Settimanale"

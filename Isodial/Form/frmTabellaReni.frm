@@ -1,17 +1,18 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmTabellaReni 
-   BorderStyle     =   1  'Fixed Single
+   BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Parco Reni"
    ClientHeight    =   3360
    ClientLeft      =   45
-   ClientTop       =   435
+   ClientTop       =   390
    ClientWidth     =   8175
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   3360
    ScaleWidth      =   8175
+   ShowInTaskbar   =   0   'False
    Begin VB.Frame fraListaMain 
       Height          =   2535
       Left            =   120

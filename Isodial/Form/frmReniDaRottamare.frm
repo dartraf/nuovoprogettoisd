@@ -3,14 +3,14 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmReniDaRottamare 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Elenco reni da rottamare"
-   ClientHeight    =   4155
+   ClientHeight    =   4290
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   9480
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4155
+   ScaleHeight     =   4290
    ScaleWidth      =   9480
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -94,7 +94,7 @@ Begin VB.Form frmReniDaRottamare
       End
    End
    Begin VB.Frame Frame1 
-      Height          =   855
+      Height          =   975
       Left            =   120
       TabIndex        =   5
       Top             =   3240
@@ -103,35 +103,35 @@ Begin VB.Form frmReniDaRottamare
          Caption         =   "Sostituisci da Parco Reni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
-         Left            =   4800
+         Height          =   615
+         Left            =   4080
          TabIndex        =   8
          Top             =   240
-         Width           =   1410
+         Width           =   1650
       End
       Begin VB.CommandButton cmdSostituisci 
          Caption         =   "Sostituisci con Rene Nuovo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
-         Left            =   6240
+         Height          =   615
+         Left            =   5880
          TabIndex        =   7
          Top             =   240
-         Width           =   1410
+         Width           =   1650
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
@@ -144,7 +144,7 @@ Begin VB.Form frmReniDaRottamare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
+         Height          =   615
          Left            =   7680
          TabIndex        =   6
          Top             =   240

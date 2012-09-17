@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "10/09/2012"
+            TextSave        =   "17/09/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -531,7 +531,7 @@ Begin VB.MDIForm frmMain
          Tag             =   "&Pazienti candidati al trapianto|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "Esami &Periodici in ED"
+         Caption         =   "Esami &Periodici"
          Index           =   9
          Tag             =   "Esami &Periodici|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End

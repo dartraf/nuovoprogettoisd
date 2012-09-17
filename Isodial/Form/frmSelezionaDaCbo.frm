@@ -101,8 +101,8 @@ Begin VB.Form frmSelezionaDaCbo
          Top             =   240
          Width           =   1380
       End
-      Begin VB.CommandButton cmdSeleziona 
-         Caption         =   "&Seleziona"
+      Begin VB.CommandButton cmdTrasferisci 
+         Caption         =   "&Trasferisci"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -153,8 +153,8 @@ Private Sub cmdAnnulla_Click()
 End Sub
 
 Private Sub cmdNuovo_Click()
-    Dim v_nomi(1 To 2) As Variant
-    Dim v_val(1 To 2) As Variant
+    Dim v_Nomi(1 To 2) As Variant
+    Dim v_Val(1 To 2) As Variant
     Dim num As Integer
     Dim primo As Boolean
     Dim rsDataset As New Recordset
@@ -173,15 +173,15 @@ Private Sub cmdNuovo_Click()
     Loop While Esiste(frmTipiEsamiLab.flxNomi, 1, 0, tInput.v_valori(1))
     
     If Not (tInput.v_valori(1) = "") Then
-        v_nomi(1) = "KEY"
-        v_nomi(2) = "NOME"
+        v_Nomi(1) = "KEY"
+        v_Nomi(2) = "NOME"
         num = GetNumero("GRUPPI_ESAMI")
-        v_val(1) = num
-        v_val(2) = tInput.v_valori(1)
+        v_Val(1) = num
+        v_Val(2) = tInput.v_valori(1)
         
         Set rsDataset = New Recordset
         rsDataset.Open "GRUPPI_ESAMI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
-        rsDataset.AddNew v_nomi, v_val
+        rsDataset.AddNew v_Nomi, v_Val
         rsDataset.Update
         Set rsDataset = Nothing
         
@@ -191,7 +191,7 @@ Private Sub cmdNuovo_Click()
     End If
 End Sub
 
-Private Sub cmdSeleziona_Click()
+Private Sub cmdTrasferisci_Click()
     tSelezionaDaCbo.nuovoInserimento = False
     If cboDati.ListIndex = -1 Then
         tSelezionaDaCbo.valoreSelezionato = -1
@@ -200,6 +200,7 @@ Private Sub cmdSeleziona_Click()
     End If
     Unload Me
 End Sub
+
 
 Private Sub Form_Activate()
     cboDati.SetFocus

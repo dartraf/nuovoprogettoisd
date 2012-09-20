@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Object = "{EB7F7146-0A68-4457-8036-5793F0EB1EB8}#31.0#0"; "SuperTextBox.ocx"
 Begin VB.Form frmAnamnesiDialitica 
@@ -264,42 +264,42 @@ Begin VB.Form frmAnamnesiDialitica
       TabCaption(1)   =   "Scheda 2"
       TabPicture(1)   =   "frmAnamnesiDialitica.frx":0475
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboDosiUnitaMisura"
-      Tab(1).Control(1)=   "txtFlussoSangue"
-      Tab(1).Control(2)=   "txtSolInfCc"
-      Tab(1).Control(3)=   "cboCartuccia"
-      Tab(1).Control(4)=   "cboSolInfusionale"
-      Tab(1).Control(5)=   "cboSolDialitica"
-      Tab(1).Control(6)=   "txtFlusso"
-      Tab(1).Control(7)=   "cboAnticoagulante(0)"
-      Tab(1).Control(8)=   "cboAnticoagulante(1)"
-      Tab(1).Control(9)=   "txtDose(0)"
-      Tab(1).Control(10)=   "txtDose(1)"
-      Tab(1).Control(11)=   "txtDose(2)"
+      Tab(1).Control(0)=   "Label1(16)"
+      Tab(1).Control(1)=   "Label1(15)"
+      Tab(1).Control(2)=   "Label1(14)"
+      Tab(1).Control(3)=   "Label1(13)"
+      Tab(1).Control(4)=   "Label1(12)"
+      Tab(1).Control(5)=   "Label1(11)"
+      Tab(1).Control(6)=   "Label1(26)"
+      Tab(1).Control(7)=   "Label1(28)"
+      Tab(1).Control(8)=   "Label1(29)"
+      Tab(1).Control(9)=   "Label1(30)"
+      Tab(1).Control(10)=   "Label1(31)"
+      Tab(1).Control(11)=   "Label1(35)"
       Tab(1).Control(12)=   "txtDose(3)"
-      Tab(1).Control(13)=   "Label1(35)"
-      Tab(1).Control(14)=   "Label1(31)"
-      Tab(1).Control(15)=   "Label1(30)"
-      Tab(1).Control(16)=   "Label1(29)"
-      Tab(1).Control(17)=   "Label1(28)"
-      Tab(1).Control(18)=   "Label1(26)"
-      Tab(1).Control(19)=   "Label1(11)"
-      Tab(1).Control(20)=   "Label1(12)"
-      Tab(1).Control(21)=   "Label1(13)"
-      Tab(1).Control(22)=   "Label1(14)"
-      Tab(1).Control(23)=   "Label1(15)"
-      Tab(1).Control(24)=   "Label1(16)"
+      Tab(1).Control(13)=   "txtDose(2)"
+      Tab(1).Control(14)=   "txtDose(1)"
+      Tab(1).Control(15)=   "txtDose(0)"
+      Tab(1).Control(16)=   "cboAnticoagulante(1)"
+      Tab(1).Control(17)=   "cboAnticoagulante(0)"
+      Tab(1).Control(18)=   "txtFlusso"
+      Tab(1).Control(19)=   "cboSolDialitica"
+      Tab(1).Control(20)=   "cboSolInfusionale"
+      Tab(1).Control(21)=   "cboCartuccia"
+      Tab(1).Control(22)=   "txtSolInfCc"
+      Tab(1).Control(23)=   "txtFlussoSangue"
+      Tab(1).Control(24)=   "cboDosiUnitaMisura"
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "cmdEliminaEpo"
-      Tab(2).Control(1)=   "txtNote"
-      Tab(2).Control(2)=   "txtUI"
+      Tab(2).Control(0)=   "Label1(32)"
+      Tab(2).Control(1)=   "lblUnitaMisura"
+      Tab(2).Control(2)=   "Label1(34)"
       Tab(2).Control(3)=   "cboEPO"
-      Tab(2).Control(4)=   "Label1(34)"
-      Tab(2).Control(5)=   "lblUnitaMisura"
-      Tab(2).Control(6)=   "Label1(32)"
+      Tab(2).Control(4)=   "txtUI"
+      Tab(2).Control(5)=   "txtNote"
+      Tab(2).Control(6)=   "cmdEliminaEpo"
       Tab(2).ControlCount=   7
       Begin VB.PictureBox picCaricaPesoSecco 
          AutoSize        =   -1  'True
@@ -2145,6 +2145,9 @@ Private Function Completo() As Boolean
 End Function
 
 Private Sub cmdStampaSintetica_Click()
+    
+If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
+    
     Dim strSqlStampa As String
     Dim strSql As String
     Dim i As Integer
@@ -2189,7 +2192,7 @@ Private Sub cmdStampaSintetica_Click()
                 "       NEW adVarChar (10) as HCVRN, " & _
                 "       NEW adVarChar (10) as IMMUNITA_HIV, " & _
                 "       NEW adVarChar (10) as HIV, " & _
-                "       NEW adInteger as RITMO_SETTIMANALE, " & _
+                "       NEW adVarChar (10) as RITMO_SETTIMANALE, " & _
                 "       NEW adVarChar (100) as GIORNI_DIALISI, "
     strSqlStampa = strSqlStampa & _
                 "       NEW adVarChar (50) as DURATA_SEDUTA, " & _
@@ -2212,8 +2215,8 @@ Private Sub cmdStampaSintetica_Click()
                 "       NEW adSingle  as PESO_SECCO, " & _
                 "       NEW adDate as ULTIMA_DIALISI_DEL, " & _
                 "       NEW adVarChar (50) as INTOLLERANZA_FARMACO, " & _
-                "       NEW adSingle as PESO_PRE_DIALISI, " & _
-                "       NEW adSingle as PESO_POST_DIALISI, " & _
+                "       NEW adVarChar (10) as PESO_PRE_DIALISI, " & _
+                "       NEW adVarChar (10) as PESO_POST_DIALISI, " & _
                 "       NEW adVarChar (10) as PRESS_ARTER_PRE_DIAL, " & _
                 "       NEW adVarChar (10) as PRESS_ARTER_POST_DIAL, " & _
                 "       NEW adLongVarChar as COMPLICANZE_INTRADIALITICHE, " & _
@@ -2556,6 +2559,13 @@ Private Sub cmdStampaSintetica_Click()
     Set rptCartellaDialiticaMaddaloni.DataSource = rsMain
     rptCartellaDialiticaMaddaloni.Sections("Intestazione").Controls.Item("lblCodiceID").Caption = intCodiceID
     rptCartellaDialiticaMaddaloni.PrintReport True, rptRangeAllPages
+
+Else
+
+    MsgBox "MODULO OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
+
+End If
+
 End Sub
 
 Private Sub cmdEliminaEpo_Click()

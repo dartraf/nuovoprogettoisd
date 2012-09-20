@@ -97,7 +97,7 @@ Begin VB.Form frmEsamiPeriodiciStampa
       TabIndex        =   11
       Top             =   1680
       Width           =   4815
-      Begin VB.OptionButton optStampaDicituraImpostata 
+      Begin VB.CheckBox chkStampaDiciture 
          Caption         =   "Stampa dicitura"
          Enabled         =   0   'False
          BeginProperty Font 
@@ -113,7 +113,7 @@ Begin VB.Form frmEsamiPeriodiciStampa
          Left            =   120
          TabIndex        =   17
          Top             =   1920
-         Width           =   3495
+         Width           =   2415
       End
       Begin VB.CheckBox chkFrequenzaSeProblemiClinici 
          Caption         =   "Se problemi clinici"
@@ -323,7 +323,7 @@ Private Sub AbilitaFrequenza(inStato)
     chkFrequenzaSemestrale.Enabled = inStato
     chkFrequenzaSeProblemiClinici.Enabled = inStato
     chkFrequenzaTrimestrale.Enabled = inStato
-    optStampaDicituraImpostata.Enabled = inStato
+    chkStampaDiciture.Enabled = inStato
 End Sub
 
 Private Sub cmdAnnulla_Click()
@@ -353,11 +353,13 @@ Private Sub cmdStampa_Click()
         If optStampaPrescrizioni.Value Then intTipoStampa = 2
         If optStampaPrescrizioniTuttiPazienti.Value Then intTipoStampa = 3
         If optStampaStandard.Value Then intTipoStampa = 1
-        If optStampaDicituraImpostata.Value = True Then
+        
+        If chkStampaDiciture.Value = Checked Then
             blnStampaDicituraImpostata = True
         Else
             blnStampaDicituraImpostata = False
         End If
+        
         blnStampa = True
         Unload Me
     Else

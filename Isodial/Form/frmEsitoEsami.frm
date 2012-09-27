@@ -545,6 +545,7 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
     data_max = oData(1).DataAmericana
     condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & " # AND #" & data_max & "# "
     
+    If Not Completo Then Exit Sub
     If intPazientiKey = 0 Then
         MsgBox "Selezionare il paziente", vbInformation, "Impossibile stampare"
         Exit Sub
@@ -1212,6 +1213,8 @@ Private Sub cmdStampa_Click()
     data_min = oData(0).DataAmericana
     data_max = oData(1).DataAmericana
     condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & "# AND #" & data_max & "# "
+    
+    If Not Completo Then Exit Sub
     
     If intPazientiKey = 0 Then
         MsgBox "Selezionare il paziente", vbInformation, "Impossibile stampare"

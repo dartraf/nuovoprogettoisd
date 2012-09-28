@@ -1986,6 +1986,10 @@ Public Sub StampaSestaParte(formPazienti As Boolean, codicePaziente As Integer, 
         legenda = legenda & vbCrLf & Mid(rsEsami("COGNOME"), 1, 2) & " " & Mid(rsEsami("NOME"), 1, 2) & " = " & rsEsami("COGNOME") & " " & rsEsami("NOME")
         rsEsami.MoveNext
     Loop
+        If rsEsami.RecordCount = 0 Then
+            MsgBox "Non sono presenti esami da stampare", vbInformation, "Attenzione"
+            Exit Sub
+        End If
     rsEsami.Close
     
     ReDim vett(0)

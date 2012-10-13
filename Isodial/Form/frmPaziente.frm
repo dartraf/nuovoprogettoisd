@@ -3,7 +3,7 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmPaziente 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "INFORMAZIONI GENERALI"
+   Caption         =   " "
    ClientHeight    =   8655
    ClientLeft      =   855
    ClientTop       =   1605
@@ -18,7 +18,7 @@ Begin VB.Form frmPaziente
    Begin TabDlg.SSTab tabScheda 
       Height          =   7815
       Left            =   120
-      TabIndex        =   44
+      TabIndex        =   43
       Top             =   120
       Width           =   11895
       _ExtentX        =   20981
@@ -206,36 +206,65 @@ Begin VB.Form frmPaziente
       TabCaption(1)   =   "Medico di Base Associato"
       TabPicture(1)   =   "frmPaziente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboTipologia"
-      Tab(1).Control(1)=   "chkPresenzaBarCode"
-      Tab(1).Control(2)=   "txtCodiceRegionaleMedico"
-      Tab(1).Control(3)=   "txtFaxMedico"
-      Tab(1).Control(4)=   "txtEmailMedico"
-      Tab(1).Control(5)=   "txtCellulareMedico"
-      Tab(1).Control(6)=   "txtTelefonoMedico"
-      Tab(1).Control(7)=   "txtStudioMedico"
-      Tab(1).Control(8)=   "txtIndirizzoMedico"
-      Tab(1).Control(9)=   "txtProvMedico"
-      Tab(1).Control(10)=   "txtCapMedico"
-      Tab(1).Control(11)=   "txtCittaMedico"
-      Tab(1).Control(12)=   "txtNomeMedico"
-      Tab(1).Control(13)=   "txtCognomeMedico"
-      Tab(1).Control(14)=   "cmdTrova(1)"
-      Tab(1).Control(15)=   "Label1(50)"
-      Tab(1).Control(16)=   "Label1(47)"
-      Tab(1).Control(17)=   "Label1(42)"
-      Tab(1).Control(18)=   "Label1(38)"
-      Tab(1).Control(19)=   "Label1(41)"
-      Tab(1).Control(20)=   "Label1(40)"
-      Tab(1).Control(21)=   "Label1(39)"
-      Tab(1).Control(22)=   "Label1(37)"
-      Tab(1).Control(23)=   "Label1(36)"
-      Tab(1).Control(24)=   "Label1(35)"
-      Tab(1).Control(25)=   "Label1(34)"
-      Tab(1).Control(26)=   "Label1(33)"
-      Tab(1).Control(27)=   "Label1(32)"
+      Tab(1).Control(0)=   "Label1(32)"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Label1(33)"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "Label1(34)"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "Label1(35)"
+      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(4)=   "Label1(36)"
+      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(5)=   "Label1(37)"
+      Tab(1).Control(5).Enabled=   0   'False
+      Tab(1).Control(6)=   "Label1(39)"
+      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(7)=   "Label1(40)"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "Label1(41)"
+      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(9)=   "Label1(38)"
+      Tab(1).Control(9).Enabled=   0   'False
+      Tab(1).Control(10)=   "Label1(42)"
+      Tab(1).Control(10).Enabled=   0   'False
+      Tab(1).Control(11)=   "lblTipologiaMedico(47)"
+      Tab(1).Control(11).Enabled=   0   'False
+      Tab(1).Control(12)=   "Label1(50)"
+      Tab(1).Control(12).Enabled=   0   'False
+      Tab(1).Control(13)=   "cmdTrova(1)"
+      Tab(1).Control(13).Enabled=   0   'False
+      Tab(1).Control(14)=   "txtCognomeMedico"
+      Tab(1).Control(14).Enabled=   0   'False
+      Tab(1).Control(15)=   "txtNomeMedico"
+      Tab(1).Control(15).Enabled=   0   'False
+      Tab(1).Control(16)=   "txtCittaMedico"
+      Tab(1).Control(16).Enabled=   0   'False
+      Tab(1).Control(17)=   "txtCapMedico"
+      Tab(1).Control(17).Enabled=   0   'False
+      Tab(1).Control(18)=   "txtProvMedico"
+      Tab(1).Control(18).Enabled=   0   'False
+      Tab(1).Control(19)=   "txtIndirizzoMedico"
+      Tab(1).Control(19).Enabled=   0   'False
+      Tab(1).Control(20)=   "txtStudioMedico"
+      Tab(1).Control(20).Enabled=   0   'False
+      Tab(1).Control(21)=   "txtTelefonoMedico"
+      Tab(1).Control(21).Enabled=   0   'False
+      Tab(1).Control(22)=   "txtCellulareMedico"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "txtEmailMedico"
+      Tab(1).Control(23).Enabled=   0   'False
+      Tab(1).Control(24)=   "txtFaxMedico"
+      Tab(1).Control(24).Enabled=   0   'False
+      Tab(1).Control(25)=   "txtCodiceRegionaleMedico"
+      Tab(1).Control(25).Enabled=   0   'False
+      Tab(1).Control(26)=   "chkPresenzaBarCode"
+      Tab(1).Control(26).Enabled=   0   'False
+      Tab(1).Control(27)=   "cboTipologia"
+      Tab(1).Control(27).Enabled=   0   'False
       Tab(1).ControlCount=   28
       Begin VB.ComboBox cboTipologia 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -249,13 +278,15 @@ Begin VB.Form frmPaziente
          Left            =   -72480
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   118
+         TabIndex        =   117
          Top             =   3000
+         Visible         =   0   'False
          Width           =   4215
       End
       Begin VB.CheckBox chkPresenzaBarCode 
          Alignment       =   1  'Right Justify
          Caption         =   "Barcode Cod.Fisc. su ricetta"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -267,11 +298,12 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   255
          Left            =   -68520
-         TabIndex        =   117
+         TabIndex        =   116
          Top             =   2580
          Width           =   3975
       End
       Begin VB.TextBox txtCodiceRegionaleMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -284,11 +316,12 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -72480
          MaxLength       =   7
-         TabIndex        =   116
+         TabIndex        =   115
          Top             =   2580
          Width           =   855
       End
       Begin VB.TextBox txtFaxMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -300,46 +333,13 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Left            =   -67440
-         MaxLength       =   31
-         TabIndex        =   115
-         Top             =   2160
-         Width           =   3495
-      End
-      Begin VB.TextBox txtEmailMedico 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -72480
          MaxLength       =   31
          TabIndex        =   114
          Top             =   2160
          Width           =   3495
       End
-      Begin VB.TextBox txtCellulareMedico 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -67440
-         MaxLength       =   31
-         TabIndex        =   113
-         Top             =   1740
-         Width           =   3495
-      End
-      Begin VB.TextBox txtTelefonoMedico 
+      Begin VB.TextBox txtEmailMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -351,29 +351,31 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Left            =   -72480
+         MaxLength       =   31
+         TabIndex        =   113
+         Top             =   2160
+         Width           =   3495
+      End
+      Begin VB.TextBox txtCellulareMedico 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -67440
          MaxLength       =   31
          TabIndex        =   112
          Top             =   1740
          Width           =   3495
       End
-      Begin VB.TextBox txtStudioMedico 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -67440
-         MaxLength       =   31
-         TabIndex        =   111
-         Top             =   1320
-         Width           =   3495
-      End
-      Begin VB.TextBox txtIndirizzoMedico 
+      Begin VB.TextBox txtTelefonoMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -386,11 +388,48 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -72480
          MaxLength       =   31
+         TabIndex        =   111
+         Top             =   1740
+         Width           =   3495
+      End
+      Begin VB.TextBox txtStudioMedico 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -67440
+         MaxLength       =   31
          TabIndex        =   110
          Top             =   1320
          Width           =   3495
       End
+      Begin VB.TextBox txtIndirizzoMedico 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72480
+         MaxLength       =   31
+         TabIndex        =   109
+         Top             =   1320
+         Width           =   3495
+      End
       Begin VB.TextBox txtProvMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -403,11 +442,12 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -64920
          MaxLength       =   2
-         TabIndex        =   109
+         TabIndex        =   108
          Top             =   900
          Width           =   975
       End
       Begin VB.TextBox txtCapMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -420,11 +460,12 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -67440
          MaxLength       =   5
-         TabIndex        =   108
+         TabIndex        =   107
          Top             =   900
          Width           =   975
       End
       Begin VB.TextBox txtCittaMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -437,11 +478,12 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -72480
          MaxLength       =   31
-         TabIndex        =   107
+         TabIndex        =   106
          Top             =   900
          Width           =   3495
       End
       Begin VB.TextBox txtNomeMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -454,11 +496,12 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -67440
          MaxLength       =   31
-         TabIndex        =   106
+         TabIndex        =   105
          Top             =   480
          Width           =   3495
       End
       Begin VB.TextBox txtCognomeMedico 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -471,7 +514,7 @@ Begin VB.Form frmPaziente
          Height          =   285
          Left            =   -72480
          MaxLength       =   31
-         TabIndex        =   105
+         TabIndex        =   104
          Top             =   480
          Width           =   3495
       End
@@ -490,7 +533,7 @@ Begin VB.Form frmPaziente
          Left            =   2520
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   100
+         TabIndex        =   99
          Top             =   470
          Width           =   3495
       End
@@ -498,7 +541,7 @@ Begin VB.Form frmPaziente
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   7920
-         TabIndex        =   99
+         TabIndex        =   98
          Top             =   1320
          Width           =   1455
          Begin VB.OptionButton optSesso 
@@ -547,7 +590,7 @@ Begin VB.Form frmPaziente
          Left            =   1800
          Picture         =   "frmPaziente.frx":0038
          Style           =   1  'Graphical
-         TabIndex        =   60
+         TabIndex        =   59
          Top             =   860
          Width           =   450
       End
@@ -722,7 +765,7 @@ Begin VB.Form frmPaziente
          Left            =   2040
          ScaleHeight     =   375
          ScaleWidth      =   375
-         TabIndex        =   59
+         TabIndex        =   58
          Top             =   6460
          Width           =   375
       End
@@ -750,7 +793,7 @@ Begin VB.Form frmPaziente
          BorderStyle     =   0  'None
          Height          =   375
          Left            =   9120
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   6360
          Width           =   2175
          Begin VB.OptionButton optRh 
@@ -804,7 +847,7 @@ Begin VB.Form frmPaziente
             Height          =   240
             Index           =   44
             Left            =   0
-            TabIndex        =   58
+            TabIndex        =   57
             Top             =   120
             Width           =   600
             WordWrap        =   -1  'True
@@ -1230,12 +1273,13 @@ Begin VB.Form frmPaziente
       End
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
+         Enabled         =   0   'False
          Height          =   450
          Index           =   1
          Left            =   -73200
          Picture         =   "frmPaziente.frx":07D4
          Style           =   1  'Graphical
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   360
          Width           =   450
       End
@@ -1243,7 +1287,7 @@ Begin VB.Form frmPaziente
          Height          =   375
          Index           =   0
          Left            =   2520
-         TabIndex        =   102
+         TabIndex        =   101
          Top             =   1320
          Width           =   2100
          _ExtentX        =   3704
@@ -1256,7 +1300,7 @@ Begin VB.Form frmPaziente
          Height          =   375
          Index           =   1
          Left            =   7920
-         TabIndex        =   103
+         TabIndex        =   102
          Top             =   3840
          Width           =   2100
          _ExtentX        =   3704
@@ -1269,7 +1313,7 @@ Begin VB.Form frmPaziente
          Height          =   375
          Index           =   2
          Left            =   7920
-         TabIndex        =   104
+         TabIndex        =   103
          Top             =   4680
          Width           =   2100
          _ExtentX        =   3704
@@ -1281,6 +1325,7 @@ Begin VB.Form frmPaziente
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Codice Regionale"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1293,13 +1338,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   50
          Left            =   -74880
-         TabIndex        =   121
+         TabIndex        =   119
          Top             =   2580
          Width           =   1890
       End
-      Begin VB.Label Label1 
+      Begin VB.Label lblTipologiaMedico 
          AutoSize        =   -1  'True
          Caption         =   "Tipologia medico"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1312,8 +1358,9 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   47
          Left            =   -74880
-         TabIndex        =   120
+         TabIndex        =   118
          Top             =   3000
+         Visible         =   0   'False
          Width           =   1845
       End
       Begin VB.Label Label1 
@@ -1331,7 +1378,7 @@ Begin VB.Form frmPaziente
          Height          =   480
          Index           =   23
          Left            =   120
-         TabIndex        =   101
+         TabIndex        =   100
          Top             =   330
          Width           =   2175
          WordWrap        =   -1  'True
@@ -1350,7 +1397,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Left            =   5280
-         TabIndex        =   98
+         TabIndex        =   97
          Top             =   1365
          Width           =   735
       End
@@ -1369,7 +1416,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   49
          Left            =   120
-         TabIndex        =   97
+         TabIndex        =   96
          Top             =   7365
          Width           =   1785
       End
@@ -1388,7 +1435,7 @@ Begin VB.Form frmPaziente
          Height          =   345
          Index           =   48
          Left            =   6480
-         TabIndex        =   96
+         TabIndex        =   95
          Top             =   6030
          Width           =   1485
          WordWrap        =   -1  'True
@@ -1407,7 +1454,7 @@ Begin VB.Form frmPaziente
          Height          =   495
          Index           =   46
          Left            =   10200
-         TabIndex        =   95
+         TabIndex        =   94
          Top             =   2160
          Width           =   855
       End
@@ -1426,7 +1473,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   29
          Left            =   6480
-         TabIndex        =   94
+         TabIndex        =   93
          Top             =   6480
          Width           =   1320
          WordWrap        =   -1  'True
@@ -1446,7 +1493,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   25
          Left            =   120
-         TabIndex        =   93
+         TabIndex        =   92
          Top             =   2670
          Width           =   2325
       End
@@ -1465,7 +1512,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   45
          Left            =   9720
-         TabIndex        =   92
+         TabIndex        =   91
          Top             =   1395
          Width           =   1035
       End
@@ -1484,7 +1531,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   43
          Left            =   6480
-         TabIndex        =   91
+         TabIndex        =   90
          Top             =   6915
          Width           =   825
       End
@@ -1503,7 +1550,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   31
          Left            =   120
-         TabIndex        =   90
+         TabIndex        =   89
          Top             =   6915
          Width           =   510
       End
@@ -1522,7 +1569,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   30
          Left            =   120
-         TabIndex        =   89
+         TabIndex        =   88
          Top             =   6480
          Width           =   1515
       End
@@ -1541,7 +1588,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   28
          Left            =   6480
-         TabIndex        =   88
+         TabIndex        =   87
          Top             =   5610
          Width           =   1260
       End
@@ -1560,7 +1607,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   27
          Left            =   120
-         TabIndex        =   87
+         TabIndex        =   86
          Top             =   6030
          Width           =   1545
       End
@@ -1579,7 +1626,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   26
          Left            =   6480
-         TabIndex        =   86
+         TabIndex        =   85
          Top             =   5190
          Width           =   1095
       End
@@ -1597,7 +1644,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   85
+         TabIndex        =   84
          Top             =   5610
          Width           =   2325
       End
@@ -1616,7 +1663,7 @@ Begin VB.Form frmPaziente
          Height          =   195
          Index           =   24
          Left            =   4920
-         TabIndex        =   84
+         TabIndex        =   83
          Top             =   5220
          Width           =   465
       End
@@ -1635,7 +1682,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   22
          Left            =   120
-         TabIndex        =   83
+         TabIndex        =   82
          Top             =   5190
          Width           =   1770
       End
@@ -1654,7 +1701,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   21
          Left            =   6480
-         TabIndex        =   82
+         TabIndex        =   81
          Top             =   4800
          Width           =   135
       End
@@ -1673,7 +1720,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   20
          Left            =   120
-         TabIndex        =   81
+         TabIndex        =   80
          Top             =   4800
          Width           =   1605
       End
@@ -1692,7 +1739,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   19
          Left            =   6480
-         TabIndex        =   80
+         TabIndex        =   79
          Top             =   4365
          Width           =   825
       End
@@ -1711,7 +1758,7 @@ Begin VB.Form frmPaziente
          Height          =   480
          Index           =   18
          Left            =   120
-         TabIndex        =   79
+         TabIndex        =   78
          Top             =   4230
          Width           =   2175
          WordWrap        =   -1  'True
@@ -1731,7 +1778,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   17
          Left            =   6480
-         TabIndex        =   78
+         TabIndex        =   77
          Top             =   3960
          Width           =   345
       End
@@ -1750,7 +1797,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   16
          Left            =   120
-         TabIndex        =   77
+         TabIndex        =   76
          Top             =   3900
          Width           =   1695
       End
@@ -1769,7 +1816,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   15
          Left            =   120
-         TabIndex        =   76
+         TabIndex        =   75
          Top             =   3510
          Width           =   675
       End
@@ -1788,7 +1835,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   14
          Left            =   6480
-         TabIndex        =   75
+         TabIndex        =   74
          Top             =   3510
          Width           =   390
       End
@@ -1807,7 +1854,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   13
          Left            =   6480
-         TabIndex        =   74
+         TabIndex        =   73
          Top             =   3120
          Width           =   870
       End
@@ -1826,7 +1873,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   12
          Left            =   120
-         TabIndex        =   73
+         TabIndex        =   72
          Top             =   3120
          Width           =   870
       End
@@ -1845,7 +1892,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   11
          Left            =   6480
-         TabIndex        =   72
+         TabIndex        =   71
          Top             =   2670
          Width           =   870
       End
@@ -1864,7 +1911,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   10
          Left            =   6480
-         TabIndex        =   71
+         TabIndex        =   70
          Top             =   2235
          Width           =   645
       End
@@ -1883,7 +1930,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   9
          Left            =   8760
-         TabIndex        =   70
+         TabIndex        =   69
          Top             =   2235
          Width           =   555
       End
@@ -1902,7 +1949,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   8
          Left            =   120
-         TabIndex        =   69
+         TabIndex        =   68
          Top             =   2235
          Width           =   1905
       End
@@ -1921,7 +1968,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   68
+         TabIndex        =   67
          Top             =   960
          Width           =   1005
       End
@@ -1940,7 +1987,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   1
          Left            =   6480
-         TabIndex        =   67
+         TabIndex        =   66
          Top             =   960
          Width           =   630
       End
@@ -1959,7 +2006,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   2
          Left            =   120
-         TabIndex        =   66
+         TabIndex        =   65
          Top             =   1395
          Width           =   1620
       End
@@ -1978,7 +2025,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   3
          Left            =   4680
-         TabIndex        =   65
+         TabIndex        =   64
          Top             =   1395
          Width           =   465
       End
@@ -1997,7 +2044,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   4
          Left            =   120
-         TabIndex        =   64
+         TabIndex        =   63
          Top             =   1815
          Width           =   1590
       End
@@ -2016,7 +2063,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   5
          Left            =   6480
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   1395
          Width           =   675
       End
@@ -2035,7 +2082,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   6
          Left            =   8760
-         TabIndex        =   62
+         TabIndex        =   61
          Top             =   1815
          Width           =   555
       End
@@ -2054,13 +2101,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   7
          Left            =   6480
-         TabIndex        =   61
+         TabIndex        =   60
          Top             =   1815
          Width           =   645
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Studio"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2073,13 +2121,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   42
          Left            =   -68520
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   1320
          Width           =   675
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "E-mail"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2092,13 +2141,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   38
          Left            =   -74880
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   2160
          Width           =   675
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Telefono"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2111,13 +2161,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   41
          Left            =   -74880
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   1740
          Width           =   945
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Cellulare"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2130,13 +2181,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   40
          Left            =   -68520
-         TabIndex        =   53
+         TabIndex        =   52
          Top             =   1740
          Width           =   945
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Fax"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2149,13 +2201,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   39
          Left            =   -68520
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   2160
          Width           =   390
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "C.A.P."
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2168,13 +2221,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   37
          Left            =   -68520
-         TabIndex        =   51
+         TabIndex        =   50
          Top             =   900
          Width           =   645
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Prov."
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2187,13 +2241,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   36
          Left            =   -65640
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   900
          Width           =   555
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Indirizzo"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2206,13 +2261,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   35
          Left            =   -74880
-         TabIndex        =   49
+         TabIndex        =   48
          Top             =   1320
          Width           =   870
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Città"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2225,13 +2281,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   34
          Left            =   -74880
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   900
          Width           =   480
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Nome"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2244,13 +2301,14 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   33
          Left            =   -68520
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   480
          Width           =   630
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Cognome"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2263,7 +2321,7 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   32
          Left            =   -74880
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   480
          Width           =   1005
       End
@@ -2271,7 +2329,7 @@ Begin VB.Form frmPaziente
    Begin VB.Frame Frame3 
       Height          =   855
       Left            =   120
-      TabIndex        =   43
+      TabIndex        =   42
       Top             =   7800
       Width           =   11895
       Begin VB.CommandButton cmdMemorizza 
@@ -2287,7 +2345,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   8880
-         TabIndex        =   41
+         TabIndex        =   120
          Top             =   240
          Width           =   1335
       End
@@ -2339,7 +2397,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   10440
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   240
          Width           =   1215
       End
@@ -2359,24 +2417,6 @@ Begin VB.Form frmPaziente
          TabIndex        =   38
          Top             =   240
          Width           =   1935
-      End
-      Begin VB.CommandButton cmdMemorizzaMedico 
-         Caption         =   "&Memorizza"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   8880
-         TabIndex        =   119
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1335
       End
    End
 End
@@ -2409,6 +2449,8 @@ Dim lettera As String
 Public intPazientiKey As Integer
 Dim intMedicoKey As Integer
 Dim blnModificato As Boolean
+Dim KeyAppo As Integer
+Dim NuovoPaziente As Boolean
 '' indica se cancellare i turni nel caso di stato non in dialisi
 Dim cancellaTurni As Boolean
 '' indica se eliminare la data fine dialisi per il cambio dello stato
@@ -2422,19 +2464,160 @@ Private Sub cboTipologia_Change()
     Call SetComboWidth(cboTipologia, 280)
 End Sub
 
-Private Sub cmdMemorizzaMedico_Click()
+Private Sub Memorizza()
+    Dim i As Integer
+    Dim v_Val() As Variant
+    Dim v_Nomi() As Variant
+    Dim numKey As Integer
+    
+    i = 0
+
+    If Completo Then
+        If idNonValido Then
+            Exit Sub
+        End If
+        If Not unicoCodiceFiscale Then
+            Exit Sub
+        End If
+        Call SuperUcase(Me)
+        If cboCentroProv.Text <> "" Then
+            Call GestisciNuovo("CENTRI_PROVENIENZA", cboCentroProv)
+        End If
+        If txtKm = "" Then
+            txtKm = 0
+        End If
+        
+        
+        v_Nomi = Array("COGNOME", "NOME", "CODICE_ID", "DATA_NASCITA", "SESSO", "CITTA_NASCITA", _
+                    "CODICE_COMUNE_RESIDENZA", "CODICE_REGIONE", "NAZIONIID", "CAP_NASCITA", "CAP_RESIDENZA", "PROV_NASCITA", "PROV_RESIDENZA", _
+                    "KM", "INDIRIZZO", "TELEFONO", "CELLULARE", "FAX", "EMAIL", _
+                    "NUMERO_PROCURA", "DATA_PROCURA", "DATA_RILASCIO", "TIPO_DOCUMENTO", "CODICE_DOCUMENTO", "LUOGO_RILASCIO", _
+                    "CODICE_ASL", "CODICE_FISCALE", "TESSERA_SANITARIA", "ESENZIONE_REDDITO", "ALLERGIA", "PROFESSIONE", _
+                    "G_SANGUIGNO", "RH", "NOTE", "CODICE_MEDICO", "CODICE_FISCALE_CIFRATO", "TRASPORTO_IN_AMBULANZA", _
+                    "CODICE_DISTRETTO", "CODICE_ESENZIONE", "CODICE_CENTRO_PROV", "CODICE_ACCOMPAGNATORE")
+        v_Val = Array(txtCognome, txtNome, txtCodiceId, oData(0).data, IIf(optSesso(0).Value, "M", "F"), txtCitta, _
+                    -1, -1, -1, txtCAP(0), txtCAP(1), txtProv(0), txtProv(1), _
+                    txtKm, txtIndirizzo, txtTelefono, txtCellulare, txtFax, txtEmail, _
+                    txtNumeroProcura, IIf(oData(1).data = "", Null, oData(1).data), IIf(oData(2).data = "", Null, oData(2).data), cboDocumento.ListIndex, txtNumCarta, txtRilascioCarta, _
+                    -1, txtCodiceFiscale, txtTesseraSanitaria, IIf(chkEsenteReddito.Value = Checked, True, False), txtAllergia, txtProfessione, _
+                    cboGSanguigno.ListIndex, GestisciOpt(optRh), txtNote, intMedicoKey, "", IIf(chkTrasportoInAmbulanza.Value = Checked, True, False), _
+                    -1, -1, -1, -1)
+                                        
+        If cboComuneResidenza.ListIndex <> -1 Then
+            v_Val(6) = cboComuneResidenza.ItemData(cboComuneResidenza.ListIndex)
+        End If
+        If cboRegione.ListIndex <> -1 Then
+            v_Val(7) = cboRegione.ItemData(cboRegione.ListIndex)
+        End If
+        If cboNazione.ListIndex <> -1 Then
+            v_Val(8) = cboNazione.ItemData(cboNazione.ListIndex)
+        End If
+        If cboAsl.ListIndex <> -1 Then
+            v_Val(25) = cboAsl.ItemData(cboAsl.ListIndex)
+        End If
+        If cboDistretto.ListIndex <> -1 Then
+            v_Val(37) = cboDistretto.ItemData(cboDistretto.ListIndex)
+        End If
+        If cboEsenzione.ListIndex <> -1 Then
+            v_Val(38) = cboEsenzione.ItemData(cboEsenzione.ListIndex)
+        End If
+        If cboCentroProv.ListIndex <> -1 Then
+            v_Val(39) = cboCentroProv.ItemData(cboCentroProv.ListIndex)
+        End If
+        If cboAccompagnatore.ListIndex <> -1 Then
+            v_Val(40) = cboAccompagnatore.ItemData(cboAccompagnatore.ListIndex)
+        End If
+        
+        Set rsPaziente = New Recordset
+        
+        If modifica Then
+        
+            rsPaziente.Open "SELECT * FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            KeyAppo = intPazientiKey
+            Do While i <> UBound(v_Nomi) + 1
+                rsPaziente(v_Nomi(i)) = v_Val(i)
+                i = i + 1
+            Loop
+            rsPaziente.Update
+            
+        Else
+        
+            rsPaziente.Open "PAZIENTI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+            rsPaziente.AddNew
+            KeyAppo = GetNumero("PAZIENTI")
+            rsPaziente("KEY") = KeyAppo
+            Do While i <> UBound(v_Nomi) + 1
+                rsPaziente(v_Nomi(i)) = v_Val(i)
+                i = i + 1
+            Loop
+            rsPaziente.Update
+            
+        End If
+        rsPaziente.Close
+        
+        Call GestisciStato(KeyAppo)
+        If cancellaTurni Then
+            Call EliminaTurni
+        End If
+        If eliminaDateInizioFineDialisiSede Then
+            Call EliminaDateDialisiSede
+        End If
+        If variazioneDataInizioDialisiSede Then
+            Call CambiaDataInizioDialisiSede
+        End If
+        If variazioneDataFineDialisiSede Then
+            Call CambiaDataFineDialisiSede
+        End If
+        
+        
+        If TRACCIATO Then
+            ' salva le modifiche anche in tracciatura
+            v_Nomi = Array("KEY", "NOME", "COGNOME", "CODICE_FISCALE")
+            v_Val = Array(KeyAppo, txtNome, txtCognome, txtCodiceFiscale)
+            If modifica Then
+                rsPaziente.Open "SELECT * FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnTrac, adOpenKeyset, adLockPessimistic, adCmdText
+                rsPaziente.Update v_Nomi, v_Val
+            Else
+                rsPaziente.Open "PAZIENTI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
+                rsPaziente.AddNew v_Nomi, v_Val
+                rsPaziente.Update
+            End If
+        End If
+        
+        Set rsPaziente = Nothing
+        
+        modifica = True
+        NuovoPaziente = False
+        MsgBox "I dati sono stati memorizzzati nell'archivio", vbInformation, "Informazioni"
+        
+        blnModificato = False
+    End If
+End Sub
+
+Private Sub cmdMemorizza_Click()
     Dim rsMedico As Recordset
     Dim s As Integer
     Dim v_ValMedico() As Variant
     Dim v_NomiMedico() As Variant
     Dim numKey As Integer
-    
-    If txtCognomeMedico.Text = "" Then
-        MsgBox "Inserire i dati obbligatori" & vbCrLf & "Campo: COGNOME", vbCritical, "Attenzione"
-        Exit Sub
+           
+    If intMedicoKey = 0 And txtCognomeMedico.Text = "" Then     'nel caso in cui voglio memorizzare solo il paziente senza medico associato
+        If intPazientiKey = 0 Then
+            modifica = False
+            Call Memorizza
+            Exit Sub
+        Else
+            modifica = True
+            Call Memorizza
+            Exit Sub
+        End If
     End If
         
     Call SuperUcase(Me)
+    
+    If intMedicoKey > 0 Then
+        modifica = True
+    End If
     
     If modifica Then            ' controllo per l' inserimento o modifica del medico di base
         numKey = intMedicoKey
@@ -2463,8 +2646,17 @@ Private Sub cmdMemorizzaMedico_Click()
                 s = s + 1
             Loop
             rsMedico.Update
-            modifica = True
-            cmdMemorizza_Click
+            intMedicoKey = numKey
+            If intPazientiKey = 0 Then
+                intPazientiKey = KeyAppo
+            End If
+            If intMedicoKey > 0 And intPazientiKey = 0 Then
+                modifica = False
+                Call Memorizza
+            Else
+                modifica = True
+                Call Memorizza
+            End If
         
         Else
             
@@ -2476,16 +2668,22 @@ Private Sub cmdMemorizzaMedico_Click()
             Loop
             rsMedico.Update
             intMedicoKey = numKey
-            modifica = True
-            cmdMemorizza_Click
+            If intPazientiKey = 0 Then
+                intPazientiKey = KeyAppo
+            End If
+            If intPazientiKey = 0 Then      'INSERIMENTO NUOVO MEDICO: controlla se inserisco o modifico un paziente
+                modifica = False
+                Call Memorizza
+            Else
+                modifica = True
+                Call Memorizza
+            End If
             
         End If
         rsMedico.Clone
-        
         Set rsMedico = Nothing
-        
         blnModificato = False
-    
+
 End Sub
 
 Private Sub Form_Activate()
@@ -2521,6 +2719,11 @@ Private Sub Form_Load()
     Dim i As Integer
     Dim intTop As Single
     Dim intLeft As Single
+    
+    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Then
+        lblTipologiaMedico(47).Visible = True
+        cboTipologia.Visible = True
+    End If
     
     Call GetCenterForm(Me.Height, Me.Width, intTop, intLeft)
     Me.Top = intTop
@@ -2800,6 +3003,7 @@ Private Sub PulisciTutto()
     Call PulisciForm(Me)
     intPazientiKey = 0
     intMedicoKey = 0
+    KeyAppo = 0
     chkPresenzaBarCode.Value = False
     lblEta = ""
     For i = 0 To 2
@@ -2821,6 +3025,7 @@ Private Sub PulisciTutto()
     txtCognome.SetFocus
     stoPulendo = False
     Call ProponiId
+    Call DisabilitaMedico
     blnModificato = False
 End Sub
 
@@ -2923,6 +3128,7 @@ Private Sub cmdChiudi_Click()
 End Sub
 
 Private Sub cmdNuovoPaziente_Click()
+    NuovoPaziente = True
     Call PulisciTutto
     oPazientiKey.OnClosingForm (Me.Caption)
 End Sub
@@ -3148,134 +3354,6 @@ Private Sub GestisciStato(codicePaziente As Integer)
     End If
 End Sub
 
-Private Sub cmdMemorizza_Click()
-    Dim keyAppo As Integer
-    Dim i As Integer
-    Dim v_Val() As Variant
-    Dim v_Nomi() As Variant
-    Dim numKey As Integer
-    
-    i = 0
-
-    If Completo Then
-        If idNonValido Then
-            Exit Sub
-        End If
-        If Not unicoCodiceFiscale Then
-            Exit Sub
-        End If
-        Call SuperUcase(Me)
-        If cboCentroProv.Text <> "" Then
-            Call GestisciNuovo("CENTRI_PROVENIENZA", cboCentroProv)
-        End If
-        If txtKm = "" Then
-            txtKm = 0
-        End If
-        
-        v_Nomi = Array("COGNOME", "NOME", "CODICE_ID", "DATA_NASCITA", "SESSO", "CITTA_NASCITA", _
-                    "CODICE_COMUNE_RESIDENZA", "CODICE_REGIONE", "NAZIONIID", "CAP_NASCITA", "CAP_RESIDENZA", "PROV_NASCITA", "PROV_RESIDENZA", _
-                    "KM", "INDIRIZZO", "TELEFONO", "CELLULARE", "FAX", "EMAIL", _
-                    "NUMERO_PROCURA", "DATA_PROCURA", "DATA_RILASCIO", "TIPO_DOCUMENTO", "CODICE_DOCUMENTO", "LUOGO_RILASCIO", _
-                    "CODICE_ASL", "CODICE_FISCALE", "TESSERA_SANITARIA", "ESENZIONE_REDDITO", "ALLERGIA", "PROFESSIONE", _
-                    "G_SANGUIGNO", "RH", "NOTE", "CODICE_MEDICO", "CODICE_FISCALE_CIFRATO", "TRASPORTO_IN_AMBULANZA", _
-                    "CODICE_DISTRETTO", "CODICE_ESENZIONE", "CODICE_CENTRO_PROV", "CODICE_ACCOMPAGNATORE")
-        v_Val = Array(txtCognome, txtNome, txtCodiceId, oData(0).data, IIf(optSesso(0).Value, "M", "F"), txtCitta, _
-                    -1, -1, -1, txtCAP(0), txtCAP(1), txtProv(0), txtProv(1), _
-                    txtKm, txtIndirizzo, txtTelefono, txtCellulare, txtFax, txtEmail, _
-                    txtNumeroProcura, IIf(oData(1).data = "", Null, oData(1).data), IIf(oData(2).data = "", Null, oData(2).data), cboDocumento.ListIndex, txtNumCarta, txtRilascioCarta, _
-                    -1, txtCodiceFiscale, txtTesseraSanitaria, IIf(chkEsenteReddito.Value = Checked, True, False), txtAllergia, txtProfessione, _
-                    cboGSanguigno.ListIndex, GestisciOpt(optRh), txtNote, intMedicoKey, "", IIf(chkTrasportoInAmbulanza.Value = Checked, True, False), _
-                    -1, -1, -1, -1)
-                                        
-        If cboComuneResidenza.ListIndex <> -1 Then
-            v_Val(6) = cboComuneResidenza.ItemData(cboComuneResidenza.ListIndex)
-        End If
-        If cboRegione.ListIndex <> -1 Then
-            v_Val(7) = cboRegione.ItemData(cboRegione.ListIndex)
-        End If
-        If cboNazione.ListIndex <> -1 Then
-            v_Val(8) = cboNazione.ItemData(cboNazione.ListIndex)
-        End If
-        If cboAsl.ListIndex <> -1 Then
-            v_Val(25) = cboAsl.ItemData(cboAsl.ListIndex)
-        End If
-        If cboDistretto.ListIndex <> -1 Then
-            v_Val(37) = cboDistretto.ItemData(cboDistretto.ListIndex)
-        End If
-        If cboEsenzione.ListIndex <> -1 Then
-            v_Val(38) = cboEsenzione.ItemData(cboEsenzione.ListIndex)
-        End If
-        If cboCentroProv.ListIndex <> -1 Then
-            v_Val(39) = cboCentroProv.ItemData(cboCentroProv.ListIndex)
-        End If
-        If cboAccompagnatore.ListIndex <> -1 Then
-            v_Val(40) = cboAccompagnatore.ItemData(cboAccompagnatore.ListIndex)
-        End If
-        
-        Set rsPaziente = New Recordset
-        
-        If modifica Then
-        
-            rsPaziente.Open "SELECT * FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-            keyAppo = intPazientiKey
-            Do While i <> UBound(v_Nomi) + 1
-                rsPaziente(v_Nomi(i)) = v_Val(i)
-                i = i + 1
-            Loop
-            rsPaziente.Update
-            
-        Else
-        
-            rsPaziente.Open "PAZIENTI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
-            rsPaziente.AddNew
-            keyAppo = GetNumero("PAZIENTI")
-            rsPaziente("KEY") = keyAppo
-            Do While i <> UBound(v_Nomi) + 1
-                rsPaziente(v_Nomi(i)) = v_Val(i)
-                i = i + 1
-            Loop
-            rsPaziente.Update
-            
-        End If
-        rsPaziente.Close
-        
-        Call GestisciStato(keyAppo)
-        If cancellaTurni Then
-            Call EliminaTurni
-        End If
-        If eliminaDateInizioFineDialisiSede Then
-            Call EliminaDateDialisiSede
-        End If
-        If variazioneDataInizioDialisiSede Then
-            Call CambiaDataInizioDialisiSede
-        End If
-        If variazioneDataFineDialisiSede Then
-            Call CambiaDataFineDialisiSede
-        End If
-        
-        
-        If TRACCIATO Then
-            ' salva le modifiche anche in tracciatura
-            v_Nomi = Array("KEY", "NOME", "COGNOME", "CODICE_FISCALE")
-            v_Val = Array(keyAppo, txtNome, txtCognome, txtCodiceFiscale)
-            If modifica Then
-                rsPaziente.Open "SELECT * FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnTrac, adOpenKeyset, adLockPessimistic, adCmdText
-                rsPaziente.Update v_Nomi, v_Val
-            Else
-                rsPaziente.Open "PAZIENTI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
-                rsPaziente.AddNew v_Nomi, v_Val
-                rsPaziente.Update
-            End If
-        End If
-        
-        Set rsPaziente = Nothing
-
-        MsgBox "I dati sono stati memorizzzati nell'archivio", vbInformation, "Informazioni"
-        
-        blnModificato = False
-    End If
-End Sub
-
 Private Sub cmdStampaCartella_Click()
     If intPazientiKey = 0 Then
         MsgBox "Selezionare il paziente", vbCritical, "Attenzione"
@@ -3302,6 +3380,7 @@ Private Sub cmdTrova_Click(Index As Integer)
             Case -1
                 ' nuovo paziente
                 Call PulisciTutto
+                NuovoPaziente = True
             Case 0
                 ' indietro
                 Unload Me
@@ -3322,6 +3401,7 @@ Private Sub CaricaMedico()
     Dim rsDataset As Recordset
     
     If intMedicoKey = 0 Then
+        Call DisabilitaMedico
         Exit Sub
     End If
     
@@ -3342,6 +3422,7 @@ Private Sub CaricaMedico()
         txtCodiceRegionaleMedico = ""
         chkPresenzaBarCode.Value = False
         cboTipologia.ListIndex = -1
+        Call AbilitaMedico
     Exit Sub
     End If
     
@@ -3362,6 +3443,7 @@ Private Sub CaricaMedico()
     txtCodiceRegionaleMedico = rsDataset("CODICE") & ""
     chkPresenzaBarCode.Value = IIf(CBool(rsDataset("PRESENZA_BARCODE")), Checked, Unchecked)
     cboTipologia.ListIndex = GetCboListIndex(rsDataset("CODICE_TIPO_MEDICO"), cboTipologia)
+    Call AbilitaMedico
     
     Set rsDataset = Nothing
     
@@ -3523,13 +3605,80 @@ End Sub
 Private Sub tabScheda_Click(PreviousTab As Integer)
     If tabScheda.Tab = 0 Then
         cboCentroProv.SelStart = 0
-        cmdMemorizza.Visible = True
-        cmdMemorizzaMedico.Visible = False
+        Call DisabilitaMedico
     Else
-        txtCognomeMedico.SetFocus
-        cmdMemorizza.Visible = False
-        cmdMemorizzaMedico.Visible = True
-    End If
+        If intMedicoKey = 0 And NuovoPaziente = False Then
+            cmdTrova(1).Enabled = True
+            Exit Sub
+        ElseIf NuovoPaziente = True Then
+            cmdTrova(1).Enabled = False
+        End If
+
+        If txtCognome.Text <> "" And txtNome.Text <> "" And oData(0).data <> "" And txtCodiceFiscale.Text <> "" Then
+            Call AbilitaMedico
+            End If
+        End If
+End Sub
+Private Sub AbilitaMedico()
+    cmdTrova(1).Enabled = True
+    txtCognomeMedico.Enabled = True
+    txtNomeMedico.Enabled = True
+    txtCittaMedico.Enabled = True
+    txtCapMedico.Enabled = True
+    txtProvMedico.Enabled = True
+    txtIndirizzoMedico.Enabled = True
+    txtStudioMedico.Enabled = True
+    txtTelefonoMedico.Enabled = True
+    txtCellulareMedico.Enabled = True
+    txtEmailMedico.Enabled = True
+    txtFaxMedico.Enabled = True
+    txtCodiceRegionaleMedico.Enabled = True
+    chkPresenzaBarCode.Enabled = True
+    cboTipologia.Enabled = True
+    Label1(32).Enabled = True
+    Label1(33).Enabled = True
+    Label1(34).Enabled = True
+    Label1(35).Enabled = True
+    Label1(36).Enabled = True
+    Label1(37).Enabled = True
+    Label1(38).Enabled = True
+    Label1(39).Enabled = True
+    Label1(40).Enabled = True
+    Label1(41).Enabled = True
+    Label1(42).Enabled = True
+    Label1(50).Enabled = True
+    lblTipologiaMedico(47).Enabled = True
+End Sub
+
+Private Sub DisabilitaMedico()
+    cmdTrova(1).Enabled = False
+    txtCognomeMedico.Enabled = False
+    txtNomeMedico.Enabled = False
+    txtCittaMedico.Enabled = False
+    txtCapMedico.Enabled = False
+    txtProvMedico.Enabled = False
+    txtIndirizzoMedico.Enabled = False
+    txtStudioMedico.Enabled = False
+    txtTelefonoMedico.Enabled = False
+    txtCellulareMedico.Enabled = False
+    txtEmailMedico.Enabled = False
+    txtFaxMedico.Enabled = False
+    txtCodiceRegionaleMedico.Enabled = False
+    chkPresenzaBarCode.Enabled = False
+    cboTipologia.Enabled = False
+    Label1(32).Enabled = False
+    Label1(33).Enabled = False
+    Label1(34).Enabled = False
+    Label1(35).Enabled = False
+    Label1(36).Enabled = False
+    Label1(37).Enabled = False
+    Label1(38).Enabled = False
+    Label1(39).Enabled = False
+    Label1(40).Enabled = False
+    Label1(41).Enabled = False
+    Label1(42).Enabled = False
+    Label1(50).Enabled = False
+    lblTipologiaMedico(47).Enabled = False
 End Sub
 
 Private Sub txtAllergia_GotFocus()

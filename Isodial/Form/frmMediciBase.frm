@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmMediciBase 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Medici di Base"
@@ -696,8 +696,9 @@ Private Sub Form_Load()
     
     modifica = False
     Set rsMedico = New Recordset
-    rsMedico.Open "SELECT CODICE FROM (INTESTAZIONE_STAMPA I LEFT OUTER JOIN ASL A ON A.KEY=I.CODICE_ASL)", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If rsMedico("CODICE") = "201" Then
+    'rsMedico.Open "SELECT CODICE FROM (INTESTAZIONE_STAMPA I LEFT OUTER JOIN ASL A ON A.KEY=I.CODICE_ASL)", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Then
+    'If rsMedico("CODICE") = "201" Then
         Frame2.Height = 6615
         fraAzioni.Top = 6480
         Me.Height = 7725
@@ -734,8 +735,8 @@ Private Sub cmdChiudi_Click()
 End Sub
 
 Private Sub cmdMemorizza_Click()
-    Dim v_nomi() As Variant
-    Dim v_val() As Variant
+    Dim v_Nomi() As Variant
+    Dim v_Val() As Variant
     Dim numKey As Integer
     Dim codiceTimbro As String
     Dim pos As Integer
@@ -755,19 +756,19 @@ Private Sub cmdMemorizza_Click()
         Else
             codiceTimbro = txtCodiceMedico
         End If
-        v_nomi = Array("KEY", "COGNOME", "NOME", "COMUNE", "INDIRIZZO", "CAP", "PROV", "TELEFONO", "STUDIO" _
+        v_Nomi = Array("KEY", "COGNOME", "NOME", "COMUNE", "INDIRIZZO", "CAP", "PROV", "TELEFONO", "STUDIO" _
                     , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO")
-        v_val = Array(numKey, txtCognome, txtNome, txtCitta, txtIndirizzo, txtCap, txtProv, txtTelefono, txtStudio _
+        v_Val = Array(numKey, txtCognome, txtNome, txtCitta, txtIndirizzo, txtCap, txtProv, txtTelefono, txtStudio _
                     , txtCellulare, txtFax, txtEmail, codiceTimbro, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1)
         If cboTipologia.ListIndex <> -1 Then
-            v_val(14) = cboTipologia.ItemData(cboTipologia.ListIndex)
+            v_Val(14) = cboTipologia.ItemData(cboTipologia.ListIndex)
         End If
         If modifica Then
             rsMedico.Open "SELECT * FROM MEDICI_BASE WHERE KEY=" & intMediciBaseKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-            rsMedico.Update v_nomi, v_val
+            rsMedico.Update v_Nomi, v_Val
         Else
             rsMedico.Open "MEDICI_BASE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
-            rsMedico.AddNew v_nomi, v_val
+            rsMedico.AddNew v_Nomi, v_Val
         End If
         Set rsMedico = Nothing
         Call PulisciTutto

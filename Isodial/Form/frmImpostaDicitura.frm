@@ -2,14 +2,14 @@ VERSION 5.00
 Begin VB.Form frmImpostaDicitura 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Imposta Dicitura"
-   ClientHeight    =   2760
+   ClientHeight    =   2400
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   5265
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2760
+   ScaleHeight     =   2400
    ScaleWidth      =   5265
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -24,7 +24,7 @@ Begin VB.Form frmImpostaDicitura
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1815
+      Height          =   1455
       Left            =   120
       TabIndex        =   4
       Top             =   120
@@ -39,8 +39,9 @@ Begin VB.Form frmImpostaDicitura
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1275
+         Height          =   915
          Left            =   120
+         MaxLength       =   156
          MultiLine       =   -1  'True
          TabIndex        =   0
          Top             =   360
@@ -51,7 +52,7 @@ Begin VB.Form frmImpostaDicitura
       Height          =   855
       Left            =   120
       TabIndex        =   1
-      Top             =   1800
+      Top             =   1440
       Width           =   5055
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"

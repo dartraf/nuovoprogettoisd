@@ -41,7 +41,7 @@ Begin VB.Form frmImpostaDicitura
          EndProperty
          Height          =   915
          Left            =   120
-         MaxLength       =   156
+         MaxLength       =   190
          MultiLine       =   -1  'True
          TabIndex        =   0
          Top             =   360

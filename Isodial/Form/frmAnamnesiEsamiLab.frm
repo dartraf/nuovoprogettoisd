@@ -704,6 +704,7 @@ Private Sub SalvaModifiche()
     Dim i As Integer
     Dim strSql As String
     
+    
     With flxGriglia
         Set rsEsami = New Recordset
         If .TextMatrix(vRow, 7) <> "" Then
@@ -835,6 +836,7 @@ Private Sub SalvaModifiche()
                     rsEsami.Open "Select * From ANAMNESI_ESAMI where Key=" & intAnamnesiEsamiKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
                     If Not (rsEsami.EOF And rsEsami.BOF) Then
                         rsEsami.Delete
+                        flxGriglia.TextMatrix(0, 0) = ""
                     End If
                     rsEsami.Close
                 End If

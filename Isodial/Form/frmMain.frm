@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "08/10/2012"
+            TextSave        =   "20/10/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -501,43 +501,47 @@ Begin VB.MDIForm frmMain
          Index           =   2
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "&Eventi"
+         Caption         =   "Pr&odotto Ca / P"
          Index           =   3
+      End
+      Begin VB.Menu mnuGestioneIndicatoriSotto 
+         Caption         =   "&Eventi"
+         Index           =   4
          Tag             =   "&Eventi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "&Colture"
-         Index           =   4
+         Index           =   5
          Tag             =   "&Colture|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "E&ritropoietina per Paziente"
-         Index           =   5
+         Index           =   6
          Tag             =   "E&ritropoietina per Paziente|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "&Monitoraggi"
-         Index           =   6
+         Index           =   7
          Tag             =   "&Monitoraggi|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "&Trattamento Acque"
-         Index           =   7
+         Index           =   8
          Tag             =   "&Trattamento acque|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "&Pazienti Candidati ai Trapianti"
-         Index           =   8
+         Index           =   9
          Tag             =   "&Pazienti candidati al trapianto|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "Esami &Periodici"
-         Index           =   9
+         Index           =   10
          Tag             =   "Esami &Periodici|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
          Caption         =   "&Scansione Documenti Pazienti"
-         Index           =   10
+         Index           =   11
          Tag             =   "&Scansione Referti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
    End
@@ -1013,14 +1017,15 @@ Private Sub mnugestioneIndicatoriSotto_Click(Index As Integer)
     Select Case Index
         Case 1: frmKtv.Show
         Case 2: frmTsat.Show
-        Case 3: frmEventi.Show
-        Case 4: frmColture.Show
-        Case 5: frmEpo.Show
-        Case 6: frmMonitoraggio.Show
-        Case 7: frmTrattamentoAcque.Show
-        Case 8: frmTrapianti.Show
-        Case 9: frmEsamiPeriodici.Show
-        Case 10: frmScanDocumenti.Show
+        Case 3: MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
+        Case 4: frmEventi.Show
+        Case 5: frmColture.Show
+        Case 6: frmEpo.Show
+        Case 7: frmMonitoraggio.Show
+        Case 8: frmTrattamentoAcque.Show
+        Case 9: frmTrapianti.Show
+        Case 10: frmEsamiPeriodici.Show
+        Case 11: frmScanDocumenti.Show
     End Select
 End Sub
 
@@ -1060,8 +1065,9 @@ Private Sub mnuMostraFattElaborazione_Click()
 End Sub
 
 Private Sub mnuPthAnnuale_Click()
-    tStampa = tpPTHAnnuale
-    frmStampaFiltri.Show 1
+    MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
+    'tStampa = tpPTHAnnuale
+    'frmStampaFiltri.Show 1
 End Sub
 
 Private Sub mnuRimborsi_Click()
@@ -2039,14 +2045,15 @@ Public Sub SubClassMenuXP()
     mnuGestioneIndicatori.Caption = "Gestione &Indicatori"
           mnuGestioneIndicatoriSotto(1).Caption = "&Indicatore Adeguatezza Dialitica (Kt/V)"
           mnuGestioneIndicatoriSotto(2).Caption = "C&alcolo TSAT %"
-          mnuGestioneIndicatoriSotto(3).Caption = "&Eventi"
-          mnuGestioneIndicatoriSotto(4).Caption = "&Colture"
-          mnuGestioneIndicatoriSotto(5).Caption = "E&ritropoietina per Paziente"
-          mnuGestioneIndicatoriSotto(6).Caption = "&Monitoraggi"
-          mnuGestioneIndicatoriSotto(7).Caption = "&Trattamento Acque"
-          mnuGestioneIndicatoriSotto(8).Caption = "&Pazienti Candidati al Trapianto"
-          mnuGestioneIndicatoriSotto(9).Caption = "Esami Periodici in &ED"
-          mnuGestioneIndicatoriSotto(10).Caption = "&Scansione Documenti Pazienti"
+          mnuGestioneIndicatoriSotto(3).Caption = "Pr&odotto Ca / P"
+          mnuGestioneIndicatoriSotto(4).Caption = "&Eventi"
+          mnuGestioneIndicatoriSotto(5).Caption = "&Colture"
+          mnuGestioneIndicatoriSotto(6).Caption = "E&ritropoietina per Paziente"
+          mnuGestioneIndicatoriSotto(7).Caption = "&Monitoraggi"
+          mnuGestioneIndicatoriSotto(8).Caption = "&Trattamento Acque"
+          mnuGestioneIndicatoriSotto(9).Caption = "&Pazienti Candidati al Trapianto"
+          mnuGestioneIndicatoriSotto(10).Caption = "Esami Periodici in &ED"
+          mnuGestioneIndicatoriSotto(11).Caption = "&Scansione Documenti Pazienti"
     mnuArchivi.Caption = "&Setup Tabelle"
           mnuSottoTab(1).Caption = "&Organigramma"
           mnuSottoTabOrgan(2).Caption = "&Medici in Dialisi"

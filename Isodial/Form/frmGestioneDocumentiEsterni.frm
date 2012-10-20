@@ -381,7 +381,7 @@ Private Sub cmdImporta_Click()
     cdlApri.FilterIndex = 1
     cdlApri.ShowOpen
     nomePathFile = cdlApri.FileName
-    nome = nomeFile & Format(numPag + 1, "00") & tTrova.keyReturn
+    nome = nomeFile & Format(numPag + 1, "00") '   DA RIVEDERE     & tTrova.keyReturn
     Select Case Mid(nomePathFile, Len(nomePathFile) - 2, 3)
         Case Is = "jpg"
             FileCopy nomePathFile, structApri.pathDB & "\" & nome & ".jpg"

@@ -704,6 +704,7 @@ Private Sub SalvaModifiche()
     Dim i As Integer
     Dim strSql As String
     
+    On Error GoTo gestione
     
     With flxGriglia
         Set rsEsami = New Recordset
@@ -844,7 +845,15 @@ Private Sub SalvaModifiche()
             
         End If
         Set rsEsami = Nothing
-    End With
+End With
+
+gestione:
+   If Err.Number = -2147467259 Then
+    MsgBox "Valore NON memorizzato correttamente - Ripetere l'inserimento", vbCritical, "ATTENZIONE!!!"
+    flxGriglia.TextMatrix(vRow, vCol) = ""
+    Exit Sub
+   End If
+   
 End Sub
 
 '' Salva l'eliminazione nel db di tracciature

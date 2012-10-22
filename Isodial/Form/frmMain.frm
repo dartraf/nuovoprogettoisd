@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "20/10/2012"
+            TextSave        =   "22/10/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -359,7 +359,7 @@ Begin VB.MDIForm frmMain
       Caption         =   "&Gestione Pazienti"
       Tag             =   "&Gestione pazienti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       Begin VB.Menu mnuSottoPaz 
-         Caption         =   "&Informazioni Generali"
+         Caption         =   "&Anagrafica Generale"
          Index           =   1
          Tag             =   "&Informazioni generali|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -492,7 +492,7 @@ Begin VB.MDIForm frmMain
       Caption         =   "Gestione &Indicatori"
       Tag             =   "Gestione &Indicatori|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "&Indicatore Adeguatezza Dialitica (Kt/V)"
+         Caption         =   "&Calcolo Kt/V"
          Index           =   1
          Tag             =   "&Indicatore Adeguatezza Dialitica (Kt/V)|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -501,7 +501,7 @@ Begin VB.MDIForm frmMain
          Index           =   2
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "Pr&odotto Ca / P"
+         Caption         =   "Calcolo Pr&odotto Ca / P"
          Index           =   3
       End
       Begin VB.Menu mnuGestioneIndicatoriSotto 
@@ -692,6 +692,9 @@ Begin VB.MDIForm frmMain
       End
       Begin VB.Menu mnuTsatAnnuale 
          Caption         =   "&TSAT% Annuale"
+      End
+      Begin VB.Menu mnuCaPAnnuale 
+         Caption         =   "&Ca/P Annuale"
       End
       Begin VB.Menu mnuPthAnnuale 
          Caption         =   "&PTH Annuale"
@@ -952,6 +955,10 @@ End Sub
 
 Private Sub mnuabout_Click()
     frmInfo.Show 1
+End Sub
+
+Private Sub mnuCaPAnnuale_Click()
+    MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
 End Sub
 
 Private Sub mnuPopUpInserisciEsame_Click()
@@ -2043,9 +2050,9 @@ Public Sub SubClassMenuXP()
           mnuSottoDialisi(5).Caption = "C&onsumi e Previsioni"
           
     mnuGestioneIndicatori.Caption = "Gestione &Indicatori"
-          mnuGestioneIndicatoriSotto(1).Caption = "&Indicatore Adeguatezza Dialitica (Kt/V)"
+          mnuGestioneIndicatoriSotto(1).Caption = "&Calcolo Kt/V"
           mnuGestioneIndicatoriSotto(2).Caption = "C&alcolo TSAT %"
-          mnuGestioneIndicatoriSotto(3).Caption = "Pr&odotto Ca / P"
+          mnuGestioneIndicatoriSotto(3).Caption = "Calcolo Pr&odotto Ca / P"
           mnuGestioneIndicatoriSotto(4).Caption = "&Eventi"
           mnuGestioneIndicatoriSotto(5).Caption = "&Colture"
           mnuGestioneIndicatoriSotto(6).Caption = "E&ritropoietina per Paziente"

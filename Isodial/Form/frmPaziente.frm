@@ -3,7 +3,7 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmPaziente 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   " "
+   Caption         =   " ANAGRAFICA GENERALE"
    ClientHeight    =   8655
    ClientLeft      =   855
    ClientTop       =   1605

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -441,6 +441,10 @@ Begin VB.MDIForm frmMain
          Index           =   6
          Tag             =   "&Diario clinico|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
+      Begin VB.Menu mnuSottoPaz 
+         Caption         =   "&Scansione Documenti Pazienti"
+         Index           =   7
+      End
    End
    Begin VB.Menu mnuDialisi 
       Caption         =   "Gestione &Emodialisi"
@@ -538,11 +542,6 @@ Begin VB.MDIForm frmMain
          Caption         =   "Esami &Periodici"
          Index           =   10
          Tag             =   "Esami &Periodici|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
-      End
-      Begin VB.Menu mnuGestioneIndicatoriSotto 
-         Caption         =   "&Scansione Documenti Pazienti"
-         Index           =   11
-         Tag             =   "&Scansione Referti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
    End
    Begin VB.Menu mnuArchivi 
@@ -1032,7 +1031,6 @@ Private Sub mnugestioneIndicatoriSotto_Click(Index As Integer)
         Case 8: frmTrattamentoAcque.Show
         Case 9: frmTrapianti.Show
         Case 10: frmEsamiPeriodici.Show
-        Case 11: frmScanDocumenti.Show
     End Select
 End Sub
 
@@ -1123,6 +1121,7 @@ Private Sub mnuSottoPaz_Click(Index As Integer)
         Case 1: frmPaziente.Show    ' info generali
         Case 5: frmAccessi.Show     ' accessi vascolari
         Case 6: frmDiario.Show      ' diario clinico
+        Case 7: frmScanDocumenti.Show   ' scansione documenti paziente
     End Select
 End Sub
 
@@ -1973,7 +1972,7 @@ Private Sub cmdToolbar_Click(Index As Integer)
         Case 10
             mnuSottoPaz_Click (6)
         Case 11
-            mnuSottoDialisi_Click (1)
+            mnuSottoDialisiTurni_Click (1)
         Case 12
             mnuSottoDialisiScheda_Click (1)
         Case 13
@@ -2039,6 +2038,8 @@ Public Sub SubClassMenuXP()
           mnuSottoPazTerapia(3).Caption = "&Stampa Riepiloghi"
           mnuSottoPaz(5).Caption = "&Accessi Vascolari"
           mnuSottoPaz(6).Caption = "&Diario Clinico"
+          mnuSottoPaz(7).Caption = "&Scansione Documenti Pazienti"
+          
     mnuDialisi.Caption = "Gestione &Emodialisi"
           mnuSottoDialisi(1).Caption = "&Turni Pazienti"
           mnuSottoDialisiTurni(1).Caption = "&Associa Turni/Reni"
@@ -2060,7 +2061,6 @@ Public Sub SubClassMenuXP()
           mnuGestioneIndicatoriSotto(8).Caption = "&Trattamento Acque"
           mnuGestioneIndicatoriSotto(9).Caption = "&Pazienti Candidati al Trapianto"
           mnuGestioneIndicatoriSotto(10).Caption = "Esami Periodici in &ED"
-          mnuGestioneIndicatoriSotto(11).Caption = "&Scansione Documenti Pazienti"
     mnuArchivi.Caption = "&Setup Tabelle"
           mnuSottoTab(1).Caption = "&Organigramma"
           mnuSottoTabOrgan(2).Caption = "&Medici in Dialisi"

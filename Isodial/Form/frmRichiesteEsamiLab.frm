@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmRichiesteEsamiLab 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -821,8 +821,12 @@ Private Sub Stampa(codicePaziente As Integer)
                 End If
         End If
         
-        nomeMese = MonthName(Month(Now))
-
+        If Month(Now) = 12 Then
+            nomeMese = MonthName(1)
+        Else
+            nomeMese = MonthName(Month(Now) + 1)
+        End If
+        
         Set rptRichiestaEsamiLaboratorio.DataSource = rsMain
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di " & UCase(Left(nomeMese, 1)) & Right(nomeMese, Len(nomeMese) - 1) & " " & Year(Now)
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblPaziente").Caption = nomePaziente

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "22/10/2012"
+            TextSave        =   "25/10/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1680,12 +1680,12 @@ Private Sub StampaTurni()
     End Select
     
     Select Case intSessione
-        Case tpPariMattina: strNomeSessione = "Pari Mattina"
-        Case tpPariPomeriggio: strNomeSessione = "Pari Pomeriggio"
-        Case tpPariSera: strNomeSessione = "Pari Sera"
-        Case tpDispariMattina: strNomeSessione = "Dispari Mattina"
-        Case tpDispariPomeriggio: strNomeSessione = "Dispari Pomeriggio"
-        Case tpDispariSera: strNomeSessione = "Dispari Sera"
+        Case tpPariMattina: strNomeSessione = "Turno Pari Mattina"
+        Case tpPariPomeriggio: strNomeSessione = "Turno Pari Pomeriggio"
+        Case tpPariSera: strNomeSessione = "Turno Pari Sera"
+        Case tpDispariMattina: strNomeSessione = "Turno Dispari Mattina"
+        Case tpDispariPomeriggio: strNomeSessione = "Turno Dispari Pomeriggio"
+        Case tpDispariSera: strNomeSessione = "Turno Dispari Sera"
     End Select
     
     For i = 0 To UBound(giorni)

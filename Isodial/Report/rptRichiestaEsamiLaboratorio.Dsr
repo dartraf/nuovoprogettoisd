@@ -84,8 +84,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblPaziente"
-         Object.Left            =   3255
-         Object.Top             =   2790
+         Object.Left            =   3330
+         Object.Top             =   2805
          Object.Width           =   3975
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -104,7 +104,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
          Name            =   "Label7"
          Object.Left            =   1590
          Object.Top             =   2805
-         Object.Width           =   1590
+         Object.Width           =   1650
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

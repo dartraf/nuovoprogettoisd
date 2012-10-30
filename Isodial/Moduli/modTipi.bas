@@ -131,6 +131,8 @@ Enum Stampa
     tpSCHEDADIALITICASETTIMANALE = 4
     tpKTVANNUALE
     tpTSATANNUALE
+    tpPTHAnnuale
+    tpCAPAnnuale
 End Enum
 Public tStampa As Stampa
 '------------------------

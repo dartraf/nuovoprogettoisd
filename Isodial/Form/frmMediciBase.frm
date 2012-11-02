@@ -3,7 +3,7 @@ Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmMediciBase 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Medici di Base"
-   ClientHeight    =   6930
+   ClientHeight    =   8760
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   6960
@@ -11,7 +11,7 @@ Begin VB.Form frmMediciBase
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   6930
+   ScaleHeight     =   8760
    ScaleWidth      =   6960
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame2 
@@ -25,18 +25,35 @@ Begin VB.Form frmMediciBase
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   6135
+      Height          =   7935
       Left            =   120
-      TabIndex        =   17
+      TabIndex        =   20
       Top             =   0
       Width           =   6735
+      Begin VB.TextBox txtRiceve 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1005
+         Left            =   2400
+         MultiLine       =   -1  'True
+         TabIndex        =   13
+         Top             =   5760
+         Width           =   4215
+      End
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   1320
          Picture         =   "frmMediciBase.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   32
+         TabIndex        =   34
          Top             =   360
          Width           =   450
       End
@@ -54,8 +71,8 @@ Begin VB.Form frmMediciBase
          Left            =   2400
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   30
-         Top             =   6240
+         TabIndex        =   15
+         Top             =   7440
          Width           =   4215
       End
       Begin VB.TextBox txtNome 
@@ -276,8 +293,8 @@ Begin VB.Form frmMediciBase
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   13
-         Top             =   5760
+         TabIndex        =   14
+         Top             =   6960
          Width           =   3975
       End
       Begin MSComDlg.CommonDialog cdlStampa 
@@ -286,6 +303,25 @@ Begin VB.Form frmMediciBase
          _ExtentX        =   847
          _ExtentY        =   847
          _Version        =   393216
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Riceve"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   2
+         Left            =   120
+         TabIndex        =   35
+         Top             =   5760
+         Width           =   750
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -302,8 +338,8 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   31
-         Top             =   6270
+         TabIndex        =   33
+         Top             =   7470
          Width           =   1845
       End
       Begin VB.Label Label1 
@@ -321,7 +357,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   42
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   32
          Top             =   3360
          Width           =   675
       End
@@ -340,7 +376,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   38
          Left            =   120
-         TabIndex        =   28
+         TabIndex        =   31
          Top             =   4800
          Width           =   675
       End
@@ -359,7 +395,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   41
          Left            =   120
-         TabIndex        =   27
+         TabIndex        =   30
          Top             =   2880
          Width           =   945
       End
@@ -378,7 +414,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   40
          Left            =   120
-         TabIndex        =   26
+         TabIndex        =   29
          Top             =   3840
          Width           =   945
       End
@@ -397,7 +433,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   39
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   28
          Top             =   4320
          Width           =   390
       End
@@ -416,7 +452,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   37
          Left            =   120
-         TabIndex        =   24
+         TabIndex        =   27
          Top             =   2400
          Width           =   585
       End
@@ -435,7 +471,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   36
          Left            =   4440
-         TabIndex        =   23
+         TabIndex        =   26
          Top             =   2400
          Width           =   555
       End
@@ -454,7 +490,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   35
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   25
          Top             =   1920
          Width           =   870
       End
@@ -473,7 +509,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   34
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   24
          Top             =   1440
          Width           =   480
       End
@@ -492,7 +528,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   33
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   23
          Top             =   960
          Width           =   630
       End
@@ -511,7 +547,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   32
          Left            =   120
-         TabIndex        =   19
+         TabIndex        =   22
          Top             =   480
          Width           =   1005
       End
@@ -530,7 +566,7 @@ Begin VB.Form frmMediciBase
          Height          =   240
          Index           =   1
          Left            =   120
-         TabIndex        =   18
+         TabIndex        =   21
          Top             =   5280
          Width           =   1890
       End
@@ -548,7 +584,7 @@ Begin VB.Form frmMediciBase
       Height          =   855
       Left            =   120
       TabIndex        =   0
-      Top             =   6000
+      Top             =   7800
       Width           =   6735
       Begin VB.CommandButton cmdElimina 
          Caption         =   "&Elimina"
@@ -563,7 +599,7 @@ Begin VB.Form frmMediciBase
          EndProperty
          Height          =   480
          Left            =   480
-         TabIndex        =   33
+         TabIndex        =   19
          Top             =   240
          Width           =   1215
       End
@@ -580,7 +616,7 @@ Begin VB.Form frmMediciBase
          EndProperty
          Height          =   495
          Left            =   1920
-         TabIndex        =   14
+         TabIndex        =   18
          Top             =   240
          Width           =   1455
       End
@@ -615,7 +651,7 @@ Begin VB.Form frmMediciBase
          EndProperty
          Height          =   495
          Left            =   3600
-         TabIndex        =   15
+         TabIndex        =   17
          Top             =   240
          Width           =   1335
       End
@@ -682,7 +718,6 @@ End Sub
 '' Ricarica le cbo
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
-    
     Call RicaricaComboBox("TIPOLOGIE_MEDICO", "NOME", cboTipologia)
 End Sub
 
@@ -699,13 +734,13 @@ Private Sub Form_Load()
     'rsMedico.Open "SELECT CODICE FROM (INTESTAZIONE_STAMPA I LEFT OUTER JOIN ASL A ON A.KEY=I.CODICE_ASL)", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Then
     'If rsMedico("CODICE") = "201" Then
-        Frame2.Height = 6615
-        fraAzioni.Top = 6480
-        Me.Height = 7725
+        Frame2.Height = 7935
+        fraAzioni.Top = 7800
+        frmMediciBase.Height = 9090
     Else
-        Frame2.Height = 6135
-        fraAzioni.Top = 6000
-        Me.Height = 7290
+        Frame2.Height = 7335
+        fraAzioni.Top = 7200
+        frmMediciBase.Height = 8490
     End If
     Set rsMedico = Nothing
 End Sub
@@ -757,9 +792,9 @@ Private Sub cmdMemorizza_Click()
             codiceTimbro = txtCodiceMedico
         End If
         v_Nomi = Array("KEY", "COGNOME", "NOME", "COMUNE", "INDIRIZZO", "CAP", "PROV", "TELEFONO", "STUDIO" _
-                    , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO")
-        v_Val = Array(numKey, txtCognome, txtNome, txtCitta, txtIndirizzo, txtCap, txtProv, txtTelefono, txtStudio _
-                    , txtCellulare, txtFax, txtEmail, codiceTimbro, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1)
+                    , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO", "RICEVE")
+        v_Val = Array(numKey, txtCognome, txtNome, txtCitta, txtIndirizzo, txtCAP, txtProv, txtTelefono, txtStudio _
+                    , txtCellulare, txtFax, txtEmail, codiceTimbro, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1, txtRiceve)
         If cboTipologia.ListIndex <> -1 Then
             v_Val(14) = cboTipologia.ItemData(cboTipologia.ListIndex)
         End If
@@ -814,7 +849,7 @@ gestione:
     Printer.Print "Indirizzo: ", txtIndirizzo.Text
     Printer.Print
     Printer.Print
-    Printer.Print "C.A.P.: ", txtCap.Text, , "Prov.:", txtProv.Text
+    Printer.Print "C.A.P.: ", txtCAP.Text, , "Prov.:", txtProv.Text
     Printer.Print
     Printer.Print
     Printer.Print "Telefono: ", txtTelefono.Text
@@ -833,6 +868,9 @@ gestione:
     Printer.Print
     Printer.Print
     Printer.Print "Codice Medico: ", txtCodiceMedico.Text
+    Printer.Print
+    Printer.Print
+    Printer.Print "Riceve: ", txtRiceve.Text
     Printer.EndDoc
     End If
 End Sub
@@ -858,7 +896,7 @@ Private Sub CaricaMedico()
     modifica = True
     Set rsMedico = New Recordset
     rsMedico.Open "SELECT * FROM MEDICI_BASE WHERE KEY=" & intMediciBaseKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    txtCap = rsMedico("CAP") & ""
+    txtCAP = rsMedico("CAP") & ""
     txtCellulare = rsMedico("CELLULARE") & ""
     txtCitta = rsMedico("COMUNE") & ""
     txtCognome = rsMedico("COGNOME") & ""
@@ -870,13 +908,14 @@ Private Sub CaricaMedico()
     txtStudio = rsMedico("STUDIO") & ""
     txtTelefono = rsMedico("TELEFONO") & ""
     txtCodiceMedico = rsMedico("CODICE") & ""
+    txtRiceve = rsMedico("RICEVE") & ""
     chkPresenzaBarCode.Value = IIf(CBool(rsMedico("PRESENZA_BARCODE")), Checked, Unchecked)
     cboTipologia.ListIndex = GetCboListIndex(rsMedico("CODICE_TIPO_MEDICO"), cboTipologia)
     Set rsMedico = Nothing
 End Sub
 
 Private Sub txtCap_GotFocus()
-    txtCap.BackColor = colArancione
+    txtCAP.BackColor = colArancione
 End Sub
 
 Private Sub txtCAP_KeyPress(KeyAscii As Integer)
@@ -884,7 +923,7 @@ Private Sub txtCAP_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtCap_LostFocus()
-    txtCap.BackColor = vbWhite
+    txtCAP.BackColor = vbWhite
 End Sub
 
 Private Sub txtCellulare_GotFocus()
@@ -985,6 +1024,14 @@ End Sub
 
 Private Sub txtProv_LostFocus()
     txtProv.BackColor = vbWhite
+End Sub
+
+Private Sub txtRiceve_GotFocus()
+    txtRiceve.BackColor = colArancione
+End Sub
+
+Private Sub txtRiceve_LostFocus()
+    txtRiceve.BackColor = vbWhite
 End Sub
 
 Private Sub txtStudio_GotFocus()

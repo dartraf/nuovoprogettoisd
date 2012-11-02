@@ -206,35 +206,55 @@ Begin VB.Form frmPaziente
       TabCaption(1)   =   "Medico di Base Associato"
       TabPicture(1)   =   "frmPaziente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboTipologia"
-      Tab(1).Control(1)=   "chkPresenzaBarCode"
-      Tab(1).Control(2)=   "txtCodiceRegionaleMedico"
-      Tab(1).Control(3)=   "txtFaxMedico"
-      Tab(1).Control(4)=   "txtEmailMedico"
-      Tab(1).Control(5)=   "txtCellulareMedico"
-      Tab(1).Control(6)=   "txtTelefonoMedico"
-      Tab(1).Control(7)=   "txtStudioMedico"
-      Tab(1).Control(8)=   "txtIndirizzoMedico"
-      Tab(1).Control(9)=   "txtProvMedico"
-      Tab(1).Control(10)=   "txtCapMedico"
-      Tab(1).Control(11)=   "txtCittaMedico"
-      Tab(1).Control(12)=   "txtNomeMedico"
-      Tab(1).Control(13)=   "txtCognomeMedico"
+      Tab(1).Control(0)=   "Label1(32)"
+      Tab(1).Control(1)=   "Label1(33)"
+      Tab(1).Control(2)=   "Label1(34)"
+      Tab(1).Control(3)=   "Label1(35)"
+      Tab(1).Control(4)=   "Label1(36)"
+      Tab(1).Control(5)=   "Label1(37)"
+      Tab(1).Control(6)=   "Label1(39)"
+      Tab(1).Control(7)=   "Label1(40)"
+      Tab(1).Control(8)=   "Label1(41)"
+      Tab(1).Control(9)=   "Label1(38)"
+      Tab(1).Control(10)=   "Label1(42)"
+      Tab(1).Control(11)=   "lblTipologiaMedico(47)"
+      Tab(1).Control(12)=   "Label1(50)"
+      Tab(1).Control(13)=   "Label1(47)"
       Tab(1).Control(14)=   "cmdTrova(1)"
-      Tab(1).Control(15)=   "Label1(50)"
-      Tab(1).Control(16)=   "lblTipologiaMedico(47)"
-      Tab(1).Control(17)=   "Label1(42)"
-      Tab(1).Control(18)=   "Label1(38)"
-      Tab(1).Control(19)=   "Label1(41)"
-      Tab(1).Control(20)=   "Label1(40)"
-      Tab(1).Control(21)=   "Label1(39)"
-      Tab(1).Control(22)=   "Label1(37)"
-      Tab(1).Control(23)=   "Label1(36)"
-      Tab(1).Control(24)=   "Label1(35)"
-      Tab(1).Control(25)=   "Label1(34)"
-      Tab(1).Control(26)=   "Label1(33)"
-      Tab(1).Control(27)=   "Label1(32)"
-      Tab(1).ControlCount=   28
+      Tab(1).Control(15)=   "txtCognomeMedico"
+      Tab(1).Control(16)=   "txtNomeMedico"
+      Tab(1).Control(17)=   "txtCittaMedico"
+      Tab(1).Control(18)=   "txtCapMedico"
+      Tab(1).Control(19)=   "txtProvMedico"
+      Tab(1).Control(20)=   "txtIndirizzoMedico"
+      Tab(1).Control(21)=   "txtStudioMedico"
+      Tab(1).Control(22)=   "txtTelefonoMedico"
+      Tab(1).Control(23)=   "txtCellulareMedico"
+      Tab(1).Control(24)=   "txtEmailMedico"
+      Tab(1).Control(25)=   "txtFaxMedico"
+      Tab(1).Control(26)=   "txtCodiceRegionaleMedico"
+      Tab(1).Control(27)=   "chkPresenzaBarCode"
+      Tab(1).Control(28)=   "cboTipologia"
+      Tab(1).Control(29)=   "txtRiceve"
+      Tab(1).ControlCount=   30
+      Begin VB.TextBox txtRiceve 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1005
+         Left            =   -72480
+         MultiLine       =   -1  'True
+         TabIndex        =   117
+         Top             =   3000
+         Width           =   3495
+      End
       Begin VB.ComboBox cboTipologia 
          Enabled         =   0   'False
          BeginProperty Font 
@@ -247,13 +267,13 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   -72480
+         Left            =   -67200
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   117
+         TabIndex        =   118
          Top             =   3000
          Visible         =   0   'False
-         Width           =   4215
+         Width           =   3255
       End
       Begin VB.CheckBox chkPresenzaBarCode 
          Alignment       =   1  'Right Justify
@@ -1296,6 +1316,26 @@ Begin VB.Form frmPaziente
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
+         Caption         =   "Riceve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   47
+         Left            =   -74880
+         TabIndex        =   122
+         Top             =   3000
+         Width           =   750
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
          Caption         =   "Codice Regionale"
          Enabled         =   0   'False
          BeginProperty Font 
@@ -1310,13 +1350,13 @@ Begin VB.Form frmPaziente
          Height          =   240
          Index           =   50
          Left            =   -74880
-         TabIndex        =   119
+         TabIndex        =   120
          Top             =   2580
          Width           =   1890
       End
       Begin VB.Label lblTipologiaMedico 
          AutoSize        =   -1  'True
-         Caption         =   "Tipologia medico"
+         Caption         =   "Tip.Medico"
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -1329,11 +1369,11 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   47
-         Left            =   -74880
-         TabIndex        =   118
+         Left            =   -68520
+         TabIndex        =   119
          Top             =   3000
          Visible         =   0   'False
-         Width           =   1845
+         Width           =   1185
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2317,7 +2357,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   8880
-         TabIndex        =   120
+         TabIndex        =   121
          Top             =   240
          Width           =   1335
       End
@@ -2468,7 +2508,7 @@ Private Sub Memorizza()
                     "G_SANGUIGNO", "RH", "NOTE", "CODICE_MEDICO", "CODICE_FISCALE_CIFRATO", "TRASPORTO_IN_AMBULANZA", _
                     "CODICE_DISTRETTO", "CODICE_ESENZIONE", "CODICE_CENTRO_PROV", "CODICE_ACCOMPAGNATORE")
         v_Val = Array(txtCognome, txtNome, txtCodiceId, oData(0).data, IIf(optSesso(0).Value, "M", "F"), txtCitta, _
-                    -1, -1, -1, txtCap(0), txtCap(1), txtProv(0), txtProv(1), _
+                    -1, -1, -1, txtCAP(0), txtCAP(1), txtProv(0), txtProv(1), _
                     txtKm, txtIndirizzo, txtTelefono, txtCellulare, txtFax, txtEmail, _
                     txtNumeroProcura, IIf(oData(1).data = "", Null, oData(1).data), IIf(oData(2).data = "", Null, oData(2).data), cboDocumento.ListIndex, txtNumCarta, txtRilascioCarta, _
                     -1, txtCodiceFiscale, txtTesseraSanitaria, IIf(chkEsenteReddito.Value = Checked, True, False), txtAllergia, txtProfessione, _
@@ -2600,9 +2640,9 @@ Private Sub cmdMemorizza_Click()
     s = 0
                     
         v_NomiMedico = Array("KEY", "COGNOME", "NOME", "COMUNE", "INDIRIZZO", "CAP", "PROV", "TELEFONO", "STUDIO" _
-                    , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO")
+                    , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO", "RICEVE")
         v_ValMedico = Array(numKey, txtCognomeMedico, txtNomeMedico, txtCittaMedico, txtIndirizzoMedico, txtCapMedico, txtProvMedico, txtTelefonoMedico, txtStudioMedico _
-                    , txtCellulareMedico, txtFaxMedico, txtEmailMedico, txtCodiceRegionaleMedico, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1)
+                    , txtCellulareMedico, txtFaxMedico, txtEmailMedico, txtCodiceRegionaleMedico, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1, txtRiceve)
                     
         If cboTipologia.ListIndex <> -1 Then
             v_ValMedico(14) = cboTipologia.ItemData(cboTipologia.ListIndex)
@@ -3395,6 +3435,7 @@ Private Sub CaricaMedico()
         txtStudioMedico = ""
         txtCodiceRegionaleMedico = ""
         chkPresenzaBarCode.Value = False
+        txtRiceve = ""
         cboTipologia.ListIndex = -1
         Call AbilitaMedico
         txtCognomeMedico.SetFocus
@@ -3417,6 +3458,7 @@ Private Sub CaricaMedico()
     txtStudioMedico = rsDataset("STUDIO") & ""
     txtCodiceRegionaleMedico = rsDataset("CODICE") & ""
     chkPresenzaBarCode.Value = IIf(CBool(rsDataset("PRESENZA_BARCODE")), Checked, Unchecked)
+    txtRiceve = rsDataset("RICEVE") & ""
     cboTipologia.ListIndex = GetCboListIndex(rsDataset("CODICE_TIPO_MEDICO"), cboTipologia)
     Call AbilitaMedico
     
@@ -3446,8 +3488,8 @@ Private Sub CaricaPaziente()
     txtCognome = rsDataset("COGNOME")
     txtNome = rsDataset("NOME")
     txtCodiceId = rsDataset("CODICE_ID") & ""
-    txtCap(0) = rsDataset("CAP_NASCITA")
-    txtCap(1) = rsDataset("CAP_RESIDENZA")
+    txtCAP(0) = rsDataset("CAP_NASCITA")
+    txtCAP(1) = rsDataset("CAP_RESIDENZA")
     txtCellulare = rsDataset("CELLULARE")
     txtCitta = rsDataset("CITTA_NASCITA")
     cboNazione.ListIndex = GetCboListIndex(rsDataset("NAZIONIID"), cboNazione)
@@ -3609,6 +3651,7 @@ Private Sub AbilitaMedico()
     txtFaxMedico.Enabled = True
     txtCodiceRegionaleMedico.Enabled = True
     chkPresenzaBarCode.Enabled = True
+    txtRiceve.Enabled = True
     cboTipologia.Enabled = True
     Label1(32).Enabled = True
     Label1(33).Enabled = True
@@ -3621,6 +3664,7 @@ Private Sub AbilitaMedico()
     Label1(40).Enabled = True
     Label1(41).Enabled = True
     Label1(42).Enabled = True
+    Label1(47).Enabled = True
     Label1(50).Enabled = True
     lblTipologiaMedico(47).Enabled = True
 End Sub
@@ -3640,6 +3684,7 @@ Private Sub DisabilitaMedico()
     txtFaxMedico.Enabled = False
     txtCodiceRegionaleMedico.Enabled = False
     chkPresenzaBarCode.Enabled = False
+    txtRiceve.Enabled = False
     cboTipologia.Enabled = False
     Label1(32).Enabled = False
     Label1(33).Enabled = False
@@ -3652,6 +3697,7 @@ Private Sub DisabilitaMedico()
     Label1(40).Enabled = False
     Label1(41).Enabled = False
     Label1(42).Enabled = False
+    Label1(47).Enabled = False
     Label1(50).Enabled = False
     lblTipologiaMedico(47).Enabled = False
 End Sub
@@ -3665,7 +3711,7 @@ Private Sub txtAllergia_LostFocus()
 End Sub
 
 Private Sub txtCap_LostFocus(Index As Integer)
-    txtCap(Index).BackColor = vbWhite
+    txtCAP(Index).BackColor = vbWhite
 End Sub
 
 Private Sub txtCapMedico_GotFocus()
@@ -3766,10 +3812,6 @@ Private Sub txtCodiceId_LostFocus()
     txtCodiceId.BackColor = vbWhite
 End Sub
 
-
-
-
-
 Private Sub txtCodiceRegionaleMedico_GotFocus()
     txtCodiceRegionaleMedico.BackColor = colArancione
 End Sub
@@ -3787,7 +3829,7 @@ Private Sub txtcogNome_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtCap_GotFocus(Index As Integer)
-    txtCap(Index).BackColor = colArancione
+    txtCAP(Index).BackColor = colArancione
 End Sub
 
 Private Sub txtCellulare_GotFocus()
@@ -3801,8 +3843,6 @@ End Sub
 Private Sub txtCognome_LostFocus()
     txtCognome.BackColor = vbWhite
 End Sub
-
-
 
 Private Sub txtCognomeMedico_GotFocus()
     txtCognomeMedico.BackColor = colArancione
@@ -3819,8 +3859,6 @@ End Sub
 Private Sub txtEmail_LostFocus()
     txtEmail.BackColor = vbWhite
 End Sub
-
-
 
 Private Sub txtEmailMedico_GotFocus()
     txtEmailMedico.BackColor = colArancione
@@ -3940,6 +3978,14 @@ End Sub
 
 Private Sub txtProvMedico_LostFocus()
     txtProvMedico.BackColor = vbWhite
+End Sub
+
+Private Sub txtRiceve_GotFocus()
+    txtRiceve.BackColor = colArancione
+End Sub
+
+Private Sub txtRiceve_LostFocus()
+    txtRiceve.BackColor = vbWhite
 End Sub
 
 Private Sub txtRilascioCarta_GotFocus()

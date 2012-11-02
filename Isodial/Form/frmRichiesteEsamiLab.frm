@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmRichiesteEsamiLab 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -402,6 +402,7 @@ Begin VB.Form frmRichiesteEsamiLab
       End
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -638,6 +639,7 @@ Private Sub PulisciTutto()
     cmdCopiaPerPazienteSingolo.Enabled = False
     cmdCopiaPerTuttiPazienti.Enabled = False
     cmdCopiaPerTurni.Enabled = False
+    cmdStampa.Enabled = False
     cmdTrova.SetFocus
 End Sub
 
@@ -1376,6 +1378,7 @@ Private Sub cboEsami_Click()
     cmdCopiaPerPazienteSingolo.Enabled = True
     cmdCopiaPerTuttiPazienti.Enabled = True
     cmdCopiaPerTurni.Enabled = True
+    cmdStampa.Enabled = True
 End Sub
 
 Private Sub flxGriglia_DblClick()

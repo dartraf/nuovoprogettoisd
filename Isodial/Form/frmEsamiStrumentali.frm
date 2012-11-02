@@ -1258,6 +1258,15 @@ Private Sub oData_OnDataClick()
 End Sub
 
 Private Sub oData_OnElencaClick()
+
+    If cboOrgano.ListIndex = -1 Then
+        MsgBox "Selezionare l' Organo/Apparato", vbInformation, "Informazione"
+        Exit Sub
+    ElseIf cboEsami.ListIndex = -1 Then
+        MsgBox "Selezionare il Tipo di Esame", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
     If ControlloChiusuraForm(blnModificato, Me.Caption) Then
         ' setta le variabili che saranno viste dal frmElencaDate
         tElenca.Tipo = tpESAMISTRUMENTALI
@@ -1265,6 +1274,7 @@ Private Sub oData_OnElencaClick()
         frmElencaDate.Show 1
         If laData <> "" Then oData.data = laData
     End If
+    
 End Sub
 
 Private Sub txtReferto_GotFocus()

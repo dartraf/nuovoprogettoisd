@@ -65,9 +65,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTitolo"
-         Object.Left            =   1605
-         Object.Top             =   2370
-         Object.Width           =   6390
+         Object.Left            =   1500
+         Object.Top             =   2355
+         Object.Width           =   7575
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -78,14 +78,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Si richiedono i seguenti esami relativi al mese di Dicembre 2011"
       EndProperty
       ItemType3       =   3
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblPaziente"
-         Object.Left            =   3330
-         Object.Top             =   2805
+         Object.Left            =   3225
+         Object.Top             =   2790
          Object.Width           =   3975
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -102,8 +101,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   1590
-         Object.Top             =   2805
+         Object.Left            =   1485
+         Object.Top             =   2790
          Object.Width           =   1650
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 

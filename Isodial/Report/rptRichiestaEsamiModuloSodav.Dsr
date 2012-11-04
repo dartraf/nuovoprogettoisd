@@ -192,7 +192,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
       BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   2381
+         Object.Left            =   2268
          Object.Top             =   1870
          Object.Width           =   3855
          Object.Height          =   345
@@ -211,9 +211,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblMese"
-         Object.Left            =   6293
+         Object.Left            =   6180
          Object.Top             =   1871
-         Object.Width           =   2385
+         Object.Width           =   2880
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

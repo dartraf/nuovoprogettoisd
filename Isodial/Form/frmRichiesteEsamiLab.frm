@@ -213,6 +213,44 @@ Begin VB.Form frmRichiesteEsamiLab
       TabIndex        =   9
       Top             =   1320
       Width           =   12495
+      Begin VB.ComboBox cboMese 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         ItemData        =   "frmRichiesteEsamiLab.frx":045D
+         Left            =   2760
+         List            =   "frmRichiesteEsamiLab.frx":0485
+         Style           =   2  'Dropdown List
+         TabIndex        =   26
+         Top             =   5950
+         Width           =   1455
+      End
+      Begin VB.ComboBox cboAnno 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         ItemData        =   "frmRichiesteEsamiLab.frx":04F3
+         Left            =   5160
+         List            =   "frmRichiesteEsamiLab.frx":04F5
+         Style           =   2  'Dropdown List
+         TabIndex        =   25
+         Top             =   5950
+         Width           =   855
+      End
       Begin VB.CheckBox chkStampaDicituraImpostata 
          Caption         =   "Stampa dicitura"
          BeginProperty Font 
@@ -225,10 +263,10 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   240
+         Left            =   9840
          TabIndex        =   24
-         Top             =   5985
-         Width           =   4095
+         Top             =   5950
+         Width           =   2055
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   5655
@@ -243,7 +281,7 @@ Begin VB.Form frmRichiesteEsamiLab
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          ScrollBars      =   2
-         FormatString    =   $"frmRichiesteEsamiLab.frx":045D
+         FormatString    =   $"frmRichiesteEsamiLab.frx":04F7
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -257,15 +295,51 @@ Begin VB.Form frmRichiesteEsamiLab
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   0
-         Left            =   10320
+         Left            =   7920
          TabIndex        =   22
-         Top             =   5925
+         Top             =   5900
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
+      End
+      Begin VB.Label lblMese 
+         AutoSize        =   -1  'True
+         Caption         =   "Esami relativi al mese di"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   120
+         TabIndex        =   28
+         Top             =   5950
+         Width           =   2565
+      End
+      Begin VB.Label lblAnno 
+         AutoSize        =   -1  'True
+         Caption         =   "Anno"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   4440
+         TabIndex        =   27
+         Top             =   5950
+         Width           =   540
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -281,9 +355,9 @@ Begin VB.Form frmRichiesteEsamiLab
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   8640
+         Left            =   6240
          TabIndex        =   21
-         Top             =   5985
+         Top             =   5950
          Width           =   1545
       End
    End
@@ -510,8 +584,13 @@ Private Sub Form_Load()
     End With
     
     chkStampaDicituraImpostata.Value = GetSetting(appName, "Default", Me.Name & "." & chkStampaDicituraImpostata.Name, 0)
-    
+            
+    cboAnno.AddItem Year(Now)
+    cboAnno.AddItem Year(Now) + 1
+    cboAnno.ListIndex = 0
+    cboMese.ListIndex = Month(Now) - 1
     oData(0).txtBox = date
+    
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -823,14 +902,14 @@ Private Sub Stampa(codicePaziente As Integer)
                 End If
         End If
         
-        If Month(Now) = 12 Then
-            nomeMese = MonthName(1)
-        Else
-            nomeMese = MonthName(Month(Now) + 1)
-        End If
+        'If Month(Now) = 12 Then
+        '    nomeMese = MonthName(1)
+        'Else
+        '    nomeMese = MonthName(Month(Now) + 1)
+        'End If
         
         Set rptRichiestaEsamiLaboratorio.DataSource = rsMain
-        rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di " & UCase(Left(nomeMese, 1)) & Right(nomeMese, Len(nomeMese) - 1) & " " & Year(Now)
+        rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di: " & UCase(cboMese.Text) & " " & cboAnno.Text
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblPaziente").Caption = nomePaziente
         rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Caption = dicitura
         rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblData").Caption = "Data, " & oData(0).txtBox
@@ -970,10 +1049,10 @@ Private Sub StampaModuloSodav(codicePaziente As Integer)
                 End If
         End If
         
-        nomeMese = MonthName(Month(Now))
+        'nomeMese = MonthName(Month(Now))
 
         Set rptRichiestaEsamiModuloSodav.DataSource = rsMain
-        rptRichiestaEsamiModuloSodav.Sections("intestazione").Controls.Item("lblMese").Caption = UCase(Left(nomeMese, 1)) & Right(nomeMese, Len(nomeMese) - 1)
+        rptRichiestaEsamiModuloSodav.Sections("intestazione").Controls.Item("lblMese").Caption = UCase(cboMese.Text) & " " & cboAnno.Text  'UCase(Left(nomeMese, 1)) & Right(nomeMese, Len(nomeMese) - 1)
         rptRichiestaEsamiModuloSodav.Sections("intestazione").Controls.Item("lblData").Caption = oData(0).txtBox
         rptRichiestaEsamiModuloSodav.Sections("intestazione").Controls.Item("lblMedicoDiBase").Caption = MedicoDiBase
         rptRichiestaEsamiModuloSodav.Sections("intestazione").Controls.Item("lblPaziente").Caption = nomePaziente

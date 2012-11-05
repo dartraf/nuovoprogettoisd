@@ -1428,10 +1428,14 @@ Private Sub cmdStampa_Click()
             Call StampaModuloFirmePaziente
         Case tpSCHEDADIALITICASETTIMANALE
             Call StampaSchedaDialiticaSettimanale
-        Case tpKTVANNUALE
-            Call StampaKtvAnnuale
-        Case tpTSATANNUALE
-            Call StampaTsatAnnuale
+'        Case tpKTVANNUALE
+'            Call StampaKtvAnnuale
+'        Case tpTSATANNUALE
+'            Call StampaTsatAnnuale
+'        Case tpPTHAnnuale
+'            Call StampaPthAnnuale
+'        Case tpCAPAnnuale
+'            Call StampaCAPAnnuale
     End Select
 End Sub
 

@@ -540,8 +540,11 @@ Private Function GeneraFileXML() As Boolean
             nodo2.appendChild CreaNodo("DataErogazione", sistemaData(rsAppo("DATA_INIZIO")))
             nodo2.appendChild CreaNodo("TipologiaPrestazione", "")
             nodo2.appendChild CreaNodo("QtaPrest", rsAppo("QUANTITA"))
-            nodo2.appendChild CreaNodo("TariffaPrest", VirgolaOrPunto(Format(rsAppo("QUANTITA") * rsAppo("IMPORTO"), "#####.00"), ","))
-            nodo2.appendChild CreaNodo("TariffaPrestLab", VirgolaOrPunto(Format(rsAppo("QUANTITA") * rsAppo("IMPORTO_SCONTATO"), "#####.00"), ","))
+'            nodo2.appendChild CreaNodo("TariffaPrest", VirgolaOrPunto(Format(rsAppo("QUANTITA") * rsAppo("IMPORTO"), "#####.00"), ","))
+'            nodo2.appendChild CreaNodo("TariffaPrestLab", VirgolaOrPunto(Format(rsAppo("QUANTITA") * rsAppo("IMPORTO_SCONTATO"), "#####.00"), ","))
+            nodo2.appendChild CreaNodo("TariffaPrest", VirgolaOrPunto(Format(rsAppo("IMPORTO"), "#####.00"), ","))
+            nodo2.appendChild CreaNodo("TariffaPrestLab", VirgolaOrPunto(Format(rsAppo("IMPORTO_SCONTATO"), "#####.00"), ","))
+            
             nodo1.appendChild nodo2
             rsAppo.MoveNext
         Loop

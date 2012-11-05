@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmRichiesteEsamiLab 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -244,7 +244,7 @@ Begin VB.Form frmRichiesteEsamiLab
          EndProperty
          Height          =   315
          ItemData        =   "frmRichiesteEsamiLab.frx":04F3
-         Left            =   5160
+         Left            =   5040
          List            =   "frmRichiesteEsamiLab.frx":04F5
          Style           =   2  'Dropdown List
          TabIndex        =   25
@@ -263,9 +263,9 @@ Begin VB.Form frmRichiesteEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   9840
+         Left            =   10320
          TabIndex        =   24
-         Top             =   5950
+         Top             =   6000
          Width           =   2055
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
@@ -295,9 +295,9 @@ Begin VB.Form frmRichiesteEsamiLab
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   0
-         Left            =   7920
+         Left            =   7800
          TabIndex        =   22
-         Top             =   5900
+         Top             =   5915
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -320,7 +320,7 @@ Begin VB.Form frmRichiesteEsamiLab
          Height          =   240
          Left            =   120
          TabIndex        =   28
-         Top             =   5950
+         Top             =   6000
          Width           =   2565
       End
       Begin VB.Label lblAnno 
@@ -338,7 +338,7 @@ Begin VB.Form frmRichiesteEsamiLab
          Height          =   240
          Left            =   4440
          TabIndex        =   27
-         Top             =   5950
+         Top             =   6000
          Width           =   540
       End
       Begin VB.Label Label1 
@@ -355,9 +355,9 @@ Begin VB.Form frmRichiesteEsamiLab
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   6240
+         Left            =   6120
          TabIndex        =   21
-         Top             =   5950
+         Top             =   6000
          Width           =   1545
       End
    End

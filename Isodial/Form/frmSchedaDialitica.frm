@@ -132,26 +132,26 @@ Begin VB.Form frmSchedaDialitica
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblSolInfCc"
-      Tab(1).Control(1)=   "lblCartuccia"
-      Tab(1).Control(2)=   "lblSolInfusionale"
-      Tab(1).Control(3)=   "lblSolDialitica"
-      Tab(1).Control(4)=   "lblFlussoSangue"
-      Tab(1).Control(5)=   "lblFlusso"
-      Tab(1).Control(6)=   "Label1(21)"
-      Tab(1).Control(7)=   "Label1(20)"
-      Tab(1).Control(8)=   "Label1(19)"
-      Tab(1).Control(9)=   "Label1(18)"
-      Tab(1).Control(10)=   "Label1(7)"
-      Tab(1).Control(11)=   "Label1(6)"
+      Tab(1).Control(0)=   "Label1(6)"
+      Tab(1).Control(1)=   "Label1(7)"
+      Tab(1).Control(2)=   "Label1(18)"
+      Tab(1).Control(3)=   "Label1(19)"
+      Tab(1).Control(4)=   "Label1(20)"
+      Tab(1).Control(5)=   "Label1(21)"
+      Tab(1).Control(6)=   "lblFlusso"
+      Tab(1).Control(7)=   "lblFlussoSangue"
+      Tab(1).Control(8)=   "lblSolDialitica"
+      Tab(1).Control(9)=   "lblSolInfusionale"
+      Tab(1).Control(10)=   "lblCartuccia"
+      Tab(1).Control(11)=   "lblSolInfCc"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(36)"
-      Tab(2).Control(1)=   "Label1(37)"
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(3)=   "flxGriglia(0)"
+      Tab(2).Control(0)=   "flxGriglia(0)"
+      Tab(2).Control(1)=   "flxGriglia(1)"
+      Tab(2).Control(2)=   "Label1(37)"
+      Tab(2).Control(3)=   "Label1(36)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -3158,7 +3158,7 @@ Private Function SalvaDatiDialisi(numKey As Integer) As Boolean
             
     ' aggiunge solo se e in inserimento perche questi dati (scheda dialitica e terapie) non vengono modificati
     If Not modifica Then
-        strNomeTabella = "Ricette"
+ '       strNomeTabella = "Ricette"
         v_Nomi() = Array("KEY", "CODICE_RENE", "TIPO_FILTRO", "TIPO_DIALISI", "PESO_SECCO", _
                         "ULTIMO_PESO", "DATA_PESO", "SODIO", "POTASSIO", "BICARBONATO", "CALCIO", "GLUCOSIO", "ORE_DIALISI", "MIN_DIALISI", "ANTICOAGULANTE1", "DOSE1", "DOSE_INTERMEDIA", "DOSE_FINALE", "DOSI_UNITA_MISURA", _
                         "ANTICOAGULANTE2", "DOSE2", "FLUSSO", "FLUSSO_SANGUE", "SOLUZIONE_DIALITICA", "SOLUZIONE_INFUSIONALE", _
@@ -3173,15 +3173,15 @@ Private Function SalvaDatiDialisi(numKey As Integer) As Boolean
         rsDataset.Update
         rsDataset.Close
         
-        Dim laData2 As String
-        laData2 = Format(Day(Now), "00") & "/" & Format(intValore, "00") & "/" & Format(Year(Now), "0000")
-        If date > CDate(laData2) Then
-            Dim cmCommand As New Command
-            cmCommand.CommandType = adCmdText
-            cmCommand.ActiveConnection = cnPrinc
-            cmCommand.CommandText = "Delete From " & strNomeTabella & " Where Mese=" & Month(CDate(lblData)) - 1
-            cmCommand.Execute
-        End If
+'        Dim laData2 As String
+'        laData2 = Format(Day(Now), "00") & "/" & Format(intValore, "00") & "/" & Format(Year(Now), "0000")
+'        If date > CDate(laData2) Then
+'            Dim cmCommand As New Command
+'            cmCommand.CommandType = adCmdText
+'            cmCommand.ActiveConnection = cnPrinc
+'            cmCommand.CommandText = "Delete From " & strNomeTabella & " Where Mese=" & Month(CDate(lblData)) - 1
+'            cmCommand.Execute
+'        End If
         SalvaDatiDialisi = True
     Else
         ' modifica solo il rene perche potrebbe essere cambiato

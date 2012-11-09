@@ -412,7 +412,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
          Name            =   "lblData"
          Object.Left            =   120
          Object.Top             =   1980
-         Object.Width           =   2835
+         Object.Width           =   4050
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -423,7 +423,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiLaboratorio
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Data, "
       EndProperty
       ItemType10      =   3
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 

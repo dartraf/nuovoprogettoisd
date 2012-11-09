@@ -43,8 +43,8 @@ Begin VB.Form frmMediciBase
          Height          =   1005
          Left            =   2400
          MultiLine       =   -1  'True
-         TabIndex        =   13
-         Top             =   5760
+         TabIndex        =   12
+         Top             =   5280
          Width           =   4215
       End
       Begin VB.CommandButton cmdTrova 
@@ -275,8 +275,8 @@ Begin VB.Form frmMediciBase
          Height          =   285
          Left            =   2400
          MaxLength       =   7
-         TabIndex        =   12
-         Top             =   5280
+         TabIndex        =   13
+         Top             =   6480
          Width           =   855
       End
       Begin VB.CheckBox chkPresenzaBarCode 
@@ -320,7 +320,7 @@ Begin VB.Form frmMediciBase
          Index           =   2
          Left            =   120
          TabIndex        =   35
-         Top             =   5760
+         Top             =   5280
          Width           =   750
       End
       Begin VB.Label Label1 
@@ -567,7 +567,7 @@ Begin VB.Form frmMediciBase
          Index           =   1
          Left            =   120
          TabIndex        =   21
-         Top             =   5280
+         Top             =   6480
          Width           =   1890
       End
    End
@@ -793,7 +793,7 @@ Private Sub cmdMemorizza_Click()
         End If
         v_Nomi = Array("KEY", "COGNOME", "NOME", "COMUNE", "INDIRIZZO", "CAP", "PROV", "TELEFONO", "STUDIO" _
                     , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO", "RICEVE")
-        v_Val = Array(numKey, txtCognome, txtNome, txtCitta, txtIndirizzo, txtCAP, txtProv, txtTelefono, txtStudio _
+        v_Val = Array(numKey, txtCognome, txtNome, txtCitta, txtIndirizzo, txtCap, txtProv, txtTelefono, txtStudio _
                     , txtCellulare, txtFax, txtEmail, codiceTimbro, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1, txtRiceve)
         If cboTipologia.ListIndex <> -1 Then
             v_Val(14) = cboTipologia.ItemData(cboTipologia.ListIndex)
@@ -849,7 +849,7 @@ gestione:
     Printer.Print "Indirizzo: ", txtIndirizzo.Text
     Printer.Print
     Printer.Print
-    Printer.Print "C.A.P.: ", txtCAP.Text, , "Prov.:", txtProv.Text
+    Printer.Print "C.A.P.: ", txtCap.Text, , "Prov.:", txtProv.Text
     Printer.Print
     Printer.Print
     Printer.Print "Telefono: ", txtTelefono.Text
@@ -896,7 +896,7 @@ Private Sub CaricaMedico()
     modifica = True
     Set rsMedico = New Recordset
     rsMedico.Open "SELECT * FROM MEDICI_BASE WHERE KEY=" & intMediciBaseKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    txtCAP = rsMedico("CAP") & ""
+    txtCap = rsMedico("CAP") & ""
     txtCellulare = rsMedico("CELLULARE") & ""
     txtCitta = rsMedico("COMUNE") & ""
     txtCognome = rsMedico("COGNOME") & ""
@@ -915,7 +915,7 @@ Private Sub CaricaMedico()
 End Sub
 
 Private Sub txtCap_GotFocus()
-    txtCAP.BackColor = colArancione
+    txtCap.BackColor = colArancione
 End Sub
 
 Private Sub txtCAP_KeyPress(KeyAscii As Integer)
@@ -923,7 +923,7 @@ Private Sub txtCAP_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtCap_LostFocus()
-    txtCAP.BackColor = vbWhite
+    txtCap.BackColor = vbWhite
 End Sub
 
 Private Sub txtCellulare_GotFocus()

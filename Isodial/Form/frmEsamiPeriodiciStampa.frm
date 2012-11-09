@@ -1,18 +1,158 @@
 VERSION 5.00
+Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmEsamiPeriodiciStampa 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Esami Periodici"
-   ClientHeight    =   4905
+   ClientHeight    =   6375
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   5010
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4905
+   ScaleHeight     =   6375
    ScaleWidth      =   5010
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.Frame Frame1 
+      Enabled         =   0   'False
+      Height          =   1575
+      Left            =   120
+      TabIndex        =   18
+      Top             =   3960
+      Width           =   4815
+      Begin VB.ComboBox cboAnno 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         ItemData        =   "frmEsamiPeriodiciStampa.frx":0000
+         Left            =   720
+         List            =   "frmEsamiPeriodiciStampa.frx":0002
+         Style           =   2  'Dropdown List
+         TabIndex        =   22
+         Top             =   1125
+         Width           =   855
+      End
+      Begin VB.ComboBox cboMese 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         ItemData        =   "frmEsamiPeriodiciStampa.frx":0004
+         Left            =   2760
+         List            =   "frmEsamiPeriodiciStampa.frx":002C
+         Style           =   2  'Dropdown List
+         TabIndex        =   20
+         Top             =   600
+         Width           =   1455
+      End
+      Begin DataTimeBox.uDataTimeBox oData 
+         Height          =   375
+         Index           =   0
+         Left            =   2640
+         TabIndex        =   24
+         Top             =   1080
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin VB.Label lblData 
+         AutoSize        =   -1  'True
+         Caption         =   "Data "
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   2
+         Left            =   2040
+         TabIndex        =   25
+         Top             =   1125
+         Width           =   570
+      End
+      Begin VB.Label lblAnno 
+         AutoSize        =   -1  'True
+         Caption         =   "Anno"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   120
+         TabIndex        =   23
+         Top             =   1125
+         Width           =   540
+      End
+      Begin VB.Label lblMese 
+         AutoSize        =   -1  'True
+         Caption         =   "Esami relativi al mese di"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   120
+         TabIndex        =   21
+         Top             =   650
+         Width           =   2565
+      End
+      Begin VB.Label lblRichiesta 
+         AutoSize        =   -1  'True
+         Caption         =   "Data richiesta:"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   2
+         Left            =   120
+         TabIndex        =   19
+         Top             =   240
+         Width           =   1515
+      End
+   End
    Begin VB.Frame fraStampa 
       Height          =   1815
       Left            =   120
@@ -247,7 +387,7 @@ Begin VB.Form frmEsamiPeriodiciStampa
       Height          =   855
       Left            =   120
       TabIndex        =   13
-      Top             =   3960
+      Top             =   5400
       Width           =   4815
       Begin VB.CommandButton cmdImpostaDicitura 
          Caption         =   "&Imposta dicitura"
@@ -314,7 +454,9 @@ Public blnStampa As Boolean
 Public intPeriodo As tipoPeriodo
 Public intTipoStampa As Integer
 Public blnStampaDicituraImpostata As Boolean
-
+Public MeseRichiestaStampa As String
+Public AnnoRichiestaStampa As String
+Public DataRichiestaStampa As String
 
 Private Sub AbilitaFrequenza(inStato)
     chkFrequenzaAnnuale.Enabled = inStato
@@ -324,6 +466,13 @@ Private Sub AbilitaFrequenza(inStato)
     chkFrequenzaSeProblemiClinici.Enabled = inStato
     chkFrequenzaTrimestrale.Enabled = inStato
     chkStampaDiciture.Enabled = inStato
+    Frame1.Enabled = inStato
+    lblRichiesta(2).Enabled = inStato
+    lblMese.Enabled = inStato
+    cboMese.Enabled = inStato
+    lblAnno.Enabled = inStato
+    cboAnno.Enabled = inStato
+    lblData(2).Enabled = inStato
 End Sub
 
 Private Sub cmdAnnulla_Click()
@@ -360,11 +509,23 @@ Private Sub cmdStampa_Click()
             blnStampaDicituraImpostata = False
         End If
         
+        MeseRichiestaStampa = cboMese.Text
+        AnnoRichiestaStampa = cboAnno.Text
+        DataRichiestaStampa = oData(0).txtBox
+        
         blnStampa = True
         Unload Me
     Else
         MsgBox "Selezionare almeno un periodo", vbExclamation, Me.Caption
     End If
+End Sub
+
+Private Sub Form_Load()
+    cboAnno.AddItem Year(Now)
+    cboAnno.AddItem Year(Now) + 1
+    cboAnno.ListIndex = 0
+    cboMese.ListIndex = Month(Now) - 1
+    oData(0).txtBox = date
 End Sub
 
 Private Sub optStampaPrescrizioniTuttiPazienti_Click()

@@ -676,7 +676,7 @@ Public Sub StampaStandard()
 
 End Sub
 
-Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String, blnStampaDicituraImpostata As Boolean)
+Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String, blnStampaDicituraImpostata As Boolean, MeseRichiestaStampa As String, AnnoRichiestaStampa As String, DataRichiestaStampa As String)
     Const numMaxEsami As Integer = 19
     Dim strSql As String
     Dim strSqlShape As String
@@ -690,7 +690,6 @@ Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String
     Dim intNumeroEsame As Integer
     Dim strPaziente As String
     Dim strNomeEsame As String
-    Dim strNomeMese  As String
     Dim dicitura As String
         
     strSqlShape = "SHAPE APPEND " & _
@@ -764,12 +763,11 @@ Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String
                 End If
         End If
                 
-        strNomeMese = MonthName(Month(Now))
-
         Set rptRichiestaEsamiLaboratorio.DataSource = rsMain
-        rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di " & UCase(Left(strNomeMese, 1)) & Right(strNomeMese, Len(strNomeMese) - 1) & " " & Year(Now)
+        rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di: " & UCase(MeseRichiestaStampa) & " " & AnnoRichiestaStampa
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblPaziente").Caption = strPaziente
         rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Caption = dicitura
+        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblData").Caption = "Data richiesta stampa, " & UCase(DataRichiestaStampa)
         rptRichiestaEsamiLaboratorio.PrintReport False, rptRangeAllPages
         
     Else
@@ -996,14 +994,14 @@ Private Sub cmdStampa_Click()
                 Call StartProgressBar(rsPazienti.RecordCount, 0, Me)
                 Do While Not rsPazienti.EOF
                     frmBarra.prgBar.Value = frmBarra.prgBar.Value + 1
-                    Call StampaPrescrizioni(rsPazienti("KEY"), strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
+                    Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata, lfrmEsamiPeriodiciStampa.MeseRichiestaStampa, lfrmEsamiPeriodiciStampa.AnnoRichiestaStampa, lfrmEsamiPeriodiciStampa.DataRichiestaStampa)
                     rsPazienti.MoveNext
                 Loop
                 rsPazienti.Close
                 Set rsPazienti = Nothing
                 Call StopProgressBar(Me)
             Else
-                Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata)
+                Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata, lfrmEsamiPeriodiciStampa.MeseRichiestaStampa, lfrmEsamiPeriodiciStampa.AnnoRichiestaStampa, lfrmEsamiPeriodiciStampa.DataRichiestaStampa)
             End If
         Else
             Call StampaStandard

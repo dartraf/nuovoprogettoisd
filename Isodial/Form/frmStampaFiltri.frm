@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmStampaFiltri 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa "
@@ -718,6 +718,10 @@ Private Sub StampaPthAnnuale()
     Dim keyGruppo As Integer
     Dim keyAnamnesi As Integer
     Dim keyRecord As Integer
+    Dim mese As String
+    Dim primogg As Date
+    Dim ultimogg As Date
+    Dim SommaMedia As Variant
     
     If Not Completo Then Exit Sub
 
@@ -782,47 +786,8 @@ Private Sub StampaPthAnnuale()
      End If
      rsDataset.Close
     
-  ' verifica se esiste un record nella tab anamnesi_esami del gruppo
-     rsDataset.Open "SELECT * FROM ANAMNESI_ESAMI WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_GRUPPO=" & keyGruppo & " AND DATA BETWEEN #" & "01/01/" & cboAnno.Text & "# AND #" & "31/12/" & cboAnno.Text & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-     If Not (rsDataset.EOF And rsDataset.BOF) Then
-'        keyAnamnesi = rsDataset("KEY")
-     Else
-        MsgBox "Per l'esame PTH NON sono presenti registrazioni", vbCritical, "Attenzione"
-        rsDataset.Close
-        Exit Sub
-     End If
-     rsDataset.Close
-     
-   ' trova il record col valore del PTH
-'      rsDataset.Open "SELECT * FROM ESAMI_LAB WHERE CODICE_ANAMNESI_ESAMI=" & keyAnamnesi & " AND CODICE_ESAME=" & keyEsame, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-'      If Not (rsDataset.EOF And rsDataset.BOF) Then
-'         keyRecord = rsDataset("VALORE")
-'      End If
-      
-'   data = DateValue(Month(dt_rott_rene) & "/" & Day(dt_rott_rene) & "/" & Year(dt_rott_rene))
-
-'SELECT PAZIENTI.KEY AS "PAZIENTI KEY", PAZIENTI.COGNOME AS "PAZIENTI COGNOME", ANAMNESI_ESAMI.DATA AS "ANAMNESI_ESAMI DATA"
-'FROM (PAZIENTI AS PAZIENTI
-'     INNER JOIN ANAMNESI_ESAMI AS ANAMNESI_ESAMI ON (ANAMNESI_ESAMI.KEY = PAZIENTI.KEY ))
-'Where
-'(
-'  PAZIENTI.KEY = 1 AND
-'  PAZIENTI.COGNOME LIKE '%' AND
-'  ANAMNESI_ESAMI.CODICE_PAZIENTE = 1 AND
-'  ANAMNESI_ESAMI.DATA = '2012-10-08' )
-
-'SQLString = "SELECT COGNOME, NOME, TURNI." & strGiornoIni(0) & " AS GGINI1, TURNI." & strGiornoIni(1) & " AS GGINI2,TURNI." & strGiornoIni(2) & " AS GGINI3,TURNI." & strGiornoFin(0) & " AS GGFIN1, TURNI." & strGiornoFin(1) & " AS GGFIN2,TURNI." & strGiornoFin(2) & " AS GGFIN3,RENI.POSTAZIONE, RENI.NUMERO_RENE, RENI.TIPO_RENE AS MONITOR, RENI.TIPO " & _
-             "FROM ((PAZIENTI " & _
-             "INNER JOIN TURNI ON PAZIENTI.KEY = TURNI.CODICE_PAZIENTE ) " & _
-             "INNER JOIN RENI  ON TURNI.CODICE_RENE= RENI.KEY ) " & _
-             "WHERE (" & condizione & ") AND (PAZIENTI.STATO = 0) " & _
-             "ORDER BY  PAZIENTI.COGNOME, PAZIENTI.NOME"
-             
-      
-
-
-Set rsDataselect = New Recordset
-    
+   Set rsDataselect = New Recordset
+   cont = 0
    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         With rsMain
@@ -830,71 +795,56 @@ Set rsDataselect = New Recordset
             .Fields("CODICE_PAZIENTE") = rsDataset("KEY")
             .Fields("COGNOME") = rsDataset("COGNOME")
             .Fields("NOME") = rsDataset("NOME")
-            .Update
-        
-            For i = 1 To 1
             
-            SQLString2 = "SELECT VALORE " & _
-            "FROM ESAMI_LAB " & _
-            "WHERE ESAMI_LAB.CODICE_ESAME= " & keyEsame & ""
-            'AND ANAMNESI_ESAMI.CODICE_PAZIENTE=" & intPazientiKey & " AND ANAMNESI_ESAMI.DATA BETWEEN #" & "01/01/" & cboAnno.Text & "# AND #" & "31/01/" & cboAnno.Text & "#"""
-           '"INNER JOIN ON ESAMI_LAB.CODICE_ANAMNESI_ESAMI=ANAMNESI_ESAMI.KEY) " & _
-
-  
-    rsDataselect.Open SQLString2, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    
-      Debug.Print SQLString2
+           For i = 1 To 12
+             Select Case i
+                Case 1 To 9
+                   mese = "0" & i
+                Case Else
+                   mese = i
+             End Select
+                               
+             primogg = DateValue(mese & "/01/" & cboAnno.Text)
+             ultimogg = DateValue(mese & "/" & Day(GetUltimoGiorno(val(mese), cboAnno.Text)) & "/" & cboAnno.Text)
             
-            Next i
+            SQLString2 = "SELECT ANAMNESI_ESAMI.KEY,ESAMI_LAB.VALORE " & _
+            "FROM (ANAMNESI_ESAMI " & _
+            "INNER JOIN ESAMI_LAB ON ANAMNESI_ESAMI.KEY = ESAMI_LAB.CODICE_ANAMNESI_ESAMI ) " & _
+            "WHERE ESAMI_LAB.CODICE_ESAME=" & keyEsame & " AND ANAMNESI_ESAMI.CODICE_PAZIENTE=" & rsDataset("KEY") & " AND ANAMNESI_ESAMI.DATA BETWEEN #" & primogg & "# AND #" & ultimogg & "#"
 
+            rsDataselect.Open SQLString2, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+ 
+ '     Debug.Print SQLString2
+ '     Debug.Print rsDataselect!key
+ '     Debug.Print rsDataselect!valore
+ 
+            If rsDataselect.RecordCount <> 0 Then
+                .Fields("MESE" & i) = rsDataselect("VALORE")
+                SommaMedia = SommaMedia + rsDataselect("VALORE")
+                cont = cont + 1
+            Else
+                .Fields("MESE" & i) = Null
+            End If
+            rsDataselect.Close
+          Next i
+
+          If cont <> 0 Then
+            .Fields("MEDIA") = SommaMedia / cont
+          End If
+
+          .Update
         End With
+        SommaMedia = 0
+        cont = 0
         rsDataset.MoveNext
     Loop
     rsDataset.Close
-    
-    
-'    rsDataset.Open "SELECT * FROM ANAMNESI_ESAMI WHERE DATA BETWEEN #" & "01/01/" & cboAnno.Text & "# AND #" & "31/01/" & cboAnno.Text & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-
-    
- '   rsDataset.Open "SELECT * FROM TSAT WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
- '   Do While Not rsDataset.EOF
-  '      rsMain.Filter = "CODICE_PAZIENTE=" & rsDataset("CODICE_PAZIENTE")
-   '     If rsMain.RecordCount <> 0 Then
- '           rsMain("MEDIA") = 0
- '           If IsNull(rsDataset("SIDEREMIA")) Or IsNull(rsDataset("TRANSFERRINA")) Then
- '               rsMain.Fields("MESE" & rsDataset("MESE")) = Null
- '           Else
- '               rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaTsat(rsDataset("SIDEREMIA"), rsDataset("TRANSFERRINA"))
- '           End If
- '       End If
- '     rsDataset.MoveNext
- '   Loop
- '   rsDataset.Close
-'    rsMain.Filter = ""
- 
-'    Do While Not rsMain.EOF
     
     If rsMain.RecordCount = 0 Then
         MsgBox "Nessun paziente presente nel turno selezionato", vbInformation, "Informazione"
         Exit Sub
     ElseIf rsMain.RecordCount > 0 Then rsMain.MoveFirst
-                 
-    Do While Not rsMain.EOF
-        cont = 0
-        For i = 1 To 12
-            If Not IsNull(rsMain("MESE" & i)) Then
-                rsMain("MEDIA") = rsMain("MEDIA") + rsMain("MESE" & i)
-                cont = cont + 1
-            End If
-        Next i
-        If cont <> 0 Then
-            rsMain("MEDIA") = rsMain("MEDIA") / cont
-        Else
-            rsMain("MEDIA") = Null
-        End If
-        rsMain.MoveNext
-    Loop
-    
+  
     Set rsDataset = Nothing
     
     If rsMain.RecordCount <> 0 Then
@@ -1341,13 +1291,13 @@ gestione:
     CalcolaTsat = 0
 End Function
 
-'Private Function CalcolaPth(c1 As Single, c2 As Single) As Double
-'    On Error GoTo gestione
-'    CalcolaPth = Format(c1 / c2 * CSng("70,9"), "##.##")
-'    Exit Function
-'gestione:
-'    CalcolaPth = 0
-'End Function
+Private Function CalcolaKtv(c1 As Single, c2 As Single, c3 As Single, c4 As Single, c5 As Single) As Double
+    On Error GoTo gestione
+    CalcolaKtv = Format((4 - 3.5 * c1 / c2) * (c4 / c5) - Log(c1 / c2 - 0.008 * c3), "##.##")
+    Exit Function
+gestione:
+    CalcolaKtv = 0
+End Function
 
 Private Function CalcolaCap(c1 As Single, c2 As Single) As Double
     On Error GoTo gestione
@@ -1355,14 +1305,6 @@ Private Function CalcolaCap(c1 As Single, c2 As Single) As Double
     Exit Function
 gestione:
     CalcolaCap = 0
-End Function
-
-Private Function CalcolaKtv(c1 As Single, c2 As Single, c3 As Single, c4 As Single, c5 As Single) As Double
-    On Error GoTo gestione
-    CalcolaKtv = Format((4 - 3.5 * c1 / c2) * (c4 / c5) - Log(c1 / c2 - 0.008 * c3), "##.##")
-    Exit Function
-gestione:
-    CalcolaKtv = 0
 End Function
 
 Private Function GetCondizione()

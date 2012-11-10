@@ -338,6 +338,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub StampaPerMazzetteMensili()
+    On Error GoTo gestione
     Dim strShape As String
     Dim strSql As String
     Dim cnConn As Connection        ' connessione per lo shape
@@ -349,6 +350,10 @@ Private Sub StampaPerMazzetteMensili()
     ' totale dei totali
     Dim importoTotale As Currency
     Dim quantitaTotale As Integer
+
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
 
 
     If cboMese.ListIndex >= 6 And cboMese.ListIndex <= 9 And cboAnno.Text = 2010 Then
@@ -446,15 +451,20 @@ Private Sub StampaPerMazzetteMensili()
         rptRiepilogoPerMazzetteMensili.Orientation = rptOrientLandscape
         rptRiepilogoPerMazzetteMensili.LeftMargin = rptRiepilogoPerMazzetteMensili.LeftMargin / 4
         rptRiepilogoPerMazzetteMensili.RightMargin = rptRiepilogoPerMazzetteMensili.RightMargin / 4
-        rptRiepilogoPerMazzetteMensili.PrintReport True, rptRangeAllPages
+        rptRiepilogoPerMazzetteMensili.PrintReport False, rptRangeAllPages
     End If
     
     Set rsDataset = Nothing
     Set rsAppo = Nothing
     
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaPerPaziente()
+    On Error GoTo gestione
     Dim strShape As String
     Dim strSql As String
     Dim cnConn As Connection        ' connessione per lo shape
@@ -478,6 +488,10 @@ Private Sub StampaPerPaziente()
     Dim coeffTicket As Integer
     Dim coeffQuotaNazionale As Integer
     Dim coeffQuota As Single
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
         
     strShape = "SHAPE APPEND " & _
                 "               NEW adVarChar(45) AS PAZIENTE, " & _
@@ -609,13 +623,19 @@ Private Sub StampaPerPaziente()
     rptRiepilogoPerPaziente.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
     Set rptRiepilogoPerPaziente.DataSource = rsMain
     rptRiepilogoPerPaziente.Orientation = rptOrientLandscape
-    rptRiepilogoPerPaziente.PrintReport True, rptRangeAllPages
+    rptRiepilogoPerPaziente.PrintReport False, rptRangeAllPages
 
     Set rsDataset = Nothing
     Set rsAppo = Nothing
+    
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaPerTotaliPerPrestazione()
+    On Error GoTo gestione
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -625,6 +645,10 @@ Private Sub StampaPerTotaliPerPrestazione()
     ' totale dei totali
     Dim importoTotale As Currency
     Dim quantitaTotale As Integer
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
         
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(10) AS CODICE_PRESTAZIONE, " & _
@@ -681,14 +705,20 @@ Private Sub StampaPerTotaliPerPrestazione()
     Else
         rptRiepilogoPerTotaliPerPrestazione.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
         Set rptRiepilogoPerTotaliPerPrestazione.DataSource = rsMain
-        rptRiepilogoPerTotaliPerPrestazione.PrintReport True, rptRangeAllPages
+        rptRiepilogoPerTotaliPerPrestazione.PrintReport False, rptRangeAllPages
     End If
     
     Set rsDataset = Nothing
     Set rsAppo = Nothing
+    
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaFattura()
+    On Error GoTo gestione
     Dim strShape As String
     Dim strSql As String
     Dim cnConn As Connection        ' connessione per lo shape
@@ -713,6 +743,11 @@ Private Sub StampaFattura()
     Dim importoTotaleQuotaAggiuntiva As Currency
     Dim importoTotaleQuotaNazionale As Currency
     Dim importoTotaleNetto As Currency
+    
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
     
     importoTotale = 0
     importoTotaleNetto = 0
@@ -886,14 +921,20 @@ Private Sub StampaFattura()
         Set rptFattura.DataSource = rsMain
         rptFattura.RightMargin = 0
         rptFattura.LeftMargin = 0
-        rptFattura.PrintReport True, rptRangeAllPages
+        rptFattura.PrintReport False, rptRangeAllPages
     End If
     
     Set rsDataset = Nothing
     Set rsAppo = Nothing
+    
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaPerAslDistretto()
+    On Error GoTo gestione
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -919,6 +960,10 @@ Private Sub StampaPerAslDistretto()
     Dim totaleTicket As Currency
     Dim totaleQuotaAggiuntiva As Currency
     Dim totaleQuotaNazionale As Currency
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
 
     
     SQLString = "SHAPE APPEND " & _
@@ -1113,15 +1158,21 @@ Private Sub StampaPerAslDistretto()
     Set rptRiepilogoPerAslDistretto.DataSource = rsMain
     rptRiepilogoPerAslDistretto.RightMargin = 0
     rptRiepilogoPerAslDistretto.LeftMargin = 0
-    rptRiepilogoPerAslDistretto.PrintReport True, rptRangeAllPages
+    rptRiepilogoPerAslDistretto.PrintReport False, rptRangeAllPages
     End If
     
     Set rsRicette = Nothing
     Set rsDataset = Nothing
     Set rsAppo = Nothing
+    
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaTotaliPerAsl()
+    On Error GoTo gestione
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -1135,6 +1186,10 @@ Private Sub StampaTotaliPerAsl()
     Dim coeffTicket As Integer
     Dim coeffQuota As Single
     Dim coeffQuotaNazionale As Single
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
     
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(40) AS NOME, " & _
@@ -1328,12 +1383,18 @@ Private Sub StampaTotaliPerAsl()
     Set rptRiepilogoPerTotaliPerAsl.DataSource = rsMain
     rptRiepilogoPerTotaliPerAsl.RightMargin = 0
     rptRiepilogoPerTotaliPerAsl.LeftMargin = 0
-    rptRiepilogoPerTotaliPerAsl.PrintReport True, rptRangeAllPages
+    rptRiepilogoPerTotaliPerAsl.PrintReport False, rptRangeAllPages
     
     Set rsDataset = Nothing
+
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaRiepilogoImpegnative()
+    On Error GoTo gestione
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -1344,6 +1405,10 @@ Private Sub StampaRiepilogoImpegnative()
     Dim totaleRicette As Integer
     Dim totalePrestazioni As Integer
     Dim totaleLordo As Currency
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
     
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(25) AS NOME_ASL, " & _
@@ -1410,11 +1475,16 @@ Private Sub StampaRiepilogoImpegnative()
         rptRiepilogoImpegnative.LeftMargin = 1000
         rptRiepilogoImpegnative.RightMargin = 0
         rptRiepilogoImpegnative.Orientation = rptOrientLandscape
-        rptRiepilogoImpegnative.PrintReport True, rptRangeAllPages
+        rptRiepilogoImpegnative.PrintReport False, rptRangeAllPages
     End If
     
     Set rsAppo = Nothing
     Set rsDataset = Nothing
+    
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaPerAslNapoli2Nord()
@@ -1443,6 +1513,10 @@ Private Sub StampaPerAslNapoli2Nord()
     Dim totaleQuotaNazionale As Currency
     Dim totaleNetto As Currency
     Dim totaleNettoScontato As Currency
+    
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
 
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(30) AS NOME_ASL, " & _
@@ -1691,18 +1765,15 @@ Private Sub StampaPerAslNapoli2Nord()
         Set rptFatturaAslNapoli2Nord.DataSource = rsMain
         rptFatturaAslNapoli2Nord.RightMargin = 0
         rptFatturaAslNapoli2Nord.LeftMargin = 0
-        rptFatturaAslNapoli2Nord.PrintReport True, rptRangeAllPages
+        rptFatturaAslNapoli2Nord.PrintReport False, rptRangeAllPages
     End If
     
     Set rsDataset = Nothing
     Set rsAppo = Nothing
     
-    Exit Sub
 gestione:
-    If Err.Number = cdlCancel Then
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
         Exit Sub
-    Else
-        MsgBox "Descrizione: " & Err.Description, vbCritical, "Errore n# " & Err.Number
     End If
 End Sub
 
@@ -2083,6 +2154,7 @@ gestione:
 End Sub
 
 Private Sub StampaPerMazzetteDistretti()
+    On Error GoTo gestione
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -2096,6 +2168,9 @@ Private Sub StampaPerMazzetteDistretti()
     Dim totaleTotaleRicette As Integer
     Dim totaleTotaleQuantita As Integer
     
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
 
     If cboMese.ListIndex >= 5 And cboMese.ListIndex <= 8 And cboAnno.Text = 2010 Then
         MsgBox "Impossibile stampare solo per il mese di " & cboMese.Text & " " & cboAnno.Text & vbCrLf & "Selezionare l'opzione Stampa Giu. - Sett. 2010 in Stampa Mazzette Mensili", vbCritical, "Attenzione"
@@ -2258,15 +2333,20 @@ Private Sub StampaPerMazzetteDistretti()
     Else
         rptRiepilogoMazzettePerDistretto.Sections("Intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
         Set rptRiepilogoMazzettePerDistretto.DataSource = rsMain
-        rptRiepilogoMazzettePerDistretto.PrintReport True, rptRangeAllPages
+        rptRiepilogoMazzettePerDistretto.PrintReport False, rptRangeAllPages
     End If
     
     Set rsDataset = Nothing
     Set rsAppo = Nothing
     
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Sub StampaPerMazzettaSingola()
+    On Error GoTo gestione
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -2280,6 +2360,9 @@ Private Sub StampaPerMazzettaSingola()
     Dim vecchioNumeroPrestazioni As Integer
     Const numRecordInPag As Integer = 24
     
+    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
+    cdlStampa.CancelError = True
+    cdlStampa.ShowPrinter
     
     If cboMese.ListIndex >= 5 And cboMese.ListIndex <= 8 And cboAnno.Text = 2010 Then
         MsgBox "Impossibile stampare solo per il mese di " & cboMese.Text & " " & cboAnno.Text & vbCrLf & "Selezionare l'opzione Stampa Giu. - Sett. 2010 in Stampa Mazzette Mensili", vbCritical, "Attenzione"
@@ -2383,12 +2466,17 @@ Private Sub StampaPerMazzettaSingola()
         Set rptRiepilogoMazzettaSingola.DataSource = rsMain
         rptRiepilogoMazzettaSingola.LeftMargin = 0
         rptRiepilogoMazzettaSingola.RightMargin = 0
-        rptRiepilogoMazzettaSingola.PrintReport True, rptRangeAllPages
+        rptRiepilogoMazzettaSingola.PrintReport False, rptRangeAllPages
     End If
     
     Set rsRicette = Nothing
     Set rsAppo = Nothing
     Set rsDataset = Nothing
+    
+gestione:
+    If Err.Number = cdlCancel Then      ' se clicco ANNULLA nella finestra di scelta Stampante
+        Exit Sub
+    End If
 End Sub
 
 Private Function Completo() As Boolean

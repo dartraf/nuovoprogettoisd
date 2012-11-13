@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmEsamiPeriodici 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Esami periodici in ED"
@@ -767,7 +767,7 @@ Public Sub StampaPrescrizioni(intCodicePaziente As Integer, strPeriodo As String
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblTitolo").Caption = "Si richiedono i seguenti esami relativi al mese di: " & UCase(MeseRichiestaStampa) & " " & AnnoRichiestaStampa
         rptRichiestaEsamiLaboratorio.Sections("intestazione").Controls.Item("lblPaziente").Caption = strPaziente
         rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblDicitura").Caption = dicitura
-        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblData").Caption = "Data richiesta stampa, " & UCase(DataRichiestaStampa)
+        rptRichiestaEsamiLaboratorio.Sections("pie").Controls.Item("lblData").Caption = "Data, " & UCase(DataRichiestaStampa)
         rptRichiestaEsamiLaboratorio.PrintReport False, rptRangeAllPages
         
     Else
@@ -959,7 +959,7 @@ Private Sub AggiornaFlx(num As Integer)
     Next i
     Call ColoraFlx(flxGriglia(tEsamiPeriodici.periodo - 1), flxGriglia(tEsamiPeriodici.periodo - 1).Cols - 1)
     
-    MsgBox "Inserimento valore effettuato", vbInformation, "Inserimento"
+'    MsgBox "Inserimento valore effettuato", vbInformation, "Inserimento"
 End Sub
 
 Private Sub cmdStampa_Click()

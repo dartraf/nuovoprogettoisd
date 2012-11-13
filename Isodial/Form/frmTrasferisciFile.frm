@@ -6,12 +6,12 @@ Begin VB.Form frmTrasferisciFile
    ClientHeight    =   2400
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   4725
+   ClientWidth     =   4665
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   2400
-   ScaleWidth      =   4725
+   ScaleWidth      =   4665
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin MSComCtl2.Animation anmAvi 
@@ -31,7 +31,7 @@ Begin VB.Form frmTrasferisciFile
    Begin VB.Label lblScritta 
       AutoSize        =   -1  'True
       BackColor       =   &H8000000B&
-      Caption         =   "L'operazione potrebbe richiedere alcuni minuti"
+      Caption         =   "L'operazione richiedere alcuni minuti"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   9.75
@@ -42,11 +42,11 @@ Begin VB.Form frmTrasferisciFile
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00000000&
-      Height          =   720
-      Left            =   120
+      Height          =   240
+      Left            =   360
       TabIndex        =   2
       Top             =   720
-      Width           =   4440
+      Width           =   3960
       WordWrap        =   -1  'True
    End
    Begin VB.Label lblAttendi 
@@ -64,7 +64,7 @@ Begin VB.Form frmTrasferisciFile
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   435
-      Left            =   120
+      Left            =   840
       TabIndex        =   0
       Top             =   120
       Width           =   2850
@@ -99,7 +99,7 @@ Private Sub Form_Activate()
         If tPeriferica = tpBACKUP Then
             If nessunClient(numClient) Then
                 If nonCorrotto Then
-                    lblScritta = "Database integro. Backup in corso" & vbCrLf & "L'operazione potrebbe richiedere alcuni minuti"
+                    lblScritta = "Database integro. Backup in corso" & vbCrLf & "L'operazione richiede alcuni minuti"
                     Call Copia(lettera)
                 Else
                     MsgBox "Impossibile procedere al backup" & vbCrLf & "Ripristinare un precedente backup o richiedere l'intervento tecnico", vbCritical, "Database corrotto"
@@ -175,8 +175,8 @@ Private Sub Copia(lettera As String)
     anmAvi.Visible = False
     Screen.MousePointer = 0
     Me.Height = 1485
-    lblAttendi = "Premere un tasto per chiudere"
-    lblScritta = "Backup eseguito correttamente"
+    lblAttendi = "Premere un tasto"
+    lblScritta = "      Backup eseguito correttamente"
     Call BloccoCentri
     Me.SetFocus
     If SpegniPc Then

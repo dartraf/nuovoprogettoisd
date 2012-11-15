@@ -654,10 +654,10 @@ End Function
 ' @param inNomeTabella nome della tabella
 ' @return il primo key libero nella tabella
 ' @remarks utilizza metodi per velocizzare la ricerca, puo restituire numeri di record cancellati
-Public Function GetNumero(inNomeTabella As String) As Integer
+Public Function GetNumero(inNomeTabella As String) As Long
     Dim rsDataset As Recordset
     Dim blnTrovato As Boolean
-    Dim intNumero As Integer
+    Dim intNumero As Long
     
     Set rsDataset = New Recordset
     rsDataset.Open "SELECT COUNT(KEY) AS TOTALE FROM " & inNomeTabella, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText

@@ -785,10 +785,26 @@ Private Sub StampaPthAnnuale()
         Exit Sub
      End If
      rsDataset.Close
+     
+    'If optTutti.Value = True Or optSessione(0).Value = True Or optSessione(1).Value = True Or optSessione(2).Value = True Or optSessione(3).Value = True Or optSessione(4).Value = True Or optSessione(5).Value = True Then
+    '    prgBarra.Value = 0
+    '    panProgress.Visible = True
+    '    fraPulsanti.Top = 4080
+    '    Me.Height = 5400
+    'End If
+    'DoEvents
     
    Set rsDataselect = New Recordset
    cont = 0
    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If rsDataset.RecordCount > 0 Then       ' se ci sono record attiva la barra di progresso
+        prgBarra.Value = 0
+        panProgress.Visible = True
+        fraPulsanti.Top = 4080
+        Me.Height = 5400
+        prgBarra.max = rsDataset.RecordCount
+    End If
+    DoEvents
     Do While Not rsDataset.EOF
         With rsMain
             .AddNew
@@ -836,14 +852,25 @@ Private Sub StampaPthAnnuale()
         End With
         SommaMedia = 0
         cont = 0
+            
+        If optTutti.Value = True Or optSessione(0).Value = True Or optSessione(1).Value = True Or optSessione(2).Value = True Or optSessione(3).Value = True Or optSessione(4).Value = True Or optSessione(5).Value = True Then
+            prgBarra.Value = prgBarra.Value + 1
+            Else
+        End If
+        
         rsDataset.MoveNext
     Loop
     rsDataset.Close
-    
+   
     If rsMain.RecordCount = 0 Then
         MsgBox "Nessun paziente presente nel turno selezionato", vbInformation, "Informazione"
         Exit Sub
     ElseIf rsMain.RecordCount > 0 Then rsMain.MoveFirst
+      
+    prgBarra.Value = prgBarra.max
+    panProgress.Visible = False
+    fraPulsanti.Top = 3360
+    Me.Height = 4665
   
     Set rsDataset = Nothing
     

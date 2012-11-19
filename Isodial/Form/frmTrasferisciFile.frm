@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmTrasferisciFile 
    BackColor       =   &H8000000B&
    BorderStyle     =   4  'Fixed ToolWindow
@@ -14,19 +14,17 @@ Begin VB.Form frmTrasferisciFile
    ScaleWidth      =   4665
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
-   Begin MSComCtl2.Animation anmAvi 
-      Height          =   735
+   Begin MSComctlLib.ProgressBar ProgressBar1 
+      Height          =   615
       Left            =   120
-      TabIndex        =   1
-      Top             =   1560
-      Width           =   4455
-      _ExtentX        =   7858
-      _ExtentY        =   1296
+      TabIndex        =   2
+      Top             =   1680
+      Width           =   4335
+      _ExtentX        =   7646
+      _ExtentY        =   1085
       _Version        =   393216
-      Center          =   -1  'True
-      BackColor       =   -2147483637
-      FullWidth       =   297
-      FullHeight      =   49
+      Appearance      =   1
+      Scrolling       =   1
    End
    Begin VB.Label lblScritta 
       AutoSize        =   -1  'True
@@ -44,7 +42,7 @@ Begin VB.Form frmTrasferisciFile
       ForeColor       =   &H00000000&
       Height          =   240
       Left            =   360
-      TabIndex        =   2
+      TabIndex        =   1
       Top             =   720
       Width           =   3960
       WordWrap        =   -1  'True
@@ -148,13 +146,14 @@ Private Sub CaricaMaxBackup()
 End Sub
 
 Private Sub Copia(lettera As String)
+
     Dim tempo As Single
     Dim ret As Double
     On Error GoTo gestioneerror
     
     Screen.MousePointer = cc2Hourglass
-    anmAvi.Open App.Path & "\clip.avi"
-    anmAvi.Play
+   ' anmAvi.Open App.Path & "\clip.avi"
+   ' anmAvi.Play
     tempo = Timer
     Do
         DoEvents
@@ -171,8 +170,8 @@ Private Sub Copia(lettera As String)
     
     Call BackupArchivio(lettera)
     
-    anmAvi.Stop
-    anmAvi.Visible = False
+'    anmAvi.Stop
+'    anmAvi.Visible = False
     Screen.MousePointer = 0
     Me.Height = 1485
     lblAttendi = "Premere un tasto"
@@ -338,7 +337,25 @@ Private Sub BackupArchivio(lettera As String)
     Dim numFile As Integer
     numFile = GestisciFile(lettera)
     If SpazioSufficiente(lettera, FileLen(structApri.pathVolume & "\" & nomeVolume) / Megabyte) Then
-        FileCopy structApri.pathVolume & "\" & nomeVolume, lettera & ":\" & nomeVolume & numFile
+    
+    Dim fileorigine As String
+    Dim filedestinazione As String
+    fileorigine = structApri.pathVolume & "\" & nomeVolume
+    filedestinazione = lettera & ":\" & nomeVolume & numFile
+'If Len(Dir1.Path) > 3 Then
+'fileorigine = Trim(Dir1.Path) & "\" & Trim(File1.FileName)
+'Else
+'fileorigine = Trim(Dir1.Path) & Trim(File1.FileName)
+'End If
+'filedestinazione = Trim(Text1.Text)
+
+ Call CopiaFile(fileorigine, filedestinazione, ProgressBar1)
+ 'Call CopiaFile(fileorigine, filedestinazione, Form1!ProgressBar1)
+'Command3.Visible = True
+'Command1.Visible = False
+
+       
+       ' FileCopy structApri.pathVolume & "\" & nomeVolume, lettera & ":\" & nomeVolume & numFile
     Else
         MsgBox "Impossibile continuare" & vbCrLf & "Spazio insufficiente sull'unita' di backup", vbCritical, "Backup archivio"
     End If
@@ -376,7 +393,7 @@ Private Sub GestioneErrore()
             strMsg = Err.Description
     End Select
     Screen.MousePointer = 0
-    anmAvi.Stop
+ '   anmAvi.Stop
     If Err.Number <> 5 Then
         MsgBox "Errore n° 1 - " & strMsg, vbCritical, "Attenzione"
     End If

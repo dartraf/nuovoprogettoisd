@@ -1097,7 +1097,8 @@ Private Sub cmdElimina_Click()
     Dim numKey As Integer
     
     If Not Completo Then Exit Sub
-    If MsgBox("Sei sicuro di voler cancellare tutti i valori degli esami del paziente: " & UCase(lblCognome) & " " & UCase(lblNome) & " ?", vbQuestion + vbYesNo, "Eliminazione") = vbYes Then
+    
+    If MsgBox("Si è sicuri di eliminare i valori degli esami del paziente: " & UCase(lblCognome) & " " & UCase(lblNome) & " del " & oDataTimeBox.data & " ?", vbQuestion + vbYesNo, "Eliminazione") = vbYes Then
         Set rsEsami = New Recordset
         ' la data americana
         data = oDataTimeBox.DataAmericana

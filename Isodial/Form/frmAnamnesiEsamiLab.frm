@@ -699,7 +699,7 @@ Private Sub SalvaModifiche()
     Dim v_nomiEsami(1 To 4) As Variant
     Dim v_valEsami(1 To 4) As Variant
     Dim valore As Variant
-    Dim numKey As Integer
+    Dim numKey As Long
     Dim data As Date
     Dim i As Integer
     Dim strSql As String
@@ -811,7 +811,7 @@ Private Sub SalvaModifiche()
                 .TextMatrix(vRow, 0) = v_valEsami(1)
             End If
         Else
-            Dim intEsamiLabKey As Integer
+            Dim intEsamiLabKey As Long
             Dim intAnamnesiEsamiKey As Integer
             Dim blnEliminaAnamnesi As Boolean
             
@@ -912,10 +912,6 @@ Private Sub Confronta()
     rsDisco.Filter = "(ESAMI_LABKEY=" & rsEsami("ESAMI_LABKEY") & ")"
     If rsDisco("VALORE") <> rsEsami("VALORE") Then
         trovato = True
-    Else
-        trovato = False
-    End If
-    If trovato Then
         valori = VirgolaOrPunto(rsDisco("VALORE"), ",")
         ' aggiorna il rsDisco
         rsDisco("VALORE") = rsEsami("VALORE")
@@ -926,7 +922,10 @@ Private Sub Confronta()
         rsDataset.AddNew v_Nomi, v_Val
         rsDataset.Update
         Set rsDataset = Nothing
+    Else
+        trovato = False
     End If
+    
 End Sub
 
 '' Carica gli ultimi 5 esami precedenti a quello selezionato
@@ -1094,7 +1093,7 @@ Private Sub cmdElimina_Click()
     Dim cmCommand As New Command
     Dim data As Date
     Dim eliminato As Boolean
-    Dim numKey As Integer
+    Dim numKey As Long
     
     If Not Completo Then Exit Sub
     

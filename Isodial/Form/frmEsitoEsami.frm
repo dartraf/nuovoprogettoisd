@@ -660,10 +660,6 @@ Private Sub Confronta()
     rsDisco.Filter = " (ESAMI_LABKEY=" & rsEsami("ESAMI_LABKEY") & ")"
     If rsDisco("VALORE") <> rsEsami("VALORE") Then
         trovato = True
-    Else
-        trovato = False
-    End If
-    If trovato Then
         valori = VirgolaOrPunto(rsDisco("VALORE"), ",")
         ' aggiorna il rsDisco
         rsDisco("VALORE") = rsEsami("VALORE")
@@ -674,7 +670,10 @@ Private Sub Confronta()
         rsDataset.AddNew v_Nomi, v_Val
         rsDataset.Update
         Set rsDataset = Nothing
+    Else
+        trovato = False
     End If
+
 End Sub
 
 '' Permette il funzionamento della rotellina del mouse nella flx
@@ -963,7 +962,7 @@ Private Sub SalvaModifiche(ByRef outRefresh As Boolean)
     Dim v_Nomi(1 To 5) As Variant
     Dim v_Val(1 To 5) As Variant
     Dim valore As Variant
-    Dim numKey As Integer
+    Dim numKey As Long
     Dim data As Date
     Dim data_max As Date
     Dim data_min As Date
@@ -1059,7 +1058,7 @@ Private Sub SalvaModifiche(ByRef outRefresh As Boolean)
                 rsEsami.Close
             End If
         Else
-            Dim intEsamiLabKey As Integer
+            Dim intEsamiLabKey As Long
             Dim intAnamnesiEsamiKey As Integer
             Dim blnEliminaAnamnesi As Boolean
             
@@ -1169,7 +1168,7 @@ Private Sub cmdElimina_Click()
     Dim data_max As Date
     Dim data_min As Date
     Dim eliminato As Boolean
-    Dim numKey As Integer
+    Dim numKey As Long
     Dim cmCommand As New Command
     
     If Not Completo Then Exit Sub

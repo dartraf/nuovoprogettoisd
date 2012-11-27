@@ -1,16 +1,17 @@
 VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmPeriferiche 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Ripristina archivi"
-   ClientHeight    =   3465
+   ClientHeight    =   4095
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   3690
    Icon            =   "frmPeriferiche.frx":0000
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3465
+   ScaleHeight     =   4095
    ScaleWidth      =   3690
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -41,11 +42,23 @@ Begin VB.Form frmPeriferiche
       MouseIcon       =   "frmPeriferiche.frx":000C
    End
    Begin VB.Frame Frame2 
-      Height          =   855
+      Height          =   1455
       Left            =   120
       TabIndex        =   0
       Top             =   2520
       Width           =   3495
+      Begin MSComctlLib.ProgressBar ProgressBar1 
+         Height          =   495
+         Left            =   120
+         TabIndex        =   4
+         Top             =   840
+         Width           =   3255
+         _ExtentX        =   5741
+         _ExtentY        =   873
+         _Version        =   393216
+         Appearance      =   1
+         Scrolling       =   1
+      End
       Begin VB.CommandButton cmdRipristina 
          Cancel          =   -1  'True
          Caption         =   "&Ripristina"
@@ -59,7 +72,7 @@ Begin VB.Form frmPeriferiche
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   360
+         Left            =   280
          TabIndex        =   2
          Top             =   240
          Width           =   1260
@@ -109,6 +122,7 @@ Private Type structFile
     num As Integer
 End Type
 Dim records() As structFile
+Dim numFile As Integer
 Dim lettera As String
 
 Private Sub Form_Load()
@@ -126,12 +140,7 @@ Private Sub Form_Load()
         .MousePointer = flexCustom
     End With
     Call TakeCloseOff(Me.hWnd)
-    If VerificaDiscoRimovibile(lettera) Then
-        Call LeggiDati
-    Else
-        MsgBox "Impossibile effettuare il ripristino degli archivi", vbCritical, "Disco rimovibile non presente"
-        Unload Me
-    End If
+    Call LeggiDati
     flxGriglia.Row = 0
 End Sub
 
@@ -144,7 +153,7 @@ Private Sub LeggiDati()
     ReDim records(0)
     flxGriglia.Rows = 1
     
-    If Dir(lettera & ":\Dati.dat") <> "" Then
+    If VerificaDiscoRimovibile(lettera) And Dir(lettera & ":\Dati.dat") <> "" Then
         ' legge il file
         Open lettera & ":\Dati.dat" For Random As 1
         i = 0
@@ -218,27 +227,16 @@ Private Sub GestioneErrore()
     End Select
     Screen.MousePointer = 0
     Me.Enabled = True
-    MsgBox strMsg, vbCritical, "Attenzione"
+    MsgBox strMsg, vbCritical, "ATTENZIONE"
     Call ApriVolume
 End Sub
 
-' Ripristina il disco selezionato
+' Ripristina il volume selezionato
 Private Sub Ripristina()
     On Error GoTo gestioneerror
     Dim ret As Double
     Dim numClient As Integer
-
-    If Not nessunClient(numClient) Then
-        If MsgBox(numClient & " CLIENT COLLEGATI" & vbCrLf & "Disconnetto automaticamente gli altri utenti?", vbQuestion + vbYesNo, "Disconnessione") = vbYes Then
-            Call PulisciTabCLIENTI
-        Else
-            Exit Sub
-        End If
-    End If
-    If MsgBox("ATTENZIONE!!! Il ripristino sovrascrive tutti i dati attualmente in archivio." & vbCrLf & "Sicuro di voler ripristinare il vecchio archivio?", vbQuestion + vbYesNo, "Ripristino archivi") = vbNo Then
-        Exit Sub
-    End If
-    
+       
     ' prima chiude la connessione
     Set cnPrinc = Nothing
     Set cnTrac = Nothing
@@ -246,14 +244,30 @@ Private Sub Ripristina()
     Call Shell("NET SHARE RISORSA /DELETE", vbHide)
     ' smonta il volume
     ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe /d X /q /s /f", vbHide)
-    
-    tPeriferica = tpRIPRISTINA
-    frmTrasferisciFile.Show 1
+  
+    Screen.MousePointer = cc2Hourglass
+    numFile = frmPeriferiche!flxGriglia.TextMatrix(frmPeriferiche!flxGriglia.Row, 0)
+' If VerificaDiscoRimovibile(lettera) And Dir(lettera & ":\" & nomeVolume & numFile) <> "" Then
+    Dim fileorigine As String
+    Dim filedestinazione As String
+    fileorigine = lettera & ":\" & nomeVolume & numFile
+    filedestinazione = structApri.pathVolume & "\" & nomeVolume & numFile
+  ' ripristina il file
+
+    Call CopiaFile(fileorigine, filedestinazione, ProgressBar1)
+   
+  ' FileCopy lettera & ":\" & nomeVolume & numFile, structApri.pathVolume & "\" & nomeVolume & numFile
+  ' elimina il vecchio database
+    Kill structApri.pathVolume & "\" & nomeVolume
+    Name structApri.pathVolume & "\" & nomeVolume & numFile As structApri.pathVolume & "\" & nomeVolume
+
+    Screen.MousePointer = 0
+    Me.SetFocus
     
     Call ApriVolume
 
-
     Exit Sub
+
 gestioneerror:
     Call GestioneErrore
 End Sub
@@ -264,7 +278,7 @@ Private Sub ApriVolume()
     Call CaricaDati
     ' verifica che il db non sia corrotto
     If Not nonCorrotto Then
-        MsgBox "Impossibile procedere" & vbCrLf & "Ripristinare un precedente backup o richiedere l'intervento tecnico" & vbCrLf & "Accesso consentito al solo amministratore di sistema", vbCritical, "Database corrotto"
+        MsgBox "Impossibile procedere" & vbCrLf & "Ripristinare un precedente backup o contattare l'autore" & vbCrLf & "Accesso consentito al solo amministratore di sistema", vbCritical, "ATTENZIONE!!! DATABASE CORROTTO"
         isCorrotto = True
     Else
         isCorrotto = False
@@ -272,10 +286,18 @@ Private Sub ApriVolume()
 End Sub
 
 Private Sub cmdRipristina_Click()
-    If flxGriglia.Row <> 0 Then
+    If VerificaDiscoRimovibile(lettera) And Dir(lettera & ":\" & nomeVolume & numFile) = "" Then
+       MsgBox "Impossibile procedere al ripristino - Archivio inesistente", vbCritical, "ATTENZIONE!!!"
+       Exit Sub
+    ElseIf flxGriglia.Row <> 0 Then
+        If MsgBox("ATTENZIONE!!! Il ripristino sovrascrive tutti i dati attuali." & vbCrLf & "Sicuro di voler ripristinare i dati precedenti?", vbQuestion + vbYesNo, "RIPRISTINO ARCHIVI") = vbNo Then
+            Exit Sub
+        End If
         Call Ripristina
+        MsgBox "RIPRISTINO ARCHIVIO EFFETTUATO CORRETTAMENTE", vbInformation, "RIPRISTINO ARCHIVI"
+        Unload Me
     Else
-        MsgBox "Selezionare l'archivio da ripristinare", vbCritical, "Attenzione"
+        MsgBox "Selezionare l'archivio da ripristinare", vbCritical, "ATTENZIONE!!!"
     End If
 End Sub
 

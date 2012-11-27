@@ -34,7 +34,6 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Const Megabyte = 1048576
-Dim finito As Boolean
 Dim numClient As Integer
 
 Private Type structFile
@@ -46,17 +45,26 @@ Dim MAX_BACKUP As Integer
 
 Private Sub Form_Load()
     Call TakeCloseOff(Me.hWnd)
-    finito = False
 End Sub
 
 Private Sub Form_Activate()
    Dim lettera As String
    Me.Left = 5420
    Me.Top = 7000
-    If tPeriferica = tpBACKUP = False Then
-       Call RipristinaArchivio(lettera)
-    ElseIf VerificaDiscoRimovibile(lettera) = False Then
+    
+    'ATTENZIONE - NON CAMBIARE L'ORDINE DEGLI ELSEIF
+    If VerificaDiscoRimovibile(lettera) = False Then
            MsgBox "Impossibile effettuare il backup del database - CONNETTERE L'UNITA'", vbCritical, "UNITA' DI BACKUP NON PRESENTE"
+           tDisconnetti = tpDANNULLA
+ '   ElseIf tPeriferica = tpBACKUP = False Then
+ '          ProgressBar1.Width = 3200
+ '          Me.Left = 6000
+ '          Me.Top = 6800
+ '          Me.Width = 3390
+ '          Me.BackColor = &H8000000A
+ '          Call RipristinaArchivio(lettera)
+    ElseIf SpazioSufficiente(lettera, FileLen(structApri.pathVolume & "\" & nomeVolume) / Megabyte) = False Then
+           MsgBox "Impossibile continuare" & vbCrLf & "Spazio insufficiente sull'unita' di backup", vbCritical, "Backup Database"
            tDisconnetti = tpDANNULLA
     ElseIf nonCorrotto = False Then
            MsgBox "Impossibile procedere al backup" & vbCrLf & "Ripristinare un precedente backup o contattare l'autore", vbCritical, "ATTENZIONE!!! DATABASE CORROTTO"
@@ -67,12 +75,11 @@ Private Sub Form_Activate()
               Call PulisciTabCLIENTI
               Call Copia(lettera)
            Else
-              MsgBox ("Disconnettere TUTTI gli utenti e riavviare il backup")
+              MsgBox "Disconnettere TUTTI gli utenti e riavviare il backup", vbCritical, "BACKUP ARCHIVIO"
               tDisconnetti = tpDANNULLA
            End If
     Else
- '     lblScritta = "Database integro. Backup in corso" & vbCrLf & "L'operazione richiede alcuni minuti"
-       Call Copia(lettera)
+      Call Copia(lettera)
     End If
     Unload Me
 End Sub
@@ -84,7 +91,7 @@ End Sub
 'End Sub
 
 Private Sub CaricaMaxBackup()
-    ' carica il numeri di backup impostato dall'utente
+  ' carica il numero di backup impostato dall'utente
     Dim rsDataset As New Recordset
     rsDataset.Open "IMPOSTAZIONI_BACKUP", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
     MAX_BACKUP = rsDataset("NUMERO")
@@ -97,9 +104,9 @@ Private Sub Copia(lettera As String)
 
     On Error GoTo gestioneerror
     
-   ' Screen.MousePointer = cc2Hourglass
    ' anmAvi.Open App.Path & "\clip.avi"
    ' anmAvi.Play
+    
     tempo = Timer
     Do
      DoEvents
@@ -110,7 +117,7 @@ Private Sub Copia(lettera As String)
     
 '    anmAvi.Stop
 '    anmAvi.Visible = False
- '   Screen.MousePointer = 0
+    
     Call BloccoCentri
     Me.SetFocus
     If SpegniPc Then
@@ -120,7 +127,6 @@ Private Sub Copia(lettera As String)
         Loop Until tempo + 5 <= Timer
         Call Spegni
     End If
-    'finito = True
     Exit Sub
     
 gestioneerror:
@@ -232,85 +238,36 @@ gestione:
     MsgBox "Errore n° 3 - " & Err.Description, vbCritical, "Attenzione"
 End Function
 
-Private Sub RipristinaArchivio(lettera As String)
-    Dim tempo As Single
-    Dim numFile As Integer
-    
-    Screen.MousePointer = cc2Hourglass
- '   anmAvi.Open App.Path & "\clip.avi"
- '   anmAvi.Play
-    tempo = Timer
-    Do
-        DoEvents
-    Loop Until tempo + 1 <= Timer
-    
-    numFile = frmPeriferiche!flxGriglia.TextMatrix(frmPeriferiche!flxGriglia.Row, 0)
-    If Dir(lettera & ":\" & nomeVolume & numFile) <> "" Then
-        Dim fileorigine As String
-        Dim filedestinazione As String
-        fileorigine = lettera & ":\" & nomeVolume & numFile
-        filedestinazione = structApri.pathVolume & "\" & nomeVolume & numFile
-        ' ripristina il file
-
-        Call CopiaFile(fileorigine, filedestinazione, ProgressBar1)
-
-      ' FileCopy lettera & ":\" & nomeVolume & numFile, structApri.pathVolume & "\" & nomeVolume & numFile
-      ' elimina il vecchio database
-        Kill structApri.pathVolume & "\" & nomeVolume
-        Name structApri.pathVolume & "\" & nomeVolume & numFile As structApri.pathVolume & "\" & nomeVolume
-        lblScritta = "    Ripristino eseguito correttamente"
-    Else
-        MsgBox "Impossibile ripristinare - Archivio inesistente", vbCritical, "ATTENZIONE!!!"
-        lblScritta = "            Ripristino non eseguito"
-    End If
-  '  anmAvi.Stop
-  '  anmAvi.Visible = False
-    Screen.MousePointer = 0
-    Me.Height = 1485
-    lblAttendi = "Premere un tasto"
-    Me.SetFocus
-    finito = True
-End Sub
-
 Private Sub BackupArchivio(lettera As String)
-    ' effettua la copia del volume sul disco rimovibile
+  ' effettua la copia del volume sull'unità di backup (disco rimovibile)
     On Error GoTo gestione
     Dim ret As Double
     Dim numFile As Integer
+    
     numFile = GestisciFile(lettera)
-    If SpazioSufficiente(lettera, FileLen(structApri.pathVolume & "\" & nomeVolume) / Megabyte) Then
-        Screen.MousePointer = cc2Hourglass
-        ' chiude la connessione
-        Set cnPrinc = Nothing
-        Set cnTrac = Nothing
-        ' chiude la condivisione
-        Call Shell("NET SHARE RISORSA /DELETE", vbHide)
-        ' smonta il volume
-        ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe /d X /q /s /f", vbHide)
+    Screen.MousePointer = cc2Hourglass
+        
+  ' chiude la connessione
+    Set cnPrinc = Nothing
+    Set cnTrac = Nothing
+  ' chiude la condivisione
+    Call Shell("NET SHARE RISORSA /DELETE", vbHide)
+  ' smonta il volume
+    ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe /d X /q /s /f", vbHide)
 
-        Dim fileorigine As String
-        Dim filedestinazione As String
-        fileorigine = structApri.pathVolume & "\" & nomeVolume
-        filedestinazione = lettera & ":\" & nomeVolume & numFile
+    Dim fileorigine As String
+    Dim filedestinazione As String
+    fileorigine = structApri.pathVolume & "\" & nomeVolume
+    filedestinazione = lettera & ":\" & nomeVolume & numFile
 
-        Call CopiaFile(fileorigine, filedestinazione, ProgressBar1)
-        Screen.MousePointer = 0
-  '      Me.Height = 1485
-  '      lblAttendi = "Premere un tasto"
-  '      lblScritta = "      Backup eseguito correttamente"
-       
-       ' FileCopy structApri.pathVolume & "\" & nomeVolume, lettera & ":\" & nomeVolume & numFile
-    Else
-        MsgBox "Impossibile continuare" & vbCrLf & "Spazio insufficiente sull'unita' di backup", vbCritical, "Backup Database"
-  '      tDisconnetti = tpDANNULLA
-  '      Unload Me
-    End If
+    Call CopiaFile(fileorigine, filedestinazione, ProgressBar1)
+    Screen.MousePointer = 0
     Exit Sub
 gestione:
     If Err.Number = 70 Then
-        MsgBox "Impossibile effettuare il backup" & vbCrLf & "Disconnettere prima gli altri utenti client", vbCritical, "Attenzione"
+        MsgBox "IMPOSSIBILE EFFETTUARE IL BACKUP - Altri utenti sono connessi ad ISODIAL" & vbCrLf & "Disconnetterli TUTTI e riavviare il backup", vbCritical, "ATTENZIONE!!!"
     Else
-        MsgBox "Errore n°: 2 - " & Err.Description, vbCritical, "Attenzione"
+        MsgBox "Errore n°: 2 - " & Err.Description, vbCritical, "ATTENZIONE!!!"
     End If
     tDisconnetti = tpDANNULLA
     Unload Me
@@ -339,7 +296,6 @@ Private Sub GestioneErrore()
             strMsg = Err.Description
     End Select
     Screen.MousePointer = 0
- '   anmAvi.Stop
     If Err.Number <> 5 Then
         MsgBox "Errore n° 1 - " & strMsg, vbCritical, "Attenzione"
     End If

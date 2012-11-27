@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "05/11/2012"
+            TextSave        =   "27/11/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1080,7 +1080,20 @@ Private Sub mnuRimborsi_Click()
 End Sub
 
 Private Sub mnuRipristina_Click()
-    frmPeriferiche.Show 1
+    Dim lettera As String
+    Dim numClient As Integer
+    If VerificaDiscoRimovibile(lettera) = False Then
+       MsgBox "Impossibile procedere al ripristino - CONNETTERE L'UNITA'", vbCritical, "UNITA' DI BACKUP NON PRESENTE"
+    ElseIf nessunClient(numClient) = False Then
+           If MsgBox("ATTENZIONE!!! Altri utenti sono connessi ad ISODIAL - Li disconnetto automaticamente?", vbQuestion + vbYesNo, "CONTROLLO UTENTI") = vbYes Then
+             Call PulisciTabCLIENTI
+             frmPeriferiche.Show 1
+           Else
+              MsgBox "Disconnettere TUTTI gli utenti e riavviare il ripristino", vbCritical, "RIPRISTINO ARCHIVIO"
+           End If
+    Else
+        frmPeriferiche.Show 1
+    End If
 End Sub
 
 Private Sub mnuSchedaDialiticaSettimanale_Click()

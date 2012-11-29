@@ -2,9 +2,9 @@ VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
-Begin VB.Form frmTsat 
+Begin VB.Form frmProdottoCalcioFosforo 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Calcolo TSAT %"
+   Caption         =   "Calcolo Prodotto Ca / P"
    ClientHeight    =   4785
    ClientLeft      =   45
    ClientTop       =   315
@@ -37,7 +37,7 @@ Begin VB.Form frmTsat
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "Tabella"
-      TabPicture(0)   =   "frmTsat.frx":0000
+      TabPicture(0)   =   "frmProdottoCalcioFosforo.frx":0000
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Frame4"
       Tab(0).Control(0).Enabled=   0   'False
@@ -45,12 +45,12 @@ Begin VB.Form frmTsat
       Tab(0).Control(1).Enabled=   0   'False
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Grafico 2D"
-      TabPicture(1)   =   "frmTsat.frx":001C
+      TabPicture(1)   =   "frmProdottoCalcioFosforo.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "grafico(0)"
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
-      TabPicture(2)   =   "frmTsat.frx":0038
+      TabPicture(2)   =   "frmProdottoCalcioFosforo.frx":0038
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "grafico(1)"
       Tab(2).ControlCount=   1
@@ -81,9 +81,9 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            ItemData        =   "frmTsat.frx":0054
+            ItemData        =   "frmProdottoCalcioFosforo.frx":0054
             Left            =   960
-            List            =   "frmTsat.frx":0056
+            List            =   "frmProdottoCalcioFosforo.frx":0056
             Style           =   2  'Dropdown List
             TabIndex        =   11
             Top             =   300
@@ -121,7 +121,7 @@ Begin VB.Form frmTsat
             Cols            =   13
             ScrollTrack     =   -1  'True
             MousePointer    =   15
-            FormatString    =   $"frmTsat.frx":0058
+            FormatString    =   $"frmProdottoCalcioFosforo.frx":0058
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -131,7 +131,7 @@ Begin VB.Form frmTsat
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            MouseIcon       =   "frmTsat.frx":0134
+            MouseIcon       =   "frmProdottoCalcioFosforo.frx":0138
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -160,7 +160,7 @@ Begin VB.Form frmTsat
          Top             =   2880
          Width           =   11895
          Begin VB.CommandButton cmdEsportaEsame 
-            Caption         =   "&Esporta TSAT%"
+            Caption         =   "&Esporta Prodotto Ca / P"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -171,10 +171,10 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   3840
+            Left            =   3000
             TabIndex        =   21
             Top             =   240
-            Width           =   1935
+            Width           =   2775
          End
          Begin VB.CommandButton cmdStampa 
             Caption         =   "&Stampa"
@@ -188,7 +188,7 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   495
-            Left            =   2280
+            Left            =   1440
             TabIndex        =   20
             Top             =   240
             Width           =   1335
@@ -251,7 +251,7 @@ Begin VB.Form frmTsat
          Height          =   3495
          Index           =   0
          Left            =   -74880
-         OleObjectBlob   =   "frmTsat.frx":028E
+         OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":0292
          TabIndex        =   5
          Top             =   360
          Width           =   11895
@@ -260,7 +260,7 @@ Begin VB.Form frmTsat
          Height          =   3495
          Index           =   1
          Left            =   -74880
-         OleObjectBlob   =   "frmTsat.frx":2F3A
+         OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":2F3E
          TabIndex        =   9
          Top             =   360
          Width           =   11895
@@ -276,7 +276,7 @@ Begin VB.Form frmTsat
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   360
-         Picture         =   "frmTsat.frx":5BCF
+         Picture         =   "frmProdottoCalcioFosforo.frx":5BD3
          Style           =   1  'Graphical
          TabIndex        =   16
          Top             =   240
@@ -395,7 +395,7 @@ Begin VB.Form frmTsat
       End
    End
 End
-Attribute VB_Name = "frmTsat"
+Attribute VB_Name = "frmProdottoCalcioFosforo"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -403,7 +403,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Dim lettera As String
-Dim rsTSAT As Recordset
+Dim rsProdottoCalcioFosforo As Recordset
 Dim vCol As Integer
 Dim vRow As Integer
 Dim objAnnulla As CAnnulla
@@ -472,29 +472,31 @@ End Sub
 
 Private Sub SalvaModifiche()
     Dim nome_campo As String
+    
     With flxGriglia
         Select Case vRow
             Case 1: nome_campo = "GIORNO"
-            Case 2: nome_campo = "SIDEREMIA"
-            Case 3: nome_campo = "TRANSFERRINA"
+            Case 2: nome_campo = "CALCEMIA"
+            Case 3: nome_campo = "FOSFOREMIA"
         End Select
-        Set rsTSAT = New Recordset
-        rsTSAT.Open "SELECT * FROM TSAT WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND MESE=" & vCol & " AND ANNO=" & cboAnno.Text, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-        If rsTSAT.EOF And rsTSAT.BOF Then
-            ' nn esiste e quindi lo aggiunge
-            rsTSAT.AddNew
-            rsTSAT("KEY") = GetNumero("TSAT")
-            rsTSAT("CODICE_PAZIENTE") = intPazientiKey
-            rsTSAT("ANNO") = cboAnno.Text
-            rsTSAT("MESE") = vCol
-            rsTSAT(nome_campo) = IIf(.TextMatrix(vRow, vCol) = "", Null, VirgolaOrPunto(.TextMatrix(vRow, vCol), ","))
-            rsTSAT.Update
+        
+        Set rsProdottoCalcioFosforo = New Recordset
+        rsProdottoCalcioFosforo.Open "SELECT * FROM PRODOTTO_CALCIO_FOSFORO WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND MESE=" & vCol & " AND ANNO=" & cboAnno.Text, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        If rsProdottoCalcioFosforo.EOF And rsProdottoCalcioFosforo.BOF Then
+            ' non esiste e quindi lo aggiunge
+            rsProdottoCalcioFosforo.AddNew
+            rsProdottoCalcioFosforo("KEY") = GetNumero("PRODOTTO_CALCIO_FOSFORO")
+            rsProdottoCalcioFosforo("CODICE_PAZIENTE") = intPazientiKey
+            rsProdottoCalcioFosforo("ANNO") = cboAnno.Text
+            rsProdottoCalcioFosforo("MESE") = vCol
+            rsProdottoCalcioFosforo(nome_campo) = IIf(.TextMatrix(vRow, vCol) = "", Null, VirgolaOrPunto(.TextMatrix(vRow, vCol), ","))
+            rsProdottoCalcioFosforo.Update
         Else
            '  esiste e lo modifica
-            rsTSAT(nome_campo) = IIf(.TextMatrix(vRow, vCol) = "", Null, VirgolaOrPunto(.TextMatrix(vRow, vCol), ","))
-            rsTSAT.Update
+            rsProdottoCalcioFosforo(nome_campo) = IIf(.TextMatrix(vRow, vCol) = "", Null, VirgolaOrPunto(.TextMatrix(vRow, vCol), ","))
+            rsProdottoCalcioFosforo.Update
         End If
-        Set rsTSAT = Nothing
+        Set rsProdottoCalcioFosforo = Nothing
     End With
 End Sub
 
@@ -511,6 +513,7 @@ Private Sub Pulisci()
     Dim i As Integer
     Dim k As Integer
     For i = 1 To 12
+    
         For k = 1 To flxGriglia.Rows - 1
             flxGriglia.TextMatrix(k, i) = ""
         Next k
@@ -519,16 +522,17 @@ Private Sub Pulisci()
             grafico(k).Row = i
             grafico(k).data = 0
         Next k
+        
     Next i
 End Sub
 
-Private Function CalcolaTsat(vCol As Integer) As Double
-    On Error GoTo gestione
+Private Function CalcoloProdottoCalcioFosforo(vCol As Integer) As Double
+    On Error GoTo gestione      'da vedere il calcolo
 
     'Sideremia/Transferrina*70,9
     With flxGriglia
         If .TextMatrix(2, vCol) <> "" And .TextMatrix(3, vCol) <> "" Then
-            CalcolaTsat = Format(VirgolaOrPunto(.TextMatrix(2, vCol), ".") / VirgolaOrPunto(.TextMatrix(3, vCol), ".") * CSng("70,9"), "##.##")
+            CalcoloProdottoCalcioFosforo = Format(VirgolaOrPunto(.TextMatrix(2, vCol), ".") / VirgolaOrPunto(.TextMatrix(3, vCol), ".") * CSng("70,9"), "##.##")
         Else
             Exit Function
         End If
@@ -579,9 +583,11 @@ End Sub
 
 Private Sub CaricaPaziente()
     Dim rsDataset As Recordset
+    
     If intPazientiKey = 0 Then
         Exit Sub
     End If
+    
     ' carica i dati del paziente
     Set rsDataset = New Recordset
     rsDataset.Open "SELECT COGNOME,NOME,DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
@@ -601,36 +607,38 @@ Private Sub CaricaPaziente()
     Call CaricaScheda
 End Sub
 
-'' elimina l'esame tsat del mese
+'' elimina i valori nella tabella PRODOTTO_CALCIO_FOSFORO
 Private Sub Elimina()
-    Set rsTSAT = New Recordset
-    rsTSAT.Open "SELECT * FROM TSAT WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND MESE=" & vCol & " AND ANNO=" & cboAnno.Text, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-    If Not (rsTSAT.EOF And rsTSAT.BOF) Then
-        rsTSAT.Delete
-        rsTSAT.Update
+    Set rsProdottoCalcioFosforo = New Recordset
+    rsProdottoCalcioFosforo.Open "SELECT * FROM PRODOTTO_CALCIO_FOSFORO WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND MESE=" & vCol & " AND ANNO=" & cboAnno.Text, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+    If Not (rsProdottoCalcioFosforo.EOF And rsProdottoCalcioFosforo.BOF) Then
+        rsProdottoCalcioFosforo.Delete
+        rsProdottoCalcioFosforo.Update
     End If
-    Set rsTSAT = Nothing
+    Set rsProdottoCalcioFosforo = Nothing
 End Sub
 
 Private Sub CaricaScheda()
     Dim i As Integer
     Dim k As Integer
     Dim valore As Single
+    
     vRow = 0
     vCol = 0
+    
     ' pulisce l'oggetto
     objAnnulla.Refresh
     cmdAnnulla.Enabled = False
     With flxGriglia
         For i = 1 To 12
-            Set rsTSAT = New Recordset
-            rsTSAT.Open "SELECT * FROM TSAT WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND ANNO=" & cboAnno.Text & " AND MESE=" & i, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-            If Not (rsTSAT.EOF And rsTSAT.BOF) Then
-                .TextMatrix(1, i) = rsTSAT("GIORNO") & ""
-                .TextMatrix(2, i) = VirgolaOrPunto(rsTSAT("SIDEREMIA") & "", ",")
-                .TextMatrix(3, i) = VirgolaOrPunto(rsTSAT("TRANSFERRINA") & "", ",")
+            Set rsProdottoCalcioFosforo = New Recordset
+            rsProdottoCalcioFosforo.Open "SELECT * FROM PRODOTTO_CALCIO_FOSFORO WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND ANNO=" & cboAnno.Text & " AND MESE=" & i, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+            If Not (rsProdottoCalcioFosforo.EOF And rsProdottoCalcioFosforo.BOF) Then
+                .TextMatrix(1, i) = rsProdottoCalcioFosforo("GIORNO") & ""
+                .TextMatrix(2, i) = VirgolaOrPunto(rsProdottoCalcioFosforo("CALCEMIA") & "", ",")
+                .TextMatrix(3, i) = VirgolaOrPunto(rsProdottoCalcioFosforo("FOSFOREMIA") & "", ",")
                 
-                valore = CalcolaTsat(i)
+                valore = CalcoloProdottoCalcioFosforo(i)
                 .TextMatrix(4, i) = VirgolaOrPunto(CStr(valore), ",")
                 For k = 0 To 1
                     grafico(k).Column = 1
@@ -638,9 +646,9 @@ Private Sub CaricaScheda()
                     grafico(k).data = valore
                 Next k
             End If
-            rsTSAT.Close
+            rsProdottoCalcioFosforo.Close
         Next i
-        Set rsTSAT = Nothing
+        Set rsProdottoCalcioFosforo = Nothing
     End With
 End Sub
 
@@ -651,6 +659,8 @@ Private Sub cmdEsportaEsame_Click()
     Dim keyAnamnesi As Integer
     Dim keyRecord As Integer
     Dim keyNuovo As Integer
+    
+    MsgBox "DA FARE", vbExclamation, "ATTENZIONE"
     
     If flxGriglia.TextMatrix(4, vCol) = "" Then
         MsgBox "IMPOSSIBILE ESPORTARE!!!" & vbCrLf & "Valori non definiti", vbCritical, "Attenzione"
@@ -779,22 +789,24 @@ Private Sub cmdEsportaEsame_Click()
 End Sub
 
 Private Sub cmdImportaEsami_Click()
-    Dim rsDataset As Recordset
+    Dim rsDataset As Recordset          ' da controllare l'importa esami con le date degl' esami
     Dim continua As Boolean
     Dim strSql As String
     
     If flxGriglia.Col = 0 Then
         MsgBox "Selezionare il mese degli esami da importare", vbInformation, "Informazione"
     Else
+    
         strSql = "SELECT    VOCI_ESAMI.NOME AS VOCI_ESAMINOME, VALORE, DATA " & _
                 "FROM       ((ANAMNESI_ESAMI " & _
                 "           INNER JOIN ESAMI_LAB ON ANAMNESI_ESAMI.KEY=ESAMI_LAB.CODICE_ANAMNESI_ESAMI) " & _
                 "           INNER JOIN VOCI_ESAMI ON VOCI_ESAMI.KEY=ESAMI_LAB.CODICE_ESAME) " & _
                 "WHERE      CODICE_PAZIENTE=" & intPazientiKey & " AND " & _
-                "           (NOME LIKE '%Sideremia%' OR NOME LIKE '%Trasferrina%' OR NOME LIKE '%Transferrina%') AND " & _
+                "           (NOME LIKE '%Fosforemia%' OR NOME LIKE '%FOSFOREMIA%' OR NOME LIKE '%Calcemia%' OR NOME LIKE '%CALCEMIA%') AND " & _
                 "           MONTH([DATA])=" & flxGriglia.Col & " AND " & _
                 "           YEAR([DATA])=" & cboAnno.Text & " " & _
                 "ORDER BY   DATA DESC"
+        
         Set rsDataset = New Recordset
         rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
@@ -808,24 +820,27 @@ Private Sub cmdImportaEsami_Click()
                 continua = True
             End If
             If continua Then
-                rsDataset.Filter = "VOCI_ESAMINOME LIKE '%Trasferrina%' OR VOCI_ESAMINOME LIKE '%Transferrina%'"
+                rsDataset.Filter = "VOCI_ESAMINOME LIKE '%Fosforemia%' OR VOCI_ESAMINOME LIKE '%FOSFOREMIA%'"
                 If Not (rsDataset.EOF And rsDataset.BOF) Then
                     flxGriglia.TextMatrix(3, flxGriglia.Col) = VirgolaOrPunto(rsDataset("VALORE"), ",")
                     vRow = 3
                     Call SalvaModifiche
                 End If
-                rsDataset.Filter = "VOCI_ESAMINOME LIKE '%Sideremia%'"
+                rsDataset.Filter = "VOCI_ESAMINOME LIKE '%Calcemia%' OR VOCI_ESAMINOME LIKE '%CALCEMIA%'"
                 If Not (rsDataset.EOF And rsDataset.BOF) Then
                     flxGriglia.TextMatrix(2, flxGriglia.Col) = VirgolaOrPunto(rsDataset("VALORE"), ",")
                     vRow = 2
                     Call SalvaModifiche
                 End If
-                ' tsat
-                flxGriglia.TextMatrix(4, flxGriglia.Col) = VirgolaOrPunto(CStr(CalcolaTsat(flxGriglia.Col)), ",")
-                ' giorno
+                
+                ' Prodotto Ca / P
+                flxGriglia.TextMatrix(4, flxGriglia.Col) = VirgolaOrPunto(CStr(CalcoloProdottoCalcioFosforo(flxGriglia.Col)), ",")
+                
+                ' Giorno
                 flxGriglia.TextMatrix(1, flxGriglia.Col) = Day(rsDataset("DATA"))
                 vRow = 1
                 Call SalvaModifiche
+            
             End If
         Else
             MsgBox "Nessun esame per il mese selezionato", vbInformation, "Importa esami"
@@ -867,44 +882,44 @@ Private Sub cmdStampa_Click()
                     "       NEW adVarChar (10) as GIORNO_NOV, " & _
                     "       NEW adVarChar (10) as GIORNO_DIC, "
     strSql = strSql & _
-                    "       NEW adVarChar (10) as SIDEREMIA_GEN, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_FEB, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_MAR, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_APR, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_MAG, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_GIU, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_LUG, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_AGO, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_SET, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_OTT, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_NOV, " & _
-                    "       NEW adVarChar (10) as SIDEREMIA_DIC, "
+                    "       NEW adVarChar (10) as CALCEMIA_GEN, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_FEB, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_MAR, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_APR, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_MAG, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_GIU, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_LUG, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_AGO, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_SET, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_OTT, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_NOV, " & _
+                    "       NEW adVarChar (10) as CALCEMIA_DIC, "
     strSql = strSql & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_GEN, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_FEB, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_MAR, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_APR, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_MAG, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_GIU, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_LUG, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_AGO, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_SET, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_OTT, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_NOV, " & _
-                    "       NEW adVarChar (10) as TRANSFERRINA_DIC, "
+                    "       NEW adVarChar (10) as FOSFOREMIA_GEN, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_FEB, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_MAR, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_APR, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_MAG, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_GIU, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_LUG, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_AGO, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_SET, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_OTT, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_NOV, " & _
+                    "       NEW adVarChar (10) as FOSFOREMIA_DIC, "
     strSql = strSql & _
-                    "       NEW adVarChar (10) as TSAT_GEN, " & _
-                    "       NEW adVarChar (10) as TSAT_FEB, " & _
-                    "       NEW adVarChar (10) as TSAT_MAR, " & _
-                    "       NEW adVarChar (10) as TSAT_APR, " & _
-                    "       NEW adVarChar (10) as TSAT_MAG, " & _
-                    "       NEW adVarChar (10) as TSAT_GIU, " & _
-                    "       NEW adVarChar (10) as TSAT_LUG, " & _
-                    "       NEW adVarChar (10) as TSAT_AGO, " & _
-                    "       NEW adVarChar (10) as TSAT_SET, " & _
-                    "       NEW adVarChar (10) as TSAT_OTT, " & _
-                    "       NEW adVarChar (10) as TSAT_NOV, " & _
-                    "       NEW adVarChar (10) as TSAT_DIC "
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_GEN, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_FEB, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_MAR, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_APR, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_MAG, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_GIU, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_LUG, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_AGO, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_SET, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_OTT, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_NOV, " & _
+                    "       NEW adVarChar (10) as PRODOTTO_CALCIO_FOSFORO_DIC "
 
                  
          
@@ -933,38 +948,38 @@ Private Sub cmdStampa_Click()
     With rsMain
         .AddNew
         
-        Set rsTSAT = New Recordset
+        Set rsProdottoCalcioFosforo = New Recordset
         For i = 1 To 12
-            rsTSAT.Open "SELECT * FROM TSAT WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND ANNO=" & cboAnno.Text & " AND MESE=" & i, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-            If Not (rsTSAT.EOF And rsTSAT.BOF) Then
-                .Fields("GIORNO_" & vett(i)) = rsTSAT("GIORNO") & ""
-                .Fields("SIDEREMIA_" & vett(i)) = VirgolaOrPunto(rsTSAT("SIDEREMIA") & "", ",")
-                .Fields("TRANSFERRINA_" & vett(i)) = VirgolaOrPunto(rsTSAT("TRANSFERRINA") & "", ",")
-                If .Fields("SIDEREMIA_" & vett(i)) <> "" And .Fields("TRANSFERRINA_" & vett(i)) <> "" Then
-                    valore = Format(.Fields("SIDEREMIA_" & vett(i)) / .Fields("TRANSFERRINA_" & vett(i)) * CSng("70,9"), "##.##")
-                    .Fields("TSAT_" & vett(i)) = VirgolaOrPunto(CStr(valore), ",")
+            rsProdottoCalcioFosforo.Open "SELECT * FROM PRODOTTO_CALCIO_FOSFORO WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND ANNO=" & cboAnno.Text & " AND MESE=" & i, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+            If Not (rsProdottoCalcioFosforo.EOF And rsProdottoCalcioFosforo.BOF) Then
+                .Fields("GIORNO_" & vett(i)) = rsProdottoCalcioFosforo("GIORNO") & ""
+                .Fields("CALCEMIA_" & vett(i)) = VirgolaOrPunto(rsProdottoCalcioFosforo("CALCEMIA") & "", ",")
+                .Fields("FOSFOREMIA_" & vett(i)) = VirgolaOrPunto(rsProdottoCalcioFosforo("FOSFOREMIA") & "", ",")
+                If .Fields("CALCEMIA_" & vett(i)) <> "" And .Fields("FOSFOREMIA_" & vett(i)) <> "" Then
+                    valore = Format(.Fields("CALCEMIA_" & vett(i)) / .Fields("FOSFOREMIA_" & vett(i)) * CSng("70,9"), "##.##")
+                    .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = VirgolaOrPunto(CStr(valore), ",")
                 Else
-                    .Fields("TSAT_" & vett(i)) = ""
+                    .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = ""
                 End If
             Else
                 .Fields("GIORNO_" & vett(i)) = ""
-                .Fields("SIDEREMIA_" & vett(i)) = ""
-                .Fields("TRANSFERRINA_" & vett(i)) = ""
-                .Fields("TSAT_" & vett(i)) = ""
+                .Fields("CALCEMIA_" & vett(i)) = ""
+                .Fields("FOSFOREMIA_" & vett(i)) = ""
+                .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = ""
             End If
-            rsTSAT.Close
+            rsProdottoCalcioFosforo.Close
         Next i
-        Set rsTSAT = Nothing
+        Set rsProdottoCalcioFosforo = Nothing
     End With
 
-    Set rptCalcoloTsat.DataSource = rsMain
-    rptCalcoloTsat.TopMargin = 0
-    rptCalcoloTsat.BottomMargin = 0
-    rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
-    rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
-    rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
-    rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
-    rptCalcoloTsat.PrintReport True, rptRangeAllPages
+    Set rptProdottoCalcioFosforo.DataSource = rsMain
+    rptProdottoCalcioFosforo.TopMargin = 0
+    rptProdottoCalcioFosforo.BottomMargin = 0
+    rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
+    rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
+    rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
+    rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
+    rptProdottoCalcioFosforo.PrintReport True, rptRangeAllPages
 End Sub
 
 Private Sub cmdChiudi_Click()
@@ -977,13 +992,15 @@ Private Sub cmdAnnulla_Click()
     Dim Col As Integer
     Dim Row As Integer
     Dim valore As Single
+    
     Dato = objAnnulla.Dato
     Col = objAnnulla.Col
+    
     ' row identifica la riga e non il key
     Row = objAnnulla.Row
     With flxGriglia
         .TextMatrix(Row, Col) = Dato
-        valore = CalcolaTsat(Col)
+        valore = CalcoloProdottoCalcioFosforo(Col)
         .TextMatrix(4, Col) = VirgolaOrPunto(CStr(valore), ",")
         For k = 0 To 1
             grafico(k).Column = 1
@@ -991,6 +1008,7 @@ Private Sub cmdAnnulla_Click()
             grafico(k).data = valore
         Next k
         objAnnulla.Remove
+        
         ' modifica anche il db
         vRow = Row
         Call SalvaModifiche
@@ -1088,7 +1106,7 @@ Private Sub txtAppo_LostFocus()
     Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, vRow)
     cmdAnnulla.Enabled = True
     Call SalvaModifiche
-    valore = CalcolaTsat(vCol)
+    valore = CalcoloProdottoCalcioFosforo(vCol)
     flxGriglia.TextMatrix(4, vCol) = VirgolaOrPunto(CStr(valore), ",")
     For k = 0 To 1
         grafico(k).Column = 1

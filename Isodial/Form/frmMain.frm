@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "27/11/2012"
+            TextSave        =   "28/11/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1023,7 +1023,7 @@ Private Sub mnugestioneIndicatoriSotto_Click(Index As Integer)
     Select Case Index
         Case 1: frmKtv.Show
         Case 2: frmTsat.Show
-        Case 3: MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
+        Case 3: frmProdottoCalcioFosforo.Show            'MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
         Case 4: frmEventi.Show
         Case 5: frmColture.Show
         Case 6: frmEpo.Show

@@ -186,9 +186,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
             Name            =   "Times New Roman"
             Size            =   26.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "CALCOLO KT/V"

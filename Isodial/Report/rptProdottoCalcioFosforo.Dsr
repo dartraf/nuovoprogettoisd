@@ -1,7 +1,7 @@
 VERSION 5.00
-Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat 
+Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptProdottoCalcioFosforo 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Calcolo Tsat"
+   Caption         =   "Calcolo Prodotto Ca / P"
    ClientHeight    =   9420
    ClientLeft      =   45
    ClientTop       =   315
@@ -178,9 +178,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lbl"
-         Object.Left            =   2494
-         Object.Top             =   2382
-         Object.Width           =   4545
+         Object.Left            =   624
+         Object.Top             =   2381
+         Object.Width           =   7313
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -191,7 +191,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "CALCOLO TSAT %"
+         Object.Caption         =   "CALCOLO PRODOTTO Ca / P"
          Alignment       =   2
       EndProperty
       ItemType9       =   3
@@ -636,7 +636,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Sideremia (mcg/dl)"
+         Object.Caption         =   "Calcemia (mg/dl)"
       EndProperty
       ItemType17      =   3
       BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -655,7 +655,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "TSAT %"
+         Object.Caption         =   "Prodotto Ca / P"
       EndProperty
       ItemType18      =   3
       BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -674,7 +674,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Transferrina (mcg/dl)"
+         Object.Caption         =   "Fosforemia (mg/dl)"
       EndProperty
       ItemType19      =   4
       BeginProperty Item19 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -949,7 +949,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType29      =   4
       BeginProperty Item29 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaFeb"
+         Name            =   "txtCalcemiaFeb"
          Object.Left            =   3005
          Object.Top             =   1135
          Object.Width           =   570
@@ -976,7 +976,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType30      =   4
       BeginProperty Item30 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaGen"
+         Name            =   "txtCalcemiaGen"
          Object.Left            =   2438
          Object.Top             =   1135
          Object.Width           =   570
@@ -1003,7 +1003,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType31      =   4
       BeginProperty Item31 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaApr"
+         Name            =   "txtCalcemiaApr"
          Object.Left            =   4139
          Object.Top             =   1135
          Object.Width           =   555
@@ -1030,7 +1030,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType32      =   4
       BeginProperty Item32 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaMar"
+         Name            =   "txtCalcemiaMar"
          Object.Left            =   3572
          Object.Top             =   1135
          Object.Width           =   570
@@ -1057,7 +1057,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType33      =   4
       BeginProperty Item33 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaGiu"
+         Name            =   "txtCalcemiaGiu"
          Object.Left            =   5273
          Object.Top             =   1135
          Object.Width           =   570
@@ -1084,7 +1084,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType34      =   4
       BeginProperty Item34 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaMag"
+         Name            =   "txtCalcemiaMag"
          Object.Left            =   4706
          Object.Top             =   1135
          Object.Width           =   570
@@ -1111,7 +1111,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType35      =   4
       BeginProperty Item35 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaAgo"
+         Name            =   "txtCalcemiaAgo"
          Object.Left            =   6406
          Object.Top             =   1135
          Object.Width           =   570
@@ -1138,7 +1138,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType36      =   4
       BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaLug"
+         Name            =   "txtCalcemiaLug"
          Object.Left            =   5839
          Object.Top             =   1135
          Object.Width           =   570
@@ -1165,7 +1165,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType37      =   4
       BeginProperty Item37 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaOtt"
+         Name            =   "txtCalcemiaOtt"
          Object.Left            =   7540
          Object.Top             =   1135
          Object.Width           =   570
@@ -1192,7 +1192,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType38      =   4
       BeginProperty Item38 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaSet"
+         Name            =   "txtCalcemiaSet"
          Object.Left            =   6973
          Object.Top             =   1135
          Object.Width           =   555
@@ -1219,7 +1219,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType39      =   4
       BeginProperty Item39 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaNov"
+         Name            =   "txtCalcemiaNov"
          Object.Left            =   8107
          Object.Top             =   1135
          Object.Width           =   570
@@ -1246,7 +1246,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType40      =   4
       BeginProperty Item40 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSideremiaDic"
+         Name            =   "txtCalcemiaDic"
          Object.Left            =   8674
          Object.Top             =   1135
          Object.Width           =   570
@@ -1273,7 +1273,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType41      =   4
       BeginProperty Item41 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaFeb"
+         Name            =   "txtFosforemiaFeb"
          Object.Left            =   3005
          Object.Top             =   1588
          Object.Width           =   570
@@ -1300,7 +1300,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType42      =   4
       BeginProperty Item42 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaGen"
+         Name            =   "txtFosforemiaGen"
          Object.Left            =   2438
          Object.Top             =   1588
          Object.Width           =   570
@@ -1327,7 +1327,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType43      =   4
       BeginProperty Item43 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaApr"
+         Name            =   "txtFosforemiaApr"
          Object.Left            =   4139
          Object.Top             =   1588
          Object.Width           =   555
@@ -1354,7 +1354,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType44      =   4
       BeginProperty Item44 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaMar"
+         Name            =   "txtFosforemiaMar"
          Object.Left            =   3572
          Object.Top             =   1588
          Object.Width           =   570
@@ -1381,7 +1381,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType45      =   4
       BeginProperty Item45 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaGiu"
+         Name            =   "txtFosforemiaGiu"
          Object.Left            =   5273
          Object.Top             =   1588
          Object.Width           =   570
@@ -1408,7 +1408,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType46      =   4
       BeginProperty Item46 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaMag"
+         Name            =   "txtFosforemiaMag"
          Object.Left            =   4706
          Object.Top             =   1588
          Object.Width           =   570
@@ -1435,7 +1435,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType47      =   4
       BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaAgo"
+         Name            =   "txtFosforemiaAgo"
          Object.Left            =   6406
          Object.Top             =   1588
          Object.Width           =   570
@@ -1462,7 +1462,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType48      =   4
       BeginProperty Item48 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaLug"
+         Name            =   "txtFosforemiaLug"
          Object.Left            =   5839
          Object.Top             =   1588
          Object.Width           =   570
@@ -1489,7 +1489,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType49      =   4
       BeginProperty Item49 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaOtt"
+         Name            =   "txtFosforemiaOtt"
          Object.Left            =   7540
          Object.Top             =   1588
          Object.Width           =   570
@@ -1516,7 +1516,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType50      =   4
       BeginProperty Item50 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaSet"
+         Name            =   "txtFosforemiaSet"
          Object.Left            =   6973
          Object.Top             =   1588
          Object.Width           =   555
@@ -1543,7 +1543,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType51      =   4
       BeginProperty Item51 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaNov"
+         Name            =   "txtFosforemiaNov"
          Object.Left            =   8107
          Object.Top             =   1588
          Object.Width           =   570
@@ -1570,7 +1570,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType52      =   4
       BeginProperty Item52 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTransferrinaDic"
+         Name            =   "txtFosforemiaDic"
          Object.Left            =   8674
          Object.Top             =   1588
          Object.Width           =   570
@@ -1597,7 +1597,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType53      =   4
       BeginProperty Item53 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatFeb"
+         Name            =   "txtProdottoCalcioFosforoFeb"
          Object.Left            =   3005
          Object.Top             =   2042
          Object.Width           =   570
@@ -1624,7 +1624,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType54      =   4
       BeginProperty Item54 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatGen"
+         Name            =   "txtProdottoCalcioFosforoGen"
          Object.Left            =   2438
          Object.Top             =   2042
          Object.Width           =   570
@@ -1651,7 +1651,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType55      =   4
       BeginProperty Item55 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatApr"
+         Name            =   "txtProdottoCalcioFosforoApr"
          Object.Left            =   4139
          Object.Top             =   2042
          Object.Width           =   555
@@ -1678,7 +1678,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType56      =   4
       BeginProperty Item56 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatMar"
+         Name            =   "txtProdottoCalcioFosforoMar"
          Object.Left            =   3572
          Object.Top             =   2042
          Object.Width           =   570
@@ -1705,7 +1705,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType57      =   4
       BeginProperty Item57 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatGiu"
+         Name            =   "txtProdottoCalcioFosforoGiu"
          Object.Left            =   5273
          Object.Top             =   2042
          Object.Width           =   570
@@ -1732,7 +1732,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType58      =   4
       BeginProperty Item58 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatMag"
+         Name            =   "txtProdottoCalcioFosforoMag"
          Object.Left            =   4706
          Object.Top             =   2042
          Object.Width           =   570
@@ -1759,7 +1759,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType59      =   4
       BeginProperty Item59 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatAgo"
+         Name            =   "txtProdottoCalcioFosforoAgo"
          Object.Left            =   6406
          Object.Top             =   2042
          Object.Width           =   570
@@ -1786,7 +1786,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType60      =   4
       BeginProperty Item60 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatLug"
+         Name            =   "txtProdottoCalcioFosforoLug"
          Object.Left            =   5839
          Object.Top             =   2042
          Object.Width           =   570
@@ -1813,7 +1813,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType61      =   4
       BeginProperty Item61 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatOtt"
+         Name            =   "txtProdottoCalcioFosforoOtt"
          Object.Left            =   7540
          Object.Top             =   2042
          Object.Width           =   570
@@ -1840,7 +1840,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType62      =   4
       BeginProperty Item62 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatSet"
+         Name            =   "txtProdottoCalcioFosforoSet"
          Object.Left            =   6973
          Object.Top             =   2042
          Object.Width           =   555
@@ -1867,7 +1867,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType63      =   4
       BeginProperty Item63 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatNov"
+         Name            =   "txtProdottoCalcioFosforoNov"
          Object.Left            =   8107
          Object.Top             =   2042
          Object.Width           =   570
@@ -1894,7 +1894,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       ItemType64      =   4
       BeginProperty Item64 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTsatDic"
+         Name            =   "txtProdottoCalcioFosforoDic"
          Object.Left            =   8674
          Object.Top             =   2042
          Object.Width           =   570
@@ -1991,7 +1991,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
       NumControls     =   0
    EndProperty
 End
-Attribute VB_Name = "rptCalcoloTsat"
+Attribute VB_Name = "rptProdottoCalcioFosforo"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -2040,50 +2040,50 @@ Private Sub DataReport_Initialize()
             .Item("txtGiornoNov").DataField = "GIORNO_NOV"
             .Item("txtGiornoDic").DataField = "GIORNO_DIC"
             
-            '                      SIDEREMIA
+            '                      CALCIO
             
-            .Item("txtSideremiaGen").DataField = "SIDEREMIA_GEN"
-            .Item("txtSideremiaFeb").DataField = "SIDEREMIA_FEB"
-            .Item("txtSideremiaMar").DataField = "SIDEREMIA_MAR"
-            .Item("txtSideremiaApr").DataField = "SIDEREMIA_APR"
-            .Item("txtSideremiaMag").DataField = "SIDEREMIA_MAG"
-            .Item("txtSideremiaGiu").DataField = "SIDEREMIA_GIU"
-            .Item("txtSideremiaLug").DataField = "SIDEREMIA_LUG"
-            .Item("txtSideremiaAgo").DataField = "SIDEREMIA_AGO"
-            .Item("txtSideremiaSet").DataField = "SIDEREMIA_SET"
-            .Item("txtSideremiaOtt").DataField = "SIDEREMIA_OTT"
-            .Item("txtSideremiaNov").DataField = "SIDEREMIA_NOV"
-            .Item("txtSideremiaDic").DataField = "SIDEREMIA_DIC"
+            .Item("txtCalcemiaGen").DataField = "CALCEMIA_GEN"
+            .Item("txtCalcemiaFeb").DataField = "CALCEMIA_FEB"
+            .Item("txtCalcemiaMar").DataField = "CALCEMIA_MAR"
+            .Item("txtCalcemiaApr").DataField = "CALCEMIA_APR"
+            .Item("txtCalcemiaMag").DataField = "CALCEMIA_MAG"
+            .Item("txtCalcemiaGiu").DataField = "CALCEMIA_GIU"
+            .Item("txtCalcemiaLug").DataField = "CALCEMIA_LUG"
+            .Item("txtCalcemiaAgo").DataField = "CALCEMIA_AGO"
+            .Item("txtCalcemiaSet").DataField = "CALCEMIA_SET"
+            .Item("txtCalcemiaOtt").DataField = "CALCEMIA_OTT"
+            .Item("txtCalcemiaNov").DataField = "CALCEMIA_NOV"
+            .Item("txtCalcemiaDic").DataField = "CALCEMIA_DIC"
             
-            '                      TRANSFERRINA
+            '                      FOSFORO
             
-            .Item("txtTransferrinaGen").DataField = "TRANSFERRINA_GEN"
-            .Item("txtTransferrinaFeb").DataField = "TRANSFERRINA_FEB"
-            .Item("txtTransferrinaMar").DataField = "TRANSFERRINA_MAR"
-            .Item("txtTransferrinaApr").DataField = "TRANSFERRINA_APR"
-            .Item("txtTransferrinaMag").DataField = "TRANSFERRINA_MAG"
-            .Item("txtTransferrinaGiu").DataField = "TRANSFERRINA_GIU"
-            .Item("txtTransferrinaLug").DataField = "TRANSFERRINA_LUG"
-            .Item("txtTransferrinaAgo").DataField = "TRANSFERRINA_AGO"
-            .Item("txtTransferrinaSet").DataField = "TRANSFERRINA_SET"
-            .Item("txtTransferrinaOtt").DataField = "TRANSFERRINA_OTT"
-            .Item("txtTransferrinaNov").DataField = "TRANSFERRINA_NOV"
-            .Item("txtTransferrinaDic").DataField = "TRANSFERRINA_DIC"
+            .Item("txtFosforemiaGen").DataField = "FOSFOREMIA_GEN"
+            .Item("txtFosforemiaFeb").DataField = "FOSFOREMIA_FEB"
+            .Item("txtFosforemiaMar").DataField = "FOSFOREMIA_MAR"
+            .Item("txtFosforemiaApr").DataField = "FOSFOREMIA_APR"
+            .Item("txtFosforemiaMag").DataField = "FOSFOREMIA_MAG"
+            .Item("txtFosforemiaGiu").DataField = "FOSFOREMIA_GIU"
+            .Item("txtFosforemiaLug").DataField = "FOSFOREMIA_LUG"
+            .Item("txtFosforemiaAgo").DataField = "FOSFOREMIA_AGO"
+            .Item("txtFosforemiaSet").DataField = "FOSFOREMIA_SET"
+            .Item("txtFosforemiaOtt").DataField = "FOSFOREMIA_OTT"
+            .Item("txtFosforemiaNov").DataField = "FOSFOREMIA_NOV"
+            .Item("txtFosforemiaDic").DataField = "FOSFOREMIA_DIC"
             
-            '                      TSAT %
+            '                      PRODOTTO CA / P
             
-            .Item("txtTsatGen").DataField = "TSAT_GEN"
-            .Item("txtTsatFeb").DataField = "TSAT_FEB"
-            .Item("txtTsatMar").DataField = "TSAT_MAR"
-            .Item("txtTsatApr").DataField = "TSAT_APR"
-            .Item("txtTsatMag").DataField = "TSAT_MAG"
-            .Item("txtTsatGiu").DataField = "TSAT_GIU"
-            .Item("txtTsatLug").DataField = "TSAT_LUG"
-            .Item("txtTsatAgo").DataField = "TSAT_AGO"
-            .Item("txtTsatSet").DataField = "TSAT_SET"
-            .Item("txtTsatOtt").DataField = "TSAT_OTT"
-            .Item("txtTsatNov").DataField = "TSAT_NOV"
-            .Item("txtTsatDic").DataField = "TSAT_DIC"
+            .Item("txtProdottoCalcioFosforoGen").DataField = "PRODOTTO_CALCIO_FOSFORO_GEN"
+            .Item("txtProdottoCalcioFosforoFeb").DataField = "PRODOTTO_CALCIO_FOSFORO_FEB"
+            .Item("txtProdottoCalcioFosforoMar").DataField = "PRODOTTO_CALCIO_FOSFORO_MAR"
+            .Item("txtProdottoCalcioFosforoApr").DataField = "PRODOTTO_CALCIO_FOSFORO_APR"
+            .Item("txtProdottoCalcioFosforoMag").DataField = "PRODOTTO_CALCIO_FOSFORO_MAG"
+            .Item("txtProdottoCalcioFosforoGiu").DataField = "PRODOTTO_CALCIO_FOSFORO_GIU"
+            .Item("txtProdottoCalcioFosforoLug").DataField = "PRODOTTO_CALCIO_FOSFORO_LUG"
+            .Item("txtProdottoCalcioFosforoAgo").DataField = "PRODOTTO_CALCIO_FOSFORO_AGO"
+            .Item("txtProdottoCalcioFosforoSet").DataField = "PRODOTTO_CALCIO_FOSFORO_SET"
+            .Item("txtProdottoCalcioFosforoOtt").DataField = "PRODOTTO_CALCIO_FOSFORO_OTT"
+            .Item("txtProdottoCalcioFosforoNov").DataField = "PRODOTTO_CALCIO_FOSFORO_NOV"
+            .Item("txtProdottoCalcioFosforoDic").DataField = "PRODOTTO_CALCIO_FOSFORO_DIC"
             
         End With
         

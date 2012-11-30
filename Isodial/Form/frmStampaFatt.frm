@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStampaFogliViaggio 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -855,222 +855,222 @@ Private Sub StampaModuloFirmePaziente()
     End If
 End Sub
 
-Private Sub StampaKtvAnnuale()
-    Dim SQLString As String
-    Dim cnConn As Connection        ' connessione per lo shape
-    Dim rsMain As Recordset         ' recordset padre per lo shape
-    Dim rsDataset As Recordset
+'Private Sub StampaKtvAnnuale()
+'    Dim SQLString As String
+'    Dim cnConn As Connection        ' connessione per lo shape
+'    Dim rsMain As Recordset         ' recordset padre per lo shape
+'    Dim rsDataset As Recordset
     
-    Dim strSingoloPaziente As String
-    Dim strStato As String
-    Dim cont As Integer
-    Dim i As Integer
+'    Dim strSingoloPaziente As String
+'    Dim strStato As String
+'    Dim cont As Integer
+'    Dim i As Integer
 
-    If chkTutti.Value = Unchecked And intPazientiKey = 0 Then
-        MsgBox "Selezionare il paziente ", vbCritical, "Attenzione"
-        Exit Sub
-    End If
-    If chkTutti.Value = Unchecked Then
-        strSingoloPaziente = " AND KEY=" & intPazientiKey
-    End If
-    If cboStato.ListIndex = cboStato.ListCount - 1 Then
-        strStato = "TRUE"
-    Else
-        strStato = "STATO = " & cboStato.ListIndex
-    End If
+'    If chkTutti.Value = Unchecked And intPazientiKey = 0 Then
+'        MsgBox "Selezionare il paziente ", vbCritical, "Attenzione"
+'        Exit Sub
+'    End If
+'    If chkTutti.Value = Unchecked Then
+'        strSingoloPaziente = " AND KEY=" & intPazientiKey
+'    End If
+'    If cboStato.ListIndex = cboStato.ListCount - 1 Then
+'        strStato = "TRUE"
+'    Else
+'        strStato = "STATO = " & cboStato.ListIndex
+'    End If
 
-    SQLString = "SHAPE APPEND " & _
-            "       NEW adInteger AS CODICE_PAZIENTE, " & _
-            "       NEW adVarChar(35) AS COGNOME, " & _
-            "       NEW adVarChar(35) AS NOME, " & _
-            "       NEW adCurrency AS MESE1, " & _
-            "       NEW adCurrency AS MESE2, " & _
-            "       NEW adCurrency AS MESE3, " & _
-            "       NEW adCurrency AS MESE4, " & _
-            "       NEW adCurrency AS MESE5, " & _
-            "       NEW adCurrency AS MESE6, " & _
-            "       NEW adCurrency AS MESE7, " & _
-            "       NEW adCurrency AS MESE8, " & _
-            "       NEW adCurrency AS MESE9, " & _
-            "       NEW adCurrency AS MESE10, " & _
-            "       NEW adCurrency AS MESE11, " & _
-            "       NEW adCurrency AS MESE12, " & _
-            "       NEW adCurrency AS MEDIA "
-
-    
-    ' apre la connessione per lo shape
-    Set cnConn = New ADODB.Connection
-    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
-    Set rsMain = New ADODB.Recordset
-    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
-
-    Set rsDataset = New Recordset
-    rsDataset.Open "SELECT KEY,COGNOME,NOME, STATO FROM PAZIENTI WHERE " & strStato & " " & strSingoloPaziente & " ORDER BY COGNOME, NOME, KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    Do While Not rsDataset.EOF
-        With rsMain
-            .AddNew
-            .Fields("CODICE_PAZIENTE") = rsDataset("KEY")
-            .Fields("COGNOME") = rsDataset("COGNOME")
-            .Fields("NOME") = rsDataset("NOME")
-            .Update
-        End With
-        rsDataset.MoveNext
-    Loop
-    rsDataset.Close
-    
-    rsDataset.Open "SELECT * FROM KTV WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    Do While Not rsDataset.EOF
-        rsMain.Filter = "CODICE_PAZIENTE=" & rsDataset("CODICE_PAZIENTE")
-        If rsMain.RecordCount <> 0 Then
-            rsMain("MEDIA") = 0
-            If IsNull(rsDataset("UREA_POST")) Or IsNull(rsDataset("UREA_PRE")) Or IsNull(rsDataset("DURATA")) Or IsNull(rsDataset("VOLUME")) Or IsNull(rsDataset("PESO")) Then
-                rsMain.Fields("MESE" & rsDataset("MESE")) = Null
-            Else
-                rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaKtv(rsDataset("UREA_POST"), rsDataset("UREA_PRE"), rsDataset("DURATA"), rsDataset("VOLUME"), rsDataset("PESO"))
-            End If
-        End If
-        rsDataset.MoveNext
-    Loop
-    rsDataset.Close
-    rsMain.Filter = ""
-    rsMain.MoveFirst
-    
-    Do While Not rsMain.EOF
-        cont = 0
-        For i = 1 To 12
-            If Not IsNull(rsMain("MESE" & i)) Then
-                rsMain("MEDIA") = rsMain("MEDIA") + rsMain("MESE" & i)
-                cont = cont + 1
-            End If
-        Next i
-        If cont <> 0 Then
-            rsMain("MEDIA") = rsMain("MEDIA") / cont
-        Else
-            rsMain("MEDIA") = Null
-        End If
-        rsMain.MoveNext
-    Loop
-    
-    
-    Set rsDataset = Nothing
-    
-    If rsMain.RecordCount <> 0 Then
-        Set rptKtvTsatAnnuale.DataSource = rsMain
-        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "KT/V ANNO " & cboAnno.Text
-        rptKtvTsatAnnuale.LeftMargin = 500
-        rptKtvTsatAnnuale.RightMargin = 0
-        rptKtvTsatAnnuale.TopMargin = 0
-        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
-    End If
-End Sub
-
-Private Sub StampaTsatAnnuale()
-    Dim SQLString As String
-    Dim cnConn As Connection        ' connessione per lo shape
-    Dim rsMain As Recordset         ' recordset padre per lo shape
-    Dim rsDataset As Recordset
-    
-    Dim strSingoloPaziente As String
-    Dim strStato As String
-    Dim cont As Integer
-    Dim i As Integer
-
-    If chkTutti.Value = Unchecked And intPazientiKey = 0 Then
-        MsgBox "Selezionare il paziente ", vbCritical, "Attenzione"
-        Exit Sub
-    End If
-    If chkTutti.Value = Unchecked Then
-        strSingoloPaziente = " AND KEY=" & intPazientiKey
-    End If
-    If cboStato.ListIndex = cboStato.ListCount - 1 Then
-        strStato = "TRUE"
-    Else
-        strStato = "STATO = " & cboStato.ListIndex
-    End If
-
-    SQLString = "SHAPE APPEND " & _
-            "       NEW adInteger AS CODICE_PAZIENTE, " & _
-            "       NEW adVarChar(35) AS COGNOME, " & _
-            "       NEW adVarChar(35) AS NOME, " & _
-            "       NEW adCurrency AS MESE1, " & _
-            "       NEW adCurrency AS MESE2, " & _
-            "       NEW adCurrency AS MESE3, " & _
-            "       NEW adCurrency AS MESE4, " & _
-            "       NEW adCurrency AS MESE5, " & _
-            "       NEW adCurrency AS MESE6, " & _
-            "       NEW adCurrency AS MESE7, " & _
-            "       NEW adCurrency AS MESE8, " & _
-            "       NEW adCurrency AS MESE9, " & _
-            "       NEW adCurrency AS MESE10, " & _
-            "       NEW adCurrency AS MESE11, " & _
-            "       NEW adCurrency AS MESE12, " & _
-            "       NEW adCurrency AS MEDIA "
+'    SQLString = "SHAPE APPEND " & _
+'            "       NEW adInteger AS CODICE_PAZIENTE, " & _
+'            "       NEW adVarChar(35) AS COGNOME, " & _
+'            "       NEW adVarChar(35) AS NOME, " & _
+'            "       NEW adCurrency AS MESE1, " & _
+'            "       NEW adCurrency AS MESE2, " & _
+'            "       NEW adCurrency AS MESE3, " & _
+'            "       NEW adCurrency AS MESE4, " & _
+'            "       NEW adCurrency AS MESE5, " & _
+'            "       NEW adCurrency AS MESE6, " & _
+'            "       NEW adCurrency AS MESE7, " & _
+'            "       NEW adCurrency AS MESE8, " & _
+'            "       NEW adCurrency AS MESE9, " & _
+'            "       NEW adCurrency AS MESE10, " & _
+'            "       NEW adCurrency AS MESE11, " & _
+'            "       NEW adCurrency AS MESE12, " & _
+'            "       NEW adCurrency AS MEDIA "
 
     
     ' apre la connessione per lo shape
-    Set cnConn = New ADODB.Connection
-    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
-    Set rsMain = New ADODB.Recordset
-    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+'    Set cnConn = New ADODB.Connection
+'    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+'    Set rsMain = New ADODB.Recordset
+'    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
 
-    Set rsDataset = New Recordset
-    rsDataset.Open "SELECT KEY,COGNOME,NOME,STATO FROM PAZIENTI WHERE " & strStato & " " & strSingoloPaziente & " ORDER BY COGNOME, NOME, KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    Do While Not rsDataset.EOF
-        With rsMain
-            .AddNew
-            .Fields("CODICE_PAZIENTE") = rsDataset("KEY")
-            .Fields("COGNOME") = rsDataset("COGNOME")
-            .Fields("NOME") = rsDataset("NOME")
-            .Update
-        End With
-        rsDataset.MoveNext
-    Loop
-    rsDataset.Close
+'    Set rsDataset = New Recordset
+'    rsDataset.Open "SELECT KEY,COGNOME,NOME, STATO FROM PAZIENTI WHERE " & strStato & " " & strSingoloPaziente & " ORDER BY COGNOME, NOME, KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    Do While Not rsDataset.EOF
+'        With rsMain
+'            .AddNew
+'            .Fields("CODICE_PAZIENTE") = rsDataset("KEY")
+'            .Fields("COGNOME") = rsDataset("COGNOME")
+'            .Fields("NOME") = rsDataset("NOME")
+'            .Update
+'        End With
+'        rsDataset.MoveNext
+'    Loop
+'    rsDataset.Close
     
-    rsDataset.Open "SELECT * FROM TSAT WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    Do While Not rsDataset.EOF
-        rsMain.Filter = "CODICE_PAZIENTE=" & rsDataset("CODICE_PAZIENTE")
-        If rsMain.RecordCount <> 0 Then
-            rsMain("MEDIA") = 0
-            If IsNull(rsDataset("SIDEREMIA")) Or IsNull(rsDataset("TRANSFERRINA")) Then
-                rsMain.Fields("MESE" & rsDataset("MESE")) = Null
-            Else
-                rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaTsat(rsDataset("SIDEREMIA"), rsDataset("TRANSFERRINA"))
-            End If
-        End If
-        rsDataset.MoveNext
-    Loop
-    rsDataset.Close
-    rsMain.Filter = ""
-    rsMain.MoveFirst
+'    rsDataset.Open "SELECT * FROM KTV WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    Do While Not rsDataset.EOF
+'        rsMain.Filter = "CODICE_PAZIENTE=" & rsDataset("CODICE_PAZIENTE")
+'        If rsMain.RecordCount <> 0 Then
+'            rsMain("MEDIA") = 0
+'            If IsNull(rsDataset("UREA_POST")) Or IsNull(rsDataset("UREA_PRE")) Or IsNull(rsDataset("DURATA")) Or IsNull(rsDataset("VOLUME")) Or IsNull(rsDataset("PESO")) Then
+'                rsMain.Fields("MESE" & rsDataset("MESE")) = Null
+'            Else
+'                rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaKtv(rsDataset("UREA_POST"), rsDataset("UREA_PRE"), rsDataset("DURATA"), rsDataset("VOLUME"), rsDataset("PESO"))
+'            End If
+'        End If
+'        rsDataset.MoveNext
+'    Loop
+'    rsDataset.Close
+'    rsMain.Filter = ""
+'    rsMain.MoveFirst
+
+'    Do While Not rsMain.EOF
+'        cont = 0
+'        For i = 1 To 12
+'            If Not IsNull(rsMain("MESE" & i)) Then
+'                rsMain("MEDIA") = rsMain("MEDIA") + rsMain("MESE" & i)
+'                cont = cont + 1
+'            End If
+'        Next i
+'        If cont <> 0 Then
+'            rsMain("MEDIA") = rsMain("MEDIA") / cont
+'        Else
+'            rsMain("MEDIA") = Null
+'        End If
+'        rsMain.MoveNext
+'    Loop
     
-    Do While Not rsMain.EOF
-        cont = 0
-        For i = 1 To 12
-            If Not IsNull(rsMain("MESE" & i)) Then
-                rsMain("MEDIA") = rsMain("MEDIA") + rsMain("MESE" & i)
-                cont = cont + 1
-            End If
-        Next i
-        If cont <> 0 Then
-            rsMain("MEDIA") = rsMain("MEDIA") / cont
-        Else
-            rsMain("MEDIA") = Null
-        End If
-        rsMain.MoveNext
-    Loop
     
-    Set rsDataset = Nothing
+'    Set rsDataset = Nothing
     
-    If rsMain.RecordCount <> 0 Then
-        Set rptKtvTsatAnnuale.DataSource = rsMain
-        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text
-        rptKtvTsatAnnuale.LeftMargin = 500
-        rptKtvTsatAnnuale.RightMargin = 0
-        rptKtvTsatAnnuale.TopMargin = 0
-        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
-    End If
-End Sub
+'    If rsMain.RecordCount <> 0 Then
+'        Set rptKtvTsatAnnuale.DataSource = rsMain
+'        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "KT/V ANNO " & cboAnno.Text
+'        rptKtvTsatAnnuale.LeftMargin = 500
+'        rptKtvTsatAnnuale.RightMargin = 0
+'        rptKtvTsatAnnuale.TopMargin = 0
+'        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
+'    End If
+'End Sub
+
+'Private Sub StampaTsatAnnuale()
+'    Dim SQLString As String
+'    Dim cnConn As Connection        ' connessione per lo shape
+'    Dim rsMain As Recordset         ' recordset padre per lo shape
+'    Dim rsDataset As Recordset
+    
+'    Dim strSingoloPaziente As String
+'    Dim strStato As String
+'    Dim cont As Integer
+'    Dim i As Integer
+
+'    If chkTutti.Value = Unchecked And intPazientiKey = 0 Then
+'        MsgBox "Selezionare il paziente ", vbCritical, "Attenzione"
+'        Exit Sub
+'    End If
+'    If chkTutti.Value = Unchecked Then
+'        strSingoloPaziente = " AND KEY=" & intPazientiKey
+'    End If
+'    If cboStato.ListIndex = cboStato.ListCount - 1 Then
+'        strStato = "TRUE"
+'    Else
+'        strStato = "STATO = " & cboStato.ListIndex
+'    End If
+
+'    SQLString = "SHAPE APPEND " & _
+'            "       NEW adInteger AS CODICE_PAZIENTE, " & _
+'            "       NEW adVarChar(35) AS COGNOME, " & _
+'            "       NEW adVarChar(35) AS NOME, " & _
+'            "       NEW adCurrency AS MESE1, " & _
+'            "       NEW adCurrency AS MESE2, " & _
+'            "       NEW adCurrency AS MESE3, " & _
+'            "       NEW adCurrency AS MESE4, " & _
+'            "       NEW adCurrency AS MESE5, " & _
+'            "       NEW adCurrency AS MESE6, " & _
+'            "       NEW adCurrency AS MESE7, " & _
+'            "       NEW adCurrency AS MESE8, " & _
+'            "       NEW adCurrency AS MESE9, " & _
+'            "       NEW adCurrency AS MESE10, " & _
+'            "       NEW adCurrency AS MESE11, " & _
+'            "       NEW adCurrency AS MESE12, " & _
+'            "       NEW adCurrency AS MEDIA "
+
+    
+    ' apre la connessione per lo shape
+'    Set cnConn = New ADODB.Connection
+'    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+'    Set rsMain = New ADODB.Recordset
+'    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+
+'    Set rsDataset = New Recordset
+'    rsDataset.Open "SELECT KEY,COGNOME,NOME,STATO FROM PAZIENTI WHERE " & strStato & " " & strSingoloPaziente & " ORDER BY COGNOME, NOME, KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    Do While Not rsDataset.EOF
+'        With rsMain
+'            .AddNew
+'            .Fields("CODICE_PAZIENTE") = rsDataset("KEY")
+'            .Fields("COGNOME") = rsDataset("COGNOME")
+'            .Fields("NOME") = rsDataset("NOME")
+'            .Update
+'        End With
+'        rsDataset.MoveNext
+'    Loop
+'    rsDataset.Close
+    
+'    rsDataset.Open "SELECT * FROM TSAT WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    Do While Not rsDataset.EOF
+'        rsMain.Filter = "CODICE_PAZIENTE=" & rsDataset("CODICE_PAZIENTE")
+'        If rsMain.RecordCount <> 0 Then
+'            rsMain("MEDIA") = 0
+'            If IsNull(rsDataset("SIDEREMIA")) Or IsNull(rsDataset("TRANSFERRINA")) Then
+'                rsMain.Fields("MESE" & rsDataset("MESE")) = Null
+'            Else
+'                rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaTsat(rsDataset("SIDEREMIA"), rsDataset("TRANSFERRINA"))
+'            End If
+'        End If
+'        rsDataset.MoveNext
+'    Loop
+'    rsDataset.Close
+'    rsMain.Filter = ""
+'    rsMain.MoveFirst
+    
+'    Do While Not rsMain.EOF
+'        cont = 0
+'        For i = 1 To 12
+'            If Not IsNull(rsMain("MESE" & i)) Then
+'                rsMain("MEDIA") = rsMain("MEDIA") + rsMain("MESE" & i)
+'                cont = cont + 1
+'            End If
+'        Next i
+'        If cont <> 0 Then
+'            rsMain("MEDIA") = rsMain("MEDIA") / cont
+'        Else
+'            rsMain("MEDIA") = Null
+'        End If
+'        rsMain.MoveNext
+'    Loop
+    
+'    Set rsDataset = Nothing
+    
+'    If rsMain.RecordCount <> 0 Then
+'        Set rptKtvTsatAnnuale.DataSource = rsMain
+'        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text
+'        rptKtvTsatAnnuale.LeftMargin = 500
+'        rptKtvTsatAnnuale.RightMargin = 0
+'        rptKtvTsatAnnuale.TopMargin = 0
+'        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
+'    End If
+'End Sub
 
 Private Sub StampaSchedaDialiticaSettimanale()
     Dim strSqlStampa As String
@@ -1374,21 +1374,21 @@ Private Sub StampaSchedaDialiticaSettimanale()
     End If
 End Sub
 
-Private Function CalcolaTsat(c1 As Single, c2 As Single) As Double
-    On Error GoTo gestione
-    CalcolaTsat = Format(c1 / c2 * CSng("70,9"), "##.##")
-    Exit Function
-gestione:
-    CalcolaTsat = 0
-End Function
+'Private Function CalcolaTsat(c1 As Single, c2 As Single) As Double
+'    On Error GoTo gestione
+'    CalcolaTsat = Format(c1 / c2 * CSng("70,9"), "##.##")
+'    Exit Function
+'gestione:
+'    CalcolaTsat = 0
+'End Function
 
-Private Function CalcolaKtv(c1 As Single, c2 As Single, c3 As Single, c4 As Single, c5 As Single) As Double
-    On Error GoTo gestione
-    CalcolaKtv = Format((4 - 3.5 * c1 / c2) * (c4 / c5) - Log(c1 / c2 - 0.008 * c3), "##.##")
-    Exit Function
-gestione:
-    CalcolaKtv = 0
-End Function
+'Private Function CalcolaKtv(c1 As Single, c2 As Single, c3 As Single, c4 As Single, c5 As Single) As Double
+'    On Error GoTo gestione
+'    CalcolaKtv = Format((4 - 3.5 * c1 / c2) * (c4 / c5) - Log(c1 / c2 - 0.008 * c3), "##.##")
+'    Exit Function
+'gestione:
+'    CalcolaKtv = 0
+'End Function
 
 Private Sub cmdTrova_Click()
     tTrova.Tipo = tpPAZIENTE

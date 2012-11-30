@@ -845,7 +845,7 @@ Private Sub StampaPthAnnuale()
           Next i
 
           If cont <> 0 Then
-            .Fields("MEDIA") = SommaMedia / cont
+            .Fields("MEDIA") = Int(SommaMedia / cont * 100) / 100
           End If
 
           .Update
@@ -1328,7 +1328,7 @@ End Function
 
 Private Function CalcolaCap(c1 As Single, c2 As Single) As Double
     On Error GoTo gestione
-    CalcolaCap = Format(c1 / c2 * CSng("70,9"), "##.##")
+    CalcolaCap = Int(c1 / c2 * 100) / 100
     Exit Function
 gestione:
     CalcolaCap = 0

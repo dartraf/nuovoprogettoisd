@@ -25,6 +25,7 @@ Begin VB.Form frmProdottoCalcioFosforo
       _ExtentX        =   21405
       _ExtentY        =   6773
       _Version        =   393216
+      Tab             =   1
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -38,21 +39,21 @@ Begin VB.Form frmProdottoCalcioFosforo
       EndProperty
       TabCaption(0)   =   "Tabella"
       TabPicture(0)   =   "frmProdottoCalcioFosforo.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame4"
-      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Frame2"
-      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Grafico 2D"
       TabPicture(1)   =   "frmProdottoCalcioFosforo.frx":001C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "grafico(0)"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmProdottoCalcioFosforo.frx":0038
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "grafico(1)"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -66,7 +67,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   2535
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   1
          Top             =   480
          Width           =   11895
@@ -155,7 +156,7 @@ Begin VB.Form frmProdottoCalcioFosforo
       End
       Begin VB.Frame Frame4 
          Height          =   855
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   6
          Top             =   2880
          Width           =   11895
@@ -250,7 +251,7 @@ Begin VB.Form frmProdottoCalcioFosforo
       Begin MSChart20Lib.MSChart grafico 
          Height          =   3495
          Index           =   0
-         Left            =   -74880
+         Left            =   120
          OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":0292
          TabIndex        =   5
          Top             =   360
@@ -260,7 +261,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          Height          =   3495
          Index           =   1
          Left            =   -74880
-         OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":2F3E
+         OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":2F3A
          TabIndex        =   9
          Top             =   360
          Width           =   11895
@@ -276,7 +277,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   360
-         Picture         =   "frmProdottoCalcioFosforo.frx":5BD3
+         Picture         =   "frmProdottoCalcioFosforo.frx":5BCF
          Style           =   1  'Graphical
          TabIndex        =   16
          Top             =   240
@@ -453,8 +454,8 @@ Private Sub Form_Load()
     cboAnno.ListIndex = 0
     stoCaricando = False
     For k = 0 To 1
-        ' valore massimo di ktv è 4
-        grafico(k).Plot.Axis(VtChAxisIdY).ValueScale.Maximum = 100
+        ' valore massimo di Ca/P è 5
+        grafico(k).Plot.Axis(VtChAxisIdY).ValueScale.Maximum = 5
         For i = 1 To 12
             grafico(k).Column = 1
             grafico(k).Row = i
@@ -527,12 +528,11 @@ Private Sub Pulisci()
 End Sub
 
 Private Function CalcoloProdottoCalcioFosforo(vCol As Integer) As Double
-    On Error GoTo gestione      'da vedere il calcolo
+    On Error GoTo gestione
 
-    'Sideremia/Transferrina*70,9
     With flxGriglia
         If .TextMatrix(2, vCol) <> "" And .TextMatrix(3, vCol) <> "" Then
-            CalcoloProdottoCalcioFosforo = Format(VirgolaOrPunto(.TextMatrix(2, vCol), ".") / VirgolaOrPunto(.TextMatrix(3, vCol), ".") * CSng("70,9"), "##.##")
+             CalcoloProdottoCalcioFosforo = Int(.TextMatrix(2, vCol) / .TextMatrix(3, vCol) * 100) / 100
         Else
             Exit Function
         End If
@@ -956,7 +956,7 @@ Private Sub cmdStampa_Click()
                 .Fields("CALCEMIA_" & vett(i)) = VirgolaOrPunto(rsProdottoCalcioFosforo("CALCEMIA") & "", ",")
                 .Fields("FOSFOREMIA_" & vett(i)) = VirgolaOrPunto(rsProdottoCalcioFosforo("FOSFOREMIA") & "", ",")
                 If .Fields("CALCEMIA_" & vett(i)) <> "" And .Fields("FOSFOREMIA_" & vett(i)) <> "" Then
-                    valore = Format(.Fields("CALCEMIA_" & vett(i)) / .Fields("FOSFOREMIA_" & vett(i)) * CSng("70,9"), "##.##")
+                    valore = Format(.Fields("CALCEMIA_" & vett(i)) / .Fields("FOSFOREMIA_" & vett(i)), "##.##")
                     .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = VirgolaOrPunto(CStr(valore), ",")
                 Else
                     .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = ""

@@ -1536,8 +1536,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          _Version        =   393216
          Name            =   "txtCartuccia"
          Object.Left            =   1247
-         Object.Top             =   8107
-         Object.Width           =   7770
+         Object.Top             =   8115
+         Object.Width           =   2722
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1609,83 +1609,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
       ItemType55      =   3
       BeginProperty Item55 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label67"
-         Object.Left            =   170
-         Object.Top             =   8617
-         Object.Width           =   1365
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Eritropoietina"
-      EndProperty
-      ItemType56      =   4
-      BeginProperty Item56 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtEritropoietina"
-         Object.Left            =   1644
-         Object.Top             =   8617
-         Object.Width           =   1020
-         Object.Height          =   330
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         CanGrow         =   -1  'True
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType57      =   4
-      BeginProperty Item57 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtUI"
-         Object.Left            =   2665
-         Object.Top             =   8617
-         Object.Width           =   1920
-         Object.Height          =   330
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         CanGrow         =   -1  'True
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType58      =   3
-      BeginProperty Item58 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label69"
-         Object.Left            =   4819
+         Object.Left            =   170
          Object.Top             =   8617
          Object.Width           =   570
          Object.Height          =   345
@@ -1700,13 +1625,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Note:"
       EndProperty
-      ItemType59      =   4
-      BeginProperty Item59 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType56      =   4
+      BeginProperty Item56 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNote"
-         Object.Left            =   5613
+         Object.Left            =   907
          Object.Top             =   8617
-         Object.Width           =   3405
+         Object.Width           =   8107
          Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1728,16 +1653,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType60      =   5
-      BeginProperty Item60 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType57      =   5
+      BeginProperty Item57 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line14"
          Object.Left            =   57
          Object.Top             =   454
          Object.Width           =   9581
       EndProperty
-      ItemType61      =   4
-      BeginProperty Item61 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType58      =   4
+      BeginProperty Item58 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtBicarbonato"
          Object.Left            =   5272
@@ -1764,8 +1689,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType62      =   3
-      BeginProperty Item62 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType59      =   3
+      BeginProperty Item59 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label16"
          Object.Left            =   4479
@@ -1783,8 +1708,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "HCO3-"
       EndProperty
-      ItemType63      =   4
-      BeginProperty Item63 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType60      =   4
+      BeginProperty Item60 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCalcio"
          Object.Left            =   6520
@@ -1811,8 +1736,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType64      =   3
-      BeginProperty Item64 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType61      =   3
+      BeginProperty Item61 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label17"
          Object.Left            =   6123
@@ -1830,8 +1755,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Ca"
       EndProperty
-      ItemType65      =   3
-      BeginProperty Item65 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType62      =   3
+      BeginProperty Item62 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label73"
          Object.Left            =   4309
@@ -1849,8 +1774,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Flusso Dialisi Qd (ml/min)"
       EndProperty
-      ItemType66      =   4
-      BeginProperty Item66 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType63      =   4
+      BeginProperty Item63 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFlussoSangue"
          Object.Left            =   2891
@@ -1877,8 +1802,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType67      =   4
-      BeginProperty Item67 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType64      =   4
+      BeginProperty Item64 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame1"
          Object.Left            =   170
@@ -1907,12 +1832,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType68      =   4
-      BeginProperty Item68 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType65      =   4
+      BeginProperty Item65 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame2"
          Object.Left            =   3628
-         Object.Top             =   9468
+         Object.Top             =   9411
          Object.Width           =   1935
          Object.Height          =   1020
          Object.BorderStyle     =   1
@@ -1937,12 +1862,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType69      =   4
-      BeginProperty Item69 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType66      =   4
+      BeginProperty Item66 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame3"
          Object.Left            =   7087
-         Object.Top             =   9468
+         Object.Top             =   9411
          Object.Width           =   1935
          Object.Height          =   1020
          Object.BorderStyle     =   1
@@ -1967,8 +1892,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType70      =   4
-      BeginProperty Item70 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType67      =   4
+      BeginProperty Item67 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAgo1"
          Object.Left            =   6520
@@ -1995,8 +1920,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType71      =   3
-      BeginProperty Item71 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType68      =   3
+      BeginProperty Item68 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
          Object.Left            =   5726
@@ -2014,8 +1939,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Ago A."
       EndProperty
-      ItemType72      =   4
-      BeginProperty Item72 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType69      =   4
+      BeginProperty Item69 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAgo2"
          Object.Left            =   8504
@@ -2042,8 +1967,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType73      =   3
-      BeginProperty Item73 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType70      =   3
+      BeginProperty Item70 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   7710
@@ -2061,8 +1986,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Ago V."
       EndProperty
-      ItemType74      =   3
-      BeginProperty Item74 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType71      =   3
+      BeginProperty Item71 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
          Object.Left            =   6293
@@ -2080,8 +2005,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Sedute Settimanali"
       EndProperty
-      ItemType75      =   4
-      BeginProperty Item75 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType72      =   4
+      BeginProperty Item72 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtSedute"
          Object.Left            =   8277
@@ -2108,8 +2033,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType76      =   4
-      BeginProperty Item76 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType73      =   4
+      BeginProperty Item73 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGlucosio"
          Object.Left            =   7824
@@ -2136,8 +2061,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType77      =   3
-      BeginProperty Item77 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType74      =   3
+      BeginProperty Item74 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   7257
@@ -2155,8 +2080,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Gluc"
       EndProperty
-      ItemType78      =   4
-      BeginProperty Item78 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType75      =   4
+      BeginProperty Item75 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDosiUnitaMisura"
          Object.Left            =   1520
@@ -2168,6 +2093,81 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             Size            =   12
             Charset         =   0
             Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType76      =   3
+      BeginProperty Item76 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label67"
+         Object.Left            =   4592
+         Object.Top             =   8107
+         Object.Width           =   1365
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Eritropoietina"
+      EndProperty
+      ItemType77      =   4
+      BeginProperty Item77 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtEritropoietina"
+         Object.Left            =   6066
+         Object.Top             =   8115
+         Object.Width           =   1020
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType78      =   4
+      BeginProperty Item78 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtUI"
+         Object.Left            =   7087
+         Object.Top             =   8115
+         Object.Width           =   1920
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False

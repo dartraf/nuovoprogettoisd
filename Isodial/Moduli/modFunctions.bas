@@ -1694,19 +1694,20 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
             .Fields("SEDUTE") = 0
             
             rsTabelle.Open "SELECT * FROM TURNI WHERE CODICE_PAZIENTE=" & codicePaziente, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-            For i = 1 To 7
-                If rsTabelle("AM_INIZIO" & i) <> "" Then
-                    .Fields("SEDUTE") = .Fields("SEDUTE") + 1
-                End If
-                If rsTabelle("PM_INIZIO" & i) <> "" Then
-                    .Fields("SEDUTE") = .Fields("SEDUTE") + 1
-                End If
-                If rsTabelle("SR_INIZIO" & i) <> "" Then
-                    .Fields("SEDUTE") = .Fields("SEDUTE") + 1
-                End If
-            Next i
+            If rsTabelle.EOF And rsTabelle.BOF Then
+                .Fields("SEDUTE") = 0
+            Else
+                For i = 1 To 7
+                    If rsTabelle("AM_INIZIO" & i) <> "" Then
+                        .Fields("SEDUTE") = .Fields("SEDUTE") + 1
+                    ElseIf rsTabelle("PM_INIZIO" & i) <> "" Then
+                        .Fields("SEDUTE") = .Fields("SEDUTE") + 1
+                    ElseIf rsTabelle("SR_INIZIO" & i) <> "" Then
+                        .Fields("SEDUTE") = .Fields("SEDUTE") + 1
+                    End If
+                Next i
+            End If
             rsTabelle.Close
-            
         End With
     End If
     Set rsTabelle = Nothing

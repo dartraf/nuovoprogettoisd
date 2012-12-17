@@ -33,7 +33,7 @@ Begin VB.Form frmPass
          Height          =   345
          IMEMode         =   3  'DISABLE
          Left            =   600
-         MaxLength       =   15
+         MaxLength       =   20
          PasswordChar    =   "*"
          TabIndex        =   3
          ToolTipText     =   "Inserisci la password"
@@ -53,7 +53,7 @@ Begin VB.Form frmPass
          Height          =   345
          IMEMode         =   3  'DISABLE
          Left            =   600
-         MaxLength       =   15
+         MaxLength       =   20
          PasswordChar    =   "*"
          TabIndex        =   2
          ToolTipText     =   "Inserisci la password"
@@ -73,7 +73,7 @@ Begin VB.Form frmPass
          Height          =   345
          IMEMode         =   3  'DISABLE
          Left            =   600
-         MaxLength       =   15
+         MaxLength       =   20
          PasswordChar    =   "*"
          TabIndex        =   1
          ToolTipText     =   "Inserisci la password"

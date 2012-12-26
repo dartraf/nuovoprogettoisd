@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "28/11/2012"
+            TextSave        =   "24/12/2012"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -957,7 +957,8 @@ Private Sub mnuabout_Click()
 End Sub
 
 Private Sub mnuCaPAnnuale_Click()
-    MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
+    tStampa = tpCAPAnnuale
+    frmStampaFiltri.Show 1
 End Sub
 
 Private Sub mnuPopUpInserisciEsame_Click()

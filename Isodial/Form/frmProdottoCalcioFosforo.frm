@@ -25,7 +25,6 @@ Begin VB.Form frmProdottoCalcioFosforo
       _ExtentX        =   21405
       _ExtentY        =   6773
       _Version        =   393216
-      Tab             =   1
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -39,21 +38,21 @@ Begin VB.Form frmProdottoCalcioFosforo
       EndProperty
       TabCaption(0)   =   "Tabella"
       TabPicture(0)   =   "frmProdottoCalcioFosforo.frx":0000
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Frame4"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Frame2"
+      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Grafico 2D"
       TabPicture(1)   =   "frmProdottoCalcioFosforo.frx":001C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "grafico(0)"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmProdottoCalcioFosforo.frx":0038
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "grafico(1)"
-      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -67,7 +66,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   2535
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   1
          Top             =   480
          Width           =   11895
@@ -156,7 +155,7 @@ Begin VB.Form frmProdottoCalcioFosforo
       End
       Begin VB.Frame Frame4 
          Height          =   855
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   6
          Top             =   2880
          Width           =   11895
@@ -251,7 +250,7 @@ Begin VB.Form frmProdottoCalcioFosforo
       Begin MSChart20Lib.MSChart grafico 
          Height          =   3495
          Index           =   0
-         Left            =   120
+         Left            =   -74880
          OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":0292
          TabIndex        =   5
          Top             =   360
@@ -541,7 +540,7 @@ Private Function CalcoloProdottoCalcioFosforo(vCol As Integer) As Double
     Exit Function
 gestione:
     If Err.Number = 13 Or Err.Number = 5 Then
-        'MsgBox "Impossibile calcolare il valore del TSAT con i dati presenti", vbCritical, "Attenzione"
+        'MsgBox "Impossibile calcolare il Prodotto Ca/P con i dati presenti", vbCritical, "Attenzione"
     Else
         MsgBox Err.Number & ":  " & Err.Description, vbCritical, "Attenzione"
     End If
@@ -660,8 +659,6 @@ Private Sub cmdEsportaEsame_Click()
     Dim keyRecord As Integer
     Dim keyNuovo As Integer
     
-    MsgBox "DA FARE", vbExclamation, "ATTENZIONE"
-    
     If flxGriglia.TextMatrix(4, vCol) = "" Then
         MsgBox "IMPOSSIBILE ESPORTARE!!!" & vbCrLf & "Valori non definiti", vbCritical, "Attenzione"
         Exit Sub
@@ -673,12 +670,12 @@ Private Sub cmdEsportaEsame_Click()
         If flxGriglia.TextMatrix(4, vCol) <> 0 Then
             Set rsDataset = New Recordset
             
-            ' verifica se esiste l'esame kt/v
-            rsDataset.Open "SELECT * FROM VOCI_ESAMI WHERE NOME like '%TSAT%'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+            ' verifica se esiste l'esame Ca/p
+            rsDataset.Open "SELECT * FROM VOCI_ESAMI WHERE NOME like '%Ca/P%' or NOME like '%Ca / P%' ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
             If Not (rsDataset.EOF And rsDataset.BOF) Then
                 keyEsame = rsDataset("KEY")
             Else
-                MsgBox "Esame TSAT% non presente nella lista esami di laboratorio", vbCritical, "Attenzione"
+                MsgBox "Esame Ca/P non presente nella lista esami di laboratorio", vbCritical, "Attenzione"
             End If
             rsDataset.Close
             
@@ -688,7 +685,7 @@ Private Sub cmdEsportaEsame_Click()
                 If Not (rsDataset.EOF And rsDataset.BOF) Then
                     keyGruppo = rsDataset("CODICE_GRUPPO")
                 Else
-                    MsgBox "Esame TSAT% non è associato a nessun raggruppamento esami di laboratorio", vbCritical, "Attenzione"
+                    MsgBox "Esame Ca/P non è associato a nessun raggruppamento esami di laboratorio", vbCritical, "Attenzione"
                 End If
                 rsDataset.Close
                 
@@ -731,7 +728,7 @@ Private Sub cmdEsportaEsame_Click()
                         rsDataset.Close
                         
                         If keyRecord <> 0 Then
-                            If MsgBox("Il valore del Tsat% è già presente" & vbCrLf & "Vuoi sovrascriverlo?", vbQuestion + vbYesNo + vbDefaultButton2, "Esporta esame") = vbYes Then
+                            If MsgBox("Il valore del Ca/P è già presente" & vbCrLf & "Vuoi sovrascriverlo?", vbQuestion + vbYesNo + vbDefaultButton2, "Esporta esame") = vbYes Then
                                 ' modifica il dato esistente
                                 rsDataset.Open "SELECT * FROM ESAMI_LAB WHERE CODICE_ANAMNESI_ESAMI=" & keyAnamnesi & " AND CODICE_ESAME=" & keyEsame, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
                                 If Not (rsDataset.EOF And rsDataset.BOF) Then
@@ -783,7 +780,7 @@ Private Sub cmdEsportaEsame_Click()
             End If
             Set rsDataset = Nothing
         Else
-            MsgBox "Per il mese selezionato impossibile calcolare il TSAT%", vbCritical, "Attenzione"
+            MsgBox "Per il mese selezionato impossibile calcolare il Ca/P", vbCritical, "Attenzione"
         End If
     End If
 End Sub

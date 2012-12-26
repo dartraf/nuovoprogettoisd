@@ -576,12 +576,12 @@ Private Sub StampaKtvAnnuale()
     Set rsDataset = Nothing
     
     If rsMain.RecordCount <> 0 Then
-        Set rptKtvTsatAnnuale.DataSource = rsMain
-        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "KT/V ANNO " & cboAnno.Text
-        rptKtvTsatAnnuale.LeftMargin = 500
-        rptKtvTsatAnnuale.RightMargin = 0
-        rptKtvTsatAnnuale.TopMargin = 0
-        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
+        Set rptKtvTsatCapAnnuale.DataSource = rsMain
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "KT/V ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.LeftMargin = 500
+        rptKtvTsatCapAnnuale.RightMargin = 0
+        rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
 End Sub
@@ -691,12 +691,12 @@ Private Sub StampaTsatAnnuale()
     Set rsDataset = Nothing
     
     If rsMain.RecordCount <> 0 Then
-        Set rptKtvTsatAnnuale.DataSource = rsMain
-        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text
-        rptKtvTsatAnnuale.LeftMargin = 500
-        rptKtvTsatAnnuale.RightMargin = 0
-        rptKtvTsatAnnuale.TopMargin = 0
-        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
+        Set rptKtvTsatCapAnnuale.DataSource = rsMain
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.LeftMargin = 500
+        rptKtvTsatCapAnnuale.RightMargin = 0
+        rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
 End Sub
@@ -875,12 +875,12 @@ Private Sub StampaPthAnnuale()
     Set rsDataset = Nothing
     
     If rsMain.RecordCount <> 0 Then
-        Set rptKtvTsatAnnuale.DataSource = rsMain
-        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "PTH ANNO " & cboAnno.Text
-        rptKtvTsatAnnuale.LeftMargin = 500
-        rptKtvTsatAnnuale.RightMargin = 0
-        rptKtvTsatAnnuale.TopMargin = 0
-        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
+        Set rptKtvTsatCapAnnuale.DataSource = rsMain
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "PTH ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.LeftMargin = 500
+        rptKtvTsatCapAnnuale.RightMargin = 0
+        rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
 End Sub
@@ -950,15 +950,15 @@ Private Sub StampaCAPAnnuale()
     Loop
     rsDataset.Close
     
-    rsDataset.Open "SELECT * FROM TSAT WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM PRODOTTO_CALCIO_FOSFORO WHERE ANNO=" & cboAnno.Text, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         rsMain.Filter = "CODICE_PAZIENTE=" & rsDataset("CODICE_PAZIENTE")
         If rsMain.RecordCount <> 0 Then
             rsMain("MEDIA") = 0
-            If IsNull(rsDataset("SIDEREMIA")) Or IsNull(rsDataset("TRANSFERRINA")) Then
+            If IsNull(rsDataset("CALCEMIA")) Or IsNull(rsDataset("FOSFOREMIA")) Then
                 rsMain.Fields("MESE" & rsDataset("MESE")) = Null
             Else
-                rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaTsat(rsDataset("SIDEREMIA"), rsDataset("TRANSFERRINA"))
+                 rsMain.Fields("MESE" & rsDataset("MESE")) = CalcolaCap(rsDataset("CALCEMIA"), rsDataset("FOSFOREMIA"))
             End If
         End If
         rsDataset.MoveNext
@@ -990,12 +990,12 @@ Private Sub StampaCAPAnnuale()
     Set rsDataset = Nothing
     
     If rsMain.RecordCount <> 0 Then
-        Set rptKtvTsatAnnuale.DataSource = rsMain
-        rptKtvTsatAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text
-        rptKtvTsatAnnuale.LeftMargin = 500
-        rptKtvTsatAnnuale.RightMargin = 0
-        rptKtvTsatAnnuale.TopMargin = 0
-        rptKtvTsatAnnuale.PrintReport True, rptRangeAllPages
+        Set rptKtvTsatCapAnnuale.DataSource = rsMain
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "PRODOTTO Ca/P ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.LeftMargin = 500
+        rptKtvTsatCapAnnuale.RightMargin = 0
+        rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
 End Sub

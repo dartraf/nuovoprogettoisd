@@ -1,7 +1,7 @@
 VERSION 5.00
-Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatAnnuale 
+Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Kt/V o Tsat Annuale"
+   Caption         =   "Kt/V o Tsat o CaP Annuale"
    ClientHeight    =   7020
    ClientLeft      =   45
    ClientTop       =   315
@@ -47,7 +47,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatAnnuale
       BeginProperty Item0 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
-         Object.Left            =   5330
+         Object.Left            =   6010
          Object.Top             =   30
          Object.Width           =   3390
          Object.Height          =   1410
@@ -57,7 +57,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatAnnuale
       BeginProperty Item1 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
-         Object.Left            =   8732
+         Object.Left            =   9412
          Object.Top             =   30
          Object.Width           =   855
          Object.Height          =   810
@@ -67,9 +67,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatAnnuale
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTitolo"
-         Object.Left            =   2608
+         Object.Left            =   1134
          Object.Top             =   2154
-         Object.Width           =   4830
+         Object.Width           =   8447
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1033,7 +1033,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatAnnuale
       NumControls     =   0
    EndProperty
 End
-Attribute VB_Name = "rptKtvTsatAnnuale"
+Attribute VB_Name = "rptKtvTsatCapAnnuale"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Begin VB.Form frmTrasferisciFile 
    BackColor       =   &H00808080&
    BorderStyle     =   0  'None
@@ -50,7 +50,7 @@ End Sub
 Private Sub Form_Activate()
    Dim lettera As String
    Me.Left = 5420
-   Me.Top = 7000
+   Me.Top = 6800
     
     'ATTENZIONE - NON CAMBIARE L'ORDINE DEGLI ELSEIF
     If VerificaDiscoRimovibile(lettera) = False Then

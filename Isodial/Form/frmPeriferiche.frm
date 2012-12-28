@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmPeriferiche 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -140,7 +140,9 @@ Private Sub Form_Load()
         .MousePointer = flexCustom
     End With
     Call TakeCloseOff(Me.hWnd)
-    Call LeggiDati
+    If VerificaDiscoRimovibile(lettera) Then
+        Call LeggiDati
+    End If
     flxGriglia.Row = 0
 End Sub
 
@@ -153,7 +155,7 @@ Private Sub LeggiDati()
     ReDim records(0)
     flxGriglia.Rows = 1
     
-    If VerificaDiscoRimovibile(lettera) And Dir(lettera & ":\Dati.dat") <> "" Then
+    If Dir(lettera & ":\Dati.dat") <> "" Then
         ' legge il file
         Open lettera & ":\Dati.dat" For Random As 1
         i = 0

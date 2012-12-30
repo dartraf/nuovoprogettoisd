@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmStampaFiltri 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa "
@@ -1053,6 +1053,8 @@ Dim strSqlStampa As String
                 "       NEW adVarChar (70) AS FILTRO_SEDUTA, " & _
                 "       NEW adVarChar (50) as BAGNO_DIALISI, " & _
                 "       NEW adVarChar (50) AS ANTICOAGULANTE, " & _
+                "       NEW adVarChar (35) as ALLERGIA, " & _
+                "       NEW adSingle as  FLUSSO_QB, " & _
                 "       NEW adLongVarChar as ESAME1, "
     strSqlStampa = strSqlStampa & _
                 "       NEW adLongVarChar as ESAME2, " & _
@@ -1159,6 +1161,8 @@ Dim strSqlStampa As String
             .Fields("FILTRO_SEDUTA") = rsDataset("FILTRI.NOME") & " : LOTTO N°"
             .Fields("BAGNO_DIALISI") = "Na+ " & rsDataset("SODIO") & " / " & "K+ " & rsDataset("POTASSIO") & " / " & "HC03- " & rsDataset("BICARBONATO") & " / " & "Ca " & rsDataset("CALCIO") & " / " & "Gluc " & rsDataset("GLUCOSIO")
             .Fields("ANTICOAGULANTE") = rsDataset("ANTICOAGULANTI.NOME")
+            .Fields("ALLERGIA") = rsDataset("ALLERGIA")
+            .Fields("FLUSSO_QB") = rsDataset("FLUSSO_SANGUE")
             .Fields("PESO_SECCO") = rsDataset("PESO_SECCO")
             
             

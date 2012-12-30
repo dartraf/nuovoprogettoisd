@@ -17,7 +17,7 @@ Begin VB.Form frmAccessi
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   30
+      TabIndex        =   29
       Top             =   0
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -27,7 +27,7 @@ Begin VB.Form frmAccessi
          Left            =   360
          Picture         =   "frmAccessi.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   240
          Width           =   450
       End
@@ -46,7 +46,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   360
          Width           =   1005
       End
@@ -65,7 +65,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   1
          Left            =   6000
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   360
          Width           =   630
       End
@@ -84,7 +84,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   3
          Left            =   10440
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   360
          Width           =   465
       End
@@ -102,7 +102,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   285
          Left            =   2280
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   360
          Width           =   3255
       End
@@ -120,7 +120,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   285
          Left            =   6840
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   360
          Width           =   3135
       End
@@ -138,7 +138,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   285
          Left            =   11160
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   360
          Width           =   615
       End
@@ -146,21 +146,9 @@ Begin VB.Form frmAccessi
    Begin VB.Frame Frame2 
       Height          =   1455
       Left            =   120
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   720
       Width           =   12015
-      Begin DataTimeBox.uDataTimeBox oDataTimeBox 
-         Height          =   375
-         Left            =   2280
-         TabIndex        =   0
-         Top             =   195
-         Width           =   2100
-         _ExtentX        =   3704
-         _ExtentY        =   661
-         DataBox         =   -1  'True
-         TimeBox         =   0   'False
-         VisibleElenca   =   -1  'True
-      End
       Begin VB.TextBox txtIntervento 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -175,9 +163,21 @@ Begin VB.Form frmAccessi
          Left            =   2280
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   1
+         TabIndex        =   0
          Top             =   600
          Width           =   9495
+      End
+      Begin DataTimeBox.uDataTimeBox oData 
+         Height          =   375
+         Left            =   2280
+         TabIndex        =   37
+         Top             =   175
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   -1  'True
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -194,7 +194,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   2
          Left            =   240
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   240
          Width           =   1590
       End
@@ -213,7 +213,7 @@ Begin VB.Form frmAccessi
          Height          =   480
          Index           =   4
          Left            =   240
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   720
          Width           =   1485
          WordWrap        =   -1  'True
@@ -222,7 +222,7 @@ Begin VB.Form frmAccessi
    Begin VB.Frame Frame3 
       Height          =   1335
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   2040
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -232,7 +232,7 @@ Begin VB.Form frmAccessi
          Left            =   1680
          Picture         =   "frmAccessi.frx":0459
          Style           =   1  'Graphical
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   720
          Width           =   450
       End
@@ -243,7 +243,7 @@ Begin VB.Form frmAccessi
          Left            =   1680
          Picture         =   "frmAccessi.frx":08B2
          Style           =   1  'Graphical
-         TabIndex        =   2
+         TabIndex        =   1
          Top             =   240
          Width           =   450
       End
@@ -262,7 +262,7 @@ Begin VB.Form frmAccessi
          Height          =   285
          Index           =   1
          Left            =   8640
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   840
          Width           =   3135
       End
@@ -281,7 +281,7 @@ Begin VB.Form frmAccessi
          Height          =   285
          Index           =   1
          Left            =   3600
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   840
          Width           =   3255
       End
@@ -300,7 +300,7 @@ Begin VB.Form frmAccessi
          Height          =   285
          Index           =   0
          Left            =   8640
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   360
          Width           =   3135
       End
@@ -319,7 +319,7 @@ Begin VB.Form frmAccessi
          Height          =   285
          Index           =   0
          Left            =   3600
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   360
          Width           =   3255
       End
@@ -338,7 +338,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   10
          Left            =   240
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   840
          Width           =   1245
       End
@@ -357,7 +357,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   9
          Left            =   7680
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   840
          Width           =   630
       End
@@ -376,7 +376,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   8
          Left            =   2280
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   840
          Width           =   1005
       End
@@ -395,7 +395,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   5
          Left            =   240
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   360
          Width           =   1245
       End
@@ -414,7 +414,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   6
          Left            =   7680
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   360
          Width           =   630
       End
@@ -433,7 +433,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   7
          Left            =   2280
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   360
          Width           =   1005
       End
@@ -441,7 +441,7 @@ Begin VB.Form frmAccessi
    Begin VB.Frame Frame5 
       Height          =   1455
       Left            =   120
-      TabIndex        =   22
+      TabIndex        =   21
       Top             =   3240
       Width           =   12015
       Begin VB.TextBox txtDati 
@@ -458,7 +458,7 @@ Begin VB.Form frmAccessi
          Left            =   2280
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   600
          Width           =   9495
       End
@@ -476,7 +476,7 @@ Begin VB.Form frmAccessi
          Height          =   255
          Index           =   2
          Left            =   6600
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   240
          Width           =   1215
       End
@@ -494,7 +494,7 @@ Begin VB.Form frmAccessi
          Height          =   255
          Index           =   1
          Left            =   4080
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   240
          Width           =   1935
       End
@@ -512,7 +512,7 @@ Begin VB.Form frmAccessi
          Height          =   255
          Index           =   0
          Left            =   2280
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   240
          Width           =   1215
       End
@@ -531,7 +531,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   12
          Left            =   240
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   600
          Width           =   1410
       End
@@ -550,7 +550,7 @@ Begin VB.Form frmAccessi
          Height          =   240
          Index           =   11
          Left            =   240
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   240
          Width           =   1050
       End
@@ -558,7 +558,7 @@ Begin VB.Form frmAccessi
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   4560
       Width           =   12015
       Begin VB.CommandButton cmdElimina 
@@ -574,7 +574,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   495
          Left            =   7200
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   240
          Width           =   1335
       End
@@ -591,7 +591,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   495
          Left            =   5520
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   240
          Width           =   1335
       End
@@ -609,7 +609,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   495
          Left            =   10560
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   240
          Width           =   1215
       End
@@ -626,7 +626,7 @@ Begin VB.Form frmAccessi
          EndProperty
          Height          =   495
          Left            =   8880
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   240
          Width           =   1335
       End
@@ -686,7 +686,7 @@ Private Sub Form_Load()
     intPazientiKey = 0
     
     Call ApriRsDisconnesso
-    oDataTimeBox.ConnectionString = strConnectionStringCentro
+    oData.ConnectionString = strConnectionStringCentro
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -764,7 +764,7 @@ Private Sub Confronta(rs As Recordset)
         nome_campi = Left(nome_campi, Len(nome_campi) - 3)
         valori = Left(valori, Len(valori) - 3)
         v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "DATA_RECORD", "NOME_CAMPI", "VECCHI_VALORI")
-        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rs("KEY"), oDataTimeBox.data, nome_campi, valori)
+        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rs("KEY"), oData.data, nome_campi, valori)
         Set rsDataset = New Recordset
         rsDataset.Open "M_ACCESSI_VASCOLARI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
         rsDataset.AddNew v_Nomi, v_Val
@@ -780,7 +780,10 @@ Private Sub CaricaScheda()
     Dim strSql As String
     
     ' la data americana
-    data = oDataTimeBox.DataAmericana
+    data = Month(oData.data) & "/" & Day(oData.data) & "/" & Year(oData.data)
+    
+    'data = oData.DataAmericana in questo form da errore incrementando il giorno di 2
+    
     strSql = "SELECT    * " & _
              "FROM      ACCESSI_VASCOLARI_TAB " & _
              "WHERE     CODICE_PAZIENTE=" & intPazientiKey & " AND " & _
@@ -846,7 +849,7 @@ Private Function Completo() As Boolean
         MsgBox "Selezionare il paziente", vbCritical, "Attenzione"
         Exit Function
     Else
-        If oDataTimeBox.data = "" Then
+        If oData.data = "" Then
             MsgBox "Inserire una data", vbCritical, "Attenzione"
             Exit Function
         End If
@@ -878,7 +881,7 @@ Private Sub PulisciTutto()
     intPazientiKey = 0
     intMedicoKey(0) = 0
     intMedicoKey(1) = 0
-    oDataTimeBox.Pulisci
+    oData.Pulisci
     Call PulisciForm(Me)
     cmdTrova(0).SetFocus
     For i = 0 To 2
@@ -920,7 +923,7 @@ Private Sub cmdMemorizza_Click()
         End If
         v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "INTERVENTO", "CODICE_MEDICO1", _
                         "CODICE_MEDICO2", "ANESTESIA", "DATI")
-        v_Val = Array(keyId, intPazientiKey, oDataTimeBox.data, txtIntervento, intMedicoKey(0), intMedicoKey(1), GestisciOpt, txtDati)
+        v_Val = Array(keyId, intPazientiKey, oData.data, txtIntervento, intMedicoKey(0), intMedicoKey(1), GestisciOpt, txtDati)
         Set rsAccessi = New Recordset
         If modifica Then
             rsAccessi.Open "SELECT * FROM ACCESSI_VASCOLARI_TAB WHERE KEY=" & keyId, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -976,7 +979,7 @@ Private Sub cmdElimina_Click()
         If modifica Then
             If MsgBox("Sei sicuro di voler eliminare la scheda di: " & UCase(lblCognome) & " " & UCase(lblNome) & "?", vbQuestion & vbYesNo, "Eliminazione") = vbYes Then
                 ' la data americana
-                data = oDataTimeBox.DataAmericana
+                data = Month(oData.data) & "/" & Day(oData.data) & "/" & Year(oData.data)
                 Set rsAccessi = New Recordset
                 rsAccessi.Open "SELECT * FROM ACCESSI_VASCOLARI_TAB WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & data & "#", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
                 If Not (rsAccessi.BOF And rsAccessi.EOF) Then
@@ -1029,25 +1032,25 @@ Private Sub CaricaPaziente()
     blnModificato = False
 End Sub
 
-Private Sub oDataTimeBox_OnCalendarClick(blnProsegui As Boolean)
-    blnProsegui = ControlloChiusuraForm(blnModificato, Me.Caption)
+Private Sub oData_OnCalendarClick(blnProsegui As Boolean)
+     blnProsegui = ControlloChiusuraForm(blnModificato, Me.Caption)
 End Sub
 
 '' Pulisce e carica le nuova scheda (se data non è null)
-Private Sub oDataTimeBox_OnDataChange()
-    If IsDate(oDataTimeBox.data) Then
+Private Sub oData_OnDataChange()
+    If IsDate(oData.data) Then
         Call CaricaScheda
     Else
-        If oDataTimeBox.data = "" Then Pulisci
+        If oData.data = "" Then Pulisci
     End If
 End Sub
 
-Private Sub oDataTimeBox_OnElencaClick()
+Private Sub oData_OnElencaClick()
     If ControlloChiusuraForm(blnModificato, Me.Caption) Then
         tElenca.Tipo = tpACCESSO
         tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey
         frmElencaDate.Show 1
-        If laData <> "" Then oDataTimeBox.data = laData
+        If laData <> "" Then oData.data = laData
     End If
 End Sub
 

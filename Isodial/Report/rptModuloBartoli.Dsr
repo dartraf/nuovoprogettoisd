@@ -159,7 +159,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   30450
-      NumControls     =   286
+      NumControls     =   289
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -942,25 +942,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       ItemType33      =   3
       BeginProperty Item33 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label34"
-         Object.Left            =   4819
-         Object.Top             =   1410
-         Object.Width           =   510
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Litri:"
-      EndProperty
-      ItemType34      =   3
-      BeginProperty Item34 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label4"
          Object.Left            =   170
          Object.Top             =   16555
@@ -977,8 +958,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Acc. Vascolare"
       EndProperty
-      ItemType35      =   4
-      BeginProperty Item35 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType34      =   4
+      BeginProperty Item34 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAccessoVascolareSecondo"
          Object.Left            =   1701
@@ -1005,8 +986,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType36      =   4
-      BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType35      =   4
+      BeginProperty Item35 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEmogruppoSecondo"
          Object.Left            =   8561
@@ -1032,8 +1013,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType37      =   3
-      BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType36      =   3
+      BeginProperty Item36 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label21"
          Object.Left            =   7427
@@ -1051,8 +1032,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Emogruppo"
       EndProperty
-      ItemType38      =   3
-      BeginProperty Item38 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType37      =   3
+      BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label23"
          Object.Left            =   4819
@@ -1070,8 +1051,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Cod. E.D.T.A."
       EndProperty
-      ItemType39      =   4
-      BeginProperty Item39 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType38      =   4
+      BeginProperty Item38 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEDTASecondo"
          Object.Left            =   6237
@@ -1097,8 +1078,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType40      =   3
-      BeginProperty Item40 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType39      =   3
+      BeginProperty Item39 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label120"
          Object.Left            =   6917
@@ -1116,8 +1097,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Tempo Dialisi"
       EndProperty
-      ItemType41      =   4
-      BeginProperty Item41 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType40      =   4
+      BeginProperty Item40 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTempoDialisiSecondo"
          Object.Left            =   8327
@@ -1143,8 +1124,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType42      =   3
-      BeginProperty Item42 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType41      =   3
+      BeginProperty Item41 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lbllavbel23"
          Object.Left            =   170
@@ -1162,8 +1143,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Cognome"
       EndProperty
-      ItemType43      =   3
-      BeginProperty Item43 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType42      =   3
+      BeginProperty Item42 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label70"
          Object.Left            =   3515
@@ -1181,8 +1162,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Anni:"
       EndProperty
-      ItemType44      =   3
-      BeginProperty Item44 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType43      =   3
+      BeginProperty Item43 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label22"
          Object.Left            =   4818
@@ -1200,8 +1181,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Matricola Paziente"
       EndProperty
-      ItemType45      =   4
-      BeginProperty Item45 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType44      =   4
+      BeginProperty Item44 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCognome"
          Object.Left            =   1247
@@ -1227,8 +1208,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType46      =   3
-      BeginProperty Item46 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType45      =   3
+      BeginProperty Item45 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label121"
          Object.Left            =   1985
@@ -1246,8 +1227,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Nome"
       EndProperty
-      ItemType47      =   4
-      BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType46      =   4
+      BeginProperty Item46 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNome"
          Object.Left            =   2721
@@ -1273,8 +1254,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType48      =   4
-      BeginProperty Item48 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType47      =   4
+      BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAnni"
          Object.Left            =   4139
@@ -1300,8 +1281,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType49      =   4
-      BeginProperty Item49 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType48      =   4
+      BeginProperty Item48 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodiceID"
          Object.Left            =   6745
@@ -1327,8 +1308,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType50      =   3
-      BeginProperty Item50 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType49      =   3
+      BeginProperty Item49 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label56"
          Object.Left            =   170
@@ -1346,8 +1327,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Cognome"
       EndProperty
-      ItemType51      =   3
-      BeginProperty Item51 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType50      =   3
+      BeginProperty Item50 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label78"
          Object.Left            =   3515
@@ -1365,8 +1346,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Anni:"
       EndProperty
-      ItemType52      =   3
-      BeginProperty Item52 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType51      =   3
+      BeginProperty Item51 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label98"
          Object.Left            =   4818
@@ -1384,8 +1365,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Matricola Paziente"
       EndProperty
-      ItemType53      =   4
-      BeginProperty Item53 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType52      =   4
+      BeginProperty Item52 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCognomeSecondo"
          Object.Left            =   1247
@@ -1411,8 +1392,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType54      =   3
-      BeginProperty Item54 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType53      =   3
+      BeginProperty Item53 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label118"
          Object.Left            =   1985
@@ -1430,8 +1411,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Nome"
       EndProperty
-      ItemType55      =   4
-      BeginProperty Item55 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType54      =   4
+      BeginProperty Item54 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNomeSecondo"
          Object.Left            =   2721
@@ -1457,8 +1438,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType56      =   4
-      BeginProperty Item56 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType55      =   4
+      BeginProperty Item55 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAnniSecondo"
          Object.Left            =   4139
@@ -1484,8 +1465,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType57      =   4
-      BeginProperty Item57 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType56      =   4
+      BeginProperty Item56 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodiceIDSecondo"
          Object.Left            =   6745
@@ -1511,8 +1492,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType58      =   4
-      BeginProperty Item58 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType57      =   4
+      BeginProperty Item57 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteDomiciliare"
          Object.Left            =   7313
@@ -1539,8 +1520,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType59      =   4
-      BeginProperty Item59 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType58      =   4
+      BeginProperty Item58 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteDialisi"
          Object.Left            =   7313
@@ -1567,8 +1548,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType60      =   4
-      BeginProperty Item60 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType59      =   4
+      BeginProperty Item59 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame6"
          Object.Left            =   2620
@@ -1595,8 +1576,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType61      =   4
-      BeginProperty Item61 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType60      =   4
+      BeginProperty Item60 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame11"
          Object.Left            =   5250
@@ -1623,8 +1604,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType62      =   4
-      BeginProperty Item62 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType61      =   4
+      BeginProperty Item61 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame2"
          Object.Left            =   2620
@@ -1651,8 +1632,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType63      =   4
-      BeginProperty Item63 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType62      =   4
+      BeginProperty Item62 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame7"
          Object.Left            =   5250
@@ -1679,8 +1660,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType64      =   4
-      BeginProperty Item64 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType63      =   4
+      BeginProperty Item63 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame12"
          Object.Left            =   7870
@@ -1707,8 +1688,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType65      =   4
-      BeginProperty Item65 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType64      =   4
+      BeginProperty Item64 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame3"
          Object.Left            =   5250
@@ -1735,8 +1716,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType66      =   4
-      BeginProperty Item66 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType65      =   4
+      BeginProperty Item65 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame8"
          Object.Left            =   7870
@@ -1763,8 +1744,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType67      =   4
-      BeginProperty Item67 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType66      =   4
+      BeginProperty Item66 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame13"
          Object.Top             =   19446
@@ -1790,8 +1771,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType68      =   4
-      BeginProperty Item68 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType67      =   4
+      BeginProperty Item67 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame4"
          Object.Left            =   7870
@@ -1818,8 +1799,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType69      =   4
-      BeginProperty Item69 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType68      =   4
+      BeginProperty Item68 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame9"
          Object.Top             =   18822
@@ -1845,8 +1826,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType70      =   4
-      BeginProperty Item70 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType69      =   4
+      BeginProperty Item69 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame14"
          Object.Left            =   2620
@@ -1873,8 +1854,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType71      =   4
-      BeginProperty Item71 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType70      =   4
+      BeginProperty Item70 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame5"
          Object.Top             =   18198
@@ -1900,8 +1881,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType72      =   4
-      BeginProperty Item72 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType71      =   4
+      BeginProperty Item71 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame10"
          Object.Left            =   2620
@@ -1928,8 +1909,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType73      =   4
-      BeginProperty Item73 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType72      =   4
+      BeginProperty Item72 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame15"
          Object.Left            =   5250
@@ -1956,23 +1937,23 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType74      =   5
-      BeginProperty Item74 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType73      =   5
+      BeginProperty Item73 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line131"
          Object.Top             =   20013
          Object.Width           =   9978
       EndProperty
-      ItemType75      =   5
-      BeginProperty Item75 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType74      =   5
+      BeginProperty Item74 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line132"
          Object.Top             =   16951
          Object.Width           =   9978
          Object.Height          =   1
       EndProperty
-      ItemType76      =   3
-      BeginProperty Item76 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType75      =   3
+      BeginProperty Item75 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblSpazio"
          Object.Left            =   9694
@@ -1990,8 +1971,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "."
       EndProperty
-      ItemType77      =   4
-      BeginProperty Item77 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType76      =   4
+      BeginProperty Item76 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEsame16"
          Object.Left            =   7870
@@ -2018,8 +1999,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType78      =   3
-      BeginProperty Item78 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType77      =   3
+      BeginProperty Item77 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label35"
          Object.Left            =   340
@@ -2038,8 +2019,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Anamnesi interdialitica"
          Alignment       =   2
       EndProperty
-      ItemType79      =   3
-      BeginProperty Item79 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType78      =   3
+      BeginProperty Item78 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label36"
          Object.Left            =   113
@@ -2057,8 +2038,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Firma del Medico"
       EndProperty
-      ItemType80      =   3
-      BeginProperty Item80 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType79      =   3
+      BeginProperty Item79 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label37"
          Object.Left            =   114
@@ -2076,8 +2057,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Data"
       EndProperty
-      ItemType81      =   3
-      BeginProperty Item81 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType80      =   3
+      BeginProperty Item80 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label38"
          Object.Left            =   2552
@@ -2095,8 +2076,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "N° Dialisi"
       EndProperty
-      ItemType82      =   3
-      BeginProperty Item82 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType81      =   3
+      BeginProperty Item81 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label39"
          Object.Left            =   114
@@ -2114,8 +2095,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Inizio"
       EndProperty
-      ItemType83      =   3
-      BeginProperty Item83 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType82      =   3
+      BeginProperty Item82 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label40"
          Object.Left            =   2552
@@ -2133,8 +2114,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Inizio"
       EndProperty
-      ItemType84      =   3
-      BeginProperty Item84 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType83      =   3
+      BeginProperty Item83 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label41"
          Object.Left            =   114
@@ -2152,8 +2133,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Fine"
       EndProperty
-      ItemType85      =   3
-      BeginProperty Item85 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType84      =   3
+      BeginProperty Item84 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label43"
          Object.Left            =   2552
@@ -2171,8 +2152,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Fine"
       EndProperty
-      ItemType86      =   3
-      BeginProperty Item86 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType85      =   3
+      BeginProperty Item85 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label44"
          Object.Left            =   114
@@ -2190,8 +2171,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "F.C. Inizio"
       EndProperty
-      ItemType87      =   3
-      BeginProperty Item87 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType86      =   3
+      BeginProperty Item86 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label45"
          Object.Left            =   2551
@@ -2209,8 +2190,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Litri"
       EndProperty
-      ItemType88      =   3
-      BeginProperty Item88 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType87      =   3
+      BeginProperty Item87 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label46"
          Object.Left            =   114
@@ -2229,8 +2210,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Ora"
          Alignment       =   2
       EndProperty
-      ItemType89      =   3
-      BeginProperty Item89 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType88      =   3
+      BeginProperty Item88 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label47"
          Object.Left            =   1191
@@ -2249,8 +2230,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Polso"
          Alignment       =   2
       EndProperty
-      ItemType90      =   3
-      BeginProperty Item90 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType89      =   3
+      BeginProperty Item89 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label49"
          Object.Left            =   114
@@ -2269,8 +2250,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "1ª ora"
          Alignment       =   2
       EndProperty
-      ItemType91      =   3
-      BeginProperty Item91 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType90      =   3
+      BeginProperty Item90 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label50"
          Object.Left            =   114
@@ -2289,8 +2270,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "2ª ora"
          Alignment       =   2
       EndProperty
-      ItemType92      =   3
-      BeginProperty Item92 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType91      =   3
+      BeginProperty Item91 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label52"
          Object.Left            =   2350
@@ -2309,8 +2290,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "P.A."
          Alignment       =   2
       EndProperty
-      ItemType93      =   3
-      BeginProperty Item93 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType92      =   3
+      BeginProperty Item92 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label53"
          Object.Left            =   3700
@@ -2329,8 +2310,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Peso Kg"
          Alignment       =   2
       EndProperty
-      ItemType94      =   3
-      BeginProperty Item94 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType93      =   3
+      BeginProperty Item93 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label54"
          Object.Left            =   114
@@ -2349,160 +2330,160 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "4ª ora "
          Alignment       =   2
       EndProperty
-      ItemType95      =   5
-      BeginProperty Item95 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType94      =   5
+      BeginProperty Item94 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line1"
          Object.Left            =   965
          Object.Top             =   2089
          Object.Width           =   1455
       EndProperty
-      ItemType96      =   5
-      BeginProperty Item96 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType95      =   5
+      BeginProperty Item95 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line2"
          Object.Left            =   965
          Object.Top             =   2389
          Object.Width           =   1455
       EndProperty
-      ItemType97      =   5
-      BeginProperty Item97 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType96      =   5
+      BeginProperty Item96 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line4"
          Object.Left            =   965
          Object.Top             =   2689
          Object.Width           =   1455
       EndProperty
-      ItemType98      =   5
-      BeginProperty Item98 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType97      =   5
+      BeginProperty Item97 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line5"
          Object.Left            =   964
          Object.Top             =   2989
          Object.Width           =   1455
       EndProperty
-      ItemType99      =   5
-      BeginProperty Item99 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType98      =   5
+      BeginProperty Item98 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line6"
          Object.Left            =   3513
          Object.Top             =   2088
          Object.Width           =   1455
       EndProperty
-      ItemType100     =   5
-      BeginProperty Item100 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType99      =   5
+      BeginProperty Item99 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line7"
          Object.Left            =   3513
          Object.Top             =   2389
          Object.Width           =   1455
       EndProperty
-      ItemType101     =   5
-      BeginProperty Item101 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType100     =   5
+      BeginProperty Item100 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line8"
          Object.Left            =   3513
          Object.Top             =   2689
          Object.Width           =   1455
       EndProperty
-      ItemType102     =   5
-      BeginProperty Item102 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType101     =   5
+      BeginProperty Item101 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line9"
          Object.Left            =   3513
          Object.Top             =   2989
          Object.Width           =   1455
       EndProperty
-      ItemType103     =   5
-      BeginProperty Item103 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType102     =   5
+      BeginProperty Item102 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line10"
          Object.Left            =   57
          Object.Top             =   5173
          Object.Width           =   4980
       EndProperty
-      ItemType104     =   5
-      BeginProperty Item104 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType103     =   5
+      BeginProperty Item103 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line11"
          Object.Left            =   57
          Object.Top             =   5473
          Object.Width           =   4980
       EndProperty
-      ItemType105     =   5
-      BeginProperty Item105 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType104     =   5
+      BeginProperty Item104 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line12"
          Object.Left            =   57
          Object.Top             =   4873
          Object.Width           =   4980
       EndProperty
-      ItemType106     =   5
-      BeginProperty Item106 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType105     =   5
+      BeginProperty Item105 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line13"
          Object.Left            =   5046
          Object.Top             =   1758
          Object.Height          =   6135
       EndProperty
-      ItemType107     =   5
-      BeginProperty Item107 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType106     =   5
+      BeginProperty Item106 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line16"
          Object.Left            =   57
          Object.Top             =   4575
          Object.Width           =   4980
       EndProperty
-      ItemType108     =   5
-      BeginProperty Item108 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType107     =   5
+      BeginProperty Item107 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line17"
          Object.Left            =   57
          Object.Top             =   3675
          Object.Width           =   4980
       EndProperty
-      ItemType109     =   5
-      BeginProperty Item109 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType108     =   5
+      BeginProperty Item108 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line18"
          Object.Left            =   57
          Object.Top             =   4275
          Object.Width           =   4980
       EndProperty
-      ItemType110     =   5
-      BeginProperty Item110 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType109     =   5
+      BeginProperty Item109 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line19"
          Object.Left            =   57
          Object.Top             =   3975
          Object.Width           =   4980
       EndProperty
-      ItemType111     =   5
-      BeginProperty Item111 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType110     =   5
+      BeginProperty Item110 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line20"
          Object.Left            =   1134
          Object.Top             =   3119
          Object.Height          =   1470
       EndProperty
-      ItemType112     =   5
-      BeginProperty Item112 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType111     =   5
+      BeginProperty Item111 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line21"
          Object.Left            =   2211
          Object.Top             =   3119
          Object.Height          =   1470
       EndProperty
-      ItemType113     =   5
-      BeginProperty Item113 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType112     =   5
+      BeginProperty Item112 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line22"
          Object.Left            =   3458
          Object.Top             =   3118
          Object.Height          =   1470
       EndProperty
-      ItemType114     =   4
-      BeginProperty Item114 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType113     =   4
+      BeginProperty Item113 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFiltroSeduta1"
          Object.Left            =   114
@@ -2528,96 +2509,96 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType115     =   5
-      BeginProperty Item115 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType114     =   5
+      BeginProperty Item114 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line23"
          Object.Left            =   3458
          Object.Top             =   5483
          Object.Height          =   2400
       EndProperty
-      ItemType116     =   5
-      BeginProperty Item116 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType115     =   5
+      BeginProperty Item115 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line24"
          Object.Left            =   57
          Object.Top             =   6073
          Object.Width           =   4980
       EndProperty
-      ItemType117     =   5
-      BeginProperty Item117 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType116     =   5
+      BeginProperty Item116 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line25"
          Object.Left            =   57
          Object.Top             =   6373
          Object.Width           =   4980
       EndProperty
-      ItemType118     =   5
-      BeginProperty Item118 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType117     =   5
+      BeginProperty Item117 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line26"
          Object.Left            =   57
          Object.Top             =   5773
          Object.Width           =   4980
       EndProperty
-      ItemType119     =   5
-      BeginProperty Item119 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType118     =   5
+      BeginProperty Item118 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line27"
          Object.Left            =   57
          Object.Top             =   6973
          Object.Width           =   4980
       EndProperty
-      ItemType120     =   5
-      BeginProperty Item120 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType119     =   5
+      BeginProperty Item119 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line28"
          Object.Left            =   57
          Object.Top             =   7273
          Object.Width           =   4980
       EndProperty
-      ItemType121     =   5
-      BeginProperty Item121 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType120     =   5
+      BeginProperty Item120 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line29"
          Object.Left            =   57
          Object.Top             =   6673
          Object.Width           =   4980
       EndProperty
-      ItemType122     =   5
-      BeginProperty Item122 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType121     =   5
+      BeginProperty Item121 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line30"
          Object.Left            =   57
          Object.Top             =   7887
          Object.Width           =   4995
       EndProperty
-      ItemType123     =   5
-      BeginProperty Item123 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType122     =   5
+      BeginProperty Item122 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line123"
          Object.Left            =   57
          Object.Top             =   7573
          Object.Width           =   4980
       EndProperty
-      ItemType124     =   5
-      BeginProperty Item124 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType123     =   5
+      BeginProperty Item123 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line124"
          Object.Left            =   57
          Object.Top             =   1757
          Object.Height          =   6135
       EndProperty
-      ItemType125     =   5
-      BeginProperty Item125 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType124     =   5
+      BeginProperty Item124 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line125"
          Object.Left            =   57
          Object.Top             =   1758
          Object.Width           =   4995
       EndProperty
-      ItemType126     =   3
-      BeginProperty Item126 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType125     =   3
+      BeginProperty Item125 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label55"
          Object.Left            =   3628
@@ -2636,8 +2617,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Firma"
          Alignment       =   2
       EndProperty
-      ItemType127     =   3
-      BeginProperty Item127 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType126     =   3
+      BeginProperty Item126 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label57"
          Object.Left            =   170
@@ -2656,16 +2637,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Sintomatologia e terapia"
          Alignment       =   2
       EndProperty
-      ItemType128     =   5
-      BeginProperty Item128 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType127     =   5
+      BeginProperty Item127 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line15"
          Object.Left            =   57
          Object.Top             =   3375
          Object.Width           =   4980
       EndProperty
-      ItemType129     =   3
-      BeginProperty Item129 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType128     =   3
+      BeginProperty Item128 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
          Object.Left            =   340
@@ -2684,8 +2665,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Anamnesi interdialitica"
          Alignment       =   2
       EndProperty
-      ItemType130     =   3
-      BeginProperty Item130 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType129     =   3
+      BeginProperty Item129 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   113
@@ -2703,8 +2684,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Firma del Medico"
       EndProperty
-      ItemType131     =   3
-      BeginProperty Item131 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType130     =   3
+      BeginProperty Item130 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
          Object.Left            =   114
@@ -2722,8 +2703,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Data"
       EndProperty
-      ItemType132     =   3
-      BeginProperty Item132 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType131     =   3
+      BeginProperty Item131 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   2552
@@ -2741,8 +2722,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "N° Dialisi"
       EndProperty
-      ItemType133     =   3
-      BeginProperty Item133 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType132     =   3
+      BeginProperty Item132 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
          Object.Left            =   114
@@ -2760,8 +2741,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Inizio"
       EndProperty
-      ItemType134     =   3
-      BeginProperty Item134 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType133     =   3
+      BeginProperty Item133 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
          Object.Left            =   2552
@@ -2779,8 +2760,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Inizio"
       EndProperty
-      ItemType135     =   3
-      BeginProperty Item135 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType134     =   3
+      BeginProperty Item134 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
          Object.Left            =   114
@@ -2798,8 +2779,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Fine"
       EndProperty
-      ItemType136     =   3
-      BeginProperty Item136 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType135     =   3
+      BeginProperty Item135 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label12"
          Object.Left            =   2552
@@ -2817,8 +2798,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Fine"
       EndProperty
-      ItemType137     =   3
-      BeginProperty Item137 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType136     =   3
+      BeginProperty Item136 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label13"
          Object.Left            =   114
@@ -2836,8 +2817,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "F.C. Inizio"
       EndProperty
-      ItemType138     =   3
-      BeginProperty Item138 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType137     =   3
+      BeginProperty Item137 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label14"
          Object.Left            =   2551
@@ -2855,8 +2836,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Litri"
       EndProperty
-      ItemType139     =   3
-      BeginProperty Item139 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType138     =   3
+      BeginProperty Item138 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
          Object.Left            =   114
@@ -2875,8 +2856,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Ora"
          Alignment       =   2
       EndProperty
-      ItemType140     =   3
-      BeginProperty Item140 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType139     =   3
+      BeginProperty Item139 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label16"
          Object.Left            =   1191
@@ -2895,8 +2876,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Polso"
          Alignment       =   2
       EndProperty
-      ItemType141     =   3
-      BeginProperty Item141 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType140     =   3
+      BeginProperty Item140 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label17"
          Object.Left            =   114
@@ -2915,8 +2896,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "1ª ora"
          Alignment       =   2
       EndProperty
-      ItemType142     =   3
-      BeginProperty Item142 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType141     =   3
+      BeginProperty Item141 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label18"
          Object.Left            =   114
@@ -2935,8 +2916,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "2ª ora"
          Alignment       =   2
       EndProperty
-      ItemType143     =   3
-      BeginProperty Item143 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType142     =   3
+      BeginProperty Item142 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label19"
          Object.Left            =   2350
@@ -2955,8 +2936,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "P.A."
          Alignment       =   2
       EndProperty
-      ItemType144     =   3
-      BeginProperty Item144 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType143     =   3
+      BeginProperty Item143 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label20"
          Object.Left            =   3700
@@ -2975,8 +2956,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Peso Kg"
          Alignment       =   2
       EndProperty
-      ItemType145     =   3
-      BeginProperty Item145 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType144     =   3
+      BeginProperty Item144 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label51"
          Object.Left            =   114
@@ -2995,160 +2976,160 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "4ª ora "
          Alignment       =   2
       EndProperty
-      ItemType146     =   5
-      BeginProperty Item146 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType145     =   5
+      BeginProperty Item145 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line14"
          Object.Left            =   965
          Object.Top             =   8326
          Object.Width           =   1455
       EndProperty
-      ItemType147     =   5
-      BeginProperty Item147 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType146     =   5
+      BeginProperty Item146 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line31"
          Object.Left            =   965
          Object.Top             =   8626
          Object.Width           =   1455
       EndProperty
-      ItemType148     =   5
-      BeginProperty Item148 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType147     =   5
+      BeginProperty Item147 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line32"
          Object.Left            =   965
          Object.Top             =   8926
          Object.Width           =   1455
       EndProperty
-      ItemType149     =   5
-      BeginProperty Item149 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType148     =   5
+      BeginProperty Item148 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line33"
          Object.Left            =   964
          Object.Top             =   9226
          Object.Width           =   1455
       EndProperty
-      ItemType150     =   5
-      BeginProperty Item150 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType149     =   5
+      BeginProperty Item149 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line34"
          Object.Left            =   3513
          Object.Top             =   8325
          Object.Width           =   1455
       EndProperty
-      ItemType151     =   5
-      BeginProperty Item151 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType150     =   5
+      BeginProperty Item150 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line35"
          Object.Left            =   3513
          Object.Top             =   8626
          Object.Width           =   1455
       EndProperty
-      ItemType152     =   5
-      BeginProperty Item152 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType151     =   5
+      BeginProperty Item151 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line36"
          Object.Left            =   3513
          Object.Top             =   8926
          Object.Width           =   1455
       EndProperty
-      ItemType153     =   5
-      BeginProperty Item153 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType152     =   5
+      BeginProperty Item152 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line37"
          Object.Left            =   3513
          Object.Top             =   9226
          Object.Width           =   1455
       EndProperty
-      ItemType154     =   5
-      BeginProperty Item154 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType153     =   5
+      BeginProperty Item153 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line38"
          Object.Left            =   57
          Object.Top             =   11411
          Object.Width           =   4980
       EndProperty
-      ItemType155     =   5
-      BeginProperty Item155 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType154     =   5
+      BeginProperty Item154 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line39"
          Object.Left            =   57
          Object.Top             =   11711
          Object.Width           =   4980
       EndProperty
-      ItemType156     =   5
-      BeginProperty Item156 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType155     =   5
+      BeginProperty Item155 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line40"
          Object.Left            =   57
          Object.Top             =   11111
          Object.Width           =   4980
       EndProperty
-      ItemType157     =   5
-      BeginProperty Item157 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType156     =   5
+      BeginProperty Item156 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line41"
          Object.Left            =   5046
          Object.Top             =   7995
          Object.Height          =   6135
       EndProperty
-      ItemType158     =   5
-      BeginProperty Item158 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType157     =   5
+      BeginProperty Item157 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line42"
          Object.Left            =   57
          Object.Top             =   10813
          Object.Width           =   4980
       EndProperty
-      ItemType159     =   5
-      BeginProperty Item159 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType158     =   5
+      BeginProperty Item158 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line43"
          Object.Left            =   57
          Object.Top             =   9913
          Object.Width           =   4980
       EndProperty
-      ItemType160     =   5
-      BeginProperty Item160 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType159     =   5
+      BeginProperty Item159 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line44"
          Object.Left            =   57
          Object.Top             =   10513
          Object.Width           =   4980
       EndProperty
-      ItemType161     =   5
-      BeginProperty Item161 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType160     =   5
+      BeginProperty Item160 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line45"
          Object.Left            =   57
          Object.Top             =   10213
          Object.Width           =   4980
       EndProperty
-      ItemType162     =   5
-      BeginProperty Item162 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType161     =   5
+      BeginProperty Item161 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line46"
          Object.Left            =   1134
          Object.Top             =   9357
          Object.Height          =   1470
       EndProperty
-      ItemType163     =   5
-      BeginProperty Item163 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType162     =   5
+      BeginProperty Item162 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line47"
          Object.Left            =   2211
          Object.Top             =   9357
          Object.Height          =   1470
       EndProperty
-      ItemType164     =   5
-      BeginProperty Item164 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType163     =   5
+      BeginProperty Item163 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line48"
          Object.Left            =   3458
          Object.Top             =   9356
          Object.Height          =   1470
       EndProperty
-      ItemType165     =   4
-      BeginProperty Item165 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType164     =   4
+      BeginProperty Item164 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFiltroSeduta3"
          Object.Left            =   114
@@ -3174,88 +3155,88 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType166     =   5
-      BeginProperty Item166 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType165     =   5
+      BeginProperty Item165 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line49"
          Object.Left            =   3458
          Object.Top             =   11721
          Object.Height          =   2400
       EndProperty
-      ItemType167     =   5
-      BeginProperty Item167 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType166     =   5
+      BeginProperty Item166 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line50"
          Object.Left            =   57
          Object.Top             =   12311
          Object.Width           =   4980
       EndProperty
-      ItemType168     =   5
-      BeginProperty Item168 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType167     =   5
+      BeginProperty Item167 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line51"
          Object.Left            =   57
          Object.Top             =   12611
          Object.Width           =   4980
       EndProperty
-      ItemType169     =   5
-      BeginProperty Item169 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType168     =   5
+      BeginProperty Item168 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line52"
          Object.Left            =   57
          Object.Top             =   12011
          Object.Width           =   4980
       EndProperty
-      ItemType170     =   5
-      BeginProperty Item170 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType169     =   5
+      BeginProperty Item169 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line53"
          Object.Left            =   57
          Object.Top             =   13211
          Object.Width           =   4980
       EndProperty
-      ItemType171     =   5
-      BeginProperty Item171 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType170     =   5
+      BeginProperty Item170 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line54"
          Object.Left            =   57
          Object.Top             =   13511
          Object.Width           =   4980
       EndProperty
-      ItemType172     =   5
-      BeginProperty Item172 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType171     =   5
+      BeginProperty Item171 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line55"
          Object.Left            =   57
          Object.Top             =   12911
          Object.Width           =   4980
       EndProperty
-      ItemType173     =   5
-      BeginProperty Item173 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType172     =   5
+      BeginProperty Item172 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line56"
          Object.Left            =   57
          Object.Top             =   14117
          Object.Width           =   4995
       EndProperty
-      ItemType174     =   5
-      BeginProperty Item174 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType173     =   5
+      BeginProperty Item173 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line57"
          Object.Left            =   57
          Object.Top             =   13811
          Object.Width           =   4980
       EndProperty
-      ItemType175     =   5
-      BeginProperty Item175 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType174     =   5
+      BeginProperty Item174 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line58"
          Object.Left            =   57
          Object.Top             =   7995
          Object.Height          =   6135
       EndProperty
-      ItemType176     =   3
-      BeginProperty Item176 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType175     =   3
+      BeginProperty Item175 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label58"
          Object.Left            =   3628
@@ -3274,8 +3255,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Firma"
          Alignment       =   2
       EndProperty
-      ItemType177     =   3
-      BeginProperty Item177 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType176     =   3
+      BeginProperty Item176 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label59"
          Object.Left            =   170
@@ -3294,24 +3275,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Sintomatologia e terapia"
          Alignment       =   2
       EndProperty
-      ItemType178     =   5
-      BeginProperty Item178 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType177     =   5
+      BeginProperty Item177 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line59"
          Object.Left            =   57
          Object.Top             =   9613
          Object.Width           =   4980
       EndProperty
-      ItemType179     =   5
-      BeginProperty Item179 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType178     =   5
+      BeginProperty Item178 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line60"
          Object.Left            =   57
          Object.Top             =   7994
          Object.Width           =   4995
       EndProperty
-      ItemType180     =   3
-      BeginProperty Item180 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType179     =   3
+      BeginProperty Item179 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label61"
          Object.Left            =   5443
@@ -3330,8 +3311,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Anamnesi interdialitica"
          Alignment       =   2
       EndProperty
-      ItemType181     =   3
-      BeginProperty Item181 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType180     =   3
+      BeginProperty Item180 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label62"
          Object.Left            =   5216
@@ -3349,8 +3330,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Firma del Medico"
       EndProperty
-      ItemType182     =   3
-      BeginProperty Item182 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType181     =   3
+      BeginProperty Item181 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label63"
          Object.Left            =   5217
@@ -3368,8 +3349,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Data"
       EndProperty
-      ItemType183     =   3
-      BeginProperty Item183 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType182     =   3
+      BeginProperty Item182 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label64"
          Object.Left            =   7655
@@ -3387,8 +3368,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "N° Dialisi"
       EndProperty
-      ItemType184     =   3
-      BeginProperty Item184 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType183     =   3
+      BeginProperty Item183 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label65"
          Object.Left            =   5217
@@ -3406,8 +3387,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Inizio"
       EndProperty
-      ItemType185     =   3
-      BeginProperty Item185 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType184     =   3
+      BeginProperty Item184 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label66"
          Object.Left            =   7655
@@ -3425,8 +3406,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Inizio"
       EndProperty
-      ItemType186     =   3
-      BeginProperty Item186 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType185     =   3
+      BeginProperty Item185 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label67"
          Object.Left            =   5217
@@ -3444,8 +3425,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Fine"
       EndProperty
-      ItemType187     =   3
-      BeginProperty Item187 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType186     =   3
+      BeginProperty Item186 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label68"
          Object.Left            =   7655
@@ -3463,8 +3444,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Fine"
       EndProperty
-      ItemType188     =   3
-      BeginProperty Item188 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType187     =   3
+      BeginProperty Item187 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label69"
          Object.Left            =   5217
@@ -3482,8 +3463,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "F.C. Inizio"
       EndProperty
-      ItemType189     =   3
-      BeginProperty Item189 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType188     =   3
+      BeginProperty Item188 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label71"
          Object.Left            =   7654
@@ -3501,8 +3482,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Litri"
       EndProperty
-      ItemType190     =   3
-      BeginProperty Item190 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType189     =   3
+      BeginProperty Item189 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label72"
          Object.Left            =   5217
@@ -3521,8 +3502,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Ora"
          Alignment       =   2
       EndProperty
-      ItemType191     =   3
-      BeginProperty Item191 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType190     =   3
+      BeginProperty Item190 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label73"
          Object.Left            =   6294
@@ -3541,8 +3522,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Polso"
          Alignment       =   2
       EndProperty
-      ItemType192     =   3
-      BeginProperty Item192 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType191     =   3
+      BeginProperty Item191 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label74"
          Object.Left            =   5217
@@ -3561,8 +3542,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "1ª ora"
          Alignment       =   2
       EndProperty
-      ItemType193     =   3
-      BeginProperty Item193 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType192     =   3
+      BeginProperty Item192 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label75"
          Object.Left            =   5217
@@ -3581,8 +3562,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "2ª ora"
          Alignment       =   2
       EndProperty
-      ItemType194     =   3
-      BeginProperty Item194 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType193     =   3
+      BeginProperty Item193 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label76"
          Object.Left            =   7453
@@ -3601,8 +3582,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "P.A."
          Alignment       =   2
       EndProperty
-      ItemType195     =   3
-      BeginProperty Item195 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType194     =   3
+      BeginProperty Item194 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label77"
          Object.Left            =   8803
@@ -3621,8 +3602,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Peso Kg"
          Alignment       =   2
       EndProperty
-      ItemType196     =   3
-      BeginProperty Item196 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType195     =   3
+      BeginProperty Item195 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label79"
          Object.Left            =   5217
@@ -3641,160 +3622,160 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "4ª ora"
          Alignment       =   2
       EndProperty
-      ItemType197     =   5
-      BeginProperty Item197 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType196     =   5
+      BeginProperty Item196 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line61"
          Object.Left            =   6068
          Object.Top             =   2089
          Object.Width           =   1440
       EndProperty
-      ItemType198     =   5
-      BeginProperty Item198 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType197     =   5
+      BeginProperty Item197 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line62"
          Object.Left            =   6068
          Object.Top             =   2389
          Object.Width           =   1440
       EndProperty
-      ItemType199     =   5
-      BeginProperty Item199 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType198     =   5
+      BeginProperty Item198 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line63"
          Object.Left            =   6068
          Object.Top             =   2689
          Object.Width           =   1440
       EndProperty
-      ItemType200     =   5
-      BeginProperty Item200 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType199     =   5
+      BeginProperty Item199 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line64"
          Object.Left            =   6067
          Object.Top             =   2989
          Object.Width           =   1455
       EndProperty
-      ItemType201     =   5
-      BeginProperty Item201 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType200     =   5
+      BeginProperty Item200 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line65"
          Object.Left            =   8616
          Object.Top             =   2088
          Object.Width           =   1455
       EndProperty
-      ItemType202     =   5
-      BeginProperty Item202 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType201     =   5
+      BeginProperty Item201 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line66"
          Object.Left            =   8616
          Object.Top             =   2389
          Object.Width           =   1455
       EndProperty
-      ItemType203     =   5
-      BeginProperty Item203 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType202     =   5
+      BeginProperty Item202 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line67"
          Object.Left            =   8616
          Object.Top             =   2689
          Object.Width           =   1455
       EndProperty
-      ItemType204     =   5
-      BeginProperty Item204 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType203     =   5
+      BeginProperty Item203 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line68"
          Object.Left            =   8616
          Object.Top             =   2989
          Object.Width           =   1455
       EndProperty
-      ItemType205     =   5
-      BeginProperty Item205 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType204     =   5
+      BeginProperty Item204 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line69"
          Object.Left            =   5160
          Object.Top             =   5173
          Object.Width           =   4980
       EndProperty
-      ItemType206     =   5
-      BeginProperty Item206 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType205     =   5
+      BeginProperty Item205 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line70"
          Object.Left            =   5160
          Object.Top             =   5473
          Object.Width           =   4980
       EndProperty
-      ItemType207     =   5
-      BeginProperty Item207 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType206     =   5
+      BeginProperty Item206 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line71"
          Object.Left            =   5160
          Object.Top             =   4873
          Object.Width           =   4980
       EndProperty
-      ItemType208     =   5
-      BeginProperty Item208 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType207     =   5
+      BeginProperty Item207 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line72"
          Object.Left            =   10149
          Object.Top             =   1758
          Object.Height          =   6135
       EndProperty
-      ItemType209     =   5
-      BeginProperty Item209 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType208     =   5
+      BeginProperty Item208 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line73"
          Object.Left            =   5160
          Object.Top             =   4575
          Object.Width           =   4980
       EndProperty
-      ItemType210     =   5
-      BeginProperty Item210 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType209     =   5
+      BeginProperty Item209 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line74"
          Object.Left            =   5160
          Object.Top             =   3675
          Object.Width           =   4980
       EndProperty
-      ItemType211     =   5
-      BeginProperty Item211 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType210     =   5
+      BeginProperty Item210 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line75"
          Object.Left            =   5160
          Object.Top             =   4275
          Object.Width           =   4980
       EndProperty
-      ItemType212     =   5
-      BeginProperty Item212 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType211     =   5
+      BeginProperty Item211 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line76"
          Object.Left            =   5160
          Object.Top             =   3975
          Object.Width           =   4980
       EndProperty
-      ItemType213     =   5
-      BeginProperty Item213 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType212     =   5
+      BeginProperty Item212 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line77"
          Object.Left            =   6237
          Object.Top             =   3119
          Object.Height          =   1470
       EndProperty
-      ItemType214     =   5
-      BeginProperty Item214 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType213     =   5
+      BeginProperty Item213 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line78"
          Object.Left            =   7314
          Object.Top             =   3119
          Object.Height          =   1470
       EndProperty
-      ItemType215     =   5
-      BeginProperty Item215 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType214     =   5
+      BeginProperty Item214 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line79"
          Object.Left            =   8561
          Object.Top             =   3118
          Object.Height          =   1470
       EndProperty
-      ItemType216     =   4
-      BeginProperty Item216 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType215     =   4
+      BeginProperty Item215 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFiltroSeduta2"
          Object.Left            =   5217
@@ -3820,88 +3801,88 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType217     =   5
-      BeginProperty Item217 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType216     =   5
+      BeginProperty Item216 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line80"
          Object.Left            =   8561
          Object.Top             =   5483
          Object.Height          =   2400
       EndProperty
-      ItemType218     =   5
-      BeginProperty Item218 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType217     =   5
+      BeginProperty Item217 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line81"
          Object.Left            =   5160
          Object.Top             =   6073
          Object.Width           =   4980
       EndProperty
-      ItemType219     =   5
-      BeginProperty Item219 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType218     =   5
+      BeginProperty Item218 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line82"
          Object.Left            =   5160
          Object.Top             =   6373
          Object.Width           =   4980
       EndProperty
-      ItemType220     =   5
-      BeginProperty Item220 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType219     =   5
+      BeginProperty Item219 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line83"
          Object.Left            =   5160
          Object.Top             =   5773
          Object.Width           =   4980
       EndProperty
-      ItemType221     =   5
-      BeginProperty Item221 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType220     =   5
+      BeginProperty Item220 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line84"
          Object.Left            =   5160
          Object.Top             =   6973
          Object.Width           =   4980
       EndProperty
-      ItemType222     =   5
-      BeginProperty Item222 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType221     =   5
+      BeginProperty Item221 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line85"
          Object.Left            =   5160
          Object.Top             =   7273
          Object.Width           =   4980
       EndProperty
-      ItemType223     =   5
-      BeginProperty Item223 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType222     =   5
+      BeginProperty Item222 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line86"
          Object.Left            =   5160
          Object.Top             =   6673
          Object.Width           =   4980
       EndProperty
-      ItemType224     =   5
-      BeginProperty Item224 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType223     =   5
+      BeginProperty Item223 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line87"
          Object.Left            =   5160
          Object.Top             =   7887
          Object.Width           =   4995
       EndProperty
-      ItemType225     =   5
-      BeginProperty Item225 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType224     =   5
+      BeginProperty Item224 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line88"
          Object.Left            =   5160
          Object.Top             =   7573
          Object.Width           =   4980
       EndProperty
-      ItemType226     =   5
-      BeginProperty Item226 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType225     =   5
+      BeginProperty Item225 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line89"
          Object.Left            =   5160
          Object.Top             =   1758
          Object.Height          =   6135
       EndProperty
-      ItemType227     =   3
-      BeginProperty Item227 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType226     =   3
+      BeginProperty Item226 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label80"
          Object.Left            =   8731
@@ -3920,8 +3901,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Firma"
          Alignment       =   2
       EndProperty
-      ItemType228     =   3
-      BeginProperty Item228 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType227     =   3
+      BeginProperty Item227 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label81"
          Object.Left            =   5273
@@ -3940,24 +3921,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Sintomatologia e terapia"
          Alignment       =   2
       EndProperty
-      ItemType229     =   5
-      BeginProperty Item229 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType228     =   5
+      BeginProperty Item228 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line90"
          Object.Left            =   5160
          Object.Top             =   3375
          Object.Width           =   4980
       EndProperty
-      ItemType230     =   5
-      BeginProperty Item230 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType229     =   5
+      BeginProperty Item229 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line91"
          Object.Left            =   5159
          Object.Top             =   1758
          Object.Width           =   4995
       EndProperty
-      ItemType231     =   3
-      BeginProperty Item231 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType230     =   3
+      BeginProperty Item230 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label82"
          Object.Left            =   5443
@@ -3976,8 +3957,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Anamnesi interdialitica"
          Alignment       =   2
       EndProperty
-      ItemType232     =   3
-      BeginProperty Item232 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType231     =   3
+      BeginProperty Item231 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label83"
          Object.Left            =   5216
@@ -3995,8 +3976,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Firma del Medico"
       EndProperty
-      ItemType233     =   3
-      BeginProperty Item233 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType232     =   3
+      BeginProperty Item232 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label84"
          Object.Left            =   5217
@@ -4014,8 +3995,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Data"
       EndProperty
-      ItemType234     =   3
-      BeginProperty Item234 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType233     =   3
+      BeginProperty Item233 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label85"
          Object.Left            =   7655
@@ -4033,8 +4014,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "N° Dialisi"
       EndProperty
-      ItemType235     =   3
-      BeginProperty Item235 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType234     =   3
+      BeginProperty Item234 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label86"
          Object.Left            =   5217
@@ -4052,8 +4033,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Inizio"
       EndProperty
-      ItemType236     =   3
-      BeginProperty Item236 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType235     =   3
+      BeginProperty Item235 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label87"
          Object.Left            =   7655
@@ -4071,8 +4052,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Inizio"
       EndProperty
-      ItemType237     =   3
-      BeginProperty Item237 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType236     =   3
+      BeginProperty Item236 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label88"
          Object.Left            =   5217
@@ -4090,8 +4071,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "P.A. Fine"
       EndProperty
-      ItemType238     =   3
-      BeginProperty Item238 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType237     =   3
+      BeginProperty Item237 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label89"
          Object.Left            =   7655
@@ -4109,8 +4090,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Peso Fine"
       EndProperty
-      ItemType239     =   3
-      BeginProperty Item239 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType238     =   3
+      BeginProperty Item238 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label90"
          Object.Left            =   5217
@@ -4128,8 +4109,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "F.C. Inizio"
       EndProperty
-      ItemType240     =   3
-      BeginProperty Item240 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType239     =   3
+      BeginProperty Item239 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label91"
          Object.Left            =   7654
@@ -4147,8 +4128,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Litri"
       EndProperty
-      ItemType241     =   3
-      BeginProperty Item241 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType240     =   3
+      BeginProperty Item240 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label92"
          Object.Left            =   5217
@@ -4167,8 +4148,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Ora"
          Alignment       =   2
       EndProperty
-      ItemType242     =   3
-      BeginProperty Item242 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType241     =   3
+      BeginProperty Item241 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label93"
          Object.Left            =   6294
@@ -4187,8 +4168,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Polso"
          Alignment       =   2
       EndProperty
-      ItemType243     =   3
-      BeginProperty Item243 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType242     =   3
+      BeginProperty Item242 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label94"
          Object.Left            =   5217
@@ -4207,8 +4188,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "1ª ora"
          Alignment       =   2
       EndProperty
-      ItemType244     =   3
-      BeginProperty Item244 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType243     =   3
+      BeginProperty Item243 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label95"
          Object.Left            =   5217
@@ -4227,8 +4208,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "2ª ora"
          Alignment       =   2
       EndProperty
-      ItemType245     =   3
-      BeginProperty Item245 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType244     =   3
+      BeginProperty Item244 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label96"
          Object.Left            =   7453
@@ -4247,8 +4228,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "P.A."
          Alignment       =   2
       EndProperty
-      ItemType246     =   3
-      BeginProperty Item246 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType245     =   3
+      BeginProperty Item245 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label97"
          Object.Left            =   8803
@@ -4267,8 +4248,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Peso Kg"
          Alignment       =   2
       EndProperty
-      ItemType247     =   3
-      BeginProperty Item247 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType246     =   3
+      BeginProperty Item246 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label99"
          Object.Left            =   5217
@@ -4287,160 +4268,160 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "4ª ora "
          Alignment       =   2
       EndProperty
-      ItemType248     =   5
-      BeginProperty Item248 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType247     =   5
+      BeginProperty Item247 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line92"
          Object.Left            =   6068
          Object.Top             =   8326
          Object.Width           =   1440
       EndProperty
-      ItemType249     =   5
-      BeginProperty Item249 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType248     =   5
+      BeginProperty Item248 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line93"
          Object.Left            =   6068
          Object.Top             =   8626
          Object.Width           =   1440
       EndProperty
-      ItemType250     =   5
-      BeginProperty Item250 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType249     =   5
+      BeginProperty Item249 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line94"
          Object.Left            =   6068
          Object.Top             =   8926
          Object.Width           =   1440
       EndProperty
-      ItemType251     =   5
-      BeginProperty Item251 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType250     =   5
+      BeginProperty Item250 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line95"
          Object.Left            =   6067
          Object.Top             =   9226
          Object.Width           =   1455
       EndProperty
-      ItemType252     =   5
-      BeginProperty Item252 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType251     =   5
+      BeginProperty Item251 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line96"
          Object.Left            =   8616
          Object.Top             =   8325
          Object.Width           =   1455
       EndProperty
-      ItemType253     =   5
-      BeginProperty Item253 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType252     =   5
+      BeginProperty Item252 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line97"
          Object.Left            =   8616
          Object.Top             =   8626
          Object.Width           =   1455
       EndProperty
-      ItemType254     =   5
-      BeginProperty Item254 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType253     =   5
+      BeginProperty Item253 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line98"
          Object.Left            =   8616
          Object.Top             =   8926
          Object.Width           =   1455
       EndProperty
-      ItemType255     =   5
-      BeginProperty Item255 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType254     =   5
+      BeginProperty Item254 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line99"
          Object.Left            =   8616
          Object.Top             =   9226
          Object.Width           =   1455
       EndProperty
-      ItemType256     =   5
-      BeginProperty Item256 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType255     =   5
+      BeginProperty Item255 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line100"
          Object.Left            =   5160
          Object.Top             =   11411
          Object.Width           =   4980
       EndProperty
-      ItemType257     =   5
-      BeginProperty Item257 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType256     =   5
+      BeginProperty Item256 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line101"
          Object.Left            =   5160
          Object.Top             =   11711
          Object.Width           =   4980
       EndProperty
-      ItemType258     =   5
-      BeginProperty Item258 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType257     =   5
+      BeginProperty Item257 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line102"
          Object.Left            =   5160
          Object.Top             =   11111
          Object.Width           =   4980
       EndProperty
-      ItemType259     =   5
-      BeginProperty Item259 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType258     =   5
+      BeginProperty Item258 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line103"
          Object.Left            =   10149
          Object.Top             =   7995
          Object.Height          =   6135
       EndProperty
-      ItemType260     =   5
-      BeginProperty Item260 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType259     =   5
+      BeginProperty Item259 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line104"
          Object.Left            =   5160
          Object.Top             =   10813
          Object.Width           =   4980
       EndProperty
-      ItemType261     =   5
-      BeginProperty Item261 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType260     =   5
+      BeginProperty Item260 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line105"
          Object.Left            =   5160
          Object.Top             =   9913
          Object.Width           =   4980
       EndProperty
-      ItemType262     =   5
-      BeginProperty Item262 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType261     =   5
+      BeginProperty Item261 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line106"
          Object.Left            =   5160
          Object.Top             =   10513
          Object.Width           =   4980
       EndProperty
-      ItemType263     =   5
-      BeginProperty Item263 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType262     =   5
+      BeginProperty Item262 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line107"
          Object.Left            =   5160
          Object.Top             =   10213
          Object.Width           =   4980
       EndProperty
-      ItemType264     =   5
-      BeginProperty Item264 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType263     =   5
+      BeginProperty Item263 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line108"
          Object.Left            =   6237
          Object.Top             =   9357
          Object.Height          =   1470
       EndProperty
-      ItemType265     =   5
-      BeginProperty Item265 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType264     =   5
+      BeginProperty Item264 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line109"
          Object.Left            =   7314
          Object.Top             =   9357
          Object.Height          =   1470
       EndProperty
-      ItemType266     =   5
-      BeginProperty Item266 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType265     =   5
+      BeginProperty Item265 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line110"
          Object.Left            =   8561
          Object.Top             =   9356
          Object.Height          =   1470
       EndProperty
-      ItemType267     =   4
-      BeginProperty Item267 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType266     =   4
+      BeginProperty Item266 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFiltroSeduta4"
          Object.Left            =   5217
@@ -4466,88 +4447,88 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType268     =   5
-      BeginProperty Item268 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType267     =   5
+      BeginProperty Item267 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line111"
          Object.Left            =   8561
          Object.Top             =   11721
          Object.Height          =   2400
       EndProperty
-      ItemType269     =   5
-      BeginProperty Item269 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType268     =   5
+      BeginProperty Item268 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line112"
          Object.Left            =   5160
          Object.Top             =   12311
          Object.Width           =   4980
       EndProperty
-      ItemType270     =   5
-      BeginProperty Item270 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType269     =   5
+      BeginProperty Item269 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line113"
          Object.Left            =   5160
          Object.Top             =   12611
          Object.Width           =   4980
       EndProperty
-      ItemType271     =   5
-      BeginProperty Item271 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType270     =   5
+      BeginProperty Item270 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line114"
          Object.Left            =   5160
          Object.Top             =   12011
          Object.Width           =   4980
       EndProperty
-      ItemType272     =   5
-      BeginProperty Item272 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType271     =   5
+      BeginProperty Item271 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line115"
          Object.Left            =   5160
          Object.Top             =   13211
          Object.Width           =   4980
       EndProperty
-      ItemType273     =   5
-      BeginProperty Item273 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType272     =   5
+      BeginProperty Item272 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line116"
          Object.Left            =   5160
          Object.Top             =   13511
          Object.Width           =   4980
       EndProperty
-      ItemType274     =   5
-      BeginProperty Item274 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType273     =   5
+      BeginProperty Item273 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line117"
          Object.Left            =   5160
          Object.Top             =   12911
          Object.Width           =   4980
       EndProperty
-      ItemType275     =   5
-      BeginProperty Item275 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType274     =   5
+      BeginProperty Item274 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line118"
          Object.Left            =   5160
          Object.Top             =   14117
          Object.Width           =   4995
       EndProperty
-      ItemType276     =   5
-      BeginProperty Item276 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType275     =   5
+      BeginProperty Item275 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line119"
          Object.Left            =   5160
          Object.Top             =   13811
          Object.Width           =   4980
       EndProperty
-      ItemType277     =   5
-      BeginProperty Item277 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType276     =   5
+      BeginProperty Item276 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line120"
          Object.Left            =   5160
          Object.Top             =   7995
          Object.Height          =   6135
       EndProperty
-      ItemType278     =   3
-      BeginProperty Item278 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType277     =   3
+      BeginProperty Item277 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label100"
          Object.Left            =   8731
@@ -4566,8 +4547,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Firma"
          Alignment       =   2
       EndProperty
-      ItemType279     =   3
-      BeginProperty Item279 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType278     =   3
+      BeginProperty Item278 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label101"
          Object.Left            =   5273
@@ -4586,24 +4567,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "Sintomatologia e terapia"
          Alignment       =   2
       EndProperty
-      ItemType280     =   5
-      BeginProperty Item280 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType279     =   5
+      BeginProperty Item279 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line121"
          Object.Left            =   5160
          Object.Top             =   9613
          Object.Width           =   4980
       EndProperty
-      ItemType281     =   5
-      BeginProperty Item281 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType280     =   5
+      BeginProperty Item280 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line126"
          Object.Left            =   5159
          Object.Top             =   7994
          Object.Width           =   4995
       EndProperty
-      ItemType282     =   3
-      BeginProperty Item282 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType281     =   3
+      BeginProperty Item281 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label102"
          Object.Left            =   114
@@ -4622,8 +4603,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "3ª ora"
          Alignment       =   2
       EndProperty
-      ItemType283     =   3
-      BeginProperty Item283 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType282     =   3
+      BeginProperty Item282 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label103"
          Object.Left            =   5217
@@ -4642,8 +4623,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "3ª ora"
          Alignment       =   2
       EndProperty
-      ItemType284     =   3
-      BeginProperty Item284 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType283     =   3
+      BeginProperty Item283 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label104"
          Object.Left            =   5217
@@ -4662,8 +4643,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Object.Caption         =   "3ª ora"
          Alignment       =   2
       EndProperty
-      ItemType285     =   3
-      BeginProperty Item285 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType284     =   3
+      BeginProperty Item284 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label105"
          Object.Left            =   114
@@ -4681,6 +4662,100 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "3ª ora"
          Alignment       =   2
+      EndProperty
+      ItemType285     =   4
+      BeginProperty Item285 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtAllergia"
+         Object.Left            =   5613
+         Object.Top             =   1440
+         Object.Width           =   2381
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType286     =   3
+      BeginProperty Item286 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label34"
+         Object.Left            =   4819
+         Object.Top             =   1410
+         Object.Width           =   850
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Allergia"
+      EndProperty
+      ItemType287     =   4
+      BeginProperty Item287 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtFlussoQB"
+         Object.Left            =   9184
+         Object.Top             =   1440
+         Object.Width           =   680
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType288     =   3
+      BeginProperty Item288 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label106"
+         Object.Left            =   8107
+         Object.Top             =   1417
+         Object.Width           =   1021
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Flusso QB"
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -4766,6 +4841,8 @@ Private Sub DataReport_Initialize()
             .Item("txtFiltro").DataField = "FILTRO"
             .Item("txtBagnoDialisi").DataField = "BAGNO_DIALISI"
             .Item("txtAnticoagulante").DataField = "ANTICOAGULANTE"
+            .Item("txtAllergia").DataField = "ALLERGIA"
+            .Item("txtFlussoQB").DataField = "FLUSSO_QB"
             
             .Item("txtFiltroSeduta1").DataField = "FILTRO_SEDUTA"   'valori tabella
             .Item("txtFiltroSeduta2").DataField = "FILTRO_SEDUTA"

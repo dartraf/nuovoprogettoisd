@@ -980,7 +980,7 @@ Private Sub StampaCAPAnnuale()
             End If
         Next i
         If cont <> 0 Then
-            rsMain("MEDIA") = rsMain("MEDIA") / cont
+            rsMain("MEDIA") = Int(rsMain("MEDIA") / cont * 100) / 100
         Else
             rsMain("MEDIA") = Null
         End If

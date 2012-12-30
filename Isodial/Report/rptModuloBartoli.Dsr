@@ -1166,7 +1166,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item43 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label22"
-         Object.Left            =   4818
+         Object.Left            =   4819
          Object.Top             =   60
          Object.Width           =   1875
          Object.Height          =   285
@@ -4667,9 +4667,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item285 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAllergia"
-         Object.Left            =   5613
+         Object.Left            =   5591
          Object.Top             =   1440
-         Object.Width           =   2381
+         Object.Width           =   2400
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -4697,7 +4697,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Name            =   "Label34"
          Object.Left            =   4819
          Object.Top             =   1410
-         Object.Width           =   850
+         Object.Width           =   855
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -4714,9 +4714,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item287 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFlussoQB"
-         Object.Left            =   9184
+         Object.Left            =   9801
          Object.Top             =   1440
-         Object.Width           =   680
+         Object.Width           =   404
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -4742,9 +4742,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item288 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label106"
-         Object.Left            =   8107
-         Object.Top             =   1417
-         Object.Width           =   1021
+         Object.Left            =   8031
+         Object.Top             =   1410
+         Object.Width           =   1755
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -4755,7 +4755,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Flusso QB"
+         Object.Caption         =   "Flusso Qb (ml/min)"
       EndProperty
    EndProperty
    SectionCode3    =   7

@@ -817,7 +817,7 @@ Private Sub cmdEsportaEsame_Click()
             If Not (rsDataset.EOF And rsDataset.BOF) Then
                 keyEsame = rsDataset("KEY")
             Else
-                MsgBox "Esame KT/V non presente nella lista esami di laboratorio", vbCritical, "Attenzione"
+                MsgBox "La voce KT/V non è presente nella lista degli esami di laboratorio", vbCritical, "ATTENZIONE!!!"
             End If
             rsDataset.Close
             
@@ -827,7 +827,7 @@ Private Sub cmdEsportaEsame_Click()
                 If Not (rsDataset.EOF And rsDataset.BOF) Then
                     keyGruppo = rsDataset("CODICE_GRUPPO")
                 Else
-                    MsgBox "Esame KT/V non è associato a nessun raggruppamento esami di laboratorio", vbCritical, "Attenzione"
+                    MsgBox "La voce KT/V è presente nella lista degli esami di laboratorio ma non è associata ad alcun gruppo", vbCritical, "ATTENZIONE!!!"
                 End If
                 rsDataset.Close
                 

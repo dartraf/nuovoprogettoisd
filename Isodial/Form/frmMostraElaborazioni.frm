@@ -6,12 +6,12 @@ Begin VB.Form frmMostraElaborazioni
    ClientHeight    =   5850
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   10545
+   ClientWidth     =   10830
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   5850
-   ScaleWidth      =   10545
+   ScaleWidth      =   10830
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
@@ -19,7 +19,7 @@ Begin VB.Form frmMostraElaborazioni
       Left            =   120
       TabIndex        =   4
       Top             =   0
-      Width           =   10335
+      Width           =   10695
       Begin VB.ComboBox cboAnno 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -146,14 +146,14 @@ Begin VB.Form frmMostraElaborazioni
       Left            =   120
       TabIndex        =   5
       Top             =   600
-      Width           =   10335
+      Width           =   10695
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   4095
          Left            =   120
          TabIndex        =   1
          Top             =   240
-         Width           =   10095
-         _ExtentX        =   17806
+         Width           =   10455
+         _ExtentX        =   18441
          _ExtentY        =   7223
          _Version        =   393216
          Cols            =   3
@@ -185,7 +185,7 @@ Begin VB.Form frmMostraElaborazioni
       Left            =   120
       TabIndex        =   6
       Top             =   4920
-      Width           =   10335
+      Width           =   10695
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
          BeginProperty Font 

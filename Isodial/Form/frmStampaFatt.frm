@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStampaFogliViaggio 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -601,7 +601,7 @@ Private Sub StampaFogliViaggio()
                 "       NEW adVarChar(4) AS ANNO, " & _
                 "       NEW adDate AS DATA, " & _
                 "       NEW adInteger AS TOTALE_DIALISI, " & _
-                "       NEW adVarChar(100) AS GIORNI_DIALISI, " & _
+                "       NEW adVarChar(110) AS GIORNI_DIALISI, " & _
                 "       NEW adVarChar(25) AS ASL, " & _
                 "       NEW adVarChar(6) AS DISTRETTO "
         

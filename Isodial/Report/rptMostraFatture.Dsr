@@ -4,13 +4,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
    ClientHeight    =   9645
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   10530
+   ClientWidth     =   10695
    StartUpPosition =   3  'Windows Default
-   _ExtentX        =   18574
+   _ExtentX        =   18865
    _ExtentY        =   17013
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   9975
+   ReportWidth     =   10380
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -44,7 +44,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTitolo"
-         Object.Left            =   1455
+         Object.Left            =   1680
          Object.Top             =   2580
          Object.Width           =   6855
          Object.Height          =   570
@@ -103,7 +103,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
          _Version        =   393216
          Name            =   "lblPazienti"
          Object.Left            =   8140
-         Object.Top             =   3585
+         Object.Top             =   3570
          Object.Width           =   600
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -120,7 +120,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label3"
-         Object.Left            =   113
+         Object.Left            =   53
          Object.Top             =   4155
          Object.Width           =   2750
          Object.Height          =   270
@@ -139,9 +139,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   2925
+         Object.Left            =   2800
          Object.Top             =   4170
-         Object.Width           =   585
+         Object.Width           =   515
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -159,9 +159,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   3540
+         Object.Left            =   3345
          Object.Top             =   4170
-         Object.Width           =   4200
+         Object.Width           =   2640
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -179,7 +179,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
          _Version        =   393216
          Name            =   "lblMese"
          Object.Left            =   740
-         Object.Top             =   3585
+         Object.Top             =   3570
          Object.Width           =   2340
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -197,7 +197,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
          _Version        =   393216
          Name            =   "lblAnno"
          Object.Left            =   4630
-         Object.Top             =   3585
+         Object.Top             =   3570
          Object.Width           =   1230
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -214,7 +214,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item9 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
-         Object.Left            =   5670
+         Object.Left            =   6090
          Object.Width           =   3390
          Object.Height          =   1410
          SizeMode        =   2
@@ -223,7 +223,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item10 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
-         Object.Left            =   9075
+         Object.Left            =   9495
          Object.Width           =   855
          Object.Height          =   810
          SizeMode        =   2
@@ -329,7 +329,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtPaziente"
-         Object.Left            =   60
          Object.Top             =   120
          Object.Width           =   2745
          Object.Height          =   255
@@ -356,9 +355,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTotale"
-         Object.Left            =   2835
+         Object.Left            =   2775
          Object.Top             =   120
-         Object.Width           =   465
+         Object.Width           =   400
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -384,9 +383,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDialisi"
-         Object.Left            =   3510
+         Object.Left            =   3240
          Object.Top             =   120
-         Object.Width           =   6420
+         Object.Width           =   7120
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -413,7 +412,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
          Name            =   "Line1"
          Object.Left            =   60
          Object.Top             =   450
-         Object.Width           =   9915
+         Object.Width           =   10275
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -515,7 +514,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptMostraFatture
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
    EndProperty
    SectionCode4    =   8

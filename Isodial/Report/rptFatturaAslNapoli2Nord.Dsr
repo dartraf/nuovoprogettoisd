@@ -73,7 +73,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFatturaAslNapoli2Nord
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label22"
-         Object.Left            =   2323
+         Object.Left            =   3626
          Object.Top             =   2154
          Object.Width           =   510
          Object.Height          =   285
@@ -92,9 +92,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFatturaAslNapoli2Nord
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblNumeroFattura"
-         Object.Left            =   1644
+         Object.Left            =   1474
          Object.Top             =   2136
-         Object.Width           =   570
+         Object.Width           =   1928
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Tahoma"
@@ -111,7 +111,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFatturaAslNapoli2Nord
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblData"
-         Object.Left            =   2835
+         Object.Left            =   4138
          Object.Top             =   2136
          Object.Width           =   2490
          Object.Height          =   285

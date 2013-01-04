@@ -95,7 +95,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura2
          Name            =   "lblNumeroFattura"
          Object.Left            =   1247
          Object.Top             =   2608
-         Object.Width           =   1928
+         Object.Width           =   2495
          Object.Height          =   283
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

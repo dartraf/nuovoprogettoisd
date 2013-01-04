@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "30/12/2012"
+            TextSave        =   "04/01/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1831,8 +1831,10 @@ Private Sub mnuStampaPaz_Click()
     If tFiltroStato.statoPaziente = tpNoneStatoPaziente Then Exit Sub
     
     If Not tFiltroStato.isTutteLeDate Then
-        dataDal = DateValue(Month(tFiltroStato.dataDal) & "/" & Day(tFiltroStato.dataDal) & "/" & Year(tFiltroStato.dataDal))
-        dataAl = DateValue(Month(tFiltroStato.dataAl) & "/" & Day(tFiltroStato.dataAl) & "/" & Year(tFiltroStato.dataAl))
+       dataDal = DateValue(tFiltroStato.dataDal)
+       dataAl = DateValue(tFiltroStato.dataAl)
+'      dataDal = DateValue(Month(tFiltroStato.dataDal) & "/" & Day(tFiltroStato.dataDal) & "/" & Year(tFiltroStato.dataDal))
+'      dataAl = DateValue(Month(tFiltroStato.dataAl) & "/" & Day(tFiltroStato.dataAl) & "/" & Year(tFiltroStato.dataAl))
     End If
     
     Select Case tFiltroStato.statoPaziente

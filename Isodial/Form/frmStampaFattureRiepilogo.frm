@@ -181,7 +181,7 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   3480
+         Left            =   3000
          TabIndex        =   11
          Top             =   240
          Visible         =   0   'False
@@ -198,33 +198,15 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   1680
+         Left            =   2040
          MaxLength       =   6
          TabIndex        =   3
          Top             =   240
          Width           =   735
       End
-      Begin VB.Label lblAnnoFattura 
-         AutoSize        =   -1  'True
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   0
-         Left            =   2520
-         TabIndex        =   16
-         Top             =   240
-         Width           =   75
-      End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Num. di fattura"
+         Caption         =   "Numero di fattura"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -239,7 +221,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          Left            =   120
          TabIndex        =   10
          Top             =   240
-         Width           =   1500
+         Width           =   1785
       End
    End
    Begin VB.Frame fraPulsanti 
@@ -308,7 +290,6 @@ Private Sub Form_Load()
             fraNumFattura.ZOrder
             fraAutorizzazioneBollo.Top = fraNumFattura.Top + fraNumFattura.Height - 135
             fraPulsanti.Top = fraAutorizzazioneBollo.Top + fraAutorizzazioneBollo.Height - 135
-            lblAnnoFattura(0).Caption = "/ " & Year(Now)
         Case tpXMAZZETTEDISTRETTI
             Me.Caption = "Stampa Mazzette per Distretti"
         Case tpXPAZIENTE
@@ -932,7 +913,7 @@ Private Sub StampaFattura()
             
         End If
         rsDataset.Close
-        rptFattura.Sections("intestazione").Controls("lblNumeroFattura").Caption = txtNumFattura.Text & "/ " & lblAnnoFattura(0).Caption
+        rptFattura.Sections("intestazione").Controls("lblNumeroFattura").Caption = txtNumFattura.Text & " / " & cboAnno.Text
         rptFattura.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
         rptFattura.Sections("intestazione").Controls("lblNomeAsl").Caption = "Emodialisi " & GetNome(structIntestazione.sCodiceAsl, "ASL")
         rptFattura.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
@@ -1778,7 +1759,7 @@ Private Sub StampaPerAslNapoli2Nord()
                                         
         End If
         rsDataset.Close
-        rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And chkDividi.Value = Checked, txtNumFattura + 1, txtNumFattura) & " " & lblAnnoFattura(0).Caption
+        rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And chkDividi.Value = Checked, txtNumFattura + 1, txtNumFattura) & " / " & cboAnno.Text
         rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
         rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
         Set rptFatturaAslNapoli2Nord.DataSource = rsMain
@@ -1968,7 +1949,7 @@ Private Sub StampaFattura2()
                 
             End If
             rsDataset.Close
-            rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = txtNumFattura.Text & " " & lblAnnoFattura(0).Caption
+            rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = txtNumFattura.Text & " / " & cboAnno.Text
             rptFattura2.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
             rptFattura2.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
             rptFattura2.Sections("intestazione").Controls("lblTicket").Caption = "Ticket    " & Format(ticket, "###.00") & " €"
@@ -2150,7 +2131,7 @@ Private Sub StampaFattura2()
             
         End If
         rsDataset.Close
-        rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And chkDividi.Value = Checked, txtNumFattura + 1, txtNumFattura) & " " & lblAnnoFattura(0).Caption
+        rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And chkDividi.Value = Checked, txtNumFattura + 1, txtNumFattura) & " / " & cboAnno.Text
         rptFattura2.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
         rptFattura2.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
         rptFattura2.Sections("intestazione").Controls("lblTicket").Caption = "Ticket    " & Format(ticket, "###.00") & " €"

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmGestioneDocumentiEsterni 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Gestione Documenti"
@@ -276,7 +276,7 @@ Private Sub cmdScansione_Click()
         MsgBox "Scansione non riuscita", vbInformation, "Impossibile aggiornare"
         Exit Sub
     Else
-        nome = nomeFile & Format(numPag + 1, "00") & tTrova.keyReturn
+        nome = nomeFile & Format(numPag + 1, "00")   ' & tTrova.keyReturn
         imgAppo = Clipboard.getData(2)
         SavePicture imgAppo.Picture, "C:\temp.bmp"
         ' converte in jpg e lo salva sul disco

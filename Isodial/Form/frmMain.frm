@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "04/01/2013"
+            TextSave        =   "10/01/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1024,7 +1024,12 @@ Private Sub mnugestioneIndicatoriSotto_Click(Index As Integer)
     Select Case Index
         Case 1: frmKtv.Show
         Case 2: frmTsat.Show
-        Case 3: frmProdottoCalcioFosforo.Show            'MsgBox "MODULO IN SVILUPPO", vbInformation, "Informazione"
+        Case 3:
+                If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Then
+                    frmProdottoCalcioFosforo.Show
+                Else
+                    MsgBox "MODULO OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
+                End If
         Case 4: frmEventi.Show
         Case 5: frmColture.Show
         Case 6: frmEpo.Show

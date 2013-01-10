@@ -416,9 +416,6 @@ Private Sub Form_Activate()
     
     If intPazientiKey = 0 Then
         cmdTrova_Click
-        If tTrova.keyReturn = 0 Then
-            Unload Me
-        End If
     End If
     
 End Sub
@@ -1048,7 +1045,11 @@ Private Sub cmdTrova_Click()
     tTrova.condStato = ""
     frmTrova.Show 1
     intPazientiKey = tTrova.keyReturn
-    Call CaricaPaziente
+    If tTrova.keyReturn = 0 Then
+        Unload frmTsat
+    Else
+        Call CaricaPaziente
+    End If
 End Sub
 
 Private Sub cboAnno_Click()

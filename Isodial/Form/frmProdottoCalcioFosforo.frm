@@ -48,11 +48,13 @@ Begin VB.Form frmProdottoCalcioFosforo
       TabPicture(1)   =   "frmProdottoCalcioFosforo.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "grafico(0)"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmProdottoCalcioFosforo.frx":0038
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "grafico(1)"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -260,7 +262,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          Height          =   3495
          Index           =   1
          Left            =   -74880
-         OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":2F3A
+         OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":2F3C
          TabIndex        =   9
          Top             =   360
          Width           =   11895
@@ -276,7 +278,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   360
-         Picture         =   "frmProdottoCalcioFosforo.frx":5BCF
+         Picture         =   "frmProdottoCalcioFosforo.frx":5BD3
          Style           =   1  'Graphical
          TabIndex        =   16
          Top             =   240
@@ -416,9 +418,6 @@ Private Sub Form_Activate()
     
     If intPazientiKey = 0 Then
         cmdTrova_Click
-        If tTrova.keyReturn = 0 Then
-            Unload Me
-        End If
     End If
     
 End Sub
@@ -1063,7 +1062,11 @@ Private Sub cmdTrova_Click()
     tTrova.condStato = ""
     frmTrova.Show 1
     intPazientiKey = tTrova.keyReturn
-    Call CaricaPaziente
+    If tTrova.keyReturn = 0 Then
+        Unload frmProdottoCalcioFosforo
+    Else
+        Call CaricaPaziente
+    End If
 End Sub
 
 Private Sub cboAnno_Click()

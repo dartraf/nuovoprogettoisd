@@ -782,6 +782,7 @@ Private Sub cmdImportaEsami_Click()
                 End If
                 valore = CalcolaKtv(flxGriglia.Col)
                 flxGriglia.TextMatrix(6, flxGriglia.Col) = VirgolaOrPunto(CStr(valore), ",")
+                Call CaricaScheda
             End If
         Else
             MsgBox "Nessun esame per il mese selezionato", vbInformation, "Importa esami"

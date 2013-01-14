@@ -823,6 +823,7 @@ Private Sub cmdImportaEsami_Click()
                 flxGriglia.TextMatrix(1, flxGriglia.Col) = Day(rsDataset("DATA"))
                 vRow = 1
                 Call SalvaModifiche
+                Call CaricaScheda
             End If
         Else
             MsgBox "Nessun esame per il mese selezionato", vbInformation, "Importa esami"

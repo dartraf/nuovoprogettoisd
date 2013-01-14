@@ -48,13 +48,11 @@ Begin VB.Form frmProdottoCalcioFosforo
       TabPicture(1)   =   "frmProdottoCalcioFosforo.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "grafico(0)"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmProdottoCalcioFosforo.frx":0038
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "grafico(1)"
-      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -836,6 +834,7 @@ Private Sub cmdImportaEsami_Click()
                 flxGriglia.TextMatrix(1, flxGriglia.Col) = Day(rsDataset("DATA"))
                 vRow = 1
                 Call SalvaModifiche
+                Call CaricaScheda
             
             End If
         Else

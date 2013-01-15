@@ -574,6 +574,20 @@ Public Sub ColoraColonna(Optional colore As ColorConstants = vbCyan)
     flxGriglia.Row = riga
 End Sub
 
+Public Sub DiscoloraColonna()
+    ' Discolora la colonna di una flex
+    Dim i As Integer
+       
+    For i = flxGriglia.FixedRows To flxGriglia.Rows - 1
+        flxGriglia.Row = i
+        flxGriglia.CellBackColor = vbWhite
+    Next i
+    
+    ' Imposto la colonna uguale a 0 per evitare problemi nella Sub SalvaModifiche
+    flxGriglia.Col = 0
+
+End Sub
+
 Private Sub CaricaPaziente()
     Dim rsDataset As Recordset
     If intPazientiKey = 0 Then
@@ -1056,6 +1070,7 @@ End Sub
 Private Sub cboAnno_Click()
     If stoCaricando Then Exit Sub
     Call Pulisci
+    Call DiscoloraColonna
     Call CaricaScheda
 End Sub
 

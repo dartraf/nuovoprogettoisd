@@ -732,6 +732,20 @@ Private Sub ColoraColonna(Optional colore As ColorConstants = vbCyan)
     flxGriglia.Row = riga
 End Sub
 
+Public Sub DiscoloraColonna()
+    ' Discolora la colonna di una flex
+    Dim i As Integer
+       
+    For i = flxGriglia.FixedRows To flxGriglia.Rows - 1
+        flxGriglia.Row = i
+        flxGriglia.CellBackColor = vbWhite
+    Next i
+    
+    ' Imposto la colonna uguale a 0 per evitare problemi nella Sub SalvaModifiche
+    flxGriglia.Col = 0
+
+End Sub
+
 Private Sub cmdChiudi_Click()
     Unload Me
 End Sub
@@ -744,7 +758,7 @@ Private Sub cmdImportaEsami_Click()
     Dim strSql As String
     
     If flxGriglia.Col = 0 Then
-        MsgBox "Selezionare il mese degli esami da importare", vbCritical, "Attenzione"
+        MsgBox "Selezionare il mese degli esami da importare", vbInformation, "Informazione"
     Else
         Set rsDataset = New Recordset
         strSql = "SELECT    VOCI_ESAMI.NOME, VALORE " & _
@@ -1218,6 +1232,7 @@ End Sub
 Private Sub cboAnno_Click()
     If stoCaricando Then Exit Sub
     Call Pulisci
+    Call DiscoloraColonna
     Call CaricaScheda
 End Sub
 

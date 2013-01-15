@@ -543,6 +543,20 @@ gestione:
     End If
 End Function
 
+Public Sub DiscoloraColonna()
+    ' Discolora la colonna di una flex
+    Dim i As Integer
+       
+    For i = flxGriglia.FixedRows To flxGriglia.Rows - 1
+        flxGriglia.Row = i
+        flxGriglia.CellBackColor = vbWhite
+    Next i
+    
+    ' Imposto la colonna uguale a 0 per evitare problemi nella Sub SalvaModifiche
+    flxGriglia.Col = 0
+
+End Sub
+
 Public Sub ColoraColonna(Optional colore As ColorConstants = vbCyan)
     ' colora l'intera colonna di una flex
     Dim i As Integer
@@ -1071,6 +1085,7 @@ End Sub
 Private Sub cboAnno_Click()
     If stoCaricando Then Exit Sub
     Call Pulisci
+    Call DiscoloraColonna
     Call CaricaScheda
 End Sub
 

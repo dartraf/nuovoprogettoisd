@@ -735,15 +735,26 @@ End Sub
 Public Sub DiscoloraColonna()
     ' Discolora la colonna di una flex
     Dim i As Integer
+    Dim k As Integer
+    Dim Col As Integer
+    Dim riga As Integer
+    Dim colAppo As ColorConstants
        
-    For i = flxGriglia.FixedRows To flxGriglia.Rows - 1
-        flxGriglia.Row = i
-        flxGriglia.CellBackColor = vbWhite
-    Next i
+    For k = 1 To flxGriglia.Cols - 1
+        flxGriglia.Col = k
+        ' utilizzo un var di appoggio perche cosi funziona
+        colAppo = flxGriglia.CellBackColor
+        If colAppo <> vbWhite And colAppo <> 0 Then
+            For i = flxGriglia.FixedRows To flxGriglia.Rows - 1
+                flxGriglia.Row = i
+                flxGriglia.CellBackColor = vbWhite
+            Next i
+            Exit For
+        End If
+    Next k
     
     ' Imposto la colonna uguale a 0 per evitare problemi nella Sub SalvaModifiche
     flxGriglia.Col = 0
-
 End Sub
 
 Private Sub cmdChiudi_Click()

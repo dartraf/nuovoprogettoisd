@@ -450,12 +450,12 @@ Private Sub Form_Load()
     cboAnno.ListIndex = 0
     stoCaricando = False
     For k = 0 To 1
-        ' valore massimo di Ca/P è 5
-        grafico(k).Plot.Axis(VtChAxisIdY).ValueScale.Maximum = 5
+        ' valore massimo di Ca/P è 100
+        grafico(k).Plot.Axis(VtChAxisIdY).ValueScale.Maximum = 110
         For i = 1 To 12
             grafico(k).Column = 1
             grafico(k).Row = i
-            grafico(k).data = 0
+            grafico(k).Data = 0
             grafico(k).RowLabel = UCase(MonthName(i, True))
         Next i
     Next k
@@ -517,7 +517,7 @@ Private Sub Pulisci()
         For k = 0 To 1
             grafico(k).Column = 1
             grafico(k).Row = i
-            grafico(k).data = 0
+            grafico(k).Data = 0
         Next k
         
     Next i
@@ -528,7 +528,7 @@ Private Function CalcoloProdottoCalcioFosforo(vCol As Integer) As Double
 
     With flxGriglia
         If .TextMatrix(2, vCol) <> "" And .TextMatrix(3, vCol) <> "" Then
-             CalcoloProdottoCalcioFosforo = Int(.TextMatrix(2, vCol) / .TextMatrix(3, vCol) * 100) / 100
+           CalcoloProdottoCalcioFosforo = Format(VirgolaOrPunto(.TextMatrix(2, vCol), ".") * VirgolaOrPunto(.TextMatrix(3, vCol), "."), "##.##")
         Else
             Exit Function
         End If
@@ -664,7 +664,7 @@ Private Sub CaricaScheda()
                 For k = 0 To 1
                     grafico(k).Column = 1
                     grafico(k).Row = i
-                    grafico(k).data = valore
+                    grafico(k).Data = valore
                 Next k
             End If
             rsProdottoCalcioFosforo.Close
@@ -1025,7 +1025,7 @@ Private Sub cmdAnnulla_Click()
         For k = 0 To 1
             grafico(k).Column = 1
             grafico(k).Row = Col
-            grafico(k).data = valore
+            grafico(k).Data = valore
         Next k
         objAnnulla.Remove
         
@@ -1138,7 +1138,7 @@ Private Sub txtAppo_LostFocus()
     For k = 0 To 1
         grafico(k).Column = 1
         grafico(k).Row = vCol
-        grafico(k).data = valore
+        grafico(k).Data = valore
     Next k
 
     With flxGriglia

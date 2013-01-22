@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmStampaFiltri 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa "
@@ -145,7 +145,6 @@ Begin VB.Form frmStampaFiltri
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   240
-         Visible         =   0   'False
          Width           =   2775
       End
       Begin VB.Label Label1 
@@ -522,7 +521,7 @@ Private Sub StampaKtvAnnuale()
     rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
 
     Set rsDataset = New Recordset
-    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME, STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME, STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " AND (STATODATA IS NULL OR YEAR(STATODATA)=" & cboAnno.Text & ") ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         With rsMain
             .AddNew
@@ -577,10 +576,11 @@ Private Sub StampaKtvAnnuale()
     
     If rsMain.RecordCount <> 0 Then
         Set rptKtvTsatCapAnnuale.DataSource = rsMain
-        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "KT/V ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "KT/V ANNO " & cboAnno.Text & " - PAZIENTI CON STATUS ''" & cboStato & "''"
         rptKtvTsatCapAnnuale.LeftMargin = 500
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
@@ -638,7 +638,8 @@ Private Sub StampaTsatAnnuale()
     rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
 
     Set rsDataset = New Recordset
-    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME, STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " AND (STATODATA IS NULL OR YEAR(STATODATA)=" & cboAnno.Text & ") ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         With rsMain
             .AddNew
@@ -692,10 +693,11 @@ Private Sub StampaTsatAnnuale()
     
     If rsMain.RecordCount <> 0 Then
         Set rptKtvTsatCapAnnuale.DataSource = rsMain
-        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "TSAT% ANNO " & cboAnno.Text & " - PAZIENTI CON STATUS ''" & cboStato & "''"
         rptKtvTsatCapAnnuale.LeftMargin = 500
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
@@ -796,7 +798,8 @@ Private Sub StampaPthAnnuale()
     
    Set rsDataselect = New Recordset
    cont = 0
-   rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+   rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME, STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " AND (STATODATA IS NULL OR YEAR(STATODATA)=" & cboAnno.Text & ") ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'   rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDataset.RecordCount > 0 Then       ' se ci sono record attiva la barra di progresso
         prgBarra.Value = 0
         panProgress.Visible = True
@@ -876,10 +879,11 @@ Private Sub StampaPthAnnuale()
     
     If rsMain.RecordCount <> 0 Then
         Set rptKtvTsatCapAnnuale.DataSource = rsMain
-        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "PTH ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "PTH ANNO " & cboAnno.Text & " - PAZIENTI CON STATUS ''" & cboStato & "''"
         rptKtvTsatCapAnnuale.LeftMargin = 500
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
@@ -937,7 +941,8 @@ Private Sub StampaCAPAnnuale()
     rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
 
     Set rsDataset = New Recordset
-    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME, STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " AND (STATODATA IS NULL OR YEAR(STATODATA)=" & cboAnno.Text & ") ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+ '   rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         With rsMain
             .AddNew
@@ -991,10 +996,11 @@ Private Sub StampaCAPAnnuale()
     
     If rsMain.RecordCount <> 0 Then
         Set rptKtvTsatCapAnnuale.DataSource = rsMain
-        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "PRODOTTO Ca/P ANNO " & cboAnno.Text
+        rptKtvTsatCapAnnuale.Sections("intestazione").Controls("lblTitolo").Caption = "Ca/P ANNO " & cboAnno.Text & " - PAZIENTI CON STATUS ''" & cboStato & "''"
         rptKtvTsatCapAnnuale.LeftMargin = 500
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If

@@ -67,13 +67,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTitolo"
-         Object.Left            =   1134
          Object.Top             =   2154
-         Object.Width           =   8447
+         Object.Width           =   10377
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.25
+            Size            =   18
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -889,7 +888,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Pie"
-      Object.Height          =   1050
+      Object.Height          =   795
       NumControls     =   7
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -916,8 +915,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale
          _Version        =   393216
          Name            =   "Label1"
          Object.Left            =   57
-         Object.Top             =   171
-         Object.Width           =   2154
+         Object.Top             =   170
+         Object.Width           =   2145
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1030,7 +1029,44 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Section5"
-      NumControls     =   0
+      Object.Height          =   585
+      NumControls     =   2
+      ItemType0       =   3
+      BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblPazienti"
+         Object.Left            =   2041
+         Object.Top             =   57
+         Object.Width           =   585
+         Object.Height          =   255
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType1       =   3
+      BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label8"
+         Object.Top             =   57
+         Object.Width           =   2098
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "TOTALE PAZIENTI:"
+      EndProperty
    EndProperty
 End
 Attribute VB_Name = "rptKtvTsatCapAnnuale"

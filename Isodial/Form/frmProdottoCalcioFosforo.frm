@@ -1132,7 +1132,9 @@ Private Sub txtAppo_LostFocus()
     cmdAnnulla.Enabled = True
     Call SalvaModifiche
     valore = CalcoloProdottoCalcioFosforo(vCol)
-    flxGriglia.TextMatrix(4, vCol) = VirgolaOrPunto(CStr(valore), ",")
+    If Not valore = 0 Then
+        flxGriglia.TextMatrix(4, vCol) = VirgolaOrPunto(CStr(valore), ",")
+    End If
     For k = 0 To 1
         grafico(k).Column = 1
         grafico(k).Row = vCol

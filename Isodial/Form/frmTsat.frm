@@ -849,6 +849,7 @@ Private Sub cmdImportaEsami_Click()
                 vRow = 1
                 Call SalvaModifiche
                 Call CaricaScheda
+                Call DiscoloraColonna
             End If
         Else
             MsgBox "Nessun esame per il mese selezionato", vbInformation, "Importa esami"
@@ -1066,6 +1067,7 @@ End Sub
 Private Sub cmdTrova_Click()
     ' pulisce per evitare problemi
     Call PulisciTutto
+    Call DiscoloraColonna
     tTrova.Tipo = tpPAZIENTE
     tTrova.condizione = ""
     tTrova.condStato = ""

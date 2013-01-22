@@ -455,7 +455,7 @@ Private Sub Form_Load()
         For i = 1 To 12
             grafico(k).Column = 1
             grafico(k).Row = i
-            grafico(k).Data = 0
+            grafico(k).data = 0
             grafico(k).RowLabel = UCase(MonthName(i, True))
         Next i
     Next k
@@ -517,7 +517,7 @@ Private Sub Pulisci()
         For k = 0 To 1
             grafico(k).Column = 1
             grafico(k).Row = i
-            grafico(k).Data = 0
+            grafico(k).data = 0
         Next k
         
     Next i
@@ -664,7 +664,7 @@ Private Sub CaricaScheda()
                 For k = 0 To 1
                     grafico(k).Column = 1
                     grafico(k).Row = i
-                    grafico(k).Data = valore
+                    grafico(k).data = valore
                 Next k
             End If
             rsProdottoCalcioFosforo.Close
@@ -860,6 +860,7 @@ Private Sub cmdImportaEsami_Click()
                 vRow = 1
                 Call SalvaModifiche
                 Call CaricaScheda
+                Call DiscoloraColonna
             
             End If
         Else
@@ -962,6 +963,7 @@ Private Sub cmdStampa_Click()
     vett(10) = "OTT"
     vett(11) = "NOV"
     vett(12) = "DIC"
+    
     Dim i As Integer
     Dim valore As Double
     
@@ -976,7 +978,9 @@ Private Sub cmdStampa_Click()
                 .Fields("CALCEMIA_" & vett(i)) = VirgolaOrPunto(rsProdottoCalcioFosforo("CALCEMIA") & "", ",")
                 .Fields("FOSFOREMIA_" & vett(i)) = VirgolaOrPunto(rsProdottoCalcioFosforo("FOSFOREMIA") & "", ",")
                 If .Fields("CALCEMIA_" & vett(i)) <> "" And .Fields("FOSFOREMIA_" & vett(i)) <> "" Then
-                    valore = Format(.Fields("CALCEMIA_" & vett(i)) / .Fields("FOSFOREMIA_" & vett(i)), "##.##")
+                    'calcolo vecchio utilizzabile per la divisione
+                    'valore = Format(.Fields("CALCEMIA_" & vett(i)) * .Fields("FOSFOREMIA_" & vett(i)), "##.##")
+                    valore = val(.Fields("CALCEMIA_" & vett(i))) * val(.Fields("FOSFOREMIA_" & vett(i)))
                     .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = VirgolaOrPunto(CStr(valore), ",")
                 Else
                     .Fields("PRODOTTO_CALCIO_FOSFORO_" & vett(i)) = ""
@@ -1025,7 +1029,7 @@ Private Sub cmdAnnulla_Click()
         For k = 0 To 1
             grafico(k).Column = 1
             grafico(k).Row = Col
-            grafico(k).Data = valore
+            grafico(k).data = valore
         Next k
         objAnnulla.Remove
         
@@ -1081,6 +1085,7 @@ End Sub
 Private Sub cmdTrova_Click()
     ' pulisce per evitare problemi
     Call PulisciTutto
+    Call DiscoloraColonna
     tTrova.Tipo = tpPAZIENTE
     tTrova.condizione = ""
     tTrova.condStato = ""
@@ -1138,7 +1143,7 @@ Private Sub txtAppo_LostFocus()
     For k = 0 To 1
         grafico(k).Column = 1
         grafico(k).Row = vCol
-        grafico(k).Data = valore
+        grafico(k).data = valore
     Next k
 
     With flxGriglia

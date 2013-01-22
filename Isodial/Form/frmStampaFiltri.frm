@@ -1338,7 +1338,7 @@ End Function
 
 Private Function CalcolaCap(c1 As Single, c2 As Single) As Double
     On Error GoTo gestione
-    CalcolaCap = Int(c1 / c2 * 100) / 100
+    CalcolaCap = Format(c1 * c2, "##.##")
     Exit Function
 gestione:
     CalcolaCap = 0

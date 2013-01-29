@@ -388,7 +388,7 @@ Private Function GeneraFileXML() As Boolean
     rsAppo.Open "SELECT COUNT(R.KEY) AS TOTALER FROM (RICETTE R INNER JOIN TIPOLOGIE_ESENZIONE T ON T.KEY=R.CODICE_ESENZIONE)  WHERE ((NOT R.CODICE_ESENZIONE=-1) AND (NOT T.CODICE='E05') AND (NOT ESENZIONE_DOPPIA=TRUE) AND ESENZIONE_QUOTA=FALSE AND VALIDATA=FALSE AND NOT FLAG=3 AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
     coefficienteQuotaAggiuntiva = rsAppo("TOTALER") / 2
     rsAppo.Close
-    ' codice_esenzione=-1 è un record fittizzio per fare gli inner join
+    ' codice_esenzione=-1 è un record fittizio per fare gli inner join
     rsAppo.Open "SELECT COUNT(KEY) AS TOTALER FROM RICETTE WHERE (CODICE_ESENZIONE=-1 AND VALIDATA=FALSE AND NOT FLAG=3 AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
     coefficienteQuotaAggiuntiva = coefficienteQuotaAggiuntiva + rsAppo("TOTALER")
     rsAppo.Close
@@ -474,7 +474,8 @@ Private Function GeneraFileXML() As Boolean
         Else
             nodo1.appendChild CreaNodo("CodEsenzione", rsDataset("TIPOLOGIE_ESENZIONECODICE"))
         End If
-        nodo1.appendChild CreaNodo("Reddito", IIf(CBool(rsDataset("ESENTE_REDDITO")), "1", ""))
+  '      nodo1.appendChild CreaNodo("Reddito", IIf(CBool(rsDataset("ESENTE_REDDITO")), "1", ""))
+        nodo1.appendChild CreaNodo("Reddito", IIf(CBool(rsDataset("ESENTE_REDDITO")), "", ""))
         If CBool(rsDataset("STAMPATO_PC")) Then
             If CBool(rsDataset("PRESENZA_BARCODE")) Then
                 tipoStampaPC = 1

@@ -670,9 +670,9 @@ Private Sub cmdEsportaEsame_Click()
     Dim rsDataset As Recordset
     Dim keyEsame As Integer
     Dim keyGruppo As Integer
-    Dim keyAnamnesi As Integer
-    Dim keyRecord As Integer
-    Dim keyNuovo As Integer
+    Dim keyAnamnesi As Long
+    Dim keyRecord As Long
+    Dim keyNuovo As Long
     
     If flxGriglia.TextMatrix(4, vCol) = "" Then
         MsgBox "IMPOSSIBILE ESPORTARE!!!" & vbCrLf & "Valori non definiti", vbCritical, "Attenzione"

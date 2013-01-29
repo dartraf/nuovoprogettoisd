@@ -829,7 +829,7 @@ Private Sub cmdImportaEsami_Click()
         Set rsDataset = New Recordset
         rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
-            If flxGriglia.TextMatrix(2, flxGriglia.Col) <> "" Then
+            If flxGriglia.TextMatrix(2, flxGriglia.Col) <> "" Or flxGriglia.TextMatrix(3, flxGriglia.Col) <> "" Then
                 If MsgBox("I valori degli esami sono già presenti" & vbCrLf & "Vuoi sovrascriverli?", vbQuestion + vbYesNo + vbDefaultButton2, "Importa esami") = vbYes Then
                     continua = True
                 Else
@@ -844,19 +844,21 @@ Private Sub cmdImportaEsami_Click()
                     flxGriglia.TextMatrix(3, flxGriglia.Col) = VirgolaOrPunto(rsDataset("VALORE"), ",")
                     vRow = 3
                     Call SalvaModifiche
+                  ' Giorno
+                    flxGriglia.TextMatrix(1, flxGriglia.Col) = Day(rsDataset("DATA"))
                 End If
                 rsDataset.Filter = "VOCI_ESAMINOME LIKE '%Calcemia%' OR VOCI_ESAMINOME LIKE '%CALCEMIA%'"
                 If Not (rsDataset.EOF And rsDataset.BOF) Then
                     flxGriglia.TextMatrix(2, flxGriglia.Col) = VirgolaOrPunto(rsDataset("VALORE"), ",")
                     vRow = 2
                     Call SalvaModifiche
+                  ' Giorno
+                    flxGriglia.TextMatrix(1, flxGriglia.Col) = Day(rsDataset("DATA"))
                 End If
                 
                 ' Prodotto Ca / P
                 flxGriglia.TextMatrix(4, flxGriglia.Col) = VirgolaOrPunto(CStr(CalcoloProdottoCalcioFosforo(flxGriglia.Col)), ",")
                 
-                ' Giorno
-                flxGriglia.TextMatrix(1, flxGriglia.Col) = Day(rsDataset("DATA"))
                 vRow = 1
                 Call SalvaModifiche
                 Call CaricaScheda

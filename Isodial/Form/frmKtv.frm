@@ -783,7 +783,7 @@ Private Sub cmdImportaEsami_Click()
                  "ORDER BY  DATA DESC"
         rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
-            If flxGriglia.TextMatrix(1, flxGriglia.Col) <> "" Then
+            If flxGriglia.TextMatrix(1, flxGriglia.Col) <> "" Or flxGriglia.TextMatrix(2, flxGriglia.Col) <> "" Then
                 If MsgBox("I valori degli esami sono già presenti" & vbCrLf & "Vuoi sovrascriverli?", vbQuestion + vbYesNo + vbDefaultButton2, "Importa esami") = vbYes Then
                     continua = True
                 Else

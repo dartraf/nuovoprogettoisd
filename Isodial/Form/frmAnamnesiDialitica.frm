@@ -210,97 +210,121 @@ Begin VB.Form frmAnamnesiDialitica
       Tab(0).Control(19).Enabled=   0   'False
       Tab(0).Control(20)=   "Label1(37)"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "oData(2)"
+      Tab(0).Control(21)=   "Label1(38)"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "oData(1)"
+      Tab(0).Control(22)=   "oData(2)"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "oData(0)"
+      Tab(0).Control(23)=   "oData(1)"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "picElenca(2)"
+      Tab(0).Control(24)=   "oData(0)"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "cboTipoLinee"
+      Tab(0).Control(25)=   "picElenca(2)"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "picElenca(1)"
+      Tab(0).Control(26)=   "cboTipoLinee"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "picElenca(0)"
+      Tab(0).Control(27)=   "picElenca(1)"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "cboTipoFiltro"
+      Tab(0).Control(28)=   "picElenca(0)"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "chkDiuresiResidua"
+      Tab(0).Control(29)=   "cboTipoFiltro"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "txtPotassio"
+      Tab(0).Control(30)=   "chkDiuresiResidua"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "cboTipoDialisi"
+      Tab(0).Control(31)=   "txtPotassio"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "cboAccesso"
+      Tab(0).Control(32)=   "cboTipoDialisi"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "txtSedeAccesso"
+      Tab(0).Control(33)=   "cboAccesso"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "txtPesoSecco"
+      Tab(0).Control(34)=   "txtSedeAccesso"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "txtQuantita"
+      Tab(0).Control(35)=   "txtPesoSecco"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "txtAumentoPond"
+      Tab(0).Control(36)=   "txtQuantita"
       Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "txtOre"
+      Tab(0).Control(37)=   "txtAumentoPond"
       Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "txtMinuti"
+      Tab(0).Control(38)=   "txtOre"
       Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "txtBicarbonato"
+      Tab(0).Control(39)=   "txtMinuti"
       Tab(0).Control(39).Enabled=   0   'False
-      Tab(0).Control(40)=   "txtCalcio"
+      Tab(0).Control(40)=   "txtBicarbonato"
       Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "cboTipoAgo(0)"
+      Tab(0).Control(41)=   "txtCalcio"
       Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).Control(42)=   "cboTipoAgo(1)"
+      Tab(0).Control(42)=   "cboTipoAgo(0)"
       Tab(0).Control(42).Enabled=   0   'False
-      Tab(0).Control(43)=   "txtGlucosio"
+      Tab(0).Control(43)=   "cboTipoAgo(1)"
       Tab(0).Control(43).Enabled=   0   'False
-      Tab(0).Control(44)=   "txtSodio"
+      Tab(0).Control(44)=   "txtGlucosio"
       Tab(0).Control(44).Enabled=   0   'False
-      Tab(0).Control(45)=   "picCaricaPesoSecco"
+      Tab(0).Control(45)=   "txtSodio"
       Tab(0).Control(45).Enabled=   0   'False
-      Tab(0).ControlCount=   46
+      Tab(0).Control(46)=   "picCaricaPesoSecco"
+      Tab(0).Control(46).Enabled=   0   'False
+      Tab(0).Control(47)=   "cboCodicePrestaione"
+      Tab(0).Control(47).Enabled=   0   'False
+      Tab(0).ControlCount=   48
       TabCaption(1)   =   "Scheda 2"
       TabPicture(1)   =   "frmAnamnesiDialitica.frx":0475
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(16)"
-      Tab(1).Control(1)=   "Label1(15)"
-      Tab(1).Control(2)=   "Label1(14)"
-      Tab(1).Control(3)=   "Label1(13)"
-      Tab(1).Control(4)=   "Label1(12)"
-      Tab(1).Control(5)=   "Label1(11)"
-      Tab(1).Control(6)=   "Label1(26)"
-      Tab(1).Control(7)=   "Label1(28)"
-      Tab(1).Control(8)=   "Label1(29)"
-      Tab(1).Control(9)=   "Label1(30)"
-      Tab(1).Control(10)=   "Label1(31)"
-      Tab(1).Control(11)=   "Label1(35)"
+      Tab(1).Control(0)=   "cboDosiUnitaMisura"
+      Tab(1).Control(1)=   "txtFlussoSangue"
+      Tab(1).Control(2)=   "txtSolInfCc"
+      Tab(1).Control(3)=   "cboCartuccia"
+      Tab(1).Control(4)=   "cboSolInfusionale"
+      Tab(1).Control(5)=   "cboSolDialitica"
+      Tab(1).Control(6)=   "txtFlusso"
+      Tab(1).Control(7)=   "cboAnticoagulante(0)"
+      Tab(1).Control(8)=   "cboAnticoagulante(1)"
+      Tab(1).Control(9)=   "txtDose(0)"
+      Tab(1).Control(10)=   "txtDose(1)"
+      Tab(1).Control(11)=   "txtDose(2)"
       Tab(1).Control(12)=   "txtDose(3)"
-      Tab(1).Control(13)=   "txtDose(2)"
-      Tab(1).Control(14)=   "txtDose(1)"
-      Tab(1).Control(15)=   "txtDose(0)"
-      Tab(1).Control(16)=   "cboAnticoagulante(1)"
-      Tab(1).Control(17)=   "cboAnticoagulante(0)"
-      Tab(1).Control(18)=   "txtFlusso"
-      Tab(1).Control(19)=   "cboSolDialitica"
-      Tab(1).Control(20)=   "cboSolInfusionale"
-      Tab(1).Control(21)=   "cboCartuccia"
-      Tab(1).Control(22)=   "txtSolInfCc"
-      Tab(1).Control(23)=   "txtFlussoSangue"
-      Tab(1).Control(24)=   "cboDosiUnitaMisura"
+      Tab(1).Control(13)=   "Label1(35)"
+      Tab(1).Control(14)=   "Label1(31)"
+      Tab(1).Control(15)=   "Label1(30)"
+      Tab(1).Control(16)=   "Label1(29)"
+      Tab(1).Control(17)=   "Label1(28)"
+      Tab(1).Control(18)=   "Label1(26)"
+      Tab(1).Control(19)=   "Label1(11)"
+      Tab(1).Control(20)=   "Label1(12)"
+      Tab(1).Control(21)=   "Label1(13)"
+      Tab(1).Control(22)=   "Label1(14)"
+      Tab(1).Control(23)=   "Label1(15)"
+      Tab(1).Control(24)=   "Label1(16)"
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(32)"
-      Tab(2).Control(1)=   "lblUnitaMisura"
-      Tab(2).Control(2)=   "Label1(34)"
+      Tab(2).Control(0)=   "cmdEliminaEpo"
+      Tab(2).Control(1)=   "txtNote"
+      Tab(2).Control(2)=   "txtUI"
       Tab(2).Control(3)=   "cboEPO"
-      Tab(2).Control(4)=   "txtUI"
-      Tab(2).Control(5)=   "txtNote"
-      Tab(2).Control(6)=   "cmdEliminaEpo"
+      Tab(2).Control(4)=   "Label1(34)"
+      Tab(2).Control(5)=   "lblUnitaMisura"
+      Tab(2).Control(6)=   "Label1(32)"
       Tab(2).ControlCount=   7
+      Begin VB.ComboBox cboCodicePrestaione 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         ItemData        =   "frmAnamnesiDialitica.frx":04AD
+         Left            =   9840
+         List            =   "frmAnamnesiDialitica.frx":04AF
+         Sorted          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   92
+         Top             =   3360
+         Width           =   1575
+      End
       Begin VB.PictureBox picCaricaPesoSecco 
          AutoSize        =   -1  'True
          BorderStyle     =   0  'None
@@ -356,9 +380,9 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmAnamnesiDialitica.frx":04AD
+         ItemData        =   "frmAnamnesiDialitica.frx":04B1
          Left            =   -71760
-         List            =   "frmAnamnesiDialitica.frx":04B7
+         List            =   "frmAnamnesiDialitica.frx":04BB
          Style           =   2  'Dropdown List
          TabIndex        =   20
          Top             =   960
@@ -395,7 +419,9 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          Index           =   0
+         ItemData        =   "frmAnamnesiDialitica.frx":04C7
          Left            =   7080
+         List            =   "frmAnamnesiDialitica.frx":04C9
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   8
@@ -485,7 +511,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   11160
+         Left            =   11040
          MaxLength       =   2
          TabIndex        =   17
          Top             =   3840
@@ -503,7 +529,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   9960
+         Left            =   9840
          MaxLength       =   1
          TabIndex        =   16
          Top             =   3840
@@ -643,9 +669,9 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmAnamnesiDialitica.frx":04C3
+         ItemData        =   "frmAnamnesiDialitica.frx":04CB
          Left            =   -73200
-         List            =   "frmAnamnesiDialitica.frx":04D6
+         List            =   "frmAnamnesiDialitica.frx":04DE
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   31
@@ -832,6 +858,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   285
          Left            =   2400
+         MaxLength       =   92
          TabIndex        =   10
          Top             =   2880
          Width           =   7935
@@ -868,7 +895,7 @@ Begin VB.Form frmAnamnesiDialitica
          Sorted          =   -1  'True
          TabIndex        =   11
          Top             =   3360
-         Width           =   7935
+         Width           =   5055
       End
       Begin VB.TextBox txtPotassio 
          Alignment       =   1  'Right Justify
@@ -916,9 +943,9 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmAnamnesiDialitica.frx":04FC
+         ItemData        =   "frmAnamnesiDialitica.frx":0504
          Left            =   2400
-         List            =   "frmAnamnesiDialitica.frx":04FE
+         List            =   "frmAnamnesiDialitica.frx":0506
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   5
@@ -1020,6 +1047,25 @@ Begin VB.Form frmAnamnesiDialitica
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Codice Prestazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   38
+         Left            =   7680
+         TabIndex        =   93
+         Top             =   3360
+         Width           =   2040
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -1149,7 +1195,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   21
-         Left            =   10440
+         Left            =   10320
          TabIndex        =   75
          Top             =   3840
          Width           =   615
@@ -1168,7 +1214,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   20
-         Left            =   9480
+         Left            =   9360
          TabIndex        =   74
          Top             =   3840
          Width           =   390
@@ -1819,6 +1865,7 @@ Private Sub Form_Activate()
     Call RicaricaComboBox("ANTICOAGULANTI", "NOME", cboAnticoagulante(0))
     Call RicaricaComboBox("ANTICOAGULANTI", "NOME", cboAnticoagulante(1))
     Call RicaricaComboBox("TIPI_DIALISI", "NOME", cboTipoDialisi)
+    Call RicaricaComboBox("NOMENCLATORE_TARIFFARIO", "CODICE", cboCodicePrestaione)
     Call RicaricaComboBox("ACCESSI_VASCOLARI", "NOME", cboAccesso)
     Call RicaricaComboBox("AGO", "NOME", cboTipoAgo(0))
     Call RicaricaComboBox("AGO", "NOME", cboTipoAgo(1))
@@ -1833,28 +1880,33 @@ Private Sub Form_Activate()
         Case tpCaricaPaziente
             Call CaricaPaziente
     End Select
+
 End Sub
 
 Private Sub Form_Load()
     Dim i As Integer
     Dim intTop As Single
     Dim intLeft As Single
-    
+        
     Call GetCenterForm(Me.Height, Me.Width, intTop, intLeft)
+    
     Me.Top = intTop
     Me.Left = intLeft
     tabSchede.Tab = 0
     cboDosiUnitaMisura.ListIndex = 0
+    
     For i = 0 To 2
         oData(i).ConnectionString = strConnectionStringCentro
         picElenca(i).Picture = LoadResPicture("storico1", 0)
     Next i
     picCaricaPesoSecco.Picture = LoadResPicture("PESO1", 0)
+    
     Call ApriRsDisconnesso
     
     If structIntestazione.sCodiceSTS = "AD0082" Or (Environ$("COMPUTERNAME") = "MASTERMIO") Then
         cmdStampaSintetica.Visible = True
     End If
+    
     blnModificato = False
 
 End Sub
@@ -2627,17 +2679,18 @@ Private Sub cmdMemorizza_Click()
                      "DATA_FILTRO", "DATA_LINEE", "FLUSSO", "FLUSSO_SANGUE", "SOL_INF_CC", "EPO", _
                      "UI", "NOTE", "CARTUCCIA", "TIPO_FILTRO", "ACCESSO_VASCOLARE", "AGO1", _
                      "AGO2", "TIPO_DIALISI", "ANTICOAGULANTE1", "ANTICOAGULANTE2", "TIPO_LINEE", "SOL_DIALITICA", _
-                     "SOL_INFUSIONALE", "DOSI_UNITA_MISURA", "GLUCOSIO")
+                     "SOL_INFUSIONALE", "DOSI_UNITA_MISURA", "GLUCOSIO", "CODICE_PRESTAZIONE")
             
             If Not modifica Then
                 keyId = GetNumero("ANAMNESI_DIALITICHE")
             End If
+            
             v_Val = Array(keyId, intPazientiKey, IIf(chkDiuresiResidua.Value = Checked, True, False), _
                     txtQuantita, txtPesoSecco, txtAumentoPond, txtSedeAccesso, txtSodio.GetDecimal, txtPotassio, _
                     txtBicarbonato, txtCalcio, txtDose(0), txtDose(1), txtDose(2), txtDose(3), txtOre, _
                     txtMinuti, oData(0).data, oData(1).data, oData(2).data, txtFlusso, txtFlussoSangue, _
                     txtSolInfCc, cboEPO.ListIndex, txtUI, IIf(txtNote = "", " ", txtNote), _
-                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, cboDosiUnitaMisura.ListIndex, txtGlucosio)
+                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, cboDosiUnitaMisura.ListIndex, txtGlucosio, cboCodicePrestaione.ItemData(cboCodicePrestaione.ListIndex))
                     
             If cboCartuccia.ListIndex <> -1 Then v_Val(26) = cboCartuccia.ItemData(cboCartuccia.ListIndex)
             If cboTipoFiltro.ListIndex <> -1 Then v_Val(27) = cboTipoFiltro.ItemData(cboTipoFiltro.ListIndex)
@@ -2650,7 +2703,7 @@ Private Sub cmdMemorizza_Click()
             If cboTipoLinee.ListIndex <> -1 Then v_Val(34) = cboTipoLinee.ItemData(cboTipoLinee.ListIndex)
             If cboSolDialitica.ListIndex <> -1 Then v_Val(35) = cboSolDialitica.ItemData(cboSolDialitica.ListIndex)
             If cboSolInfusionale.ListIndex <> -1 Then v_Val(36) = cboSolInfusionale.ItemData(cboSolInfusionale.ListIndex)
-                             
+                                    
             cnPrinc.BeginTrans
             Set rsAnamnesiDialitica = New Recordset
             If modifica Then
@@ -2772,6 +2825,11 @@ Private Sub CaricaPaziente()
         cboTipoAgo(0).ListIndex = GetCboListIndex(rsAnamnesiDialitica("AGO1"), cboTipoAgo(0))
         cboTipoAgo(1).ListIndex = GetCboListIndex(rsAnamnesiDialitica("AGO2"), cboTipoAgo(1))
         cboTipoDialisi.ListIndex = GetCboListIndex(rsAnamnesiDialitica("TIPO_DIALISI"), cboTipoDialisi)
+        If IsNull(rsAnamnesiDialitica("CODICE_PRESTAZIONE")) Then   ' se non c'è il codice prestazione di default inserisce 39.95.4.
+            cboCodicePrestaione.ListIndex = GetIndex(cboCodicePrestaione, "39.95.4")
+        Else
+            cboCodicePrestaione.ListIndex = GetCboListIndex(rsAnamnesiDialitica("CODICE_PRESTAZIONE"), cboCodicePrestaione)
+        End If
         cboCartuccia.ListIndex = GetCboListIndex(rsAnamnesiDialitica("CARTUCCIA"), cboCartuccia)
         cboSolDialitica.ListIndex = GetCboListIndex(rsAnamnesiDialitica("SOL_DIALITICA"), cboSolDialitica)
         cboSolInfusionale.ListIndex = GetCboListIndex(rsAnamnesiDialitica("SOL_INFUSIONALE"), cboSolInfusionale)

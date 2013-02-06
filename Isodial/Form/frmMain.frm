@@ -342,7 +342,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   4057
             MinWidth        =   4057
-            TextSave        =   "10/01/2013"
+            TextSave        =   "06/02/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1042,7 +1042,7 @@ End Sub
 
 Private Sub mnuImpegnativeDialisi_Click()
     tStampa = tpIMPEGNATIVE
-    frmStampaFogliViaggio.Show 1
+    frmRichiestaImpegnativeDialisi.Show 1
 End Sub
 
 Private Sub mnuImpostaBackup_Click()

@@ -179,6 +179,7 @@ Module=modBackup; Moduli\modBackup.bas
 Form=Form\frmProdottoCalcioFosforo.frm
 Designer=Report\rptProdottoCalcioFosforo.Dsr
 ResFile32="Risorse.res"
+Form=Form\frmRichiestaImpegnativeDialisi.frm
 IconForm="frmCalendario"
 Startup="Sub Main"
 HelpFile=""

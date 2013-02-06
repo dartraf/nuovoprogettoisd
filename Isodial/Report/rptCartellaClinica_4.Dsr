@@ -5,11 +5,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
    ClientHeight    =   7770
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   10350
+   ClientWidth     =   10500
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   18256
+   _ExtentX        =   18521
    _ExtentY        =   13705
    _Version        =   393216
    _DesignerVersion=   100688210
@@ -317,7 +317,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   10665
-      NumControls     =   79
+      NumControls     =   81
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -811,9 +811,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
       BeginProperty Item21 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtSedeAccesso"
-         Object.Left            =   2041
+         Object.Left            =   1871
          Object.Top             =   3118
-         Object.Width           =   4422
+         Object.Width           =   7425
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -858,9 +858,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
       BeginProperty Item23 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTipoDialisi"
-         Object.Left            =   2041
-         Object.Top             =   3629
-         Object.Width           =   6975
+         Object.Left            =   1871
+         Object.Top             =   3660
+         Object.Width           =   3915
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -2183,6 +2183,53 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             SubFormatType   =   0
          EndProperty
       EndProperty
+      ItemType79      =   4
+      BeginProperty Item79 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtCodicePrestazione"
+         Object.Left            =   8107
+         Object.Top             =   3660
+         Object.Width           =   1417
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType80      =   3
+      BeginProperty Item80 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label9"
+         Object.Left            =   6123
+         Object.Top             =   3630
+         Object.Width           =   1927
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Codice Prestazione"
+      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -2291,6 +2338,8 @@ Dim WithEvents sdfZero  As StdDataFormat
 Attribute sdfZero.VB_VarHelpID = -1
 Dim WithEvents sdfDosiUnitaMisura As StdDataFormat
 Attribute sdfDosiUnitaMisura.VB_VarHelpID = -1
+Dim WithEvents sdfCodicePrestazione As StdDataFormat
+Attribute sdfCodicePrestazione.VB_VarHelpID = -1
 
 Private Function CalcolaEta() As Integer
     Dim somma As Integer
@@ -2309,6 +2358,7 @@ Private Sub DataReport_Initialize()
     Set sdfEpo = New StdDataFormat
     Set sdfZero = New StdDataFormat
     Set sdfDosiUnitaMisura = New StdDataFormat
+    Set sdfCodicePrestazione = New StdDataFormat
         
     With Me
         With .Sections("intestazione").Controls
@@ -2349,6 +2399,7 @@ Private Sub DataReport_Initialize()
             .Item("txtSedeAccesso").DataField = "SEDE_ACCESSO"
             .Item("txtAgo2").DataField = "AGO2"
             .Item("txtTipoDialisi").DataField = "TIPO_DIALISI"
+            .Item("txtCodicePrestazione").DataField = "CODICE_PRESTAZIONE"
             .Item("txtSodio").DataField = "SODIO"
             .Item("txtPotassio").DataField = "POTASSIO"
             .Item("txtBicarbonato").DataField = "BICARBONATO"
@@ -2392,12 +2443,17 @@ Private Sub DataReport_Initialize()
             Set .Item("txtUI").DataFormat = sdfZero
             Set .Item("txtAumentoPond").DataFormat = sdfZero
             Set .Item("txtQuantità").DataFormat = sdfZero
+            Set .Item("txtCodicePrestazione").DataFormat = sdfCodicePrestazione
         End With
         
         With .Sections("Pie").Controls
             .Item("lblDa").Caption = "da: " & tAccesso.cognome & " " & tAccesso.nome
         End With
     End With
+End Sub
+
+Private Sub sdfCodicePrestazione_Format(ByVal DataValue As StdFormat.StdDataValue)
+        DataValue = Choose(DataValue, "39.95.1", "39.95.2", "39.95.3", "39.95.4", "39.95.5", "39.95.6", "39.95.7", "39.95.8", "39.95.9", "89.65.1", "89.65.2", "89.65.3", "89.65.4", "89.65.5", "89.65.6", "89.66")
 End Sub
 
 Private Sub sdfZero_Format(ByVal DataValue As StdFormat.StdDataValue)

@@ -1576,6 +1576,7 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
                 "       NEW adVarChar (50) as AGO1, " & _
                 "       NEW adVarChar (50) as AGO2, " & _
                 "       NEW adVarChar (30) as DOSI_UNITA_MISURA, " & _
+                "       NEW adSingle as CODICE_PRESTAZIONE, " & _
                 "       NEW adSingle as GLUCOSIO "
 
     ' stringa di shape
@@ -1625,6 +1626,7 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
             .Fields("AGO2") = rsTabelle("AGO2NOME")
             .Fields("SEDE_ACCESSO") = rsTabelle("SEDE_ACCESSO")
             .Fields("TIPO_DIALISI") = rsTabelle("TIPI_DIALISINOME")
+            .Fields("CODICE_PRESTAZIONE") = rsTabelle("CODICE_PRESTAZIONE")
             .Fields("SODIO") = rsTabelle("SODIO")
             .Fields("POTASSIO") = rsTabelle("POTASSIO")
             .Fields("BICARBONATO") = rsTabelle("BICARBONATO")

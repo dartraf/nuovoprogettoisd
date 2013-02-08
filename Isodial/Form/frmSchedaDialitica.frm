@@ -2624,11 +2624,11 @@ Option Explicit
 
 Dim rsDialisi As Recordset
 Dim modifica As Boolean
-Dim keyId As Integer
+Dim keyId As Long
 Dim lettera As String
 Dim periodo As Integer
 Dim codice_rene  As Integer
-Dim codice_storico_dialisi As Integer
+Dim codice_storico_dialisi As Long
 Dim intPazientiKey As Integer
 
 Const icsCAS As String = "   X "
@@ -3211,7 +3211,7 @@ Private Function SalvaDatiTerapia() As Boolean
     Dim v_Nomi() As Variant
     Dim v_Val() As Variant
     Dim conferma As Boolean
-    Dim num As Integer
+    Dim num As Long
     
     ' cancella le precedenti se esistono
     If modifica Then
@@ -3466,7 +3466,7 @@ End Function
 Private Sub cmdMemorizza_Click()
     Dim v_Val(1 To 30) As Variant
     Dim v_Nomi(1 To 30) As Variant
-    Dim numKey As Integer
+    Dim numKey As Long
     Dim i As Integer
     
     If Completo Then

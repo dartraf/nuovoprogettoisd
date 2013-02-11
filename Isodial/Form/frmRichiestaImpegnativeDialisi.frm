@@ -337,31 +337,6 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       TabIndex        =   18
       Top             =   2760
       Width           =   7095
-      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   3735
-         Left            =   120
-         TabIndex        =   20
-         Top             =   240
-         Width           =   6855
-         _ExtentX        =   12091
-         _ExtentY        =   6588
-         _Version        =   393216
-         Cols            =   4
-         FixedCols       =   0
-         ScrollTrack     =   -1  'True
-         MousePointer    =   99
-         FormatString    =   "| Paziente                                                       | N° Dialisi      | Cod. Prestaz.          "
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         MouseIcon       =   "frmRichiestaImpegnativeDialisi.frx":04F7
-      End
       Begin VB.ComboBox cboPrestazioni 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -379,7 +354,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          TabIndex        =   22
          Top             =   1560
          Visible         =   0   'False
-         Width           =   1455
+         Width           =   1815
       End
       Begin VB.TextBox txtAppo 
          Alignment       =   1  'Right Justify
@@ -410,12 +385,38 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   5400
+         Left            =   4800
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   19
-         Top             =   360
+         Top             =   1200
+         Visible         =   0   'False
          Width           =   1575
+      End
+      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
+         Height          =   3735
+         Left            =   120
+         TabIndex        =   20
+         Top             =   240
+         Width           =   6855
+         _ExtentX        =   12091
+         _ExtentY        =   6588
+         _Version        =   393216
+         Cols            =   4
+         FixedCols       =   0
+         ScrollTrack     =   -1  'True
+         MousePointer    =   99
+         FormatString    =   "| Paziente                                                       | N° Dialisi      | Cod. Prestaz.          "
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         MouseIcon       =   "frmRichiestaImpegnativeDialisi.frx":04F7
       End
    End
 End
@@ -796,11 +797,11 @@ Private Sub flxGriglia_DblClick()
             txtAppo.SetFocus
         ElseIf .Col = 3 Then
             Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
-       '     cboPrestazioni.Left = .colPos(.Col) + .Left + 45
-       '     cboPrestazioni.Top = .rowPos(.Row) + .Top + 45
-       '     cboPrestazioni.ListIndex = GetIndex(cboPrestazioni, .TextMatrix(.Row, .Col))
-       '     cboPrestazioni.Visible = True
-       '     cboPrestazioni.SetFocus
+            cboPrestazioni.Left = .colPos(.Col) + .Left + 45
+            cboPrestazioni.Top = .rowPos(.Row) + .Top + 45
+            cboPrestazioni.ListIndex = GetIndex(cboPrestazioni, .TextMatrix(.Row, .Col))
+            cboPrestazioni.Visible = True
+            cboPrestazioni.SetFocus
         End If
     End With
 End Sub

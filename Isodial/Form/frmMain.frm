@@ -90,7 +90,7 @@ Begin VB.MDIForm frmMain
          Picture         =   "frmMain.frx":BDC7
          Style           =   1  'Graphical
          TabIndex        =   19
-         ToolTipText     =   "Chiudi tutte le finestre aperte"
+         ToolTipText     =   "Chiudi Tutte le Finestre Aperte"
          Top             =   0
          Width           =   770
       End
@@ -102,7 +102,7 @@ Begin VB.MDIForm frmMain
          Picture         =   "frmMain.frx":C3BD
          Style           =   1  'Graphical
          TabIndex        =   18
-         ToolTipText     =   "Genera file XML"
+         ToolTipText     =   "Genera File XML"
          Top             =   0
          Width           =   800
       End
@@ -114,7 +114,7 @@ Begin VB.MDIForm frmMain
          Picture         =   "frmMain.frx":C851
          Style           =   1  'Graphical
          TabIndex        =   17
-         ToolTipText     =   "Genera file C"
+         ToolTipText     =   "Genera File C"
          Top             =   0
          Width           =   800
       End
@@ -294,7 +294,7 @@ Begin VB.MDIForm frmMain
          Picture         =   "frmMain.frx":143D9
          Style           =   1  'Graphical
          TabIndex        =   2
-         ToolTipText     =   "Informazioni generali"
+         ToolTipText     =   "Anagrafica Generale"
          Top             =   0
          Width           =   800
       End
@@ -315,9 +315,10 @@ Begin VB.MDIForm frmMain
             Alignment       =   1
             AutoSize        =   2
             Object.Width           =   4419
-            MinWidth        =   4412
+            MinWidth        =   4419
             Text            =   "ISODIAL 2.9"
             TextSave        =   "ISODIAL 2.9"
+            Object.ToolTipText     =   "Versione in Uso"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Alignment       =   1
@@ -333,16 +334,17 @@ Begin VB.MDIForm frmMain
          EndProperty
          BeginProperty Panel4 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Alignment       =   1
-            Object.Width           =   3706
-            MinWidth        =   3706
+            Object.Width           =   4940
+            MinWidth        =   4940
+            Object.ToolTipText     =   "Utente Connesso"
          EndProperty
          BeginProperty Panel5 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
             Alignment       =   1
             AutoSize        =   1
-            Object.Width           =   4057
-            MinWidth        =   4057
-            TextSave        =   "06/02/2013"
+            Object.Width           =   2999
+            MinWidth        =   2999
+            TextSave        =   "13/02/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 

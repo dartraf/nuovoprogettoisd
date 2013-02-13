@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmIntestazioneCentro 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Intestazione Centro"
@@ -188,7 +188,7 @@ Begin VB.Form frmIntestazioneCentro
          MaxLength       =   30
          TabIndex        =   5
          Top             =   1680
-         Width           =   3375
+         Width           =   3615
       End
       Begin VB.TextBox txtCap 
          BeginProperty Font 
@@ -219,10 +219,10 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   285
          Left            =   1920
-         MaxLength       =   30
+         MaxLength       =   40
          TabIndex        =   3
          Top             =   1200
-         Width           =   3375
+         Width           =   3615
       End
       Begin VB.TextBox txtTipo 
          BeginProperty Font 
@@ -364,7 +364,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   240
          Index           =   8
-         Left            =   4320
+         Left            =   4350
          TabIndex        =   26
          Top             =   2640
          Width           =   600
@@ -402,7 +402,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   4320
+         Left            =   4560
          TabIndex        =   24
          Top             =   2160
          Width           =   390
@@ -440,7 +440,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   5520
+         Left            =   5640
          TabIndex        =   22
          Top             =   1680
          Width           =   555
@@ -478,9 +478,9 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   5520
+         Left            =   5700
          TabIndex        =   20
-         Top             =   1200
+         Top             =   1215
          Width           =   465
       End
       Begin VB.Label Label1 
@@ -544,6 +544,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   5760
          TabIndex        =   44
          Top             =   1200
+         Visible         =   0   'False
          Width           =   255
       End
       Begin VB.CommandButton cmdScegli 
@@ -598,6 +599,7 @@ Begin VB.Form frmIntestazioneCentro
          MaxLength       =   25
          TabIndex        =   41
          Top             =   1200
+         Visible         =   0   'False
          Width           =   3735
       End
       Begin VB.TextBox txtLogoQualita 
@@ -668,6 +670,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   6120
          TabIndex        =   34
          Top             =   1200
+         Visible         =   0   'False
          Width           =   1215
       End
       Begin VB.CheckBox chkLogoQualita 
@@ -723,6 +726,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   120
          TabIndex        =   37
          Top             =   1200
+         Visible         =   0   'False
          Width           =   1620
       End
       Begin VB.Label Label1 
@@ -910,19 +914,19 @@ Private Sub ControllaImg()
 End Sub
 
 Private Sub cmdMemorizza_Click()
-    Dim v_val() As Variant
+    Dim v_Val() As Variant
     Dim v_nome() As Variant
     
     If Completo Then
         Call ControllaImg
         v_nome = Array("KEY", "RAGIONE_SOCIALE", "TIPO", "INDIRIZZO", "CAP", "CITTA", "PROV", "TELEFONO", "FAX", "IVA", "CODICE_FISCALE", "MAIL", "LOGO", "LOGO_AZIENDALE", "LOGO_QUALITA", "NOME_LOGOISO", "NOME_LOGOQUALITA", "NOME_LOGOAZIENDALE", "CODICE_STS", "CODICE_ASL", "CODICE_DISTRETTO")
-        v_val = Array(1, txtRagione, txtTipo, txtIndirizzo, txtCap, txtCitta, txtProv, txtTelefono, txtFax, txtIva, txtCodiceFiscale, txtMail, IIf(chkLogo.Value = Checked, True, False), IIf(chkLogoAziendale.Value = Checked, True, False), IIf(chkLogoQualita.Value = Checked, True, False), txtLogoISO, txtLogoQualita, txtLogoAziendale, txtCodiceSts, cboAslAppartenenza.ItemData(cboAslAppartenenza.ListIndex), cboDistrettoAppartenenza.ItemData(cboDistrettoAppartenenza.ListIndex))
+        v_Val = Array(1, txtRagione, txtTipo, txtIndirizzo, txtCap, txtCitta, txtProv, txtTelefono, txtFax, txtIva, txtCodiceFiscale, txtMail, IIf(chkLogo.Value = Checked, True, False), IIf(chkLogoAziendale.Value = Checked, True, False), IIf(chkLogoQualita.Value = Checked, True, False), txtLogoISO, txtLogoQualita, txtLogoAziendale, txtCodiceSts, cboAslAppartenenza.ItemData(cboAslAppartenenza.ListIndex), cboDistrettoAppartenenza.ItemData(cboDistrettoAppartenenza.ListIndex))
         Set rsDataset = New Recordset
         rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
         If modifica Then
-            rsDataset.Update v_nome, v_val
+            rsDataset.Update v_nome, v_Val
         Else
-            rsDataset.AddNew v_nome, v_val
+            rsDataset.AddNew v_nome, v_Val
             rsDataset.Update
         End If
         Set rsDataset = Nothing

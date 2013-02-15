@@ -79,7 +79,7 @@ Begin VB.Form frmParametriFattura
          Style           =   2  'Dropdown List
          TabIndex        =   4
          Top             =   1440
-         Width           =   3615
+         Width           =   3375
       End
       Begin VB.ComboBox cboAsl 
          BeginProperty Font 
@@ -96,7 +96,7 @@ Begin VB.Form frmParametriFattura
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Top             =   480
-         Width           =   3615
+         Width           =   3375
       End
       Begin VB.TextBox txtIva 
          BeginProperty Font 
@@ -161,10 +161,10 @@ Begin VB.Form frmParametriFattura
          EndProperty
          Height          =   285
          Left            =   1320
-         MaxLength       =   40
+         MaxLength       =   30
          TabIndex        =   2
          Top             =   960
-         Width           =   3615
+         Width           =   3375
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -949,6 +949,8 @@ Private Sub cmdMemorizza_Click()
         MsgBox "I dati sono stati memorizzati nell'archivio", vbInformation, "Informazioni"
     End If
 End Sub
+
+
 
 Private Sub txtAutorizzazione_GotFocus()
     txtAutorizzazione.BackColor = colArancione

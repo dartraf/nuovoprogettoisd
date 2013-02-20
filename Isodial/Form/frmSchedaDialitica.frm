@@ -132,26 +132,26 @@ Begin VB.Form frmSchedaDialitica
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(6)"
-      Tab(1).Control(1)=   "Label1(7)"
-      Tab(1).Control(2)=   "Label1(18)"
-      Tab(1).Control(3)=   "Label1(19)"
-      Tab(1).Control(4)=   "Label1(20)"
-      Tab(1).Control(5)=   "Label1(21)"
-      Tab(1).Control(6)=   "lblFlusso"
-      Tab(1).Control(7)=   "lblFlussoSangue"
-      Tab(1).Control(8)=   "lblSolDialitica"
-      Tab(1).Control(9)=   "lblSolInfusionale"
-      Tab(1).Control(10)=   "lblCartuccia"
-      Tab(1).Control(11)=   "lblSolInfCc"
+      Tab(1).Control(0)=   "lblSolInfCc"
+      Tab(1).Control(1)=   "lblCartuccia"
+      Tab(1).Control(2)=   "lblSolInfusionale"
+      Tab(1).Control(3)=   "lblSolDialitica"
+      Tab(1).Control(4)=   "lblFlussoSangue"
+      Tab(1).Control(5)=   "lblFlusso"
+      Tab(1).Control(6)=   "Label1(21)"
+      Tab(1).Control(7)=   "Label1(20)"
+      Tab(1).Control(8)=   "Label1(19)"
+      Tab(1).Control(9)=   "Label1(18)"
+      Tab(1).Control(10)=   "Label1(7)"
+      Tab(1).Control(11)=   "Label1(6)"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "flxGriglia(0)"
-      Tab(2).Control(1)=   "flxGriglia(1)"
-      Tab(2).Control(2)=   "Label1(37)"
-      Tab(2).Control(3)=   "Label1(36)"
+      Tab(2).Control(0)=   "Label1(36)"
+      Tab(2).Control(1)=   "Label1(37)"
+      Tab(2).Control(2)=   "flxGriglia(1)"
+      Tab(2).Control(3)=   "flxGriglia(0)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -3149,7 +3149,7 @@ Private Function GetEpo() As Integer
     End Select
 End Function
 
-Private Function SalvaDatiDialisi(numKey As Integer) As Boolean
+Private Function SalvaDatiDialisi(numKey As Long) As Boolean
     On Error GoTo gestione
     
     Dim rsDataset As New Recordset

@@ -2628,8 +2628,10 @@ Dim keyId As Long
 Dim lettera As String
 Dim periodo As Integer
 Dim codice_rene  As Integer
+Dim tprene As Byte
 Dim codice_storico_dialisi As Long
 Dim intPazientiKey As Integer
+Dim tprene_appo As String
 
 Const icsCAS As String = "   X "
 
@@ -3159,12 +3161,12 @@ Private Function SalvaDatiDialisi(numKey As Long) As Boolean
     ' aggiunge solo se e in inserimento perche questi dati (scheda dialitica e terapie) non vengono modificati
     If Not modifica Then
  '       strNomeTabella = "Ricette"
-        v_Nomi() = Array("KEY", "CODICE_RENE", "TIPO_FILTRO", "TIPO_DIALISI", "PESO_SECCO", _
+        v_Nomi() = Array("KEY", "CODICE_RENE", "TP_RENE", "TIPO_FILTRO", "TIPO_DIALISI", "PESO_SECCO", _
                         "ULTIMO_PESO", "DATA_PESO", "SODIO", "POTASSIO", "BICARBONATO", "CALCIO", "GLUCOSIO", "ORE_DIALISI", "MIN_DIALISI", "ANTICOAGULANTE1", "DOSE1", "DOSE_INTERMEDIA", "DOSE_FINALE", "DOSI_UNITA_MISURA", _
                         "ANTICOAGULANTE2", "DOSE2", "FLUSSO", "FLUSSO_SANGUE", "SOLUZIONE_DIALITICA", "SOLUZIONE_INFUSIONALE", _
                         "VALORE_CC", "CARTUCCIA", "EPO", "UI", "TIPO_LINEE", "ACCESSO_VASCOLARE", "TIPO_AGO1", "TIPO_AGO2")
         v_Val() = Array(GetNumero("STORICO_DIALISI_GIORNALIERA"), _
-                      codice_rene, lblFiltro, lblTipoDialisi, lblPesoSecco, lblUltimoPeso, IIf(lblDataUltimoPeso = "", Null, lblDataUltimoPeso), _
+                      codice_rene, tprene, lblFiltro, lblTipoDialisi, lblPesoSecco, lblUltimoPeso, IIf(lblDataUltimoPeso = "", Null, lblDataUltimoPeso), _
                       lblSodio, lblPotassio, lblBicarbonato, lblCalcio, lblGlucosio, getTempo(1), getTempo(2), lblAnticoagulante(0), lblDoseIniziale, lblDoseIntermedia, lblDoseFinale, IIf(lblDoseUnitaMisura = "ui", 0, 1), lblAnticoagulante(1), _
                       lblDoseAltroAnticoagulante, lblFlusso, lblFlussoSangue, lblSolDialitica, lblSolInfusionale, lblSolInfCc, lblCartuccia, _
                       GetEpo, lblUI, lblTipoLinee, lblAccessoVascolare, lblAgo1, lblAgo2)
@@ -3188,6 +3190,7 @@ Private Function SalvaDatiDialisi(numKey As Long) As Boolean
         rsDataset.Open "SELECT * FROM STORICO_DIALISI_GIORNALIERA WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             rsDataset.Update "CODICE_RENE", codice_rene
+            rsDataset.Update "TP_RENE", tprene
         End If
         rsDataset.Close
         SalvaDatiDialisi = True
@@ -3381,15 +3384,17 @@ Private Sub CaricaPaziente()
     
     rsDataset.Open "SELECT * FROM SCHEDE_DIALISI WHERE SPECIALE=FALSE AND CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & data & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
-        strSql = "SELECT    RENI.* " & _
+        strSql = "SELECT    STORICO_DIALISI_GIORNALIERA.TP_RENE, RENI.* " & _
                  "FROM      (STORICO_DIALISI_GIORNALIERA " & _
                  "          INNER JOIN RENI ON STORICO_DIALISI_GIORNALIERA.CODICE_RENE=RENI.KEY) " & _
                  "WHERE     STORICO_DIALISI_GIORNALIERA.KEY=" & rsDataset("CODICE_STORICO_DIALISI")
+                 tprene_appo = "TP_RENE"
     Else
         strSql = "SELECT    RENI.* " & _
                  "FROM      (TURNI " & _
                  "          INNER JOIN RENI ON RENI.KEY=TURNI.CODICE_RENE) " & _
                  "WHERE     CODICE_PAZIENTE=" & intPazientiKey
+                 tprene_appo = "TIPO"
     End If
     rsDataset.Close
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
@@ -3398,7 +3403,8 @@ Private Sub CaricaPaziente()
         lblPostazione = rsDataset("POSTAZIONE")
         lblNumeroRene = rsDataset("NUMERO_RENE") & ""
         lblTipoRene = rsDataset("TIPO_RENE")
-        lblTipo = Choose(rsDataset("TIPO") + 1, "NEG", "HCV POS", "HBV POS")
+        lblTipo = Choose(rsDataset(tprene_appo) + 1, "NEG", "HCV POS", "HBV POS")
+        tprene = rsDataset("TIPO")
     End If
     rsDataset.Close
     

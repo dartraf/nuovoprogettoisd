@@ -3187,6 +3187,9 @@ Private Function SalvaDatiDialisi(numKey As Long) As Boolean
         SalvaDatiDialisi = True
     Else
         ' modifica solo il rene perche potrebbe essere cambiato
+        rsDataset.Open "SELECT TIPO FROM RENI WHERE KEY=" & codice_rene, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        tprene = rsDataset("TIPO")
+        rsDataset.Close
         rsDataset.Open "SELECT * FROM STORICO_DIALISI_GIORNALIERA WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             rsDataset.Update "CODICE_RENE", codice_rene

@@ -2760,6 +2760,7 @@ Dim modifica As Boolean
 Dim keyId As Integer
 Dim codice_storico_dialisi As Integer
 Dim codice_rene As Integer
+Dim tprene As Byte
 Dim lettera As String * 1
 Dim numFlx As Byte
 Dim intPazientiKey As Integer
@@ -2987,7 +2988,7 @@ Private Sub CaricaScheda()
             lblPostazione = rsDialisi("POSTAZIONE")
             lblNumeroRene = rsDialisi("NUMERO_RENE") & ""
             lblTipoRene = rsDialisi("TIPO_RENE")
-            lblTipo = Choose(rsDialisi("TIPO") + 1, "NEG", "HCV POS", "HBV POS")
+            lblTipo = Choose(rsDialisi("TP_RENE") + 1, "NEG", "HCV POS", "HBV POS")
         End If
         rsDialisi.Close
         
@@ -3253,11 +3254,17 @@ Private Function SalvaDatiDialisi() As Boolean
     Else
         numKey = GetNumero("STORICO_DIALISI_GIORNALIERA")
     End If
-    v_Nomi() = Array("KEY", "CODICE_RENE", "TIPO_FILTRO", "TIPO_DIALISI", "PESO_SECCO", _
+    
+    ' punta il TIPO di rene (NEG-HCV+/HBV+)
+    rsDataset.Open "SELECT TIPO FROM RENI WHERE KEY=" & codice_rene, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        tprene = rsDataset("TIPO")
+    rsDataset.Close
+    
+    v_Nomi() = Array("KEY", "CODICE_RENE", "TP_RENE", "TIPO_FILTRO", "TIPO_DIALISI", "PESO_SECCO", _
                     "ULTIMO_PESO", "DATA_PESO", "SODIO", "POTASSIO", "BICARBONATO", "CALCIO", "GLUCOSIO", "ORE_DIALISI", "MIN_DIALISI", "ANTICOAGULANTE1", "DOSE1", "DOSE_INTERMEDIA", "DOSE_FINALE", "DOSI_UNITA_MISURA", _
                     "ANTICOAGULANTE2", "DOSE2", "FLUSSO", "FLUSSO_SANGUE", "SOLUZIONE_DIALITICA", "SOLUZIONE_INFUSIONALE", _
                     "VALORE_CC", "CARTUCCIA", "EPO", "UI", "TIPO_LINEE", "ACCESSO_VASCOLARE", "TIPO_AGO1", "TIPO_AGO2")
-    v_Val() = Array(numKey, codice_rene, cboTipoFiltro.Text, cboTipoDialisi.Text, _
+    v_Val() = Array(numKey, codice_rene, tprene, cboTipoFiltro.Text, cboTipoDialisi.Text, _
                     txtPesoSecco, txtUltimoPeso, IIf(oData(1).data = "", Null, oData(1).data), txtSodio, txtPotassio, txtBicarbonato, txtCalcio, txtGlucosio, txtOre, txtMinuti, cboAnticoagulante(0).Text, txtDoseIniziale, txtDoseIntermedia, txtDoseFinale, cboDosiUnitaMisura.ListIndex, _
                     cboAnticoagulante(1).Text, txtDoseAltroAnticoagulante, txtFlusso, txtFlussoSangue, cboSolDialitica.Text, cboSolInf.Text, _
                     txtSolInfCc, cboCartuccia.Text, cboEPO.ListIndex, txtUI, cboTipoLinee.Text, cboAccesso.Text, cboTipoAgo(0).Text, cboTipoAgo(1).Text)

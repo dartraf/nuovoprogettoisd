@@ -2756,7 +2756,8 @@ Private Sub CaricaScheda()
             lblPostazione = rsDialisi("POSTAZIONE")
             lblNumeroRene = rsDialisi("NUMERO_RENE") & ""
             lblTipoRene = rsDialisi("TIPO_RENE")
-            lblTipo = Choose(rsDialisi("TIPO") + 1, "NEG", "HCV POS", "HBV POS")
+            lblTipo = Choose(rsDialisi("TP_RENE") + 1, "NEG", "HCV POS", "HBV POS")
+
         End If
         rsDialisi.Close
         

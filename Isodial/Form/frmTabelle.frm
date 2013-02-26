@@ -985,6 +985,8 @@ Private Sub txtAppo_Change()
 End Sub
 
 Private Sub txtAppo_LostFocus()
+    Dim PostazionePrecedente As String
+    
     txtAppo.Visible = False
     If (flxGriglia.TextMatrix(vRow, vCol)) <> (txtAppo) Then
         If txtAppo = "" Then
@@ -996,8 +998,16 @@ Private Sub txtAppo_LostFocus()
         End If
         
         If vCol = 1 Then
+        PostazionePrecedente = flxGriglia.TextMatrix(vRow, vCol)
             If Esiste(flxGriglia, 1, vRow, txtAppo) Then
-                MsgBox "Il valore inserito è già presente", vbCritical, "Attenzione"
+                flxGriglia.TextMatrix(vRow, vCol) = UCase((txtAppo.Text))
+                If MsgBox("Postazione già presente." & vbCrLf & "Vuoi duplicarla?", vbQuestion + vbYesNo + vbDefaultButton2, "Inserisci rene") = vbYes Then
+                    Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
+                    cmdAnnulla.Enabled = True
+                    Call SalvaModifiche
+                Else
+                    flxGriglia.TextMatrix(vRow, vCol) = PostazionePrecedente
+                End If
             Else
                 If tTabelle = tpCOMUNI And vCol = 1 Then
                     If Not Len(txtAppo) = 6 Then

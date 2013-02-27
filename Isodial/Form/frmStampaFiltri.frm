@@ -437,7 +437,7 @@ Private Sub Form_Load()
             ElseIf tStampa = tpPTHAnnuale Then
                 label = "PTH Annuale"
             Else: tStampa = tpCAPAnnuale
-                label = " CA/P Annuale"
+                label = " Ca/P Annuale"
             End If
             
             Me.Caption = Me.Caption & label
@@ -1007,7 +1007,7 @@ Private Sub StampaCAPAnnuale()
 End Sub
 
 Private Sub StampaSchedaDialiticaSettimanale()
-Dim strSqlStampa As String
+    Dim strSqlStampa As String
     Dim strSql As String
     Dim i As Integer
     Dim intNumeroGiorni As Integer

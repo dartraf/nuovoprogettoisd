@@ -246,45 +246,52 @@ gestione:
 End Sub
 
 ''
-' Verifica l'abilitazione a le funzionalita aggiuntive
+' Abilita la gestione dei rimborsi
 '
 ' @param
 ' @param
 ' @return
 ' @remarks
 Private Sub VerificaFunzionalita()
-    On Error GoTo gestione
-    Dim rsDataset As New Recordset
-    Dim appo As String
-    Dim codiceSTS As String
+If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Then
+   structApri.F1abiliata = True
+Else
+   structApri.F1abiliata = False
+End If
+    
+'    On Error GoTo gestione
+'    Dim rsDataset As New Recordset
+'    Dim appo As String
+'    Dim codiceSTS As String
 
-    rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
-    codiceSTS = rsDataset("CODICE_STS")
-    rsDataset.Close
+'    rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+'    codiceSTS = rsDataset("CODICE_STS")
+'    rsDataset.Close
     
-    If Dir(structApri.pathExe & "\impostazioni.dat") <> "" Then
-        Open structApri.pathExe & "\impostazioni.dat" For Input As #1
-        If Not EOF(1) Then
-            Line Input #1, appo
-        End If
-        Close #1
-    End If
+'    If Dir(structApri.pathExe & "\impostazioni.dat") <> "" Then
+'        Open structApri.pathExe & "\impostazioni.dat" For Input As #1
+'        If Not EOF(1) Then
+'            Line Input #1, appo
+'        End If
+'        Close #1
+'    End If
     
-    If appo = "" Then
-        structApri.F1abiliata = False
-    Else
-        If CInt(Mid(appo, 11, 4)) = CInt(Mid(codiceSTS, 3, 4) + 1111) Then
-            structApri.F1abiliata = True
-        Else
-            structApri.F1abiliata = False
-        End If
-    End If
+'    If appo = "" Then
+'        structApri.F1abiliata = False
+'    Else
+'        If CInt(Mid(appo, 11, 4)) = CInt(Mid(codiceSTS, 3, 4) + 1111) Then
+'            structApri.F1abiliata = True
+'        Else
+'            structApri.F1abiliata = False
+'        End If
+'    End If
     
-    Exit Sub
-gestione:
+'    Exit Sub
+'gestione:
     ' identificativo errore 7-
-    MsgBox "Errore n° 7-" & Err.Number & ":  " & vbCrLf & Err.Description, vbCritical, "Attenzione"
-    End
+'    MsgBox "Errore n° 7-" & Err.Number & ":  " & vbCrLf & Err.Description, vbCritical, "Attenzione"
+'    End
+
 End Sub
 
 ''

@@ -317,11 +317,10 @@ End Function
 Private Function ControlloDuplicato() As Boolean
     Dim rsDataset As New Recordset
     Dim strSql As String
-    
     strSql = "Select    count(Key) as Totale " & _
             "From " & strNomeTabella & " " & _
-            "Where      Cognome like '" & txtCognome.Text & "' and" & _
-            "           Nome like '" & txtNome.Text & "'"
+            "Where      Cognome like '" & Apostrophe(txtCognome.Text) & "' and" & _
+            "           Nome like '" & Apostrophe(txtNome.Text) & "'"
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly
     If rsDataset("Totale") <> 0 Then
         MsgBox strNomeElemento & " è gia presente in archivio.", vbExclamation, Me.Caption

@@ -344,13 +344,15 @@ Private Function VerificaDuplicato() As Boolean
     
     strSql = "Select    count(Key) as Totale " & _
             "From " & strNomeTabella & " " & _
-            "Where      Nome  like '" & strNome & "'"
+            "Where      Nome  like '" & Apostrophe(strNome) & "'"
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly
+    
     If rsDataset("Totale") <> 0 Then
         VerificaDuplicato = True
     Else
         VerificaDuplicato = False
     End If
+    
     rsDataset.Close
     Set rsDataset = Nothing
 End Function

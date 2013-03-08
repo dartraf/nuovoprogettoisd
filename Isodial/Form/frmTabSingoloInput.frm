@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form frmTabSingoloInput 
    BorderStyle     =   4  'Fixed ToolWindow
-   ClientHeight    =   1575
+   ClientHeight    =   1545
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   6240
@@ -9,7 +9,7 @@ Begin VB.Form frmTabSingoloInput
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1575
+   ScaleHeight     =   1545
    ScaleWidth      =   6240
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -174,15 +174,18 @@ Private Function ControlloDuplicato() As Boolean
     
     strSql = "Select    count(Key) as Totale " & _
             "From " & strNomeTabella & " " & _
-            "Where      Nome like '" & txtNome.Text & "'"
+            "Where      Nome like '" & Apostrophe(txtNome.Text) & "'"
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly
+    
     If rsDataset("Totale") <> 0 Then
         MsgBox strNomeElemento & " è gia presente in archivio.", vbExclamation, Me.Caption
         ControlloDuplicato = False
     Else
         ControlloDuplicato = True
     End If
+    
     rsDataset.Close
+    
     Set rsDataset = Nothing
 End Function
 

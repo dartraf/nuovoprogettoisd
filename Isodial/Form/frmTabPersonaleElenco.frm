@@ -435,8 +435,9 @@ Private Function VerificaDuplicato() As Boolean
     Dim strCognome As String
     Dim strNome As String
     
-    strCognome = flxGriglia.TextMatrix(intRow, 1)
-    strNome = flxGriglia.TextMatrix(intRow, 2)
+    strCognome = UCase(flxGriglia.TextMatrix(intRow, 1))
+    strNome = UCase(flxGriglia.TextMatrix(intRow, 2))
+    
     If intCol = 1 Then
         strCognome = txtAppo.Text
     ElseIf intCol = 2 Then
@@ -448,15 +449,17 @@ Private Function VerificaDuplicato() As Boolean
     
     strSql = "Select    count(Key) as Totale " & _
             "From " & strNomeTabella & " " & _
-            "Where      Cognome like '" & strCognome & "' and" & _
-            "           Nome  like '" & strNome & "'"
+            "Where      Cognome like '" & Apostrophe(strCognome) & "' and" & _
+            "           Nome  like '" & Apostrophe(strNome) & "'"
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly
+    
     If rsDataset("Totale") <> 0 Then
         VerificaDuplicato = True
     Else
         VerificaDuplicato = False
     End If
     rsDataset.Close
+    
     Set rsDataset = Nothing
 End Function
 

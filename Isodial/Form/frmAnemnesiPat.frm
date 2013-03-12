@@ -664,8 +664,14 @@ Private Sub cmdMemorizza_Click()
     Set rsAnamnesi = Nothing
     
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
+    
     blnModificato = False
     modifica = True
+    
+    'Ricarico il paziente per evitare il seguente problema:
+    'Il record corrisponde all' inizio o alla fine del file ecc ecc
+    Call CaricaPaziente
+    
 End Sub
 
 Private Sub cmdTrova_Click()

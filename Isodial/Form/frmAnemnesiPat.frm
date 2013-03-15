@@ -660,18 +660,13 @@ Private Sub cmdMemorizza_Click()
     Else
         rsAnamnesi.Open "ANAMNESI_PATOLOGICHE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
         rsAnamnesi.AddNew v_Nomi, v_Val
+        Call Upd_rsDisco
     End If
     Set rsAnamnesi = Nothing
     
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
-    
     blnModificato = False
     modifica = True
-    
-    'Ricarico il paziente per evitare il seguente problema:
-    'Il record corrisponde all' inizio o alla fine del file ecc ecc
-    Call CaricaPaziente
-    
 End Sub
 
 Private Sub cmdTrova_Click()
@@ -805,17 +800,8 @@ Private Sub CaricaPaziente()
             End If
         End With
         
-        ' aggiorna i dati nel rsDisco
-        Do While Not rsDisco.EOF
-            rsDisco.Delete
-            rsDisco.MoveNext
-        Loop
-        rsDisco.AddNew
-        For i = 0 To rsAnamnesi.Fields.count - 1
-            rsDisco.Fields(i) = rsAnamnesi.Fields(i)
-        Next i
-        rsDisco.Update
-        
+      Call Upd_rsDisco
+      
     End If
     Set rsAnamnesi = Nothing
     
@@ -853,9 +839,21 @@ Private Sub txtPatologica_LostFocus()
     txtPatologica.BackColor = vbWhite
 End Sub
 
-
 '******** Gestione Modificato
-
 Private Sub txtFamiliare_Change()
     blnModificato = True
+End Sub
+
+Private Sub Upd_rsDisco()
+ ' aggiorna i dati nel rsDisco
+   Dim i As Integer
+   Do While Not rsDisco.EOF
+      rsDisco.Delete
+      rsDisco.MoveNext
+      Loop
+      rsDisco.AddNew
+      For i = 0 To rsAnamnesi.Fields.count - 1
+          rsDisco.Fields(i) = rsAnamnesi.Fields(i)
+      Next i
+      rsDisco.Update
 End Sub

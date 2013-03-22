@@ -625,17 +625,7 @@ Private Sub CaricaScheda()
             chkStampa.Value = IIf(CBool(rsDiario("STAMPA")), Checked, Unchecked)
             keyId = rsDiario("KEY")
             Call CaricaUtenteModificatore(rsDiario("UTENTE_MODIFICATORE"))
-            
-            ' aggiorna i dati nel rsDisco
-            Do While Not rsDisco.EOF
-                rsDisco.Delete
-                rsDisco.MoveNext
-            Loop
-            rsDisco.AddNew
-            For i = 0 To rsDisco.Fields.count - 1
-                rsDisco.Fields(i) = rsDiario.Fields(i)
-            Next i
-            rsDisco.Update
+            Call Upd_rsDisco
             
             modifica = True
         Else
@@ -766,6 +756,7 @@ Private Sub cmdMemorizza_Click()
             rsDiario.Open "DIARI_CLINICI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsDiario.AddNew v_Nomi, v_Val
             rsDiario.Update
+            Call Upd_rsDisco
         End If
         Set rsDiario = Nothing
         
@@ -867,4 +858,19 @@ End Sub
 Private Sub txtDati_Change()
     blnModificato = True
 End Sub
+
+Private Sub Upd_rsDisco()
+' aggiorna i dati nel rsDisco
+    Dim i As Integer
+    Do While Not rsDisco.EOF
+        rsDisco.Delete
+        rsDisco.MoveNext
+    Loop
+        rsDisco.AddNew
+        For i = 0 To rsDisco.Fields.count - 1
+            rsDisco.Fields(i) = rsDiario.Fields(i)
+        Next i
+        rsDisco.Update
+End Sub
+
 

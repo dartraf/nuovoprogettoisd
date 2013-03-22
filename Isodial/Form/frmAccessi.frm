@@ -803,17 +803,7 @@ Private Sub CaricaScheda()
             optAnestesia(rsAccessi("ANESTESIA") - 1).Value = True
         End If
         keyId = rsAccessi("KEY")
-        
-        ' aggiorna i dati nel rsDisco
-        Do While Not rsDisco.EOF
-            rsDisco.Delete
-            rsDisco.MoveNext
-        Loop
-        rsDisco.AddNew
-        For i = 0 To rsAccessi.Fields.count - 1
-            rsDisco.Fields(i) = rsAccessi.Fields(i)
-        Next i
-        rsDisco.Update
+        Call Upd_rsDisco
         
         modifica = True
     Else
@@ -935,6 +925,7 @@ Private Sub cmdMemorizza_Click()
             rsAccessi.Open "ACCESSI_VASCOLARI_TAB", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsAccessi.AddNew v_Nomi, v_Val
             rsAccessi.Update
+            Call Upd_rsDisco
         End If
         Set rsAccessi = Nothing
         
@@ -1087,4 +1078,19 @@ End Sub
 Private Sub optAnestesia_Click(Index As Integer)
     blnModificato = True
 End Sub
+
+Private Sub Upd_rsDisco()
+' aggiorna i dati nel rsDisco
+    Dim i As Integer
+    Do While Not rsDisco.EOF
+       rsDisco.Delete
+       rsDisco.MoveNext
+    Loop
+        rsDisco.AddNew
+        For i = 0 To rsAccessi.Fields.count - 1
+            rsDisco.Fields(i) = rsAccessi.Fields(i)
+        Next i
+        rsDisco.Update
+End Sub
+
 

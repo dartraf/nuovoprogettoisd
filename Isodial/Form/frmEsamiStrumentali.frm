@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmEsamiStrumentali 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -929,17 +929,8 @@ Private Sub CaricaScheda()
         txtReferto = rsEsami("REFERTO")
         Call CaricaUtenteModificatore(rsEsami("UTENTE_MODIFICATORE"))
         Call AggiornaReferto
+        Call Upd_rsDisco
         
-        ' aggiorna i dati nel rsDisco
-        Do While Not rsDisco.EOF
-            rsDisco.Delete
-            rsDisco.MoveNext
-        Loop
-        rsDisco.AddNew
-        For i = 0 To rsEsami.Fields.count - 1
-            rsDisco.Fields(i) = rsEsami.Fields(i)
-        Next i
-        rsDisco.Update
     End If
     Set rsEsami = Nothing
     
@@ -1149,6 +1140,7 @@ Private Sub cmdMemorizza_Click()
             rsEsami.Open "ESAMI_STRUMENTALI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsEsami.AddNew v_Nomi, v_Val
             rsEsami.Update
+            Call Upd_rsDisco
             rsEsami.Close
             ' controlla eventuali scansioni memorizzate in sospeso
             rsEsami.Open "SELECT * FROM SCAN_ESAMI_STRUMENTALI WHERE CODICE_SCHEDA=0", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -1285,10 +1277,22 @@ Private Sub txtReferto_LostFocus()
     txtReferto.BackColor = vbWhite
 End Sub
 
-
-
 '******** Gestione Modificato
 
 Private Sub txtReferto_Change()
     blnModificato = True
+End Sub
+
+Private Sub Upd_rsDisco()
+  ' aggiorna i dati nel rsDisco
+    Dim i As Integer
+    Do While Not rsDisco.EOF
+      rsDisco.Delete
+      rsDisco.MoveNext
+    Loop
+      rsDisco.AddNew
+      For i = 0 To rsEsami.Fields.count - 1
+          rsDisco.Fields(i) = rsEsami.Fields(i)
+      Next i
+      rsDisco.Update
 End Sub

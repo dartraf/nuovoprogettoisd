@@ -269,14 +269,14 @@ Private Sub Form_Load()
     Select Case intTipoTabPersonale
         Case enumTipoTabPersonale.MEDICI_DIALISI
             strNomeTabella = "MEDICI_DIALISI"
-            strNomeElemento = "Il medico dialisi"
-            Me.Caption = "Inserimento Medico Dialisi"
+            strNomeElemento = "Il medico inserito"
+            Me.Caption = "Inserimento Medico in Dialisi"
             fraAlreInfoMediciDialisi.Visible = True
             fraAlreInfoMediciDialisi.Enabled = True
             fraPulsanti.Top = fraAlreInfoMediciDialisi.Top + fraAlreInfoMediciDialisi.Height - 100
         Case enumTipoTabPersonale.INFERMIERI
             strNomeTabella = "INFERMIERI"
-            strNomeElemento = "L'infermiere"
+            strNomeElemento = "L'infermiere inserito"
             Me.Caption = "Inserimento Infermiere"
             fraAltreInfoInfermieri.Visible = True
             fraAltreInfoInfermieri.Enabled = True
@@ -317,20 +317,41 @@ End Function
 Private Function ControlloDuplicato() As Boolean
     Dim rsDataset As New Recordset
     Dim strSql As String
-    
+
     strSql = "Select    count(Key) as Totale " & _
             "From " & strNomeTabella & " " & _
             "Where      Cognome like '" & Apostrophe(txtCognome.Text) & "' and" & _
             "           Nome like '" & Apostrophe(txtNome.Text) & "'"
+            
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly
     
-    If rsDataset("Totale") <> 0 Then
-        MsgBox strNomeElemento & " è gia presente in archivio.", vbExclamation, Me.Caption
-        ControlloDuplicato = False
-    Else
+    If rsDataset("Totale") = 0 Then
         ControlloDuplicato = True
+    Else
+        rsDataset.Close
+         strSql = "Select * " & _
+            "From " & strNomeTabella & " " & _
+            "Where      Cognome like '" & Apostrophe(txtCognome.Text) & "' and" & _
+            "           Nome like '" & Apostrophe(txtNome.Text) & "'"
+  
+        rsDataset.Open strSql, cnPrinc, adOpenKeyset, adLockOptimistic
+        If rsDataset("Cognome") = txtCognome.Text And rsDataset("Nome") = txtNome.Text And rsDataset("Eliminato") = False Then
+            MsgBox strNomeElemento & " è già presente in archivio", vbExclamation, Me.Caption
+            ControlloDuplicato = False
+        ElseIf rsDataset("Cognome") = txtCognome.Text And rsDataset("Nome") = txtNome.Text And rsDataset("Eliminato") = True Then
+            If MsgBox(strNomeElemento & " è presente in archivio ed è disattivato. Vuoi riattivarlo?", vbYesNo + vbCritical + vbDefaultButton2, Me.Caption) = vbNo Then
+                ControlloDuplicato = False
+            Else
+                rsDataset("Eliminato") = False
+                rsDataset.Update
+                intIDInserito = rsDataset("key")   ' seleziona la riga nella flex
+                blnRefresh = True
+                Unload Me
+                ControlloDuplicato = False
+            End If
+        End If
     End If
-    
+
     rsDataset.Close
     
     Set rsDataset = Nothing
@@ -368,6 +389,7 @@ Private Sub cmdAnnulla_Click()
 End Sub
 
 Private Sub cmdInserisci_Click()
+    Call SuperUcase(Me)
     If ControlloValori Then
         If ControlloDuplicato Then
             Call Memorizza

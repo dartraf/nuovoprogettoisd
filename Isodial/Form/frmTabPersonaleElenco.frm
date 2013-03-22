@@ -212,13 +212,13 @@ Private Sub Form_Load()
         Select Case intTipoTabPersonale
             Case enumTipoTabPersonale.MEDICI_DIALISI
                 strNomeTabella = "MEDICI_DIALISI"
-                strNomeElemento = "Il medico dialisi"
+                strNomeElemento = "Il medico inserito"
                 Me.Caption = "Tabella: Medici Dialisi"
                 .Cols = 4
                 .TextMatrix(0, 3) = "N° Iscrizione Albo"
             Case enumTipoTabPersonale.INFERMIERI
                 strNomeTabella = "INFERMIERI"
-                strNomeElemento = "L'infermiere"
+                strNomeElemento = "L'infermiere inserito"
                 Me.Caption = "Tabella: Infermieri"
                 .Cols = 4
                 .TextMatrix(0, 3) = "Mansione"
@@ -527,7 +527,7 @@ Private Sub cmdElimina_Click()
                         Set rsDataset = Nothing
                     End If
                 Else
-                    MsgBox "Impossibile eliminare " & strNome & " perchè in relazione con altri dati del sistema", vbInformation, Me.Caption
+                    MsgBox "Eliminazione non permessa - " & strNome & " è in relazione con altri dati del sistema", vbInformation, Me.Caption
                 End If
             End If
             
@@ -688,16 +688,17 @@ Private Sub txtAppo_LostFocus()
         
         If txtAppo = "" Then
             If Not (intTipoTabPersonale = MEDICI_DIALISI And intCol = 4) Then
-                MsgBox "Impossibile memorizzare dati vuoti", vbCritical, "Attenzione"
+                MsgBox "Memorizzazione non permessa - Campi Vuoti", vbCritical, "ATTENZIONE!!!"
                 Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
                 flxGriglia.TopRow = intRow
             End If
         Else
             If VerificaDuplicato() Then
-                MsgBox strNomeElemento & " è gia presente in archivio.", vbExclamation, Me.Caption
+                MsgBox strNomeElemento & " è già presente in archivio.", vbExclamation, Me.Caption
             Else
                 Call objAnnulla.Add(flxGriglia.TextMatrix(intRow, intCol), intCol, Int(flxGriglia.TextMatrix(intRow, 0)))
                 cmdAnnulla.Enabled = True
+                Call SuperUcase(Me)
                 flxGriglia.TextMatrix(intRow, intCol) = txtAppo.Text
                 Call SalvaModifiche
             End If

@@ -1133,6 +1133,7 @@ Private Sub cmdMemorizza_Click()
             rsAnamnesiNefro.Open "ANAMNESI_NEFROLOGICHE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsAnamnesiNefro.AddNew v_Nomi, v_Val
             rsAnamnesiNefro.Update
+            Call Upd_rsDisco
         End If
         Set rsAnamnesiNefro = Nothing
         
@@ -1226,16 +1227,7 @@ Private Sub CaricaPaziente()
             oDataFine.data = rsAnamnesiNefro("DATA_FINE")
         End If
         
-        ' aggiorna i dati nel rsDisco
-        Do While Not rsDisco.EOF
-            rsDisco.Delete
-            rsDisco.MoveNext
-        Loop
-        rsDisco.AddNew
-        For i = 0 To rsAnamnesiNefro.Fields.count - 1
-            rsDisco.Fields(i) = rsAnamnesiNefro.Fields(i)
-        Next i
-        rsDisco.Update
+        Call Upd_rsDisco
         
     End If
     Set rsAnamnesiNefro = Nothing
@@ -1315,3 +1307,16 @@ Private Sub cboEDTA_Click()
     blnModificato = True
 End Sub
 
+Private Sub Upd_rsDisco()
+  ' aggiorna i dati nel rsDisco
+    Dim i As Integer
+    Do While Not rsDisco.EOF
+       rsDisco.Delete
+       rsDisco.MoveNext
+    Loop
+       rsDisco.AddNew
+       For i = 0 To rsAnamnesiNefro.Fields.count - 1
+           rsDisco.Fields(i) = rsAnamnesiNefro.Fields(i)
+       Next i
+       rsDisco.Update
+End Sub

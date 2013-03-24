@@ -3,14 +3,14 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmReniDaRottamare 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Elenco reni da rottamare"
-   ClientHeight    =   4290
+   ClientHeight    =   4440
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   9480
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4290
+   ScaleHeight     =   4440
    ScaleWidth      =   9480
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -94,7 +94,7 @@ Begin VB.Form frmReniDaRottamare
       End
    End
    Begin VB.Frame Frame1 
-      Height          =   975
+      Height          =   1095
       Left            =   120
       TabIndex        =   5
       Top             =   3240
@@ -110,10 +110,10 @@ Begin VB.Form frmReniDaRottamare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
+         Height          =   735
          Left            =   4080
          TabIndex        =   8
-         Top             =   240
+         Top             =   220
          Width           =   1650
       End
       Begin VB.CommandButton cmdSostituisci 
@@ -127,10 +127,10 @@ Begin VB.Form frmReniDaRottamare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
+         Height          =   735
          Left            =   5880
          TabIndex        =   7
-         Top             =   240
+         Top             =   220
          Width           =   1650
       End
       Begin VB.CommandButton cmdChiudi 
@@ -144,10 +144,10 @@ Begin VB.Form frmReniDaRottamare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
+         Height          =   735
          Left            =   7680
          TabIndex        =   6
-         Top             =   240
+         Top             =   220
          Width           =   1380
       End
    End

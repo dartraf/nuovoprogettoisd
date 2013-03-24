@@ -2809,6 +2809,8 @@ Private Sub CaricaPaziente()
     If rsAnamnesiDialitica.BOF And rsAnamnesiDialitica.EOF Then
         ' il paziente non ha una scheda clinica
         modifica = False
+        ' inserimento di un nuovo paziente di default inserisce 39.95.4. per evitare il crash
+        cboCodicePrestaione.ListIndex = GetIndex(cboCodicePrestaione, "39.95.4")
     Else
         keyId = rsAnamnesiDialitica("KEY")
         modifica = True
@@ -2826,7 +2828,8 @@ Private Sub CaricaPaziente()
         cboTipoAgo(0).ListIndex = GetCboListIndex(rsAnamnesiDialitica("AGO1"), cboTipoAgo(0))
         cboTipoAgo(1).ListIndex = GetCboListIndex(rsAnamnesiDialitica("AGO2"), cboTipoAgo(1))
         cboTipoDialisi.ListIndex = GetCboListIndex(rsAnamnesiDialitica("TIPO_DIALISI"), cboTipoDialisi)
-        If IsNull(rsAnamnesiDialitica("CODICE_PRESTAZIONE")) Then   ' se non c'è il codice prestazione di default inserisce 39.95.4.
+        If IsNull(rsAnamnesiDialitica("CODICE_PRESTAZIONE")) Then
+            ' se non c'è il codice prestazione di default inserisce 39.95.4.
             cboCodicePrestaione.ListIndex = GetIndex(cboCodicePrestaione, "39.95.4")
         Else
             cboCodicePrestaione.ListIndex = GetCboListIndex(rsAnamnesiDialitica("CODICE_PRESTAZIONE"), cboCodicePrestaione)

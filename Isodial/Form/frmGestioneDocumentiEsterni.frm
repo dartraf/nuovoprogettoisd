@@ -269,6 +269,14 @@ Private Sub cmdScansione_Click()
     Dim nome As String
     Dim nPixTypes As Long
     Dim keyScan As Integer
+    Dim dimResidua As Double
+    
+    dimResidua = CLng(GetDriveSize(structApri.pathDB))
+    
+     If dimResidua <= 13 Then
+     MsgBox "DISCO PIENO - Impossibile effettuare scansioni - Contattare l'autore", vbCritical, "ATTENZIONE!!!"
+     Exit Sub
+    End If
 
     ' pulisco la clipboar che dovra contenere l'immagine
     Clipboard.Clear

@@ -292,8 +292,8 @@ Private Sub ModificaDaOrganigramma()
     rsDataset.Close
     
     rsDataset.Open "SELECT * FROM " & nomeTabella & " WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-    rsDataset.Update "COGNOME", cognome
-    rsDataset.Update "NOME", nome
+    rsDataset.Update "COGNOME", UCase(cognome)
+    rsDataset.Update "NOME", UCase(nome)
     Set rsDataset = Nothing
 End Sub
 
@@ -667,7 +667,7 @@ Private Sub txtAppo_LostFocus()
                 Else
                     Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, flxGriglia.TextMatrix(vRow, 0))
                     cmdAnnulla.Enabled = True
-                    flxGriglia.TextMatrix(vRow, vCol) = txtAppo.Text
+                    flxGriglia.TextMatrix(vRow, vCol) = UCase(txtAppo.Text)
                     Call SalvaModifiche
                 End If
             End If

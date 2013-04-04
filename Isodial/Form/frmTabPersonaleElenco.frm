@@ -287,9 +287,9 @@ Private Sub CaricaFlx()
     flxGriglia.Redraw = False
     
     strSql = "SELECT * FROM " & strNomeTabella
-    If intTipoTabPersonale = enumTipoTabPersonale.INFERMIERI Or intTipoTabPersonale = enumTipoTabPersonale.MEDICI_DIALISI Then
+ '   If intTipoTabPersonale = enumTipoTabPersonale.INFERMIERI Or intTipoTabPersonale = enumTipoTabPersonale.MEDICI_DIALISI Then
         strSql = strSql & " WHERE ELIMINATO=FALSE "
-    End If
+ '   End If
     strSql = strSql & " ORDER BY COGNOME"
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
@@ -465,70 +465,78 @@ End Function
 
 Private Sub cmdElimina_Click()
     Dim blnEliminato As Boolean
-    Dim blnElimina As Boolean
     Dim intKey As Integer
     Dim strNome As String
     Dim rsDataset As Recordset
-   
+
     With flxGriglia
         If .Row = 0 Then
             MsgBox "Selezionare " & LCase(strNomeElemento) & " da eliminare", vbCritical, "Attenzione"
         Else
             intKey = .TextMatrix(.Row, 0)
-            strNome = .TextMatrix(.Row, 1)
-            blnElimina = False
-            If intTipoTabPersonale = INFERMIERI Or intTipoTabPersonale = MEDICI_DIALISI Then
-                strNome = .TextMatrix(intRow, 1) & " " & .TextMatrix(intRow, 2)
-                If MsgBox("Sei sicuro di eliminare: " & strNome & " ?", vbQuestion + vbYesNo, Me.Caption) = vbYes Then
-                    Set rsDataset = New Recordset
-                    rsDataset.Open "SELECT * FROM " & strNomeTabella & " WHERE KEY=" & intKey, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-                    If rsDataset.EOF And rsDataset.BOF Then
-                        MsgBox "Errore nel caricamento dei dati", vbCritical, "Impossibile aggiornare"
+ '           strNome = .TextMatrix(.Row, 1)
+            strNome = .TextMatrix(intRow, 1) & " " & .TextMatrix(intRow, 2)
+            If MsgBox("Sei sicuro di voler eliminare " & strNome & "?", vbQuestion + vbYesNo, Me.Caption) = vbYes Then
+                Set rsDataset = New Recordset
+                rsDataset.Open "SELECT * FROM " & strNomeTabella & " WHERE KEY=" & intKey, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+                If rsDataset.EOF And rsDataset.BOF Then
+                    MsgBox "Errore nel caricamento dei dati", vbCritical, "Impossibile aggiornare"
+                End If
+                
+                Select Case intTipoTabPersonale
+                Case MEDICI_DIALISI
+                    If IsPossibleDelete("PIANO_LAVORO", "CODICE_MEDICO", intKey) = False Then
+                       rsDataset("ELIMINATO") = True
+                       rsDataset.Update
+                       blnEliminato = True
                     Else
-                        rsDataset("ELIMINATO") = True
-                        rsDataset.Update
+                        rsDataset.Delete
                         blnEliminato = True
                     End If
-                    Set rsDataset = Nothing
-                    If IsPresente Then
-                        If MsgBox("Si vuole CANCELLARE l'utente " & strNome & "?", vbQuestion + vbYesNo, "Cancellazione") = vbYes Then
-                            Call EliminaDaLogin(False)
-                        Else
-                            Call EliminaDaLogin(True)
-                        End If
+                Case INFERMIERI
+               'Condizio_If = "IsPossibleDelete(" & """PIANO_LAVORO""" & ", " & """CODICE_CAPOSALA""" & "," & intKey & ")"
+                    If IsPossibleDelete("PIANO_LAVORO", "CODICE_CAPOSALA", intKey) = False Then
+                       rsDataset("ELIMINATO") = True
+                       rsDataset.Update
+                       blnEliminato = True
+                    Else
+                        rsDataset.Delete
+                        blnEliminato = True
                     End If
-                End If
-            Else
-                blnElimina = False
-                If intTipoTabPersonale = MEDICI_REFERTANTI Then
-                    strNome = .TextMatrix(intRow, 1) & " " & .TextMatrix(intRow, 2)
-                    blnElimina = IsPossibleDelete("ESAMI_STRUMENTALI", "CODICE_MEDICO", intKey)
-                    If blnElimina Then
-                        blnElimina = IsPossibleDelete("ACCESSI_VASCOLARI_TAB", "CODICE_MEDICO1", intKey)
+                Case PSICOLOGI
+               'Condizio_If = "IsPossibleDelete(" & """MON_VALUTAZIONI""" & ", " & """CODICE_PSICOLOGO""" & "," & intKey & ")"
+                    If IsPossibleDelete("MON_VALUTAZIONI", "CODICE_PSICOLOGO", intKey) = False Then
+                       rsDataset("ELIMINATO") = True
+                       rsDataset.Update
+                       blnEliminato = True
+                    Else
+                        rsDataset.Delete
+                        blnEliminato = True
                     End If
-                    If blnElimina Then
-                        blnElimina = IsPossibleDelete("ACCESSI_VASCOLARI_TAB", "CODICE_MEDICO2", intKey)
+                Case MEDICI_REFERTANTI
+               'Condizio_If = "IsPossibleDelete(" & """ESAMI_STRUMENTALI""" & ", " & """CODICE_MEDICO""" & "," & intKey & ")"
+               'Condizio_If_2 = "IsPossibleDelete(" & """ACCESSI_VASCOLARI_TAB""" & ", " & """CODICE_MEDICO1""" & "," & intKey & ")"
+               'Condizio_If_2 = "IsPossibleDelete(" & """ACCESSI_VASCOLARI_TAB""" & ", " & """CODICE_MEDICO2""" & "," & intKey & ")"
+                    If IsPossibleDelete("ESAMI_STRUMENTALI", "CODICE_MEDICO", intKey) = False Or IsPossibleDelete("ACCESSI_VASCOLARI_TAB", "CODICE_MEDICO1", intKey) = False Or IsPossibleDelete("ACCESSI_VASCOLARI_TAB", "CODICE_MEDICO2", intKey) = False Then
+                       rsDataset("ELIMINATO") = True
+                       rsDataset.Update
+                       blnEliminato = True
+                    Else
+                       rsDataset.Delete
+                       blnEliminato = True
                     End If
-                ElseIf intTipoTabPersonale = PSICOLOGI Then
-                    strNome = .TextMatrix(intRow, 1) & " " & .TextMatrix(intRow, 2)
-                    blnElimina = IsPossibleDelete("MON_VALUTAZIONI", "CODICE_PSICOLOGO", intKey)
-                End If
-                    
-                If blnElimina Then
-                    If MsgBox("Sicuro di voler eliminare " & strNome & "?", vbQuestion + vbYesNo, Me.Caption) = vbYes Then
-                        Set rsDataset = New Recordset
-                        rsDataset.Open "SELECT * FROM " & strNomeTabella & " WHERE KEY=" & intKey, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-                        If rsDataset.EOF And rsDataset.BOF Then
-                            MsgBox "Errore nel caricamento dei dati", vbCritical, "Impossibile aggiornare"
-                        Else
-                            rsDataset.Delete
-                            blnEliminato = True
-                        End If
-                        Set rsDataset = Nothing
-                    End If
-                Else
-                    MsgBox "Eliminazione non permessa - " & strNome & " è in relazione con altri dati del sistema", vbInformation, Me.Caption
-                End If
+            End Select
+            Set rsDataset = Nothing
+            End If
+            
+            If intTipoTabPersonale = INFERMIERI Or intTipoTabPersonale = MEDICI_DIALISI Then
+               If IsPresente Then
+                  If MsgBox("Vuoi ELIMINARE anche l'account utente per l'accesso ad ISODIAL?" & strNome & "?", vbQuestion + vbYesNo, "Cancellazione") = vbYes Then
+                     Call EliminaDaLogin(False)
+                  Else
+                     Call EliminaDaLogin(True)
+                  End If
+               End If
             End If
             
             If blnEliminato Then

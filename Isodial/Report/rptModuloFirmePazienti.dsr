@@ -68,9 +68,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmePaziente
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTipo"
-         Object.Left            =   1984
+         Object.Left            =   1644
          Object.Top             =   397
-         Object.Width           =   5100
+         Object.Width           =   6180
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1396,7 +1396,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmePaziente
          Name            =   "Label2"
          Object.Left            =   113
          Object.Top             =   113
-         Object.Width           =   2211
+         Object.Width           =   2205
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1407,7 +1407,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmePaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
       ItemType1       =   3
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStampaFogliViaggio 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -719,6 +719,7 @@ Private Sub StampaModuloFirmePaziente()
         Set rsPazienti = Nothing
         
         If rsMain.RecordCount <> 0 Then
+          If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
             Set rptModuloFirmePaziente.DataSource = rsMain
             rptModuloFirmePaziente.LeftMargin = 1100
             rptModuloFirmePaziente.RightMargin = 0
@@ -726,6 +727,15 @@ Private Sub StampaModuloFirmePaziente()
             rptModuloFirmePaziente.Sections("intestazione").Controls.Item("lblMese").Caption = cboMese & " " & cboAnno
             rptModuloFirmePaziente.Sections("pie").Controls.Item("lblStampato").Caption = structIntestazione.sCitta & " lì, " & lblData
             rptModuloFirmePaziente.PrintReport True, rptRangeAllPages
+          ElseIf structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
+            Set rptModuloFirmeSodav.DataSource = rsMain
+            rptModuloFirmeSodav.LeftMargin = 0 '1100
+            rptModuloFirmeSodav.RightMargin = 0
+            rptModuloFirmeSodav.TopMargin = 0
+            rptModuloFirmeSodav.Sections("intestazione").Controls.Item("lblMese").Caption = cboMese & " " & cboAnno
+            rptModuloFirmeSodav.Sections("pie").Controls.Item("lblStampato").Caption = structIntestazione.sCitta & " lì, " & lblData
+            rptModuloFirmeSodav.PrintReport True, rptRangeAllPages
+          End If
         End If
     End If
 End Sub

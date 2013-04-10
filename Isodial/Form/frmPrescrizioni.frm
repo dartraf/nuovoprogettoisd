@@ -1697,9 +1697,10 @@ Private Sub Pulisci()
     txtMazzettaPrimo.Enabled = True
     txtMazzettaSecondo.Enabled = True
     cboMese.ListIndex = Month(Now) - 1
-    oData(0).data = date
+'    oData(0).data = date
     flxGriglia.Rows = 1
     Call SettaProgressivi
+    oData(0).data = date
     stoPulendo = False
 End Sub
 

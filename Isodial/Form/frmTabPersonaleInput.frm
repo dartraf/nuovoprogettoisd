@@ -339,7 +339,7 @@ Private Function ControlloDuplicato() As Boolean
             MsgBox strNomeElemento & " è già presente in archivio", vbExclamation, Me.Caption
             ControlloDuplicato = False
         ElseIf rsDataset("Cognome") = txtCognome.Text And rsDataset("Nome") = txtNome.Text And rsDataset("Eliminato") = True Then
-            If MsgBox(strNomeElemento & " è presente in archivio ed è disattivato. Vuoi riattivarlo?", vbYesNo + vbCritical + vbDefaultButton2, Me.Caption) = vbNo Then
+            If MsgBox(strNomeElemento & " è presente in archivio ma è disattivato. Vuoi riattivarlo?", vbYesNo + vbCritical + vbDefaultButton2, Me.Caption) = vbNo Then
                 ControlloDuplicato = False
             Else
                 rsDataset("Eliminato") = False

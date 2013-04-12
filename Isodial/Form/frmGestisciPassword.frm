@@ -214,11 +214,11 @@ Private Sub SalvaModifiche()
         rsPassword.Close
         Set rsPassword = Nothing
     End With
-    If (flxGriglia.TextMatrix(vRow, 5) = "Medico" Or flxGriglia.TextMatrix(vRow, 5) = "Infermiere") And (vCol = 1 Or vCol = 2) Then
-        If IsPresente Then
-            Call ModificaDaOrganigramma
-        End If
-    End If
+'    If (flxGriglia.TextMatrix(vRow, 5) = "Medico" Or flxGriglia.TextMatrix(vRow, 5) = "Infermiere") And (vCol = 1 Or vCol = 2) Then
+'        If IsPresente Then
+'            Call ModificaDaOrganigramma
+'        End If
+'    End If
 End Sub
 
 '' Carica la scheda nella flx
@@ -272,110 +272,110 @@ Private Sub SalvaEliminazione()
 End Sub
 
 '' Modifica il  medico o infermiere nella relativa tabella (MEDICI_DIALISI, INFERMIERI)
-Private Sub ModificaDaOrganigramma()
-    Dim rsDataset As New Recordset
-    Dim nomeTabella As String
-    Dim nome As String
-    Dim cognome As String
-    Dim num As Integer
+'Private Sub ModificaDaOrganigramma()
+'    Dim rsDataset As New Recordset
+'    Dim nomeTabella As String
+'    Dim nome As String
+'    Dim cognome As String
+'    Dim num As Integer
     
-    If flxGriglia.TextMatrix(vRow, 5) = "Medico" Then
-        nomeTabella = "MEDICI_DIALISI"
-    Else
-        nomeTabella = "INFERMIERI"
-    End If
-    nome = flxGriglia.TextMatrix(vRow, 2)
-    cognome = flxGriglia.TextMatrix(vRow, 1)
+'    If flxGriglia.TextMatrix(vRow, 5) = "Medico" Then
+'        nomeTabella = "MEDICI_DIALISI"
+'    Else
+'        nomeTabella = "INFERMIERI"
+'    End If
+'    nome = flxGriglia.TextMatrix(vRow, 2)
+'    cognome = flxGriglia.TextMatrix(vRow, 1)
     
-    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_UTENTE=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    num = rsDataset("CODICE_PERSONALE")
-    rsDataset.Close
+'    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_UTENTE=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    num = rsDataset("CODICE_PERSONALE")
+'    rsDataset.Close
     
-    rsDataset.Open "SELECT * FROM " & nomeTabella & " WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-    rsDataset.Update "COGNOME", UCase(cognome)
-    rsDataset.Update "NOME", UCase(nome)
-    Set rsDataset = Nothing
-End Sub
+'    rsDataset.Open "SELECT * FROM " & nomeTabella & " WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+'    rsDataset.Update "COGNOME", UCase(cognome)
+'    rsDataset.Update "NOME", UCase(nome)
+'    Set rsDataset = Nothing
+'End Sub
 
 '' Elimina il nuovo medico o infermiere nella relativa tabella (MEDICI_DIALISI, INFERMIERI)
 ' e dal collegamento (UTENTI_PERSONALE)
 ' @param soloCollegamento se true elimina solo il collegamento (UTENTI_PERSONALE)
-Private Sub EliminaDaOrganigramma(soloCollegamento As Boolean)
-    Dim rsDataset As New Recordset
-    Dim nomeTabella As String
-    Dim num As Integer
+'Private Sub EliminaDaOrganigramma(soloCollegamento As Boolean)
+'    Dim rsDataset As New Recordset
+'    Dim nomeTabella As String
+'    Dim num As Integer
     
-    If flxGriglia.TextMatrix(vRow, 5) = "Medico" Then
-        nomeTabella = "MEDICI_DIALISI"
-    Else
-        nomeTabella = "INFERMIERI"
-    End If
+'    If flxGriglia.TextMatrix(vRow, 5) = "Medico" Then
+'        nomeTabella = "MEDICI_DIALISI"
+'    Else
+'        nomeTabella = "INFERMIERI"
+'    End If
     
-    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_UTENTE=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
-    num = rsDataset("CODICE_PERSONALE")
-    rsDataset.Delete
-    rsDataset.Close
-    If Not soloCollegamento Then
-        rsDataset.Open "SELECT * FROM " & nomeTabella & " WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-        If Not (rsDataset.EOF And rsDataset.BOF) Then
-            rsDataset("ELIMINATO") = True
-            rsDataset.Update
-        End If
-        rsDataset.Close
-    End If
+'    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_UTENTE=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
+'    num = rsDataset("CODICE_PERSONALE")
+'    rsDataset.Delete
+'    rsDataset.Close
+'    If Not soloCollegamento Then
+'        rsDataset.Open "SELECT * FROM " & nomeTabella & " WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+'        If Not (rsDataset.EOF And rsDataset.BOF) Then
+'            rsDataset("ELIMINATO") = True
+'            rsDataset.Update
+'        End If
+'        rsDataset.Close
+'    End If
     
-    Set rsDataset = Nothing
-End Sub
+'    Set rsDataset = Nothing
+'End Sub
 
 '' Verifica se il medico o infermiere è presente nell'organigramma e quindi se c'è il collegamento in UTENTI_PERSONALE
 '
 ' @return true se è presente
-Private Function IsPresente() As Boolean
-    Dim rsDataset As New Recordset
-    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_UTENTE=" & flxGriglia.TextMatrix(flxGriglia.Row, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If Not (rsDataset.EOF And rsDataset.BOF) Then
-        IsPresente = True
-    Else
-        IsPresente = False
-    End If
-    Set rsDataset = Nothing
-End Function
+'Private Function IsPresente() As Boolean
+'    Dim rsDataset As New Recordset
+'    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_UTENTE=" & flxGriglia.TextMatrix(flxGriglia.Row, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    If Not (rsDataset.EOF And rsDataset.BOF) Then
+'        IsPresente = True
+'    Else
+'        IsPresente = False
+'    End If
+'    Set rsDataset = Nothing
+'End Function
 
 '' Carica il nuovo medico o infermiere nella relativa tabella (MEDICI_DIALISI, INFERMIERI)
-Private Sub InserisciInOrganigramma(keyUtente As Integer)
-    Dim rsDataset As New Recordset
-    Dim nomeTabella As String
-    Dim num As Integer
-    Dim v_Nomi() As Variant
-    Dim v_Val() As Variant
+'Private Sub InserisciInOrganigramma(keyUtente As Integer)
+'    Dim rsDataset As New Recordset
+'    Dim nomeTabella As String
+'    Dim num As Integer
+'    Dim v_Nomi() As Variant
+'    Dim v_Val() As Variant
+
+'    If tInput.v_valori(5) = 1 Then
+'        nomeTabella = "MEDICI_DIALISI"
+'        num = GetNumero(nomeTabella)
+'        v_Nomi = Array("KEY", "COGNOME", "NOME")
+'        v_Val = Array(num, tInput.v_valori(2), tInput.v_valori(3))
+'    Else
+'        nomeTabella = "INFERMIERI"
+'        num = GetNumero(nomeTabella)
+'        v_Nomi = Array("KEY", "COGNOME", "NOME", "MANSIONE")
+'        v_Val = Array(num, tInput.v_valori(2), tInput.v_valori(3), 1)
+'    End If
     
-    If tInput.v_valori(5) = 1 Then
-        nomeTabella = "MEDICI_DIALISI"
-        num = GetNumero(nomeTabella)
-        v_Nomi = Array("KEY", "COGNOME", "NOME")
-        v_Val = Array(num, tInput.v_valori(2), tInput.v_valori(3))
-    Else
-        nomeTabella = "INFERMIERI"
-        num = GetNumero(nomeTabella)
-        v_Nomi = Array("KEY", "COGNOME", "NOME", "MANSIONE")
-        v_Val = Array(num, tInput.v_valori(2), tInput.v_valori(3), 1)
-    End If
-    
-    rsDataset.Open nomeTabella, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
-    rsDataset.AddNew v_Nomi, v_Val
-    rsDataset.Update
-    rsDataset.Close
+'    rsDataset.Open nomeTabella, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
+'    rsDataset.AddNew v_Nomi, v_Val
+'    rsDataset.Update
+'    rsDataset.Close
     ' aggiunge anche nella tabella di collegamento
-    rsDataset.Open "UTENTI_PERSONALE", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
-    rsDataset.AddNew
-    rsDataset("KEY") = GetNumero("UTENTI_PERSONALE")
-    rsDataset("CODICE_UTENTE") = keyUtente
-    rsDataset("CODICE_PERSONALE") = num
-    rsDataset("TIPO") = tInput.v_valori(5)
-    rsDataset.Update
-    rsDataset.Close
-    Set rsDataset = Nothing
-End Sub
+'    rsDataset.Open "UTENTI_PERSONALE", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
+'    rsDataset.AddNew
+'    rsDataset("KEY") = GetNumero("UTENTI_PERSONALE")
+'    rsDataset("CODICE_UTENTE") = keyUtente
+'    rsDataset("CODICE_PERSONALE") = num
+'    rsDataset("TIPO") = tInput.v_valori(5)
+'    rsDataset.Update
+'    rsDataset.Close
+'    Set rsDataset = Nothing
+'End Sub
 
 Private Sub cmdAnnulla_Click()
     Dim Dato As String
@@ -431,15 +431,15 @@ Private Sub cmdElimina_Click()
                     eliminato = True
                 End If
                 Set rsPassword = Nothing
-                If .TextMatrix(vRow, 5) = "Medico" Or .TextMatrix(vRow, 5) = "Infermiere" Then
-                    If IsPresente Then
-                        If MsgBox("Si vuole CANCELLARE questo utente dall'organigramma?", vbQuestion + vbYesNo, "Cancellazione") = vbYes Then
-                            Call EliminaDaOrganigramma(False)
-                        Else
-                            Call EliminaDaOrganigramma(True)
-                        End If
-                    End If
-                End If
+'                If .TextMatrix(vRow, 5) = "Medico" Or .TextMatrix(vRow, 5) = "Infermiere" Then
+'                    If IsPresente Then
+'                        If MsgBox("Si vuole CANCELLARE questo utente dall'organigramma?", vbQuestion + vbYesNo, "Cancellazione") = vbYes Then
+'                            Call EliminaDaOrganigramma(False)
+'                        Else
+'                            Call EliminaDaOrganigramma(True)
+'                        End If
+'                    End If
+'                End If
             End If
             If eliminato And TRACCIATO Then
                 Call SalvaEliminazione
@@ -500,7 +500,9 @@ Private Sub cmdInserisci_Click()
         frmInput.Show 1
         primo = False
     Loop While EsisteUtente(strValore, tInput.v_valori(2), tInput.v_valori(3), tInput.v_valori(1), 0)
-    
+       
+      ' aggiorna la flx
+        Call CaricaFlx
     
     If Not (tInput.v_valori(1) = "") Then
         v_Nomi = Array("KEY", "COGNOME", "NOME", "CHIAVE", "PASSWORD", "TIPO", "DATA")
@@ -513,12 +515,12 @@ Private Sub cmdInserisci_Click()
         rsPassword.Update
         Set rsPassword = Nothing
         
-        If (tInput.v_valori(5) = 1 Or tInput.v_valori(5) = 2) Then
-            If tInput.v_valori(6) Then
+ '       If (tInput.v_valori(5) = 1 Or tInput.v_valori(5) = 2) Then
+ '           If tInput.v_valori(6) Then
                 ' inserisce il nuovo utente nell'organigramma come medico o infermiere
-                Call InserisciInOrganigramma(num)
-            End If
-        End If
+ '               Call InserisciInOrganigramma(num)
+ '           End If
+ '       End If
         
         ' aggiorna la flx
         Call CaricaFlx

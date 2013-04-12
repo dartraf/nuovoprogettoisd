@@ -3007,7 +3007,7 @@ Private Sub Form_Load()
             fraPassword.Left = fraTabelle.Left
             fraPassword.ZOrder
             fraPulsanti.Top = fraPassword.Height - 135
-            chkInserisci.Visible = True
+            chkInserisci.Visible = False
         Case tpITERAPIADOMICILIARE, tpITERAPIADIALITICA
             If tInput.Tipo = tpITERAPIADIALITICA Then
                 fraTerapia.Height = 3015
@@ -3312,9 +3312,13 @@ Private Sub cmdInserisci_Click()
             txtPass.SetFocus
             Exit Sub
         End If
+        If ControlloDuplicato("LOGIN") Then
+           txtCognomePass.SetFocus
+           Exit Sub
+        End If
         tInput.v_valori(1) = txtChiave
-        tInput.v_valori(2) = txtCognomePass
-        tInput.v_valori(3) = txtNomePass
+        tInput.v_valori(2) = UCase(txtCognomePass)
+        tInput.v_valori(3) = UCase(txtNomePass)
         tInput.v_valori(4) = txtPass
         tInput.v_valori(5) = GestisciOpt
         tInput.v_valori(6) = (chkInserisci.Value = Checked)
@@ -4068,4 +4072,44 @@ End Sub
 Private Sub txtPass_KeyPress(KeyAscii As Integer)
     Call InvioTab(KeyAscii)
 End Sub
+
+Private Function ControlloDuplicato(strNomeTabella As String) As Boolean
+    Dim rsDataset As New Recordset
+    Dim strSql As String
+
+    strSql = "Select    count(Key) as Totale " & _
+            "From " & strNomeTabella & " " & _
+            "Where      Cognome like '" & Apostrophe(UCase(txtCognomePass.Text)) & "' and" & _
+            "           Nome like '" & Apostrophe(UCase(txtNomePass.Text)) & "' and Tipo= " & GestisciOpt & ""
+
+    rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly
+    
+    If rsDataset("Totale") = 0 Then
+        ControlloDuplicato = False
+    Else
+        rsDataset.Close
+         strSql = "Select * " & _
+            "From " & strNomeTabella & " " & _
+            "Where      Cognome like '" & Apostrophe(UCase(txtCognomePass.Text)) & "' and" & _
+            "           Nome like '" & Apostrophe(UCase(txtNomePass.Text)) & "'and Tipo= " & GestisciOpt & ""
+  
+        rsDataset.Open strSql, cnPrinc, adOpenKeyset, adLockOptimistic
+        If rsDataset("Cognome") = UCase(txtCognomePass.Text) And rsDataset("Nome") = UCase(txtNomePass.Text) And rsDataset("Eliminato") = True Then
+            If MsgBox(UCase(txtCognomePass.Text) & " " & UCase(txtNomePass.Text) & " è presente in archivio ma è disattivato. Vuoi riattivarlo?", vbYesNo + vbCritical + vbDefaultButton2, Me.Caption) = vbNo Then
+                ControlloDuplicato = True
+            Else
+                rsDataset("Eliminato") = False
+                rsDataset("Chiave") = txtChiave
+                rsDataset("Password") = txtPass
+                rsDataset.Update
+                Unload Me
+                ControlloDuplicato = False
+            End If
+        End If
+    End If
+
+    rsDataset.Close
+    
+    Set rsDataset = Nothing
+End Function
 

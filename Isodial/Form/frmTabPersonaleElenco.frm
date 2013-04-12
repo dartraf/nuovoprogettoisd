@@ -336,55 +336,55 @@ Private Sub GestisciMansione()
     End Select
 End Sub
 
-Private Function IsPresente() As Boolean
+'Private Function IsPresente() As Boolean
     ' verifica se il medico o infermiere è presente nella tab Login
     ' quindi verifica se c è collegamento
 
-    Dim rsDataset As New Recordset
-    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_PERSONALE=" & flxGriglia.TextMatrix(flxGriglia.Row, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If Not (rsDataset.EOF And rsDataset.BOF) Then
-        IsPresente = True
-    Else
-        IsPresente = False
-    End If
-    Set rsDataset = Nothing
-End Function
+ '   Dim rsDataset As New Recordset
+ '   rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_PERSONALE=" & flxGriglia.TextMatrix(flxGriglia.Row, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+ '   If Not (rsDataset.EOF And rsDataset.BOF) Then
+ '       IsPresente = True
+ '   Else
+ '       IsPresente = False
+ '   End If
+ '   Set rsDataset = Nothing
+'End Function
 
-Private Sub EliminaDaLogin(soloCollegamento As Boolean)
+'Private Sub EliminaDaLogin(soloCollegamento As Boolean)
     ' elimina il nuovo medico o infermiere nella tabella login
     ' e dal collegamento
     ' se soloCollegamento elimina solo il collegamento
-    Dim rsDataset As New Recordset
-    Dim num As Integer
+'    Dim rsDataset As New Recordset
+'    Dim num As Integer
     
-    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_PERSONALE=" & flxGriglia.TextMatrix(intRow, 0), cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
-    num = rsDataset("CODICE_UTENTE")
-    rsDataset.Delete
-    rsDataset.Close
-    If Not soloCollegamento Then
-        rsDataset.Open "SELECT * FROM LOGIN WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-        If Not (rsDataset.EOF And rsDataset.BOF) Then
-            rsDataset("ELIMINATO") = True
-            rsDataset.Update
-        End If
-        rsDataset.Close
-    End If
+'    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_PERSONALE=" & flxGriglia.TextMatrix(intRow, 0), cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
+'    num = rsDataset("CODICE_UTENTE")
+'    rsDataset.Delete
+'    rsDataset.Close
+'    If Not soloCollegamento Then
+'        rsDataset.Open "SELECT * FROM LOGIN WHERE KEY=" & num, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+'        If Not (rsDataset.EOF And rsDataset.BOF) Then
+'            rsDataset("ELIMINATO") = True
+'            rsDataset.Update
+'        End If
+'        rsDataset.Close
+'    End If
     
-    Set rsDataset = Nothing
-End Sub
+'    Set rsDataset = Nothing
+'End Sub
 
-Private Sub ModificaInLogin()
-    Dim codiceUtente As Integer
-    Dim rsDataset As New Recordset
-    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_PERSONALE=" & flxGriglia.TextMatrix(intRow, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    codiceUtente = rsDataset("CODICE_UTENTE")
-    rsDataset.Close
-    rsDataset.Open "SELECT * FROM LOGIN WHERE KEY=" & codiceUtente, cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
-    rsDataset("COGNOME") = flxGriglia.TextMatrix(intRow, 1)
-    rsDataset("NOME") = flxGriglia.TextMatrix(intRow, 2)
-    rsDataset.Update
-    Set rsDataset = Nothing
-End Sub
+'Private Sub ModificaInLogin()
+'    Dim codiceUtente As Integer
+'    Dim rsDataset As New Recordset
+'    rsDataset.Open "SELECT * FROM UTENTI_PERSONALE WHERE CODICE_PERSONALE=" & flxGriglia.TextMatrix(intRow, 0), cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    codiceUtente = rsDataset("CODICE_UTENTE")
+'    rsDataset.Close
+'    rsDataset.Open "SELECT * FROM LOGIN WHERE KEY=" & codiceUtente, cnPrinc, adOpenDynamic, adLockOptimistic, adCmdText
+'    rsDataset("COGNOME") = flxGriglia.TextMatrix(intRow, 1)
+'    rsDataset("NOME") = flxGriglia.TextMatrix(intRow, 2)
+'    rsDataset.Update
+'    Set rsDataset = Nothing
+'End Sub
 
 Private Sub SalvaModifiche()
     Dim rsDataset As New Recordset
@@ -400,9 +400,9 @@ Private Sub SalvaModifiche()
             v_Val = Array(intKey, .TextMatrix(intRow, 1), .TextMatrix(intRow, 2))
         ElseIf intTipoTabPersonale = MEDICI_DIALISI Then
             ' modifica anche nella tabella Login se presente
-            If IsPresente Then
-                Call ModificaInLogin
-            End If
+ '           If IsPresente Then
+ '               Call ModificaInLogin
+ '           End If
             v_Nomi = Array("KEY", "COGNOME", "NOME", "CODICE_ALBO")
             v_Val = Array(intKey, .TextMatrix(intRow, 1), .TextMatrix(intRow, 2), .TextMatrix(intRow, 3))
         ElseIf intTipoTabPersonale = INFERMIERI Then
@@ -416,9 +416,9 @@ Private Sub SalvaModifiche()
             v_Nomi = Array("KEY", "COGNOME", "NOME", "MANSIONE")
             v_Val = Array(intKey, .TextMatrix(intRow, 1), .TextMatrix(intRow, 2), intTipoInfermiere)
             ' modifica anche nella tabella Login se presente
-            If IsPresente Then
-                Call ModificaInLogin
-            End If
+ '           If IsPresente Then
+ '               Call ModificaInLogin
+ '           End If
         End If
         
         rsDataset.Open "SELECT * FROM " & strNomeTabella & " WHERE KEY=" & intKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -529,15 +529,15 @@ Private Sub cmdElimina_Click()
             Set rsDataset = Nothing
             End If
             
-            If intTipoTabPersonale = INFERMIERI Or intTipoTabPersonale = MEDICI_DIALISI Then
-               If IsPresente Then
-                  If MsgBox("Vuoi ELIMINARE anche l'account utente per l'accesso ad ISODIAL?" & strNome & "?", vbQuestion + vbYesNo, "Cancellazione") = vbYes Then
-                     Call EliminaDaLogin(False)
-                  Else
-                     Call EliminaDaLogin(True)
-                  End If
-               End If
-            End If
+ '           If intTipoTabPersonale = INFERMIERI Or intTipoTabPersonale = MEDICI_DIALISI Then
+ '              If IsPresente Then
+ '                 If MsgBox("Vuoi ELIMINARE anche l'account utente per l'accesso ad ISODIAL di " & strNome & "?", vbQuestion + vbYesNo, "Cancellazione") = vbYes Then
+ '                    Call EliminaDaLogin(False)
+ '                 Else
+ '                    Call EliminaDaLogin(True)
+ '                 End If
+ '              End If
+ '           End If
             
             If blnEliminato Then
                 ' rimuove dalla flx

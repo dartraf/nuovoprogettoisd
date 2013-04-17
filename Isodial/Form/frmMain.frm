@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -955,7 +955,8 @@ gestione:
 End Sub
 
 Private Sub mnuabout_Click()
-    frmInfo.Show 1
+    frmGestioniApparecchiatureInput.Show 1
+    'frmInfo.Show 1
 End Sub
 
 Private Sub mnuCaPAnnuale_Click()

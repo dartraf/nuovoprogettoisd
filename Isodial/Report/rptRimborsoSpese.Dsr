@@ -5,15 +5,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
    ClientHeight    =   11040
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   10725
+   ClientWidth     =   10740
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   18918
+   _ExtentX        =   18944
    _ExtentY        =   19473
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   9735
+   ReportWidth     =   9840
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -25,10 +25,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
    EndProperty
    GridX           =   20
    GridY           =   20
-   LeftMargin      =   1000
+   LeftMargin      =   700
    RightMargin     =   1000
-   TopMargin       =   1000
-   BottomMargin    =   1000
+   TopMargin       =   2000
+   BottomMargin    =   400
    _Settings       =   30
    NumSections     =   5
    SectionCode0    =   1
@@ -47,10 +47,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   14430
+      Object.Height          =   13264
       NumControls     =   47
-      ItemType0       =   4
-      BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType0       =   6
+      BeginProperty Item0 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Shape1"
+         Object.Left            =   5046
+         Object.Top             =   57
+         Object.Width           =   4275
+         Object.Height          =   825
+      EndProperty
+      ItemType1       =   4
+      BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCognomeNome"
          Object.Left            =   1956
@@ -77,8 +86,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType1       =   3
-      BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType2       =   3
+      BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label26"
          Object.Left            =   170
@@ -96,8 +105,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "residente in"
       EndProperty
-      ItemType2       =   3
-      BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType3       =   3
+      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label27"
          Object.Left            =   170
@@ -115,8 +124,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "Titolare della tessera per l'assistenza sanitaria n."
       EndProperty
-      ItemType3       =   4
-      BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType4       =   4
+      BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtResidenza"
          Object.Left            =   1474
@@ -143,8 +152,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType4       =   4
-      BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType5       =   4
+      BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTesseraSanitaria"
          Object.Left            =   4961
@@ -171,8 +180,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType5       =   4
-      BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType6       =   4
+      BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataNascita"
          Object.Left            =   6293
@@ -199,8 +208,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType6       =   3
-      BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType7       =   3
+      BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label29"
          Object.Left            =   170
@@ -218,12 +227,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "e del codice fiscale n."
       EndProperty
-      ItemType7       =   3
-      BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType8       =   3
+      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label30"
-         Object.Left            =   170
-         Object.Top             =   5697
+         Object.Left            =   142
+         Object.Top             =   5442
          Object.Width           =   2610
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -237,12 +246,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "il rimborso delle spese di €"
       EndProperty
-      ItemType8       =   3
-      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType9       =   3
+      BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label31"
-         Object.Left            =   170
-         Object.Top             =   6377
+         Object.Left            =   114
+         Object.Top             =   6009
          Object.Width           =   1335
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -256,12 +265,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "ricorso per sè"
       EndProperty
-      ItemType9       =   4
-      BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType10      =   4
+      BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodiceFiscale"
          Object.Left            =   2183
-         Object.Top             =   4300
+         Object.Top             =   4290
          Object.Width           =   2700
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -284,12 +293,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType10      =   4
-      BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType11      =   4
+      BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtRimborso"
-         Object.Left            =   2778
-         Object.Top             =   5689
+         Object.Left            =   2750
+         Object.Top             =   5440
          Object.Width           =   960
          Object.Height          =   360
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -313,12 +322,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   1
          EndProperty
       EndProperty
-      ItemType11      =   3
-      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType12      =   3
+      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label32"
          Object.Left            =   4309
-         Object.Top             =   4961
+         Object.Top             =   4819
          Object.Width           =   1230
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -333,12 +342,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          Object.Caption         =   "CHIEDE"
          Alignment       =   2
       EndProperty
-      ItemType12      =   3
-      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label33"
          Object.Left            =   1588
-         Object.Top             =   6377
+         Object.Top             =   6009
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -352,12 +361,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "dal"
       EndProperty
-      ItemType13      =   4
-      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   4
+      BeginProperty Item14 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataDal"
-         Object.Left            =   2041
-         Object.Top             =   6397
+         Object.Left            =   1985
+         Object.Top             =   6033
          Object.Width           =   1065
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -381,12 +390,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   3
+      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label34"
-         Object.Left            =   170
-         Object.Top             =   7085
+         Object.Left            =   113
+         Object.Top             =   6576
          Object.Width           =   4935
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -400,12 +409,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "come dai sottoelencati documenti allegati:"
       EndProperty
-      ItemType15      =   3
-      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label36"
-         Object.Left            =   170
-         Object.Top             =   10960
+         Object.Left            =   114
+         Object.Top             =   10337
          Object.Width           =   6075
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -419,12 +428,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "Dichiara inoltre di aver usufruito della prestazione richiesta n."
       EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType17      =   3
+      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label38"
-         Object.Left            =   170
-         Object.Top             =   11668
+         Object.Left            =   114
+         Object.Top             =   10904
          Object.Width           =   1710
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -438,12 +447,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "volte negli anni"
       EndProperty
-      ItemType17      =   3
-      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType18      =   3
+      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label74"
          Object.Left            =   170
-         Object.Top             =   7597
+         Object.Top             =   7172
          Object.Width           =   315
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -457,12 +466,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "1)"
       EndProperty
-      ItemType18      =   3
-      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType19      =   3
+      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label75"
-         Object.Left            =   170
-         Object.Top             =   9188
+         Object.Left            =   142
+         Object.Top             =   8791
          Object.Width           =   9525
          Object.Height          =   360
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -476,12 +485,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "Dichiara di non aver potuto usufruire dell' assistenza diretta da parte della A.S.L. per i seguenti"
       EndProperty
-      ItemType19      =   3
-      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType20      =   3
+      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   3742
-         Object.Top             =   5698
+         Object.Left            =   3714
+         Object.Top             =   5443
          Object.Width           =   5400
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -495,12 +504,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "sostenute per le prestazioni sanitarie cui ha dovuto fare"
       EndProperty
-      ItemType20      =   3
-      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType21      =   3
+      BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   3146
-         Object.Top             =   6378
+         Object.Top             =   6010
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -515,12 +524,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          Object.Caption         =   "al"
          Alignment       =   2
       EndProperty
-      ItemType21      =   3
-      BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType22      =   3
+      BeginProperty Item22 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
          Object.Left            =   4734
-         Object.Top             =   6378
+         Object.Top             =   6010
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -535,12 +544,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          Object.Caption         =   "gg."
          Alignment       =   2
       EndProperty
-      ItemType22      =   4
-      BeginProperty Item22 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType23      =   4
+      BeginProperty Item23 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataAl"
-         Object.Left            =   3600
-         Object.Top             =   6397
+         Object.Left            =   3544
+         Object.Top             =   6033
          Object.Width           =   1080
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -564,12 +573,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType23      =   4
-      BeginProperty Item23 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType24      =   4
+      BeginProperty Item24 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGiorni"
          Object.Left            =   5187
-         Object.Top             =   6397
+         Object.Top             =   6033
          Object.Width           =   780
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -592,12 +601,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   1
          EndProperty
       EndProperty
-      ItemType24      =   3
-      BeginProperty Item24 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType25      =   3
+      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   170
-         Object.Top             =   8593
+         Object.Top             =   8158
          Object.Width           =   315
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -611,12 +620,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "3)"
       EndProperty
-      ItemType25      =   3
-      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType26      =   3
+      BeginProperty Item26 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
          Object.Left            =   170
-         Object.Top             =   8079
+         Object.Top             =   7678
          Object.Width           =   315
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -630,70 +639,70 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "2)"
       EndProperty
-      ItemType26      =   5
-      BeginProperty Item26 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Line3"
-         Object.Left            =   482
-         Object.Top             =   7824
-         Object.Width           =   5535
-      EndProperty
       ItemType27      =   5
       BeginProperty Item27 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Line4"
-         Object.Left            =   482
-         Object.Top             =   8816
+         Name            =   "Line3"
+         Object.Left            =   454
+         Object.Top             =   7427
          Object.Width           =   5535
       EndProperty
       ItemType28      =   5
       BeginProperty Item28 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Line5"
-         Object.Left            =   482
-         Object.Top             =   8306
+         Name            =   "Line4"
+         Object.Left            =   454
+         Object.Top             =   8419
          Object.Width           =   5535
       EndProperty
       ItemType29      =   5
       BeginProperty Item29 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Line6"
-         Object.Left            =   170
-         Object.Top             =   10602
-         Object.Width           =   9241
+         Name            =   "Line5"
+         Object.Left            =   454
+         Object.Top             =   7909
+         Object.Width           =   5535
       EndProperty
       ItemType30      =   5
       BeginProperty Item30 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Line7"
-         Object.Left            =   906
-         Object.Top             =   10148
-         Object.Width           =   8477
+         Name            =   "Line6"
+         Object.Left            =   142
+         Object.Top             =   10007
+         Object.Width           =   9240
       EndProperty
       ItemType31      =   5
       BeginProperty Item31 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Line8"
-         Object.Left            =   6066
-         Object.Top             =   11225
-         Object.Width           =   3345
+         Name            =   "Line7"
+         Object.Left            =   878
+         Object.Top             =   9609
+         Object.Width           =   8490
       EndProperty
       ItemType32      =   5
       BeginProperty Item32 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
+         Name            =   "Line8"
+         Object.Left            =   6038
+         Object.Top             =   10562
+         Object.Width           =   3345
+      EndProperty
+      ItemType33      =   5
+      BeginProperty Item33 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
          Name            =   "Line9"
-         Object.Left            =   1701
-         Object.Top             =   11934
+         Object.Left            =   1673
+         Object.Top             =   11180
          Object.Width           =   2415
       EndProperty
-      ItemType33      =   3
-      BeginProperty Item33 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType34      =   3
+      BeginProperty Item34 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   170
-         Object.Top             =   12955
-         Object.Width           =   9241
-         Object.Height          =   1425
+         Object.Left            =   28
+         Object.Top             =   12019
+         Object.Width           =   9780
+         Object.Height          =   1245
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -705,16 +714,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   $"rptRimborsoSpese.dsx":0000
       EndProperty
-      ItemType34      =   5
-      BeginProperty Item34 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType35      =   5
+      BeginProperty Item35 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line11"
          Object.Left            =   5783
-         Object.Top             =   12586
-         Object.Width           =   3628
+         Object.Top             =   11793
+         Object.Width           =   3615
       EndProperty
-      ItemType35      =   4
-      BeginProperty Item35 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType36      =   4
+      BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtSottoscritto"
          Object.Left            =   170
@@ -741,8 +750,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType36      =   4
-      BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType37      =   4
+      BeginProperty Item37 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNato"
          Object.Left            =   5443
@@ -770,8 +779,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType37      =   3
-      BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType38      =   3
+      BeginProperty Item38 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label1"
          Object.Left            =   1360
@@ -790,13 +799,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          Object.Caption         =   "Domanda di rimborso spese per prestazioni sanitarie"
          Alignment       =   2
       EndProperty
-      ItemType38      =   3
-      BeginProperty Item38 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType39      =   3
+      BeginProperty Item39 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label2"
          Object.Left            =   142
-         Object.Top             =   114
-         Object.Width           =   2691
+         Object.Top             =   113
+         Object.Width           =   2610
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -809,32 +818,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          EndProperty
          Object.Caption         =   "Azienda Sanitaria Locale di "
       EndProperty
-      ItemType39      =   3
-      BeginProperty Item39 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label3"
-         Object.Left            =   5555
-         Object.Top             =   114
-         Object.Width           =   1673
-         Object.Height          =   330
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Riservato A.S.L."
-      EndProperty
       ItemType40      =   3
       BeginProperty Item40 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label4"
-         Object.Left            =   5555
-         Object.Top             =   511
-         Object.Width           =   4054
+         Name            =   "Label3"
+         Object.Left            =   5074
+         Object.Top             =   113
+         Object.Width           =   3120
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -845,16 +835,26 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Domanda n. ......................"
+         Object.Caption         =   "Al Direttore Responsabile DSS"
       EndProperty
-      ItemType41      =   6
-      BeginProperty Item41 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType41      =   3
+      BeginProperty Item41 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Shape1"
-         Object.Left            =   5471
-         Object.Top             =   28
-         Object.Width           =   4170
-         Object.Height          =   855
+         Name            =   "Label4"
+         Object.Left            =   5102
+         Object.Top             =   510
+         Object.Width           =   4196
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Al Dirigente Referente Medicina di Base"
       EndProperty
       ItemType42      =   5
       BeginProperty Item42 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -868,9 +868,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
       BeginProperty Item43 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAslDistrettoSx"
-         Object.Left            =   2920
-         Object.Top             =   142
-         Object.Width           =   2385
+         Object.Left            =   2734
+         Object.Top             =   113
+         Object.Width           =   2070
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -896,9 +896,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
       BeginProperty Item44 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAslDistrettoDx"
-         Object.Left            =   7257
-         Object.Top             =   125
-         Object.Width           =   2360
+         Object.Left            =   8107
+         Object.Top             =   113
+         Object.Width           =   1200
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -925,7 +925,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
          _Version        =   393216
          Name            =   "txtAssistito"
          Object.Left            =   3656
-         Object.Top             =   12331
+         Object.Top             =   11538
          Object.Width           =   2100
          Object.Height          =   360
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -953,8 +953,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
       BeginProperty Item46 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
-         Object.Left            =   170
-         Object.Top             =   9893
+         Object.Left            =   142
+         Object.Top             =   9354
          Object.Width           =   765
          Object.Height          =   360
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -979,10 +979,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label16"
-         Object.Left            =   170
-         Object.Top             =   198
-         Object.Width           =   2268
-         Object.Height          =   465
+         Object.Left            =   85
+         Object.Width           =   2280
+         Object.Height          =   482
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   8.25
@@ -992,7 +991,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRimborsoSpese
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
    EndProperty
    SectionCode4    =   8
@@ -1022,7 +1021,7 @@ Private Sub DataReport_Initialize()
             .Item("txtTesseraSanitaria").DataField = "TESSERA_SANITARIA"
             .Item("txtDataNascita").DataField = "DATA_NASCITA"
             .Item("txtAslDistrettoSx").DataField = "ASL_DISTRETTO"
-            .Item("txtAslDistrettoDx").DataField = "ASL_DISTRETTO"
+            .Item("txtAslDistrettoDx").DataField = "DISTRETTO"
             .Item("txtAssistito").DataField = "ASSISTITO"
 
         End With

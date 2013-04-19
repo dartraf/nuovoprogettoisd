@@ -542,7 +542,7 @@ Private Sub Form_Activate()
     Call RicaricaComboBox("GRUPPI_ESAMI", "NOME", cboEsami)
     
     If intPazientiKey = 0 Then
-        frmPannelloPeriodo.LetSenzaData = True
+        frmPannelloPeriodo.LetSenzaData = False
         frmPannelloPeriodo.Show 1
         periodo = frmPannelloPeriodo.GetPeriodo
         laData = frmPannelloPeriodo.getData
@@ -551,11 +551,45 @@ Private Sub Form_Activate()
             Unload Me
         Else
             cmdTrova_Click
-            If tTrova.keyReturn = 0 Then
-                Unload Me
-            End If
         End If
     End If
+End Sub
+
+'Private Sub Select_Data()
+'        tTrova.isOpenFromEsamiPrescriz = True
+'        frmPannelloPeriodo.LetSenzaData = False
+'        frmPannelloPeriodo.Show 1
+'        periodo = frmPannelloPeriodo.GetPeriodo
+'        laData = frmPannelloPeriodo.getData
+'        Unload frmPannelloPeriodo
+'        If periodo = -1 Then
+'            scelta = True
+'            Unload Me
+'        Else
+'            cmdTrova_Click
+'           If scelta = True Then
+'            Exit Do
+'           End If
+ '           If tTrova.keyReturn = 0 Then
+ '               scelta = True
+ '               Unload Me
+ '           End If
+ '       End If
+
+'End Sub
+
+Private Sub cmdTrova_Click()
+    ' pulisce per evitare problemi
+    Call PulisciTutto
+    tTrova.Tipo = tpPAZIENTE
+    tTrova.condizione = CreaCondizione
+    tTrova.condStato = "(-1)"
+    frmTrova.Show 1
+    intPazientiKey = tTrova.keyReturn
+    If tTrova.keyReturn = 0 Then
+       Unload Me
+    End If
+    Call CaricaPaziente
 End Sub
 
 Private Sub Form_Load()
@@ -596,7 +630,7 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
     
     Call SaveSetting(appName, "Default", Me.Name & "." & chkStampaDicituraImpostata.Name, chkStampaDicituraImpostata.Value)
-    
+      tTrova.isOpenFromEsamiPrescriz = False
     intPazientiKey = 0
 End Sub
 
@@ -1406,16 +1440,7 @@ Private Sub cmdTutti_Click(Index As Integer)
     End With
 End Sub
 
-Private Sub cmdTrova_Click()
-    ' pulisce per evitare problemi
-    Call PulisciTutto
-    tTrova.Tipo = tpPAZIENTE
-    tTrova.condizione = CreaCondizione
-    tTrova.condStato = "(-1)"
-    frmTrova.Show 1
-    intPazientiKey = tTrova.keyReturn
-    Call CaricaPaziente
-End Sub
+
 
 Private Sub cmdStampa_Click()
     

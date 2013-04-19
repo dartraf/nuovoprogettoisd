@@ -105,6 +105,24 @@ Begin VB.Form frmTrova
       TabIndex        =   4
       Top             =   4560
       Width           =   7335
+      Begin VB.CommandButton cmdCambiaData 
+         Caption         =   "&Cambio Data/Turno"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   2420
+         TabIndex        =   11
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   1340
+      End
       Begin VB.CommandButton cmdNuovo 
          Caption         =   "&Nuovo"
          BeginProperty Font 
@@ -117,11 +135,11 @@ Begin VB.Form frmTrova
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   3000
+         Left            =   3760
          TabIndex        =   10
          Top             =   240
          Visible         =   0   'False
-         Width           =   1215
+         Width           =   1095
       End
       Begin VB.CommandButton cmdAvanti 
          Caption         =   "&Seleziona"
@@ -135,10 +153,10 @@ Begin VB.Form frmTrova
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   4440
+         Left            =   4900
          TabIndex        =   3
          Top             =   240
-         Width           =   1215
+         Width           =   1200
       End
       Begin VB.CommandButton cmdIndietro 
          Caption         =   "&Chiudi"
@@ -153,10 +171,10 @@ Begin VB.Form frmTrova
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   5880
+         Left            =   6140
          TabIndex        =   5
          Top             =   240
-         Width           =   1215
+         Width           =   1095
       End
       Begin VB.Label lblVoci 
          AutoSize        =   -1  'True
@@ -197,6 +215,34 @@ Option Explicit
 
 Dim rsDatasetCerca As Recordset
 Dim testoVoce As String
+
+Private Sub cmdCambiaData_Click()
+
+ ' scelta = False
+ ' caricato = False
+' Call Select_Data
+    Unload Me
+ '   Exit Sub
+    
+ '   Unload Me
+ '   frmPannelloPeriodo.Show 1
+ '   periodo = frmPannelloPeriodo.GetPeriodo
+ '   laData = frmPannelloPeriodo.getData
+ '   Unload frmPannelloPeriodo
+ '   If periodo = -1 Then
+ '       Unload Me
+ '   Else
+ '       tTrova.Tipo = tpPAZIENTE
+ '       tTrova.condizione = CreaCondizione
+ '       tTrova.condStato = "(-1)"
+ '       frmTrova.Show 1
+ '       intPazientiKey = tTrova.keyReturn'
+
+'        If tTrova.keyReturn = 0 Then
+'           Unload Me
+'        End If
+'    End If
+End Sub
 
 Private Sub cmdNuovo_Click()
     tTrova.keyReturn = -1
@@ -303,6 +349,11 @@ Private Sub Form_Load()
     
     If tTrova.isOpenFromInfoGenerali Then
         cmdNuovo.Visible = True
+    End If
+    
+    If tTrova.isOpenFromEsamiPrescriz Then
+        cmdCambiaData.Visible = True
+        cmdIndietro.Visible = False
     End If
 End Sub
 
@@ -467,3 +518,4 @@ End Sub
 Private Sub txtCerca_LostFocus()
     txtCerca.BackColor = vbWhite
 End Sub
+

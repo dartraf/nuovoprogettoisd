@@ -2827,3 +2827,27 @@ gestione:
     VirgolaOrPunto = num
 End Function
 
+'Public Sub Select_Data()
+'Dim periodo As Integer
+'        Unload frmTrova
+ '       tTrova.isOpenFromEsamiPrescriz = True
+ '       frmPannelloPeriodo.LetSenzaData = False
+ '       frmPannelloPeriodo.Show 1
+ '       periodo = frmPannelloPeriodo.GetPeriodo
+ '       laData = frmPannelloPeriodo.getData
+ '       Unload frmPannelloPeriodo
+ '       If periodo = -1 Then
+ '           scelta = True
+ '           Unload 'Me
+ '       Else
+'            cmdTrova_Click
+'           If scelta = True Then
+'            Exit Do
+'           End If
+ '           If tTrova.keyReturn = 0 Then
+ '               scelta = True
+ '               Unload Me
+ '           End If
+ '       End If
+
+'End Sub

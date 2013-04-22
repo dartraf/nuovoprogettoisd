@@ -203,7 +203,8 @@ Private Type structTrova
     condizione As String                ' condizione di ricerca sql
     condStato As String                 ' condizione di caricamento dello stato nel cboStato
     isOpenFromInfoGenerali As Boolean
-End Type
+    isOpenFromEsamiPrescriz As Boolean
+    End Type
 Public tTrova As structTrova              '  il tipo passato ai form con molteplici funzioni frmTrova
 '------------------------
 

@@ -768,9 +768,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmeSodav
          _Version        =   393216
          Name            =   "Label42"
          Object.Left            =   170
-         Object.Top             =   11169
-         Object.Width           =   10261
-         Object.Height          =   960
+         Object.Top             =   11339
+         Object.Width           =   10260
+         Object.Height          =   780
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -786,17 +786,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmeSodav
       BeginProperty Item36 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line42"
-         Object.Left            =   5727
-         Object.Top             =   10941
-         Object.Width           =   4140
+         Object.Left            =   5750
+         Object.Top             =   11169
+         Object.Width           =   4400
       EndProperty
       ItemType37      =   3
       BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label45"
          Object.Left            =   5669
-         Object.Top             =   10261
-         Object.Width           =   4320
+         Object.Top             =   10148
+         Object.Width           =   4536
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -804,7 +804,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmeSodav
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Il Direttore Sanitario del Centro di Emodialisi"
@@ -814,15 +814,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloFirmeSodav
       BeginProperty Item38 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDirettore"
-         Object.Left            =   5727
-         Object.Top             =   10600
+         Object.Left            =   5839
+         Object.Top             =   10488
          Object.Width           =   4140
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   12
+            Size            =   11.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False

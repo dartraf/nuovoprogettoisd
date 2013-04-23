@@ -253,7 +253,7 @@ End Sub
 ' @return
 ' @remarks
 Private Sub VerificaFunzionalita()
-If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Then
+If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
    structApri.F1abiliata = True
 Else
    structApri.F1abiliata = False

@@ -692,7 +692,7 @@ Dim v_Nomi() As Variant
 Dim v_Val() As Variant
 Dim numKey As Integer
 
-    'decidere i campi obbligatori oltre al numero inventraio
+    'decidere i campi obbligatori oltre al numero inventario
 
     If txtNumeroInventario.Text = "" Then
         MsgBox "Inserire il N° Inventario", vbInformation, "Informazione"
@@ -715,7 +715,7 @@ Dim numKey As Integer
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataScadenza(1).data = "", Null, oDataScadenza(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), txtPeriodoAmmortamento)
             
-    rsMemorizzaApparecchiature.Open "GESTIONE_APPARECCHIATURE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+    rsMemorizzaApparecchiature.Open "APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
     rsMemorizzaApparecchiature.AddNew v_Nomi, v_Val
         
     Set rsMemorizzaApparecchiature = Nothing

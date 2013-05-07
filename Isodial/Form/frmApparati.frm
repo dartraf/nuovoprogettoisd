@@ -1,7 +1,8 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Begin VB.Form frmGestioneApparecchiature 
+Begin VB.Form frmApparati 
    BorderStyle     =   4  'Fixed ToolWindow
+   Caption         =   "Gestione Apparati"
    ClientHeight    =   7695
    ClientLeft      =   45
    ClientTop       =   315
@@ -106,7 +107,7 @@ Begin VB.Form frmGestioneApparecchiature
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmGestioneApparecchiature.frx":0000
+         MouseIcon       =   "frmApparati.frx":0000
       End
    End
    Begin VB.Frame fraAzioni 
@@ -215,7 +216,7 @@ Begin VB.Form frmGestioneApparecchiature
       End
    End
 End
-Attribute VB_Name = "frmGestioneApparecchiature"
+Attribute VB_Name = "frmApparati"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -284,7 +285,7 @@ Private Sub Form_Load()
     Select Case tTabelle
             Case tpRENI
                 nomeTabella = "RENI"
-                frmGestioneApparecchiature.Caption = "Gestione Apparecchiature: RENI ARTIFICIALI"
+                frmGestioneApparati.Caption = "Gestione Apparecchiature: RENI ARTIFICIALI"
                 With flxGriglia
                     .Cols = 9
                     .ColWidth(1) = .ColWidth(1) * 0.3

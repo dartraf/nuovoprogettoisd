@@ -1,8 +1,8 @@
 VERSION 5.00
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
-Begin VB.Form frmGestioniApparecchiatureInput 
+Begin VB.Form frmApparatiInput 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Inserimento Gestioni Apparecchiature"
+   Caption         =   "Inserimento Gestioni Apparati"
    ClientHeight    =   5520
    ClientLeft      =   45
    ClientTop       =   315
@@ -569,7 +569,7 @@ Begin VB.Form frmGestioniApparecchiatureInput
       End
    End
 End
-Attribute VB_Name = "frmGestioniApparecchiatureInput"
+Attribute VB_Name = "frmApparatiInput"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -584,15 +584,15 @@ End Sub
 
 Private Sub cboManutentore_LostFocus(Index As Integer)
         
-    If Len(cboManutentore(1)) > 25 Then
-        MsgBox "Impossibile memorizzare più di 25 caratteri", vbInformation, "Informazione"
+    If Len(cboManutentore(1)) > 30 Then
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
         cboManutentore(1).Text = ""
         cboManutentore(1).SetFocus
         Exit Sub
     End If
     
     If cboManutentore(1).Text <> "" Then
-        Call GestisciNuovo("GESTIONE_APPARECCHIATURE_MANUTENTORE", cboManutentore(1))
+        Call GestisciNuovo("APPARATI_MANUTENT", cboManutentore(1))
     End If
     
     cboManutentore(1).BackColor = vbWhite
@@ -613,7 +613,7 @@ Private Sub cboModalitaAcquisizione_LostFocus(Index As Integer)
     End If
     
     If cboModalitaAcquisizione(1).Text <> "" Then
-        Call GestisciNuovo("GESTIONE_APPARECCHIATURE_MODALITA_ACQUISIZIONE", cboModalitaAcquisizione(1))
+        Call GestisciNuovo("APPARATI_MOD_ACQ", cboModalitaAcquisizione(1))
     End If
 
     cboModalitaAcquisizione(1).BackColor = vbWhite
@@ -625,15 +625,15 @@ End Sub
 
 Private Sub cboModello_LostFocus(Index As Integer)
     
-    If Len(cboModello(2)) > 25 Then
-        MsgBox "Impossibile memorizzare più di 25 caratteri", vbInformation, "Informazione"
+    If Len(cboModello(2)) > 30 Then
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
         cboModello(2).Text = ""
         cboModello(2).SetFocus
         Exit Sub
     End If
     
     If cboModello(2).Text <> "" Then
-        Call GestisciNuovo("GESTIONE_APPARECCHIATURE_MODELLO", cboModello(2))
+        Call GestisciNuovo("APPARATI_MODELLO", cboModello(2))
     End If
     
     cboModello(2).BackColor = vbWhite
@@ -646,15 +646,15 @@ End Sub
 
 Private Sub cboProduttore_LostFocus(Index As Integer)
     
-    If Len(cboProduttore(0)) > 25 Then
-        MsgBox "Impossibile memorizzare più di 25 caratteri", vbInformation, "Informazione"
+    If Len(cboProduttore(0)) > 30 Then
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
         cboProduttore(0).Text = ""
         cboProduttore(0).SetFocus
         Exit Sub
     End If
     
     If cboProduttore(0).Text <> "" Then
-        Call GestisciNuovo("GESTIONE_APPARECCHIATURE_PRODUTTORE", cboProduttore(0))
+        Call GestisciNuovo("APPARATI_PRODUT", cboProduttore(0))
     End If
     
     cboProduttore(0).BackColor = vbWhite
@@ -667,8 +667,8 @@ End Sub
 
 Private Sub cboTipoApparato_LostFocus(Index As Integer)
             
-    If Len(cboTipoApparato(0)) > 25 Then
-        MsgBox "Impossibile memorizzare più di 25 caratteri", vbInformation, "Informazione"
+    If Len(cboTipoApparato(0)) > 30 Then
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
         cboTipoApparato(0).Text = ""
         cboTipoApparato(0).SetFocus
         Exit Sub
@@ -676,7 +676,7 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
     
     
     If cboTipoApparato(0).Text <> "" Then
-        Call GestisciNuovo("GESTIONE_APPARECCHIATURE_TIPO_APPARATO", cboTipoApparato(0))
+        Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
 
     cboTipoApparato(0).BackColor = vbWhite
@@ -684,7 +684,7 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
 End Sub
 
 Private Sub cmdChiudi_Click()
-    Unload frmGestioniApparecchiatureInput
+    Unload frmApparatiInput
 End Sub
 
 Private Sub cmdMemorizza_Click()
@@ -707,7 +707,7 @@ Dim numKey As Integer
         
     Set rsMemorizzaApparecchiature = New Recordset
         
-    numKey = GetNumero("GESTIONE_APPARECCHIATURE")
+    numKey = GetNumero("APPARATI")
         
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
                     , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_SCADENZA", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "PERIODO_AMMORTAMENTO")
@@ -721,6 +721,7 @@ Dim numKey As Integer
     Set rsMemorizzaApparecchiature = Nothing
     
     Call Pulisci
+    Call NumeroInventario
     
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
 
@@ -743,12 +744,13 @@ Private Sub Pulisci()
     txtNumeroInventario.SetFocus
     txtNumeroInventario_GotFocus
 End Sub
+
 Private Sub Form_Activate()
-    Call RicaricaComboBox("GESTIONE_APPARECCHIATURE_TIPO_APPARATO", "NOME", cboTipoApparato(0))
-    Call RicaricaComboBox("GESTIONE_APPARECCHIATURE_MODELLO", "NOME", cboModello(2))
-    Call RicaricaComboBox("GESTIONE_APPARECCHIATURE_PRODUTTORE", "NOME", cboProduttore(0))
-    Call RicaricaComboBox("GESTIONE_APPARECCHIATURE_MANUTENTORE", "NOME", cboManutentore(1))
-    Call RicaricaComboBox("GESTIONE_APPARECCHIATURE_MODALITA_ACQUISIZIONE", "NOME", cboModalitaAcquisizione(1))
+    Call RicaricaComboBox("APPARATI_TIPO", "NOME", cboTipoApparato(0))
+    Call RicaricaComboBox("APPARATI_MODELLO", "NOME", cboModello(2))
+    Call RicaricaComboBox("APPARATI_PRODUT", "NOME", cboProduttore(0))
+    Call RicaricaComboBox("APPARATI_MANUTENT", "NOME", cboManutentore(1))
+    Call RicaricaComboBox("APPARATI_MOD_ACQ", "NOME", cboModalitaAcquisizione(1))
 End Sub
 
 Private Sub Form_Load()
@@ -758,7 +760,7 @@ End Sub
 Private Sub NumeroInventario()
     Set rsNumeroProgressivo = New Recordset
     
-    rsNumeroProgressivo.Open "SELECT MAX(NUMERO_INVENTARIO) AS MASSIMO FROM GESTIONE_APPARECCHIATURE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsNumeroProgressivo.Open "SELECT MAX(NUMERO_INVENTARIO) AS MASSIMO FROM APPARATI", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not IsNull(rsNumeroProgressivo("MASSIMO")) Then
         txtNumeroInventario = rsNumeroProgressivo("MASSIMO") + 1
     Else

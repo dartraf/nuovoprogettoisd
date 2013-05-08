@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmRimborsiSpese 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Rimborsi Spese"
@@ -53,10 +53,10 @@ Begin VB.Form frmRimborsiSpese
       TabCaption(1)   =   "Stampa per Distretti"
       TabPicture(1)   =   "frmRimborsiSpese.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboDa"
-      Tab(1).Control(1)=   "cboA"
-      Tab(1).Control(2)=   "Label1(4)"
-      Tab(1).Control(3)=   "Label1(0)"
+      Tab(1).Control(0)=   "Label1(0)"
+      Tab(1).Control(1)=   "Label1(4)"
+      Tab(1).Control(2)=   "cboA"
+      Tab(1).Control(3)=   "cboDa"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
@@ -883,6 +883,7 @@ Private Sub StampaRimborsoSpese(codPaziente As Integer, anno As Integer, mese As
         
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(50) AS ASL_DISTRETTO, " & _
+                "       NEW adVarChar(15) AS DISTRETTO, " & _
                 "       NEW adVarChar(20) AS SOTTOSCRITT, " & _
                 "       NEW adVarChar(60) AS PAZIENTE, " & _
                 "       NEW adVarChar(10) AS NAT, " & _
@@ -917,6 +918,7 @@ Private Sub StampaRimborsoSpese(codPaziente As Integer, anno As Integer, mese As
         With rsMain
             .AddNew
             .Fields("ASL_DISTRETTO") = UCase(nomeAsl) & "- distr. " & rsDataset("D.NOME")
+            .Fields("DISTRETTO") = "- distr. " & rsDataset("D.NOME")
             .Fields("SOTTOSCRITT") = IIf(rsDataset("SESSO") = "M", "Il sottoscritto", "La sottoscritta")
             .Fields("ASSISTITO") = "L'assistito"
             .Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("P.NOME")

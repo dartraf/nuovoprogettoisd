@@ -6,12 +6,12 @@ Begin VB.Form frmApparatiInput
    ClientHeight    =   5520
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   10425
+   ClientWidth     =   10680
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   5520
-   ScaleWidth      =   10425
+   ScaleWidth      =   10680
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
@@ -19,7 +19,7 @@ Begin VB.Form frmApparatiInput
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   10215
+      Width           =   10455
       Begin VB.ComboBox cboManutentore 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -32,11 +32,11 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   6840
+         Left            =   6960
          Sorted          =   -1  'True
          TabIndex        =   7
          Top             =   1800
-         Width           =   3255
+         Width           =   3375
       End
       Begin VB.ComboBox cboProduttore 
          BeginProperty Font 
@@ -54,7 +54,7 @@ Begin VB.Form frmApparatiInput
          Sorted          =   -1  'True
          TabIndex        =   6
          Top             =   1800
-         Width           =   3255
+         Width           =   3375
       End
       Begin VB.ComboBox cboModello 
          BeginProperty Font 
@@ -72,7 +72,7 @@ Begin VB.Form frmApparatiInput
          Sorted          =   -1  'True
          TabIndex        =   4
          Top             =   1320
-         Width           =   3255
+         Width           =   3375
       End
       Begin VB.ComboBox cboModalitaAcquisizione 
          BeginProperty Font 
@@ -125,7 +125,7 @@ Begin VB.Form frmApparatiInput
          MultiLine       =   -1  'True
          TabIndex        =   13
          Top             =   3240
-         Width           =   3015
+         Width           =   3255
       End
       Begin VB.TextBox txtMatricola 
          BeginProperty Font 
@@ -138,11 +138,11 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   6840
-         MaxLength       =   25
+         Left            =   6960
+         MaxLength       =   30
          TabIndex        =   5
          Top             =   1320
-         Width           =   3255
+         Width           =   3375
       End
       Begin VB.TextBox txtNumeroApparato 
          BeginProperty Font 
@@ -156,10 +156,10 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Left            =   1680
-         MaxLength       =   25
+         MaxLength       =   30
          TabIndex        =   2
          Top             =   840
-         Width           =   3255
+         Width           =   3375
       End
       Begin VB.ComboBox cboTipoApparato 
          BeginProperty Font 
@@ -173,11 +173,11 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Index           =   0
-         Left            =   6840
+         Left            =   6960
          Sorted          =   -1  'True
          TabIndex        =   3
          Top             =   840
-         Width           =   3255
+         Width           =   3375
       End
       Begin VB.TextBox txtNumeroInventario 
          BeginProperty DataFormat 
@@ -209,7 +209,7 @@ Begin VB.Form frmApparatiInput
       Begin DataTimeBox.uDataTimeBox oDataScadenza 
          Height          =   375
          Index           =   1
-         Left            =   7200
+         Left            =   7320
          TabIndex        =   9
          Top             =   2280
          Width           =   2100
@@ -235,7 +235,7 @@ Begin VB.Form frmApparatiInput
       Begin DataTimeBox.uDataTimeBox oDataAcquisizione 
          Height          =   375
          Index           =   2
-         Left            =   7200
+         Left            =   7320
          TabIndex        =   11
          Top             =   2760
          Width           =   2100
@@ -311,7 +311,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   13
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   28
          Top             =   2790
          Width           =   1890
@@ -349,7 +349,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   11
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   26
          Top             =   1800
          Width           =   1290
@@ -425,7 +425,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   3
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   22
          Top             =   3270
          Width           =   1500
@@ -444,7 +444,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   21
          Top             =   1320
          Width           =   975
@@ -482,7 +482,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   19
          Top             =   2310
          Width           =   1605
@@ -501,7 +501,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   7
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   18
          Top             =   840
          Width           =   1515
@@ -531,7 +531,7 @@ Begin VB.Form frmApparatiInput
       Left            =   120
       TabIndex        =   30
       Top             =   4440
-      Width           =   10215
+      Width           =   10455
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          BeginProperty Font 
@@ -544,7 +544,7 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   7200
+         Left            =   7440
          TabIndex        =   15
          Top             =   240
          Width           =   1455
@@ -562,7 +562,7 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   8880
+         Left            =   9120
          TabIndex        =   16
          Top             =   240
          Width           =   1215
@@ -577,6 +577,9 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim rsNumeroProgressivo As Recordset
 Dim rsMemorizzaApparecchiature As Recordset
+Dim rsCercaApparato As Recordset
+Dim NumeroApparato As Integer
+Dim ModificaApparato As Boolean
 
 Private Sub cboManutentore_GotFocus(Index As Integer)
     cboManutentore(1).BackColor = colArancione
@@ -592,7 +595,8 @@ Private Sub cboManutentore_LostFocus(Index As Integer)
     End If
     
     If cboManutentore(1).Text <> "" Then
-        Call GestisciNuovo("APPARATI_MANUTENT", cboManutentore(1))
+        Call GestisciNuovo("APPARATI_PRODUT_MANUTENT", cboManutentore(1))
+        Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboProduttore(0))
     End If
     
     cboManutentore(1).BackColor = vbWhite
@@ -654,7 +658,8 @@ Private Sub cboProduttore_LostFocus(Index As Integer)
     End If
     
     If cboProduttore(0).Text <> "" Then
-        Call GestisciNuovo("APPARATI_PRODUT", cboProduttore(0))
+        Call GestisciNuovo("APPARATI_PRODUT_MANUTENT", cboProduttore(0))
+        Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboManutentore(1))
     End If
     
     cboProduttore(0).BackColor = vbWhite
@@ -707,7 +712,11 @@ Dim numKey As Integer
         
     Set rsMemorizzaApparecchiature = New Recordset
         
-    numKey = GetNumero("APPARATI")
+    If ModificaApparato = True Then
+         numKey = NumeroApparato
+    Else
+        numKey = GetNumero("APPARATI")
+    End If
         
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
                     , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_SCADENZA", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "PERIODO_AMMORTAMENTO")
@@ -715,16 +724,21 @@ Dim numKey As Integer
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataScadenza(1).data = "", Null, oDataScadenza(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), txtPeriodoAmmortamento)
             
-    rsMemorizzaApparecchiature.Open "APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
-    rsMemorizzaApparecchiature.AddNew v_Nomi, v_Val
-        
+    If ModificaApparato = True Then
+        rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        rsMemorizzaApparecchiature.Update v_Nomi, v_Val
+    Else
+        rsMemorizzaApparecchiature.Open "APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+        rsMemorizzaApparecchiature.AddNew v_Nomi, v_Val
+    End If
+            
     Set rsMemorizzaApparecchiature = Nothing
     
     Call Pulisci
     Call NumeroInventario
     
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
-
+    ModificaApparato = False
 End Sub
 
 Private Sub Pulisci()
@@ -743,18 +757,51 @@ Private Sub Pulisci()
     txtPeriodoAmmortamento.Text = ""
     txtNumeroInventario.SetFocus
     txtNumeroInventario_GotFocus
+    NumeroApparato = 0
+    tTrova.keyReturn = 0
 End Sub
 
 Private Sub Form_Activate()
     Call RicaricaComboBox("APPARATI_TIPO", "NOME", cboTipoApparato(0))
     Call RicaricaComboBox("APPARATI_MODELLO", "NOME", cboModello(2))
-    Call RicaricaComboBox("APPARATI_PRODUT", "NOME", cboProduttore(0))
-    Call RicaricaComboBox("APPARATI_MANUTENT", "NOME", cboManutentore(1))
+    Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboProduttore(0))
+    Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboManutentore(1))
     Call RicaricaComboBox("APPARATI_MOD_ACQ", "NOME", cboModalitaAcquisizione(1))
 End Sub
 
 Private Sub Form_Load()
-    Call NumeroInventario
+    If tTrova.keyReturn = 0 Then
+        Call NumeroInventario
+    Else
+        NumeroApparato = tTrova.keyReturn
+        Call CaricaApparato
+    End If
+End Sub
+
+Private Sub CaricaApparato()
+    
+    Set rsCercaApparato = New Recordset
+    
+    rsCercaApparato.Open "SELECT * FROM APPARATI WHERE KEY =" & NumeroApparato, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        
+        txtNumeroInventario.Text = rsCercaApparato("NUMERO_INVENTARIO")
+        txtNumeroApparato.Text = rsCercaApparato("NUMERO_APPARATO")
+        cboTipoApparato(0).Text = rsCercaApparato("TIPO_APPARATO")
+        cboModello(2).Text = rsCercaApparato("MODELLO")
+        txtMatricola.Text = rsCercaApparato("MATRICOLA")
+        cboProduttore(0).Text = rsCercaApparato("PRODUTTORE")
+        cboManutentore(1).Text = rsCercaApparato("MANUTENTORE")
+        oDataFabbricazione(0).txtBox = rsCercaApparato("DATA_FABBRICAZIONE") & ""
+        oDataScadenza(1).txtBox = rsCercaApparato("DATA_SCADENZA") & ""
+        cboModalitaAcquisizione(1).Text = rsCercaApparato("MODALITA_ACQUISIZIONE")
+        oDataAcquisizione(2).txtBox = rsCercaApparato("DATA_ACQUISIZIONE") & ""
+        oDataCollaudo(3).txtBox = rsCercaApparato("DATA_COLLAUDO") & ""
+        txtNoteCollaudo.Text = rsCercaApparato("NOTE_COLLAUDO")
+        txtPeriodoAmmortamento.Text = rsCercaApparato("PERIODO_AMMORTAMENTO")
+        
+    Set rsCercaApparato = Nothing
+    ModificaApparato = True
+    
 End Sub
 
 Private Sub NumeroInventario()

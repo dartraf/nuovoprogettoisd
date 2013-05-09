@@ -68,7 +68,7 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   2
       Top             =   6600
-      Width           =   10455
+      Width           =   14775
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
@@ -82,7 +82,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   9120
+         Left            =   13440
          TabIndex        =   5
          Top             =   240
          Width           =   1215
@@ -99,7 +99,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   4680
+         Left            =   12000
          TabIndex        =   4
          Top             =   240
          Width           =   1215
@@ -116,7 +116,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   3240
+         Left            =   10560
          TabIndex        =   3
          Top             =   240
          Visible         =   0   'False
@@ -174,7 +174,6 @@ End Sub
 
 Private Sub CaricaFlx()
     Dim strSql As String
-    Dim Numero_Progressivo As Integer
     
     flxGriglia.Rows = 1
     vCol = 0
@@ -292,5 +291,14 @@ Private Sub flxGriglia_Click()
         vCol = flxGriglia.Col
         Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
     End If
+End Sub
+
+Private Sub flxGriglia_DblClick()
+    If VerificaClickFlx(flxGriglia) = False Then Exit Sub
+    
+    ' Seleziono la key dell' apparato e la passo
+    tTrova.keyReturn = flxGriglia.TextMatrix(vRow, 0)
+    cmdInserisci_Click
+    tTrova.keyReturn = 0    'per evitare di ricaricare l'apparato
 End Sub
 

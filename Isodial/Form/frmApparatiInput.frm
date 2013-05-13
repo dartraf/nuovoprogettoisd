@@ -260,7 +260,7 @@ Begin VB.Form frmApparatiInput
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Periodo Ammortamento"
+         Caption         =   "Periodo Ammortamento (anni)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -270,12 +270,12 @@ Begin VB.Form frmApparatiInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   480
+         Height          =   720
          Index           =   18
          Left            =   120
          TabIndex        =   31
          Top             =   3720
-         Width           =   2175
+         Width           =   2295
          WordWrap        =   -1  'True
       End
       Begin VB.Label Label1 
@@ -697,10 +697,39 @@ Dim v_Nomi() As Variant
 Dim v_Val() As Variant
 Dim numKey As Integer
 
-    'decidere i campi obbligatori oltre al numero inventario
 
     If txtNumeroInventario.Text = "" Then
         MsgBox "Inserire il N° Inventario", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    If cboTipoApparato(0).Text = "" Then
+        MsgBox "Inserire il Tipo di Apparato", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    If cboModello(2).Text = "" Then
+        MsgBox "Inserire il Modello", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    If txtMatricola.Text = "" Then
+        MsgBox "Inserire la Matricola", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    If cboProduttore(0).Text = "" Then
+        MsgBox "Inserire il Produttore", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    If oDataAcquisizione(2).txtBox = "" Then
+        MsgBox "Inserire la Data di Acquisizione", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    If cboModalitaAcquisizione(1).Text = "" Then
+        MsgBox "Inserire la Modalità di Acquisizione", vbInformation, "Informazione"
         Exit Sub
     End If
        
@@ -738,7 +767,14 @@ Dim numKey As Integer
     Call NumeroInventario
     
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
-    ModificaApparato = False
+    
+    If ModificaApparato = True Then
+        ModificaApparato = False
+        Unload frmApparatiInput
+    Else
+        ModificaApparato = False
+    End If
+    
 End Sub
 
 Private Sub Pulisci()

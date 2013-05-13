@@ -3,14 +3,14 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Gestione Apparati"
-   ClientHeight    =   7695
+   ClientHeight    =   7920
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   15000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7695
+   ScaleHeight     =   7920
    ScaleWidth      =   15000
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -24,19 +24,19 @@ Begin VB.Form frmApparati
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   6735
+      Height          =   3615
       Left            =   120
       TabIndex        =   0
       Top             =   0
       Width           =   14775
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   6375
+         Height          =   3255
          Left            =   120
          TabIndex        =   1
          Top             =   240
          Width           =   14535
          _ExtentX        =   25638
-         _ExtentY        =   11245
+         _ExtentY        =   5741
          _Version        =   393216
          FixedCols       =   0
          ScrollTrack     =   -1  'True
@@ -54,20 +54,11 @@ Begin VB.Form frmApparati
          MouseIcon       =   "frmApparati.frx":0000
       End
    End
-   Begin VB.Frame fraAzioni 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   975
+   Begin VB.Frame Frame1 
+      Height          =   855
       Left            =   120
       TabIndex        =   2
-      Top             =   6600
+      Top             =   3480
       Width           =   14775
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
@@ -81,7 +72,7 @@ Begin VB.Form frmApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   600
+         Height          =   450
          Left            =   13440
          TabIndex        =   5
          Top             =   240
@@ -98,7 +89,7 @@ Begin VB.Form frmApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   600
+         Height          =   450
          Left            =   12000
          TabIndex        =   4
          Top             =   240
@@ -115,7 +106,7 @@ Begin VB.Form frmApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   600
+         Height          =   450
          Left            =   10560
          TabIndex        =   3
          Top             =   240

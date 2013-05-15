@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmTrova 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Seleziona il "
@@ -74,6 +75,15 @@ Begin VB.Form frmTrova
       TabIndex        =   8
       Top             =   600
       Width           =   7335
+      Begin WheelCatch.WheelCatcher WheelCatcher1 
+         Height          =   480
+         Left            =   1440
+         TabIndex        =   12
+         Top             =   360
+         Width           =   480
+         _ExtentX        =   847
+         _ExtentY        =   847
+      End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3735
          Left            =   120
@@ -255,29 +265,29 @@ End Sub
 
 '' Permette il funzionamento della rotellina del mouse nella flx
 'Public Sub MouseWheel(flx As MSFlexGrid, ByVal MouseKeys As Long, ByVal Rotation As Long, ByVal Xpos As Long, ByVal Ypos As Long)
-'    Dim NewValue As Long
-'    Dim Lstep As Single
+ '   Dim NewValue As Long
+ '   Dim Lstep As Single
 
-'    On Error Resume Next
-'    With flx
-'        Lstep = .Height / .RowHeight(0)
-'        Lstep = Int(Lstep)
-'        If Lstep < 10 Then
-'            Lstep = 10
-'        End If
-'        If Rotation > 0 Then
-'            NewValue = .TopRow - Int(Lstep / 3)
-'            If NewValue < 1 Then
-'                NewValue = 1
-'            End If
-'        Else
-'            NewValue = .TopRow + Int(Lstep / 3)
-'            If NewValue > .Rows - 1 Then
-'                NewValue = .Rows - 1
-'            End If
-'        End If
-'        .TopRow = NewValue
-'    End With
+ '   On Error Resume Next
+ '   With flx
+ '       Lstep = .Height / .RowHeight(0)
+ '       Lstep = Int(Lstep)
+ '       If Lstep < 10 Then
+ '           Lstep = 10
+ '       End If
+ '       If Rotation > 0 Then
+ '           NewValue = .TopRow - Int(Lstep / 3)
+ '           If NewValue < 1 Then
+ '               NewValue = 1
+ '           End If
+ '       Else
+ '           NewValue = .TopRow + Int(Lstep / 3)
+ '           If NewValue > .Rows - 1 Then
+ '               NewValue = .Rows - 1
+ '           End If
+ '       End If
+ '       .TopRow = NewValue
+ '   End With
 'End Sub
 '---------------------------------
 
@@ -437,13 +447,13 @@ Private Sub cmdIndietro_Click()
     tTrova.keyReturn = 0
     Unload Me
 End Sub
-
+'--Attiva la rotellina del mouse----
 'Private Sub flxGriglia_GotFocus()
-    'Call WheelHook(Me, flxGriglia)
+'    Call WheelHook(Me, flxGriglia)
 'End Sub
 
 'Private Sub flxGriglia_LostFocus()
-    'Call WheelUnHook
+'    Call WheelUnHook
 'End Sub
 '------------------------------------
 
@@ -497,8 +507,8 @@ gestione:
 End Sub
 
 Private Sub flxGriglia_DblClick()
-    If VerificaClickFlx(flxGriglia) = False Then Exit Sub
-    cmdAvanti_Click
+   If VerificaClickFlx(flxGriglia) = False Then Exit Sub
+   cmdAvanti_Click
 End Sub
 
 Private Sub txtCerca_Change()
@@ -517,5 +527,21 @@ End Sub
 
 Private Sub txtCerca_LostFocus()
     txtCerca.BackColor = vbWhite
+End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
 End Sub
 

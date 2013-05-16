@@ -376,8 +376,8 @@ Begin VB.Form frmDiario
       TabIndex        =   8
       Top             =   4800
       Width           =   12015
-      Begin VB.CommandButton cmdStampa 
-         Caption         =   "Stampa &Vista"
+      Begin VB.OptionButton OptStDiario 
+         Caption         =   "Stampa &Tutto il Diario"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -387,11 +387,31 @@ Begin VB.Form frmDiario
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
-         Left            =   5280
+         Height          =   255
+         Index           =   1
+         Left            =   240
+         TabIndex        =   29
+         Top             =   540
+         Width           =   2775
+      End
+      Begin VB.OptionButton OptStDiario 
+         Caption         =   "Stampa &Vista Corrente"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   0
+         Left            =   240
          TabIndex        =   28
-         Top             =   240
-         Width           =   1215
+         Top             =   180
+         Value           =   -1  'True
+         Width           =   2775
       End
       Begin VB.CommandButton cmdElimina 
          Caption         =   "&Elimina"
@@ -410,8 +430,8 @@ Begin VB.Form frmDiario
          Top             =   240
          Width           =   1215
       End
-      Begin VB.CommandButton cmdStampaDiario 
-         Caption         =   "&Stampa Diario"
+      Begin VB.CommandButton cmdStampa 
+         Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -495,61 +515,71 @@ Dim intPazientiKey As Integer
 Dim blnModificato As Boolean
 
 Private Sub cmdStampa_Click()
-    Dim codiceId As Integer
+    If Not modifica Then
+  '      MsgBox "Memorizzare prima la scheda", vbCritical, "ATTENZIONE"
+        Exit Sub
+    End If
+    
+    If OptStDiario(1).Value Then  ' stampa vista corrente
+        Set rsDiario = New Recordset
+        rsDiario.Open "SELECT COGNOME, NOME, DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        structIntestazione.sPaziente = rsDiario("COGNOME") & " " & rsDiario("NOME")
+        structIntestazione.sDataPaziente = rsDiario("DATA_NASCITA")
+        rsDiario.Close
+        Set rsDiario = New Recordset
+        Call StampaDecimaParte(False, intPazientiKey)
+        Exit Sub
+    End If
     
 '    If intPazientiKey = 0 Then
 '        MsgBox "Selezionare il paziente", vbInformation, "ATTENZIONE"
 '        Exit Sub
 '    End If
+     
+     Dim codiceId As Integer
+     Set rsDiario = New Recordset
+     rsDiario.Open "SELECT COGNOME, NOME, DATA_NASCITA, CODICE_ID FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+     structIntestazione.sPaziente = rsDiario("COGNOME") & " " & rsDiario("NOME")
+     structIntestazione.sDataPaziente = rsDiario("DATA_NASCITA")
+     codiceId = rsDiario("CODICE_ID")
+     rsDiario.Close
     
-    If Not modifica Then
-     '   MsgBox "Memorizzare prima la scheda", vbCritical, "ATTENZIONE"
-    Else
-      
-        Set rsDiario = New Recordset
-        rsDiario.Open "SELECT COGNOME, NOME, DATA_NASCITA, CODICE_ID FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-        structIntestazione.sPaziente = rsDiario("COGNOME") & " " & rsDiario("NOME")
-        structIntestazione.sDataPaziente = rsDiario("DATA_NASCITA")
-        codiceId = rsDiario("CODICE_ID")
-        rsDiario.Close
-    
-        Dim SQLString As String
-        Dim cnConn As Connection        ' connessione per lo shape
-        Dim rsMain As Recordset         ' recordset padre per lo shape
+     Dim SQLString As String
+     Dim cnConn As Connection        ' connessione per lo shape
+     Dim rsMain As Recordset         ' recordset padre per lo shape
         
-        SQLString = "SHAPE APPEND " & _
-                    "   NEW adVarChar(50) AS TITOLO, " & _
-                    "   NEW adDate AS DATA, " & _
-                    "   NEW adLongVarChar AS DATI "
+     SQLString = "SHAPE APPEND " & _
+                 "   NEW adVarChar(50) AS TITOLO, " & _
+                 "   NEW adDate AS DATA, " & _
+                 "   NEW adLongVarChar AS DATI "
             
-        ' apre la connessione per lo shape
-        Set cnConn = New ADODB.Connection
-        cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
-        Set rsMain = New ADODB.Recordset
-        rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+     ' apre la connessione per lo shape
+     Set cnConn = New ADODB.Connection
+     cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+     Set rsMain = New ADODB.Recordset
+     rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
             
-        ' carica il recordset padre
-        Set rsDiario = New Recordset
-        rsDiario.Open "SELECT * FROM (DIARI_CLINICI D INNER JOIN TITOLI_DIARIO T ON T.KEY=D.CODICE_TITOLO) WHERE (CODICE_PAZIENTE=" & intPazientiKey & " AND STAMPA=TRUE AND D.KEY=" & keyId & ") ORDER BY CODICE_TITOLO, DATA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-        If Not (rsDiario.EOF And rsDiario.BOF) Then
-            With rsMain
-                Do While Not rsDiario.EOF
-                    .AddNew
-                    .Fields("TITOLO") = rsDiario("NOME")
-                    .Fields("DATA") = rsDiario("DATA")
-                    .Fields("DATI") = rsDiario("DATI") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsDiario("UTENTE_MODIFICATORE"))
-                    rsDiario.MoveNext
-                Loop
-            End With
-        End If
+     ' carica il recordset padre
+     Set rsDiario = New Recordset
+     rsDiario.Open "SELECT * FROM (DIARI_CLINICI D INNER JOIN TITOLI_DIARIO T ON T.KEY=D.CODICE_TITOLO) WHERE (CODICE_PAZIENTE=" & intPazientiKey & " AND STAMPA=TRUE AND D.KEY=" & keyId & ") ORDER BY CODICE_TITOLO, DATA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+     If Not (rsDiario.EOF And rsDiario.BOF) Then
+        With rsMain
+        Do While Not rsDiario.EOF
+            .AddNew
+            .Fields("TITOLO") = rsDiario("NOME")
+            .Fields("DATA") = rsDiario("DATA")
+            .Fields("DATI") = rsDiario("DATI") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsDiario("UTENTE_MODIFICATORE"))
+            rsDiario.MoveNext
+            Loop
+        End With
+     End If
         
-        ' azzero tutto
-        Set rptCartellaClinica_10 = Nothing
-        Set rptCartellaClinica_10.DataSource = rsMain
-        rptCartellaClinica_10.Sections("Intestazione").Controls.Item("lblIDLabel").Caption = ""
-        rptCartellaClinica_10.Sections("Intestazione").Controls.Item("lblCartellaClinica").Caption = ""
-        rptCartellaClinica_10.PrintReport True, rptRangeAllPages
-    End If
+     ' azzero tutto
+     Set rptCartellaClinica_10 = Nothing
+     Set rptCartellaClinica_10.DataSource = rsMain
+     rptCartellaClinica_10.Sections("Intestazione").Controls.Item("lblIDLabel").Caption = ""
+     rptCartellaClinica_10.Sections("Intestazione").Controls.Item("lblCartellaClinica").Caption = ""
+     rptCartellaClinica_10.PrintReport True, rptRangeAllPages
 
 End Sub
 
@@ -784,26 +814,6 @@ Private Sub CaricaPaziente()
     
     Call oPazientiKey.ImpostaPazientiKey(intPazientiKey, Me.Caption)
     blnModificato = False
-End Sub
-
-Private Sub cmdStampaDiario_Click()
-'    If intPazientiKey = 0 Then
-'        MsgBox "Selezionare il paziente", vbCritical, "ATTENZIONE"
-'        Exit Sub
-'    End If
-    If Not modifica Then
-  '      MsgBox "Memorizzare prima la scheda", vbCritical, "ATTENZIONE"
-        Exit Sub
-    End If
-      
-    Set rsDiario = New Recordset
-    rsDiario.Open "SELECT COGNOME, NOME, DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    structIntestazione.sPaziente = rsDiario("COGNOME") & " " & rsDiario("NOME")
-    structIntestazione.sDataPaziente = rsDiario("DATA_NASCITA")
-    rsDiario.Close
-    Set rsDiario = New Recordset
-    
-    Call StampaDecimaParte(False, intPazientiKey)
 End Sub
 
 Private Sub cmdChiudi_Click()

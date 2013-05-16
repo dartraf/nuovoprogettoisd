@@ -121,6 +121,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+Dim MantieniKeyReturn As Integer
 Dim rsApparati As Recordset
 Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
@@ -265,8 +266,27 @@ Private Sub cmdElimina_Click()
 End Sub
 
 Private Sub cmdInserisci_Click()
+    Dim num As Integer
+
     frmApparatiInput.Show 1
     Call CaricaFlx
+    
+    If MantieniKeyReturn = 0 Then
+        num = GetNumero("APPARATI") - 1
+    Else
+        num = MantieniKeyReturn
+    End If
+    
+    ' si posiziona sul record e lo seleziona
+    flxGriglia.Row = Esiste(flxGriglia, 0, vRow, num)
+    vRow = flxGriglia.Row
+    Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
+    If flxGriglia.Row > 10 Then
+        flxGriglia.TopRow = flxGriglia.Row
+    End If
+    
+    MantieniKeyReturn = 0
+    
 End Sub
 
 Private Sub flxGriglia_Click()
@@ -289,6 +309,7 @@ Private Sub flxGriglia_DblClick()
     
     ' Seleziono la key dell' apparato e la passo
     tTrova.keyReturn = flxGriglia.TextMatrix(vRow, 0)
+    MantieniKeyReturn = tTrova.keyReturn
     cmdInserisci_Click
     tTrova.keyReturn = 0    'per evitare di ricaricare l'apparato
 End Sub

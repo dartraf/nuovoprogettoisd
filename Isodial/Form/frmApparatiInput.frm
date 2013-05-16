@@ -588,7 +588,7 @@ End Sub
 Private Sub cboManutentore_LostFocus(Index As Integer)
         
     If Len(cboManutentore(1)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
         cboManutentore(1).Text = ""
         cboManutentore(1).SetFocus
         Exit Sub
@@ -610,7 +610,7 @@ End Sub
 Private Sub cboModalitaAcquisizione_LostFocus(Index As Integer)
 
     If Len(cboModalitaAcquisizione(1)) > 15 Then
-        MsgBox "Impossibile memorizzare più di 15 caratteri", vbInformation, "Informazione"
+        MsgBox "Impossibile memorizzare più di 15 caratteri", vbCritical, "Attenzione"
         cboModalitaAcquisizione(1).Text = ""
         cboModalitaAcquisizione(1).SetFocus
         Exit Sub
@@ -630,7 +630,7 @@ End Sub
 Private Sub cboModello_LostFocus(Index As Integer)
     
     If Len(cboModello(2)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
         cboModello(2).Text = ""
         cboModello(2).SetFocus
         Exit Sub
@@ -651,7 +651,7 @@ End Sub
 Private Sub cboProduttore_LostFocus(Index As Integer)
     
     If Len(cboProduttore(0)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
         cboProduttore(0).Text = ""
         cboProduttore(0).SetFocus
         Exit Sub
@@ -673,7 +673,7 @@ End Sub
 Private Sub cboTipoApparato_LostFocus(Index As Integer)
             
     If Len(cboTipoApparato(0)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbInformation, "Informazione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
         cboTipoApparato(0).Text = ""
         cboTipoApparato(0).SetFocus
         Exit Sub
@@ -699,40 +699,40 @@ Dim numKey As Integer
 
 
     If txtNumeroInventario.Text = "" Then
-        MsgBox "Inserire il N° Inventario", vbInformation, "Informazione"
+        MsgBox "Inserire il N° Inventario", vbCritical, "Attenzione"
         Exit Sub
     End If
     
     If cboTipoApparato(0).Text = "" Then
-        MsgBox "Inserire il Tipo di Apparato", vbInformation, "Informazione"
+        MsgBox "Inserire il Tipo di Apparato", vbCritical, "Attenzione"
         Exit Sub
     End If
     
     If cboModello(2).Text = "" Then
-        MsgBox "Inserire il Modello", vbInformation, "Informazione"
+        MsgBox "Inserire il Modello", vbCritical, "Attenzione"
         Exit Sub
     End If
     
     If txtMatricola.Text = "" Then
-        MsgBox "Inserire la Matricola", vbInformation, "Informazione"
+        MsgBox "Inserire la Matricola", vbCritical, "Attenzione"
         Exit Sub
     End If
     
     If cboProduttore(0).Text = "" Then
-        MsgBox "Inserire il Produttore", vbInformation, "Informazione"
-        Exit Sub
-    End If
-    
-    If oDataAcquisizione(2).txtBox = "" Then
-        MsgBox "Inserire la Data di Acquisizione", vbInformation, "Informazione"
+        MsgBox "Inserire il Produttore", vbCritical, "Attenzione"
         Exit Sub
     End If
     
     If cboModalitaAcquisizione(1).Text = "" Then
-        MsgBox "Inserire la Modalità di Acquisizione", vbInformation, "Informazione"
+        MsgBox "Inserire la Modalità di Acquisizione", vbCritical, "Attenzione"
         Exit Sub
     End If
-       
+    
+    If oDataAcquisizione(2).txtBox = "" Then
+        MsgBox "Inserire la Data di Acquisizione", vbCritical, "Attenzione"
+        Exit Sub
+    End If
+
     If txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
     End If
@@ -765,9 +765,7 @@ Dim numKey As Integer
     
     Call Pulisci
     Call NumeroInventario
-    
-    MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
-    
+        
     If ModificaApparato = True Then
         ModificaApparato = False
         Unload frmApparatiInput

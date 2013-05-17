@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmDialisiDaFare 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Schede Dialitiche Giornaliere - Compilazione"
@@ -63,6 +64,15 @@ Begin VB.Form frmDialisiDaFare
       TabIndex        =   2
       Top             =   960
       Width           =   7935
+      Begin WheelCatch.WheelCatcher WheelCatcher1 
+         Height          =   480
+         Left            =   2400
+         TabIndex        =   9
+         Top             =   360
+         Width           =   480
+         _ExtentX        =   847
+         _ExtentY        =   847
+      End
       Begin MSFlexGridLib.MSFlexGrid flxTrova 
          Height          =   3015
          Left            =   120
@@ -382,5 +392,21 @@ Private Sub flxTrova_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyEscape Then
         cmdIndietro_Click
     End If
+End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxTrova.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxTrova.hWnd
+            If flxTrova.TopRow - Rotation > 0 Then
+               flxTrova.TopRow = flxTrova.TopRow - Rotation
+            End If
+    
+        End Select
 End Sub
 

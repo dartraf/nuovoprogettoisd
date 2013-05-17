@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Gestione Apparati"
@@ -29,6 +30,15 @@ Begin VB.Form frmApparati
       TabIndex        =   0
       Top             =   0
       Width           =   14775
+      Begin WheelCatch.WheelCatcher WheelCatcher1 
+         Height          =   480
+         Left            =   2400
+         TabIndex        =   6
+         Top             =   360
+         Width           =   480
+         _ExtentX        =   847
+         _ExtentY        =   847
+      End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
          Left            =   120
@@ -312,5 +322,21 @@ Private Sub flxGriglia_DblClick()
     MantieniKeyReturn = tTrova.keyReturn
     cmdInserisci_Click
     tTrova.keyReturn = 0    'per evitare di ricaricare l'apparato
+End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
 End Sub
 

@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmElencaDate 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Selezionare Data"
@@ -22,6 +23,15 @@ Begin VB.Form frmElencaDate
    ScaleHeight     =   3855
    ScaleWidth      =   1815
    ShowInTaskbar   =   0   'False
+   Begin WheelCatch.WheelCatcher WheelCatcher1 
+      Height          =   480
+      Left            =   600
+      TabIndex        =   1
+      Top             =   120
+      Width           =   480
+      _ExtentX        =   847
+      _ExtentY        =   847
+   End
    Begin MSFlexGridLib.MSFlexGrid flxGriglia 
       Height          =   3855
       Left            =   0
@@ -215,3 +225,20 @@ End Sub
     'Call WheelUnHook
 'End Sub
 '-------------------------------
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
+End Sub
+

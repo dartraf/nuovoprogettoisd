@@ -172,6 +172,9 @@ Dim i As Integer
             .CellFontBold = True
          Next i
      End With
+     
+     MantieniKeyReturn = -1
+     
 End Sub
 
 Private Sub CaricaFlx()
@@ -307,6 +310,9 @@ Private Sub flxGriglia_Click()
         ' annulla le row e col
         flxGriglia.Row = 0
         flxGriglia.Col = 0
+        ' per evitare di colorare quando seleziono un record passi:
+        ' clicco su inserisci poi chiudi
+        MantieniKeyReturn = -1
     Else
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col

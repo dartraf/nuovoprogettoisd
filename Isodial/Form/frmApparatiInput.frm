@@ -86,10 +86,10 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   2520
+         Left            =   7800
          Sorted          =   -1  'True
          TabIndex        =   10
-         Top             =   2760
+         Top             =   2280
          Width           =   2175
       End
       Begin VB.TextBox txtPeriodoAmmortamento 
@@ -103,10 +103,10 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2520
+         Left            =   7800
          MaxLength       =   2
          TabIndex        =   14
-         Top             =   3720
+         Top             =   2760
          Width           =   615
       End
       Begin VB.TextBox txtNoteCollaudo 
@@ -124,8 +124,8 @@ Begin VB.Form frmApparatiInput
          MaxLength       =   107
          MultiLine       =   -1  'True
          TabIndex        =   13
-         Top             =   3240
-         Width           =   3255
+         Top             =   3360
+         Width           =   3375
       End
       Begin VB.TextBox txtMatricola 
          BeginProperty Font 
@@ -209,9 +209,9 @@ Begin VB.Form frmApparatiInput
       Begin DataTimeBox.uDataTimeBox oDataScadenza 
          Height          =   375
          Index           =   1
-         Left            =   7320
+         Left            =   2400
          TabIndex        =   9
-         Top             =   2280
+         Top             =   3720
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -222,9 +222,9 @@ Begin VB.Form frmApparatiInput
       Begin DataTimeBox.uDataTimeBox oDataFabbricazione 
          Height          =   375
          Index           =   0
-         Left            =   2520
+         Left            =   2400
          TabIndex        =   8
-         Top             =   2280
+         Top             =   2760
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -235,9 +235,9 @@ Begin VB.Form frmApparatiInput
       Begin DataTimeBox.uDataTimeBox oDataAcquisizione 
          Height          =   375
          Index           =   2
-         Left            =   7320
+         Left            =   2400
          TabIndex        =   11
-         Top             =   2760
+         Top             =   2280
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -248,7 +248,7 @@ Begin VB.Form frmApparatiInput
       Begin DataTimeBox.uDataTimeBox oDataCollaudo 
          Height          =   375
          Index           =   3
-         Left            =   2520
+         Left            =   2400
          TabIndex        =   12
          Top             =   3240
          Width           =   2100
@@ -272,9 +272,9 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   720
          Index           =   18
-         Left            =   120
+         Left            =   5280
          TabIndex        =   31
-         Top             =   3720
+         Top             =   2700
          Width           =   2295
          WordWrap        =   -1  'True
       End
@@ -311,9 +311,9 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   13
-         Left            =   5280
+         Left            =   120
          TabIndex        =   28
-         Top             =   2790
+         Top             =   2310
          Width           =   1890
       End
       Begin VB.Label Label1 
@@ -332,7 +332,7 @@ Begin VB.Form frmApparatiInput
          Index           =   12
          Left            =   120
          TabIndex        =   27
-         Top             =   2310
+         Top             =   2790
          Width           =   2055
       End
       Begin VB.Label Label1 
@@ -406,9 +406,9 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   8
-         Left            =   120
+         Left            =   5280
          TabIndex        =   23
-         Top             =   2790
+         Top             =   2310
          Width           =   2295
       End
       Begin VB.Label Label1 
@@ -427,7 +427,7 @@ Begin VB.Form frmApparatiInput
          Index           =   3
          Left            =   5280
          TabIndex        =   22
-         Top             =   3270
+         Top             =   3390
          Width           =   1500
       End
       Begin VB.Label Label1 
@@ -482,9 +482,9 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   5280
+         Left            =   120
          TabIndex        =   19
-         Top             =   2310
+         Top             =   3750
          Width           =   1605
       End
       Begin VB.Label Label1 
@@ -723,16 +723,16 @@ Dim numKey As Integer
         Exit Sub
     End If
     
+    If oDataAcquisizione(2).txtBox = "" Then
+        MsgBox "Inserire la Data di Acquisizione", vbCritical, "Attenzione"
+        Exit Sub
+    End If
+    
     If cboModalitaAcquisizione(1).Text = "" Then
         MsgBox "Inserire la Modalità di Acquisizione", vbCritical, "Attenzione"
         Exit Sub
     End If
     
-    If oDataAcquisizione(2).txtBox = "" Then
-        MsgBox "Inserire la Data di Acquisizione", vbCritical, "Attenzione"
-        Exit Sub
-    End If
-
     If txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
     End If
@@ -771,7 +771,10 @@ Dim numKey As Integer
         Unload frmApparatiInput
     Else
         ModificaApparato = False
+        Unload frmApparatiInput
     End If
+    
+    
     
 End Sub
 

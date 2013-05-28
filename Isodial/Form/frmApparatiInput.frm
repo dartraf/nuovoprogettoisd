@@ -3,19 +3,19 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmApparatiInput 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Inserimento Gestioni Apparati"
-   ClientHeight    =   5520
+   ClientHeight    =   7185
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   10680
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5520
+   ScaleHeight     =   7185
    ScaleWidth      =   10680
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
-      Height          =   4575
+      Height          =   6255
       Left            =   120
       TabIndex        =   0
       Top             =   0
@@ -103,7 +103,7 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   7800
+         Left            =   8520
          MaxLength       =   2
          TabIndex        =   14
          Top             =   2760
@@ -119,12 +119,11 @@ Begin VB.Form frmApparatiInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1005
+         Height          =   2835
          Left            =   6960
-         MaxLength       =   107
          MultiLine       =   -1  'True
          TabIndex        =   13
-         Top             =   3360
+         Top             =   3240
          Width           =   3375
       End
       Begin VB.TextBox txtMatricola 
@@ -258,6 +257,134 @@ Begin VB.Form frmApparatiInput
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
       End
+      Begin VB.Frame Frame3 
+         Caption         =   "Periodicità Manutenzione Ordinaria"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   -1  'True
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   1455
+         Left            =   120
+         TabIndex        =   32
+         Top             =   4680
+         Width           =   3975
+         Begin VB.ComboBox cboSicurezza 
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00000000&
+            Height          =   315
+            ItemData        =   "frmApparatiInput.frx":0000
+            Left            =   1560
+            List            =   "frmApparatiInput.frx":001C
+            Style           =   2  'Dropdown List
+            TabIndex        =   36
+            Top             =   960
+            Width           =   2295
+         End
+         Begin VB.ComboBox cboFunzionalita 
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00000000&
+            Height          =   315
+            ItemData        =   "frmApparatiInput.frx":007C
+            Left            =   1560
+            List            =   "frmApparatiInput.frx":0098
+            Style           =   2  'Dropdown List
+            TabIndex        =   35
+            Top             =   480
+            Width           =   2295
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Funzionalità"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   5
+            Left            =   120
+            TabIndex        =   34
+            Top             =   480
+            Width           =   1260
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Sicurezza"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   4
+            Left            =   120
+            TabIndex        =   33
+            Top             =   960
+            Width           =   1020
+         End
+      End
+      Begin DataTimeBox.uDataTimeBox oDataRottamazione 
+         Height          =   375
+         Index           =   0
+         Left            =   2400
+         TabIndex        =   37
+         Top             =   4200
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data Rottamazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   15
+         Left            =   120
+         TabIndex        =   38
+         Top             =   4250
+         Width           =   1995
+      End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Periodo Ammortamento (anni)"
@@ -270,12 +397,12 @@ Begin VB.Form frmApparatiInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   720
+         Height          =   345
          Index           =   18
          Left            =   5280
          TabIndex        =   31
-         Top             =   2700
-         Width           =   2295
+         Top             =   2790
+         Width           =   3375
          WordWrap        =   -1  'True
       End
       Begin VB.Label Label1 
@@ -423,11 +550,11 @@ Begin VB.Form frmApparatiInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   240
+         Height          =   345
          Index           =   3
          Left            =   5280
          TabIndex        =   22
-         Top             =   3390
+         Top             =   3240
          Width           =   1500
       End
       Begin VB.Label Label1 
@@ -530,7 +657,7 @@ Begin VB.Form frmApparatiInput
       Height          =   975
       Left            =   120
       TabIndex        =   30
-      Top             =   4440
+      Top             =   6120
       Width           =   10455
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -733,6 +860,21 @@ Dim numKey As Integer
         Exit Sub
     End If
     
+    If oDataRottamazione(0).txtBox = "" Then
+        MsgBox "Inserire la Data di Rottamazione", vbCritical, "Attenzione"
+        Exit Sub
+    End If
+    
+    If cboFunzionalita.ListIndex = -1 Then
+        MsgBox "Inserire la Periodicità della Funzionalità", vbCritical, "Attenzione"
+        Exit Sub
+    End If
+    
+    If cboSicurezza.ListIndex = -1 Then
+        MsgBox "Inserire la Periodicità della Sicurezza", vbCritical, "Attenzione"
+        Exit Sub
+    End If
+    
     If txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
     End If
@@ -748,10 +890,10 @@ Dim numKey As Integer
     End If
         
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
-                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_SCADENZA", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "PERIODO_AMMORTAMENTO")
+                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_SCADENZA", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO", "FUNZIONALITA", "SICUREZZA")
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
-                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataScadenza(1).data = "", Null, oDataScadenza(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), txtPeriodoAmmortamento)
+                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataScadenza(1).data = "", Null, oDataScadenza(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento, cboFunzionalita.ListIndex, cboSicurezza.ListIndex)
             
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -774,8 +916,6 @@ Dim numKey As Integer
         Unload frmApparatiInput
     End If
     
-    
-    
 End Sub
 
 Private Sub Pulisci()
@@ -790,12 +930,15 @@ Private Sub Pulisci()
     cboModalitaAcquisizione(1).Text = ""
     oDataAcquisizione(2).Pulisci
     oDataCollaudo(3).Pulisci
+    oDataRottamazione(0).Pulisci
     txtNoteCollaudo.Text = ""
     txtPeriodoAmmortamento.Text = ""
     txtNumeroInventario.SetFocus
     txtNumeroInventario_GotFocus
     NumeroApparato = 0
     tTrova.keyReturn = 0
+    cboFunzionalita.ListIndex = -1
+    cboSicurezza.ListIndex = -1
 End Sub
 
 Private Sub Form_Activate()
@@ -833,8 +976,11 @@ Private Sub CaricaApparato()
         cboModalitaAcquisizione(1).Text = rsCercaApparato("MODALITA_ACQUISIZIONE")
         oDataAcquisizione(2).txtBox = rsCercaApparato("DATA_ACQUISIZIONE") & ""
         oDataCollaudo(3).txtBox = rsCercaApparato("DATA_COLLAUDO") & ""
+        oDataRottamazione(0).txtBox = rsCercaApparato("DATA_ROTTAMAZIONE") & ""
         txtNoteCollaudo.Text = rsCercaApparato("NOTE_COLLAUDO")
         txtPeriodoAmmortamento.Text = rsCercaApparato("PERIODO_AMMORTAMENTO")
+        cboFunzionalita.ListIndex = rsCercaApparato("FUNZIONALITA")
+        cboSicurezza.ListIndex = rsCercaApparato("SICUREZZA")
         
     Set rsCercaApparato = Nothing
     ModificaApparato = True

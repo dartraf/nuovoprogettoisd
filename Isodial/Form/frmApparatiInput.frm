@@ -86,11 +86,11 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   7800
+         Left            =   7920
          Sorted          =   -1  'True
          TabIndex        =   10
          Top             =   2280
-         Width           =   2175
+         Width           =   1575
       End
       Begin VB.TextBox txtPeriodoAmmortamento 
          BeginProperty Font 
@@ -107,7 +107,7 @@ Begin VB.Form frmApparatiInput
          MaxLength       =   2
          TabIndex        =   14
          Top             =   2760
-         Width           =   615
+         Width           =   495
       End
       Begin VB.TextBox txtNoteCollaudo 
          BeginProperty Font 
@@ -119,12 +119,12 @@ Begin VB.Form frmApparatiInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2835
-         Left            =   6960
+         Height          =   2355
+         Left            =   4440
          MultiLine       =   -1  'True
          TabIndex        =   13
-         Top             =   3240
-         Width           =   3375
+         Top             =   3720
+         Width           =   5895
       End
       Begin VB.TextBox txtMatricola 
          BeginProperty Font 
@@ -258,7 +258,7 @@ Begin VB.Form frmApparatiInput
          VisibleElenca   =   0   'False
       End
       Begin VB.Frame Frame3 
-         Caption         =   "Periodicità Manutenzione Ordinaria"
+         Caption         =   "Frequenza Manutenzione Ordinaria"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -521,7 +521,7 @@ Begin VB.Form frmApparatiInput
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Modalità Acquisizione"
+         Caption         =   "Modalità di Acquisizione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -536,7 +536,7 @@ Begin VB.Form frmApparatiInput
          Left            =   5280
          TabIndex        =   23
          Top             =   2310
-         Width           =   2295
+         Width           =   2550
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -552,9 +552,9 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   345
          Index           =   3
-         Left            =   5280
+         Left            =   6700
          TabIndex        =   22
-         Top             =   3240
+         Top             =   3360
          Width           =   1500
       End
       Begin VB.Label Label1 
@@ -866,12 +866,12 @@ Dim numKey As Integer
     End If
     
     If cboFunzionalita.ListIndex = -1 Then
-        MsgBox "Inserire la Periodicità della Funzionalità", vbCritical, "Attenzione"
+        MsgBox "Inserire la Frequenza per la Manutenzione Ordinaria della FUNZIONALITA'", vbCritical, "Attenzione"
         Exit Sub
     End If
     
     If cboSicurezza.ListIndex = -1 Then
-        MsgBox "Inserire la Periodicità della Sicurezza", vbCritical, "Attenzione"
+        MsgBox "Inserire la Frequenza per la Manutenzione Ordinaria della SICUREZZA", vbCritical, "Attenzione"
         Exit Sub
     End If
     

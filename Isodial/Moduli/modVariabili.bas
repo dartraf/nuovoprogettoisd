@@ -81,3 +81,5 @@ Public dt_rott_rene As Date             ' data rottamazione del rene selezionato
 Public cod_rene As Integer
 Public sostituito As Boolean
 
+Public MantieniKeyReturn As Integer     ' variabile per il form Apparati
+

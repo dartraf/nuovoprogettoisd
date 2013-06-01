@@ -131,7 +131,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim MantieniKeyReturn As Integer
 Dim rsApparati As Recordset
 Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
@@ -172,9 +171,7 @@ Dim i As Integer
             .CellFontBold = True
          Next i
      End With
-     
-     MantieniKeyReturn = -1
-     
+         
 End Sub
 
 Private Sub CaricaFlx()
@@ -284,7 +281,7 @@ Private Sub cmdInserisci_Click()
     frmApparatiInput.Show 1
     Call CaricaFlx
     
-    If MantieniKeyReturn = 0 Then
+    If MantieniKeyReturn = 0 Or MantieniKeyReturn = -1 Then
         num = GetNumero("APPARATI") - 1
     Else
         num = MantieniKeyReturn
@@ -310,9 +307,6 @@ Private Sub flxGriglia_Click()
         ' annulla le row e col
         flxGriglia.Row = 0
         flxGriglia.Col = 0
-        ' per evitare di colorare quando seleziono un record passi:
-        ' clicco su inserisci poi chiudi
-        MantieniKeyReturn = -1
     Else
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col

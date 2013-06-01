@@ -205,7 +205,7 @@ Begin VB.Form frmApparatiInput
          Top             =   360
          Width           =   615
       End
-      Begin DataTimeBox.uDataTimeBox oDataScadenza 
+      Begin DataTimeBox.uDataTimeBox oDataDismissione 
          Height          =   375
          Index           =   1
          Left            =   2400
@@ -597,7 +597,7 @@ Begin VB.Form frmApparatiInput
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Data Scadenza"
+         Caption         =   "Data Dismissione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -612,7 +612,7 @@ Begin VB.Form frmApparatiInput
          Left            =   120
          TabIndex        =   19
          Top             =   3750
-         Width           =   1605
+         Width           =   1845
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -816,7 +816,12 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
 End Sub
 
 Private Sub cmdChiudi_Click()
-    Unload frmApparatiInput
+    If MantieniKeyReturn > 0 Then
+        Unload frmApparatiInput
+    Else
+        MantieniKeyReturn = -2
+        Unload frmApparatiInput
+    End If
 End Sub
 
 Private Sub cmdMemorizza_Click()
@@ -890,10 +895,10 @@ Dim numKey As Integer
     End If
         
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
-                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_SCADENZA", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO", "FUNZIONALITA", "SICUREZZA")
+                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO", "FUNZIONALITA", "SICUREZZA")
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
-                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataScadenza(1).data = "", Null, oDataScadenza(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento, cboFunzionalita.ListIndex, cboSicurezza.ListIndex)
+                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento, cboFunzionalita.ListIndex, cboSicurezza.ListIndex)
             
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -926,7 +931,7 @@ Private Sub Pulisci()
     cboProduttore(0).Text = ""
     cboManutentore(1).Text = ""
     oDataFabbricazione(0).Pulisci
-    oDataScadenza(1).Pulisci
+    oDataDismissione(1).Pulisci
     cboModalitaAcquisizione(1).Text = ""
     oDataAcquisizione(2).Pulisci
     oDataCollaudo(3).Pulisci
@@ -972,7 +977,7 @@ Private Sub CaricaApparato()
         cboProduttore(0).Text = rsCercaApparato("PRODUTTORE")
         cboManutentore(1).Text = rsCercaApparato("MANUTENTORE")
         oDataFabbricazione(0).txtBox = rsCercaApparato("DATA_FABBRICAZIONE") & ""
-        oDataScadenza(1).txtBox = rsCercaApparato("DATA_SCADENZA") & ""
+        oDataDismissione(1).txtBox = rsCercaApparato("DATA_DISMISSIONE") & ""
         cboModalitaAcquisizione(1).Text = rsCercaApparato("MODALITA_ACQUISIZIONE")
         oDataAcquisizione(2).txtBox = rsCercaApparato("DATA_ACQUISIZIONE") & ""
         oDataCollaudo(3).txtBox = rsCercaApparato("DATA_COLLAUDO") & ""

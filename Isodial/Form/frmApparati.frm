@@ -325,6 +325,7 @@ Private Sub flxGriglia_DblClick()
 End Sub
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+On Error GoTo gestione
 ' se NON è stata selezionata una riga esce e NON attiva lo scroll
 '    If flxGriglia.Row = 0 Then
 '       Exit Sub
@@ -338,5 +339,8 @@ Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, 
             End If
     
         End Select
+' Evita crash in caso di griglia non completa
+gestione:
+
 End Sub
 

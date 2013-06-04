@@ -707,6 +707,8 @@ Dim rsMemorizzaApparecchiature As Recordset
 Dim rsCercaApparato As Recordset
 Dim NumeroApparato As Integer
 Dim ModificaApparato As Boolean
+Dim ProxRevFun As String
+Dim ProxRevSic As String
 
 Private Sub cboManutentore_GotFocus(Index As Integer)
     cboManutentore(1).BackColor = colArancione
@@ -888,17 +890,72 @@ Dim numKey As Integer
         
     Set rsMemorizzaApparecchiature = New Recordset
         
+    'calcolo per il la PROXREVFUN
+    If oDataCollaudo(3).data <> "" Then
+        Select Case cboFunzionalita.ListIndex
+            Case Is = 0
+                ' funzione per sommare la date
+                ' d=day, m=month, y=year
+                ProxRevFun = DateAdd("m", 1, oDataCollaudo(3).data)
+            Case Is = 1
+                ProxRevFun = DateAdd("m", 2, oDataCollaudo(3).data)
+            Case Is = 2
+                ProxRevFun = DateAdd("m", 3, oDataCollaudo(3).data)
+            Case Is = 3
+                ProxRevFun = DateAdd("m", 4, oDataCollaudo(3).data)
+            Case Is = 4
+                ProxRevFun = DateAdd("m", 6, oDataCollaudo(3).data)
+            Case Is = 5
+                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
+                ' in quanto la funzione "year" aggiunge il giorno
+                ProxRevFun = DateAdd("m", 12, oDataCollaudo(3).data)
+            Case Is = 6
+                ProxRevFun = DateAdd("m", 24, oDataCollaudo(3).data)
+            Case Is = 7
+                ProxRevFun = DateAdd("m", 36, oDataCollaudo(3).data)
+        End Select
+    End If
+    
+    'calcolo per il la PROXREVSIC
+    If oDataCollaudo(3).data <> "" Then
+        Select Case cboSicurezza.ListIndex
+            Case Is = 0
+                ' funzione per sommare la date
+                ' d=day, m=month, y=year
+                ProxRevSic = DateAdd("m", 1, oDataCollaudo(3).data)
+            Case Is = 1
+                ProxRevSic = DateAdd("m", 2, oDataCollaudo(3).data)
+            Case Is = 2
+                ProxRevSic = DateAdd("m", 3, oDataCollaudo(3).data)
+            Case Is = 3
+                ProxRevSic = DateAdd("m", 4, oDataCollaudo(3).data)
+            Case Is = 4
+                ProxRevSic = DateAdd("m", 6, oDataCollaudo(3).data)
+            Case Is = 5
+                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
+                ' in quanto la funzione "year" aggiunge il giorno
+                ProxRevSic = DateAdd("m", 12, oDataCollaudo(3).data)
+            Case Is = 6
+                ProxRevSic = DateAdd("m", 24, oDataCollaudo(3).data)
+            Case Is = 7
+                ProxRevSic = DateAdd("m", 36, oDataCollaudo(3).data)
+        End Select
+    End If
+        
     If ModificaApparato = True Then
-         numKey = NumeroApparato
+        numKey = NumeroApparato
     Else
         numKey = GetNumero("APPARATI")
     End If
-        
+         
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
-                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO", "FUNZIONALITA", "SICUREZZA")
+                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO" _
+                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC")
+                    
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
-                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento, cboFunzionalita.ListIndex, cboSicurezza.ListIndex)
+                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
+                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic))
             
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -909,7 +966,7 @@ Dim numKey As Integer
     End If
             
     Set rsMemorizzaApparecchiature = Nothing
-    
+            
     Call Pulisci
     Call NumeroInventario
         
@@ -944,6 +1001,8 @@ Private Sub Pulisci()
     tTrova.keyReturn = 0
     cboFunzionalita.ListIndex = -1
     cboSicurezza.ListIndex = -1
+    ProxRevFun = ""
+    ProxRevSic = ""
 End Sub
 
 Private Sub Form_Activate()

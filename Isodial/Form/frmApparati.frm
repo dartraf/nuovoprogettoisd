@@ -143,13 +143,15 @@ Dim i As Integer
     flxGriglia.Rows = 1
     
     With flxGriglia
-        .Cols = 7
+        .Cols = 9
         .ColWidth(1) = .ColWidth(1) * 0.4
         .ColWidth(2) = .ColWidth(1) * 1.7
         .ColWidth(3) = .ColWidth(1) * 2.2
         .ColWidth(4) = .ColWidth(1) * 1.4
         .ColWidth(5) = .ColWidth(1) * 1.2
         .ColWidth(6) = .ColWidth(1) * 1.5
+        .ColWidth(7) = .ColWidth(1) * 1.2
+        .ColWidth(8) = .ColWidth(1) * 1.5
                                        
         .TextMatrix(0, 1) = "N° Inventario"
         .TextMatrix(0, 2) = "N° Apparato"
@@ -157,6 +159,8 @@ Dim i As Integer
         .TextMatrix(0, 4) = "Modello"
         .TextMatrix(0, 5) = "Matricola"
         .TextMatrix(0, 6) = "Produttore"
+        .TextMatrix(0, 7) = "PROXREVFUN"
+        .TextMatrix(0, 8) = "PROXREVSIC"
     End With
     
     Call CaricaFlx
@@ -197,6 +201,8 @@ Private Sub CaricaFlx()
                 .TextMatrix(.Rows - 1, 4) = rsApparati("MODELLO") & ""
                 .TextMatrix(.Rows - 1, 5) = rsApparati("MATRICOLA") & ""
                 .TextMatrix(.Rows - 1, 6) = rsApparati("PRODUTTORE") & ""
+                .TextMatrix(.Rows - 1, 7) = rsApparati("PROXREVFUN") & ""
+                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVSIC") & ""
                 rsApparati.MoveNext
             End With
         Loop

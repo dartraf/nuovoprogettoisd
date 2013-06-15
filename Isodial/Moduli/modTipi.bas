@@ -208,7 +208,6 @@ Private Type structTrova
 Public tTrova As structTrova              '  il tipo passato ai form con molteplici funzioni frmTrova
 '------------------------
 
-    
 Enum tipoTabella
     ' elementi costituiti da due informazioni
     tpCOMUNI
@@ -314,6 +313,15 @@ End Enum
 Public tStampeRiepilogo As tipoStampeRiepilogo
 '------------------------
 
+' Per il form Apparati
+Enum TipoTabellaManutenzione
+    tpMANUTENZIONEORDINARIA
+    tpMANUNTENZIONESTRAORDINARIA
+End Enum
+Public tTabellaManutenzione As TipoTabellaManutenzione
+'------------------------
+
+
 Enum tipoStato
     tpNoneStatoPaziente = -1
     tpDIALISI = 0
@@ -398,3 +406,4 @@ Public Enum enumTipoTabSingolo
     LINEE
     AGO
 End Enum
+

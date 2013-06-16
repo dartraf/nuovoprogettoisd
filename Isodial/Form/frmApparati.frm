@@ -4,14 +4,14 @@ Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Gestione Apparati"
-   ClientHeight    =   9135
+   ClientHeight    =   8865
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   15000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   9135
+   ScaleHeight     =   8865
    ScaleWidth      =   15000
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -221,6 +221,36 @@ Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
 
+Private Sub cmdManutenzioneOrdinaria_Click()
+    Dim num As Integer
+    
+    If KeyApparato = 0 Then
+        MsgBox "Selezionare il Tipo di Apparato", vbInformation, "Informazione"
+    Else
+        tTabellaManutenzione = tpMANUTENZIONEORDINARIA
+        frmInserisciManutenzione.Show 1
+        Call CaricaFlxManutenzione
+    End If
+    
+    
+    ' Funzione per Colorare il record
+    If KeyReturnManutenzione = 0 Or KeyReturnManutenzione = -1 Then
+        num = GetNumero("MANUTENZIONE_APPARATI") - 1
+    Else
+        num = KeyReturnManutenzione
+    End If
+    ' si posiziona sul record e lo seleziona
+    flxManutenzione.Row = Esiste(flxManutenzione, 0, vRow, num)
+    vRow = flxManutenzione.Row
+    Call ColoraFlx(flxManutenzione, flxManutenzione.Cols - 1)
+    If flxManutenzione.Row > 10 Then
+        flxManutenzione.TopRow = flxManutenzione.Row
+    End If
+    ' Per evitare di Ricaricare lo stesso dato
+    KeyReturnManutenzione = 0
+
+End Sub
+
 Private Sub cmdManutenzioneStraordinaria_Click()
     Dim num As Integer
     
@@ -273,11 +303,9 @@ Private Sub flxManutenzione_DblClick()
     KeyReturnManutenzione = flxManutenzione.TextMatrix(vRow, 0)
     
     If flxManutenzione.TextMatrix(vRow, 1) = "STRAORDINARIA" Then
-       cmdManutenzioneStraordinaria_Click
+        cmdManutenzioneStraordinaria_Click
     ElseIf flxManutenzione.TextMatrix(vRow, 1) = "ORDINARIA" Then
-        tTabellaManutenzione = tpMANUTENZIONEORDINARIA
-        frmInserisciManutenzione.Show 1
-        Call CaricaFlxManutenzione
+        cmdManutenzioneOrdinaria_Click
     End If
     
     'per evitare di ricaricare l'apparato
@@ -407,7 +435,7 @@ Private Sub CaricaFlxManutenzione()
     objAnnulla.Refresh
     
     Set rsManutenziona = New Recordset
-    rsManutenziona.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " ORDER BY KEY ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsManutenziona.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " ORDER BY KEY DESC ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     
     If Not (rsManutenziona.EOF And rsManutenziona.BOF) Then
         Do While Not rsManutenziona.EOF
@@ -421,8 +449,16 @@ Private Sub CaricaFlxManutenzione()
                 .TextMatrix(.Rows - 1, 5) = rsManutenziona("DESCRIZIONE_MANUTENZIONE") & ""
                 .TextMatrix(.Rows - 1, 6) = rsManutenziona("DETTAGLI_INTERVENTO") & ""
                 .TextMatrix(.Rows - 1, 7) = rsManutenziona("NUMERO_DOCUMENTO") & ""
-                .TextMatrix(.Rows - 1, 8) = rsManutenziona("FUNZIONALITA") & ""
-                .TextMatrix(.Rows - 1, 9) = rsManutenziona("SICUREZZA") & ""
+                If rsManutenziona("FUNZIONALITA") = -1 Then
+                    .TextMatrix(.Rows - 1, 8) = "     X"
+                Else
+                    .TextMatrix(.Rows - 1, 8) = ""
+                End If
+                If rsManutenziona("SICUREZZA") = -1 Then
+                    .TextMatrix(.Rows - 1, 9) = "     X"
+                Else
+                    .TextMatrix(.Rows - 1, 9) = ""
+                End If
                 rsManutenziona.MoveNext
             End With
         Loop

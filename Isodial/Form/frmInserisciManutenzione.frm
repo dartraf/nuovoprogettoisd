@@ -2,24 +2,59 @@ VERSION 5.00
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmInserisciManutenzione 
    BorderStyle     =   4  'Fixed ToolWindow
-   ClientHeight    =   3870
+   ClientHeight    =   3840
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   9960
+   ClientWidth     =   10185
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3870
-   ScaleWidth      =   9960
+   ScaleHeight     =   3840
+   ScaleWidth      =   10185
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
-   Begin VB.Frame fraManutenzioneStraordinaria 
+   Begin VB.Frame fraManutenzione 
       Height          =   2895
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Visible         =   0   'False
-      Width           =   9735
+      Width           =   9975
+      Begin VB.CheckBox chkSicurezza 
+         Caption         =   "Sicurezza"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   8280
+         TabIndex        =   19
+         Top             =   600
+         Visible         =   0   'False
+         Width           =   1575
+      End
+      Begin VB.CheckBox chkFunzionalità 
+         Caption         =   "Funzionalità"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Left            =   8280
+         TabIndex        =   18
+         Top             =   360
+         Visible         =   0   'False
+         Width           =   1575
+      End
       Begin VB.ComboBox cboDettagliIntervento 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -36,7 +71,7 @@ Begin VB.Form frmInserisciManutenzione
          Sorted          =   -1  'True
          TabIndex        =   5
          Top             =   2280
-         Width           =   6615
+         Width           =   6855
       End
       Begin VB.TextBox txtTipoManutenzione 
          BeginProperty DataFormat 
@@ -63,7 +98,6 @@ Begin VB.Form frmInserisciManutenzione
          Left            =   2400
          Locked          =   -1  'True
          TabIndex        =   14
-         Text            =   "STRAORDINARIA"
          Top             =   360
          Width           =   2055
       End
@@ -88,7 +122,7 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   315
-         Left            =   7440
+         Left            =   7200
          MaxLength       =   5
          TabIndex        =   1
          Top             =   360
@@ -110,13 +144,13 @@ Begin VB.Form frmInserisciManutenzione
          Sorted          =   -1  'True
          TabIndex        =   4
          Top             =   1680
-         Width           =   6615
+         Width           =   6855
       End
-      Begin DataTimeBox.uDataTimeBox oDataRichiestaManutenzione 
+      Begin DataTimeBox.uDataTimeBox oDataEffettivaManutenzione 
          Height          =   375
-         Index           =   0
-         Left            =   7440
-         TabIndex        =   3
+         Index           =   1
+         Left            =   2400
+         TabIndex        =   2
          Top             =   960
          Width           =   2100
          _ExtentX        =   3704
@@ -125,12 +159,27 @@ Begin VB.Form frmInserisciManutenzione
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
       End
-      Begin DataTimeBox.uDataTimeBox oDataEffettivaManutenzione 
+      Begin DataTimeBox.uDataTimeBox oDataScadenzaManutenzione 
          Height          =   375
          Index           =   1
-         Left            =   2400
-         TabIndex        =   2
+         Left            =   7200
+         TabIndex        =   16
          Top             =   960
+         Visible         =   0   'False
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin DataTimeBox.uDataTimeBox oDataRichiestaManutenzione 
+         Height          =   375
+         Index           =   0
+         Left            =   7200
+         TabIndex        =   3
+         Top             =   960
+         Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -170,7 +219,7 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   600
          Index           =   3
-         Left            =   5160
+         Left            =   4800
          TabIndex        =   13
          Top             =   360
          Width           =   2115
@@ -193,25 +242,6 @@ Begin VB.Form frmInserisciManutenzione
          TabIndex        =   12
          Top             =   990
          Width           =   2145
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Data Rchiesta Manut."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   12
-         Left            =   5160
-         TabIndex        =   10
-         Top             =   990
-         Width           =   2220
       End
       Begin VB.Label Label1 
          Caption         =   "Descrizione Manutenzione o Motivazione Richiesta"
@@ -250,13 +280,53 @@ Begin VB.Form frmInserisciManutenzione
          Top             =   2280
          Width           =   1905
       End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data Scadenza Manut."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   5
+         Left            =   4800
+         TabIndex        =   17
+         Top             =   990
+         Visible         =   0   'False
+         Width           =   2340
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data Rchiesta Manut."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   12
+         Left            =   4800
+         TabIndex        =   10
+         Top             =   990
+         Visible         =   0   'False
+         Width           =   2220
+      End
    End
    Begin VB.Frame Frame2 
       Height          =   975
       Left            =   120
       TabIndex        =   11
       Top             =   2760
-      Width           =   9735
+      Width           =   9975
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          BeginProperty Font 
@@ -269,7 +339,7 @@ Begin VB.Form frmInserisciManutenzione
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   6720
+         Left            =   6960
          TabIndex        =   6
          Top             =   240
          Width           =   1455
@@ -287,7 +357,7 @@ Begin VB.Form frmInserisciManutenzione
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   8400
+         Left            =   8640
          TabIndex        =   7
          Top             =   240
          Width           =   1215
@@ -366,20 +436,40 @@ Dim numKey As Integer
     Else
         numKey = KeyReturnManutenzione
     End If
+    
+    If tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA Then
          
-    v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_RICHIESTA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO")
+        v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_RICHIESTA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO")
         
-    v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataRichiestaManutenzione(0).data = "", Null, oDataRichiestaManutenzione(0).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto)
+        v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataRichiestaManutenzione(0).data = "", Null, oDataRichiestaManutenzione(0).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto)
             
-    If KeyReturnManutenzione > 0 Then
-        rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-        rsManutenzione.Update v_Nomi, v_Val
-    Else
-        rsManutenzione.Open "MANUTENZIONE_APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
-        rsManutenzione.AddNew v_Nomi, v_Val
+        If KeyReturnManutenzione > 0 Then
+            rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            rsManutenzione.Update v_Nomi, v_Val
+        Else
+            rsManutenzione.Open "MANUTENZIONE_APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+            rsManutenzione.AddNew v_Nomi, v_Val
+        End If
+            
+        Set rsManutenzione = Nothing
+                
+    ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then
+    
+        v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_SCADENZA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO", "FUNZIONALITA", "SICUREZZA")
+        
+        v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataScadenzaManutenzione(1).data = "", Null, oDataScadenzaManutenzione(1).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto, IIf(chkFunzionalità.Value = Checked, True, False), IIf(chkSicurezza.Value = Checked, True, False))
+            
+        If KeyReturnManutenzione > 0 Then
+            rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            rsManutenzione.Update v_Nomi, v_Val
+        Else
+            rsManutenzione.Open "MANUTENZIONE_APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+            rsManutenzione.AddNew v_Nomi, v_Val
+        End If
+            
+        Set rsManutenzione = Nothing
+    
     End If
-            
-    Set rsManutenzione = Nothing
                 
     Call Pulisci
         
@@ -408,27 +498,44 @@ End Sub
 Private Sub Form_Load()
     Select Case tTabellaManutenzione
         Case tpMANUNTENZIONESTRAORDINARIA
-            fraManutenzioneStraordinaria.Visible = True
             frmInserisciManutenzione.Caption = "Manutenzione Straordinaria"
+            Label1(12).Visible = True
+            oDataRichiestaManutenzione(0).Visible = True
+            txtTipoManutenzione = "STRAORDINARIA"
             txtNumeroDocumneto_GotFocus
             If KeyReturnManutenzione > 0 Then
-                Call CaricaManutenzioneStraordinaria
+                Call CaricaManutenzione
             End If
             
         Case tpMANUTENZIONEORDINARIA
             frmInserisciManutenzione.Caption = "Manutenzione Ordinaria"
-    
+            chkFunzionalità.Visible = True
+            chkSicurezza.Visible = True
+            Label1(5).Visible = True
+            oDataScadenzaManutenzione(1).Visible = True
+            txtTipoManutenzione = "ORDINARIA"
+            txtNumeroDocumneto_GotFocus
+            If KeyReturnManutenzione > 0 Then
+                Call CaricaManutenzione
+            End If
+            
     End Select
 End Sub
 
-Private Sub CaricaManutenzioneStraordinaria()
+Private Sub CaricaManutenzione()
     Set rsCercaManutenzione = New Recordset
     
     rsCercaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY =" & KeyReturnManutenzione, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
         txtTipoManutenzione.Text = rsCercaManutenzione("TIPO_MANUTENZIONE")
-        oDataRichiestaManutenzione(0).txtBox = rsCercaManutenzione("DATA_RICHIESTA_MANUTENZIONE")
-        oDataEffettivaManutenzione(1).txtBox = rsCercaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")
+        If tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA Then
+            oDataRichiestaManutenzione(0).txtBox = rsCercaManutenzione("DATA_RICHIESTA_MANUTENZIONE") & ""
+        ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then
+            oDataScadenzaManutenzione(1).txtBox = rsCercaManutenzione("DATA_SCADENZA_MANUTENZIONE") & ""
+            chkFunzionalità.Value = IIf(CBool(rsCercaManutenzione("FUNZIONALITA")), Checked, Unchecked)
+            chkSicurezza.Value = IIf(CBool(rsCercaManutenzione("SICUREZZA")), Checked, Unchecked)
+        End If
+        oDataEffettivaManutenzione(1).txtBox = rsCercaManutenzione("DATA_EFFETTIVA_MANUTENZIONE") & ""
         cboDescrizone(0).Text = rsCercaManutenzione("DESCRIZIONE_MANUTENZIONE")
         cboDettagliIntervento(1).Text = rsCercaManutenzione("DETTAGLI_INTERVENTO")
         txtNumeroDocumneto.Text = rsCercaManutenzione("NUMERO_DOCUMENTO")

@@ -225,7 +225,7 @@ Private Sub cmdManutenzioneOrdinaria_Click()
     Dim num As Integer
     
     If KeyApparato = 0 Then
-        MsgBox "Selezionare il Tipo di Apparato", vbInformation, "Informazione"
+        MsgBox "Selezionare Un Apparato", vbInformation, "INFORMAZIONE"
     Else
         tTabellaManutenzione = tpMANUTENZIONEORDINARIA
         frmInserisciManutenzione.Show 1
@@ -255,7 +255,7 @@ Private Sub cmdManutenzioneStraordinaria_Click()
     Dim num As Integer
     
     If KeyApparato = 0 Then
-        MsgBox "Selezionare il Tipo di Apparato", vbInformation, "Informazione"
+        MsgBox "Selezionare Un Apparato", vbInformation, "INFORMAZIONE"
     Else
         tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA
         frmInserisciManutenzione.Show 1

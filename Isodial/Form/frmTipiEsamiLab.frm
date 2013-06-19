@@ -162,7 +162,7 @@ Begin VB.Form frmTipiEsamiLab
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   240
-         Left            =   2280
+         Left            =   2160
          MaxLength       =   45
          TabIndex        =   16
          Top             =   300

@@ -569,6 +569,7 @@ Private Sub flxGriglia_Click()
         ' annulla le row e col
         flxGriglia.Row = 0
         flxGriglia.Col = 0
+        flxManutenzione.Rows = 1
     Else
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col
@@ -584,7 +585,8 @@ Private Sub flxGriglia_DblClick()
     If VerificaClickFlx(flxGriglia) = False Then Exit Sub
     
     ' Seleziono la key dell' apparato e la passo
-    tTrova.keyReturn = flxGriglia.TextMatrix(vRow, 0)
+    ' la passo con la variabile, altrimenti da errore
+    tTrova.keyReturn = KeyApparato
     MantieniKeyReturn = tTrova.keyReturn
     cmdInserisci_Click
     tTrova.keyReturn = 0    'per evitare di ricaricare l'apparato

@@ -193,6 +193,8 @@ Private Sub Memorizza()
     Dim v_Val() As Variant
     Dim v_Nomi() As Variant
     Dim rsDataset As New Recordset
+    
+    Call SuperUcase(Me)
 
     intIDInserito = GetNumero(strNomeTabella)
     v_Nomi = Array("KEY", "NOME")

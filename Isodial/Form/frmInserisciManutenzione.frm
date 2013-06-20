@@ -2,19 +2,19 @@ VERSION 5.00
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmInserisciManutenzione 
    BorderStyle     =   4  'Fixed ToolWindow
-   ClientHeight    =   3615
+   ClientHeight    =   3840
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   10185
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3615
+   ScaleHeight     =   3840
    ScaleWidth      =   10185
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraManutenzione 
-      Height          =   2715
+      Height          =   2895
       Left            =   120
       TabIndex        =   0
       Top             =   0
@@ -30,10 +30,10 @@ Begin VB.Form frmInserisciManutenzione
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   195
-         Left            =   7200
+         Height          =   240
+         Left            =   5880
          TabIndex        =   16
-         Top             =   480
+         Top             =   870
          Visible         =   0   'False
          Width           =   1575
       End
@@ -48,10 +48,10 @@ Begin VB.Form frmInserisciManutenzione
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   195
-         Left            =   4800
+         Height          =   240
+         Left            =   5880
          TabIndex        =   15
-         Top             =   480
+         Top             =   390
          Visible         =   0   'False
          Width           =   1575
       End
@@ -67,11 +67,11 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   5520
+         Left            =   5880
          Sorted          =   -1  'True
          TabIndex        =   5
          Top             =   2040
-         Width           =   4335
+         Width           =   3975
       End
       Begin VB.TextBox txtNumeroDocumneto 
          BeginProperty DataFormat 
@@ -94,7 +94,7 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   315
-         Left            =   2520
+         Left            =   2640
          MaxLength       =   5
          TabIndex        =   1
          Top             =   2040
@@ -121,7 +121,7 @@ Begin VB.Form frmInserisciManutenzione
       Begin DataTimeBox.uDataTimeBox oDataEffettivaManutenzione 
          Height          =   375
          Index           =   1
-         Left            =   7200
+         Left            =   2640
          TabIndex        =   2
          Top             =   840
          Width           =   2100
@@ -134,7 +134,7 @@ Begin VB.Form frmInserisciManutenzione
       Begin DataTimeBox.uDataTimeBox oDataScadenzaManutenzione 
          Height          =   375
          Index           =   1
-         Left            =   2520
+         Left            =   2640
          TabIndex        =   13
          Top             =   360
          Visible         =   0   'False
@@ -148,9 +148,9 @@ Begin VB.Form frmInserisciManutenzione
       Begin DataTimeBox.uDataTimeBox oDataRichiestaManutenzione 
          Height          =   375
          Index           =   0
-         Left            =   2520
+         Left            =   2640
          TabIndex        =   3
-         Top             =   840
+         Top             =   360
          Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
@@ -158,26 +158,6 @@ Begin VB.Form frmInserisciManutenzione
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Data Effettiva Manut."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   2
-         Left            =   4800
-         TabIndex        =   17
-         Top             =   900
-         Visible         =   0   'False
-         Width           =   2145
       End
       Begin VB.Label Label1 
          Caption         =   "N° Rif. Doc. di Lavoro"
@@ -193,9 +173,28 @@ Begin VB.Form frmInserisciManutenzione
          Height          =   360
          Index           =   3
          Left            =   120
-         TabIndex        =   12
+         TabIndex        =   18
          Top             =   2040
          Width           =   2355
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data Effettiva Manut."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   2
+         Left            =   120
+         TabIndex        =   12
+         Top             =   870
+         Width           =   2145
       End
       Begin VB.Label Label1 
          Caption         =   "Descrizione Manutenzione o Motivazione Richiesta"
@@ -229,7 +228,7 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   3480
+         Left            =   3840
          TabIndex        =   8
          Top             =   2040
          Width           =   1905
@@ -256,7 +255,7 @@ Begin VB.Form frmInserisciManutenzione
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Data Richiesta Manut."
+         Caption         =   "Data Rchiesta Manut."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -270,17 +269,46 @@ Begin VB.Form frmInserisciManutenzione
          Index           =   12
          Left            =   120
          TabIndex        =   10
-         Top             =   870
+         Top             =   390
          Visible         =   0   'False
-         Width           =   2280
+         Width           =   2220
       End
    End
    Begin VB.Frame Frame2 
       Height          =   975
       Left            =   120
       TabIndex        =   11
-      Top             =   2600
+      Top             =   2760
       Width           =   9975
+      Begin VB.TextBox txtTipoManutenzione 
+         BeginProperty DataFormat 
+            Type            =   0
+            Format          =   "0"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   315
+         Left            =   120
+         Locked          =   -1  'True
+         TabIndex        =   17
+         Top             =   360
+         Visible         =   0   'False
+         Width           =   2055
+      End
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          BeginProperty Font 
@@ -452,22 +480,22 @@ End Sub
 Private Sub Form_Load()
     Select Case tTabellaManutenzione
         Case tpMANUNTENZIONESTRAORDINARIA
-            frmInserisciManutenzione.Caption = "MANUTENZIONE STRAORDINARIA"
+            frmInserisciManutenzione.Caption = "Manutenzione Straordinaria"
             Label1(12).Visible = True
             oDataRichiestaManutenzione(0).Visible = True
-'            txtTipoManutenzione = "STRAORDINARIA"
+            txtTipoManutenzione = "STRAORDINARIA"
             txtNumeroDocumneto_GotFocus
             If KeyReturnManutenzione > 0 Then
                 Call CaricaManutenzione
             End If
             
         Case tpMANUTENZIONEORDINARIA
-            frmInserisciManutenzione.Caption = "MANUTENZIONE ORDINARIA"
+            frmInserisciManutenzione.Caption = "Manutenzione Ordinaria"
             chkFunzionalità.Visible = True
             chkSicurezza.Visible = True
             Label1(5).Visible = True
             oDataScadenzaManutenzione(1).Visible = True
-  '          txtTipoManutenzione = "ORDINARIA"
+            txtTipoManutenzione = "ORDINARIA"
             txtNumeroDocumneto_GotFocus
             If KeyReturnManutenzione > 0 Then
                 Call CaricaManutenzione
@@ -481,7 +509,7 @@ Private Sub CaricaManutenzione()
     
     rsCercaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY =" & KeyReturnManutenzione, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
- '       txtTipoManutenzione.Text = rsCercaManutenzione("TIPO_MANUTENZIONE")
+        txtTipoManutenzione.Text = rsCercaManutenzione("TIPO_MANUTENZIONE")
         If tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA Then
             oDataRichiestaManutenzione(0).txtBox = rsCercaManutenzione("DATA_RICHIESTA_MANUTENZIONE") & ""
         ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then

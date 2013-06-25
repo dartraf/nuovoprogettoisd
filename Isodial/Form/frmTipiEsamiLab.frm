@@ -662,7 +662,7 @@ Private Sub AggiornaGriglie(grigliaGruppi As Boolean)
             flxNomi.RemoveItem (flxNomi.Row)
         End If
         ' discolora
-        Call ColoraFlx(flxNomi, flxNomi.Cols - 1, True)
+   '     Call ColoraFlx(flxNomi, flxNomi.Cols - 1, True)
         ' annulla le row e col
         flxNomi.Row = 0
         flxNomi.Col = 0
@@ -807,7 +807,6 @@ Private Sub cmdElimina_Click()
             If MsgBox("Si conferma l'eliminazione del gruppo: " & flxNomi.TextMatrix(flxNomi.Row, 1) & "?", vbQuestion + vbYesNo + vbDefaultButton2, "Eliminazione Gruppo") = vbYes Then
                 ' il gruppo puo essere eliminato senza problemi
                 Call EliminaGruppo(codiceGruppo)
-                
                 Call AggiornaGriglie(True)
                 MsgBox "Il Gruppo è stato eliminato!!!", vbInformation, "Elimina Gruppo"
             End If

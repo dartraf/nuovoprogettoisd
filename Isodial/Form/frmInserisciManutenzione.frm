@@ -437,6 +437,16 @@ Dim numKey As Integer
                 
     ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then
     
+        If chkFunzionalità.Value = Checked And chkSicurezza.Value = Unchecked Then
+            txtTipoManutenzione.Text = "ORD. FUNZ."
+        ElseIf chkSicurezza.Value = Checked And chkFunzionalità.Value = Unchecked Then
+            txtTipoManutenzione.Text = "ORD. SICUR."
+        ElseIf chkFunzionalità.Value = Checked And chkSicurezza.Value = Checked Then
+            txtTipoManutenzione.Text = "ORD. FUN. SIC."
+        ElseIf chkFunzionalità.Value = Unchecked Or chkSicurezza.Value = Unchecked Then
+            txtTipoManutenzione.Text = "ORDINARIA"
+         End If
+            
         v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_SCADENZA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO", "FUNZIONALITA", "SICUREZZA")
         
         v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataScadenzaManutenzione(1).data = "", Null, oDataScadenzaManutenzione(1).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto, IIf(chkFunzionalità.Value = Checked, True, False), IIf(chkSicurezza.Value = Checked, True, False))
@@ -495,7 +505,6 @@ Private Sub Form_Load()
             chkSicurezza.Visible = True
             Label1(5).Visible = True
             oDataScadenzaManutenzione(1).Visible = True
-            txtTipoManutenzione = "ORDINARIA"
             txtNumeroDocumneto_GotFocus
             If KeyReturnManutenzione > 0 Then
                 Call CaricaManutenzione

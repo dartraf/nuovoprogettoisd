@@ -232,7 +232,6 @@ Private Sub cmdManutenzioneOrdinaria_Click()
         Call CaricaFlxManutenzione
     End If
     
-    
     ' Funzione per Colorare il record
     If KeyReturnManutenzione = 0 Or KeyReturnManutenzione = -1 Then
         num = GetNumero("MANUTENZIONE_APPARATI") - 1
@@ -360,7 +359,7 @@ Dim i As Integer
     flxManutenzione.Rows = 1
     
     With flxManutenzione
-        .Cols = 10
+        .Cols = 8
         .ColWidth(1) = .ColWidth(1) * 0.4
         .ColWidth(2) = .ColWidth(1) * 1.7
         .ColWidth(3) = .ColWidth(1) * 2.2
@@ -368,8 +367,6 @@ Dim i As Integer
         .ColWidth(5) = .ColWidth(1) * 1.2
         .ColWidth(6) = .ColWidth(1) * 1.5
         .ColWidth(7) = .ColWidth(1) * 1.2
-        .ColWidth(8) = .ColWidth(1) * 1.5
-        .ColWidth(9) = .ColWidth(1) * 1.5
                                        
         .TextMatrix(0, 1) = "Tipo Manutenzione"
         .TextMatrix(0, 2) = "Data Scadenza Manutenzione"
@@ -378,8 +375,6 @@ Dim i As Integer
         .TextMatrix(0, 5) = "Descrizione Manutenzione"
         .TextMatrix(0, 6) = "Dettagli Intervento"
         .TextMatrix(0, 7) = "Riferimento N° Documento Lavoro"
-        .TextMatrix(0, 8) = "Funzionalità"
-        .TextMatrix(0, 9) = "Sicurezza"
     End With
         
     With flxManutenzione
@@ -449,16 +444,6 @@ Private Sub CaricaFlxManutenzione()
                 .TextMatrix(.Rows - 1, 5) = rsManutenziona("DESCRIZIONE_MANUTENZIONE") & ""
                 .TextMatrix(.Rows - 1, 6) = rsManutenziona("DETTAGLI_INTERVENTO") & ""
                 .TextMatrix(.Rows - 1, 7) = rsManutenziona("NUMERO_DOCUMENTO") & ""
-                If rsManutenziona("FUNZIONALITA") = -1 Then
-                    .TextMatrix(.Rows - 1, 8) = "     X"
-                Else
-                    .TextMatrix(.Rows - 1, 8) = ""
-                End If
-                If rsManutenziona("SICUREZZA") = -1 Then
-                    .TextMatrix(.Rows - 1, 9) = "     X"
-                Else
-                    .TextMatrix(.Rows - 1, 9) = ""
-                End If
                 rsManutenziona.MoveNext
             End With
         Loop

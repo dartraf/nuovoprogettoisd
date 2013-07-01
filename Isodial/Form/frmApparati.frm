@@ -301,9 +301,13 @@ Private Sub flxManutenzione_DblClick()
     ' Seleziono la key della manutenzione e la passo
     KeyReturnManutenzione = flxManutenzione.TextMatrix(vRow, 0)
     
+    ' Se il campo della griglia Tipo Manutenzione è uguale a Straordinaria
+    ' carica il cmdManutenzioneStraordinaria
     If flxManutenzione.TextMatrix(vRow, 1) = "STRAORDINARIA" Then
         cmdManutenzioneStraordinaria_Click
-    ElseIf flxManutenzione.TextMatrix(vRow, 1) = "ORDINARIA" Then
+    ' Se il campo della griglia Tipo Manutenzione è diverso (per evitare di elencare tutti i campi)
+    ' da Straordinaria carica il cmdManutenzioneOrdianria
+    ElseIf flxManutenzione.TextMatrix(vRow, 1) <> "STRAORDINARIA" Then
         cmdManutenzioneOrdinaria_Click
     End If
     
@@ -321,16 +325,16 @@ Dim i As Integer
     
     With flxGriglia
         .Cols = 9
-        .ColWidth(1) = .ColWidth(1) * 0.4
-        .ColWidth(2) = .ColWidth(1) * 1.7
-        .ColWidth(3) = .ColWidth(1) * 2.2
-        .ColWidth(4) = .ColWidth(1) * 1.4
-        .ColWidth(5) = .ColWidth(1) * 1.2
-        .ColWidth(6) = .ColWidth(1) * 1.5
-        .ColWidth(7) = .ColWidth(1) * 1.2
-        .ColWidth(8) = .ColWidth(1) * 1.5
+        .ColWidth(1) = .ColWidth(1) * 0.2
+        .ColWidth(2) = .ColWidth(1) * 2.1
+        .ColWidth(3) = .ColWidth(1) * 3.2
+        .ColWidth(4) = .ColWidth(1) * 2.5
+        .ColWidth(5) = .ColWidth(1) * 2.2
+        .ColWidth(6) = .ColWidth(1) * 2.8
+        .ColWidth(7) = .ColWidth(1) * 2.2
+        .ColWidth(8) = .ColWidth(1) * 2.1
                                        
-        .TextMatrix(0, 1) = "N° Inventario"
+        .TextMatrix(0, 1) = "N° Inv."
         .TextMatrix(0, 2) = "N° Apparato"
         .TextMatrix(0, 3) = "Tipo Apparato"
         .TextMatrix(0, 4) = "Modello"
@@ -361,20 +365,20 @@ Dim i As Integer
     With flxManutenzione
         .Cols = 8
         .ColWidth(1) = .ColWidth(1) * 0.4
-        .ColWidth(2) = .ColWidth(1) * 1.7
-        .ColWidth(3) = .ColWidth(1) * 2.2
+        .ColWidth(2) = .ColWidth(1) * 1.4
+        .ColWidth(3) = .ColWidth(1) * 1.4
         .ColWidth(4) = .ColWidth(1) * 1.4
-        .ColWidth(5) = .ColWidth(1) * 1.2
+        .ColWidth(5) = .ColWidth(1) * 1.5
         .ColWidth(6) = .ColWidth(1) * 1.5
-        .ColWidth(7) = .ColWidth(1) * 1.2
+        .ColWidth(7) = .ColWidth(1) * 0.9
                                        
-        .TextMatrix(0, 1) = "Tipo Manutenzione"
-        .TextMatrix(0, 2) = "Data Scadenza Manutenzione"
-        .TextMatrix(0, 3) = "Data Richiesta Manutenzione"
-        .TextMatrix(0, 4) = "Daya Effettiva Manutenzione"
-        .TextMatrix(0, 5) = "Descrizione Manutenzione"
-        .TextMatrix(0, 6) = "Dettagli Intervento"
-        .TextMatrix(0, 7) = "Riferimento N° Documento Lavoro"
+        .TextMatrix(0, 1) = "Tp. Manutenz."
+        .TextMatrix(0, 2) = "Dt. Scad. Manutenz."
+        .TextMatrix(0, 3) = "Dt. Rich. Manutenz."
+        .TextMatrix(0, 4) = "Dt. Effet. Manutenz."
+        .TextMatrix(0, 5) = "Descr. Manutenz."
+        .TextMatrix(0, 6) = "Dett. Intervento"
+        .TextMatrix(0, 7) = "N° Doc. Lav."
     End With
         
     With flxManutenzione

@@ -50,31 +50,12 @@ Begin VB.Form frmTabelle
       Width           =   9495
       Begin WheelCatch.WheelCatcher WheelCatcher1 
          Height          =   480
-         Left            =   1800
-         TabIndex        =   12
-         Top             =   480
+         Left            =   1440
+         TabIndex        =   11
+         Top             =   360
          Width           =   480
          _ExtentX        =   847
          _ExtentY        =   847
-      End
-      Begin VB.ComboBox cboModalitaAcquisizioneProprieta 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Index           =   0
-         Left            =   3480
-         Sorted          =   -1  'True
-         TabIndex        =   11
-         Top             =   2040
-         Visible         =   0   'False
-         Width           =   3615
       End
       Begin VB.TextBox txtAppo 
          BeginProperty Font 
@@ -258,36 +239,6 @@ Dim lettera As String * 1
 Const ESENTE As String = "ESENTE"           ' true
 Const NONESENTE As String = "NON ESENTE"    ' false
 
-Private Sub cboModalitaAcquisizioneProprieta_Click(Index As Integer)
-    cboModalitaAcquisizioneProprieta(0).Visible = False
-End Sub
-
-Private Sub cboModalitaAcquisizioneProprieta_LostFocus(Index As Integer)
-    
-    If Len(cboModalitaAcquisizioneProprieta(0)) > 20 Then
-        MsgBox "Impossibile memorizzare più di 20 caratteri", vbInformation, "Informazione"
-        cboModalitaAcquisizioneProprieta(0).Text = ""
-        Exit Sub
-    End If
-    
-    If cboModalitaAcquisizioneProprieta(0).Text <> "" Then
-        Call GestisciNuovo("MODALITA_ACQUISIZIONE", cboModalitaAcquisizioneProprieta(0))
-    End If
-    
-    If flxGriglia.TextMatrix(vRow, vCol) <> cboModalitaAcquisizioneProprieta(0).Text Then
-        Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
-        cmdAnnulla.Enabled = True
-        flxGriglia.TextMatrix(vRow, vCol) = cboModalitaAcquisizioneProprieta(0).Text
-        Call SalvaModifiche
-    End If
-    cboModalitaAcquisizioneProprieta(0).Visible = False
-    
-    'Carico il valore nella flxgrid così quando inserisco un nuovo
-    'valore nella combobox viene inserito direttamente nella flxgrid
-    'flxGriglia.TextMatrix(vRow, 5) = cboModalitaAcquisizioneProprieta(0).Text
-    
-End Sub
-
 'Private Sub wheelMouse_MouseScroll(MouseKeys As Long, Rotation As Long, X As Long, Y As Long, ControlHWnd As Long)
 '    If ControlHWnd = flxGriglia.hWnd Then
 '        If flxGriglia.TopRow - Rotation > 0 Then
@@ -311,11 +262,8 @@ Private Sub Form_Activate()
         Else
             nomeTabella = "ASL"
         End If
+        
         Call RicaricaComboBox(nomeTabella, "NOME", cboAppo)
-    End If
-
-    If tTabelle = tpRENI Then
-        Call RicaricaComboBox("MODALITA_ACQUISIZIONE", "NOME", cboModalitaAcquisizioneProprieta(0))
     End If
 
 End Sub
@@ -466,37 +414,25 @@ Private Sub Form_Load()
                 End With
                 Call CaricaFlx
                 cmdElimina.Visible = False
-            Case tpRENI 'modificare qui
+            Case tpRENI
                 nomeTabella = "RENI"
                 Me.Caption = Me.Caption & "Gestione Reni"
-                frmTabelle.Width = 15000    'modificare
-                fraListaMain.Width = 14500  'modificare
-                flxGriglia.Width = 14000    'modificare
                 With flxGriglia
-                    .Cols = 8
+                    .Cols = 7
                     .ColWidth(1) = .ColWidth(1) * 1 / 2.8
                     .ColWidth(2) = .ColWidth(1) * 0.7
-                    .ColWidth(3) = .ColWidth(1) * 1.5
-                    .ColWidth(4) = .ColWidth(1) * 1.5
-                    .ColWidth(5) = .ColWidth(1) * 0.7
-                    .ColWidth(6) = .ColWidth(1) * 1.5
-                    .ColWidth(7) = .ColWidth(1) * 1.5
-                    
-                    '.ColWidth(5) = .ColWidth(1) * 0.9 ' ultimi campi modificare alla fine
-                    '.ColWidth(6) = .ColWidth(1) * 0.8
-                    '.ColWidth(7) = .ColWidth(1) * 0.9
+                    .ColWidth(3) = .ColWidth(1) * 1.9
+                    .ColWidth(4) = .ColWidth(1) * 0.9
+                    .ColWidth(5) = .ColWidth(1) * 0.8
+                    .ColWidth(6) = .ColWidth(1) * 0.9
                     
                     
                     .TextMatrix(0, 1) = "Postazione"
                     .TextMatrix(0, 2) = "N° rene"
-                    .TextMatrix(0, 3) = "Descrizione"
-                    .TextMatrix(0, 4) = "Azienda"
-                    .TextMatrix(0, 5) = "Mod.Acquisiz.Prop."
-                    .TextMatrix(0, 6) = "Period.Ammortam."
-                    .TextMatrix(0, 7) = "Dt.Installaz."
-                    '.TextMatrix(0, 5) = "Matricola"  'ultimi campi modificare alla fine
-                    '.TextMatrix(0, 6) = "Tipo"
-                    '.TextMatrix(0, 7) = "Dt.Rottam."
+                    .TextMatrix(0, 3) = "Monitor"
+                    .TextMatrix(0, 4) = "Matricola"
+                    .TextMatrix(0, 5) = "Tipo"
+                    .TextMatrix(0, 6) = "Dt.Rottam."
                     
                 End With
                 Call CaricaFlx
@@ -562,29 +498,24 @@ Private Sub CaricaFlx()
                     .TextMatrix(.Rows - 1, 2) = rsTabelle("NOME") & ""
                     .TextMatrix(.Rows - 1, 3) = VirgolaOrPunto(rsTabelle("IMPORTO"), ",")
                     .TextMatrix(.Rows - 1, 4) = VirgolaOrPunto(rsTabelle("IMPORTO_SCONTATO"), ",")
-                ElseIf tTabelle = tpRENI Then   ' modifricare qui
+                ElseIf tTabelle = tpRENI Then
                     .TextMatrix(.Rows - 1, 1) = rsTabelle("POSTAZIONE")
                     .TextMatrix(.Rows - 1, 2) = rsTabelle("NUMERO_RENE") & ""
                     .TextMatrix(.Rows - 1, 3) = rsTabelle("TIPO_RENE") & ""
-                    .TextMatrix(.Rows - 1, 4) = rsTabelle("AZIENDA") & ""
-                    .TextMatrix(.Rows - 1, 5) = rsTabelle("MODALITA_ACQUISIZIONE_PROPRIETA") & "" ' come caricare modalita acquisizione
-                    .TextMatrix(.Rows - 1, 6) = rsTabelle("PERIODO_AMMORTAMENTO") & ""
-                    .TextMatrix(.Rows - 1, 7) = rsTabelle("DATA_INSTALLAZIONE") & ""
-                    
-                    '.TextMatrix(.Rows - 1, 5) = rsTabelle("MATRICOLA") & ""
-                    'If rsTabelle("TIPO") = 0 Then ' vedere alla fine il valore
-                    '    .TextMatrix(.Rows - 1, 6) = "NEG"
-                    'ElseIf rsTabelle("TIPO") = 1 Then
-                    '    .TextMatrix(.Rows - 1, 6) = "HCV POS"
-                    'Else
-                    '    .TextMatrix(.Rows - 1, 6) = "HBV POS"
+                    .TextMatrix(.Rows - 1, 4) = rsTabelle("MATRICOLA") & ""
+                    If rsTabelle("TIPO") = 0 Then
+                        .TextMatrix(.Rows - 1, 5) = "NEG"
+                    ElseIf rsTabelle("TIPO") = 1 Then
+                        .TextMatrix(.Rows - 1, 5) = "HCV POS"
+                    Else
+                        .TextMatrix(.Rows - 1, 5) = "HBV POS"
                     End If
-                    '.Col = 6       'vedere alla fine il valore
-                    '.Row = .Rows - 1
-                    '.CellAlignment = vbRightJustify
-                    '.CellForeColor = vbRed
-                    '.TextMatrix(.Rows - 1, 7) = rsTabelle("DATA_ROTTAMAZIONE") & ""
-               ' End If
+                    .Col = 6
+                    .Row = .Rows - 1
+                    .CellAlignment = vbRightJustify
+                    .CellForeColor = vbRed
+                    .TextMatrix(.Rows - 1, 6) = rsTabelle("DATA_ROTTAMAZIONE") & ""
+                End If
 
                 rsTabelle.MoveNext
             End With
@@ -622,16 +553,16 @@ Private Sub SalvaModifiche()
         ElseIf tTabelle = tpNOMENCLATORE Then
             v_Nomi = Array("KEY", "CODICE", "NOME", "IMPORTO", "IMPORTO_SCONTATO")
             v_Val = Array(keyId, .TextMatrix(vRow, 1), .TextMatrix(vRow, 2), .TextMatrix(vRow, 3), .TextMatrix(vRow, 4))
-        ElseIf tTabelle = tpRENI Then ' modificare qui
-            v_Nomi = Array("KEY", "POSTAZIONE", "NUMERO_RENE", "TIPO_RENE", "AZIENDA", "MODALITA_ACQUISIZIONE_PROPRIETA", "PERIODO_AMMORTAMENTO", "DATA_INSTALLAZIONE") ' "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE")
-            '   If .TextMatrix(vRow, 6) = "HCV POS" Then
-            '    valore = 1
-            'ElseIf .TextMatrix(vRow, 6) = "HBV POS" Then
-            '    valore = 2
-            'Else
-            '    valore = 0
-            'End If
-            v_Val = Array(keyId, .TextMatrix(vRow, 1), .TextMatrix(vRow, 2), .TextMatrix(vRow, 3), .TextMatrix(vRow, 4), .TextMatrix(vRow, 5), .TextMatrix(vRow, 6), IIf(.TextMatrix(vRow, 7) = "", Null, .TextMatrix(vRow, 7))) ' valori finali .TextMatrix(vRow, 5), valore, IIf(.TextMatrix(vRow, 7) = "", Null, .TextMatrix(vRow, 7)))
+        ElseIf tTabelle = tpRENI Then
+            v_Nomi = Array("KEY", "POSTAZIONE", "NUMERO_RENE", "TIPO_RENE", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE")
+            If .TextMatrix(vRow, 5) = "HCV POS" Then
+                valore = 1
+            ElseIf .TextMatrix(vRow, 5) = "HBV POS" Then
+                valore = 2
+            Else
+                valore = 0
+            End If
+            v_Val = Array(keyId, .TextMatrix(vRow, 1), .TextMatrix(vRow, 2), .TextMatrix(vRow, 3), .TextMatrix(vRow, 4), valore, IIf(.TextMatrix(vRow, 6) = "", Null, .TextMatrix(vRow, 6)))
         End If
         
         Set rsTabelle = New Recordset
@@ -931,7 +862,6 @@ Private Sub flxGriglia_DblClick()
     If VerificaClickFlx(flxGriglia) = False Then Exit Sub
     With flxGriglia
         .SetFocus
-        
         If .Col = 3 And Not tTabelle = tpNOMENCLATORE And Not tTabelle = tpRENI Then
             Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
             cmdAnnulla.Enabled = True
@@ -942,7 +872,6 @@ Private Sub flxGriglia_DblClick()
             cboAppo.Visible = True
             cboAppo.SetFocus
             Call SalvaModifiche
-        
         ElseIf .Col = 2 And tTabelle = tpESENZIONI Then
             Select Case .TextMatrix(.Row, 2)
                 Case Is = ESENTE
@@ -951,49 +880,26 @@ Private Sub flxGriglia_DblClick()
                     .TextMatrix(.Row, 2) = ESENTE
             End Select
             Call SalvaModifiche
-            
-        ElseIf .Col = 5 And tTabelle = tpRENI Then  'modficare ì valori spostare la combbox
+        ElseIf .Col = 5 And tTabelle = tpRENI Then
             Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
             cmdAnnulla.Enabled = True
-            cboModalitaAcquisizioneProprieta(0).Left = .colPos(.Col) + .Left + 130
-            cboModalitaAcquisizioneProprieta(0).Width = .ColWidth(.Col) + 30
-            cboModalitaAcquisizioneProprieta(0).Top = .rowPos(.Row) + .Top + 45
-            cboModalitaAcquisizioneProprieta(0).ListIndex = GetIndex(cboModalitaAcquisizioneProprieta(0), .TextMatrix(.Row, .Col))
-            cboModalitaAcquisizioneProprieta(0).Visible = True
-            cboModalitaAcquisizioneProprieta(0).SetFocus
+            ' TIPO puo essere neg o hcv o hbv
+            If .TextMatrix(.Row, 5) = "NEG" Then
+                .TextMatrix(.Row, 5) = "HCV POS"
+            ElseIf .TextMatrix(.Row, 5) = "HCV POS" Then
+                .TextMatrix(.Row, 5) = "HBV POS"
+            Else
+                .TextMatrix(.Row, 5) = "NEG"
+            End If
             Call SalvaModifiche
-            
-        ElseIf .Col = 7 And tTabelle = tpRENI Then
+        ElseIf .Col = 6 And tTabelle = tpRENI Then
             frmCalendario.Show 1
             Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
             cmdAnnulla.Enabled = True
             .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
             Call SalvaModifiche
-           ' cambia colonna per evitave di ricaricare il calendario
-            .Col = 0
-            
-        'ElseIf .Col = 6 And tTabelle = tpRENI Then 'modificare qui
-        '    Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
-        '    cmdAnnulla.Enabled = True
-            ' TIPO puo essere neg o hcv o hbv
-        '    If .TextMatrix(.Row, 6) = "NEG" Then
-        '        .TextMatrix(.Row, 6) = "HCV POS"
-        '    ElseIf .TextMatrix(.Row, 6) = "HCV POS" Then
-        '        .TextMatrix(.Row, 6) = "HBV POS"
-        '    Else
-        '        .TextMatrix(.Row, 6) = "NEG"
-        '    End If
-        '    Call SalvaModifiche
-        
-        'ElseIf .Col = 7 And tTabelle = tpRENI Then 'modificare qui
-        '    frmCalendario.Show 1
-        '    Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
-        '    cmdAnnulla.Enabled = True
-        '    .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
-        '    Call SalvaModifiche
             ' cambia colonna per evitave di ricaricare il calendario
-        '    .Col = 0
-        
+            .Col = 0
         Else
             txtAppo.Left = .colPos(.Col) + .Left + 45
             txtAppo.Top = .rowPos(.Row) + .Top + 45
@@ -1065,8 +971,7 @@ Private Sub txtAppo_GotFocus()
         Case tpNOMENCLATORE
             txtAppo.MaxLength = Choose(vCol, 10, 100, 6, 6)
         Case tpRENI
-            txtAppo.MaxLength = Choose(vCol, 3, 3, 50, 50, 20, 2, 10) ' 50) è il monitor
-                                         'Postazione, N° Rene, Descrizione, Azienda, Mod.Acquisizione Proprietà, Periodo Ammortamento, Data Installazione, Matricola
+            txtAppo.MaxLength = Choose(vCol, 3, 3, 50, 50)
         Case tpEDTA
             txtAppo.MaxLength = IIf(vCol = 2, 150, 3)
     End Select

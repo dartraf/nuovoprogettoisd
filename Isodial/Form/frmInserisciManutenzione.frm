@@ -32,7 +32,7 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   240
          Left            =   5880
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   750
          Visible         =   0   'False
          Width           =   1575
@@ -50,8 +50,8 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   240
          Left            =   5880
-         TabIndex        =   5
-         Top             =   240
+         TabIndex        =   4
+         Top             =   360
          Visible         =   0   'False
          Width           =   1575
       End
@@ -69,7 +69,7 @@ Begin VB.Form frmInserisciManutenzione
          Index           =   0
          Left            =   3000
          Sorted          =   -1  'True
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   1320
          Width           =   6855
       End
@@ -77,7 +77,7 @@ Begin VB.Form frmInserisciManutenzione
          Height          =   375
          Index           =   1
          Left            =   2640
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   720
          Width           =   2100
          _ExtentX        =   3704
@@ -90,7 +90,7 @@ Begin VB.Form frmInserisciManutenzione
          Height          =   375
          Index           =   1
          Left            =   2640
-         TabIndex        =   3
+         TabIndex        =   1
          Top             =   240
          Visible         =   0   'False
          Width           =   2100
@@ -104,7 +104,7 @@ Begin VB.Form frmInserisciManutenzione
          Height          =   375
          Index           =   0
          Left            =   2640
-         TabIndex        =   8
+         TabIndex        =   2
          Top             =   240
          Visible         =   0   'False
          Width           =   2100
@@ -221,7 +221,7 @@ Begin VB.Form frmInserisciManutenzione
          Height          =   315
          Left            =   2640
          MaxLength       =   5
-         TabIndex        =   1
+         TabIndex        =   7
          Top             =   240
          Width           =   735
       End
@@ -239,7 +239,7 @@ Begin VB.Form frmInserisciManutenzione
          Index           =   1
          Left            =   5880
          Sorted          =   -1  'True
-         TabIndex        =   2
+         TabIndex        =   8
          Top             =   240
          Width           =   3975
       End
@@ -377,7 +377,7 @@ Private Sub cboDescrizone_LostFocus(Index As Integer)
     End If
     
     If cboDescrizone(0).Text <> "" Then
-        Call GestisciNuovo("DESCRIZIONE_MANUTENZIONE", cboDescrizone(0))
+        Call GestisciNuovoApparato("DESCRIZIONE_MANUTENZIONE", cboDescrizone(0))
     End If
 
     cboDescrizone(0).BackColor = vbWhite
@@ -396,7 +396,7 @@ Private Sub cboDettagliIntervento_LostFocus(Index As Integer)
     End If
     
     If cboDettagliIntervento(1).Text <> "" Then
-        Call GestisciNuovo("DETTAGLIO_MANUTENZIONE", cboDettagliIntervento(1))
+        Call GestisciNuovoApparato("DETTAGLIO_MANUTENZIONE", cboDettagliIntervento(1))
     End If
 
     cboDettagliIntervento(1).BackColor = vbWhite
@@ -415,11 +415,34 @@ Private Sub cmdMemorizza_Click()
 Dim v_Nomi() As Variant
 Dim v_Val() As Variant
 Dim numKey As Integer
-       
-    Call SuperUcase(Me)
-        
+               
     Set rsManutenzione = New Recordset
-        
+    
+    If tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA Then
+        If oDataRichiestaManutenzione(0).txtBox = "" Then
+            MsgBox "Inserire la Data di Richiesta Manutenzione", vbInformation, "Informazione"
+            Exit Sub
+        End If
+        If cboDescrizone(0).Text = "" Then
+            MsgBox "Inserire la Descrizione Manutenzione" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
+            Exit Sub
+        End If
+    
+    ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then
+        If oDataScadenzaManutenzione(1).txtBox = "" Then
+            MsgBox "Inserire la Data di Scadenza Manutenzione", vbInformation, "Informazione"
+            Exit Sub
+        End If
+        If chkFunzionalità.Value = Unchecked And chkSicurezza.Value = Unchecked Then
+            MsgBox "Selezionare la Funzionalità o la Sicurezza", vbInformation, "Informazione"
+            Exit Sub
+        End If
+        If cboDescrizone(0).Text = "" Then
+            MsgBox "Inserire la Descrizione Manutenzione" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
+            Exit Sub
+        End If
+    End If
+            
     If KeyReturnManutenzione = 0 Then
         numKey = GetNumero("MANUTENZIONE_APPARATI")
     Else
@@ -501,7 +524,6 @@ Private Sub Form_Load()
             Label1(12).Visible = True
             oDataRichiestaManutenzione(0).Visible = True
             txtTipoManutenzione = "STRAORDINARIA"
-            txtNumeroDocumneto_GotFocus
             If KeyReturnManutenzione > 0 Then
                 Call CaricaManutenzione
             End If
@@ -512,7 +534,6 @@ Private Sub Form_Load()
             chkSicurezza.Visible = True
             Label1(5).Visible = True
             oDataScadenzaManutenzione(1).Visible = True
-            txtNumeroDocumneto_GotFocus
             If KeyReturnManutenzione > 0 Then
                 Call CaricaManutenzione
             End If

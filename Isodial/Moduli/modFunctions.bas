@@ -561,6 +561,43 @@ Public Sub GestisciNuovo(inNomeTabella As String, ByRef inCbo As ComboBox)
 End Sub
 
 ''
+' Gestisce un nuovo valore inserito nella cbo nella tabella Apparato
+'
+' @param inNomeTabella nome della tabella
+' @param cbo comboBox
+' @return
+' @remarks aggiunge il nuovo valore alla cbo e posiziona il listIndex
+Public Sub GestisciNuovoApparato(inNomeTabella As String, ByRef inCbo As ComboBox)
+    Dim rsDataset As Recordset
+    Dim strSelezione As String
+    Dim inKeyId As Integer
+    Dim v_Nomi() As Variant
+    Dim v_Val() As Variant
+    
+    strSelezione = inCbo.Text
+    v_Nomi = Array("KEY", "NOME")
+    
+    Set rsDataset = New Recordset
+    rsDataset.Open "SELECT * FROM " & inNomeTabella & " WHERE NOME='" & (Apostrophe(strSelezione)) & "'", cnPrinc, adOpenDynamic, adLockPessimistic, adCmdText
+    If rsDataset.EOF And rsDataset.BOF Then
+        inKeyId = GetNumero(inNomeTabella)
+        v_Val = Array(inKeyId, (strSelezione))
+        rsDataset.AddNew v_Nomi, v_Val
+
+        inCbo.AddItem (strSelezione)
+        inCbo.ItemData(inCbo.NewIndex) = inKeyId
+    End If
+    Set rsDataset = Nothing
+    
+    Dim k As Integer
+    For k = 0 To inCbo.ListCount - 1
+        If UCase(inCbo.List(k)) = (strSelezione) Then
+            inCbo.ListIndex = k
+        End If
+    Next k
+End Sub
+
+''
 ' Scrive positivo o  negativo nella flx
 '
 ' @param flx griglia

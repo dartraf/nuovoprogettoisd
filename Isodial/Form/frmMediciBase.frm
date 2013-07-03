@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmMediciBase 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Medici di Base"
@@ -719,6 +719,7 @@ End Sub
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
     Call RicaricaComboBox("TIPOLOGIE_MEDICO", "NOME", cboTipologia)
+    If cboTipologia = "" Then cboTipologia.ListIndex = 4
 End Sub
 
 Private Sub Form_Load()

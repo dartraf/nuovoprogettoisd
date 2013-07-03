@@ -748,7 +748,7 @@ Private Sub cmdInserisci_Click()
                     Exit Sub
                 End If
             Else
-                MsgBox "Il valore inserito è già presente", vbCritical, "Attenzione"
+                MsgBox "Il valore inserito è già presente", vbCritical, "ATTENZIONE!!!"
                 tInput.mantieniDati = True
             End If
         End If
@@ -756,7 +756,7 @@ Private Sub cmdInserisci_Click()
         frmInput.Show 1
         primo = False
     Loop While EsisteValore
-    
+ '   Debug.Print EsisteValore
 
     If Not (tInput.v_valori(1) = "" And tInput.v_valori(2) = "") Then
         num = GetNumero(nomeTabella)
@@ -1011,7 +1011,7 @@ Private Sub txtAppo_LostFocus()
         PostazionePrecedente = flxGriglia.TextMatrix(vRow, vCol)
             If Esiste(flxGriglia, 1, vRow, txtAppo) Then
                 flxGriglia.TextMatrix(vRow, vCol) = UCase((txtAppo.Text))
-                If MsgBox("Postazione già presente." & vbCrLf & "Vuoi duplicarla?", vbQuestion + vbYesNo + vbDefaultButton2, "Inserisci rene") = vbYes Then
+                If MsgBox("Valore già presente." & vbCrLf & "Vuoi duplicarlo?", vbQuestion + vbYesNo + vbDefaultButton2, "Inserimento Valori") = vbYes Then
                     Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
                     cmdAnnulla.Enabled = True
                     Call SalvaModifiche
@@ -1021,7 +1021,7 @@ Private Sub txtAppo_LostFocus()
             Else
                 If tTabelle = tpCOMUNI And vCol = 1 Then
                     If Not Len(txtAppo) = 6 Then
-                        MsgBox "Il codice ISTAT deve essere di 6 caratteri", vbCritical, "Attenzione"
+                        MsgBox "Il codice ISTAT deve essere di 6 cifre", vbCritical, "ATTENZIONE!!!"
                         Exit Sub
                     End If
                 End If

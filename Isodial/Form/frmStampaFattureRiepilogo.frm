@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmStampaFattureRiepilogo 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Riepilogo per Impegnative"
@@ -17,7 +17,7 @@ Begin VB.Form frmStampaFattureRiepilogo
    Begin VB.Frame fraAutorizzazioneBollo 
       Height          =   975
       Left            =   120
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   1920
       Width           =   5295
       Begin VB.CheckBox chkBollo 
@@ -33,7 +33,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   240
          Width           =   2655
       End
@@ -50,7 +50,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          EndProperty
          Height          =   255
          Left            =   3000
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   240
          Width           =   2175
       End
@@ -67,7 +67,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   600
          Value           =   1  'Checked
          Width           =   3015
@@ -169,11 +169,11 @@ Begin VB.Form frmStampaFattureRiepilogo
       TabIndex        =   9
       Top             =   3000
       Width           =   5295
-      Begin VB.CheckBox chkDividi 
-         Caption         =   "Dividi fattura"
+      Begin VB.OptionButton Option2 
+         Caption         =   "3 fatture"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -181,11 +181,29 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   3000
-         TabIndex        =   11
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1695
+         Left            =   3840
+         TabIndex        =   17
+         ToolTipText     =   "Divide i pazienti ASL/Fuori ASL/Fuori Regione"
+         Top             =   335
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "2 fatture"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3840
+         TabIndex        =   16
+         ToolTipText     =   "Divide i pazienti ASL/Fuori ASL+Fuori Regione"
+         Top             =   110
+         Width           =   1095
       End
       Begin VB.TextBox txtNumFattura 
          BeginProperty Font 
@@ -198,15 +216,34 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2040
+         Left            =   1200
          MaxLength       =   6
          TabIndex        =   3
-         Top             =   240
+         Top             =   210
          Width           =   735
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Numero di fattura"
+         Caption         =   "Dividi in"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   0
+         Left            =   2760
+         TabIndex        =   15
+         Top             =   210
+         Width           =   855
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "N° fattura"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -220,8 +257,8 @@ Begin VB.Form frmStampaFattureRiepilogo
          Index           =   3
          Left            =   120
          TabIndex        =   10
-         Top             =   240
-         Width           =   1785
+         Top             =   220
+         Width           =   960
       End
    End
    Begin VB.Frame fraPulsanti 
@@ -276,6 +313,8 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Dim napoli3 As Boolean
+Dim numfat As Integer
+
 
 Private Sub Form_Load()
 
@@ -314,10 +353,14 @@ Private Sub Form_Load()
     rsDataset.Open "SELECT CODICE_ASL FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDataset("CODICE_ASL") = 6 And tStampeRiepilogo = tpFATTURA Then
         napoli3 = True
-        chkDividi.Visible = True
+        Option1.Visible = True
+        Option2.Visible = True
+        Label1(0).Visible = True
     Else
         napoli3 = False
-        chkDividi.Value = False
+        Option1.Visible = False
+        Option2.Visible = False
+        Label1(0).Visible = False
     End If
     rsDataset.Close
     
@@ -1759,7 +1802,7 @@ Private Sub StampaPerAslNapoli2Nord()
                                         
         End If
         rsDataset.Close
-        rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And chkDividi.Value = Checked, txtNumFattura + 1, txtNumFattura) & " / " & cboAnno.Text
+        rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And Option1, txtNumFattura + 1, txtNumFattura) & " / " & cboAnno.Text
         rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
         rptFatturaAslNapoli2Nord.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
         Set rptFatturaAslNapoli2Nord.DataSource = rsMain
@@ -1893,7 +1936,8 @@ Private Sub StampaFattura2()
     Loop
     rsDataset.Close
     
-    If napoli3 And chkDividi.Value = Checked Then
+   'stampa fattura pazienti asl (la prima)
+    If napoli3 And Option1 Or Option2 Then
         If totaleRicette <> 0 Then
         
             cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
@@ -2024,6 +2068,82 @@ Private Sub StampaFattura2()
     Loop
     rsDataset.Close
     
+    
+'stampa fattura pazienti regione campania fuori asl (la seconda)
+    If napoli3 And Option2 Then
+        If totaleRicette <> 0 Then
+          ' totali dei totali
+            With rsMain
+                .AddNew
+                .Update
+                .AddNew
+                .Fields("NOME_ASL") = "TOTALE"
+                .Fields("PRESTAZIONI") = totalePrestazioni
+                .Fields("RICETTE") = totaleRicette
+                .Fields("TOTALE_LORDO") = Round(totaleLordo, 2)
+                .Fields("TOTALE_SCONTATO") = Round(totaleScontato, 2)
+                .Fields("TOTALE_TICKET") = Round(totaleTicket, 2)
+                .Fields("TOTALE_QUOTA_AGGIUNTIVA") = Round(totaleQuotaAggiuntiva, 2)
+                .Fields("TOTALE_QUOTA_NAZIONALE") = Round(totaleQuotaNazionale, 2)
+                .Fields("TOTALE_NETTO") = Round(totaleNetto, 2)
+                .Fields("SCONTO") = Round(totaleLordo, 2) - Round(totaleScontato, 2)
+                .Fields("IMPORTO") = 0
+                .Fields("IMPORTO_SCONTATO") = 0
+                .Fields("CODICE_PRESTAZIONE") = ""
+                .Update
+            End With
+
+            strSql = "SELECT    INTESTAZIONE_FATTURA.*, ASL.NOME AS ASLNOME, COMUNI.NOME AS COMUNINOME " & _
+                     "FROM      ((INTESTAZIONE_FATTURA " & _
+                     "          INNER JOIN ASL ON ASL.KEY=INTESTAZIONE_FATTURA.CODICE_ASL) " & _
+                     "          INNER JOIN COMUNI ON COMUNI.KEY=INTESTAZIONE_FATTURA.CODICE_COMUNE) "
+            rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+            If Not (rsDataset.EOF And rsDataset.BOF) Then
+                rptFattura2.Sections("intestazione").Controls("lblAsl").Caption = "ASL " & rsDataset("ASLNOME")
+                rptFattura2.Sections("intestazione").Controls("lblIndirizzo").Caption = rsDataset("INDIRIZZO")
+                rptFattura2.Sections("intestazione").Controls("lblCap").Caption = rsDataset("CAP")
+                rptFattura2.Sections("intestazione").Controls("lblProvincia").Caption = rsDataset("COMUNINOME") & " (" & rsDataset("PROV") & ")"
+                rptFattura2.Sections("intestazione").Controls("lblIva").Caption = rsDataset("P_IVA")
+                rptFattura2.Sections("pie").Controls("lblDicitura").Caption = rsDataset("DICITURA")
+                rptFattura2.Sections("pie").Controls("lblIntestatario").Caption = rsDataset("INTESTATARIO_CC")
+                rptFattura2.Sections("pie").Controls("lblIban").Caption = rsDataset("IBAN")
+            
+                If chkNumeroAutorizzazione.Value = Checked Then
+                    rptFattura2.Sections("pie").Controls("lblAutorizzazione").Caption = "Autorizzazione N° " & rsDataset("NUMERO_AUTORIZZAZIONE")
+                Else
+                    rptFattura2.Sections("pie").Controls("lblAutorizzazione").Caption = ""
+                End If
+            
+                If chkBollo.Value = Checked Then
+                    rptFattura2.Sections("pie").Controls("lblBollo").Caption = "Obbligo bollo assolto in maniera virtuale"
+                Else
+                    rptFattura2.Sections("pie").Controls("lblBollo").Caption = ""
+                End If
+            End If
+            rsDataset.Close
+            rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And Option2, txtNumFattura + 1, txtNumFattura) & " / " & cboAnno.Text
+            rptFattura2.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
+            rptFattura2.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
+            rptFattura2.Sections("intestazione").Controls("lblTicket").Caption = "Ticket    " & Format(ticket, "###.00") & " €"
+            Set rptFattura2.DataSource = rsMain
+            rptFattura2.RightMargin = 0
+            rptFattura2.LeftMargin = 0
+            rptFattura2.PrintReport False, rptRangeAllPages
+        End If
+        
+        rsMain.Close
+        rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+        totaleLordo = 0
+        totaleScontato = 0
+        totalePrestazioni = 0
+        totaleRicette = 0
+        totaleTicket = 0
+        totaleNetto = 0
+        totaleQuotaAggiuntiva = 0
+        totaleQuotaNazionale = 0
+        
+    End If
+    
     primo = True
     rsDataset.Open "SELECT CODICE_PRESTAZIONE, COUNT(R.KEY) AS TOTALE_R, SUM(QUANTITA) AS TOTALE_Q, SUM(IMPORTO*QUANTITA) AS TOTALE_LORDO, SUM(IMPORTO_SCONTATO*QUANTITA) AS TOTALE_SCONTATO  FROM ((RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) INNER JOIN PAZIENTI P ON P.KEY=R.CODICE_PAZIENTE) WHERE MESE=" & cboMese.ListIndex + 1 & " AND ANNO=" & cboAnno.Text & " AND NOT CODICE_REGIONE=16 AND NOT FLAG=3 GROUP BY CODICE_PRESTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
@@ -2131,19 +2251,26 @@ Private Sub StampaFattura2()
             
         End If
         rsDataset.Close
-        rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = IIf(napoli3 And chkDividi.Value = Checked, txtNumFattura + 1, txtNumFattura) & " / " & cboAnno.Text
+        If napoli3 And Option1 Then
+            numfat = txtNumFattura + 1
+        ElseIf napoli3 And Option2 Then
+            numfat = txtNumFattura + 2
+        Else
+            numfat = txtNumFattura
+        End If
+        rptFattura2.Sections("intestazione").Controls("lblNumeroFattura").Caption = numfat & " / " & cboAnno.Text
         rptFattura2.Sections("intestazione").Controls("lblData").Caption = GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
         rptFattura2.Sections("intestazione").Controls("lblMese").Caption = cboMese.Text & " " & cboAnno.Text
         rptFattura2.Sections("intestazione").Controls("lblTicket").Caption = "Ticket    " & Format(ticket, "###.00") & " €"
         Set rptFattura2.DataSource = rsMain
         rptFattura2.RightMargin = 0
         rptFattura2.LeftMargin = 0
-        rptFattura2.PrintReport (Not (napoli3 And chkDividi.Value = Checked)), rptRangeAllPages
+        rptFattura2.PrintReport (Not (napoli3 And Option1 Or Option2)), rptRangeAllPages
     End If
     
     Set rsDataset = Nothing
     Set rsAppo = Nothing
-    
+
     Exit Sub
 gestione:
     If Err.Number = cdlCancel Then
@@ -2500,7 +2627,7 @@ End Function
 
 Private Sub SceltaFattura()
     ' se asl di caserta, avellino o benevento stampa fattura 1
-    ' se asl di napoli stampa fattura 2
+    ' se asl na1 e na3sud stampa fattura 2
     ' Asl Napoli 2 Nord codice asl 5
     
     Dim rsDataset As New Recordset

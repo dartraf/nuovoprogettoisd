@@ -3000,6 +3000,7 @@ Private Sub Form_Load()
             fraTabelle.Height = 615
             fraPulsanti.Top = fraTabelle.Height - 135
             Label1(1) = "Esame"
+            Me.Caption = "Inserimento Esami"
             cboVoci.Visible = True
             Call RicaricaComboBox("VOCI_ESAMI", "NOME", cboVoci)
         Case tpIPASSWORD

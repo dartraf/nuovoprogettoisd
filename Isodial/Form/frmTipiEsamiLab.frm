@@ -964,28 +964,48 @@ End Sub
 
 Private Sub cmdInserisciDescr_Click()
     Dim primo As Boolean
-    
+    Dim strSql As String
+     
     If vRow = 0 Then
         MsgBox "Selezionare l'esame a cui associare la voce", vbCritical, "Attenzione"
         Exit Sub
     End If
     
-    primo = True
     tInput.Tipo = tpITIPIESAMILAB
     tInput.mantieniDati = False
+    
     Do
-        If Not primo Then
-            MsgBox "La voce inserita è già presente", vbCritical, "Attenzione"
-            tInput.mantieniDati = True
-        End If
+        primo = True
         Unload frmInput
         frmInput.Show 1
-        primo = False
-    Loop While Esiste(flxGriglia, 0, 0, Int(tInput.v_valori(1)))
 
+        If Esiste(flxGriglia, 0, 0, Int(tInput.v_valori(1))) <> 0 Then
+            MsgBox "La voce scelta è stata già inserita", vbCritical, "Attenzione"
+            tInput.mantieniDati = True
+            primo = False
+        Else
+            strSql = "SELECT CODICE_ESAME FROM ASSOCIAZIONE_ESAMI_LAB " & _
+                     "WHERE CODICE_ESAME= " & tInput.v_valori(1) & " AND CODICE_GRUPPO <> " & flxNomi.TextMatrix(vRow, 0) & ""
+
+            Set rsDataset = New Recordset
+            rsDataset.Open strSql, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+            If Not (rsDataset.EOF And rsDataset.BOF) Then
+                MsgBox "INSERIMENTO NON PERMESSO - La voce scelta è presente in un altro gruppo", vbCritical, "ATTENZIONE!!!"
+                rsDataset.Close
+                Set rsDataset = Nothing
+                tInput.mantieniDati = True
+                primo = False
+            End If
+        End If
+        If primo Then
+            Exit Do
+        End If
+    Loop
+    
     If Not (tInput.v_valori(1) = -1) Then
         Set rsDataset = New Recordset
         rsDataset.Open "ASSOCIAZIONE_ESAMI_LAB", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+              
         rsDataset.AddNew
         rsDataset("KEY") = GetNumero("ASSOCIAZIONE_ESAMI_LAB")
         rsDataset("CODICE_GRUPPO") = flxNomi.TextMatrix(vRow, 0)
@@ -1209,7 +1229,7 @@ Private Sub txtAppo_LostFocus()
     txtAppo.Visible = False
     If UCase(flxNomi.TextMatrix(vRow, vCol)) <> UCase(txtAppo) Then
         If txtAppo = "" Then
-            MsgBox "Impossibile memorizzare dati vuoti", vbCritical, "Attenzione"
+            MsgBox "MEMORIZZAZIONE CAMPI VUOTI NON PERMESSA", vbCritical, "ATTENZIONE!!!"
             flxNomi.Row = vRow
             Call ColoraFlx(flxNomi, flxNomi.Cols - 1)
             ' essendo l'esame selezionato bisogna mostrare le descrizioni

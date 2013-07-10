@@ -113,6 +113,23 @@ Begin VB.Form frmApparati
       TabIndex        =   2
       Top             =   3480
       Width           =   14775
+      Begin VB.CommandButton cmdEliminaApparato 
+         Caption         =   "&Elimina"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   600
+         Left            =   11880
+         TabIndex        =   12
+         Top             =   170
+         Width           =   1215
+      End
       Begin VB.CommandButton cmdInserisci 
          Caption         =   "&Inserisci Apparato"
          BeginProperty Font 
@@ -130,7 +147,7 @@ Begin VB.Form frmApparati
          Top             =   170
          Width           =   1335
       End
-      Begin VB.CommandButton cmdElimina 
+      Begin VB.CommandButton cmdVecchio 
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -155,6 +172,23 @@ Begin VB.Form frmApparati
       TabIndex        =   8
       Top             =   7920
       Width           =   14775
+      Begin VB.CommandButton cmdEliminaManutenzioneApparato 
+         Caption         =   "&Elimina"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   600
+         Left            =   7680
+         TabIndex        =   13
+         Top             =   170
+         Width           =   1215
+      End
       Begin VB.CommandButton cmdManutenzioneOrdinaria 
          Caption         =   "Inserisci Manut. &Ordinaria"
          BeginProperty Font 
@@ -221,6 +255,32 @@ Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
 
+Private Sub cmdEliminaApparato_Click()
+
+    If flxGriglia.Row = 0 Then
+        MsgBox "Selezionare l' Apparato da eliminare", vbInformation, "Informazione"
+    
+    ElseIf flxManutenzione.Rows > 1 Then
+        MsgBox "Impossibile eliminare un' Apparato" & vbCrLf & "in presenza di una scheda di manutenzione", vbInformation, "Informazione"
+    
+    ElseIf MsgBox("Sei sicuro di voler eliminare l' Apparato selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "Informazione") = vbYes Then
+        Call EliminaApparato
+        Call CaricaFlx
+        
+    End If
+    
+End Sub
+
+Private Sub EliminaApparato()
+    Dim cmCommand As New Command
+    
+    'Elimina l' Apparato
+    cmCommand.CommandType = adCmdText
+    cmCommand.ActiveConnection = cnPrinc
+    cmCommand.CommandText = "DELETE * FROM APPARATI WHERE KEY=" & KeyApparato
+    cmCommand.Execute
+
+End Sub
 Private Sub cmdManutenzioneOrdinaria_Click()
     Dim num As Integer
     

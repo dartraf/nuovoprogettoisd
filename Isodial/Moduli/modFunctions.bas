@@ -537,7 +537,7 @@ Public Sub GestisciNuovo(inNomeTabella As String, ByRef inCbo As ComboBox)
     Dim v_Nomi() As Variant
     Dim v_Val() As Variant
     
-    strSelezione = inCbo.Text
+    strSelezione = Replace(inCbo.Text, Chr(39), Chr(96))
     v_Nomi = Array("KEY", "NOME")
     
     Set rsDataset = New Recordset

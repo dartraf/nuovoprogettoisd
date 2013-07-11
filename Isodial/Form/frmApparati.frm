@@ -29,13 +29,13 @@ Begin VB.Form frmApparati
       ForeColor       =   &H000000FF&
       Height          =   3615
       Left            =   120
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   4440
       Width           =   14775
       Begin MSFlexGridLib.MSFlexGrid flxManutenzione 
          Height          =   3255
          Left            =   120
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   240
          Width           =   14535
          _ExtentX        =   25638
@@ -76,7 +76,7 @@ Begin VB.Form frmApparati
       Begin WheelCatch.WheelCatcher WheelCatcher1 
          Height          =   480
          Left            =   2400
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   360
          Width           =   480
          _ExtentX        =   847
@@ -126,7 +126,7 @@ Begin VB.Form frmApparati
          EndProperty
          Height          =   600
          Left            =   11880
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   170
          Width           =   1215
       End
@@ -143,33 +143,15 @@ Begin VB.Form frmApparati
          EndProperty
          Height          =   600
          Left            =   13320
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   170
          Width           =   1335
-      End
-      Begin VB.CommandButton cmdVecchio 
-         Caption         =   "&Elimina"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   450
-         Left            =   1800
-         TabIndex        =   3
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1215
       End
    End
    Begin VB.Frame Frame3 
       Height          =   855
       Left            =   120
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   7920
       Width           =   14775
       Begin VB.CommandButton cmdEliminaManutenzioneApparato 
@@ -185,7 +167,7 @@ Begin VB.Form frmApparati
          EndProperty
          Height          =   600
          Left            =   7680
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   170
          Width           =   1215
       End
@@ -202,7 +184,7 @@ Begin VB.Form frmApparati
          EndProperty
          Height          =   600
          Left            =   9120
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   170
          Width           =   1935
       End
@@ -220,7 +202,7 @@ Begin VB.Form frmApparati
          EndProperty
          Height          =   600
          Left            =   13440
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   170
          Width           =   1215
       End
@@ -237,7 +219,7 @@ Begin VB.Form frmApparati
          EndProperty
          Height          =   600
          Left            =   11280
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   170
          Width           =   1935
       End
@@ -251,6 +233,7 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim rsApparati As Recordset
 Dim rsManutenziona As Recordset
+Dim rsEliminaManutenzione As Recordset
 Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
@@ -272,12 +255,51 @@ Private Sub cmdEliminaApparato_Click()
 End Sub
 
 Private Sub EliminaApparato()
+
     Dim cmCommand As New Command
     
     'Elimina l' Apparato
     cmCommand.CommandType = adCmdText
     cmCommand.ActiveConnection = cnPrinc
     cmCommand.CommandText = "DELETE * FROM APPARATI WHERE KEY=" & KeyApparato
+    cmCommand.Execute
+
+End Sub
+
+Private Sub cmdEliminaManutenzioneApparato_Click()
+    
+    If flxManutenzione.Row = 0 Then
+        MsgBox "Selezionare la Manutenzione dell' Apparato da eliminare", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    Set rsEliminaManutenzione = New Recordset
+        
+        rsEliminaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY= " & KeyReturnManutenzione, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        
+        If IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = False And IsNull(rsEliminaManutenzione("NUMERO_DOCUMENTO")) = False And IsNull(rsEliminaManutenzione("DETTAGLI_INTERVENTO")) = False Then
+            MsgBox "Impossibile eliminare la Manutenzione dell' Apparato in presenza dei seguenti campi:" & vbCrLf & "- Data Effettiva Manutenzione" & vbCrLf & "- N° Riferimento Documento" & vbCrLf & "- Dettagli Intervento", vbInformation, "Informazione"
+            Exit Sub
+        End If
+        
+        If IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = True And IsNull(rsEliminaManutenzione("NUMERO_DOCUMENTO")) = True And IsNull(rsEliminaManutenzione("DETTAGLI_INTERVENTO")) = True Then
+            ElseIf MsgBox("Sei sicuro di voler eliminare la Manutenzione selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "Informazione") = vbYes Then
+            Call EliminaManutenzione
+            Call CaricaFlxManutenzione
+        End If
+    
+    Set rsEliminaManutenzione = Nothing
+           
+End Sub
+
+Private Sub EliminaManutenzione()
+    
+    Dim cmCommand As New Command
+    
+    'Elimina la Manutenzione
+    cmCommand.CommandType = adCmdText
+    cmCommand.ActiveConnection = cnPrinc
+    cmCommand.CommandText = "DELETE * FROM MANUTENZIONE_APPARATI WHERE KEY=" & KeyReturnManutenzione
     cmCommand.Execute
 
 End Sub
@@ -352,6 +374,8 @@ Private Sub flxManutenzione_Click()
         vRow = flxManutenzione.Row
         vCol = flxManutenzione.Col
         Call ColoraFlx(flxManutenzione, flxManutenzione.Cols - 1)
+        
+        KeyReturnManutenzione = flxManutenzione.TextMatrix(vRow, 0)
     End If
 End Sub
 
@@ -512,6 +536,7 @@ Private Sub CaricaFlxManutenzione()
             End With
         Loop
     End If
+    
     Set rsManutenziona = Nothing
     flxManutenzione.Row = 0
 End Sub

@@ -7,12 +7,12 @@ Begin VB.Form frmApparati
    ClientHeight    =   8865
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   15000
+   ClientWidth     =   14640
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   8865
-   ScaleWidth      =   15000
+   ScaleWidth      =   14640
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame2 
@@ -31,14 +31,14 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   5
       Top             =   4440
-      Width           =   14775
+      Width           =   14415
       Begin MSFlexGridLib.MSFlexGrid flxManutenzione 
          Height          =   3255
          Left            =   120
          TabIndex        =   6
          Top             =   240
-         Width           =   14535
-         _ExtentX        =   25638
+         Width           =   14175
+         _ExtentX        =   25003
          _ExtentY        =   5741
          _Version        =   393216
          FixedCols       =   0
@@ -47,7 +47,7 @@ Begin VB.Form frmApparati
          FormatString    =   "| Tabella                                                                     "
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   14775
+      Width           =   14415
       Begin WheelCatch.WheelCatcher WheelCatcher1 
          Height          =   480
          Left            =   2400
@@ -87,8 +87,8 @@ Begin VB.Form frmApparati
          Left            =   120
          TabIndex        =   1
          Top             =   240
-         Width           =   14535
-         _ExtentX        =   25638
+         Width           =   14175
+         _ExtentX        =   25003
          _ExtentY        =   5741
          _Version        =   393216
          FixedCols       =   0
@@ -97,7 +97,7 @@ Begin VB.Form frmApparati
          FormatString    =   "| Tabella                                                                     "
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -112,7 +112,7 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   2
       Top             =   3480
-      Width           =   14775
+      Width           =   14415
       Begin VB.CommandButton cmdEliminaApparato 
          Caption         =   "&Elimina"
          BeginProperty Font 
@@ -125,7 +125,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   11880
+         Left            =   11400
          TabIndex        =   11
          Top             =   170
          Width           =   1215
@@ -142,7 +142,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   13320
+         Left            =   12840
          TabIndex        =   3
          Top             =   170
          Width           =   1335
@@ -153,7 +153,7 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   7
       Top             =   7920
-      Width           =   14775
+      Width           =   14415
       Begin VB.CommandButton cmdEliminaManutenzioneApparato 
          Caption         =   "&Elimina"
          BeginProperty Font 
@@ -166,7 +166,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   7680
+         Left            =   7200
          TabIndex        =   12
          Top             =   170
          Width           =   1215
@@ -183,7 +183,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   9120
+         Left            =   8640
          TabIndex        =   10
          Top             =   170
          Width           =   1935
@@ -201,7 +201,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   13440
+         Left            =   12960
          TabIndex        =   9
          Top             =   170
          Width           =   1215
@@ -218,7 +218,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   11280
+         Left            =   10800
          TabIndex        =   8
          Top             =   170
          Width           =   1935
@@ -241,12 +241,12 @@ Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati n
 Private Sub cmdEliminaApparato_Click()
 
     If flxGriglia.Row = 0 Then
-        MsgBox "Selezionare l' Apparato da eliminare", vbInformation, "Informazione"
+      '  MsgBox "Selezionare l' Apparato da eliminare", vbInformation, "Informazione"
     
     ElseIf flxManutenzione.Rows > 1 Then
-        MsgBox "Impossibile eliminare un' Apparato" & vbCrLf & "in presenza di una scheda di manutenzione", vbInformation, "Informazione"
+        MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di schede di manutenzione", vbInformation, "ATTENZIONE!!!"
     
-    ElseIf MsgBox("Sei sicuro di voler eliminare l' Apparato selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "Informazione") = vbYes Then
+    ElseIf MsgBox("Sicuro di voler eliminare l'apparato selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
         Call EliminaApparato
         Call CaricaFlx
         
@@ -269,7 +269,7 @@ End Sub
 Private Sub cmdEliminaManutenzioneApparato_Click()
     
     If flxManutenzione.Row = 0 Then
-        MsgBox "Selezionare la Manutenzione dell' Apparato da eliminare", vbInformation, "Informazione"
+     '   MsgBox "Selezionare la Manutenzione dell' Apparato da eliminare", vbInformation, "Informazione"
         Exit Sub
     End If
     
@@ -277,13 +277,10 @@ Private Sub cmdEliminaManutenzioneApparato_Click()
         
         rsEliminaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY= " & KeyReturnManutenzione, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
-        If IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = False And IsNull(rsEliminaManutenzione("NUMERO_DOCUMENTO")) = False And IsNull(rsEliminaManutenzione("DETTAGLI_INTERVENTO")) = False Then
-            MsgBox "Impossibile eliminare la Manutenzione dell' Apparato in presenza dei seguenti campi:" & vbCrLf & "- Data Effettiva Manutenzione" & vbCrLf & "- N° Riferimento Documento" & vbCrLf & "- Dettagli Intervento", vbInformation, "Informazione"
+        If IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = False Or rsEliminaManutenzione("NUMERO_DOCUMENTO") <> "" Or rsEliminaManutenzione("DETTAGLI_INTERVENTO") <> "" Then
+            MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di valori in uno dei campi:" & vbCrLf & "- Data Effettiva Manutenzione" & vbCrLf & "- N° Documento di Lavoro" & vbCrLf & "- Dettagli Intervento", vbInformation, "ATTENZIONE!!!"
             Exit Sub
-        End If
-        
-        If IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = True And IsNull(rsEliminaManutenzione("NUMERO_DOCUMENTO")) = True And IsNull(rsEliminaManutenzione("DETTAGLI_INTERVENTO")) = True Then
-            ElseIf MsgBox("Sei sicuro di voler eliminare la Manutenzione selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "Informazione") = vbYes Then
+        ElseIf MsgBox("Sicuro di voler eliminare la scheda di manutenzione selezionata?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
             Call EliminaManutenzione
             Call CaricaFlxManutenzione
         End If
@@ -409,23 +406,31 @@ Dim i As Integer
     
     With flxGriglia
         .Cols = 9
-        .ColWidth(1) = .ColWidth(1) * 0.2
-        .ColWidth(2) = .ColWidth(1) * 2.1
-        .ColWidth(3) = .ColWidth(1) * 3.2
-        .ColWidth(4) = .ColWidth(1) * 2.5
-        .ColWidth(5) = .ColWidth(1) * 2.2
-        .ColWidth(6) = .ColWidth(1) * 2.8
-        .ColWidth(7) = .ColWidth(1) * 2.2
-        .ColWidth(8) = .ColWidth(1) * 2.1
+        .ColWidth(1) = .ColWidth(1) * 0.16
+        .ColWidth(2) = .ColWidth(2) * 1.9
+        .ColWidth(3) = .ColWidth(3) * 3.1
+        .ColWidth(4) = .ColWidth(4) * 1.5
+        .ColWidth(5) = .ColWidth(5) * 1.5
+        .ColWidth(6) = .ColWidth(6) * 3.02
+        .ColWidth(7) = .ColWidth(7) * 1.4
+        .ColWidth(8) = .ColWidth(8) * 1.3
+
+       ' .ColWidth(2) = .ColWidth(1) * 2.3
+       ' .ColWidth(3) = .ColWidth(1) * 3.3
+       ' .ColWidth(4) = .ColWidth(1) * 2.5
+       ' .ColWidth(5) = .ColWidth(1) * 2.2
+       ' .ColWidth(6) = .ColWidth(1) * 2.8
+       ' .ColWidth(7) = .ColWidth(1) * 2.2
+       ' .ColWidth(8) = .ColWidth(1) * 2.1
                                        
-        .TextMatrix(0, 1) = "N° Inv."
+        .TextMatrix(0, 1) = "N°Inv."
         .TextMatrix(0, 2) = "N° Apparato"
         .TextMatrix(0, 3) = "Tipo Apparato"
         .TextMatrix(0, 4) = "Modello"
         .TextMatrix(0, 5) = "Matricola"
         .TextMatrix(0, 6) = "Produttore"
-        .TextMatrix(0, 7) = "PROXREVFUN"
-        .TextMatrix(0, 8) = "PROXREVSIC"
+        .TextMatrix(0, 7) = "Pros.Rev.Fun."
+        .TextMatrix(0, 8) = "Pros.Rev.Sic."
     End With
     
     Call CaricaFlx
@@ -449,20 +454,27 @@ Dim i As Integer
     With flxManutenzione
         .Cols = 8
         .ColWidth(1) = .ColWidth(1) * 0.4
-        .ColWidth(2) = .ColWidth(1) * 1.4
-        .ColWidth(3) = .ColWidth(1) * 1.4
-        .ColWidth(4) = .ColWidth(1) * 1.4
-        .ColWidth(5) = .ColWidth(1) * 1.5
-        .ColWidth(6) = .ColWidth(1) * 1.5
-        .ColWidth(7) = .ColWidth(1) * 0.9
+        .ColWidth(2) = .ColWidth(2) * 1.1
+        .ColWidth(3) = .ColWidth(3) * 1.1
+        .ColWidth(4) = .ColWidth(4) * 1.1
+        .ColWidth(5) = .ColWidth(5) * 4.2
+        .ColWidth(6) = .ColWidth(6) * 1.1
+        .ColWidth(7) = .ColWidth(7) * 4.2
+
+    '    .ColWidth(2) = .ColWidth(1) * 1.4
+    '    .ColWidth(3) = .ColWidth(1) * 1.4
+    '    .ColWidth(4) = .ColWidth(1) * 1.4
+    '    .ColWidth(5) = .ColWidth(1) * 1.5
+    '    .ColWidth(6) = .ColWidth(1) * 1.5
+    '    .ColWidth(7) = .ColWidth(1) * 0.9
                                        
-        .TextMatrix(0, 1) = "Tp. Manutenz."
-        .TextMatrix(0, 2) = "Dt. Scad. Manutenz."
-        .TextMatrix(0, 3) = "Dt. Rich. Manutenz."
-        .TextMatrix(0, 4) = "Dt. Effet. Manutenz."
-        .TextMatrix(0, 5) = "Descr. Manutenz."
-        .TextMatrix(0, 6) = "Dett. Intervento"
-        .TextMatrix(0, 7) = "N° Doc. Lav."
+        .TextMatrix(0, 1) = "Tipo Manutenz."
+        .TextMatrix(0, 2) = "Scad.Man."
+        .TextMatrix(0, 3) = "Rich.Man."
+        .TextMatrix(0, 4) = "Effet.Man."
+        .TextMatrix(0, 5) = "Descr.Manutenz./Motiv.Richiesta"
+        .TextMatrix(0, 6) = "N°Doc.Lav."
+        .TextMatrix(0, 7) = "Dettagli Intervento"
     End With
         
     With flxManutenzione
@@ -499,8 +511,17 @@ Private Sub CaricaFlx()
                 .TextMatrix(.Rows - 1, 4) = rsApparati("MODELLO") & ""
                 .TextMatrix(.Rows - 1, 5) = rsApparati("MATRICOLA") & ""
                 .TextMatrix(.Rows - 1, 6) = rsApparati("PRODUTTORE") & ""
+                'scrive in rosso
+                .Col = 7
+                .Row = .Rows - 1
+                .CellForeColor = vbRed
                 .TextMatrix(.Rows - 1, 7) = rsApparati("PROXREVFUN") & ""
+                
+                .Col = 8
+                .Row = .Rows - 1
+                .CellForeColor = vbRed
                 .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVSIC") & ""
+                
                 rsApparati.MoveNext
             End With
         Loop
@@ -530,8 +551,8 @@ Private Sub CaricaFlxManutenzione()
                 .TextMatrix(.Rows - 1, 3) = rsManutenziona("DATA_RICHIESTA_MANUTENZIONE") & ""
                 .TextMatrix(.Rows - 1, 4) = rsManutenziona("DATA_EFFETTIVA_MANUTENZIONE") & ""
                 .TextMatrix(.Rows - 1, 5) = rsManutenziona("DESCRIZIONE_MANUTENZIONE") & ""
-                .TextMatrix(.Rows - 1, 6) = rsManutenziona("DETTAGLI_INTERVENTO") & ""
-                .TextMatrix(.Rows - 1, 7) = rsManutenziona("NUMERO_DOCUMENTO") & ""
+                .TextMatrix(.Rows - 1, 6) = rsManutenziona("NUMERO_DOCUMENTO") & ""
+                .TextMatrix(.Rows - 1, 7) = rsManutenziona("DETTAGLI_INTERVENTO") & ""
                 rsManutenziona.MoveNext
             End With
         Loop

@@ -42,7 +42,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
       _Version        =   393216
       Name            =   "Intestazione"
       Object.Height          =   5355
-      NumControls     =   33
+      NumControls     =   31
       ItemType0       =   5
       BeginProperty Item0 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -391,56 +391,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Caption         =   "Totale"
          Alignment       =   2
       EndProperty
-      ItemType19      =   3
-      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label19"
-         Object.Left            =   5896
-         Object.Top             =   4479
-         Object.Width           =   840
-         Object.Height          =   840
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Importo Scontato"
-         Alignment       =   2
-      EndProperty
-      ItemType20      =   3
-      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label23"
-         Object.Left            =   6746
-         Object.Top             =   4479
-         Object.Width           =   855
-         Object.Height          =   840
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Totale Scontato"
-         Alignment       =   2
-      EndProperty
-      ItemType21      =   5
-      BeginProperty Item21 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType19      =   5
+      BeginProperty Item19 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line3"
          Object.Left            =   57
          Object.Top             =   5272
          Object.Width           =   10770
       EndProperty
-      ItemType22      =   3
-      BeginProperty Item22 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType20      =   3
+      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
          Object.Left            =   7540
@@ -458,8 +418,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          EndProperty
          Object.Caption         =   "P.iva"
       EndProperty
-      ItemType23      =   7
-      BeginProperty Item23 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType21      =   7
+      BeginProperty Item21 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
          Object.Left            =   6577
@@ -468,8 +428,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Height          =   1410
          SizeMode        =   2
       EndProperty
-      ItemType24      =   7
-      BeginProperty Item24 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType22      =   7
+      BeginProperty Item22 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
          Object.Left            =   9979
@@ -478,11 +438,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Height          =   810
          SizeMode        =   2
       EndProperty
-      ItemType25      =   3
-      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType23      =   3
+      BeginProperty Item23 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTicket"
-         Object.Left            =   7710
+         Object.Left            =   6066
          Object.Top             =   4479
          Object.Width           =   645
          Object.Height          =   840
@@ -498,11 +458,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Caption         =   "Ticket"
          Alignment       =   2
       EndProperty
-      ItemType26      =   3
-      BeginProperty Item26 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType24      =   3
+      BeginProperty Item24 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
-         Object.Left            =   9978
+         Object.Left            =   8334
          Object.Top             =   4479
          Object.Width           =   615
          Object.Height          =   840
@@ -518,11 +478,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Caption         =   "Totale Netto"
          Alignment       =   2
       EndProperty
-      ItemType27      =   3
-      BeginProperty Item27 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType25      =   3
+      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblQuotaAggiuntiva"
-         Object.Left            =   8447
+         Object.Left            =   6803
          Object.Top             =   4479
          Object.Width           =   735
          Object.Height          =   840
@@ -538,11 +498,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Caption         =   "Quota Region."
          Alignment       =   2
       EndProperty
-      ItemType28      =   3
-      BeginProperty Item28 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType26      =   3
+      BeginProperty Item26 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label12"
-         Object.Left            =   9184
+         Object.Left            =   7540
          Object.Top             =   4479
          Object.Width           =   735
          Object.Height          =   840
@@ -558,8 +518,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
          Object.Caption         =   "Quota Nazion."
          Alignment       =   2
       EndProperty
-      ItemType29      =   3
-      BeginProperty Item29 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType27      =   3
+      BeginProperty Item27 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblRagione"
          Object.Left            =   170
@@ -576,8 +536,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType30      =   3
-      BeginProperty Item30 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType28      =   3
+      BeginProperty Item28 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTipo"
          Object.Left            =   170
@@ -594,8 +554,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType31      =   3
-      BeginProperty Item31 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType29      =   3
+      BeginProperty Item29 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblAltro"
          Object.Left            =   170
@@ -612,8 +572,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType32      =   3
-      BeginProperty Item32 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType30      =   3
+      BeginProperty Item30 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDirettoreSanitario"
          Object.Left            =   170
@@ -637,7 +597,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
       Name            =   "corpo"
       Object.Height          =   405
       KeepTogether    =   -1  'True
-      NumControls     =   12
+      NumControls     =   10
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -809,10 +769,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
       ItemType6       =   4
       BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtImportoScontato"
-         Object.Left            =   5952
+         Name            =   "txtTotaleTicket"
+         Object.Left            =   5839
          Object.Top             =   57
-         Object.Width           =   615
+         Object.Width           =   780
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -837,10 +797,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
       ItemType7       =   4
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtImportoTotaleScontato"
-         Object.Left            =   6690
+         Name            =   "txtTotaleNetto"
+         Object.Left            =   8164
          Object.Top             =   57
-         Object.Width           =   855
+         Object.Width           =   840
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -865,10 +825,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
       ItemType8       =   4
       BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTotaleTicket"
-         Object.Left            =   7483
+         Name            =   "txtQuotaAggiuntiva"
+         Object.Left            =   6803
          Object.Top             =   57
-         Object.Width           =   780
+         Object.Width           =   570
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -893,64 +853,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFattura
       ItemType9       =   4
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTotaleNetto"
-         Object.Left            =   9808
-         Object.Top             =   57
-         Object.Width           =   840
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Alignment       =   1
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "#.##0,00"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   1
-         EndProperty
-      EndProperty
-      ItemType10      =   4
-      BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtQuotaAggiuntiva"
-         Object.Left            =   8447
-         Object.Top             =   57
-         Object.Width           =   570
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Alignment       =   1
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "#.##0,00"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   1
-         EndProperty
-      EndProperty
-      ItemType11      =   4
-      BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "txtQuotaNazionale"
-         Object.Left            =   9126
+         Object.Left            =   7482
          Object.Top             =   57
          Object.Width           =   555
          Object.Height          =   285
@@ -1276,9 +1180,9 @@ Private Sub DataReport_Initialize()
             .Item("txtImportoUnitario").DataField = "IMPORTO_UNITARIO"
             Set .Item("txtImportoUnitario").DataFormat = sdfZero
             .Item("txtImportoTotale").DataField = "IMPORTO_TOTALE"
-            .Item("txtImportoScontato").DataField = "IMPORTO_SCONTATO"
-            Set .Item("txtImportoScontato").DataFormat = sdfZero
-            .Item("txtImportoTotaleScontato").DataField = "IMPORTO_TOTALE_SCONTATO"
+ '           .Item("txtImportoScontato").DataField = "IMPORTO_SCONTATO"
+ '           Set .Item("txtImportoScontato").DataFormat = sdfZero
+ '           .Item("txtImportoTotaleScontato").DataField = "IMPORTO_TOTALE_SCONTATO"
             .Item("txtTotaleTicket").DataField = "TOTALE_TICKET"
             .Item("txtQuotaAggiuntiva").DataField = "TOTALE_QUOTA_AGGIUNTIVA"
             .Item("txtQuotaNazionale").DataField = "TOTALE_QUOTA_NAZIONALE"

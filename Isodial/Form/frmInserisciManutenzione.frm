@@ -450,7 +450,10 @@ Dim numKey As Integer
     End If
     
     If tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA Then
-         
+        'sostituisce l'apostrofo con `
+        cboDescrizone(0).Text = Replace(cboDescrizone(0).Text, Chr(39), Chr(96))
+        cboDettagliIntervento(1).Text = Replace(cboDettagliIntervento(1).Text, Chr(39), Chr(96))
+     
         v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_RICHIESTA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO")
         
         v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataRichiestaManutenzione(0).data = "", Null, oDataRichiestaManutenzione(0).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto)

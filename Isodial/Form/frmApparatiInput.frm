@@ -833,7 +833,7 @@ Dim numKey As Integer
 
 
     If txtNumeroInventario.Text = "" Then
-        MsgBox "Inserire il N° Inventario", vbCritical, "Attenzione"
+        MsgBox "Inserire il N° di Inventario", vbCritical, "Attenzione"
         Exit Sub
     End If
     
@@ -968,7 +968,9 @@ Dim numKey As Integer
     Set rsMemorizzaApparecchiature = Nothing
             
     Call Pulisci
-    Call NumeroInventario
+    
+    txtNumeroInventario = GetNumero("APPARATI")
+    'Call NumeroInventario
         
     If ModificaApparato = True Then
         ModificaApparato = False
@@ -1015,7 +1017,8 @@ End Sub
 
 Private Sub Form_Load()
     If tTrova.keyReturn = 0 Then
-        Call NumeroInventario
+        txtNumeroInventario = GetNumero("APPARATI")
+        'Call NumeroInventario
     Else
         NumeroApparato = tTrova.keyReturn
         Call CaricaApparato
@@ -1051,18 +1054,20 @@ Private Sub CaricaApparato()
     
 End Sub
 
-Private Sub NumeroInventario()
-    Set rsNumeroProgressivo = New Recordset
+'Private Sub NumeroInventario()
+'    txtNumeroInventario = GetNumero("APPARATI")
     
-    rsNumeroProgressivo.Open "SELECT MAX(NUMERO_INVENTARIO) AS MASSIMO FROM APPARATI", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If Not IsNull(rsNumeroProgressivo("MASSIMO")) Then
-        txtNumeroInventario = rsNumeroProgressivo("MASSIMO") + 1
-    Else
-        txtNumeroInventario = 1
-    End If
+'    Set rsNumeroProgressivo = New Recordset
     
-    Set rsNumeroProgressivo = Nothing
-End Sub
+'    rsNumeroProgressivo.Open "SELECT MAX(NUMERO_INVENTARIO) AS MASSIMO FROM APPARATI", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    If Not IsNull(rsNumeroProgressivo("MASSIMO")) Then
+'        txtNumeroInventario = rsNumeroProgressivo("MASSIMO") + 1
+'    Else
+'        txtNumeroInventario = 1
+'    End If
+    
+'    Set rsNumeroProgressivo = Nothing
+'End Sub
 
 Private Sub txtMatricola_GotFocus()
     txtMatricola.BackColor = colArancione

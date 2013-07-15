@@ -180,7 +180,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
       Name            =   "corpo"
       Object.Height          =   2220
       KeepTogether    =   -1  'True
-      NumControls     =   20
+      NumControls     =   18
       ItemType0       =   5
       BeginProperty Item0 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -212,7 +212,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label13"
-         Object.Left            =   7031
+         Object.Left            =   3459
          Object.Top             =   739
          Object.Width           =   1425
          Object.Height          =   285
@@ -288,7 +288,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
       BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtImportoNetto"
-         Object.Left            =   8390
+         Object.Left            =   4818
          Object.Top             =   771
          Object.Width           =   1635
          Object.Height          =   285
@@ -450,52 +450,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
       ItemType12      =   3
       BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label4"
-         Object.Left            =   3459
-         Object.Top             =   739
-         Object.Width           =   1755
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Importo scontato:"
-      EndProperty
-      ItemType13      =   4
-      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtImportoScontato"
-         Object.Left            =   5103
-         Object.Top             =   771
-         Object.Width           =   1365
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "#.##0,00"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   1
-         EndProperty
-      EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label5"
          Object.Left            =   114
          Object.Top             =   1249
@@ -512,8 +466,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
          EndProperty
          Object.Caption         =   "Importo ticket:"
       EndProperty
-      ItemType15      =   4
-      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   4
+      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtImportoTicket"
          Object.Left            =   1475
@@ -539,8 +493,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
             SubFormatType   =   1
          EndProperty
       EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   3459
@@ -558,8 +512,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
          EndProperty
          Object.Caption         =   "Quota regionale:"
       EndProperty
-      ItemType17      =   4
-      BeginProperty Item17 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   4
+      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtQuotaAggiuntiva"
          Object.Left            =   5131
@@ -585,8 +539,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
             SubFormatType   =   1
          EndProperty
       EndProperty
-      ItemType18      =   3
-      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   7030
@@ -604,8 +558,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRiepilogoPerTotaliPerAsl
          EndProperty
          Object.Caption         =   "Quota nazionale:"
       EndProperty
-      ItemType19      =   4
-      BeginProperty Item19 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType17      =   4
+      BeginProperty Item17 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtQuotaNazionale"
          Object.Left            =   8714
@@ -779,7 +733,7 @@ Private Sub DataReport_Initialize()
             .Item("txtImportoTicket").DataField = "TOTALE_TICKET"
             .Item("txtQuotaAggiuntiva").DataField = "TOTALE_QUOTA_AGGIUNTIVA"
             .Item("txtQuotaNazionale").DataField = "TOTALE_QUOTA_NAZIONALE"
-            .Item("txtImportoScontato").DataField = "TOTALE_SCONTATO"
+  '          .Item("txtImportoScontato").DataField = "TOTALE_SCONTATO"
         End With
    End With
 End Sub

@@ -574,7 +574,8 @@ Public Sub GestisciNuovoApparato(inNomeTabella As String, ByRef inCbo As ComboBo
     Dim v_Nomi() As Variant
     Dim v_Val() As Variant
     
-    strSelezione = inCbo.Text
+    strSelezione = Replace(inCbo.Text, Chr(39), Chr(96))
+   ' strSelezione = inCbo.Text
     v_Nomi = Array("KEY", "NOME")
     
     Set rsDataset = New Recordset
@@ -1032,7 +1033,7 @@ Public Sub RicaricaComboBox(inQuery As String, inNomeCampo As String, ByRef inCb
     Dim rsDataset As New Recordset
     Dim strSelezione As String
     
-    strSelezione = inCbo.Text
+   strSelezione = inCbo.Text
     inCbo.Clear
     rsDataset.Open inQuery, cnPrinc, adOpenForwardOnly, adLockReadOnly
     Do While Not rsDataset.EOF

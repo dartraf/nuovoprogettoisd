@@ -635,6 +635,10 @@ End Sub
 Private Sub cmdInserisci_Click()
     Dim num As Integer
 
+    If MantieniKeyReturn = 0 Then
+        flxManutenzione.Rows = 1
+    End If
+    
     frmApparatiInput.Show 1
     Call CaricaFlx
     

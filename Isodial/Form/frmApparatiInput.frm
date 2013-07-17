@@ -750,6 +750,7 @@ Private Sub cboModalitaAcquisizione_LostFocus(Index As Integer)
     End If
 
     cboModalitaAcquisizione(1).BackColor = vbWhite
+    
 End Sub
 
 Private Sub cboModello_GotFocus(Index As Integer)
@@ -808,7 +809,6 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
         Exit Sub
     End If
     
-    
     If cboTipoApparato(0).Text <> "" Then
         Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
@@ -818,12 +818,14 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
 End Sub
 
 Private Sub cmdChiudi_Click()
+    
     If MantieniKeyReturn > 0 Then
         Unload frmApparatiInput
     Else
         MantieniKeyReturn = -2
         Unload frmApparatiInput
     End If
+
 End Sub
 
 Private Sub cmdMemorizza_Click()
@@ -831,6 +833,10 @@ Dim v_Nomi() As Variant
 Dim v_Val() As Variant
 Dim numKey As Integer
 
+    '' Controllo sull'univocità del numero d'inventario
+    If NumInvent Then
+        Exit Sub
+    End If
 
     If txtNumeroInventario.Text = "" Then
         MsgBox "Inserire il N° di Inventario", vbCritical, "Attenzione"
@@ -982,6 +988,45 @@ Dim numKey As Integer
     
 End Sub
 
+'' Controllo sull'univocità del numero d'inventario
+Private Function NumInvent() As Boolean
+    Dim massimo As Integer
+    Dim rsDataset As New Recordset
+    
+    rsDataset.Open "SELECT MAX(NUMERO_INVENTARIO) AS MASSIMO FROM APPARATI", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If IsNull(rsDataset("MASSIMO")) Then
+        massimo = 0
+    Else
+        massimo = rsDataset("MASSIMO")
+    End If
+    rsDataset.Close
+    
+    If txtNumeroInventario = "" Then
+        txtNumeroInventario = massimo + 1
+        NumInvent = False
+    Else
+        rsDataset.Open "SELECT KEY,NUMERO_INVENTARIO FROM APPARATI WHERE NUMERO_INVENTARIO=" & txtNumeroInventario, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        If Not (rsDataset.EOF And rsDataset.BOF) Then
+            If rsDataset("KEY") <> tTrova.keyReturn Then
+                If MsgBox("Numero Inventario già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbInformation + vbYesNo, "Informazione") = vbYes Then
+                    txtNumeroInventario = massimo + 1
+                    NumInvent = False
+                Else
+                    NumInvent = True
+                End If
+            Else
+                NumInvent = False
+            End If
+        Else
+            NumInvent = False
+        End If
+    End If
+    
+    Set rsDataset = Nothing
+
+End Function
+
+
 Private Sub Pulisci()
     txtNumeroApparato.Text = ""
     cboTipoApparato(0).Text = ""
@@ -1053,6 +1098,8 @@ Private Sub CaricaApparato()
     ModificaApparato = True
     
 End Sub
+
+
 
 'Private Sub NumeroInventario()
 '    txtNumeroInventario = GetNumero("APPARATI")

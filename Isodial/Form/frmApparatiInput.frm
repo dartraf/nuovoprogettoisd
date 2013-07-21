@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmApparatiInput 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Inserimento Gestioni Apparati"
+   Caption         =   "Inserimento Apparati"
    ClientHeight    =   7185
    ClientLeft      =   45
    ClientTop       =   315
@@ -20,6 +20,25 @@ Begin VB.Form frmApparatiInput
       TabIndex        =   0
       Top             =   0
       Width           =   10455
+      Begin VB.CheckBox chkAttivaAlert 
+         Caption         =   "ATTIVA ALERT"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Left            =   2640
+         TabIndex        =   39
+         Top             =   360
+         Value           =   1  'Checked
+         Width           =   2055
+      End
       Begin VB.ComboBox cboManutentore 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -1008,10 +1027,11 @@ Private Function NumInvent() As Boolean
         rsDataset.Open "SELECT KEY,NUMERO_INVENTARIO FROM APPARATI WHERE NUMERO_INVENTARIO=" & txtNumeroInventario, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("KEY") <> tTrova.keyReturn Then
-                If MsgBox("Numero Inventario già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbInformation + vbYesNo, "Informazione") = vbYes Then
+                If MsgBox("Numero Inventario già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbCritical + vbYesNo, "ATTENZIONE!!!") = vbYes Then
                     txtNumeroInventario = massimo + 1
                     NumInvent = False
                 Else
+                    txtNumeroInventario.SetFocus
                     NumInvent = True
                 End If
             Else

@@ -2508,7 +2508,7 @@ Private Sub Memorizza()
                     "G_SANGUIGNO", "RH", "NOTE", "CODICE_MEDICO", "CODICE_FISCALE_CIFRATO", "TRASPORTO_IN_AMBULANZA", _
                     "CODICE_DISTRETTO", "CODICE_ESENZIONE", "CODICE_CENTRO_PROV", "CODICE_ACCOMPAGNATORE")
         v_Val = Array(txtCognome, txtNome, txtCodiceId, oData(0).data, IIf(optSesso(0).Value, "M", "F"), txtCitta, _
-                    -1, -1, -1, txtCAP(0), txtCAP(1), txtProv(0), txtProv(1), _
+                    -1, -1, -1, txtCap(0), txtCap(1), txtProv(0), txtProv(1), _
                     txtKm, txtIndirizzo, txtTelefono, txtCellulare, txtFax, txtEmail, _
                     txtNumeroProcura, IIf(oData(1).data = "", Null, oData(1).data), IIf(oData(2).data = "", Null, oData(2).data), cboDocumento.ListIndex, txtNumCarta, txtRilascioCarta, _
                     -1, txtCodiceFiscale, txtTesseraSanitaria, IIf(chkEsenteReddito.Value = Checked, True, False), txtAllergia, txtProfessione, _
@@ -2837,7 +2837,7 @@ Private Function idNonValido() As Boolean
         rsDataset.Open "SELECT KEY,CODICE_ID FROM PAZIENTI WHERE CODICE_ID=" & txtCodiceId, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("KEY") <> intPazientiKey Then
-                If MsgBox("Codice ID già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbInformation + vbYesNo, "Informazione") = vbYes Then
+                If MsgBox("Codice ID già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbCritical + vbYesNo, "Attenzione") = vbYes Then
                     txtCodiceId = massimo + 1
                     idNonValido = False
                 Else
@@ -3487,8 +3487,8 @@ Private Sub CaricaPaziente()
     txtCognome = rsDataset("COGNOME")
     txtNome = rsDataset("NOME")
     txtCodiceId = rsDataset("CODICE_ID") & ""
-    txtCAP(0) = rsDataset("CAP_NASCITA")
-    txtCAP(1) = rsDataset("CAP_RESIDENZA")
+    txtCap(0) = rsDataset("CAP_NASCITA")
+    txtCap(1) = rsDataset("CAP_RESIDENZA")
     txtCellulare = rsDataset("CELLULARE")
     txtCitta = rsDataset("CITTA_NASCITA")
     cboNazione.ListIndex = GetCboListIndex(rsDataset("NAZIONIID"), cboNazione)
@@ -3710,7 +3710,7 @@ Private Sub txtAllergia_LostFocus()
 End Sub
 
 Private Sub txtCap_LostFocus(Index As Integer)
-    txtCAP(Index).BackColor = vbWhite
+    txtCap(Index).BackColor = vbWhite
 End Sub
 
 Private Sub txtCapMedico_GotFocus()
@@ -3828,7 +3828,7 @@ Private Sub txtcogNome_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtCap_GotFocus(Index As Integer)
-    txtCAP(Index).BackColor = colArancione
+    txtCap(Index).BackColor = colArancione
 End Sub
 
 Private Sub txtCellulare_GotFocus()

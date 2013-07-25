@@ -361,8 +361,12 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim rsManutenzione As Recordset
 Dim rsCercaManutenzione As Recordset
+Dim rsDataRevisioneFunzionale As Recordset
+Dim rsDataRevisioneSicurezza As Recordset
 Dim NumeroApparato As Integer
 Dim ModificaApparato As Boolean
+Dim ProxRevFun As Date
+Dim ProxRevSic As Date
 
 Private Sub cboDescrizone_GotFocus(Index As Integer)
     cboDescrizone(0).BackColor = colArancione
@@ -478,7 +482,7 @@ Dim numKey As Integer
             txtTipoManutenzione.Text = "ORD. FUN. SIC."
         ElseIf chkFunzionalità.Value = Unchecked Or chkSicurezza.Value = Unchecked Then
             txtTipoManutenzione.Text = "ORDINARIA"
-         End If
+        End If
             
         v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_SCADENZA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO", "FUNZIONALITA", "SICUREZZA")
         
@@ -493,8 +497,19 @@ Dim numKey As Integer
         End If
             
         Set rsManutenzione = Nothing
-    
     End If
+    
+        ' AUTOMATISMO PER LA
+        If chkFunzionalità.Value = Checked And chkSicurezza.Value = Checked Then
+            Call CalcoloProxRevFun
+            Call CalcoloProxRevSic
+        ' DATA PROSSIMA REV. FUNZ.
+        ElseIf chkFunzionalità.Value = Checked Then
+            Call CalcoloProxRevFun
+        ' DATA PROSSIMA REV. SIC.
+        ElseIf chkSicurezza.Value = Checked Then
+            Call CalcoloProxRevSic
+        End If
                 
     Call Pulisci
         
@@ -505,6 +520,88 @@ Dim numKey As Integer
         Unload frmInserisciManutenzione
     End If
     
+End Sub
+
+'' AUTOMATISMO PER IL CALCOLO DELLA DATA DELLA PROSSIMA REVISIONE FUNZIONALE
+Private Sub CalcoloProxRevFun()
+
+    Set rsDataRevisioneFunzionale = New Recordset
+    rsDataRevisioneFunzionale.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        
+    If oDataEffettivaManutenzione(1).data > rsDataRevisioneFunzionale("DATA_COLLAUDO") Then
+        ProxRevFun = rsDataRevisioneFunzionale("DATA_COLLAUDO")
+            
+            Select Case rsDataRevisioneFunzionale("FUNZIONALITA")
+                Case Is = 0
+                ' funzione per sommare la date
+                ' d=day, m=month, y=year
+                    ProxRevFun = DateAdd("m", 1, oDataEffettivaManutenzione(1).data)
+                Case Is = 1
+                    ProxRevFun = DateAdd("m", 2, oDataEffettivaManutenzione(1).data)
+                Case Is = 2
+                    ProxRevFun = DateAdd("m", 3, oDataEffettivaManutenzione(1).data)
+                Case Is = 3
+                    ProxRevFun = DateAdd("m", 4, oDataEffettivaManutenzione(1).data)
+                Case Is = 4
+                    ProxRevFun = DateAdd("m", 6, oDataEffettivaManutenzione(1).data)
+                Case Is = 5
+                    ' calcolo l' aggiunta dell' anno con la somma dei mesi
+                    ' in quanto la funzione "year" aggiunge il giorno
+                    ProxRevFun = DateAdd("m", 12, oDataEffettivaManutenzione(1).data)
+                Case Is = 6
+                    ProxRevFun = DateAdd("m", 24, oDataEffettivaManutenzione(1).data)
+                Case Is = 7
+                    ProxRevFun = DateAdd("m", 36, oDataEffettivaManutenzione(1).data)
+            End Select
+    
+        rsDataRevisioneFunzionale("PROXREVFUN") = ProxRevFun
+        rsDataRevisioneFunzionale.Update
+        
+    End If
+        
+    Set rsDataRevisioneFunzionale = Nothing
+
+End Sub
+
+'' AUTOMATISMO PER IL CALCOLO DELLA DATA DELLA PROSSIMA REVISIONE SICUREZZA
+Private Sub CalcoloProxRevSic()
+
+    Set rsDataRevisioneSicurezza = New Recordset
+    rsDataRevisioneSicurezza.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        
+    If oDataEffettivaManutenzione(1).data > rsDataRevisioneSicurezza("DATA_COLLAUDO") Then
+        ProxRevSic = rsDataRevisioneSicurezza("DATA_COLLAUDO")
+            
+            Select Case rsDataRevisioneSicurezza("SICUREZZA")
+                Case Is = 0
+                ' funzione per sommare la date
+                ' d=day, m=month, y=year
+                    ProxRevSic = DateAdd("m", 1, oDataEffettivaManutenzione(1).data)
+                Case Is = 1
+                    ProxRevSic = DateAdd("m", 2, oDataEffettivaManutenzione(1).data)
+                Case Is = 2
+                    ProxRevSic = DateAdd("m", 3, oDataEffettivaManutenzione(1).data)
+                Case Is = 3
+                    ProxRevSic = DateAdd("m", 4, oDataEffettivaManutenzione(1).data)
+                Case Is = 4
+                    ProxRevSic = DateAdd("m", 6, oDataEffettivaManutenzione(1).data)
+                Case Is = 5
+                    ' calcolo l' aggiunta dell' anno con la somma dei mesi
+                    ' in quanto la funzione "year" aggiunge il giorno
+                    ProxRevSic = DateAdd("m", 12, oDataEffettivaManutenzione(1).data)
+                Case Is = 6
+                    ProxRevSic = DateAdd("m", 24, oDataEffettivaManutenzione(1).data)
+                Case Is = 7
+                    ProxRevSic = DateAdd("m", 36, oDataEffettivaManutenzione(1).data)
+            End Select
+    
+        rsDataRevisioneSicurezza("PROXREVSIC") = ProxRevSic
+        rsDataRevisioneSicurezza.Update
+        
+    End If
+        
+    Set rsDataRevisioneSicurezza = Nothing
+
 End Sub
 
 Private Sub Pulisci()

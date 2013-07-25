@@ -308,6 +308,7 @@ Private Sub cmdManutenzioneOrdinaria_Click()
     Else
         tTabellaManutenzione = tpMANUTENZIONEORDINARIA
         frmInserisciManutenzione.Show 1
+        Call CaricaFlx
         Call CaricaFlxManutenzione
     End If
     

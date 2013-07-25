@@ -975,12 +975,12 @@ Dim numKey As Integer
          
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
                     , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO" _
-                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC")
+                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT")
                     
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
-                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic))
+                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False))
             
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -1113,6 +1113,7 @@ Private Sub CaricaApparato()
         txtPeriodoAmmortamento.Text = rsCercaApparato("PERIODO_AMMORTAMENTO")
         cboFunzionalita.ListIndex = rsCercaApparato("FUNZIONALITA")
         cboSicurezza.ListIndex = rsCercaApparato("SICUREZZA")
+        chkAttivaAlert.Value = IIf(CBool(rsCercaApparato("ALERT")), Checked, Unchecked)
         
     Set rsCercaApparato = Nothing
     ModificaApparato = True

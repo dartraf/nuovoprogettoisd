@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmRichiestaImpegnativeDialisi 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -569,12 +569,17 @@ Private Sub CaricaFlx()
     
     rsPazienti.Open "SELECT NOME, COGNOME, KEY FROM PAZIENTI WHERE (STATO=0) " & strSingoloPaziente & " ORDER BY COGNOME, NOME", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
     Do While Not rsPazienti.EOF
-    
- '    elimina paziente con zero dialisi
-        If GetNumeroDialisiFuture(rsPazienti("KEY")) = 0 Then
+ 
+         If rsPazienti.RecordCount = 1 And GetNumeroDialisiFuture(rsPazienti("KEY")) = 0 Then
+            MsgBox "IMPOSSIBILE ELABORARE IL NUMERO DELLE IMPEGNATIVE" & vbCrLf & "Non risulta compilata l'anamnesi dialitica oppure al paziente non è stato attribuito alcun turno dialitico", vbCritical, "ATTENZIONE!!!"
+            rsPazienti.Close
+            Set rsPazienti = Nothing
+            Exit Sub
+         ElseIf GetNumeroDialisiFuture(rsPazienti("KEY")) = 0 Then
+ '    elimina pazienti con zero dialisi
             rsPazienti.MoveNext
-        End If
-    
+         End If
+   
         With flxGriglia
             .Rows = .Rows + 1
             .TextMatrix(.Rows - 1, 0) = rsPazienti("KEY")

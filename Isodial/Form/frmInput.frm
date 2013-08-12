@@ -13,6 +13,120 @@ Begin VB.Form frmInput
    ScaleWidth      =   12585
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.Frame fraComuni 
+      Height          =   1695
+      Left            =   6480
+      TabIndex        =   167
+      Top             =   6480
+      Width           =   6015
+      Begin VB.ComboBox cboRegComuni 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1680
+         Style           =   2  'Dropdown List
+         TabIndex        =   170
+         Top             =   1200
+         Width           =   4095
+      End
+      Begin VB.TextBox txtComune 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1680
+         MaxLength       =   25
+         TabIndex        =   169
+         Top             =   720
+         Width           =   4095
+      End
+      Begin VB.TextBox txtCodIstat 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1680
+         MaxLength       =   6
+         TabIndex        =   168
+         Top             =   240
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Codice ISTAT"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   45
+         Left            =   120
+         TabIndex        =   173
+         Top             =   300
+         Width           =   1470
+      End
+      Begin VB.Label Comune 
+         AutoSize        =   -1  'True
+         Caption         =   "Comune"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   120
+         TabIndex        =   172
+         Top             =   720
+         Width           =   855
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Regione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   44
+         Left            =   120
+         TabIndex        =   171
+         Top             =   1200
+         Width           =   900
+      End
+   End
    Begin VB.Frame fraVoci 
       Height          =   2055
       Left            =   6480
@@ -218,7 +332,7 @@ Begin VB.Form frmInput
       End
    End
    Begin VB.Frame fraEsenzioni 
-      Height          =   1095
+      Height          =   1185
       Left            =   6480
       TabIndex        =   156
       Top             =   5400
@@ -2918,6 +3032,13 @@ Private Sub Form_Activate()
                 txtImporto = tInput.v_valori(3)
                 txtImportoScontato = tInput.v_valori(4)
             End If
+        Case tpICOMUNI
+           txtCodIstat.SetFocus
+           If tInput.mantieniDati Then
+                txtCodIstat = tInput.v_valori(1)
+                txtComune = tInput.v_valori(2)
+                cboRegComuni.ListIndex = GetCboListIndex(CInt(tInput.v_valori(3)), cboRegComuni)
+            End If
         Case tpIASL
             txtCodiceAsl.SetFocus
             If tInput.mantieniDati Then
@@ -2944,8 +3065,8 @@ Private Sub Form_Load()
     Me.Height = 2385
     Me.Width = 6315
     For i = 0 To 9
-        lblData(i).BackColor = vbWhite
-        picData(i).Picture = LoadResPicture("cal1", 0)
+       lblData(i).BackColor = vbWhite
+       picData(i).Picture = LoadResPicture("cal1", 0)
     Next i
     
     Select Case tInput.Tipo
@@ -2967,16 +3088,6 @@ Private Sub Form_Load()
                 txtCognome.Width = txtCognome.Width / 8
                 lblNome = "Tipologia Medico"
                 txtNome.MaxLength = 50
-            ElseIf tTabelle = tpCOMUNI Then
-                Label1(1) = "Codice ISTAT"
-                txtCognome.MaxLength = 6
-                lblNome = "Comune"
-                txtNome.MaxLength = 40
-            ElseIf tTabelle = tpasl Then
-                Label1(1) = "Codice ASL"
-                txtCognome.MaxLength = 3
-                lblNome = "ASL"
-                txtNome.MaxLength = 25
             ElseIf tTabelle = tpEDTA Then
                 Label1(1) = "Codice"
                 txtCognome.MaxLength = 3
@@ -3097,6 +3208,12 @@ Private Sub Form_Load()
             fraNomenclatore.Left = fraTabelle.Left
             fraNomenclatore.ZOrder
             fraPulsanti.Top = fraNomenclatore.Height - 135
+        Case tpICOMUNI
+            fraComuni.Top = fraTabelle.Top
+            fraComuni.Left = fraTabelle.Left
+            fraComuni.ZOrder
+            fraPulsanti.Top = fraAsl.Height - 135
+            Call RicaricaComboBox("REGIONI ORDER BY NOME", "NOME", cboRegComuni)
         Case tpIASL
             fraAsl.Top = fraTabelle.Top
             fraAsl.Left = fraTabelle.Left
@@ -3207,6 +3324,8 @@ Private Sub cmdAnnulla_LostFocus()
             txtNoteEpisodi.SetFocus
         Case tpIPRESCRIZIONI
             cboPrescrizioni.SetFocus
+        Case tpICOMUNI
+            txtCodIstat.SetFocus
         Case tpIASL
             txtCodiceAsl.SetFocus
         Case tpITERAPIESTRAORDINARIE
@@ -3243,15 +3362,9 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(1) = UCase(txtCognome)                       ' obbligatorio per singolo
     Case tpICOMPOSTO:
         If txtNome = "" Or txtCognome = "" Then
-            MsgBox "Inserire tutti i valori", vbCritical, "Attenzione"
+            MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!"
             Exit Sub
         Else
-            If tTabelle = tpCOMUNI Then
-                If Not Len(txtCognome) = 6 Then
-                    MsgBox "Il codice ISTAT deve essere di 6 caratteri", vbCritical, "Attenzione"
-                    Exit Sub
-                End If
-            End If
             tInput.v_valori(1) = txtNome                       ' obbligatorio per composto
             tInput.v_valori(2) = txtCognome
         End If
@@ -3265,16 +3378,16 @@ Private Sub cmdInserisci_Click()
             txtValoreMax = 0
         End If
         If val(txtValoreMax) < val(txtValoreMin) Then
-            MsgBox "Il valore massimo non può essere inferiore al valore minimo", vbCritical, "Attenzione"
+            MsgBox "Il valore massimo non può essere inferiore al valore minimo", vbCritical, "ATTENZIONE!!!"
             Exit Sub
         End If
         If tInput.v_valori(6) >= 3 And chkStampaVoce.Value = Checked Then
-            MsgBox "IMPOSSIBILE stampare nel box - I tre esami sono già selezionati", vbCritical, "Attenzione"
+            MsgBox "IMPOSSIBILE stampare nel box - I tre esami sono già selezionati", vbCritical, "ATTENZIONE!!!"
             chkStampaVoce.Value = Unchecked
             Exit Sub
         End If
         If tInput.v_valori(7) >= 16 And chkEsameDaStampare.Value = Checked Then
-            MsgBox "IMPOSSIBILE stampare nel box - I sedici esami sono già selezionati", vbCritical, "Attenzione"
+            MsgBox "IMPOSSIBILE stampare nel box - I sedici esami sono già selezionati", vbCritical, "ATTENZIONE!!!"
             chkEsameDaStampare.Value = Unchecked
             Exit Sub
         End If
@@ -3304,12 +3417,12 @@ Private Sub cmdInserisci_Click()
             Exit Sub
         End If
         If Len(txtChiave.Text) < 8 Then
-            MsgBox "ATTENZIONE: " & vbCrLf & "Il Nome Utente deve essere almeno di 8 caratteri!!!", vbInformation, "Informazione"
+            MsgBox "ATTENZIONE!!!: " & vbCrLf & "Il Nome Utente deve essere almeno di 8 caratteri!!!", vbInformation, "Informazione"
             txtChiave.SetFocus
             Exit Sub
         End If
         If Len(txtPass.Text) < 8 Then
-            MsgBox "ATTENZIONE: " & vbCrLf & "La Password deve essere almeno di 8 caratteri!!!", vbInformation, "Informazione"
+            MsgBox "ATTENZIONE!!!: " & vbCrLf & "La Password deve essere almeno di 8 caratteri!!!", vbInformation, "Informazione"
             txtPass.SetFocus
             Exit Sub
         End If
@@ -3325,19 +3438,19 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(6) = (chkInserisci.Value = Checked)
     Case tpITERAPIADOMICILIARE, tpITERAPIADIALITICA:
         If cboMedicinali.ListIndex = -1 Then
-            MsgBox "Selezionare il farmaco", vbCritical, "Attenzione"
+            MsgBox "Selezionare il farmaco", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         Else
             tInput.v_valori(2) = cboMedicinali.ListIndex
         End If
         If lblData(0) = "" Then
-            MsgBox "Inserire la data di inizio terapia", vbCritical, "Attenzione"
+            MsgBox "Inserire la data di inizio terapia", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         Else
             tInput.v_valori(1) = lblData(0)
         End If
         If txtPosologia = "" Then
-            MsgBox "Inserire la posologia", vbCritical, "Attenzione"
+            MsgBox "Inserire la posologia", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         Else
             tInput.v_valori(3) = txtPosologia
@@ -3349,7 +3462,7 @@ Private Sub cmdInserisci_Click()
             End If
         Next i
         If trovato = False Then
-            MsgBox "Selezionare almeno un giorno della settimana", vbCritical, "Attenzione"
+            MsgBox "Selezionare almeno un giorno della settimana", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If tInput.Tipo = tpITERAPIADIALITICA Then
@@ -3367,19 +3480,19 @@ Private Sub cmdInserisci_Click()
         End If
     Case tpIRENI:
         If txtPostazione = "" Then
-            MsgBox "Inserire la postazione", vbCritical, "Attenzione"
+            MsgBox "Inserire la postazione", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If txtTipoRene = "" Then
-            MsgBox "Inserire il monitor", vbCritical, "Attenzione"
+            MsgBox "Inserire il monitor", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If txtMatricola = "" Then
-            MsgBox "Inserire la matricola", vbCritical, "Attenzione"
+            MsgBox "Inserire la matricola", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If txtNumeroRene = "" Then
-            MsgBox "Inserire il numero rene", vbCritical, "Attenzione"
+            MsgBox "Inserire il numero rene", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         tInput.v_valori(1) = txtPostazione
@@ -3398,23 +3511,23 @@ Private Sub cmdInserisci_Click()
         End If
     Case tpIPRESCRIZIONI
         If lblData(7) = "" Or lblData(8) = "" Then
-            MsgBox "Inserire le date", vbCritical, "Attenzione"
+            MsgBox "Inserire le date", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If cboCodicePrestazione.ListIndex = -1 Then
-            MsgBox "Selezionare la prescrizione", vbCritical, "Attenzione"
+            MsgBox "Selezionare la prescrizione", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If CDate(lblData(7)) > CDate(lblData(8)) Then
-            MsgBox "Inserire le date correttamente", vbCritical, "Attenzione"
+            MsgBox "Inserire le date correttamente", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If CDate(lblData(8)) < CDate(frmPrescrizioni.oData(0).data) Then
-            MsgBox "La data di fine prestazione non può essere antecedente alla data prenotazione", vbCritical, "Attenzione"
+            MsgBox "La data di fine prestazione non può essere antecedente alla data prenotazione", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If CDate(lblData(8)) < CDate(frmPrescrizioni.oData(1).data) Then
-            MsgBox "La data di fine prestazione non può essere antecedente alla data ricetta", vbCritical, "Attenzione"
+            MsgBox "La data di fine prestazione non può essere antecedente alla data ricetta", vbCritical, "ATTENZIONE!!!"
             Exit Sub
         End If
         tInput.v_valori(1) = cboPrescrizioni.ItemData(cboPrescrizioni.ListIndex)
@@ -3442,7 +3555,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(5) = GestisciOptTre(optEsitoBagno)
     Case tpITERAPIESTRAORDINARIE
         If cboMedicinaliStraordinaria.ListIndex = -1 Then
-            MsgBox "Selezionare il farmaco", vbCritical, "Attenzione"
+            MsgBox "Selezionare il farmaco", vbCritical, "ATTENZIONE!!!"
             Exit Sub
         Else
             tInput.v_valori(1) = cboMedicinaliStraordinaria.ListIndex
@@ -3452,7 +3565,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(4) = txtNoteStraordinarie
     Case tpIDISTRETTI
         If cboAslAppartenenza.ListIndex = -1 Or txtCodiceDistretto = "" Or txtNomeDistretto = "" Then
-            MsgBox "Inserire tutti i valori", vbCritical, "Attenzione"
+            MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!"
             Exit Sub
         End If
         tInput.v_valori(1) = txtCodiceDistretto
@@ -3460,16 +3573,28 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(3) = cboAslAppartenenza.ItemData(cboAslAppartenenza.ListIndex)
     Case tpINOMENCLATORE
         If txtCodicePrestazione = "" Or txtNomePrestazione = "" Or txtImporto = "" Or txtImportoScontato = "" Then
-            MsgBox "Inserire tutti i valori", vbCritical, "Attenzione"
+            MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!"
             Exit Sub
         End If
         tInput.v_valori(1) = txtCodicePrestazione
         tInput.v_valori(2) = txtNomePrestazione
         tInput.v_valori(3) = IIf(txtImporto = "", "0.00", txtImporto)
         tInput.v_valori(4) = IIf(txtImportoScontato = "", "0.00", txtImportoScontato)
+    Case tpICOMUNI
+        If cboRegComuni.ListIndex = -1 Or txtCodIstat = "" Or txtComune = "" Then
+            MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!!!!"
+            Exit Sub
+        End If
+        If Not Len(txtCodIstat) = 6 Then
+            MsgBox "Il codice ISTAT deve essere di 6 caratteri", vbCritical, "ATTENZIONE!!!!!!"
+            Exit Sub
+        End If
+        tInput.v_valori(1) = txtCodIstat
+        tInput.v_valori(2) = txtComune
+        tInput.v_valori(3) = cboRegComuni.ItemData(cboRegComuni.ListIndex)
     Case tpIASL
         If cboRegione.ListIndex = -1 Or txtCodiceAsl = "" Or txtNomeAsl = "" Then
-            MsgBox "Inserire tutti i valori", vbCritical, "Attenzione"
+            MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         tInput.v_valori(1) = txtCodiceAsl
@@ -3477,11 +3602,17 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(3) = cboRegione.ItemData(cboRegione.ListIndex)
     Case tpIESENZIONE
         tInput.v_valori(1) = txtCodiceEsenzione
+        If txtCodiceEsenzione = "" Then
+            MsgBox "Inserire il codice di esenzione", vbCritical, "ATTENZIONE!!!!!!"
+            Exit Sub
+        End If
         If optTicketRicetta(0).Value Then
             tInput.v_valori(2) = True
         Else
             tInput.v_valori(2) = False
         End If
+
+
     End Select
     Unload Me
 End Sub
@@ -3761,7 +3892,7 @@ End Sub
 Private Sub txtQuantita_Validate(Cancel As Boolean)
     If txtQuantita <> "" Then
         If txtQuantita < 1 Or txtQuantita > 99 Then
-            MsgBox "Inserire un valore compreso tra 1 e 99", vbCritical, "Attenzione"
+            MsgBox "Inserire un valore compreso tra 1 e 99", vbCritical, "ATTENZIONE!!!"
             Cancel = True
         Else
             Cancel = False
@@ -3803,6 +3934,38 @@ Private Sub txtCodiceDistretto_LostFocus()
     txtCodiceDistretto.BackColor = vbWhite
 End Sub
 
+Private Sub txtCodIstat_GotFocus()
+    txtCodIstat.BackColor = colArancione
+End Sub
+
+Private Sub txtCodIstat_LostFocus()
+    txtCodIstat.BackColor = vbWhite
+End Sub
+
+Private Sub txtComune_LostFocus()
+    txtComune.BackColor = vbWhite
+End Sub
+
+Private Sub txtComune_GotFocus()
+    txtComune.BackColor = colArancione
+End Sub
+
+Private Sub txtCodiceAsl_LostFocus()
+    txtCodiceAsl.BackColor = vbWhite
+End Sub
+
+Private Sub txtCodiceAsl_GotFocus()
+    txtCodiceAsl.BackColor = colArancione
+End Sub
+
+Private Sub txtNomeAsl_LostFocus()
+    txtNomeAsl.BackColor = vbWhite
+End Sub
+
+Private Sub txtNomeAsl_GotFocus()
+    txtNomeAsl.BackColor = colArancione
+End Sub
+
 Private Sub txtNomePrestazione_GotFocus()
     txtNomePrestazione.BackColor = colArancione
 End Sub
@@ -3817,6 +3980,14 @@ End Sub
 
 Private Sub txtCodicePrestazione_LostFocus()
     txtCodicePrestazione.BackColor = vbWhite
+End Sub
+
+Private Sub txtCodiceEsenzione_GotFocus()
+    txtCodiceEsenzione.BackColor = colArancione
+End Sub
+
+Private Sub txtCodiceEsenzione_LostFocus()
+    txtCodiceEsenzione.BackColor = vbWhite
 End Sub
 
 Private Sub txtImportoScontato_Change()

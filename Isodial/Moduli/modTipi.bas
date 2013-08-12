@@ -160,6 +160,7 @@ Enum tipoInput
     tpIPRESCRIZIONI
     tpIDISTRETTI
     tpINOMENCLATORE
+    tpICOMUNI
     tpIASL
     tpITIPOLOGIEMEDICO
     tpIESENZIONE
@@ -210,12 +211,12 @@ Public tTrova As structTrova              '  il tipo passato ai form con moltepl
 
 Enum tipoTabella
     ' elementi costituiti da due informazioni
-    tpCOMUNI
     tpREGIONI
     tpTIPOLOGIEMEDICO
     tpESENZIONI
     tpEDTA
     ' elementi costituiti da tre informazioni
+    tpComuni
     tpasl
     tpDISTRETTI
     ' altri

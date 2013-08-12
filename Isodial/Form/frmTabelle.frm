@@ -255,9 +255,9 @@ Private Sub Form_Activate()
     
     If Not RidisponiForms(Me) Then Exit Sub
     
-    If tTabelle = tpasl Or tTabelle = tpDISTRETTI Then
+    If tTabelle = tpCOMUNI Or tTabelle = tpasl Or tTabelle = tpDISTRETTI Then
         ' deve ricaricare la cbo
-        If tTabelle = tpasl Then
+        If tTabelle = tpCOMUNI Or tTabelle = tpasl Then
             nomeTabella = "REGIONI"
         Else
             nomeTabella = "ASL"
@@ -280,21 +280,11 @@ Private Sub Form_Load()
     Set objAnnulla = New CAnnulla
     flxGriglia.Rows = 1
     
-    If tTabelle >= tpCOMUNI And tTabelle <= tpEDTA Then
+    If tTabelle >= tpRegioni And tTabelle <= tpEDTA Then
         ' tipo con due informazioni
         flxGriglia.Cols = 3
         Select Case tTabelle
-            Case tpCOMUNI
-                nomeTabella = "COMUNI"
-                Me.Caption = Me.Caption & "Comuni"
-                With flxGriglia
-                    .ColWidth(1) = .ColWidth(1) * 2 / 2
-                    .ColWidth(2) = .ColWidth(1) * 2 / 2
-                    .TextMatrix(0, 1) = "Codice ISTAT"
-                    .TextMatrix(0, 2) = "Comune"
-                End With
-                cmdElimina.Visible = False
-            Case tpREGIONI
+            Case tpRegioni
                 nomeTabella = "REGIONI"
                 Me.Caption = Me.Caption & "Regioni"
                 With flxGriglia
@@ -337,10 +327,22 @@ Private Sub Form_Load()
         
         Call CaricaFlx
         
-    ElseIf tTabelle >= tpasl And tTabelle <= tpDISTRETTI Then
+        ElseIf tTabelle >= tpCOMUNI And tTabelle <= tpDISTRETTI Then
         ' tipo con tre informazioni
         flxGriglia.Cols = 4
         Select Case tTabelle
+           Case tpCOMUNI
+                nomeTabella = "COMUNI"
+                Me.Caption = Me.Caption & "Comuni"
+                With flxGriglia
+                    .ColWidth(1) = .ColWidth(1) / 2
+                    .ColWidth(2) = .ColWidth(1) * 3 / 2 + 1000
+                    .ColWidth(3) = .ColWidth(1) * 3 / 2
+                    .TextMatrix(0, 1) = "Codice ISTAT"
+                    .TextMatrix(0, 2) = "Comune"
+                    .TextMatrix(0, 3) = "Regione"
+                End With
+                cmdElimina.Visible = False
             Case tpasl
                 nomeTabella = "ASL"
                 Me.Caption = Me.Caption & "ASL"
@@ -479,9 +481,13 @@ Private Sub CaricaFlx()
                 .Rows = .Rows + 1
                 .TextMatrix(.Rows - 1, 0) = rsTabelle("KEY")
                 
-                If (tTabelle >= tpCOMUNI And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Then
+                If (tTabelle >= tpRegioni And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Then
                     .TextMatrix(.Rows - 1, 1) = rsTabelle("CODICE") & ""
                     .TextMatrix(.Rows - 1, 2) = rsTabelle("NOME") & ""
+                ElseIf tTabelle = tpCOMUNI Then
+                    .TextMatrix(.Rows - 1, 1) = rsTabelle("CODICE") & ""
+                    .TextMatrix(.Rows - 1, 2) = rsTabelle("NOME") & ""
+                    .TextMatrix(.Rows - 1, 3) = GetNome(rsTabelle("REGIONIID"), "REGIONI")
                 ElseIf tTabelle = tpasl Then
                     .TextMatrix(.Rows - 1, 1) = rsTabelle("CODICE") & ""
                     .TextMatrix(.Rows - 1, 2) = rsTabelle("NOME") & ""
@@ -535,9 +541,12 @@ Private Sub SalvaModifiche()
     With flxGriglia
         keyId = .TextMatrix(vRow, 0)
         
-        If (tTabelle >= tpCOMUNI And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Then
+        If (tTabelle >= tpRegioni And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Then
             v_Nomi = Array("KEY", "NOME", "CODICE")
             v_Val = Array(keyId, .TextMatrix(vRow, 2), .TextMatrix(vRow, 1))
+        ElseIf tTabelle = tpCOMUNI Then
+            v_Nomi = Array("KEY", "NOME", "CODICE", "REGIONIID")
+            v_Val = Array(keyId, .TextMatrix(vRow, 2), .TextMatrix(vRow, 1), GetNumeroDaNome("REGIONI", "NOME", .TextMatrix(vRow, 3)))
         ElseIf tTabelle = tpasl Then
             v_Nomi = Array("KEY", "NOME", "CODICE", "CODICE_REGIONE")
             v_Val = Array(keyId, .TextMatrix(vRow, 2), .TextMatrix(vRow, 1), GetNumeroDaNome("REGIONI", "NOME", .TextMatrix(vRow, 3)))
@@ -641,7 +650,7 @@ Private Sub cmdElimina_Click()
             blnElimina = False
             Select Case tTabelle
                 Case tpNOMENCLATORE
-                Case tpREGIONI
+                Case tpRegioni
                 Case tpRENI
                     blnElimina = IsPossibleDelete("TURNI", "CODICE_RENE", intKey)
                     If blnElimina Then
@@ -704,6 +713,26 @@ Private Function EsisteValore() As Boolean
                 Next i
             End If
             EsisteValore = 0
+        Case tpRegioni
+            If tInput.v_valori(2) <> "" Then
+                For i = 1 To flxGriglia.Rows - 1
+                    If flxGriglia.TextMatrix(i, 1) = tInput.v_valori(2) And flxGriglia.TextMatrix(i, 2) = tInput.v_valori(1) Then
+                        EsisteValore = i
+                        Exit Function
+                    End If
+                Next i
+            End If
+            EsisteValore = 0
+        Case tpEDTA
+            If tInput.v_valori(2) <> "" Then
+                For i = 1 To flxGriglia.Rows - 1
+                    If flxGriglia.TextMatrix(i, 1) = tInput.v_valori(2) Then ' And flxGriglia.TextMatrix(i, 2) = tInput.v_valori(1) Then
+                        EsisteValore = i
+                        Exit Function
+                    End If
+                Next i
+            End If
+            EsisteValore = 0
         Case Else
             EsisteValore = Esiste(flxGriglia, 1, 0, tInput.v_valori(1))
     End Select
@@ -721,7 +750,7 @@ Private Sub cmdInserisci_Click()
     End If
     
     Select Case tTabelle
-        Case tpREGIONI, tpCOMUNI, tpTIPOLOGIEMEDICO, tpEDTA
+        Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA
             tInput.Tipo = tpICOMPOSTO
         Case tpESAME
             tInput.Tipo = tpISINGOLO
@@ -729,6 +758,8 @@ Private Sub cmdInserisci_Click()
             tInput.Tipo = tpIDISTRETTI
         Case tpNOMENCLATORE
             tInput.Tipo = tpINOMENCLATORE
+        Case tpCOMUNI
+            tInput.Tipo = tpICOMUNI
         Case tpasl
             tInput.Tipo = tpIASL
         Case tpESENZIONI
@@ -756,7 +787,6 @@ Private Sub cmdInserisci_Click()
         frmInput.Show 1
         primo = False
     Loop While EsisteValore
- '   Debug.Print EsisteValore
 
     If Not (tInput.v_valori(1) = "" And tInput.v_valori(2) = "") Then
         num = GetNumero(nomeTabella)
@@ -764,7 +794,7 @@ Private Sub cmdInserisci_Click()
             Case tpESAME
                 v_Nomi = Array("KEY", "NOME", "CODICE_ORGANO")
                 v_Val = Array(num, tInput.v_valori(1), keyOrgano)
-            Case tpCOMUNI, tpREGIONI, tpTIPOLOGIEMEDICO, tpEDTA
+            Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA
                 v_Nomi = Array("KEY", "CODICE", "NOME")
                 v_Val = Array(num, tInput.v_valori(2), tInput.v_valori(1))
             Case tpESENZIONI
@@ -772,6 +802,9 @@ Private Sub cmdInserisci_Click()
                 v_Val = Array(num, tInput.v_valori(1), CBool(tInput.v_valori(2)))
             Case tpDISTRETTI
                 v_Nomi = Array("KEY", "CODICE", "NOME", "CODICE_ASL")
+                v_Val = Array(num, tInput.v_valori(1), tInput.v_valori(2), tInput.v_valori(3))
+            Case tpCOMUNI
+                v_Nomi = Array("KEY", "CODICE", "NOME", "REGIONIID")
                 v_Val = Array(num, tInput.v_valori(1), tInput.v_valori(2), tInput.v_valori(3))
             Case tpasl
                 v_Nomi = Array("KEY", "CODICE", "NOME", "CODICE_REGIONE")
@@ -962,7 +995,7 @@ Private Sub txtAppo_GotFocus()
             txtAppo.MaxLength = IIf(vCol = 1, 3, 25)
         Case tpCOMUNI
             txtAppo.MaxLength = IIf(vCol = 1, 6, 40)
-        Case tpREGIONI
+        Case tpRegioni
             txtAppo.MaxLength = IIf(vCol = 1, 3, 30)
         Case tpTIPOLOGIEMEDICO
             txtAppo.MaxLength = IIf(vCol = 1, 1, 50)

@@ -673,7 +673,7 @@ Begin VB.Form frmPaziente
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   12
-         Top             =   2640
+         Top             =   2220
          Width           =   3495
       End
       Begin VB.ComboBox cboComuneResidenza 
@@ -691,7 +691,7 @@ Begin VB.Form frmPaziente
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   8
-         Top             =   2220
+         Top             =   2640
          Width           =   3495
       End
       Begin VB.ComboBox cboEsenzione 
@@ -1506,7 +1506,7 @@ Begin VB.Form frmPaziente
          Index           =   25
          Left            =   120
          TabIndex        =   92
-         Top             =   2670
+         Top             =   2250
          Width           =   2325
       End
       Begin VB.Label Label1 
@@ -1886,7 +1886,7 @@ Begin VB.Form frmPaziente
          Index           =   12
          Left            =   120
          TabIndex        =   72
-         Top             =   3120
+         Top             =   3100
          Width           =   870
       End
       Begin VB.Label Label1 
@@ -1962,7 +1962,7 @@ Begin VB.Form frmPaziente
          Index           =   8
          Left            =   120
          TabIndex        =   68
-         Top             =   2235
+         Top             =   2670
          Width           =   1905
       End
       Begin VB.Label Label1 
@@ -4194,6 +4194,9 @@ Private Sub cboGSanguigno_Click()
 End Sub
 
 Private Sub cboRegione_Click()
+    If stoPulendo Then Exit Sub
+    If cboRegione.ListIndex = -1 Then Exit Sub
+    Call RicaricaComboBox("SELECT * FROM COMUNI WHERE REGIONIID=" & cboRegione.ItemData(cboRegione.ListIndex), "NOME", cboComuneResidenza)
     blnModificato = True
 End Sub
 

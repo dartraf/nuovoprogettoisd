@@ -268,8 +268,7 @@ End Sub
 
 Private Sub cmdEliminaManutenzioneApparato_Click()
     
-    If flxManutenzione.Row = 0 Then
-     '   MsgBox "Selezionare la Manutenzione dell' Apparato da eliminare", vbInformation, "Informazione"
+    If KeyReturnManutenzione = 0 Then
         Exit Sub
     End If
     
@@ -561,6 +560,10 @@ Private Sub CaricaFlxManutenzione()
     
     Set rsManutenziona = Nothing
     flxManutenzione.Row = 0
+    
+    ' Per evitare di far rimanere in memoria lo stesso codice della
+    ' man.apparato quando carico lo azzera
+    KeyReturnManutenzione = 0
 End Sub
 
 Private Sub cmdChiudi_Click()
@@ -584,7 +587,7 @@ Private Sub cmdElimina_Click()
             blnElimina = False
             Select Case tTabelle
                 Case tpNOMENCLATORE
-                Case tpREGIONI
+                Case tpRegioni
                 Case tpRENI
                     blnElimina = IsPossibleDelete("TURNI", "CODICE_RENE", intKey)
                     If blnElimina Then
@@ -670,6 +673,11 @@ Private Sub flxGriglia_Click()
         flxGriglia.Row = 0
         flxGriglia.Col = 0
         flxManutenzione.Rows = 1
+        ' Per evitare di richiamare la manutenzione senza seleziona l'apparato
+        KeyApparato = 0
+        ' Per evitare di far rimanere in memoria lo stesso codice
+        ' della man.apparato quando cambio scheda lo azzera
+        KeyReturnManutenzione = 0
     Else
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col

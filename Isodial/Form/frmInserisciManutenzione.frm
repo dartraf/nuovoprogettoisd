@@ -368,6 +368,9 @@ Dim ModificaApparato As Boolean
 Dim ProxRevFun As Date
 Dim ProxRevSic As Date
 
+'SelezionatoManutenzione = False    Inserisco la nuova manutenzione anche se seleziono con un click l' apparato
+'SelezionatoManutenzione = True     Seleziono la manutenzione desiderata e la carico
+
 Private Sub cboDescrizone_GotFocus(Index As Integer)
     cboDescrizone(0).BackColor = colArancione
 End Sub
@@ -447,7 +450,7 @@ Dim numKey As Integer
         End If
     End If
             
-    If KeyReturnManutenzione = 0 Then
+    If SelezionatoManutenzione = False Then
         numKey = GetNumero("MANUTENZIONE_APPARATI")
     Else
         numKey = KeyReturnManutenzione
@@ -462,7 +465,7 @@ Dim numKey As Integer
         
         v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataRichiestaManutenzione(0).data = "", Null, oDataRichiestaManutenzione(0).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto)
             
-        If KeyReturnManutenzione > 0 Then
+        If SelezionatoManutenzione = True Then
             rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
             rsManutenzione.Update v_Nomi, v_Val
         Else
@@ -488,7 +491,7 @@ Dim numKey As Integer
         
         v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataScadenzaManutenzione(1).data = "", Null, oDataScadenzaManutenzione(1).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto, IIf(chkFunzionalità.Value = Checked, True, False), IIf(chkSicurezza.Value = Checked, True, False))
             
-        If KeyReturnManutenzione > 0 Then
+        If SelezionatoManutenzione = True Then
             rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
             rsManutenzione.Update v_Nomi, v_Val
         Else
@@ -514,12 +517,13 @@ Dim numKey As Integer
     Call Pulisci
         
     If KeyReturnManutenzione > 0 Then
+        SelezionatoManutenzione = False
         Unload frmInserisciManutenzione
     Else
         KeyReturnManutenzione = 0
         Unload frmInserisciManutenzione
     End If
-    
+        
 End Sub
 
 '' AUTOMATISMO PER IL CALCOLO DELLA DATA DELLA PROSSIMA REVISIONE FUNZIONALE
@@ -624,7 +628,7 @@ Private Sub Form_Load()
             Label1(12).Visible = True
             oDataRichiestaManutenzione(0).Visible = True
             txtTipoManutenzione = "STRAORDINARIA"
-            If KeyReturnManutenzione > 0 Then
+            If Selezionato = True Then
                 Call CaricaManutenzione
             End If
             
@@ -634,11 +638,14 @@ Private Sub Form_Load()
             chkSicurezza.Visible = True
             Label1(5).Visible = True
             oDataScadenzaManutenzione(1).Visible = True
-            If KeyReturnManutenzione > 0 Then
+            If Selezionato = True Then
                 Call CaricaManutenzione
             End If
             
     End Select
+    
+    Selezionato = False
+    
 End Sub
 
 Private Sub CaricaManutenzione()

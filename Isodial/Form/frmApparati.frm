@@ -237,6 +237,7 @@ Dim rsEliminaManutenzione As Recordset
 Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
+Dim MantieniDatoManutenzione As Integer
 
 Private Sub cmdEliminaApparato_Click()
 
@@ -267,6 +268,8 @@ Private Sub EliminaApparato()
 End Sub
 
 Private Sub cmdEliminaManutenzioneApparato_Click()
+    
+    KeyReturnManutenzione = MantieniDatoManutenzione
     
     If KeyReturnManutenzione = 0 Then
         Exit Sub
@@ -302,12 +305,13 @@ End Sub
 Private Sub cmdManutenzioneOrdinaria_Click()
     Dim num As Integer
     
+
+    
     If KeyApparato = 0 Then
         MsgBox "Selezionare Un Apparato", vbInformation, "INFORMAZIONE"
     Else
         tTabellaManutenzione = tpMANUTENZIONEORDINARIA
         frmInserisciManutenzione.Show 1
-        Call CaricaFlx
         Call CaricaFlxManutenzione
     End If
     
@@ -340,7 +344,6 @@ Private Sub cmdManutenzioneStraordinaria_Click()
         Call CaricaFlxManutenzione
     End If
     
-    
     ' Funzione per Colorare il record
     If KeyReturnManutenzione = 0 Or KeyReturnManutenzione = -1 Then
         num = GetNumero("MANUTENZIONE_APPARATI") - 1
@@ -372,7 +375,12 @@ Private Sub flxManutenzione_Click()
         vCol = flxManutenzione.Col
         Call ColoraFlx(flxManutenzione, flxManutenzione.Cols - 1)
         
+        SelezionatoManutenzione = False
         KeyReturnManutenzione = flxManutenzione.TextMatrix(vRow, 0)
+        ' Mantengo il dato selezionato per evitare di cliccare
+        ' una seconda volta quando chiudo il form
+        ' Inseriscimanutenzioni per eliminare
+        MantieniDatoManutenzione = KeyReturnManutenzione
     End If
 End Sub
 
@@ -385,10 +393,14 @@ Private Sub flxManutenzione_DblClick()
     ' Se il campo della griglia Tipo Manutenzione è uguale a Straordinaria
     ' carica il cmdManutenzioneStraordinaria
     If flxManutenzione.TextMatrix(vRow, 1) = "STRAORDINARIA" Then
+        Selezionato = True
+        SelezionatoManutenzione = True
         cmdManutenzioneStraordinaria_Click
     ' Se il campo della griglia Tipo Manutenzione è diverso (per evitare di elencare tutti i campi)
     ' da Straordinaria carica il cmdManutenzioneOrdianria
     ElseIf flxManutenzione.TextMatrix(vRow, 1) <> "STRAORDINARIA" Then
+        Selezionato = True
+        SelezionatoManutenzione = True
         cmdManutenzioneOrdinaria_Click
     End If
     
@@ -487,6 +499,8 @@ Dim i As Integer
             .CellFontBold = True
          Next i
      End With
+     
+     SelezionatoManutenzione = False
          
 End Sub
 
@@ -564,6 +578,7 @@ Private Sub CaricaFlxManutenzione()
     ' Per evitare di far rimanere in memoria lo stesso codice della
     ' man.apparato quando carico lo azzera
     KeyReturnManutenzione = 0
+        
 End Sub
 
 Private Sub cmdChiudi_Click()
@@ -685,6 +700,7 @@ Private Sub flxGriglia_Click()
         
         ' seleziono la key dell' apparato per passarla alla tab Manutenzione
         KeyApparato = flxGriglia.TextMatrix(vRow, 0)
+        MantieniDatoManutenzione = 0
         Call CaricaFlxManutenzione
     End If
 End Sub

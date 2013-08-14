@@ -84,5 +84,5 @@ Public sostituito As Boolean
 Public MantieniKeyReturn As Integer     ' variabile per il form Apparati
 Public KeyApparato As Integer           ' variabile apparato che viene passata per manutenzione CODICE_APPARATO
 Public KeyReturnManutenzione As Integer ' variabile Key per la selezione della manutenzione
-
-
+Public Selezionato As Boolean           ' variabile per il frmApparati
+Public SelezionatoManutenzione As Boolean ' variabile per il frmApparati per caricare/inserire la manutenzione

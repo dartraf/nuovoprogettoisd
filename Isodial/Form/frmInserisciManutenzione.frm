@@ -483,8 +483,6 @@ Dim numKey As Integer
             txtTipoManutenzione.Text = "ORD. SICUR."
         ElseIf chkFunzionalità.Value = Checked And chkSicurezza.Value = Checked Then
             txtTipoManutenzione.Text = "ORD. FUN. SIC."
-        ElseIf chkFunzionalità.Value = Unchecked Or chkSicurezza.Value = Unchecked Then
-            txtTipoManutenzione.Text = "ORDINARIA"
         End If
             
         v_Nomi = Array("KEY", "CODICE_APPARATO", "TIPO_MANUTENZIONE", "DATA_SCADENZA_MANUTENZIONE", "DATA_EFFETTIVA_MANUTENZIONE", "DESCRIZIONE_MANUTENZIONE", "DETTAGLI_INTERVENTO", "NUMERO_DOCUMENTO", "FUNZIONALITA", "SICUREZZA")

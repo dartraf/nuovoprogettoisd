@@ -724,6 +724,7 @@ Option Explicit
 Dim rsNumeroProgressivo As Recordset
 Dim rsMemorizzaApparecchiature As Recordset
 Dim rsCercaApparato As Recordset
+Dim rsPresenzaManutenzione As Recordset
 Dim NumeroApparato As Integer
 Dim ModificaApparato As Boolean
 Dim ProxRevFun As String
@@ -837,14 +838,14 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
 End Sub
 
 Private Sub cmdChiudi_Click()
-    
     If MantieniKeyReturn > 0 Then
+        ModificaApparato = False
         Unload frmApparatiInput
     Else
         MantieniKeyReturn = -2
+        ModificaApparato = False
         Unload frmApparatiInput
     End If
-
 End Sub
 
 Private Sub cmdMemorizza_Click()
@@ -914,57 +915,19 @@ Dim numKey As Integer
     Call SuperUcase(Me)
         
     Set rsMemorizzaApparecchiature = New Recordset
-        
-    'calcolo per il la PROXREVFUN
-    If oDataCollaudo(3).data <> "" Then
-        Select Case cboFunzionalita.ListIndex
-            Case Is = 0
-                ' funzione per sommare la date
-                ' d=day, m=month, y=year
-                ProxRevFun = DateAdd("m", 1, oDataCollaudo(3).data)
-            Case Is = 1
-                ProxRevFun = DateAdd("m", 2, oDataCollaudo(3).data)
-            Case Is = 2
-                ProxRevFun = DateAdd("m", 3, oDataCollaudo(3).data)
-            Case Is = 3
-                ProxRevFun = DateAdd("m", 4, oDataCollaudo(3).data)
-            Case Is = 4
-                ProxRevFun = DateAdd("m", 6, oDataCollaudo(3).data)
-            Case Is = 5
-                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
-                ' in quanto la funzione "year" aggiunge il giorno
-                ProxRevFun = DateAdd("m", 12, oDataCollaudo(3).data)
-            Case Is = 6
-                ProxRevFun = DateAdd("m", 24, oDataCollaudo(3).data)
-            Case Is = 7
-                ProxRevFun = DateAdd("m", 36, oDataCollaudo(3).data)
-        End Select
-    End If
-    
-    'calcolo per il la PROXREVSIC
-    If oDataCollaudo(3).data <> "" Then
-        Select Case cboSicurezza.ListIndex
-            Case Is = 0
-                ' funzione per sommare la date
-                ' d=day, m=month, y=year
-                ProxRevSic = DateAdd("m", 1, oDataCollaudo(3).data)
-            Case Is = 1
-                ProxRevSic = DateAdd("m", 2, oDataCollaudo(3).data)
-            Case Is = 2
-                ProxRevSic = DateAdd("m", 3, oDataCollaudo(3).data)
-            Case Is = 3
-                ProxRevSic = DateAdd("m", 4, oDataCollaudo(3).data)
-            Case Is = 4
-                ProxRevSic = DateAdd("m", 6, oDataCollaudo(3).data)
-            Case Is = 5
-                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
-                ' in quanto la funzione "year" aggiunge il giorno
-                ProxRevSic = DateAdd("m", 12, oDataCollaudo(3).data)
-            Case Is = 6
-                ProxRevSic = DateAdd("m", 24, oDataCollaudo(3).data)
-            Case Is = 7
-                ProxRevSic = DateAdd("m", 36, oDataCollaudo(3).data)
-        End Select
+
+    '' Se mi trovo nella fase di modifica mi fa il controllo sulla
+    '' presenza di schede di manutnezione ordinaria e poi mi fa il calcolo
+    If ModificaApparato = True Then
+        If PresenzaManutenzioneOrdinaria = True Then
+            Call CalcoloProxRevFun
+            Call CalcoloProxRevSic
+        End If
+    '' Se in fase di inserimento lo calcola direttamente in quanto
+    '' non ci posso essere schede di manutenzione ordinaria
+    Else
+        Call CalcoloProxRevFun
+        Call CalcoloProxRevSic
     End If
         
     If ModificaApparato = True Then
@@ -995,7 +958,6 @@ Dim numKey As Integer
     Call Pulisci
     
     txtNumeroInventario = GetNumero("APPARATI")
-    'Call NumeroInventario
         
     If ModificaApparato = True Then
         ModificaApparato = False
@@ -1006,6 +968,82 @@ Dim numKey As Integer
     End If
     
 End Sub
+
+'' Calcolo per la prossima revisione funzionale
+Private Sub CalcoloProxRevFun()
+    If oDataCollaudo(3).data <> "" Then
+        Select Case cboFunzionalita.ListIndex
+            Case Is = 0
+                ' funzione per sommare la date
+                ' d=day, m=month, y=year
+                ProxRevFun = DateAdd("m", 1, oDataCollaudo(3).data)
+            Case Is = 1
+                ProxRevFun = DateAdd("m", 2, oDataCollaudo(3).data)
+            Case Is = 2
+                ProxRevFun = DateAdd("m", 3, oDataCollaudo(3).data)
+            Case Is = 3
+                ProxRevFun = DateAdd("m", 4, oDataCollaudo(3).data)
+            Case Is = 4
+                ProxRevFun = DateAdd("m", 6, oDataCollaudo(3).data)
+            Case Is = 5
+                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
+                ' in quanto la funzione "year" aggiunge il giorno
+                ProxRevFun = DateAdd("m", 12, oDataCollaudo(3).data)
+            Case Is = 6
+                ProxRevFun = DateAdd("m", 24, oDataCollaudo(3).data)
+            Case Is = 7
+                ProxRevFun = DateAdd("m", 36, oDataCollaudo(3).data)
+        End Select
+    End If
+End Sub
+
+'' Calcolo per la prossima revisione Sicurezza
+Private Sub CalcoloProxRevSic()
+    If oDataCollaudo(3).data <> "" Then
+        Select Case cboSicurezza.ListIndex
+            Case Is = 0
+                ' funzione per sommare la date
+                ' d=day, m=month, y=year
+                ProxRevSic = DateAdd("m", 1, oDataCollaudo(3).data)
+            Case Is = 1
+                ProxRevSic = DateAdd("m", 2, oDataCollaudo(3).data)
+            Case Is = 2
+                ProxRevSic = DateAdd("m", 3, oDataCollaudo(3).data)
+            Case Is = 3
+                ProxRevSic = DateAdd("m", 4, oDataCollaudo(3).data)
+            Case Is = 4
+                ProxRevSic = DateAdd("m", 6, oDataCollaudo(3).data)
+            Case Is = 5
+                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
+                ' in quanto la funzione "year" aggiunge il giorno
+                ProxRevSic = DateAdd("m", 12, oDataCollaudo(3).data)
+            Case Is = 6
+                ProxRevSic = DateAdd("m", 24, oDataCollaudo(3).data)
+            Case Is = 7
+                ProxRevSic = DateAdd("m", 36, oDataCollaudo(3).data)
+        End Select
+    End If
+End Sub
+
+'' Controllo sulla presenza di schede di manuntenzione ordinaria
+Private Function PresenzaManutenzioneOrdinaria() As Boolean
+
+    Set rsPresenzaManutenzione = New Recordset
+    rsPresenzaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " ORDER BY KEY DESC ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    If Not (rsPresenzaManutenzione.EOF And rsPresenzaManutenzione.BOF) Then
+        Do While Not rsPresenzaManutenzione.EOF
+            If rsPresenzaManutenzione("TIPO_MANUTENZIONE") = "ORD. FUNZ." Or rsPresenzaManutenzione("TIPO_MANUTENZIONE") = "ORD. SICUR." Or rsPresenzaManutenzione("TIPO_MANUTENZIONE") = "ORD. FUN. SIC." Then
+                PresenzaManutenzioneOrdinaria = True
+                Exit Function
+            End If
+            rsPresenzaManutenzione.MoveNext
+        Loop
+    End If
+    
+    Set rsPresenzaManutenzione = Nothing
+    
+End Function
 
 '' Controllo sull'univocità del numero d'inventario
 Private Function NumInvent() As Boolean
@@ -1045,7 +1083,6 @@ Private Function NumInvent() As Boolean
     Set rsDataset = Nothing
 
 End Function
-
 
 Private Sub Pulisci()
     txtNumeroApparato.Text = ""

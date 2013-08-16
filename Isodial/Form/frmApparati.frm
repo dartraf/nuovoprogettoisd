@@ -113,6 +113,23 @@ Begin VB.Form frmApparati
       TabIndex        =   2
       Top             =   3480
       Width           =   14415
+      Begin VB.CommandButton cmdStampaApparati 
+         Caption         =   "&Stampa"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   600
+         Left            =   11400
+         TabIndex        =   13
+         Top             =   170
+         Width           =   1215
+      End
       Begin VB.CommandButton cmdEliminaApparato 
          Caption         =   "&Elimina"
          BeginProperty Font 
@@ -125,7 +142,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   11400
+         Left            =   9960
          TabIndex        =   11
          Top             =   170
          Width           =   1215
@@ -154,6 +171,24 @@ Begin VB.Form frmApparati
       TabIndex        =   7
       Top             =   7920
       Width           =   14415
+      Begin VB.CommandButton cmdStampaManutenzione 
+         Caption         =   "S&tampa"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   600
+         Left            =   11520
+         TabIndex        =   14
+         Top             =   170
+         Width           =   1215
+      End
       Begin VB.CommandButton cmdEliminaManutenzioneApparato 
          Caption         =   "&Elimina"
          BeginProperty Font 
@@ -166,7 +201,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   7200
+         Left            =   5760
          TabIndex        =   12
          Top             =   170
          Width           =   1215
@@ -183,7 +218,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   8640
+         Left            =   7200
          TabIndex        =   10
          Top             =   170
          Width           =   1935
@@ -218,7 +253,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   10800
+         Left            =   9360
          TabIndex        =   8
          Top             =   170
          Width           =   1935
@@ -360,6 +395,10 @@ Private Sub cmdManutenzioneStraordinaria_Click()
     ' Per evitare di Ricaricare lo stesso dato
     KeyReturnManutenzione = 0
     
+End Sub
+
+Private Sub cmdStampaApparati_Click()
+    frmStampaApparati.Show 1
 End Sub
 
 Private Sub flxManutenzione_Click()

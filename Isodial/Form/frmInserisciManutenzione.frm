@@ -287,6 +287,24 @@ Begin VB.Form frmInserisciManutenzione
       TabIndex        =   13
       Top             =   2400
       Width           =   9975
+      Begin VB.CommandButton cmdStampa 
+         Caption         =   "&Stampa Richiesta Inventario"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   600
+         Left            =   4560
+         TabIndex        =   20
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   2175
+      End
       Begin VB.TextBox txtTipoManutenzione 
          BeginProperty DataFormat 
             Type            =   0
@@ -625,6 +643,7 @@ Private Sub Form_Load()
             frmInserisciManutenzione.Caption = "Manutenzione Straordinaria"
             Label1(12).Visible = True
             oDataRichiestaManutenzione(0).Visible = True
+            cmdStampa.Visible = True
             txtTipoManutenzione = "STRAORDINARIA"
             If Selezionato = True Then
                 Call CaricaManutenzione

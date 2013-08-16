@@ -182,6 +182,7 @@ Designer=Report\rptModuloFirmeSodav.Dsr
 Form=Form\frmApparati.frm
 Form=Form\frmApparatiInput.frm
 Form=Form\frmInserisciManutenzione.frm
+Form=Form\frmStampaApparati.frm
 ResFile32="Risorse.res"
 IconForm="frmCalendario"
 Startup="Sub Main"

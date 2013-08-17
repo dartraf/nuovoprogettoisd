@@ -340,8 +340,6 @@ End Sub
 Private Sub cmdManutenzioneOrdinaria_Click()
     Dim num As Integer
     
-
-    
     If KeyApparato = 0 Then
         MsgBox "Selezionare Un Apparato", vbInformation, "INFORMAZIONE"
     Else
@@ -363,6 +361,7 @@ Private Sub cmdManutenzioneOrdinaria_Click()
     If flxManutenzione.Row > 10 Then
         flxManutenzione.TopRow = flxManutenzione.Row
     End If
+    
     ' Per evitare di Ricaricare lo stesso dato
     KeyReturnManutenzione = 0
 
@@ -612,12 +611,9 @@ Private Sub CaricaFlxManutenzione()
     End If
     
     Set rsManutenziona = Nothing
-    flxManutenzione.Row = 0
     
-    ' Per evitare di far rimanere in memoria lo stesso codice della
-    ' man.apparato quando carico lo azzera
-    KeyReturnManutenzione = 0
-        
+    flxManutenzione.Row = 0
+            
 End Sub
 
 Private Sub cmdChiudi_Click()

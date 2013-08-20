@@ -133,8 +133,7 @@ Begin VB.Form frmInserisciManutenzione
          Top             =   750
          Width           =   2145
       End
-      Begin VB.Label Label1 
-         Caption         =   "Descrizione Manutenzione o Motivazione Richiesta"
+      Begin VB.Label lblDescrizioneManutenzione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -144,11 +143,11 @@ Begin VB.Form frmInserisciManutenzione
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   600
+         Height          =   240
          Index           =   1
          Left            =   120
          TabIndex        =   11
-         Top             =   1200
+         Top             =   1320
          Width           =   2745
       End
       Begin VB.Label Label1 
@@ -429,8 +428,10 @@ End Sub
 
 Private Sub cmdChiudi_Click()
     If KeyReturnManutenzione > 0 Then
+        SelezionatoManutenzione = False
         Unload frmInserisciManutenzione
     Else
+        SelezionatoManutenzione = False
         KeyReturnManutenzione = -2
         Unload frmInserisciManutenzione
     End If
@@ -448,14 +449,26 @@ Dim numKey As Integer
             MsgBox "Inserire la Data di Richiesta Manutenzione", vbInformation, "Informazione"
             Exit Sub
         End If
+        If oDataEffettivaManutenzione(1).data > date Then
+            MsgBox "La Data di Effettiva Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
+            Exit Sub
+        End If
         If cboDescrizone(0).Text = "" Then
-            MsgBox "Inserire la Descrizione Manutenzione" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
+            MsgBox "Inserire la Motivazione Richiesta" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
             Exit Sub
         End If
     
     ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then
         If oDataScadenzaManutenzione(1).txtBox = "" Then
             MsgBox "Inserire la Data di Scadenza Manutenzione", vbInformation, "Informazione"
+            Exit Sub
+        End If
+        If oDataScadenzaManutenzione(1).data > date Then
+            MsgBox "La Data di Scadenza Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
+            Exit Sub
+        End If
+        If oDataEffettivaManutenzione(1).data > date Then
+            MsgBox "La Data di Effettiva Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
         End If
         If chkFunzionalità.Value = Unchecked And chkSicurezza.Value = Unchecked Then
@@ -466,6 +479,7 @@ Dim numKey As Integer
             MsgBox "Inserire la Descrizione Manutenzione" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
             Exit Sub
         End If
+
     End If
             
     If SelezionatoManutenzione = False Then
@@ -483,12 +497,12 @@ Dim numKey As Integer
         
         v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataRichiestaManutenzione(0).data = "", Null, oDataRichiestaManutenzione(0).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto)
             
-        If SelezionatoManutenzione = True Then
-            rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-            rsManutenzione.Update v_Nomi, v_Val
-        Else
+        If SelezionatoManutenzione = False Then
             rsManutenzione.Open "MANUTENZIONE_APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsManutenzione.AddNew v_Nomi, v_Val
+        Else
+            rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            rsManutenzione.Update v_Nomi, v_Val
         End If
             
         Set rsManutenzione = Nothing
@@ -507,12 +521,12 @@ Dim numKey As Integer
         
         v_Val = Array(numKey, KeyApparato, txtTipoManutenzione.Text, IIf(oDataScadenzaManutenzione(1).data = "", Null, oDataScadenzaManutenzione(1).data), IIf(oDataEffettivaManutenzione(1).data = "", Null, oDataEffettivaManutenzione(1).data), cboDescrizone(0).Text, cboDettagliIntervento(1).Text, txtNumeroDocumneto, IIf(chkFunzionalità.Value = Checked, True, False), IIf(chkSicurezza.Value = Checked, True, False))
             
-        If SelezionatoManutenzione = True Then
-            rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-            rsManutenzione.Update v_Nomi, v_Val
-        Else
+        If SelezionatoManutenzione = False Then
             rsManutenzione.Open "MANUTENZIONE_APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsManutenzione.AddNew v_Nomi, v_Val
+        Else
+            rsManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            rsManutenzione.Update v_Nomi, v_Val
         End If
             
         Set rsManutenzione = Nothing
@@ -645,8 +659,14 @@ Private Sub Form_Load()
             oDataRichiestaManutenzione(0).Visible = True
             cmdStampa.Visible = True
             txtTipoManutenzione = "STRAORDINARIA"
+            lblDescrizioneManutenzione(1).Caption = "Motivazione Richiesta"
             If Selezionato = True Then
                 Call CaricaManutenzione
+            Else
+            'Se non è selezionata nessuna manutenzione
+            'si trova nella fase di inserimento e
+            'precompila il campo RchiestaManutenzione con la data di sistema
+                oDataRichiestaManutenzione(0).txtBox = date
             End If
             
         Case tpMANUTENZIONEORDINARIA
@@ -655,8 +675,14 @@ Private Sub Form_Load()
             chkSicurezza.Visible = True
             Label1(5).Visible = True
             oDataScadenzaManutenzione(1).Visible = True
+            lblDescrizioneManutenzione(1).Caption = "Descrizione Manutenzione"
             If Selezionato = True Then
                 Call CaricaManutenzione
+            Else
+            'Se non è selezionata nessuna manutenzione
+            'si trova nella fase di inserimento e
+            'precompila il campo ScadenzaManutenzione con la data di sistema
+                oDataScadenzaManutenzione(1).data = date
             End If
             
     End Select

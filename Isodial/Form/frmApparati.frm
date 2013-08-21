@@ -346,6 +346,7 @@ Private Sub cmdManutenzioneOrdinaria_Click()
         tTabellaManutenzione = tpMANUTENZIONEORDINARIA
         frmInserisciManutenzione.Show 1
         Call CaricaFlxManutenzione
+        Call CaricaFunSic
     End If
     
     ' Funzione per Colorare il record
@@ -364,7 +365,31 @@ Private Sub cmdManutenzioneOrdinaria_Click()
     
     ' Per evitare di Ricaricare lo stesso dato
     KeyReturnManutenzione = 0
+    
+End Sub
 
+Private Sub CaricaFunSic()
+    Set rsApparati = New Recordset
+    rsApparati.Open "SELECT * FROM APPARATI WHERE KEY= " & KeyApparato, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    If Not (rsApparati.EOF And rsApparati.BOF) Then
+        Do While Not rsApparati.EOF
+            With flxGriglia
+                .Col = 7
+                .Row = .Rows - 1
+                .CellForeColor = vbRed
+                .TextMatrix(.Rows - 1, 7) = rsApparati("PROXREVFUN") & ""
+                
+                .Col = 8
+                .Row = .Rows - 1
+                .CellForeColor = vbRed
+                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVSIC") & ""
+                
+                rsApparati.MoveNext
+            End With
+        Loop
+    End If
+    Set rsApparati = Nothing
 End Sub
 
 Private Sub cmdManutenzioneStraordinaria_Click()

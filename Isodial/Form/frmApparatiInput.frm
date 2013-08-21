@@ -909,6 +909,20 @@ Dim numKey As Integer
         Exit Sub
     End If
     
+    If oDataAcquisizione(2).data > date Then
+        MsgBox "La Data di Acquisizione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
+    Exit Sub
+    ElseIf oDataFabbricazione(0).data > date Then
+        MsgBox "La Data di Fabbricazione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
+    Exit Sub
+    ElseIf oDataCollaudo(3).data > date Then
+        MsgBox "La Data di Collaudo non può essere successiva alla Data Odierna", vbInformation, "Informazione"
+    Exit Sub
+    ElseIf oDataDismissione(1).data > date Then
+        MsgBox "La Data di Dismissione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
+    Exit Sub
+    End If
+    
     If txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
     End If
@@ -1121,7 +1135,6 @@ End Sub
 Private Sub Form_Load()
     If tTrova.keyReturn = 0 Then
         txtNumeroInventario = GetNumero("APPARATI")
-        'Call NumeroInventario
     Else
         NumeroApparato = tTrova.keyReturn
         Call CaricaApparato
@@ -1159,23 +1172,6 @@ Private Sub CaricaApparato()
     ModificaApparato = True
     
 End Sub
-
-
-
-'Private Sub NumeroInventario()
-'    txtNumeroInventario = GetNumero("APPARATI")
-    
-'    Set rsNumeroProgressivo = New Recordset
-    
-'    rsNumeroProgressivo.Open "SELECT MAX(NUMERO_INVENTARIO) AS MASSIMO FROM APPARATI", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-'    If Not IsNull(rsNumeroProgressivo("MASSIMO")) Then
-'        txtNumeroInventario = rsNumeroProgressivo("MASSIMO") + 1
-'    Else
-'        txtNumeroInventario = 1
-'    End If
-    
-'    Set rsNumeroProgressivo = Nothing
-'End Sub
 
 Private Sub txtMatricola_GotFocus()
     txtMatricola.BackColor = colArancione

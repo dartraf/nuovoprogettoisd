@@ -20,7 +20,7 @@ Begin VB.Form frmInserisciManutenzione
       Top             =   0
       Width           =   9975
       Begin VB.CheckBox chkSicurezza 
-         Caption         =   "Sicurezza"
+         Caption         =   "Verifica Sicurezza Elettrica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -35,10 +35,10 @@ Begin VB.Form frmInserisciManutenzione
          TabIndex        =   5
          Top             =   750
          Visible         =   0   'False
-         Width           =   1575
+         Width           =   3735
       End
       Begin VB.CheckBox chkFunzionalità 
-         Caption         =   "Funzionalità"
+         Caption         =   "Verifica Funzionalità Meccanica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -53,7 +53,7 @@ Begin VB.Form frmInserisciManutenzione
          TabIndex        =   4
          Top             =   360
          Visible         =   0   'False
-         Width           =   1575
+         Width           =   3735
       End
       Begin VB.ComboBox cboDescrizone 
          BeginProperty Font 
@@ -287,7 +287,7 @@ Begin VB.Form frmInserisciManutenzione
       Top             =   2400
       Width           =   9975
       Begin VB.CommandButton cmdStampa 
-         Caption         =   "&Stampa Richiesta Inventario"
+         Caption         =   "&Stampa Richiesta Intervento"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -448,13 +448,14 @@ Dim numKey As Integer
         If oDataRichiestaManutenzione(0).txtBox = "" Then
             MsgBox "Inserire la Data di Richiesta Manutenzione", vbInformation, "Informazione"
             Exit Sub
-        End If
-        If oDataEffettivaManutenzione(1).data > date Then
-            MsgBox "La Data di Effettiva Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
+        ElseIf oDataRichiestaManutenzione(0).data > date Then
+            MsgBox "La Data della Richiesta Straordinaria non può essere successiva alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
-        End If
-        If cboDescrizone(0).Text = "" Then
-            MsgBox "Inserire la Motivazione Richiesta" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
+        ElseIf oDataEffettivaManutenzione(1).data > date Then
+            MsgBox "La Data di Effettiva Manutenzione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
+            Exit Sub
+        ElseIf cboDescrizone(0).Text = "" Then
+            MsgBox "Inserire la Motivazione della Richiesta", vbInformation, "Informazione"
             Exit Sub
         End If
     
@@ -462,21 +463,17 @@ Dim numKey As Integer
         If oDataScadenzaManutenzione(1).txtBox = "" Then
             MsgBox "Inserire la Data di Scadenza Manutenzione", vbInformation, "Informazione"
             Exit Sub
-        End If
-        If oDataScadenzaManutenzione(1).data > date Then
-            MsgBox "La Data di Scadenza Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
+        ElseIf oDataScadenzaManutenzione(1).data > date Then
+            MsgBox "La Data di Scadenza Manutenzione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
-        End If
-        If oDataEffettivaManutenzione(1).data > date Then
+        ElseIf oDataEffettivaManutenzione(1).data > date Then
             MsgBox "La Data di Effettiva Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
-        End If
-        If chkFunzionalità.Value = Unchecked And chkSicurezza.Value = Unchecked Then
+        ElseIf chkFunzionalità.Value = Unchecked And chkSicurezza.Value = Unchecked Then
             MsgBox "Selezionare la Funzionalità o la Sicurezza", vbInformation, "Informazione"
             Exit Sub
-        End If
-        If cboDescrizone(0).Text = "" Then
-            MsgBox "Inserire la Descrizione Manutenzione" & vbCrLf & " o la Motivazione Richiesta", vbInformation, "Informazione"
+        ElseIf cboDescrizone(0).Text = "" Then
+            MsgBox "Inserire la Descrizione della Manutenzione", vbInformation, "Informazione"
             Exit Sub
         End If
 

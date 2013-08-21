@@ -206,36 +206,36 @@ Begin VB.Form frmPaziente
       TabCaption(1)   =   "Medico di Base Associato"
       TabPicture(1)   =   "frmPaziente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(32)"
-      Tab(1).Control(1)=   "Label1(33)"
-      Tab(1).Control(2)=   "Label1(34)"
-      Tab(1).Control(3)=   "Label1(35)"
-      Tab(1).Control(4)=   "Label1(36)"
-      Tab(1).Control(5)=   "Label1(37)"
-      Tab(1).Control(6)=   "Label1(39)"
-      Tab(1).Control(7)=   "Label1(40)"
-      Tab(1).Control(8)=   "Label1(41)"
-      Tab(1).Control(9)=   "Label1(38)"
-      Tab(1).Control(10)=   "Label1(42)"
-      Tab(1).Control(11)=   "lblTipologiaMedico(47)"
-      Tab(1).Control(12)=   "Label1(50)"
-      Tab(1).Control(13)=   "Label1(47)"
-      Tab(1).Control(14)=   "cmdTrova(1)"
-      Tab(1).Control(15)=   "txtCognomeMedico"
-      Tab(1).Control(16)=   "txtNomeMedico"
-      Tab(1).Control(17)=   "txtCittaMedico"
-      Tab(1).Control(18)=   "txtCapMedico"
-      Tab(1).Control(19)=   "txtProvMedico"
-      Tab(1).Control(20)=   "txtIndirizzoMedico"
-      Tab(1).Control(21)=   "txtStudioMedico"
-      Tab(1).Control(22)=   "txtTelefonoMedico"
-      Tab(1).Control(23)=   "txtCellulareMedico"
-      Tab(1).Control(24)=   "txtEmailMedico"
-      Tab(1).Control(25)=   "txtFaxMedico"
-      Tab(1).Control(26)=   "txtCodiceRegionaleMedico"
-      Tab(1).Control(27)=   "chkPresenzaBarCode"
-      Tab(1).Control(28)=   "cboTipologia"
-      Tab(1).Control(29)=   "txtRiceve"
+      Tab(1).Control(0)=   "txtRiceve"
+      Tab(1).Control(1)=   "cboTipologia"
+      Tab(1).Control(2)=   "chkPresenzaBarCode"
+      Tab(1).Control(3)=   "txtCodiceRegionaleMedico"
+      Tab(1).Control(4)=   "txtFaxMedico"
+      Tab(1).Control(5)=   "txtEmailMedico"
+      Tab(1).Control(6)=   "txtCellulareMedico"
+      Tab(1).Control(7)=   "txtTelefonoMedico"
+      Tab(1).Control(8)=   "txtStudioMedico"
+      Tab(1).Control(9)=   "txtIndirizzoMedico"
+      Tab(1).Control(10)=   "txtProvMedico"
+      Tab(1).Control(11)=   "txtCapMedico"
+      Tab(1).Control(12)=   "txtCittaMedico"
+      Tab(1).Control(13)=   "txtNomeMedico"
+      Tab(1).Control(14)=   "txtCognomeMedico"
+      Tab(1).Control(15)=   "cmdTrova(1)"
+      Tab(1).Control(16)=   "Label1(47)"
+      Tab(1).Control(17)=   "Label1(50)"
+      Tab(1).Control(18)=   "lblTipologiaMedico(47)"
+      Tab(1).Control(19)=   "Label1(42)"
+      Tab(1).Control(20)=   "Label1(38)"
+      Tab(1).Control(21)=   "Label1(41)"
+      Tab(1).Control(22)=   "Label1(40)"
+      Tab(1).Control(23)=   "Label1(39)"
+      Tab(1).Control(24)=   "Label1(37)"
+      Tab(1).Control(25)=   "Label1(36)"
+      Tab(1).Control(26)=   "Label1(35)"
+      Tab(1).Control(27)=   "Label1(34)"
+      Tab(1).Control(28)=   "Label1(33)"
+      Tab(1).Control(29)=   "Label1(32)"
       Tab(1).ControlCount=   30
       Begin VB.TextBox txtRiceve 
          Enabled         =   0   'False
@@ -1948,7 +1948,7 @@ Begin VB.Form frmPaziente
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Città di Residenza"
+         Caption         =   "Comune di Residenza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1963,7 +1963,7 @@ Begin VB.Form frmPaziente
          Left            =   120
          TabIndex        =   68
          Top             =   2670
-         Width           =   1905
+         Width           =   2280
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True

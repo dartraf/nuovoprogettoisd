@@ -376,15 +376,16 @@ Begin VB.Form frmEsamiStrumentali
             Charset         =   0
             Weight          =   700
             Underline       =   -1  'True
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00FF0000&
          Height          =   240
          Index           =   8
          Left            =   120
          TabIndex        =   16
          Top             =   960
-         Width           =   2070
+         Width           =   2175
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True

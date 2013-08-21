@@ -729,6 +729,7 @@ Dim NumeroApparato As Integer
 Dim ModificaApparato As Boolean
 Dim ProxRevFun As String
 Dim ProxRevSic As String
+Dim mDataCollaudo As Variant
 
 Private Sub cboManutentore_GotFocus(Index As Integer)
     cboManutentore(1).BackColor = colArancione
@@ -737,7 +738,7 @@ End Sub
 Private Sub cboManutentore_LostFocus(Index As Integer)
         
     If Len(cboManutentore(1)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
         cboManutentore(1).Text = ""
         cboManutentore(1).SetFocus
         Exit Sub
@@ -759,7 +760,7 @@ End Sub
 Private Sub cboModalitaAcquisizione_LostFocus(Index As Integer)
 
     If Len(cboModalitaAcquisizione(1)) > 15 Then
-        MsgBox "Impossibile memorizzare più di 15 caratteri", vbCritical, "Attenzione"
+        MsgBox "Impossibile memorizzare più di 15 caratteri", vbCritical, "ATTENZIONE!!!"
         cboModalitaAcquisizione(1).Text = ""
         cboModalitaAcquisizione(1).SetFocus
         Exit Sub
@@ -780,7 +781,7 @@ End Sub
 Private Sub cboModello_LostFocus(Index As Integer)
     
     If Len(cboModello(2)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
         cboModello(2).Text = ""
         cboModello(2).SetFocus
         Exit Sub
@@ -801,7 +802,7 @@ End Sub
 Private Sub cboProduttore_LostFocus(Index As Integer)
     
     If Len(cboProduttore(0)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
         cboProduttore(0).Text = ""
         cboProduttore(0).SetFocus
         Exit Sub
@@ -823,7 +824,7 @@ End Sub
 Private Sub cboTipoApparato_LostFocus(Index As Integer)
             
     If Len(cboTipoApparato(0)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "Attenzione"
+        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
         cboTipoApparato(0).Text = ""
         cboTipoApparato(0).SetFocus
         Exit Sub
@@ -859,52 +860,52 @@ Dim numKey As Integer
     End If
 
     If txtNumeroInventario.Text = "" Then
-        MsgBox "Inserire il N° di Inventario", vbCritical, "Attenzione"
+        MsgBox "Inserire il N° di Inventario", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If cboTipoApparato(0).Text = "" Then
-        MsgBox "Inserire il Tipo di Apparato", vbCritical, "Attenzione"
+        MsgBox "Inserire il Tipo di Apparato", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If cboModello(2).Text = "" Then
-        MsgBox "Inserire il Modello", vbCritical, "Attenzione"
+        MsgBox "Inserire il Modello", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If txtMatricola.Text = "" Then
-        MsgBox "Inserire la Matricola", vbCritical, "Attenzione"
+        MsgBox "Inserire la Matricola", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If cboProduttore(0).Text = "" Then
-        MsgBox "Inserire il Produttore", vbCritical, "Attenzione"
+        MsgBox "Inserire il Produttore", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If oDataAcquisizione(2).txtBox = "" Then
-        MsgBox "Inserire la Data di Acquisizione", vbCritical, "Attenzione"
+        MsgBox "Inserire la Data di Acquisizione", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If cboModalitaAcquisizione(1).Text = "" Then
-        MsgBox "Inserire la Modalità di Acquisizione", vbCritical, "Attenzione"
+        MsgBox "Inserire la Modalità di Acquisizione", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If oDataRottamazione(0).txtBox = "" Then
-        MsgBox "Inserire la Data di Rottamazione", vbCritical, "Attenzione"
+        MsgBox "Inserire la Data di Rottamazione", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If cboFunzionalita.ListIndex = -1 Then
-        MsgBox "Inserire la Frequenza per la Manutenzione Ordinaria della FUNZIONALITA'", vbCritical, "Attenzione"
+        MsgBox "Inserire la Frequenza per la Manutenzione Ordinaria della FUNZIONALITA'", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
     If cboSicurezza.ListIndex = -1 Then
-        MsgBox "Inserire la Frequenza per la Manutenzione Ordinaria della SICUREZZA", vbCritical, "Attenzione"
+        MsgBox "Inserire la Frequenza per la Manutenzione Ordinaria della SICUREZZA", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
@@ -915,14 +916,14 @@ Dim numKey As Integer
     Call SuperUcase(Me)
         
     Set rsMemorizzaApparecchiature = New Recordset
-
+ 
     '' Se mi trovo nella fase di modifica mi fa il controllo sulla
-    '' presenza di schede di manutnezione ordinaria e poi mi fa il calcolo
-    If ModificaApparato = True Then
-        If PresenzaManutenzioneOrdinaria = True Then
-            Call CalcoloProxRevFun
-            Call CalcoloProxRevSic
-        End If
+    '' presenza di schede di manutenzione ordinaria e poi mi fa il calcolo
+    If ModificaApparato And PresenzaManutenzioneOrdinaria Then
+        oDataCollaudo(3).data = mDataCollaudo
+        Call CalcoloProxRevFun
+        Call CalcoloProxRevSic
+    
     '' Se in fase di inserimento lo calcola direttamente in quanto
     '' non ci posso essere schede di manutenzione ordinaria
     Else
@@ -935,7 +936,7 @@ Dim numKey As Integer
     Else
         numKey = GetNumero("APPARATI")
     End If
-         
+
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
                     , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO" _
                     , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT")
@@ -944,7 +945,7 @@ Dim numKey As Integer
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
                     , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False))
-            
+
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
         rsMemorizzaApparecchiature.Update v_Nomi, v_Val
@@ -952,11 +953,11 @@ Dim numKey As Integer
         rsMemorizzaApparecchiature.Open "APPARATI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
         rsMemorizzaApparecchiature.AddNew v_Nomi, v_Val
     End If
-            
+
     Set rsMemorizzaApparecchiature = Nothing
-            
+
     Call Pulisci
-    
+
     txtNumeroInventario = GetNumero("APPARATI")
         
     If ModificaApparato = True Then
@@ -986,7 +987,7 @@ Private Sub CalcoloProxRevFun()
             Case Is = 4
                 ProxRevFun = DateAdd("m", 6, oDataCollaudo(3).data)
             Case Is = 5
-                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
+                ' calcolo l' aggiunta dell' anno con la somma dei mesi
                 ' in quanto la funzione "year" aggiunge il giorno
                 ProxRevFun = DateAdd("m", 12, oDataCollaudo(3).data)
             Case Is = 6
@@ -1014,7 +1015,7 @@ Private Sub CalcoloProxRevSic()
             Case Is = 4
                 ProxRevSic = DateAdd("m", 6, oDataCollaudo(3).data)
             Case Is = 5
-                ' calcolo l' aggiunta dell' anno con òa somma dei mesi
+                ' calcolo l' aggiunta dell' anno con la somma dei mesi
                 ' in quanto la funzione "year" aggiunge il giorno
                 ProxRevSic = DateAdd("m", 12, oDataCollaudo(3).data)
             Case Is = 6
@@ -1065,7 +1066,7 @@ Private Function NumInvent() As Boolean
         rsDataset.Open "SELECT KEY,NUMERO_INVENTARIO FROM APPARATI WHERE NUMERO_INVENTARIO=" & txtNumeroInventario, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("KEY") <> tTrova.keyReturn Then
-                If MsgBox("Numero Inventario già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbCritical + vbYesNo, "ATTENZIONE!!!") = vbYes Then
+                If MsgBox("Numero Inventario già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbCritical + vbYesNo, "ATTENZIONE!!!!!!") = vbYes Then
                     txtNumeroInventario = massimo + 1
                     NumInvent = False
                 Else
@@ -1151,6 +1152,8 @@ Private Sub CaricaApparato()
         cboFunzionalita.ListIndex = rsCercaApparato("FUNZIONALITA")
         cboSicurezza.ListIndex = rsCercaApparato("SICUREZZA")
         chkAttivaAlert.Value = IIf(CBool(rsCercaApparato("ALERT")), Checked, Unchecked)
+        
+        mDataCollaudo = oDataCollaudo(3).txtBox
         
     Set rsCercaApparato = Nothing
     ModificaApparato = True

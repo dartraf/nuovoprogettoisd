@@ -643,6 +643,55 @@ Private Sub Pulisci()
     txtNumeroDocumneto.Text = ""
 End Sub
 
+Private Sub cmdStampa_Click()
+    Dim SQLString As String
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
+    Dim rsDataset As Recordset
+    
+    
+    SQLString = "SHAPE APPEND " & _
+                "       NEW adVarChar(120) AS TIPOLOGIA, " & _
+                "       NEW adVarChar(120) AS MODELLO, " & _
+                "       NEW adVarChar(120) AS MATRICOLA, " & _
+                "       NEW adVarChar(120) AS MOTIVAZIONE_RICHIESTA "
+                
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+    
+    Set rsDataset = New Recordset
+    
+    rsDataset.Open "SELECT * FROM APPARATI WHERE (KEY=" & KeyApparato & ") ORDER BY KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        With rsMain
+            Do While Not rsDataset.EOF
+                .AddNew
+                .Fields("TIPOLOGIA") = rsDataset("TIPO_APPARATO")
+                .Fields("MODELLO") = rsDataset("MODELLO")
+                .Fields("MATRICOLA") = rsDataset("MATRICOLA")
+                rsDataset.MoveNext
+            Loop
+               
+                .Fields("MOTIVAZIONE_RICHIESTA") = cboDescrizone(0).Text
+            
+        End With
+    End If
+    
+    Set rsDataset = Nothing
+    
+    Set rptRichiestaIntervento.DataSource = rsMain
+    rptRichiestaIntervento.RightMargin = 0
+    rptRichiestaIntervento.LeftMargin = 0
+    rptRichiestaIntervento.Sections("Pie").Controls("lblMese").Caption = "lì" & " " & date
+    rptRichiestaIntervento.PrintReport True, rptRangeAllPages
+        
+End Sub
+
+
 Private Sub Form_Activate()
     Call RicaricaComboBox("DESCRIZIONE_MANUTENZIONE", "NOME", cboDescrizone(0))
     Call RicaricaComboBox("DETTAGLIO_MANUTENZIONE", "NOME", cboDettagliIntervento(1))

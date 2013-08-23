@@ -3248,7 +3248,7 @@ Private Sub DataReport_Initialize()
             .Item("txtOraStacco").DataField = "ORA_STACCO"
             
             .Item("txtRene").DataField = "RENE"
-            .Item("txtTipoRene").DataField = "TIPO_RENE"
+            .Item("txtTipoRene").DataField = "MODELLO"
             .Item("txtTipo").DataField = "TIPO"
             
             

@@ -128,70 +128,70 @@ Begin VB.Form frmSchedaDialiticaPassate
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaDialiticaPassate.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(56)"
-      Tab(1).Control(1)=   "Label1(48)"
-      Tab(1).Control(2)=   "lblDoseIniziale"
-      Tab(1).Control(3)=   "lblDoseAltroAnticoagulante"
-      Tab(1).Control(4)=   "lblDoseIntermedia"
-      Tab(1).Control(5)=   "Label1(38)"
-      Tab(1).Control(6)=   "lblDoseFinale"
-      Tab(1).Control(7)=   "Label1(35)"
-      Tab(1).Control(8)=   "lblDoseUnitaMisura"
-      Tab(1).Control(9)=   "lblGlucosio"
-      Tab(1).Control(10)=   "Label1(27)"
-      Tab(1).Control(11)=   "Label1(30)"
-      Tab(1).Control(12)=   "Label1(31)"
-      Tab(1).Control(13)=   "Label1(43)"
-      Tab(1).Control(14)=   "Label1(23)"
-      Tab(1).Control(15)=   "Label1(32)"
-      Tab(1).Control(16)=   "lblSodio"
-      Tab(1).Control(17)=   "lblPotassio"
-      Tab(1).Control(18)=   "lblBicarbonato"
-      Tab(1).Control(19)=   "lblCalcio"
-      Tab(1).Control(20)=   "Label1(18)"
-      Tab(1).Control(21)=   "Label1(19)"
-      Tab(1).Control(22)=   "Label1(20)"
-      Tab(1).Control(23)=   "Label1(21)"
-      Tab(1).Control(24)=   "lblSolDialitica"
-      Tab(1).Control(25)=   "lblSolInfusionale"
-      Tab(1).Control(26)=   "lblCartuccia"
-      Tab(1).Control(27)=   "lblSolInfCc"
-      Tab(1).Control(28)=   "Label1(6)"
-      Tab(1).Control(29)=   "Label1(7)"
-      Tab(1).Control(30)=   "lblFlusso"
-      Tab(1).Control(31)=   "lblFlussoSangue"
-      Tab(1).Control(32)=   "Label1(55)"
-      Tab(1).Control(33)=   "Label1(54)"
-      Tab(1).Control(34)=   "Label1(46)"
-      Tab(1).Control(35)=   "Label1(34)"
-      Tab(1).Control(36)=   "Label1(33)"
-      Tab(1).Control(37)=   "Label1(28)"
-      Tab(1).Control(38)=   "Label1(29)"
-      Tab(1).Control(39)=   "Label1(42)"
-      Tab(1).Control(40)=   "Label1(52)"
-      Tab(1).Control(41)=   "Label1(51)"
-      Tab(1).Control(42)=   "Label1(50)"
-      Tab(1).Control(43)=   "Label1(49)"
-      Tab(1).Control(44)=   "lblTipoLinee"
-      Tab(1).Control(45)=   "lblAgo1"
-      Tab(1).Control(46)=   "lblAgo2"
-      Tab(1).Control(47)=   "lblFiltro"
-      Tab(1).Control(48)=   "lblTipoDialisi"
-      Tab(1).Control(49)=   "lblAccessoVascolare"
-      Tab(1).Control(50)=   "lblAnticoagulante(0)"
-      Tab(1).Control(51)=   "lblAnticoagulante(1)"
-      Tab(1).Control(52)=   "lblPesoSecco"
-      Tab(1).Control(53)=   "lblUltimoPeso"
-      Tab(1).Control(54)=   "lblDataUltimoPeso"
-      Tab(1).Control(55)=   "lblOreDialisi"
+      Tab(1).Control(0)=   "lblOreDialisi"
+      Tab(1).Control(1)=   "lblDataUltimoPeso"
+      Tab(1).Control(2)=   "lblUltimoPeso"
+      Tab(1).Control(3)=   "lblPesoSecco"
+      Tab(1).Control(4)=   "lblAnticoagulante(1)"
+      Tab(1).Control(5)=   "lblAnticoagulante(0)"
+      Tab(1).Control(6)=   "lblAccessoVascolare"
+      Tab(1).Control(7)=   "lblTipoDialisi"
+      Tab(1).Control(8)=   "lblFiltro"
+      Tab(1).Control(9)=   "lblAgo2"
+      Tab(1).Control(10)=   "lblAgo1"
+      Tab(1).Control(11)=   "lblTipoLinee"
+      Tab(1).Control(12)=   "Label1(49)"
+      Tab(1).Control(13)=   "Label1(50)"
+      Tab(1).Control(14)=   "Label1(51)"
+      Tab(1).Control(15)=   "Label1(52)"
+      Tab(1).Control(16)=   "Label1(42)"
+      Tab(1).Control(17)=   "Label1(29)"
+      Tab(1).Control(18)=   "Label1(28)"
+      Tab(1).Control(19)=   "Label1(33)"
+      Tab(1).Control(20)=   "Label1(34)"
+      Tab(1).Control(21)=   "Label1(46)"
+      Tab(1).Control(22)=   "Label1(54)"
+      Tab(1).Control(23)=   "Label1(55)"
+      Tab(1).Control(24)=   "lblFlussoSangue"
+      Tab(1).Control(25)=   "lblFlusso"
+      Tab(1).Control(26)=   "Label1(7)"
+      Tab(1).Control(27)=   "Label1(6)"
+      Tab(1).Control(28)=   "lblSolInfCc"
+      Tab(1).Control(29)=   "lblCartuccia"
+      Tab(1).Control(30)=   "lblSolInfusionale"
+      Tab(1).Control(31)=   "lblSolDialitica"
+      Tab(1).Control(32)=   "Label1(21)"
+      Tab(1).Control(33)=   "Label1(20)"
+      Tab(1).Control(34)=   "Label1(19)"
+      Tab(1).Control(35)=   "Label1(18)"
+      Tab(1).Control(36)=   "lblCalcio"
+      Tab(1).Control(37)=   "lblBicarbonato"
+      Tab(1).Control(38)=   "lblPotassio"
+      Tab(1).Control(39)=   "lblSodio"
+      Tab(1).Control(40)=   "Label1(32)"
+      Tab(1).Control(41)=   "Label1(23)"
+      Tab(1).Control(42)=   "Label1(43)"
+      Tab(1).Control(43)=   "Label1(31)"
+      Tab(1).Control(44)=   "Label1(30)"
+      Tab(1).Control(45)=   "Label1(27)"
+      Tab(1).Control(46)=   "lblGlucosio"
+      Tab(1).Control(47)=   "lblDoseUnitaMisura"
+      Tab(1).Control(48)=   "Label1(35)"
+      Tab(1).Control(49)=   "lblDoseFinale"
+      Tab(1).Control(50)=   "Label1(38)"
+      Tab(1).Control(51)=   "lblDoseIntermedia"
+      Tab(1).Control(52)=   "lblDoseAltroAnticoagulante"
+      Tab(1).Control(53)=   "lblDoseIniziale"
+      Tab(1).Control(54)=   "Label1(48)"
+      Tab(1).Control(55)=   "Label1(56)"
       Tab(1).ControlCount=   56
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialiticaPassate.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "flxGriglia(0)"
-      Tab(2).Control(1)=   "flxGriglia(1)"
-      Tab(2).Control(2)=   "Label1(36)"
-      Tab(2).Control(3)=   "Label1(37)"
+      Tab(2).Control(0)=   "Label1(37)"
+      Tab(2).Control(1)=   "Label1(36)"
+      Tab(2).Control(2)=   "flxGriglia(1)"
+      Tab(2).Control(3)=   "flxGriglia(0)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   5055
@@ -2705,7 +2705,7 @@ Private Sub CaricaScheda()
         
         strSql = "SELECT    * " & _
                 " FROM      (STORICO_DIALISI_GIORNALIERA STORICO_DIALISI_GIORNALIERA " & _
-                "           INNER JOIN RENI ON RENI.KEY=STORICO_DIALISI_GIORNALIERA.CODICE_RENE) " & _
+                "           INNER JOIN APPARATI ON APPARATI.KEY=STORICO_DIALISI_GIORNALIERA.CODICE_RENE) " & _
                 "WHERE      STORICO_DIALISI_GIORNALIERA.KEY=" & codice_storico_dialisi
         rsDialisi.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDialisi.EOF And rsDialisi.BOF) Then
@@ -2754,8 +2754,8 @@ Private Sub CaricaScheda()
             End If
             lblUI = rsDialisi("UI")
             lblPostazione = rsDialisi("POSTAZIONE")
-            lblNumeroRene = rsDialisi("NUMERO_RENE") & ""
-            lblTipoRene = rsDialisi("TIPO_RENE")
+            lblNumeroRene = rsDialisi("NUMERO_APPARATO") & ""
+            lblTipoRene = rsDialisi("MODELLO")
             lblTipo = Choose(rsDialisi("TP_RENE") + 1, "NEG", "HCV POS", "HBV POS")
 
         End If
@@ -2897,7 +2897,7 @@ Private Sub cmdStampa_Click()
                     "       NEW adVarChar (20) as DURATA, " & _
                     "       NEW adVarChar (5) as POSTAZIONE_RENE, " & _
                     "       NEW adSingle as RENE, " & _
-                    "       NEW adVarChar (30) as TIPO_RENE, " & _
+                    "       NEW adVarChar (30) as MODELLO, " & _
                     "       NEW adVarChar (15) as TIPO, " & _
                     "       NEW adSingle as PESO_SECCO, " & _
                     "       NEW adSingle as ULTIMO_PESO, " & _
@@ -2977,7 +2977,7 @@ Private Sub cmdStampa_Click()
         
         .Fields("POSTAZIONE_RENE") = lblPostazione
         .Fields("RENE") = lblNumeroRene
-        .Fields("TIPO_RENE") = lblTipoRene
+        .Fields("MODELLO") = lblTipoRene
         .Fields("TIPO") = lblTipo
         
         .Fields("PESO_INIZIALE") = lblPesoIniziale

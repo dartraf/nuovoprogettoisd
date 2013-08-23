@@ -132,18 +132,18 @@ Begin VB.Form frmSchedaDialitica
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblSolInfCc"
-      Tab(1).Control(1)=   "lblCartuccia"
-      Tab(1).Control(2)=   "lblSolInfusionale"
-      Tab(1).Control(3)=   "lblSolDialitica"
-      Tab(1).Control(4)=   "lblFlussoSangue"
-      Tab(1).Control(5)=   "lblFlusso"
-      Tab(1).Control(6)=   "Label1(21)"
-      Tab(1).Control(7)=   "Label1(20)"
-      Tab(1).Control(8)=   "Label1(19)"
-      Tab(1).Control(9)=   "Label1(18)"
-      Tab(1).Control(10)=   "Label1(7)"
-      Tab(1).Control(11)=   "Label1(6)"
+      Tab(1).Control(0)=   "Label1(6)"
+      Tab(1).Control(1)=   "Label1(7)"
+      Tab(1).Control(2)=   "Label1(18)"
+      Tab(1).Control(3)=   "Label1(19)"
+      Tab(1).Control(4)=   "Label1(20)"
+      Tab(1).Control(5)=   "Label1(21)"
+      Tab(1).Control(6)=   "lblFlusso"
+      Tab(1).Control(7)=   "lblFlussoSangue"
+      Tab(1).Control(8)=   "lblSolDialitica"
+      Tab(1).Control(9)=   "lblSolInfusionale"
+      Tab(1).Control(10)=   "lblCartuccia"
+      Tab(1).Control(11)=   "lblSolInfCc"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":0038
@@ -3090,7 +3090,7 @@ Private Sub cmdTrova_Click(Index As Integer)
         If tReni.postazione <> Str(-1) Then
             codice_rene = tReni.key
             lblPostazione = tReni.postazione
-            lblNumeroRene = tReni.numero_rene
+            lblNumeroRene = tReni.numero_apparato
             lblTipoRene = tReni.monitor
             lblTipo = tReni.Tipo
         End If
@@ -3187,7 +3187,7 @@ Private Function SalvaDatiDialisi(numKey As Long) As Boolean
         SalvaDatiDialisi = True
     Else
         ' modifica solo il rene perche potrebbe essere cambiato
-        rsDataset.Open "SELECT TIPO FROM RENI WHERE KEY=" & codice_rene, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+        rsDataset.Open "SELECT TIPO FROM APPARATI WHERE KEY=" & codice_rene, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
         tprene = rsDataset("TIPO")
         rsDataset.Close
         rsDataset.Open "SELECT * FROM STORICO_DIALISI_GIORNALIERA WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -3387,15 +3387,15 @@ Private Sub CaricaPaziente()
     
     rsDataset.Open "SELECT * FROM SCHEDE_DIALISI WHERE SPECIALE=FALSE AND CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & data & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
-        strSql = "SELECT    STORICO_DIALISI_GIORNALIERA.TP_RENE, RENI.* " & _
+        strSql = "SELECT    STORICO_DIALISI_GIORNALIERA.TP_RENE, APPARATI.* " & _
                  "FROM      (STORICO_DIALISI_GIORNALIERA " & _
-                 "          INNER JOIN RENI ON STORICO_DIALISI_GIORNALIERA.CODICE_RENE=RENI.KEY) " & _
+                 "          INNER JOIN APPARATI ON STORICO_DIALISI_GIORNALIERA.CODICE_RENE=APPARATI.KEY) " & _
                  "WHERE     STORICO_DIALISI_GIORNALIERA.KEY=" & rsDataset("CODICE_STORICO_DIALISI")
                  tprene_appo = "TP_RENE"
     Else
-        strSql = "SELECT    RENI.* " & _
+        strSql = "SELECT    APPARATI.* " & _
                  "FROM      (TURNI " & _
-                 "          INNER JOIN RENI ON RENI.KEY=TURNI.CODICE_RENE) " & _
+                 "          INNER JOIN APPARATI ON APPARATI.KEY=TURNI.CODICE_RENE) " & _
                  "WHERE     CODICE_PAZIENTE=" & intPazientiKey
                  tprene_appo = "TIPO"
     End If
@@ -3404,8 +3404,8 @@ Private Sub CaricaPaziente()
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         codice_rene = rsDataset("KEY")
         lblPostazione = rsDataset("POSTAZIONE")
-        lblNumeroRene = rsDataset("NUMERO_RENE") & ""
-        lblTipoRene = rsDataset("TIPO_RENE")
+        lblNumeroRene = rsDataset("NUMERO_APPARATO") & ""
+        lblTipoRene = rsDataset("MODELLO")
         lblTipo = Choose(rsDataset(tprene_appo) + 1, "NEG", "HCV POS", "HBV POS")
         tprene = rsDataset("TIPO")
     End If
@@ -3435,7 +3435,7 @@ Private Function CreaCondizione() As String
     giorno = Weekday(laData, vbMonday)
     Set rsPazientiTurni = New Recordset
     rsPazientiTurni.Open "SELECT P.KEY, T." & strTurno & "_INIZIO" & giorno & " " & _
-                         "FROM ((PAZIENTI P INNER JOIN TURNI T ON P.KEY = T.CODICE_PAZIENTE) INNER JOIN RENI R ON R.KEY=T.CODICE_RENE) " & _
+                         "FROM ((PAZIENTI P INNER JOIN TURNI T ON P.KEY = T.CODICE_PAZIENTE) INNER JOIN APPARATI R ON R.KEY=T.CODICE_RENE) " & _
                          " WHERE  NOT ( T." & strTurno & "_INIZIO" & giorno & "="""")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     rsAppo.Open "ANAMNESI_NEFROLOGICHE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
     Do While Not rsPazientiTurni.EOF

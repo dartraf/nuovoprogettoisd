@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "08/05/2013"
+            TextSave        =   "23/08/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1717,10 +1717,10 @@ Private Sub StampaTurni()
     Next i
     condizione = Left(condizione, Len(condizione) - 4)
     
-SQLString = "SELECT COGNOME, NOME, TURNI." & strGiornoIni(0) & " AS GGINI1, TURNI." & strGiornoIni(1) & " AS GGINI2,TURNI." & strGiornoIni(2) & " AS GGINI3,TURNI." & strGiornoFin(0) & " AS GGFIN1, TURNI." & strGiornoFin(1) & " AS GGFIN2,TURNI." & strGiornoFin(2) & " AS GGFIN3,RENI.POSTAZIONE, RENI.NUMERO_RENE, RENI.TIPO_RENE AS MONITOR, RENI.TIPO " & _
+SQLString = "SELECT COGNOME, NOME, TURNI." & strGiornoIni(0) & " AS GGINI1, TURNI." & strGiornoIni(1) & " AS GGINI2,TURNI." & strGiornoIni(2) & " AS GGINI3,TURNI." & strGiornoFin(0) & " AS GGFIN1, TURNI." & strGiornoFin(1) & " AS GGFIN2,TURNI." & strGiornoFin(2) & " AS GGFIN3,APPARATI.POSTAZIONE, APPARATI.NUMERO_APPARATO, APPARATI.MODELLO AS MONITOR, APPARATI.TIPO " & _
              "FROM ((PAZIENTI " & _
              "INNER JOIN TURNI ON PAZIENTI.KEY = TURNI.CODICE_PAZIENTE ) " & _
-             "INNER JOIN RENI  ON TURNI.CODICE_RENE= RENI.KEY ) " & _
+             "INNER JOIN APPARATI  ON TURNI.CODICE_RENE= APPARATI.KEY ) " & _
              "WHERE (" & condizione & ") AND (PAZIENTI.STATO = 0) " & _
              "ORDER BY  PAZIENTI.COGNOME, PAZIENTI.NOME"
         
@@ -1951,7 +1951,7 @@ End Sub
 
 Private Sub mnuTabFatt_Click(Index As Integer)
     Select Case Index
-        Case 0: tTabelle = tpREGIONI
+        Case 0: tTabelle = tpRegioni
         Case 1: tTabelle = tpCOMUNI
         Case 2: tTabelle = tpasl
         Case 3: tTabelle = tpDISTRETTI

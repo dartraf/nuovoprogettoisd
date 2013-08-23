@@ -274,7 +274,7 @@ Private Sub Cerca()
     strSql = "SELECT    PAZIENTI.KEY, PAZIENTI.COGNOME, PAZIENTI.NOME, PAZIENTI.DATA_NASCITA, PAZIENTI.STATO, TURNI.AM_INIZIO" & giorno & ", TURNI.PM_INIZIO" & giorno & ", TURNI.SR_INIZIO" & giorno & " " & _
              "FROM      ((PAZIENTI " & _
              "          INNER JOIN TURNI ON PAZIENTI.KEY = TURNI.CODICE_PAZIENTE) " & _
-             "          INNER JOIN RENI ON RENI.KEY=TURNI.CODICE_RENE) " & _
+             "          INNER JOIN APPARATI ON APPARATI.KEY=TURNI.CODICE_RENE) " & _
              "WHERE     ( (PAZIENTI.STATO=0 OR PAZIENTI.STATO=4) AND " & _
              "          TURNI." & tipostrTurno & giorno & "<>"""" )"
                          

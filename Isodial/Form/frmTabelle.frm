@@ -417,7 +417,8 @@ Private Sub Form_Load()
                 Call CaricaFlx
                 cmdElimina.Visible = False
             Case tpRENI
-                nomeTabella = "RENI"
+              '  nomeTabella = "RENI"
+                nomeTabella = "APPARATI"
                 Me.Caption = Me.Caption & "Gestione Reni"
                 With flxGriglia
                     .Cols = 7
@@ -506,8 +507,10 @@ Private Sub CaricaFlx()
                     .TextMatrix(.Rows - 1, 4) = VirgolaOrPunto(rsTabelle("IMPORTO_SCONTATO"), ",")
                 ElseIf tTabelle = tpRENI Then
                     .TextMatrix(.Rows - 1, 1) = rsTabelle("POSTAZIONE")
-                    .TextMatrix(.Rows - 1, 2) = rsTabelle("NUMERO_RENE") & ""
-                    .TextMatrix(.Rows - 1, 3) = rsTabelle("TIPO_RENE") & ""
+                    '.TextMatrix(.Rows - 1, 2) = rsTabelle("NUMERO_RENE") & ""
+                    .TextMatrix(.Rows - 1, 2) = rsTabelle("NUMERO_APPARATO") & ""
+                    '.TextMatrix(.Rows - 1, 3) = rsTabelle("TIPO_RENE") & ""
+                    .TextMatrix(.Rows - 1, 3) = rsTabelle("MODELLO") & ""
                     .TextMatrix(.Rows - 1, 4) = rsTabelle("MATRICOLA") & ""
                     If rsTabelle("TIPO") = 0 Then
                         .TextMatrix(.Rows - 1, 5) = "NEG"
@@ -563,7 +566,7 @@ Private Sub SalvaModifiche()
             v_Nomi = Array("KEY", "CODICE", "NOME", "IMPORTO", "IMPORTO_SCONTATO")
             v_Val = Array(keyId, .TextMatrix(vRow, 1), .TextMatrix(vRow, 2), .TextMatrix(vRow, 3), .TextMatrix(vRow, 4))
         ElseIf tTabelle = tpRENI Then
-            v_Nomi = Array("KEY", "POSTAZIONE", "NUMERO_RENE", "TIPO_RENE", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE")
+            v_Nomi = Array("KEY", "POSTAZIONE", "NUMERO_APPARATO", "MODELLO", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE")
             If .TextMatrix(vRow, 5) = "HCV POS" Then
                 valore = 1
             ElseIf .TextMatrix(vRow, 5) = "HBV POS" Then
@@ -813,7 +816,7 @@ Private Sub cmdInserisci_Click()
                 v_Nomi = Array("KEY", "CODICE", "NOME", "IMPORTO", "IMPORTO_SCONTATO")
                 v_Val = Array(num, tInput.v_valori(1), tInput.v_valori(2), tInput.v_valori(3), tInput.v_valori(4))
             Case tpRENI
-                v_Nomi = Array("KEY", "POSTAZIONE", "TIPO_RENE", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE", "SOSTITUITO", "NUMERO_RENE")
+                v_Nomi = Array("KEY", "POSTAZIONE", "MODELLO", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE", "SOSTITUITO", "NUMERO_APPARATO")
                 v_Val = Array(num, tInput.v_valori(1), tInput.v_valori(2), tInput.v_valori(3), tInput.v_valori(4), IIf(tInput.v_valori(5) = "", Null, tInput.v_valori(5)), False, IIf(tInput.v_valori(6) = "", Null, tInput.v_valori(6)))
         End Select
         

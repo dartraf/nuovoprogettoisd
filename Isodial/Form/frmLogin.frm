@@ -266,7 +266,7 @@ Private Sub ControllaReni()
     
     data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
     
-    rsDataset.Open "SELECT * FROM RENI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         frmReniDaRottamare.Show 1
     End If

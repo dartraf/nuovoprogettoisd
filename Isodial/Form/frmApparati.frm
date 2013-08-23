@@ -113,6 +113,23 @@ Begin VB.Form frmApparati
       TabIndex        =   2
       Top             =   3480
       Width           =   14415
+      Begin VB.CommandButton cmdOrdDtRott 
+         Caption         =   "&Ordina x Data Rott."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   600
+         Left            =   240
+         TabIndex        =   15
+         Top             =   170
+         Width           =   1215
+      End
       Begin VB.CommandButton cmdStampaApparati 
          Caption         =   "&Stampa"
          BeginProperty Font 
@@ -273,6 +290,25 @@ Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
 Dim MantieniDatoManutenzione As Integer
+Dim strSql As String
+Dim swap As Integer
+
+Private Sub cmdOrdDtRott_Click()
+    If swap = 1 Then
+        cmdOrdDtRott.Caption = "&Ordina x Data Rott."
+        strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
+        swap = 0
+    Else
+        cmdOrdDtRott.Caption = "&Ordina x Num. Inv."
+        strSql = "SELECT * FROM APPARATI ORDER BY DATA_ROTTAMAZIONE DESC"
+        swap = 1
+    End If
+
+    Call CaricaFlx
+    'elimina la griglia delle manutenzioni
+    KeyApparato = 0
+    Call CaricaFlxManutenzione
+End Sub
 
 Private Sub cmdEliminaApparato_Click()
 
@@ -442,7 +478,7 @@ Private Sub flxManutenzione_Click()
         KeyReturnManutenzione = flxManutenzione.TextMatrix(vRow, 0)
         ' Mantengo il dato selezionato per evitare di cliccare
         ' una seconda volta quando chiudo il form
-        ' Inseriscimanutenzioni per eliminare
+        ' inserisci manutenzioni per eliminare
         MantieniDatoManutenzione = KeyReturnManutenzione
     End If
 End Sub
@@ -473,22 +509,25 @@ Private Sub flxManutenzione_DblClick()
 End Sub
 
 Private Sub Form_Load()
-Dim i As Integer
-       
+    Dim i As Integer
+    strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
+    swap = 0
+    
     ' Griglia Apparato
     Set objAnnulla = New CAnnulla
     flxGriglia.Rows = 1
     
     With flxGriglia
-        .Cols = 9
+        .Cols = 10
         .ColWidth(1) = .ColWidth(1) * 0.16
-        .ColWidth(2) = .ColWidth(2) * 1.9
-        .ColWidth(3) = .ColWidth(3) * 3.1
-        .ColWidth(4) = .ColWidth(4) * 1.5
+        .ColWidth(2) = .ColWidth(2) * 0.7
+        .ColWidth(3) = .ColWidth(3) * 2.8
+        .ColWidth(4) = .ColWidth(4) * 2
         .ColWidth(5) = .ColWidth(5) * 1.5
         .ColWidth(6) = .ColWidth(6) * 3.02
         .ColWidth(7) = .ColWidth(7) * 1.4
         .ColWidth(8) = .ColWidth(8) * 1.3
+        .ColWidth(9) = .ColWidth(9) * 1
 
        ' .ColWidth(2) = .ColWidth(1) * 2.3
        ' .ColWidth(3) = .ColWidth(1) * 3.3
@@ -499,13 +538,14 @@ Dim i As Integer
        ' .ColWidth(8) = .ColWidth(1) * 2.1
                                        
         .TextMatrix(0, 1) = "N°Inv."
-        .TextMatrix(0, 2) = "N° Apparato"
+        .TextMatrix(0, 2) = "N°App."
         .TextMatrix(0, 3) = "Tipo Apparato"
         .TextMatrix(0, 4) = "Modello"
         .TextMatrix(0, 5) = "Matricola"
         .TextMatrix(0, 6) = "Produttore"
         .TextMatrix(0, 7) = "Pros.Rev.Fun."
         .TextMatrix(0, 8) = "Pros.Rev.Sic."
+        .TextMatrix(0, 9) = "Data Rott."
     End With
     
     Call CaricaFlx
@@ -575,8 +615,8 @@ Private Sub CaricaFlx()
     objAnnulla.Refresh
     
     Set rsApparati = New Recordset
-    rsApparati.Open "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    
+    rsApparati.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+
     If Not (rsApparati.EOF And rsApparati.BOF) Then
         Do While Not rsApparati.EOF
             With flxGriglia
@@ -598,6 +638,12 @@ Private Sub CaricaFlx()
                 .Row = .Rows - 1
                 .CellForeColor = vbRed
                 .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVSIC") & ""
+                
+                .Col = 9
+                .Row = .Rows - 1
+                .CellForeColor = vbRed
+                .TextMatrix(.Rows - 1, 9) = rsApparati("DATA_ROTTAMAZIONE") & ""
+
                 
                 rsApparati.MoveNext
             End With
@@ -748,7 +794,7 @@ Private Sub flxGriglia_Click()
         flxGriglia.Row = 0
         flxGriglia.Col = 0
         flxManutenzione.Rows = 1
-        ' Per evitare di richiamare la manutenzione senza seleziona l'apparato
+        ' Per evitare di richiamare la manutenzione senza selezionare l'apparato
         KeyApparato = 0
         ' Per evitare di far rimanere in memoria lo stesso codice
         ' della man.apparato quando cambio scheda lo azzera
@@ -795,4 +841,3 @@ On Error GoTo gestione
 gestione:
 
 End Sub
-

@@ -2179,13 +2179,13 @@ End Sub
 Private Sub CaricaRene()
     Dim rsDataset As New Recordset
     If codice_rene = -1 Then Exit Sub
-    rsDataset.Open "SELECT * FROM RENI WHERE KEY=" & codice_rene, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE KEY=" & codice_rene, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDataset.EOF And rsDataset.BOF Then
         MsgBox "Errore nel caricamento dei dati", vbCritical, "Impossibile aggiornare"
     Else
         lblPostazione = rsDataset("POSTAZIONE")
-        lblNumeroRene = rsDataset("NUMERO_RENE") & ""
-        lblTipoRene = rsDataset("TIPO_RENE")
+        lblNumeroRene = rsDataset("NUMERO_APPARATO") & ""
+        lblTipoRene = rsDataset("MODELLO")
         lblTipo = Choose(rsDataset("TIPO") + 1, "NEG", "HCV POS", "HBV POS")
     End If
     Set rsDataset = Nothing
@@ -2272,7 +2272,7 @@ Private Sub cmdTrova_Click(Index As Integer)
         If tReni.postazione <> Str(-1) Then
             codice_rene = tReni.key
             lblPostazione = tReni.postazione
-            lblNumeroRene = tReni.numero_rene
+            lblNumeroRene = tReni.numero_apparato
             lblTipoRene = tReni.monitor
             lblTipo = tReni.Tipo
         End If

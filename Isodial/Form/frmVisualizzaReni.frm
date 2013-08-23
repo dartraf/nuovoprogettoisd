@@ -152,7 +152,7 @@ End Sub
 Private Sub CaricaFlx()
     flxGriglia.Rows = 1
     Set rsReni = New Recordset
-    rsReni.Open "RENI ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+    rsReni.Open "APPARATI ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
     If Not (rsReni.BOF And rsReni.EOF) Then
         Do While Not rsReni.EOF
             If IsNull(rsReni("DATA_ROTTAMAZIONE")) Or rsReni("DATA_ROTTAMAZIONE") > date Or CBool(rsReni("SOSTITUITO")) = False Then
@@ -160,8 +160,8 @@ Private Sub CaricaFlx()
                     .Rows = .Rows + 1
                     .TextMatrix(.Rows - 1, 0) = rsReni("KEY")
                     .TextMatrix(.Rows - 1, 1) = rsReni("POSTAZIONE")
-                    .TextMatrix(.Rows - 1, 2) = rsReni("NUMERO_RENE") & ""
-                    .TextMatrix(.Rows - 1, 3) = rsReni("TIPO_RENE")
+                    .TextMatrix(.Rows - 1, 2) = rsReni("NUMERO_APPARATO") & ""
+                    .TextMatrix(.Rows - 1, 3) = rsReni("MODELLO")
                     .TextMatrix(.Rows - 1, 4) = rsReni("MATRICOLA")
                     If rsReni("TIPO") = 0 Then
                         .TextMatrix(.Rows - 1, 5) = "NEG"
@@ -189,7 +189,7 @@ Private Sub cmdConferma_Click()
         If .Row <> 0 Then
             tReni.key = .TextMatrix(.Row, 0)
             tReni.postazione = .TextMatrix(.Row, 1)
-            tReni.numero_rene = .TextMatrix(.Row, 2)
+            tReni.numero_apparato = .TextMatrix(.Row, 2)
             tReni.monitor = .TextMatrix(.Row, 3)
             tReni.Tipo = .TextMatrix(.Row, 5)
             Unload Me

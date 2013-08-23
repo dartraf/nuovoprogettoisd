@@ -89,7 +89,7 @@ Public tScheda As schedaGiornaliera
 Type structReni
     key As Integer
     postazione As String
-    numero_rene As String
+    numero_apparato As String
     monitor As String
     Tipo As String
 End Type
@@ -211,12 +211,12 @@ Public tTrova As structTrova              '  il tipo passato ai form con moltepl
 
 Enum tipoTabella
     ' elementi costituiti da due informazioni
-    tpREGIONI
+    tpRegioni
     tpTIPOLOGIEMEDICO
     tpESENZIONI
     tpEDTA
     ' elementi costituiti da tre informazioni
-    tpComuni
+    tpCOMUNI
     tpasl
     tpDISTRETTI
     ' altri

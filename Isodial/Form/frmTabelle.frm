@@ -417,9 +417,10 @@ Private Sub Form_Load()
                 Call CaricaFlx
                 cmdElimina.Visible = False
             Case tpRENI
-              '  nomeTabella = "RENI"
                 nomeTabella = "APPARATI"
                 Me.Caption = Me.Caption & "Gestione Reni"
+                cmdInserisci.Visible = False
+                cmdElimina.Visible = False
                 With flxGriglia
                     .Cols = 7
                     .ColWidth(1) = .ColWidth(1) * 1 / 2.8
@@ -929,11 +930,11 @@ Private Sub flxGriglia_DblClick()
             End If
             Call SalvaModifiche
         ElseIf .Col = 6 And tTabelle = tpRENI Then
-            frmCalendario.Show 1
-            Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
-            cmdAnnulla.Enabled = True
-            .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
-            Call SalvaModifiche
+ '           frmCalendario.Show 1
+ '            Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, vCol), vCol, Int(flxGriglia.TextMatrix(vRow, 0)))
+ '            cmdAnnulla.Enabled = True
+ '            .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
+ '           Call SalvaModifiche
             ' cambia colonna per evitave di ricaricare il calendario
             .Col = 0
         Else

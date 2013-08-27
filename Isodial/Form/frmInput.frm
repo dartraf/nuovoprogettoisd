@@ -3008,11 +3008,11 @@ Private Sub Form_Activate()
             cboMedicinali.SetFocus
         Case tpITERAPIESTRAORDINARIE
             cboMedicinaliStraordinaria.SetFocus
-        Case tpIRENI
-            txtPostazione.SetFocus
-            If (txtPostazione = "" Or tInput.v_valori(1) <> txtPostazione) And tInput.v_valori(1) <> "" Then
-                txtPostazione = tInput.v_valori(1)
-            End If
+'        Case tpIRENI
+'            txtpostazione.SetFocus
+'            If (txtpostazione = "" Or tInput.v_valori(1) <> txtpostazione) And tInput.v_valori(1) <> "" Then
+'                txtpostazione = tInput.v_valori(1)
+'            End If
         Case tpICOLTURE
             txtColtureAcqua.SetFocus
         Case tpIPRESCRIZIONI
@@ -3077,7 +3077,7 @@ Private Sub Form_Load()
                 Label1(1) = "Esame"
             End If
         Case tpICOMPOSTO
-            If tTabelle = tpREGIONI Then
+            If tTabelle = tpRegioni Then
                 Label1(1) = "Codice Regione"
                 txtCognome.MaxLength = 3
                 lblNome = "Regione"
@@ -3132,11 +3132,11 @@ Private Sub Form_Load()
             fraTerapia.ZOrder
             fraPulsanti.Top = fraTerapia.Height - 135
             Call RicaricaComboBox("MEDICINALI", "NOME", cboMedicinali)
-        Case tpIRENI
-            fraRene.Top = fraTabelle.Top
-            fraRene.Left = fraTabelle.Left
-            fraRene.ZOrder
-            fraPulsanti.Top = fraRene.Height - 135
+ '       Case tpIRENI
+ '           fraRene.Top = fraTabelle.Top
+ '           fraRene.Left = fraTabelle.Left
+ '           fraRene.ZOrder
+ '           fraPulsanti.Top = fraRene.Height - 135
         Case tpIPRESCRIZIONI
             fraPrestazione.Top = fraTabelle.Top
             fraPrestazione.Left = fraTabelle.Left
@@ -3302,8 +3302,8 @@ End Function
 
 Private Sub cmdAnnulla_LostFocus()
     Select Case tInput.Tipo
-        Case tpIRENI
-            txtPostazione.SetFocus
+  '      Case tpIRENI
+  '          txtpostazione.SetFocus
         Case tpIVOCI
             txtVoce.SetFocus
         Case tpITERAPIADIALITICA, tpITERAPIADOMICILIARE
@@ -3478,29 +3478,29 @@ Private Sub cmdInserisci_Click()
         If tInput.Tipo = tpITERAPIADIALITICA Then
             tInput.v_valori(6) = txtSomministrazione & ""
         End If
-    Case tpIRENI:
-        If txtPostazione = "" Then
-            MsgBox "Inserire la postazione", vbCritical, "ATTENZIONE!!!!!!"
-            Exit Sub
-        End If
-        If txtTipoRene = "" Then
-            MsgBox "Inserire il monitor", vbCritical, "ATTENZIONE!!!!!!"
-            Exit Sub
-        End If
-        If txtMatricola = "" Then
-            MsgBox "Inserire la matricola", vbCritical, "ATTENZIONE!!!!!!"
-            Exit Sub
-        End If
-        If txtNumeroRene = "" Then
-            MsgBox "Inserire il numero rene", vbCritical, "ATTENZIONE!!!!!!"
-            Exit Sub
-        End If
-        tInput.v_valori(1) = txtPostazione
-        tInput.v_valori(2) = txtTipoRene
-        tInput.v_valori(3) = txtMatricola
-        tInput.v_valori(4) = IIf(optTipoRene(0).Value, 1, IIf(optTipoRene(1).Value, 2, 0))
-        tInput.v_valori(5) = lblData(9)
-        tInput.v_valori(6) = txtNumeroRene
+ '   Case tpIRENI:
+ '       If txtpostazione = "" Then
+ '           MsgBox "Inserire la postazione", vbCritical, "ATTENZIONE!!!!!!"
+ '           Exit Sub
+ '       End If
+ '       If txtTipoRene = "" Then
+ '           MsgBox "Inserire il monitor", vbCritical, "ATTENZIONE!!!!!!"
+ '           Exit Sub
+ '       End If
+ '       If txtMatricola = "" Then
+ '           MsgBox "Inserire la matricola", vbCritical, "ATTENZIONE!!!!!!"
+ '           Exit Sub
+ '       End If
+ '       If txtNumeroRene = "" Then
+ '           MsgBox "Inserire il numero rene", vbCritical, "ATTENZIONE!!!!!!"
+ '           Exit Sub
+ '       End If
+ '       tInput.v_valori(1) = txtpostazione
+ '       tInput.v_valori(2) = txtTipoRene
+ '       tInput.v_valori(3) = txtMatricola
+ '       tInput.v_valori(4) = IIf(optTipoRene(0).Value, 1, IIf(optTipoRene(1).Value, 2, 0))
+ '       tInput.v_valori(5) = lblData(9)
+ '       tInput.v_valori(6) = txtNumeroRene
     Case tpIRICOVERI
         tInput.v_valori(3) = txtNoteRicoveri & ""
         If lblData(1) <> "" Then
@@ -4159,8 +4159,8 @@ Private Sub cmdAnnulla_KeyPress(KeyAscii As Integer)
                 txtCognomePass.SetFocus
             Case tpITERAPIADOMICILIARE Or tpITERAPIESTRAORDINARIE
                 cboMedicinali.SetFocus
-            Case tpIRENI
-                txtTipoRene.SetFocus
+ '           Case tpIRENI
+ '               txtTipoRene.SetFocus
             Case tpICOLTURE
                 txtColtureAcqua.SetFocus
         End Select

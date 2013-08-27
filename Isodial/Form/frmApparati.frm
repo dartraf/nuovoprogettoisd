@@ -7,12 +7,12 @@ Begin VB.Form frmApparati
    ClientHeight    =   8865
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   14640
+   ClientWidth     =   14925
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   8865
-   ScaleWidth      =   14640
+   ScaleWidth      =   14925
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame2 
@@ -31,14 +31,14 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   5
       Top             =   4440
-      Width           =   14415
+      Width           =   14655
       Begin MSFlexGridLib.MSFlexGrid flxManutenzione 
          Height          =   3255
          Left            =   120
          TabIndex        =   6
          Top             =   240
-         Width           =   14175
-         _ExtentX        =   25003
+         Width           =   14415
+         _ExtentX        =   25426
          _ExtentY        =   5741
          _Version        =   393216
          FixedCols       =   0
@@ -72,7 +72,7 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   14415
+      Width           =   14655
       Begin WheelCatch.WheelCatcher WheelCatcher1 
          Height          =   480
          Left            =   2400
@@ -87,8 +87,8 @@ Begin VB.Form frmApparati
          Left            =   120
          TabIndex        =   1
          Top             =   240
-         Width           =   14175
-         _ExtentX        =   25003
+         Width           =   14415
+         _ExtentX        =   25426
          _ExtentY        =   5741
          _Version        =   393216
          FixedCols       =   0
@@ -112,9 +112,9 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   2
       Top             =   3480
-      Width           =   14415
+      Width           =   14655
       Begin VB.CommandButton cmdOrdDtRott 
-         Caption         =   "&Ordina x Data Rott."
+         Caption         =   "&Ordina x N° Postaz."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -142,7 +142,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   11400
+         Left            =   11640
          TabIndex        =   13
          Top             =   170
          Width           =   1215
@@ -159,7 +159,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   9960
+         Left            =   10200
          TabIndex        =   11
          Top             =   170
          Width           =   1215
@@ -176,7 +176,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   12840
+         Left            =   13080
          TabIndex        =   3
          Top             =   170
          Width           =   1335
@@ -187,7 +187,7 @@ Begin VB.Form frmApparati
       Left            =   120
       TabIndex        =   7
       Top             =   7920
-      Width           =   14415
+      Width           =   14655
       Begin VB.CommandButton cmdStampaManutenzione 
          Caption         =   "S&tampa"
          CausesValidation=   0   'False
@@ -201,7 +201,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   11520
+         Left            =   11760
          TabIndex        =   14
          Top             =   170
          Width           =   1215
@@ -218,7 +218,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   5760
+         Left            =   6000
          TabIndex        =   12
          Top             =   170
          Width           =   1215
@@ -235,7 +235,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   7200
+         Left            =   7440
          TabIndex        =   10
          Top             =   170
          Width           =   1935
@@ -253,7 +253,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   12960
+         Left            =   13200
          TabIndex        =   9
          Top             =   170
          Width           =   1215
@@ -270,7 +270,7 @@ Begin VB.Form frmApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   600
-         Left            =   9360
+         Left            =   9600
          TabIndex        =   8
          Top             =   170
          Width           =   1935
@@ -295,12 +295,16 @@ Dim swap As Integer
 
 Private Sub cmdOrdDtRott_Click()
     If swap = 1 Then
-        cmdOrdDtRott.Caption = "&Ordina x Data Rott."
+        cmdOrdDtRott.Caption = "&Ordina x N°Invent."
+        strSql = "SELECT * FROM APPARATI ORDER BY DATA_ROTTAMAZIONE DESC"
+        swap = 2
+    ElseIf swap = 2 Then
+        cmdOrdDtRott.Caption = "&Ordina x N°Postaz."
         strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
         swap = 0
     Else
-        cmdOrdDtRott.Caption = "&Ordina x Num. Inv."
-        strSql = "SELECT * FROM APPARATI ORDER BY DATA_ROTTAMAZIONE DESC"
+        cmdOrdDtRott.Caption = "&Ordina x Data Rott."
+        strSql = "SELECT * FROM APPARATI ORDER BY POSTAZIONE"
         swap = 1
     End If
 
@@ -518,34 +522,28 @@ Private Sub Form_Load()
     flxGriglia.Rows = 1
     
     With flxGriglia
-        .Cols = 10
+        .Cols = 11
         .ColWidth(1) = .ColWidth(1) * 0.16
         .ColWidth(2) = .ColWidth(2) * 0.7
-        .ColWidth(3) = .ColWidth(3) * 2.8
-        .ColWidth(4) = .ColWidth(4) * 2
-        .ColWidth(5) = .ColWidth(5) * 1.5
-        .ColWidth(6) = .ColWidth(6) * 3.02
-        .ColWidth(7) = .ColWidth(7) * 1.4
-        .ColWidth(8) = .ColWidth(8) * 1.3
-        .ColWidth(9) = .ColWidth(9) * 1
-
-       ' .ColWidth(2) = .ColWidth(1) * 2.3
-       ' .ColWidth(3) = .ColWidth(1) * 3.3
-       ' .ColWidth(4) = .ColWidth(1) * 2.5
-       ' .ColWidth(5) = .ColWidth(1) * 2.2
-       ' .ColWidth(6) = .ColWidth(1) * 2.8
-       ' .ColWidth(7) = .ColWidth(1) * 2.2
-       ' .ColWidth(8) = .ColWidth(1) * 2.1
-                                       
+        .ColWidth(3) = .ColWidth(3) * 0.8
+        .ColWidth(4) = .ColWidth(4) * 2.8
+        .ColWidth(5) = .ColWidth(5) * 2
+        .ColWidth(6) = .ColWidth(6) * 1
+        .ColWidth(7) = .ColWidth(7) * 3.02
+        .ColWidth(8) = .ColWidth(8) * 1.4
+        .ColWidth(9) = .ColWidth(9) * 1.3
+        .ColWidth(10) = .ColWidth(10) * 1
+                                     
         .TextMatrix(0, 1) = "N°Inv."
         .TextMatrix(0, 2) = "N°App."
-        .TextMatrix(0, 3) = "Tipo Apparato"
-        .TextMatrix(0, 4) = "Modello"
-        .TextMatrix(0, 5) = "Matricola"
-        .TextMatrix(0, 6) = "Produttore"
-        .TextMatrix(0, 7) = "Pros.Rev.Fun."
-        .TextMatrix(0, 8) = "Pros.Rev.Sic."
-        .TextMatrix(0, 9) = "Data Rott."
+        .TextMatrix(0, 3) = "N°Post."
+        .TextMatrix(0, 4) = "Tipo Apparato"
+        .TextMatrix(0, 5) = "Modello"
+        .TextMatrix(0, 6) = "Matricola"
+        .TextMatrix(0, 7) = "Produttore"
+        .TextMatrix(0, 8) = "Pros.Rev.Fun."
+        .TextMatrix(0, 9) = "Pros.Rev.Sic."
+        .TextMatrix(0, 10) = "Data Rott."
     End With
     
     Call CaricaFlx
@@ -574,15 +572,8 @@ Private Sub Form_Load()
         .ColWidth(4) = .ColWidth(4) * 1.1
         .ColWidth(5) = .ColWidth(5) * 4.2
         .ColWidth(6) = .ColWidth(6) * 1.1
-        .ColWidth(7) = .ColWidth(7) * 4.2
-
-    '    .ColWidth(2) = .ColWidth(1) * 1.4
-    '    .ColWidth(3) = .ColWidth(1) * 1.4
-    '    .ColWidth(4) = .ColWidth(1) * 1.4
-    '    .ColWidth(5) = .ColWidth(1) * 1.5
-    '    .ColWidth(6) = .ColWidth(1) * 1.5
-    '    .ColWidth(7) = .ColWidth(1) * 0.9
-                                       
+        .ColWidth(7) = .ColWidth(7) * 4.7
+        
         .TextMatrix(0, 1) = "Tipo Manutenz."
         .TextMatrix(0, 2) = "Scad.Man."
         .TextMatrix(0, 3) = "Rich.Man."
@@ -624,25 +615,26 @@ Private Sub CaricaFlx()
                 .TextMatrix(.Rows - 1, 0) = rsApparati("KEY")
                 .TextMatrix(.Rows - 1, 1) = rsApparati("NUMERO_INVENTARIO")
                 .TextMatrix(.Rows - 1, 2) = rsApparati("NUMERO_APPARATO") & ""
-                .TextMatrix(.Rows - 1, 3) = rsApparati("TIPO_APPARATO") & ""
-                .TextMatrix(.Rows - 1, 4) = rsApparati("MODELLO") & ""
-                .TextMatrix(.Rows - 1, 5) = rsApparati("MATRICOLA") & ""
-                .TextMatrix(.Rows - 1, 6) = rsApparati("PRODUTTORE") & ""
+                .TextMatrix(.Rows - 1, 3) = rsApparati("POSTAZIONE") & ""
+                .TextMatrix(.Rows - 1, 4) = rsApparati("TIPO_APPARATO") & ""
+                .TextMatrix(.Rows - 1, 5) = rsApparati("MODELLO") & ""
+                .TextMatrix(.Rows - 1, 6) = rsApparati("MATRICOLA") & ""
+                .TextMatrix(.Rows - 1, 7) = rsApparati("PRODUTTORE") & ""
                 'scrive in rosso
-                .Col = 7
-                .Row = .Rows - 1
-                .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 7) = rsApparati("PROXREVFUN") & ""
-                
                 .Col = 8
                 .Row = .Rows - 1
                 .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVSIC") & ""
+                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVFUN") & ""
                 
                 .Col = 9
                 .Row = .Rows - 1
                 .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 9) = rsApparati("DATA_ROTTAMAZIONE") & ""
+                .TextMatrix(.Rows - 1, 9) = rsApparati("PROXREVSIC") & ""
+                
+                .Col = 10
+                .Row = .Rows - 1
+                .CellForeColor = vbRed
+                .TextMatrix(.Rows - 1, 10) = rsApparati("DATA_ROTTAMAZIONE") & ""
 
                 
                 rsApparati.MoveNext
@@ -690,7 +682,7 @@ End Sub
 Private Sub cmdChiudi_Click()
     Unload frmApparati
 End Sub
-
+'sub da cancellare una volta finito
 Private Sub cmdElimina_Click()
     Dim blnEliminato As Boolean
     Dim blnElimina As Boolean

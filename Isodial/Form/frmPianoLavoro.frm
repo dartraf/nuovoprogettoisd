@@ -929,10 +929,10 @@ Private Sub Stampa()
     Set rsPiano = New Recordset
     Set rsDataset = New Recordset
     rsPiano.Open "SELECT    TURNI.CODICE_PAZIENTE, TURNI.CODICE_RENE, TURNI.AM_INIZIO" & giorno & ", TURNI.PM_INIZIO" & giorno & ", TURNI.PM_INIZIO" & giorno & ", " & _
-                 "          PAZIENTI.KEY, PAZIENTI.COGNOME, PAZIENTI.NOME, RENI.KEY, RENI.POSTAZIONE " & _
+                 "          PAZIENTI.KEY, PAZIENTI.COGNOME, PAZIENTI.NOME, APPARATI.KEY, APPARATI.POSTAZIONE " & _
                  "FROM      ((TURNI " & _
                  "          INNER JOIN PAZIENTI ON TURNI.CODICE_PAZIENTE = PAZIENTI.KEY) " & _
-                 "          INNER JOIN RENI ON TURNI.CODICE_RENE = RENI.KEY) " & _
+                 "          INNER JOIN APPARATI ON TURNI.CODICE_RENE = APPARATI.KEY) " & _
                  "WHERE     ((PAZIENTI.STATO=0 OR PAZIENTI.STATO=4) AND " & _
                  "          TURNI." & tipostrTurno & giorno & "<>"""")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsPiano.EOF And rsPiano.BOF) Then

@@ -197,14 +197,14 @@ Private Sub CaricaFlx()
     data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
     flxGriglia.Rows = 1
     Set rsDataset = New Recordset
-    rsDataset.Open "SELECT * FROM RENI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         With flxGriglia
             .Rows = .Rows + 1
             .TextMatrix(.Rows - 1, 0) = rsDataset("KEY")
             .TextMatrix(.Rows - 1, 1) = rsDataset("POSTAZIONE")
             .TextMatrix(.Rows - 1, 2) = rsDataset("NUMERO_APPARATO") & ""
-            .TextMatrix(.Rows - 1, 3) = rsDataset("TIPO_RENE")
+            .TextMatrix(.Rows - 1, 3) = rsDataset("MODELLO")
             .TextMatrix(.Rows - 1, 4) = rsDataset("MATRICOLA")
             .TextMatrix(.Rows - 1, 6) = rsDataset("DATA_ROTTAMAZIONE") & ""
             If rsDataset("TIPO") = 0 Then
@@ -233,7 +233,7 @@ Private Sub cmdChiudi_Click()
     data = DateValue(Month(date) & "/" & Day(date) & "/" & Year(date))
     
     Set rsDataset = New Recordset
-    rsDataset.Open "SELECT * FROM RENI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         trovato = True
     Else
@@ -317,10 +317,10 @@ Private Sub cmdSostituisci_Click()
         frmInput.Show 1
         If Not (tInput.v_valori(1) = "" And tInput.v_valori(2) = "") Then
             num = GetNumero("RENI")
-            v_Nomi = Array("KEY", "POSTAZIONE", "TIPO_RENE", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE", "SOSTITUITO", "NUMERO_APPARATO")
+            v_Nomi = Array("KEY", "POSTAZIONE", "MODELLO", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE", "SOSTITUITO", "NUMERO_APPARATO")
             v_Val = Array(num, tInput.v_valori(1), tInput.v_valori(2), tInput.v_valori(3), tInput.v_valori(4), IIf(tInput.v_valori(5) = "", Null, tInput.v_valori(5)), False, tInput.v_valori(6))
             Set rsDataset = New Recordset
-            rsDataset.Open "RENI", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
+            rsDataset.Open "APPARATI", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
             rsDataset.AddNew v_Nomi, v_Val
             rsDataset.Update
             rsDataset.Close
@@ -332,7 +332,7 @@ Private Sub cmdSostituisci_Click()
             Loop
             rsDataset.Close
             
-            rsDataset.Open "SELECT * FROM RENI WHERE KEY=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+            rsDataset.Open "SELECT * FROM APPARATI WHERE KEY=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
             Do While Not rsDataset.EOF
                 rsDataset("SOSTITUITO") = True
                 rsDataset.MoveNext

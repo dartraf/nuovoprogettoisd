@@ -164,13 +164,104 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub cmdAvanti_Click()
+Option Explicit
+Dim strSql As String
+Dim TipoElenco As String
 
-    If optInventario.Value = unchekd And optProduttore.Value = unchekd And optTipoApparato.Value = unchekd And optApparatiRottamati.Value = Unchecked Then
+Private Sub cmdAvanti_Click()
+    
+    If optInventario.Value = False And optProduttore.Value = False And optTipoApparato.Value = False And optApparatiRottamati.Value = False Then
         MsgBox "Selezionare il tipo di elenco da stampare", vbInformation, "Informazione"
         Exit Sub
     End If
     
+    If optInventario.Value = True Then
+        If chkIncludiApparatiRottamati.Value = Checked Then
+            strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
+        Else
+            strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY NUMERO_INVENTARIO"
+        End If
+        TipoElenco = "Elenco Apparati per N° Inventario:"
+        Call StampaApparato
+    
+    ElseIf optProduttore.Value = True Then
+        If chkIncludiApparatiRottamati.Value = Checked Then
+            strSql = "SELECT * FROM APPARATI ORDER BY PRODUTTORE"
+        Else
+            strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY PRODUTTORE"
+        End If
+        TipoElenco = "Elenco Apparati per Produttore:"
+        Call StampaApparato
+        
+    ElseIf optTipoApparato.Value = True Then
+        If chkIncludiApparatiRottamati.Value = Checked Then
+            strSql = "SELECT * FROM APPARATI ORDER BY TIPO_APPARATO"
+        Else
+            strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY TIPO_APPARATO"
+        End If
+        TipoElenco = "Elenco Apparati per Tipo Apparato:"
+        Call StampaApparato
+        
+    ElseIf optApparatiRottamati.Value = True Then
+        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE Is Not Null ORDER BY KEY"
+        TipoElenco = "Elenco Apparati Rottamati:"
+        Call StampaApparato
+        
+    End If
+    
+End Sub
+
+Private Sub StampaApparato()
+    Dim SQLString As String
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
+    Dim rsDataset As Recordset
+    
+    SQLString = "SHAPE APPEND " & _
+                "       NEW adVarChar(4) AS NUMERO_INVENTARIO, " & _
+                "       NEW adVarChar(4) AS NUMERO_APPARATO, " & _
+                "       NEW adVarChar(4) AS POSTAZIONE, " & _
+                "       NEW adVarChar(50) AS TIPO_APPARATO, " & _
+                "       NEW adVarChar(50) AS MODELLO, " & _
+                "       NEW adVarChar(50) AS MATRICOLA, " & _
+                "       NEW adVarChar(50) AS PRODUTTORE "
+                
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+    
+    Set rsDataset = New Recordset
+    
+    rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        With rsMain
+            Do While Not rsDataset.EOF
+                .AddNew
+                .Fields("NUMERO_INVENTARIO") = rsDataset("NUMERO_INVENTARIO")
+                .Fields("NUMERO_APPARATO") = rsDataset("NUMERO_APPARATO")
+                .Fields("POSTAZIONE") = rsDataset("POSTAZIONE")
+                .Fields("TIPO_APPARATO") = rsDataset("TIPO_APPARATO")
+                .Fields("MODELLO") = rsDataset("MODELLO")
+                .Fields("MATRICOLA") = rsDataset("MATRICOLA")
+                .Fields("PRODUTTORE") = rsDataset("PRODUTTORE")
+                rsDataset.MoveNext
+            Loop
+        End With
+    End If
+    
+    Set rsDataset = Nothing
+    
+    Set rptStampaApparati.DataSource = rsMain
+    rptStampaApparati.Orientation = rptOrientLandscape
+    rptStampaApparati.TopMargin = 0
+    'rptStampaApparati.RightMargin = 0
+    'rptStampaApparati.LeftMargin = 0
+    rptStampaApparati.Sections("Intestazione").Controls("lblElenco").Caption = TipoElenco
+    rptStampaApparati.PrintReport True, rptRangeAllPages
+
 End Sub
 
 Private Sub cmdEsci_Click()

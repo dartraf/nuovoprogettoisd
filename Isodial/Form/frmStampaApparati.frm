@@ -216,6 +216,7 @@ Private Sub StampaApparato()
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
     Dim rsDataset As Recordset
+    Dim TotaleReni As Integer
     
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(4) AS NUMERO_INVENTARIO, " & _
@@ -224,7 +225,10 @@ Private Sub StampaApparato()
                 "       NEW adVarChar(50) AS TIPO_APPARATO, " & _
                 "       NEW adVarChar(50) AS MODELLO, " & _
                 "       NEW adVarChar(50) AS MATRICOLA, " & _
-                "       NEW adVarChar(50) AS PRODUTTORE "
+                "       NEW adVarChar(50) AS PRODUTTORE, " & _
+                "       NEW adDate AS DATA_FABBRICAZIONE, " & _
+                "       NEW adDate AS DATA_COLLAUDO, " & _
+                "       NEW adDate AS DATA_ROTTAMAZIONE "
                 
         
     ' apre la connessione per lo shape
@@ -247,9 +251,16 @@ Private Sub StampaApparato()
                 .Fields("MODELLO") = rsDataset("MODELLO")
                 .Fields("MATRICOLA") = rsDataset("MATRICOLA")
                 .Fields("PRODUTTORE") = rsDataset("PRODUTTORE")
+                .Fields("DATA_FABBRICAZIONE") = rsDataset("DATA_FABBRICAZIONE")
+                .Fields("DATA_COLLAUDO") = rsDataset("DATA_COLLAUDO")
+                .Fields("DATA_ROTTAMAZIONE") = rsDataset("DATA_ROTTAMAZIONE")
                 rsDataset.MoveNext
             Loop
         End With
+    End If
+    
+    If rsDataset.RecordCount > 0 Then
+        TotaleReni = rsDataset.RecordCount
     End If
     
     Set rsDataset = Nothing
@@ -257,13 +268,18 @@ Private Sub StampaApparato()
     Set rptStampaApparati.DataSource = rsMain
     rptStampaApparati.Orientation = rptOrientLandscape
     rptStampaApparati.TopMargin = 0
-    'rptStampaApparati.RightMargin = 0
-    'rptStampaApparati.LeftMargin = 0
+    rptStampaApparati.RightMargin = 0
+    rptStampaApparati.LeftMargin = 0
     rptStampaApparati.Sections("Intestazione").Controls("lblElenco").Caption = TipoElenco
+    rptStampaApparati.Sections("Section5").Controls.Item("lblTotaleReni").Caption = TotaleReni
     rptStampaApparati.PrintReport True, rptRangeAllPages
 
 End Sub
 
 Private Sub cmdEsci_Click()
     Unload frmStampaApparati
+End Sub
+
+Private Sub optApparatiRottamati_Click()
+    chkIncludiApparatiRottamati.Value = Unchecked
 End Sub

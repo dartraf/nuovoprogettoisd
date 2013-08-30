@@ -444,12 +444,12 @@ Private Sub CaricaFunSic()
                 .Col = 7
                 .Row = .Rows - 1
                 .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 7) = rsApparati("PROXREVFUN") & ""
+                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVFUN") & ""
                 
                 .Col = 8
                 .Row = .Rows - 1
                 .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVSIC") & ""
+                .TextMatrix(.Rows - 1, 9) = rsApparati("PROXREVSIC") & ""
                 
                 rsApparati.MoveNext
             End With

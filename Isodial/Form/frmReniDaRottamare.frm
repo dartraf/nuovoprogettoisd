@@ -114,7 +114,7 @@ Begin VB.Form frmReniDaRottamare
          Left            =   4080
          TabIndex        =   8
          Top             =   220
-         Width           =   1650
+         Width           =   1660
       End
       Begin VB.CommandButton cmdSostituisci 
          Caption         =   "Sostituisci con Rene Nuovo"
@@ -131,7 +131,7 @@ Begin VB.Form frmReniDaRottamare
          Left            =   5880
          TabIndex        =   7
          Top             =   220
-         Width           =   1650
+         Width           =   1660
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
@@ -148,7 +148,7 @@ Begin VB.Form frmReniDaRottamare
          Left            =   7680
          TabIndex        =   6
          Top             =   220
-         Width           =   1380
+         Width           =   1400
       End
    End
 End
@@ -311,19 +311,30 @@ Private Sub cmdSostituisci_Click()
     Dim num As Integer
     
     If flxGriglia.Row <> 0 Then
-        tInput.Tipo = tpIRENI
+ '       tInput.Tipo = tpIRENI
         tInput.v_valori(1) = flxGriglia.TextMatrix(vRow, 1)
         tInput.mantieniDati = True
-        frmInput.Show 1
+        frmApparatiInput.Show 1
         If Not (tInput.v_valori(1) = "" And tInput.v_valori(2) = "") Then
-            num = GetNumero("RENI")
-            v_Nomi = Array("KEY", "POSTAZIONE", "MODELLO", "MATRICOLA", "TIPO", "DATA_ROTTAMAZIONE", "SOSTITUITO", "NUMERO_APPARATO")
-            v_Val = Array(num, tInput.v_valori(1), tInput.v_valori(2), tInput.v_valori(3), tInput.v_valori(4), IIf(tInput.v_valori(5) = "", Null, tInput.v_valori(5)), False, tInput.v_valori(6))
-            Set rsDataset = New Recordset
-            rsDataset.Open "APPARATI", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
-            rsDataset.AddNew v_Nomi, v_Val
-            rsDataset.Update
-            rsDataset.Close
+            num = KeyApparato
+ '         cboTipoApparato(0) = cboTipoApparatoPrec
+ '       txtpostazione = PostazionePrec
+ '       cboTipoRene.Text = cboTipoRenePrec
+
+
+       '     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "POSTAZIONE", "TIPO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
+                    , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO" _
+                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT")
+        
+       '     v_Val = Array(num, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtpostazione), valore, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
+                    , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
+                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False))
+            
+       '     Set rsDataset = New Recordset
+       '     rsDataset.Open "APPARATI", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdTable
+       '     rsDataset.AddNew v_Nomi, v_Val
+       '     rsDataset.Update
+       '     rsDataset.Close
             
             rsDataset.Open "SELECT * FROM TURNI WHERE CODICE_RENE=" & flxGriglia.TextMatrix(vRow, 0), cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
             Do While Not rsDataset.EOF

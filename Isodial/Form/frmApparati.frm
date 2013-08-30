@@ -114,7 +114,7 @@ Begin VB.Form frmApparati
       Top             =   3480
       Width           =   14655
       Begin VB.CommandButton cmdOrdDtRott 
-         Caption         =   "&Ordina x N° Postaz."
+         Caption         =   "&Ordina x Postaz."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -180,6 +180,24 @@ Begin VB.Form frmApparati
          TabIndex        =   3
          Top             =   170
          Width           =   1335
+      End
+      Begin VB.Label txtOrdine 
+         Caption         =   "--> Apparati Ordinati per N° Inventario"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   255
+         Left            =   1440
+         TabIndex        =   16
+         Top             =   360
+         Width           =   4935
       End
    End
    Begin VB.Frame Frame3 
@@ -298,14 +316,17 @@ Private Sub cmdOrdDtRott_Click()
         cmdOrdDtRott.Caption = "&Ordina x N°Invent."
         strSql = "SELECT * FROM APPARATI ORDER BY DATA_ROTTAMAZIONE DESC"
         swap = 2
+        txtOrdine.Caption = "--> Apparati Ordinati per Data Rottamazione"
     ElseIf swap = 2 Then
-        cmdOrdDtRott.Caption = "&Ordina x N°Postaz."
+        cmdOrdDtRott.Caption = "&Ordina x Postaz."
         strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
         swap = 0
+        txtOrdine.Caption = "--> Apparati Ordinati per N° Inventario"
     Else
         cmdOrdDtRott.Caption = "&Ordina x Data Rott."
         strSql = "SELECT * FROM APPARATI ORDER BY POSTAZIONE"
         swap = 1
+        txtOrdine.Caption = "--> Apparati Ordinati per Postazione"
     End If
 
     Call CaricaFlx
@@ -315,12 +336,17 @@ Private Sub cmdOrdDtRott_Click()
 End Sub
 
 Private Sub cmdEliminaApparato_Click()
-
+   
     If flxGriglia.Row = 0 Then
-      '  MsgBox "Selezionare l' Apparato da eliminare", vbInformation, "Informazione"
     
     ElseIf flxManutenzione.Rows > 1 Then
         MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di schede di manutenzione", vbInformation, "ATTENZIONE!!!"
+    
+    ElseIf Not IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) Or Not IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) Then
+        MsgBox "ELIMINAZIONE NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
+    
+ '   ElseIf IsPossibleDelete("APPARATI", "DATA_ROTTAMAZIONE", KeyApparato) Then
+ '       MsgBox "ELIMINAZIONE NON PERMESSA!!! - Apparato con DATA di ROTTAMAZIONE attribuita", vbInformation, "ATTENZIONE!!!"
     
     ElseIf MsgBox("Sicuro di voler eliminare l'apparato selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
         Call EliminaApparato
@@ -536,8 +562,8 @@ Private Sub Form_Load()
                                      
         .TextMatrix(0, 1) = "N°Inv."
         .TextMatrix(0, 2) = "N°App."
-        .TextMatrix(0, 3) = "N°Post."
-        .TextMatrix(0, 4) = "Tipo Apparato"
+        .TextMatrix(0, 3) = "Postaz."
+        .TextMatrix(0, 4) = "Categoria Apparato"
         .TextMatrix(0, 5) = "Modello"
         .TextMatrix(0, 6) = "Matricola"
         .TextMatrix(0, 7) = "Produttore"
@@ -681,72 +707,6 @@ End Sub
 
 Private Sub cmdChiudi_Click()
     Unload frmApparati
-End Sub
-'sub da cancellare una volta finito
-Private Sub cmdElimina_Click()
-    Dim blnEliminato As Boolean
-    Dim blnElimina As Boolean
-    Dim intKey As Integer
-    Dim strNome As String
-    Dim rsDataset As Recordset
-   
-    With flxGriglia
-        If .Row = 0 Then
-            MsgBox "Selezionare il dato da eliminare", vbCritical, "Attenzione"
-        Else
-            intKey = .TextMatrix(vRow, 0)
-            strNome = .TextMatrix(vRow, 1)
-
-            blnElimina = False
-            Select Case tTabelle
-                Case tpNOMENCLATORE
-                Case tpRegioni
-                Case tpRENI
-                    blnElimina = IsPossibleDelete("TURNI", "CODICE_RENE", intKey)
-                    If blnElimina Then
-                        blnElimina = IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", intKey)
-                    End If
-                    strNome = .TextMatrix(vRow, 3)
-                Case tpTIPOLOGIEMEDICO
-                Case tpasl
-                Case tpCOMUNI
-                Case tpDISTRETTI
-                Case tpESAME
-                Case tpESENZIONI
-                Case tpEDTA
-                    blnElimina = IsPossibleDelete("ANAMNESI_NEFROLOGICHE", "CODICE_EDTA", intKey)
-                    strNome = .TextMatrix(vRow, 2)
-            End Select
-                
-            If blnElimina Then
-                If MsgBox("Sicuro di voler eliminare " & strNome & "?", vbQuestion + vbYesNo, Me.Caption) = vbYes Then
-                    Set rsDataset = New Recordset
-                    rsDataset.Open "SELECT * FROM " & nomeTabella & " WHERE KEY=" & intKey, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-                    If rsDataset.EOF And rsDataset.BOF Then
-                        MsgBox "Errore nel caricamento dei dati", vbCritical, "Impossibile aggiornare"
-                    Else
-                        rsDataset.Delete
-                        blnEliminato = True
-                    End If
-                    Set rsDataset = Nothing
-                End If
-            Else
-                MsgBox "Impossibile eliminare " & strNome & " perchè in relazione con altri dati del sistema", vbInformation, Me.Caption
-            End If
-            
-            If blnEliminato Then
-                ' rimuove dalla flx
-                If .Rows = 2 Then
-                    .Rows = 1
-                Else
-                    .RemoveItem (.Row)
-                End If
-                vRow = 0
-                .Row = 0
-                MsgBox "Eliminazione avvenuta con successo", vbInformation, Me.Caption
-            End If
-        End If
-    End With
 End Sub
 
 Private Sub cmdInserisci_Click()

@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmApparatiInput 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Inserimento Apparati"
+   Caption         =   "Scheda Apparato"
    ClientHeight    =   7185
    ClientLeft      =   45
    ClientTop       =   315
@@ -211,7 +211,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Left            =   4410
-         MaxLength       =   30
+         MaxLength       =   4
          TabIndex        =   2
          Top             =   360
          Width           =   615
@@ -459,7 +459,7 @@ Begin VB.Form frmApparatiInput
          Index           =   16
          Left            =   120
          TabIndex        =   41
-         Top             =   1340
+         Top             =   1350
          Width           =   1170
       End
       Begin VB.Label Label1 
@@ -712,7 +712,7 @@ Begin VB.Form frmApparatiInput
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Apparato"
+         Caption         =   "Categoria Apparato"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -722,12 +722,13 @@ Begin VB.Form frmApparatiInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   240
+         Height          =   480
          Index           =   7
          Left            =   120
          TabIndex        =   23
-         Top             =   840
-         Width           =   975
+         Top             =   750
+         Width           =   1095
+         WordWrap        =   -1  'True
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -808,6 +809,8 @@ Dim ProxRevFun As String
 Dim ProxRevSic As String
 Dim mDataCollaudo As Variant
 Dim PostazionePrec As String
+Dim cboTipoApparatoPrec As String
+Dim cboTipoRenePrec As String
 
 Private Sub cboManutentore_GotFocus(Index As Integer)
     cboManutentore(1).BackColor = colArancione
@@ -902,7 +905,7 @@ End Sub
 Private Sub cboTipoApparato_LostFocus(Index As Integer)
 
     If Len(cboTipoApparato(0)) > 30 Then
-        MsgBox "Impossibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
+        MsgBox "NON è possibile memorizzare oltre 30 caratteri", vbCritical, "ATTENZIONE!!!"
         cboTipoApparato(0).Text = ""
         cboTipoApparato(0).SetFocus
         Exit Sub
@@ -912,6 +915,13 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
         txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         cboTipoRene.ListIndex = 0
+    ElseIf cboTipoApparato(0).Text <> "RENE ARTIFICIALE" Then
+        Label1(16).Enabled = False
+        Label1(17).Enabled = False
+        txtpostazione.Enabled = False
+        cboTipoRene.Enabled = False
+        cboTipoRene.ListIndex = -1
+        txtpostazione = ""
     ElseIf cboTipoApparato(0).Text <> "" Then
         Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
@@ -934,14 +944,11 @@ End Sub
 Private Sub cmdMemorizza_Click()
 Dim v_Nomi() As Variant
 Dim v_Val() As Variant
-Dim numKey As Integer
+Dim numkey As Integer
 Dim valore As Integer
 
-    '' Controllo sull'univocità del numero d'inventario
+    '' Controlli sui campi
     If NumInvent Then
-        Exit Sub
-    ElseIf NumPost And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
-        txtpostazione = PostazionePrec
         Exit Sub
     ElseIf NumApp Then
         Exit Sub
@@ -952,13 +959,23 @@ Dim valore As Integer
         MsgBox "Inserire il Numero dell'Apparato o del Rene Artificiale", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf cboTipoApparato(0).Text = "" Then
-        MsgBox "Inserire il Tipo di Apparato", vbCritical, "ATTENZIONE!!!"
+        MsgBox "Inserire la Categoria a cui appartiene l'Apparato", vbCritical, "ATTENZIONE!!!"
+        Exit Sub
+    ElseIf Not IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) Or Not IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) And cboTipoApparato(0) <> "RENE ARTIFICIALE" And tTrova.keyReturn <> 0 Then
+        MsgBox "MODIFICA CATEGORIA APPARATO NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
+        cboTipoApparato(0) = cboTipoApparatoPrec
+        txtpostazione = PostazionePrec
+        cboTipoRene.Text = cboTipoRenePrec
+        Label1(16).Enabled = True
+        Label1(17).Enabled = True
+        txtpostazione.Enabled = True
+        cboTipoRene.Enabled = True
         Exit Sub
     ElseIf cboModello(2).Text = "" Then
         MsgBox "Inserire il Modello", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf txtpostazione = "" And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
-        MsgBox "Inserire la postazione del rene", vbCritical, "ATTENZIONE!!!"
+        MsgBox "Inserire la Postazione del Rene", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf txtMatricola.Text = "" Then
         MsgBox "Inserire la Matricola", vbCritical, "ATTENZIONE!!!"
@@ -995,6 +1012,9 @@ Dim valore As Integer
         Exit Sub
     ElseIf txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
+    ElseIf NumPost Then
+        txtpostazione = PostazionePrec
+        Exit Sub
     End If
        
     Call SuperUcase(Me)
@@ -1016,9 +1036,9 @@ Dim valore As Integer
     End If
         
     If ModificaApparato = True Then
-        numKey = NumeroApparato
+        numkey = NumeroApparato
     Else
-        numKey = GetNumero("APPARATI")
+        numkey = GetNumero("APPARATI")
     End If
     
     If cboTipoRene = "HCV POS" Then
@@ -1034,7 +1054,7 @@ Dim valore As Integer
                     , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT")
                     
         
-    v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtpostazione), valore, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
+    v_Val = Array(numkey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtpostazione), valore, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
                     , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False))
 
@@ -1054,12 +1074,10 @@ Dim valore As Integer
         
     If ModificaApparato = True Then
         ModificaApparato = False
-        Unload frmApparatiInput
     Else
         ModificaApparato = False
-        Unload frmApparatiInput
     End If
-    
+    Unload frmApparatiInput
 End Sub
 
 '' Calcolo per la prossima revisione funzionale
@@ -1184,7 +1202,7 @@ Private Function NumPost() As Boolean
    rsDataset.Open "SELECT KEY,POSTAZIONE FROM APPARATI WHERE POSTAZIONE ='" & txtpostazione & "'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 
    If Not (rsDataset.EOF And rsDataset.BOF) Then
-    If rsDataset("KEY") <> tTrova.keyReturn Then
+    If rsDataset("KEY") <> tTrova.keyReturn And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
         If MsgBox("Postazione già presente." & vbCrLf & "Vuoi duplicarla?", vbQuestion + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
             NumPost = False
         Else
@@ -1201,6 +1219,10 @@ End Function
 
 '' Controllo sull'univocità del n° di apparato
 Private Function NumApp() As Boolean
+   If txtNumeroApparato = "" Then
+    Exit Function
+   End If
+   
    Dim rsDataset As New Recordset
    
    rsDataset.Open "SELECT KEY,NUMERO_APPARATO FROM APPARATI WHERE NUMERO_APPARATO =" & txtNumeroApparato, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
@@ -1254,7 +1276,17 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Form_Load()
-    If tTrova.keyReturn = 0 Then
+    If tTrova.keyReturn = 0 And tInput.mantieniDati = True Then  'predispone il form all'inserimento del rene
+        Label1(16).Enabled = True                                'in rottamazione da sostituire
+        Label1(17).Enabled = True
+        txtpostazione.Enabled = True
+        cboTipoRene.Enabled = True
+        txtNumeroInventario = GetNumero("APPARATI")
+        cboTipoApparato(0) = "RENE ARTIFICIALE"
+        txtpostazione = tInput.v_valori(1)
+        cboTipoRene.ListIndex = 0
+
+    ElseIf tTrova.keyReturn = 0 Then
         txtNumeroInventario = GetNumero("APPARATI")
     Else
         NumeroApparato = tTrova.keyReturn
@@ -1271,10 +1303,11 @@ Private Sub CaricaApparato()
     txtNumeroInventario.Text = rsCercaApparato("NUMERO_INVENTARIO")
     txtNumeroApparato.Text = rsCercaApparato("NUMERO_APPARATO")
     cboTipoApparato(0).Text = rsCercaApparato("TIPO_APPARATO")
+    cboTipoApparatoPrec = rsCercaApparato("TIPO_APPARATO")
     cboModello(2).Text = rsCercaApparato("MODELLO")
     txtpostazione.Text = rsCercaApparato("POSTAZIONE")
     PostazionePrec = rsCercaApparato("POSTAZIONE")
-   
+    
     If rsCercaApparato("TIPO_APPARATO") = "RENE ARTIFICIALE" Then
         Label1(16).Enabled = True
         Label1(17).Enabled = True
@@ -1287,6 +1320,7 @@ Private Sub CaricaApparato()
         Else
             cboTipoRene.Text = "HBV POS"
         End If
+        cboTipoRenePrec = cboTipoRene.Text
     End If
  
     txtMatricola.Text = rsCercaApparato("MATRICOLA")

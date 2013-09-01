@@ -222,7 +222,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-
 Dim rsDatasetCerca As Recordset
 Dim testoVoce As String
 
@@ -262,34 +261,6 @@ End Sub
 Private Sub Form_Activate()
     Call Cerca
 End Sub
-
-'' Permette il funzionamento della rotellina del mouse nella flx
-'Public Sub MouseWheel(flx As MSFlexGrid, ByVal MouseKeys As Long, ByVal Rotation As Long, ByVal Xpos As Long, ByVal Ypos As Long)
- '   Dim NewValue As Long
- '   Dim Lstep As Single
-
- '   On Error Resume Next
- '   With flx
- '       Lstep = .Height / .RowHeight(0)
- '       Lstep = Int(Lstep)
- '       If Lstep < 10 Then
- '           Lstep = 10
- '       End If
- '       If Rotation > 0 Then
- '           NewValue = .TopRow - Int(Lstep / 3)
- '           If NewValue < 1 Then
- '               NewValue = 1
- '           End If
- '       Else
- '           NewValue = .TopRow + Int(Lstep / 3)
- '           If NewValue > .Rows - 1 Then
- '               NewValue = .Rows - 1
- '           End If
- '       End If
- '       .TopRow = NewValue
- '   End With
-'End Sub
-'---------------------------------
 
 Private Function isDialisi() As Boolean
     If (InStr(1, tTrova.condizione, "IN") > 0 Or InStr(1, tTrova.condizione, "KEY=-1")) And InStr(1, tTrova.condStato, "(-1)") Then
@@ -331,6 +302,13 @@ Private Sub Form_Load()
             Me.Caption = Me.Caption & "accompagnatori"
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Accompagnatori in elenco: "
+        Case tpPRODUTTORE_MANUTENTORE
+            Me.Caption = Me.Caption & "Produttore/Manutentore"
+            flxGriglia.FormatString = "| RAGIONE SOCIALE"
+            flxGriglia.ColWidth(1) = 6500
+            flxGriglia.ColWidth(2) = 0
+            flxGriglia.ColWidth(3) = 0
+            testoVoce = "Produttori/Manutentori in elenco: "
     End Select
     lblVoci = testoVoce
     With flxGriglia
@@ -375,6 +353,7 @@ Private Function nomeTabella() As String
         Case tpINFERMIERE: nomeTabella = "INFERMIERI"
         Case tpPSICOLOGI: nomeTabella = "PSICOLOGI"
         Case tpACCOMPAGNATORI: nomeTabella = "ACCOMPAGNATORI"
+        Case tpPRODUTTORE_MANUTENTORE: nomeTabella = "PRODUTTORE_MANUTENTORE"
     End Select
 End Function
 
@@ -389,6 +368,30 @@ Private Sub Cerca()
     chiaveRic = UCase(txtCerca.Text)
     'tTrova.condizione = "(KEY=1 OR KEY=2 OR KEY=3)"
     
+    'Ricerca apposita per la tabella PRODUTTORE_MANUTENTORE
+    If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
+        
+    condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
+        
+    strSql = "SELECT * FROM " & nomeTabella & " WHERE RAGIONE_SOCIALE LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & " ORDER BY RAGIONE_SOCIALE"
+        
+    Set rsDatasetCerca = New Recordset
+    rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    Do While Not rsDatasetCerca.EOF
+        With flxGriglia
+            .Rows = .Rows + 1
+            .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
+            .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("RAGIONE_SOCIALE")
+            rsDatasetCerca.MoveNext
+        End With
+    Loop
+        
+    lblVoci = testoVoce & rsDatasetCerca.RecordCount
+    flxGriglia.Row = 0
+    Set rsDatasetCerca = Nothing
+    
+    Else
+    
     condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
     If tTrova.Tipo = tpPAZIENTE And cboStato.Visible = True And cboStato.Text <> "Tutti" Then
         If Not isDialisi Then
@@ -399,6 +402,7 @@ Private Sub Cerca()
             End If
         End If
     End If
+    
     If tTrova.Tipo = tpINFERMIERE Then
         condizione = condizione & " AND ELIMINATO=FALSE "
     End If
@@ -421,6 +425,9 @@ Private Sub Cerca()
     lblVoci = testoVoce & rsDatasetCerca.RecordCount
     flxGriglia.Row = 0
     Set rsDatasetCerca = Nothing
+    
+    End If
+    
 End Sub
 
 Private Sub cboStato_Click()

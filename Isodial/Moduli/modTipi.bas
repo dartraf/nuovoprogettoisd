@@ -197,6 +197,7 @@ Enum tipoTrova
     tpINFERMIERE
     tpPSICOLOGI
     tpACCOMPAGNATORI
+    tpPRODUTTORE_MANUTENTORE
 End Enum
 Private Type structTrova
     Tipo As tipoTrova                   ' tipo da trovare

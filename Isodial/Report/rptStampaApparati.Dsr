@@ -784,9 +784,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
-         Object.Left            =   11871
+         Object.Left            =   11225
          Object.Top             =   248
-         Object.Width           =   1620
+         Object.Width           =   2266
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -797,7 +797,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "TOTALE RENI:"
+         Object.Caption         =   "TOTALE APPARATI:"
       EndProperty
    EndProperty
 End

@@ -40,7 +40,7 @@ End Type
 Sub Main()
     Call CaricaPercorso
     Call VerificaErrori
-    Call ControlloFileEsterni
+  '  Call ControlloFileEsterni    controlla la versione delle librerie
     Call MontaVolume
     Call CaricaDati
     Call VerificaFunzionalita
@@ -253,7 +253,7 @@ End Sub
 ' @return
 ' @remarks
 Private Sub VerificaFunzionalita()
-If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
+If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_DELTA Then
    structApri.F1abiliata = True
 Else
    structApri.F1abiliata = False

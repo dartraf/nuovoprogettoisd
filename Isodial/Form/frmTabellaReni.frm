@@ -138,7 +138,7 @@ Private Sub cmdSostituisci_Click()
         Loop
            rsDataset.Close
  ' flagga i reni come sostituiti
-           rsDataset.Open "SELECT * FROM RENI WHERE KEY=" & cod_rene, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+           rsDataset.Open "SELECT * FROM APPARATI WHERE KEY=" & cod_rene, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
         Do While Not rsDataset.EOF
                 rsDataset("SOSTITUITO") = True
                 rsDataset.MoveNext
@@ -162,15 +162,15 @@ Private Sub CaricaFlx()
     flxGriglia.Rows = 1
     data = DateValue(Month(dt_rott_rene) & "/" & Day(dt_rott_rene) & "/" & Year(dt_rott_rene))
     Set rsTabella = New Recordset
-    strSql = "SELECT * FROM RENI WHERE DATA_ROTTAMAZIONE>#" & data & "# AND SOSTITUITO=FALSE OR DATA_ROTTAMAZIONE IS NULL ORDER BY NUMERO_RENE"
+    strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE>#" & data & "# AND SOSTITUITO=FALSE OR DATA_ROTTAMAZIONE IS NULL ORDER BY NUMERO_APPARATO"
 
     rsTabella.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsTabella.EOF
        With flxGriglia
             .Rows = .Rows + 1
             .TextMatrix(.Rows - 1, 0) = rsTabella("KEY")
-            .TextMatrix(.Rows - 1, 1) = rsTabella("NUMERO_RENE") & ""
-            .TextMatrix(.Rows - 1, 2) = rsTabella("TIPO_RENE") & ""
+            .TextMatrix(.Rows - 1, 1) = rsTabella("NUMERO_APPARATO") & ""
+            .TextMatrix(.Rows - 1, 2) = rsTabella("MODELLO") & ""
             .TextMatrix(.Rows - 1, 3) = rsTabella("MATRICOLA") & ""
             If rsTabella("TIPO") = 0 Then
                .TextMatrix(.Rows - 1, 4) = "NEG"

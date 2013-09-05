@@ -310,6 +310,7 @@ Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati n
 Dim MantieniDatoManutenzione As Integer
 Dim strSql As String
 Dim swap As Integer
+Dim flxgrigliarow As Integer
 
 Private Sub cmdOrdDtRott_Click()
     If swap = 1 Then
@@ -351,7 +352,7 @@ Private Sub cmdEliminaApparato_Click()
     ElseIf MsgBox("Sicuro di voler eliminare l'apparato selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
         Call EliminaApparato
         Call CaricaFlx
-        
+
     End If
     
 End Sub
@@ -413,6 +414,7 @@ Private Sub cmdManutenzioneOrdinaria_Click()
         frmInserisciManutenzione.Show 1
         Call CaricaFlxManutenzione
         Call CaricaFunSic
+     
     End If
     
     ' Funzione per Colorare il record
@@ -441,15 +443,13 @@ Private Sub CaricaFunSic()
     If Not (rsApparati.EOF And rsApparati.BOF) Then
         Do While Not rsApparati.EOF
             With flxGriglia
-                .Col = 7
-                .Row = .Rows - 1
+
+                .Row = flxgrigliarow
                 .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 8) = rsApparati("PROXREVFUN") & ""
+                .TextMatrix(.Row, 8) = rsApparati("PROXREVFUN") & ""
                 
-                .Col = 8
-                .Row = .Rows - 1
                 .CellForeColor = vbRed
-                .TextMatrix(.Rows - 1, 9) = rsApparati("PROXREVSIC") & ""
+                .TextMatrix(.Row, 9) = rsApparati("PROXREVSIC") & ""
                 
                 rsApparati.MoveNext
             End With
@@ -755,6 +755,9 @@ Private Sub flxGriglia_Click()
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col
         Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
+        
+        'conservo la riga selezionata nella flex
+        flxgrigliarow = flxGriglia.Row
         
         ' seleziono la key dell' apparato per passarla alla tab Manutenzione
         KeyApparato = flxGriglia.TextMatrix(vRow, 0)

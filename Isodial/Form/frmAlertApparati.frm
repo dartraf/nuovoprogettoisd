@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Begin VB.Form frmReniDaRottamare 
+Begin VB.Form frmAlertApparati 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Reni da rottamare"
+   Caption         =   "Prossime Revisioni Apparati"
    ClientHeight    =   4440
    ClientLeft      =   45
    ClientTop       =   315
@@ -68,23 +67,8 @@ Begin VB.Form frmReniDaRottamare
       TabIndex        =   3
       Top             =   960
       Width           =   9015
-      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   2055
-         Left            =   120
-         TabIndex        =   4
-         Top             =   240
-         Width           =   8775
-         _ExtentX        =   15478
-         _ExtentY        =   3625
-         _Version        =   393216
-         Cols            =   7
-         FixedCols       =   0
-         Redraw          =   -1  'True
-         ScrollTrack     =   -1  'True
-         ScrollBars      =   2
-         MergeCells      =   4
-         FormatString    =   "| Postazione  | N° Rene  | Monitor                                            | Matricola         | Tipo     | Dt. Rottam.  "
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+      Begin VB.PictureBox flxGriglia 
+         BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
             Charset         =   0
@@ -93,6 +77,13 @@ Begin VB.Form frmReniDaRottamare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         Height          =   2055
+         Left            =   120
+         ScaleHeight     =   1995
+         ScaleWidth      =   8715
+         TabIndex        =   4
+         Top             =   240
+         Width           =   8775
       End
    End
    Begin VB.Frame Frame1 
@@ -154,7 +145,7 @@ Begin VB.Form frmReniDaRottamare
       End
    End
 End
-Attribute VB_Name = "frmReniDaRottamare"
+Attribute VB_Name = "frmAlertApparati"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -162,9 +153,9 @@ Attribute VB_Exposed = False
 ''
 ' <b>Progetto</b>:      Isodial.vbp
 '
-' <b>Tipo e nome modulo</b>:        Form - frmReniDaRottamare.frm
+' <b>Tipo e nome modulo</b>:        Form - frmAlertApparati.frm
 '
-' <b>Descrizione</b>: Pannello Reni Da Rottamare mostra i reni che sono da rottamare
+' <b>Descrizione</b>: Pannello Prossime Revisioni Apparati mostra gli apparati che sono da revisionare
 '
 ' @remarks
 '
@@ -179,6 +170,7 @@ Dim vRow As Integer
 Dim vCol As Integer
 
 Private Sub Form_Load()
+
     Dim i As Integer
     
     With flxGriglia

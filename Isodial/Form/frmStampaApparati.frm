@@ -29,7 +29,7 @@ Begin VB.Form frmStampaApparati
       Top             =   0
       Width           =   5415
       Begin VB.CheckBox chkIncludiApparatiRottamati 
-         Caption         =   "Includi apparati rottamati"
+         Caption         =   "Includi Apparati Rottamati"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -40,11 +40,11 @@ Begin VB.Form frmStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H000000FF&
-         Height          =   975
-         Left            =   3360
+         Height          =   735
+         Left            =   3840
          TabIndex        =   8
-         Top             =   240
-         Width           =   1935
+         Top             =   360
+         Width           =   1455
       End
       Begin VB.OptionButton optApparatiRottamati 
          Caption         =   "Elenco apparati rottamati"
@@ -64,7 +64,7 @@ Begin VB.Form frmStampaApparati
          Width           =   3615
       End
       Begin VB.OptionButton optTipoApparato 
-         Caption         =   "Elenco per tipo apparato"
+         Caption         =   "Elenco per categoria apparato"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -98,7 +98,7 @@ Begin VB.Form frmStampaApparati
          Width           =   3615
       End
       Begin VB.OptionButton optInventario 
-         Caption         =   "Elenco per n° d'inventario"
+         Caption         =   "Elenco per n° inventario"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75

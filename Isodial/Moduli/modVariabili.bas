@@ -86,3 +86,4 @@ Public KeyApparato As Integer           ' variabile apparato che viene passata p
 Public KeyReturnManutenzione As Integer ' variabile Key per la selezione della manutenzione
 Public Selezionato As Boolean           ' variabile per il frmApparati
 Public SelezionatoManutenzione As Boolean ' variabile per il frmApparati per caricare/inserire la manutenzione
+Public numkey As Integer

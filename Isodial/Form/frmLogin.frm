@@ -252,13 +252,16 @@ Private Sub cmdOK_Click()
     If isCorrotto Then
         frmPeriferiche.Show 1
     End If
-    If Not tAccesso.Tipo = tpACONTABILE Then
+    
+    If tAccesso.Tipo = tpAMEDICO Or tAccesso.Tipo = tpAMASTER Then
         Call ControllaReni
+   '     Call ControllaAlertAppa
+    ElseIf tAccesso.Tipo <> tpAINFERMIERE Then
+   '     Call ControllaAlertAppa
     End If
     Unload Me
 End Sub
 
-''
 ' Controlla che non ci siano reni da rottamare
 Private Sub ControllaReni()
     Dim rsDataset As New Recordset
@@ -273,6 +276,22 @@ Private Sub ControllaReni()
     rsDataset.Close
     Set rsDataset = Nothing
 End Sub
+
+' Controlla che non ci siano reni da rottamare
+Private Sub ControllaAlertAppa()
+    Dim rsDataset As New Recordset
+    Dim data As Date
+    
+    data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
+    
+    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND ALERT=False", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        frmAlertApparati.Show 1
+    End If
+    rsDataset.Close
+    Set rsDataset = Nothing
+End Sub
+
 
 Private Sub impostaMenu()
     Dim i  As Integer
@@ -410,7 +429,7 @@ Private Sub txtUserName_GotFocus()
     txtUserName.SelStart = 0
     txtUserName.SelLength = Len(txtUserName)
     txtUserName.BackColor = colArancione
-    If Environ$("COMPUTERNAME") = "MASTERMIO" Then
+    If Environ$("COMPUTERNAME") = "MASTERMIO" Or Environ$("COMPUTERNAME") = "MASTER" Then
         txtUserName = "Admin"
         ENTRA = True
         cmdOK_Click

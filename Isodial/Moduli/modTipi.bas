@@ -204,6 +204,7 @@ Private Type structTrova
     keyReturn As Integer                ' codice_XXX restituito dal frmTrova
     condizione As String                ' condizione di ricerca sql
     condStato As String                 ' condizione di caricamento dello stato nel cboStato
+    NomeStriga As String                      ' nome_XXX restituito dal frmTrova in caso della tabella PRODUTTORE_MANUTENTORE
     isOpenFromInfoGenerali As Boolean
     isOpenFromEsamiPrescriz As Boolean
     End Type

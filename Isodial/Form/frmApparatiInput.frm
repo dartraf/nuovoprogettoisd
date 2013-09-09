@@ -20,6 +20,28 @@ Begin VB.Form frmApparatiInput
       TabIndex        =   0
       Top             =   0
       Width           =   10455
+      Begin VB.CommandButton cmdTrova 
+         BackColor       =   &H00C0C0C0&
+         Height          =   450
+         Index           =   0
+         Left            =   6700
+         Picture         =   "frmApparatiInput.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   45
+         Top             =   1730
+         Width           =   450
+      End
+      Begin VB.CommandButton cmdTrova 
+         BackColor       =   &H00C0C0C0&
+         Height          =   450
+         Index           =   1
+         Left            =   1320
+         Picture         =   "frmApparatiInput.frx":0459
+         Style           =   1  'Graphical
+         TabIndex        =   42
+         Top             =   1730
+         Width           =   450
+      End
       Begin VB.ComboBox cboTipoRene 
          Enabled         =   0   'False
          BeginProperty Font 
@@ -32,9 +54,9 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmApparatiInput.frx":0000
+         ItemData        =   "frmApparatiInput.frx":08B2
          Left            =   3860
-         List            =   "frmApparatiInput.frx":000D
+         List            =   "frmApparatiInput.frx":08BF
          Style           =   2  'Dropdown List
          TabIndex        =   7
          Top             =   1320
@@ -76,42 +98,6 @@ Begin VB.Form frmApparatiInput
          Value           =   1  'Checked
          Width           =   4575
       End
-      Begin VB.ComboBox cboManutentore 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Index           =   1
-         Left            =   6960
-         Sorted          =   -1  'True
-         TabIndex        =   10
-         Top             =   1800
-         Width           =   3375
-      End
-      Begin VB.ComboBox cboProduttore 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Index           =   0
-         Left            =   1680
-         Sorted          =   -1  'True
-         TabIndex        =   9
-         Top             =   1800
-         Width           =   3375
-      End
       Begin VB.ComboBox cboModello 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -144,7 +130,7 @@ Begin VB.Form frmApparatiInput
          Index           =   1
          Left            =   7920
          Sorted          =   -1  'True
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   2280
          Width           =   1575
       End
@@ -161,7 +147,7 @@ Begin VB.Form frmApparatiInput
          Height          =   315
          Left            =   8520
          MaxLength       =   2
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   2760
          Width           =   495
       End
@@ -178,7 +164,7 @@ Begin VB.Form frmApparatiInput
          Height          =   2355
          Left            =   4440
          MultiLine       =   -1  'True
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   3720
          Width           =   5895
       End
@@ -265,7 +251,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   1
          Left            =   2400
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   3720
          Width           =   2100
          _ExtentX        =   3704
@@ -278,7 +264,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   0
          Left            =   2400
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   2760
          Width           =   2100
          _ExtentX        =   3704
@@ -291,7 +277,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   2
          Left            =   2400
-         TabIndex        =   11
+         TabIndex        =   9
          Top             =   2280
          Width           =   2100
          _ExtentX        =   3704
@@ -304,7 +290,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   3
          Left            =   2400
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   3240
          Width           =   2100
          _ExtentX        =   3704
@@ -327,7 +313,7 @@ Begin VB.Form frmApparatiInput
          ForeColor       =   &H00FF0000&
          Height          =   1455
          Left            =   120
-         TabIndex        =   38
+         TabIndex        =   36
          Top             =   4680
          Width           =   3975
          Begin VB.ComboBox cboSicurezza 
@@ -342,11 +328,11 @@ Begin VB.Form frmApparatiInput
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   315
-            ItemData        =   "frmApparatiInput.frx":0028
+            ItemData        =   "frmApparatiInput.frx":08DA
             Left            =   1560
-            List            =   "frmApparatiInput.frx":0044
+            List            =   "frmApparatiInput.frx":08F6
             Style           =   2  'Dropdown List
-            TabIndex        =   19
+            TabIndex        =   17
             Top             =   960
             Width           =   2295
          End
@@ -362,11 +348,11 @@ Begin VB.Form frmApparatiInput
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   315
-            ItemData        =   "frmApparatiInput.frx":00A4
+            ItemData        =   "frmApparatiInput.frx":0956
             Left            =   1560
-            List            =   "frmApparatiInput.frx":00C0
+            List            =   "frmApparatiInput.frx":0972
             Style           =   2  'Dropdown List
-            TabIndex        =   18
+            TabIndex        =   16
             Top             =   480
             Width           =   2295
          End
@@ -385,7 +371,7 @@ Begin VB.Form frmApparatiInput
             Height          =   240
             Index           =   5
             Left            =   120
-            TabIndex        =   40
+            TabIndex        =   38
             Top             =   480
             Width           =   1260
          End
@@ -404,7 +390,7 @@ Begin VB.Form frmApparatiInput
             Height          =   240
             Index           =   4
             Left            =   120
-            TabIndex        =   39
+            TabIndex        =   37
             Top             =   960
             Width           =   1020
          End
@@ -413,7 +399,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   0
          Left            =   2400
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   4200
          Width           =   2100
          _ExtentX        =   3704
@@ -421,6 +407,42 @@ Begin VB.Form frmApparatiInput
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
+      End
+      Begin VB.Label lblManutentore 
+         BackColor       =   &H8000000E&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   7320
+         TabIndex        =   44
+         Top             =   1800
+         Width           =   3015
+      End
+      Begin VB.Label lblProduttore 
+         BackColor       =   &H8000000E&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1920
+         TabIndex        =   43
+         Top             =   1800
+         Width           =   3135
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -438,7 +460,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   17
          Left            =   2680
-         TabIndex        =   43
+         TabIndex        =   41
          Top             =   1340
          Width           =   1095
       End
@@ -458,7 +480,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   16
          Left            =   120
-         TabIndex        =   42
+         TabIndex        =   40
          Top             =   1350
          Width           =   1170
       End
@@ -477,7 +499,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   15
          Left            =   120
-         TabIndex        =   41
+         TabIndex        =   39
          Top             =   4250
          Width           =   1995
       End
@@ -496,7 +518,7 @@ Begin VB.Form frmApparatiInput
          Height          =   345
          Index           =   18
          Left            =   5280
-         TabIndex        =   37
+         TabIndex        =   35
          Top             =   2790
          Width           =   3375
          WordWrap        =   -1  'True
@@ -516,7 +538,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   14
          Left            =   120
-         TabIndex        =   35
+         TabIndex        =   33
          Top             =   3270
          Width           =   1500
       End
@@ -535,7 +557,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   13
          Left            =   120
-         TabIndex        =   34
+         TabIndex        =   32
          Top             =   2310
          Width           =   1890
       End
@@ -554,7 +576,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   12
          Left            =   120
-         TabIndex        =   33
+         TabIndex        =   31
          Top             =   2790
          Width           =   2055
       End
@@ -573,7 +595,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   11
          Left            =   5280
-         TabIndex        =   32
+         TabIndex        =   30
          Top             =   1800
          Width           =   1290
       End
@@ -592,7 +614,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   10
          Left            =   120
-         TabIndex        =   31
+         TabIndex        =   29
          Top             =   1800
          Width           =   1095
       End
@@ -611,7 +633,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   9
          Left            =   5280
-         TabIndex        =   30
+         TabIndex        =   28
          Top             =   840
          Width           =   855
       End
@@ -630,7 +652,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   8
          Left            =   5280
-         TabIndex        =   29
+         TabIndex        =   27
          Top             =   2310
          Width           =   2550
       End
@@ -649,7 +671,7 @@ Begin VB.Form frmApparatiInput
          Height          =   345
          Index           =   3
          Left            =   6700
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   3360
          Width           =   1500
       End
@@ -668,7 +690,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   2
          Left            =   5280
-         TabIndex        =   27
+         TabIndex        =   25
          Top             =   1320
          Width           =   975
       End
@@ -687,7 +709,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   1
          Left            =   2450
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   375
          Width           =   1905
       End
@@ -706,7 +728,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   6
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   23
          Top             =   3750
          Width           =   1845
       End
@@ -725,7 +747,7 @@ Begin VB.Form frmApparatiInput
          Height          =   480
          Index           =   7
          Left            =   120
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   750
          Width           =   1095
          WordWrap        =   -1  'True
@@ -745,7 +767,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   380
          Width           =   1335
       End
@@ -753,7 +775,7 @@ Begin VB.Form frmApparatiInput
    Begin VB.Frame Frame2 
       Height          =   975
       Left            =   120
-      TabIndex        =   36
+      TabIndex        =   34
       Top             =   6120
       Width           =   10455
       Begin VB.CommandButton cmdMemorizza 
@@ -769,7 +791,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   600
          Left            =   7440
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   240
          Width           =   1455
       End
@@ -787,7 +809,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   600
          Left            =   9120
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   240
          Width           =   1215
       End
@@ -811,28 +833,8 @@ Dim mDataCollaudo As Variant
 Dim PostazionePrec As String
 Dim cboTipoApparatoPrec As String
 Dim cboTipoRenePrec As String
+Dim MantieniDato As Integer
 
-Private Sub cboManutentore_GotFocus(Index As Integer)
-    cboManutentore(1).BackColor = colArancione
-End Sub
-
-Private Sub cboManutentore_LostFocus(Index As Integer)
-        
-    If Len(cboManutentore(1)) > 30 Then
-        MsgBox "NON è possibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
-        cboManutentore(1).Text = ""
-        cboManutentore(1).SetFocus
-        Exit Sub
-    End If
-    
-    If cboManutentore(1).Text <> "" Then
-        Call GestisciNuovo("APPARATI_PRODUT_MANUTENT", cboManutentore(1))
-        Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboProduttore(0))
-    End If
-    
-    cboManutentore(1).BackColor = vbWhite
-    
-End Sub
 
 Private Sub cboModalitaAcquisizione_GotFocus(Index As Integer)
     cboModalitaAcquisizione(1).BackColor = colArancione
@@ -876,28 +878,6 @@ Private Sub cboModello_LostFocus(Index As Integer)
     
 End Sub
 
-Private Sub cboProduttore_GotFocus(Index As Integer)
-    cboProduttore(0).BackColor = colArancione
-End Sub
-
-Private Sub cboProduttore_LostFocus(Index As Integer)
-    
-    If Len(cboProduttore(0)) > 30 Then
-        MsgBox "NON è possibile memorizzare più di 30 caratteri", vbCritical, "ATTENZIONE!!!"
-        cboProduttore(0).Text = ""
-        cboProduttore(0).SetFocus
-        Exit Sub
-    End If
-    
-    If cboProduttore(0).Text <> "" Then
-        Call GestisciNuovo("APPARATI_PRODUT_MANUTENT", cboProduttore(0))
-        Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboManutentore(1))
-    End If
-    
-    cboProduttore(0).BackColor = vbWhite
-    
-End Sub
-
 Private Sub cboTipoApparato_GotFocus(Index As Integer)
         cboTipoApparato(0).BackColor = colArancione
 End Sub
@@ -912,22 +892,46 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
     ElseIf cboTipoApparato(0).Text = "RENE ARTIFICIALE" Then
         Label1(16).Enabled = True
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         cboTipoRene.ListIndex = 0
     ElseIf cboTipoApparato(0).Text <> "RENE ARTIFICIALE" Then
         Label1(16).Enabled = False
         Label1(17).Enabled = False
-        txtPostazione.Enabled = False
+        txtpostazione.Enabled = False
         cboTipoRene.Enabled = False
         cboTipoRene.ListIndex = -1
-        txtPostazione = ""
+        txtpostazione = ""
     ElseIf cboTipoApparato(0).Text <> "" Then
         Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
 
     cboTipoApparato(0).BackColor = vbWhite
     
+End Sub
+
+Private Sub cmdTrova_Click(Index As Integer)
+    'Salvo la key dell' apparato per evitare che si perda
+    'quando carico il frmTrova
+    MantieniDato = tTrova.keyReturn
+    
+    If Index = 1 Then
+        tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
+        tTrova.condizione = ""
+        tTrova.condStato = ""
+        Unload frmTrova
+        frmTrova.Show 1
+        lblProduttore.Caption = tTrova.NomeStriga
+    Else
+        tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
+        tTrova.condizione = ""
+        tTrova.condStato = ""
+        Unload frmTrova
+        frmTrova.Show 1
+        lblManutentore.Caption = tTrova.NomeStriga
+    End If
+    
+    tTrova.keyReturn = MantieniDato
 End Sub
 
 Private Sub oDataCollaudo_LostFocus(Index As Integer)
@@ -970,23 +974,23 @@ Dim valore As Integer
     ElseIf (IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) = False Or IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) = False) And cboTipoApparato(0) <> "RENE ARTIFICIALE" And tTrova.keyReturn <> 0 Then
         MsgBox "MODIFICA CATEGORIA APPARATO NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
         cboTipoApparato(0) = cboTipoApparatoPrec
-        txtPostazione = PostazionePrec
+        txtpostazione = PostazionePrec
         cboTipoRene.Text = cboTipoRenePrec
         Label1(16).Enabled = True
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         Exit Sub
     ElseIf cboModello(2).Text = "" Then
         MsgBox "Inserire il Modello", vbCritical, "ATTENZIONE!!!"
         Exit Sub
-    ElseIf txtPostazione = "" And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
+    ElseIf txtpostazione = "" And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
         MsgBox "Inserire la Postazione del Rene", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf txtMatricola.Text = "" Then
         MsgBox "Inserire la Matricola", vbCritical, "ATTENZIONE!!!"
         Exit Sub
-    ElseIf cboProduttore(0).Text = "" Then
+    ElseIf lblProduttore.Caption = "" Then
         MsgBox "Inserire il Produttore", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf oDataAcquisizione(2).txtBox = "" Then
@@ -1015,7 +1019,7 @@ Dim valore As Integer
     ElseIf txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
     ElseIf NumPost Then
-        txtPostazione = PostazionePrec
+        txtpostazione = PostazionePrec
         Exit Sub
     End If
     
@@ -1071,7 +1075,7 @@ Dim valore As Integer
                     , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT")
                     
         
-    v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtPostazione), valore, txtMatricola, cboProduttore(0).Text, cboManutentore(1).Text, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
+    v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtpostazione), valore, txtMatricola, lblProduttore.Caption, lblManutentore.Caption, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
                     , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False))
 
@@ -1216,7 +1220,7 @@ End Function
 Private Function NumPost() As Boolean
    Dim rsDataset As New Recordset
    
-   rsDataset.Open "SELECT KEY,POSTAZIONE FROM APPARATI WHERE POSTAZIONE ='" & txtPostazione & "'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+   rsDataset.Open "SELECT KEY,POSTAZIONE FROM APPARATI WHERE POSTAZIONE ='" & txtpostazione & "'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 
    If Not (rsDataset.EOF And rsDataset.BOF) Then
     If rsDataset("KEY") <> tTrova.keyReturn And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
@@ -1260,12 +1264,12 @@ End Function
 Private Sub Pulisci()
     txtNumeroApparato.Text = ""
     cboTipoApparato(0).Text = ""
-    txtPostazione = ""
+    txtpostazione = ""
     cboTipoRene.ListIndex = 0
     cboModello(2).Text = ""
     txtMatricola.Text = ""
-    cboProduttore(0).Text = ""
-    cboManutentore(1).Text = ""
+    lblProduttore.Caption = ""
+    lblManutentore.Caption = ""
     oDataFabbricazione(0).Pulisci
     oDataDismissione(1).Pulisci
     cboModalitaAcquisizione(1).Text = ""
@@ -1278,6 +1282,7 @@ Private Sub Pulisci()
     txtNumeroInventario_GotFocus
     NumeroApparato = 0
     tTrova.keyReturn = 0
+    MantieniDato = 0
     cboFunzionalita.ListIndex = -1
     cboSicurezza.ListIndex = -1
     ProxRevFun = ""
@@ -1287,20 +1292,19 @@ End Sub
 Private Sub Form_Activate()
     Call RicaricaComboBox("APPARATI_TIPO", "NOME", cboTipoApparato(0))
     Call RicaricaComboBox("APPARATI_MODELLO", "NOME", cboModello(2))
-    Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboProduttore(0))
-    Call RicaricaComboBox("APPARATI_PRODUT_MANUTENT", "NOME", cboManutentore(1))
     Call RicaricaComboBox("APPARATI_MOD_ACQ", "NOME", cboModalitaAcquisizione(1))
 End Sub
 
 Private Sub Form_Load()
+
     If tTrova.keyReturn = 0 And tInput.mantieniDati = True Then  'predispone il form all'inserimento del rene
         Label1(16).Enabled = True                                'in rottamazione da sostituire
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         txtNumeroInventario = GetNumero("APPARATI")
         cboTipoApparato(0) = "RENE ARTIFICIALE"
-        txtPostazione = tInput.v_valori(1)
+        txtpostazione = tInput.v_valori(1)
         cboTipoRene.ListIndex = 0
 
     ElseIf tTrova.keyReturn = 0 Then
@@ -1322,13 +1326,13 @@ Private Sub CaricaApparato()
     cboTipoApparato(0).Text = rsCercaApparato("TIPO_APPARATO")
     cboTipoApparatoPrec = rsCercaApparato("TIPO_APPARATO")
     cboModello(2).Text = rsCercaApparato("MODELLO")
-    txtPostazione.Text = rsCercaApparato("POSTAZIONE")
+    txtpostazione.Text = rsCercaApparato("POSTAZIONE")
     PostazionePrec = rsCercaApparato("POSTAZIONE")
     
     If rsCercaApparato("TIPO_APPARATO") = "RENE ARTIFICIALE" Then
         Label1(16).Enabled = True
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         If rsCercaApparato("TIPO") = 0 Then
             cboTipoRene.Text = "NEG"
@@ -1341,8 +1345,8 @@ Private Sub CaricaApparato()
     End If
  
     txtMatricola.Text = rsCercaApparato("MATRICOLA")
-    cboProduttore(0).Text = rsCercaApparato("PRODUTTORE")
-    cboManutentore(1).Text = rsCercaApparato("MANUTENTORE")
+    lblProduttore.Caption = rsCercaApparato("PRODUTTORE")
+    lblManutentore.Caption = rsCercaApparato("MANUTENTORE")
     oDataFabbricazione(0).txtBox = rsCercaApparato("DATA_FABBRICAZIONE") & ""
     oDataDismissione(1).txtBox = rsCercaApparato("DATA_DISMISSIONE") & ""
     cboModalitaAcquisizione(1).Text = rsCercaApparato("MODALITA_ACQUISIZIONE")

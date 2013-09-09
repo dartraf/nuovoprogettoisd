@@ -437,7 +437,13 @@ End Sub
 Private Sub cmdAvanti_Click()
     ' il caricamento dei dati avviene in CaricaPaziente di ogni form
     If flxGriglia.Row <> 0 Then
-        tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+    ' Se la Tabella Caricata è PRODUTTORE_MANUTENTORE mi carica il nome
+    ' e non la key del record
+        If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
+            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+        Else
+            tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+        End If
     Else
         tTrova.keyReturn = 0
         MsgBox Me.Caption, vbInformation, "Attenzione"
@@ -454,6 +460,7 @@ Private Sub cmdIndietro_Click()
     tTrova.keyReturn = 0
     Unload Me
 End Sub
+
 '--Attiva la rotellina del mouse----
 'Private Sub flxGriglia_GotFocus()
 '    Call WheelHook(Me, flxGriglia)

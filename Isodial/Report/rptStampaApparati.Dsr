@@ -48,39 +48,40 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   13040
+         Object.Left            =   13494
          Object.Top             =   2495
-         Object.Width           =   1815
+         Object.Width           =   1365
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Dt. Rottamazione"
+         Object.Caption         =   "Data Rottam."
+         Alignment       =   2
       EndProperty
       ItemType1       =   3
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label1"
-         Object.Left            =   113
          Object.Top             =   2494
-         Object.Width           =   780
+         Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "N° Inv."
+         Object.Caption         =   "N°Inv."
+         Alignment       =   2
       EndProperty
       ItemType2       =   5
       BeginProperty Item2 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -201,51 +202,53 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label2"
-         Object.Left            =   1020
-         Object.Top             =   2495
-         Object.Width           =   908
+         Object.Left            =   680
+         Object.Top             =   2494
+         Object.Width           =   620
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "N° App."
+         Object.Caption         =   "N°App."
+         Alignment       =   2
       EndProperty
       ItemType11      =   3
       BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label3"
-         Object.Left            =   2041
-         Object.Top             =   2495
-         Object.Width           =   915
+         Object.Left            =   1361
+         Object.Top             =   2494
+         Object.Width           =   660
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "N° Post."
+         Object.Caption         =   "N°Post."
+         Alignment       =   2
       EndProperty
       ItemType12      =   3
       BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
-         Object.Left            =   3061
+         Object.Left            =   2154
          Object.Top             =   2495
-         Object.Width           =   1695
+         Object.Width           =   2722
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -253,18 +256,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Tipo Apparato"
+         Alignment       =   2
       EndProperty
       ItemType13      =   3
       BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   4876
+         Object.Left            =   4989
          Object.Top             =   2495
-         Object.Width           =   1470
+         Object.Width           =   1814
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -272,18 +276,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Modello"
+         Alignment       =   2
       EndProperty
       ItemType14      =   3
       BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   6463
+         Object.Left            =   6916
          Object.Top             =   2495
          Object.Width           =   1140
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -291,18 +296,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Matricola"
+         Alignment       =   2
       EndProperty
       ItemType15      =   3
       BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   7710
+         Object.Left            =   8163
          Object.Top             =   2495
-         Object.Width           =   1350
+         Object.Width           =   1815
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -310,37 +316,39 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Produttore"
+         Alignment       =   2
       EndProperty
       ItemType16      =   3
       BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   9184
-         Object.Top             =   2495
-         Object.Width           =   2041
+         Object.Left            =   10091
+         Object.Top             =   2494
+         Object.Width           =   1590
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Anno Fabbricazione"
+         Object.Caption         =   "Anno Fabbr."
+         Alignment       =   2
       EndProperty
       ItemType17      =   3
       BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   11339
+         Object.Left            =   11793
          Object.Top             =   2494
          Object.Width           =   1590
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -348,20 +356,21 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Anno Collaudo"
+         Alignment       =   2
       EndProperty
    EndProperty
    SectionCode2    =   4
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   345
+      Object.Height          =   400
       NumControls     =   10
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNumeroInventario"
          Object.Left            =   113
-         Object.Width           =   780
+         Object.Width           =   555
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -386,8 +395,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNumeroApparato"
-         Object.Left            =   1020
-         Object.Width           =   915
+         Object.Left            =   794
+         Object.Width           =   555
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -412,8 +421,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNumeroPostazione"
-         Object.Left            =   2041
-         Object.Width           =   915
+         Object.Left            =   1500
+         Object.Width           =   555
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -438,8 +447,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTipoApparato"
-         Object.Left            =   3061
-         Object.Width           =   1695
+         Object.Left            =   2154
+         Object.Width           =   2722
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -464,8 +473,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtModello"
-         Object.Left            =   4876
-         Object.Width           =   1470
+         Object.Left            =   4989
+         Object.Width           =   1814
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -490,7 +499,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtMatricola"
-         Object.Left            =   6463
+         Object.Left            =   6916
          Object.Width           =   1140
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -516,8 +525,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtProduttore"
-         Object.Left            =   7710
-         Object.Width           =   1350
+         Object.Left            =   8163
+         Object.Width           =   1815
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -542,8 +551,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataFabbricazione"
-         Object.Left            =   9184
-         Object.Width           =   400
+         Object.Left            =   10680
+         Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -568,8 +577,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataCollaudo"
-         Object.Left            =   11339
-         Object.Width           =   400
+         Object.Left            =   12360
+         Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -594,8 +603,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataRottamazione"
-         Object.Left            =   13040
-         Object.Width           =   1815
+         Object.Left            =   13720
+         Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -606,6 +615,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""

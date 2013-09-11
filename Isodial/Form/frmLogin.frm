@@ -255,9 +255,9 @@ Private Sub cmdOK_Click()
     
     If tAccesso.Tipo = tpAMEDICO Or tAccesso.Tipo = tpAMASTER Then
         Call ControllaReni
-   '     Call ControllaAlertAppa
+        Call ControllaAlertAppa
     ElseIf tAccesso.Tipo <> tpAINFERMIERE Then
-   '     Call ControllaAlertAppa
+        Call ControllaAlertAppa
     End If
     Unload Me
 End Sub
@@ -277,14 +277,14 @@ Private Sub ControllaReni()
     Set rsDataset = Nothing
 End Sub
 
-' Controlla che non ci siano reni da rottamare
+' Controlla che non ci siano alert
 Private Sub ControllaAlertAppa()
     Dim rsDataset As New Recordset
     Dim data As Date
     
     data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
-    
-    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND ALERT=False", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    'se si cambia la select cambiarla nel form ALERTAPPARATI->Sub->cmdDisTutAlert_e Sub->Caricaflx
+    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         frmAlertApparati.Show 1
     End If
@@ -429,7 +429,7 @@ Private Sub txtUserName_GotFocus()
     txtUserName.SelStart = 0
     txtUserName.SelLength = Len(txtUserName)
     txtUserName.BackColor = colArancione
-    If Environ$("COMPUTERNAME") = "MASTERMIO" Or Environ$("COMPUTERNAME") = "MASTER" Then
+    If Environ$("COMPUTERNAME") = "MASTERMIO" Then
         txtUserName = "Admin"
         ENTRA = True
         cmdOK_Click

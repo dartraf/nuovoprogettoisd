@@ -181,7 +181,7 @@ Private Sub cmdAvanti_Click()
         Else
             strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY NUMERO_INVENTARIO"
         End If
-        TipoElenco = "Elenco Apparati per N° Inventario:"
+        TipoElenco = "Elenco Apparati per N° Inventario"
         Call StampaApparato
     
     ElseIf optProduttore.Value = True Then
@@ -190,7 +190,7 @@ Private Sub cmdAvanti_Click()
         Else
             strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY PRODUTTORE"
         End If
-        TipoElenco = "Elenco Apparati per Produttore:"
+        TipoElenco = "Elenco Apparati per Produttore"
         Call StampaApparato
         
     ElseIf optTipoApparato.Value = True Then
@@ -199,12 +199,12 @@ Private Sub cmdAvanti_Click()
         Else
             strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY TIPO_APPARATO"
         End If
-        TipoElenco = "Elenco Apparati per Tipo Apparato:"
+        TipoElenco = "Elenco per Categoria Apparati"
         Call StampaApparato
         
     ElseIf optApparatiRottamati.Value = True Then
         strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE Is Not Null ORDER BY KEY"
-        TipoElenco = "Elenco Apparati Rottamati:"
+        TipoElenco = "Elenco Apparati Rottamati"
         Call StampaApparato
         
     End If

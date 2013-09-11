@@ -19,28 +19,28 @@ Begin VB.Form frmApparatiInput
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   10455
+      Width           =   10575
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Index           =   0
-         Left            =   6700
+         Left            =   6730
          Picture         =   "frmApparatiInput.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   45
-         Top             =   1730
-         Width           =   450
+         Top             =   1720
+         Width           =   375
       End
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Index           =   1
-         Left            =   1320
+         Left            =   1360
          Picture         =   "frmApparatiInput.frx":0459
          Style           =   1  'Graphical
-         TabIndex        =   42
+         TabIndex        =   9
          Top             =   1730
-         Width           =   450
+         Width           =   375
       End
       Begin VB.ComboBox cboTipoRene 
          Enabled         =   0   'False
@@ -130,7 +130,7 @@ Begin VB.Form frmApparatiInput
          Index           =   1
          Left            =   7920
          Sorted          =   -1  'True
-         TabIndex        =   10
+         TabIndex        =   11
          Top             =   2280
          Width           =   1575
       End
@@ -147,7 +147,7 @@ Begin VB.Form frmApparatiInput
          Height          =   315
          Left            =   8520
          MaxLength       =   2
-         TabIndex        =   12
+         TabIndex        =   13
          Top             =   2760
          Width           =   495
       End
@@ -164,7 +164,7 @@ Begin VB.Form frmApparatiInput
          Height          =   2355
          Left            =   4440
          MultiLine       =   -1  'True
-         TabIndex        =   18
+         TabIndex        =   19
          Top             =   3720
          Width           =   5895
       End
@@ -251,7 +251,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   1
          Left            =   2400
-         TabIndex        =   14
+         TabIndex        =   15
          Top             =   3720
          Width           =   2100
          _ExtentX        =   3704
@@ -264,7 +264,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   0
          Left            =   2400
-         TabIndex        =   11
+         TabIndex        =   12
          Top             =   2760
          Width           =   2100
          _ExtentX        =   3704
@@ -277,7 +277,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   2
          Left            =   2400
-         TabIndex        =   9
+         TabIndex        =   10
          Top             =   2280
          Width           =   2100
          _ExtentX        =   3704
@@ -290,7 +290,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   3
          Left            =   2400
-         TabIndex        =   13
+         TabIndex        =   14
          Top             =   3240
          Width           =   2100
          _ExtentX        =   3704
@@ -313,7 +313,7 @@ Begin VB.Form frmApparatiInput
          ForeColor       =   &H00FF0000&
          Height          =   1455
          Left            =   120
-         TabIndex        =   36
+         TabIndex        =   37
          Top             =   4680
          Width           =   3975
          Begin VB.ComboBox cboSicurezza 
@@ -332,7 +332,7 @@ Begin VB.Form frmApparatiInput
             Left            =   1560
             List            =   "frmApparatiInput.frx":08F6
             Style           =   2  'Dropdown List
-            TabIndex        =   17
+            TabIndex        =   18
             Top             =   960
             Width           =   2295
          End
@@ -352,7 +352,7 @@ Begin VB.Form frmApparatiInput
             Left            =   1560
             List            =   "frmApparatiInput.frx":0972
             Style           =   2  'Dropdown List
-            TabIndex        =   16
+            TabIndex        =   17
             Top             =   480
             Width           =   2295
          End
@@ -371,7 +371,7 @@ Begin VB.Form frmApparatiInput
             Height          =   240
             Index           =   5
             Left            =   120
-            TabIndex        =   38
+            TabIndex        =   39
             Top             =   480
             Width           =   1260
          End
@@ -390,7 +390,7 @@ Begin VB.Form frmApparatiInput
             Height          =   240
             Index           =   4
             Left            =   120
-            TabIndex        =   37
+            TabIndex        =   38
             Top             =   960
             Width           =   1020
          End
@@ -399,7 +399,7 @@ Begin VB.Form frmApparatiInput
          Height          =   375
          Index           =   0
          Left            =   2400
-         TabIndex        =   15
+         TabIndex        =   16
          Top             =   4200
          Width           =   2100
          _ExtentX        =   3704
@@ -460,7 +460,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   17
          Left            =   2680
-         TabIndex        =   41
+         TabIndex        =   42
          Top             =   1340
          Width           =   1095
       End
@@ -480,7 +480,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   16
          Left            =   120
-         TabIndex        =   40
+         TabIndex        =   41
          Top             =   1350
          Width           =   1170
       End
@@ -499,7 +499,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   15
          Left            =   120
-         TabIndex        =   39
+         TabIndex        =   40
          Top             =   4250
          Width           =   1995
       End
@@ -518,7 +518,7 @@ Begin VB.Form frmApparatiInput
          Height          =   345
          Index           =   18
          Left            =   5280
-         TabIndex        =   35
+         TabIndex        =   36
          Top             =   2790
          Width           =   3375
          WordWrap        =   -1  'True
@@ -538,7 +538,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   14
          Left            =   120
-         TabIndex        =   33
+         TabIndex        =   34
          Top             =   3270
          Width           =   1500
       End
@@ -557,7 +557,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   13
          Left            =   120
-         TabIndex        =   32
+         TabIndex        =   33
          Top             =   2310
          Width           =   1890
       End
@@ -576,7 +576,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   12
          Left            =   120
-         TabIndex        =   31
+         TabIndex        =   32
          Top             =   2790
          Width           =   2055
       End
@@ -595,7 +595,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   11
          Left            =   5280
-         TabIndex        =   30
+         TabIndex        =   31
          Top             =   1800
          Width           =   1290
       End
@@ -614,7 +614,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   10
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   30
          Top             =   1800
          Width           =   1095
       End
@@ -633,7 +633,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   9
          Left            =   5280
-         TabIndex        =   28
+         TabIndex        =   29
          Top             =   840
          Width           =   855
       End
@@ -652,7 +652,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   8
          Left            =   5280
-         TabIndex        =   27
+         TabIndex        =   28
          Top             =   2310
          Width           =   2550
       End
@@ -671,7 +671,7 @@ Begin VB.Form frmApparatiInput
          Height          =   345
          Index           =   3
          Left            =   6700
-         TabIndex        =   26
+         TabIndex        =   27
          Top             =   3360
          Width           =   1500
       End
@@ -690,7 +690,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   2
          Left            =   5280
-         TabIndex        =   25
+         TabIndex        =   26
          Top             =   1320
          Width           =   975
       End
@@ -709,7 +709,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   1
          Left            =   2450
-         TabIndex        =   24
+         TabIndex        =   25
          Top             =   375
          Width           =   1905
       End
@@ -728,7 +728,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   6
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   24
          Top             =   3750
          Width           =   1845
       End
@@ -747,7 +747,7 @@ Begin VB.Form frmApparatiInput
          Height          =   480
          Index           =   7
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   23
          Top             =   750
          Width           =   1095
          WordWrap        =   -1  'True
@@ -767,7 +767,7 @@ Begin VB.Form frmApparatiInput
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   22
          Top             =   380
          Width           =   1335
       End
@@ -775,7 +775,7 @@ Begin VB.Form frmApparatiInput
    Begin VB.Frame Frame2 
       Height          =   975
       Left            =   120
-      TabIndex        =   34
+      TabIndex        =   35
       Top             =   6120
       Width           =   10455
       Begin VB.CommandButton cmdMemorizza 
@@ -791,7 +791,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   600
          Left            =   7440
-         TabIndex        =   19
+         TabIndex        =   20
          Top             =   240
          Width           =   1455
       End
@@ -809,7 +809,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   600
          Left            =   9120
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   240
          Width           =   1215
       End
@@ -830,6 +830,8 @@ Dim ModificaApparato As Boolean
 Dim ProxRevFun As String
 Dim ProxRevSic As String
 Dim mDataCollaudo As Variant
+Dim mProxRevFun As Variant
+Dim mProxRevSic As Variant
 Dim PostazionePrec As String
 Dim cboTipoApparatoPrec As String
 Dim cboTipoRenePrec As String
@@ -1103,7 +1105,7 @@ End Sub
 
 '' Calcolo per la prossima revisione funzionale
 Private Sub CalcoloProxRevFun()
-    If oDataCollaudo(3).data <> "" Then
+    If oDataCollaudo(3).data <> "" And IsPossibleDelete("MANUTENZIONE_APPARATI", "CODICE_APPARATO", KeyApparato) Then
         Select Case cboFunzionalita.ListIndex
             Case Is = 0
                 ' funzione per sommare la date
@@ -1126,12 +1128,15 @@ Private Sub CalcoloProxRevFun()
             Case Is = 7
                 ProxRevFun = DateAdd("m", 36, oDataCollaudo(3).data)
         End Select
+    Else
+      ' se ci sono schede di manutenzione non modifica la data della prossima revisione funz.
+        ProxRevFun = mProxRevFun
     End If
 End Sub
 
 '' Calcolo per la prossima revisione Sicurezza
 Private Sub CalcoloProxRevSic()
-    If oDataCollaudo(3).data <> "" Then
+    If oDataCollaudo(3).data <> "" And IsPossibleDelete("MANUTENZIONE_APPARATI", "CODICE_APPARATO", KeyApparato) Then
         Select Case cboSicurezza.ListIndex
             Case Is = 0
                 ' funzione per sommare la date
@@ -1154,6 +1159,9 @@ Private Sub CalcoloProxRevSic()
             Case Is = 7
                 ProxRevSic = DateAdd("m", 36, oDataCollaudo(3).data)
         End Select
+    Else
+      ' se ci sono schede di manutenzione non modifica la data della prossima revisione sic.
+        ProxRevSic = mProxRevSic
     End If
 End Sub
 
@@ -1360,7 +1368,9 @@ Private Sub CaricaApparato()
     chkAttivaAlert.Value = IIf(CBool(rsCercaApparato("ALERT")), Checked, Unchecked)
         
     mDataCollaudo = oDataCollaudo(3).txtBox
-        
+    mProxRevFun = rsCercaApparato("PROXREVFUN")
+    mProxRevSic = rsCercaApparato("PROXREVSIC")
+    
     Set rsCercaApparato = Nothing
     ModificaApparato = True
     

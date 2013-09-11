@@ -836,7 +836,8 @@ Dim PostazionePrec As String
 Dim cboTipoApparatoPrec As String
 Dim cboTipoRenePrec As String
 Dim MantieniDato As Integer
-
+Dim KeyProduttore As Integer
+Dim keyManutentore As Integer
 
 Private Sub cboModalitaAcquisizione_GotFocus(Index As Integer)
     cboModalitaAcquisizione(1).BackColor = colArancione
@@ -918,19 +919,25 @@ Private Sub cmdTrova_Click(Index As Integer)
     MantieniDato = tTrova.keyReturn
     
     If Index = 1 Then
+        ModificaProduttore = True
         tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
         tTrova.condizione = ""
         tTrova.condStato = ""
         Unload frmTrova
         frmTrova.Show 1
+        KeyProduttore = tTrova.keyReturn
         lblProduttore.Caption = tTrova.NomeStriga
+        ModificaProduttore = False
     Else
+        ModificaManutentore = True
         tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
         tTrova.condizione = ""
         tTrova.condStato = ""
         Unload frmTrova
         frmTrova.Show 1
+        keyManutentore = tTrova.keyReturn
         lblManutentore.Caption = tTrova.NomeStriga
+        ModificaManutentore = False
     End If
     
     tTrova.keyReturn = MantieniDato
@@ -1074,12 +1081,12 @@ Dim valore As Integer
 
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "POSTAZIONE", "TIPO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
                     , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO" _
-                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT")
+                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT", "KEY_PRODUTTORE", "KEY_MANUTENTORE")
                     
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtpostazione), valore, txtMatricola, lblProduttore.Caption, lblManutentore.Caption, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
-                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False))
+                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False), KeyProduttore, keyManutentore)
 
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -1291,6 +1298,8 @@ Private Sub Pulisci()
     NumeroApparato = 0
     tTrova.keyReturn = 0
     MantieniDato = 0
+    KeyProduttore = 0
+    keyManutentore = 0
     cboFunzionalita.ListIndex = -1
     cboSicurezza.ListIndex = -1
     ProxRevFun = ""

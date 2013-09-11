@@ -81,9 +81,11 @@ Public dt_rott_rene As Date             ' data rottamazione del rene selezionato
 Public cod_rene As Integer
 Public sostituito As Boolean
 
+Public ModificaProduttore As Boolean    ' variabile per il formApparatiInput per caricare il formTrova
+Public ModificaManutentore As Boolean   ' variabile per il formApparatiInput per caricare il formTrova
 Public MantieniKeyReturn As Integer     ' variabile per il form Apparati
 Public KeyApparato As Integer           ' variabile apparato che viene passata per manutenzione CODICE_APPARATO
 Public KeyReturnManutenzione As Integer ' variabile Key per la selezione della manutenzione
 Public Selezionato As Boolean           ' variabile per il frmApparati
 Public SelezionatoManutenzione As Boolean ' variabile per il frmApparati per caricare/inserire la manutenzione
-Public numkey As Integer
+Public numKey As Integer

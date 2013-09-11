@@ -226,7 +226,6 @@ Dim rsDatasetCerca As Recordset
 Dim testoVoce As String
 
 Private Sub cmdCambiaData_Click()
-
  ' scelta = False
  ' caricato = False
 ' Call Select_Data
@@ -254,8 +253,15 @@ Private Sub cmdCambiaData_Click()
 End Sub
 
 Private Sub cmdNuovo_Click()
-    tTrova.keyReturn = -1
-    Unload Me
+    If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
+        ' Lo chiudo per evitare problemi
+        Unload frmTrova
+        frmProduttoreManutentore.Show 1
+        frmTrova.Show 1
+    Else
+        tTrova.keyReturn = -1
+        Unload frmTrova
+    End If
 End Sub
 
 Private Sub Form_Activate()
@@ -303,6 +309,9 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Accompagnatori in elenco: "
         Case tpPRODUTTORE_MANUTENTORE
+            If ModificaProduttore = True Or ModificaManutentore = True Then
+                cmdNuovo.Visible = True
+            End If
             Me.Caption = Me.Caption & "Produttore/Manutentore"
             flxGriglia.FormatString = "| RAGIONE SOCIALE"
             flxGriglia.ColWidth(1) = 6500
@@ -437,10 +446,16 @@ End Sub
 Private Sub cmdAvanti_Click()
     ' il caricamento dei dati avviene in CaricaPaziente di ogni form
     If flxGriglia.Row <> 0 Then
-    ' Se la Tabella Caricata è PRODUTTORE_MANUTENTORE mi carica il nome
-    ' e non la key del record
-        If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
+    ' Se la Tabella Caricata è PRODUTTORE_MANUTENTORE
+    ' Se è in modifica Produttore mi carica il nome e la key
+        If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaProduttore = True Then
             tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+            tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+    ' Se è in modifica Manutentore mi carica il nome e la key
+        ElseIf tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaManutentore = True Then
+            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+            tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+    ' In tutti gli altri casi carica solo la key
         Else
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
         End If

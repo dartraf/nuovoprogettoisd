@@ -9,11 +9,11 @@ Begin VB.Form frmProduttoreManutentore
    ClientWidth     =   7440
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   5775
    ScaleWidth      =   7440
    ShowInTaskbar   =   0   'False
+   StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame2 
       Caption         =   "Scheda Produttore/Manutentore"
       BeginProperty Font 
@@ -503,20 +503,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim rsProduttoreManutentore As Recordset
 Dim intProduttoreManutentoreKey As Integer
-
-Private Sub Form_Activate()
-    If Not RidisponiForms(Me) Then Exit Sub
-End Sub
-
-Private Sub Form_Load()
-    Dim intTop As Single
-    Dim intLeft As Single
-   
-    Call GetCenterForm(Me.Height, Me.Width, intTop, intLeft)
-    Me.Top = intTop
-    Me.Left = intLeft
-    
-End Sub
+Dim modifica As Boolean
 
 Private Function Completo() As Boolean
     Completo = False
@@ -538,6 +525,7 @@ Private Sub PulisciTutto()
 End Sub
 
 Private Sub cmdChiudi_Click()
+    modifica = False
     Unload Me
 End Sub
 
@@ -557,7 +545,6 @@ Private Sub cmdMemorizza_Click()
         Else
             numKey = GetNumero("PRODUTTORE_MANUTENTORE")
         End If
-        
 
         v_Nomi = Array("KEY", "RAGIONE_SOCIALE", "INDIRIZZO", "CITTA", "CAP", "PROV", "TELEFONO" _
                     , "FAX", "EMAIL", "PARTITA_IVA", "CODICE_FISCALE")
@@ -665,6 +652,7 @@ Private Sub CaricaProduttoreManutentore()
     If intProduttoreManutentoreKey = 0 Then
         Exit Sub
     Else
+    
         modifica = True
         
         Set rsProduttoreManutentore = New Recordset

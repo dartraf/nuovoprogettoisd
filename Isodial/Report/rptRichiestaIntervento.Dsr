@@ -42,7 +42,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       _Version        =   393216
       Name            =   "Intestazione"
       Object.Height          =   4320
-      NumControls     =   13
+      NumControls     =   14
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -86,7 +86,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
          _Version        =   393216
          Name            =   "Label17"
          Object.Left            =   6860
-         Object.Top             =   2042
+         Object.Top             =   1759
          Object.Width           =   795
          Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -103,9 +103,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       ItemType4       =   3
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "lblAsl"
+         Name            =   "lblRagioneSociale"
          Object.Left            =   7654
-         Object.Top             =   2042
+         Object.Top             =   1759
          Object.Width           =   2490
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -117,14 +117,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Qui deve andare l'asl a "
       EndProperty
       ItemType5       =   3
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblIndirizzo"
          Object.Left            =   6860
-         Object.Top             =   2325
+         Object.Top             =   2042
          Object.Width           =   3285
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -136,14 +135,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "cui fatturare?"
       EndProperty
       ItemType6       =   3
       BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblCap"
          Object.Left            =   6860
-         Object.Top             =   2609
+         Object.Top             =   2326
          Object.Width           =   615
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -161,7 +159,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
          _Version        =   393216
          Name            =   "lblProvincia"
          Object.Left            =   7484
-         Object.Top             =   2634
+         Object.Top             =   2351
          Object.Width           =   2670
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -264,6 +262,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Si richiede intervento di manutenzione straordinaria per la seguente apparecchiatura/impianto:"
+      EndProperty
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblFax"
+         Object.Left            =   6860
+         Object.Top             =   2608
+         Object.Width           =   3300
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
       EndProperty
    EndProperty
    SectionCode2    =   4

@@ -435,6 +435,8 @@ Private Sub cmdChiudi_Click()
         KeyReturnManutenzione = -2
         Unload frmInserisciManutenzione
     End If
+                        rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = ""
+
 End Sub
 
 Private Sub cmdMemorizza_Click()
@@ -650,6 +652,7 @@ Private Sub cmdStampa_Click()
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
     Dim rsDataset As Recordset
+    Dim KeyProduttore As Integer
     
     
     SQLString = "SHAPE APPEND " & _
@@ -666,7 +669,6 @@ Private Sub cmdStampa_Click()
     rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
     
     Set rsDataset = New Recordset
-    
     rsDataset.Open "SELECT * FROM APPARATI WHERE (KEY=" & KeyApparato & ") ORDER BY KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         With rsMain
@@ -675,6 +677,9 @@ Private Sub cmdStampa_Click()
                 .Fields("TIPOLOGIA") = rsDataset("TIPO_APPARATO")
                 .Fields("MODELLO") = rsDataset("MODELLO")
                 .Fields("MATRICOLA") = rsDataset("MATRICOLA")
+                If rsDataset("KEY_PRODUTTORE") > 0 Then
+                    KeyProduttore = rsDataset("KEY_PRODUTTORE")
+                End If
                 rsDataset.MoveNext
             Loop
                
@@ -682,9 +687,36 @@ Private Sub cmdStampa_Click()
             
         End With
     End If
-    
     Set rsDataset = Nothing
     
+    ' Ricerca del Produttore
+    If KeyProduttore > 0 Then
+        Set rsDataset = New Recordset
+        rsDataset.Open "SELECT * FROM PRODUTTORE_MANUTENTORE WHERE (KEY=" & KeyProduttore & ") ORDER BY KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        If Not (rsDataset.EOF And rsDataset.BOF) Then
+            With rsMain
+                Do While Not rsDataset.EOF
+                    .AddNew
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = rsDataset("RAGIONE_SOCIALE")
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblIndirizzo").Caption = rsDataset("INDIRIZZO") & ""
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblCap").Caption = rsDataset("CAP") & ""
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblProvincia").Caption = rsDataset("PROV") & ""
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblFax").Caption = "Fax: " & rsDataset("FAX") & ""
+                    rsDataset.MoveNext
+                Loop
+            End With
+        End If
+        Set rsDataset = Nothing
+    Else
+    ' Pulisco i campi per evitare di ricaricare i dati in caso non ci sia il produttore
+        rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = ""
+        rptRichiestaIntervento.Sections("Intestazione").Controls("lblIndirizzo").Caption = ""
+        rptRichiestaIntervento.Sections("Intestazione").Controls("lblCap").Caption = ""
+        rptRichiestaIntervento.Sections("Intestazione").Controls("lblProvincia").Caption = ""
+        rptRichiestaIntervento.Sections("Intestazione").Controls("lblFax").Caption = ""
+    End If
+    
+        
     Set rptRichiestaIntervento.DataSource = rsMain
     rptRichiestaIntervento.RightMargin = 0
     rptRichiestaIntervento.LeftMargin = 0

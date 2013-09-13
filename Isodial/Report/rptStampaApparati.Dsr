@@ -284,7 +284,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
          Name            =   "Label6"
          Object.Left            =   6916
          Object.Top             =   2495
-         Object.Width           =   1140
+         Object.Width           =   908
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -302,9 +302,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   8163
+         Object.Left            =   7937
          Object.Top             =   2495
-         Object.Width           =   1815
+         Object.Width           =   2608
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -322,9 +322,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   10091
+         Object.Left            =   10771
          Object.Top             =   2494
-         Object.Width           =   1590
+         Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -342,9 +342,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   11793
+         Object.Left            =   12132
          Object.Top             =   2494
-         Object.Width           =   1590
+         Object.Width           =   1244
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -500,7 +500,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
          _Version        =   393216
          Name            =   "txtMatricola"
          Object.Left            =   6916
-         Object.Width           =   1140
+         Object.Width           =   908
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -525,8 +525,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtProduttore"
-         Object.Left            =   8163
-         Object.Width           =   1815
+         Object.Left            =   7937
+         Object.Width           =   2948
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -551,7 +551,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataFabbricazione"
-         Object.Left            =   10680
+         Object.Left            =   11225
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -577,7 +577,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataCollaudo"
-         Object.Left            =   12360
+         Object.Left            =   12472
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -603,7 +603,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataRottamazione"
-         Object.Left            =   13720
+         Object.Left            =   13700
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 

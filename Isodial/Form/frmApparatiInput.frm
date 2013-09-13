@@ -24,7 +24,7 @@ Begin VB.Form frmApparatiInput
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Index           =   0
-         Left            =   6730
+         Left            =   6620
          Picture         =   "frmApparatiInput.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   45
@@ -35,7 +35,7 @@ Begin VB.Form frmApparatiInput
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Index           =   1
-         Left            =   1360
+         Left            =   1320
          Picture         =   "frmApparatiInput.frx":0459
          Style           =   1  'Graphical
          TabIndex        =   9
@@ -110,7 +110,7 @@ Begin VB.Form frmApparatiInput
          EndProperty
          Height          =   315
          Index           =   2
-         Left            =   6960
+         Left            =   6980
          Sorted          =   -1  'True
          TabIndex        =   5
          Top             =   840
@@ -421,10 +421,10 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   7320
+         Left            =   7080
          TabIndex        =   44
          Top             =   1800
-         Width           =   3015
+         Width           =   3250
       End
       Begin VB.Label lblProduttore 
          BackColor       =   &H8000000E&
@@ -439,10 +439,10 @@ Begin VB.Form frmApparatiInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   1920
+         Left            =   1780
          TabIndex        =   43
          Top             =   1800
-         Width           =   3135
+         Width           =   3250
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True

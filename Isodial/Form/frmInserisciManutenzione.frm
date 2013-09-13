@@ -693,25 +693,22 @@ Private Sub cmdStampa_Click()
     If KeyProduttore > 0 Then
         Set rsDataset = New Recordset
         rsDataset.Open "SELECT * FROM PRODUTTORE_MANUTENTORE WHERE (KEY=" & KeyProduttore & ") ORDER BY KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-        If Not (rsDataset.EOF And rsDataset.BOF) Then
             With rsMain
-                Do While Not rsDataset.EOF
-                    .AddNew
+                   .AddNew
                     rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = rsDataset("RAGIONE_SOCIALE")
-                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblIndirizzo").Caption = rsDataset("INDIRIZZO") & ""
-                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblCap").Caption = rsDataset("CAP") & ""
-                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblProvincia").Caption = rsDataset("PROV") & ""
-                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblFax").Caption = "Fax: " & rsDataset("FAX") & ""
-                    rsDataset.MoveNext
-                Loop
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblIndirizzo").Caption = rsDataset("INDIRIZZO")
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblCap").Caption = rsDataset("CAP")
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblCitta").Caption = rsDataset("Citta")
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblProvincia").Caption = rsDataset("PROV")
+                    rptRichiestaIntervento.Sections("Intestazione").Controls("lblFax").Caption = "Fax: " & rsDataset("FAX")
             End With
-        End If
         Set rsDataset = Nothing
     Else
-    ' Pulisco i campi per evitare di ricaricare i dati in caso non ci sia il produttore
+     ' Pulisco i campi per evitare di ricaricare i dati in caso non ci sia il produttore
         rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = ""
         rptRichiestaIntervento.Sections("Intestazione").Controls("lblIndirizzo").Caption = ""
         rptRichiestaIntervento.Sections("Intestazione").Controls("lblCap").Caption = ""
+        rptRichiestaIntervento.Sections("Intestazione").Controls("lblCitta").Caption = ""
         rptRichiestaIntervento.Sections("Intestazione").Controls("lblProvincia").Caption = ""
         rptRichiestaIntervento.Sections("Intestazione").Controls("lblFax").Caption = ""
     End If

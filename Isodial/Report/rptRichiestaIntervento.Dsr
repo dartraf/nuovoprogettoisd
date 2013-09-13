@@ -13,7 +13,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
    _ExtentY        =   15293
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   10266
+   ReportWidth     =   11852
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -41,33 +41,33 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Intestazione"
-      Object.Height          =   4320
-      NumControls     =   14
+      Object.Height          =   4880
+      NumControls     =   15
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label2"
-         Object.Left            =   1928
-         Object.Top             =   3232
-         Object.Width           =   6810
-         Object.Height          =   345
+         Object.Left            =   2778
+         Object.Top             =   3515
+         Object.Width           =   5145
+         Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   18
             Charset         =   0
             Weight          =   700
-            Underline       =   0   'False
+            Underline       =   -1  'True
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "MODULO RICHIESTA INTERVENTO"
+         Object.Caption         =   "RICHIESTA INTERVENTO"
          Alignment       =   2
       EndProperty
       ItemType1       =   7
       BeginProperty Item1 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
-         Object.Left            =   6009
+         Object.Left            =   7540
          Object.Width           =   3390
          Object.Height          =   1410
          SizeMode        =   2
@@ -76,7 +76,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       BeginProperty Item2 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
-         Object.Left            =   9411
+         Object.Left            =   10942
          Object.Width           =   855
          Object.Height          =   810
          SizeMode        =   2
@@ -85,7 +85,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label17"
-         Object.Left            =   6860
+         Object.Left            =   6520
          Object.Top             =   1759
          Object.Width           =   795
          Object.Height          =   315
@@ -104,13 +104,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblRagioneSociale"
-         Object.Left            =   7654
+         Object.Left            =   7370
          Object.Top             =   1759
-         Object.Width           =   2490
-         Object.Height          =   285
+         Object.Width           =   4250
+         Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -122,13 +122,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblIndirizzo"
-         Object.Left            =   6860
-         Object.Top             =   2042
-         Object.Width           =   3285
-         Object.Height          =   270
+         Object.Left            =   7370
+         Object.Top             =   2041
+         Object.Width           =   4252
+         Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -140,13 +140,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblCap"
-         Object.Left            =   6860
-         Object.Top             =   2326
+         Object.Left            =   7370
+         Object.Top             =   2324
          Object.Width           =   615
-         Object.Height          =   225
+         Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -157,11 +157,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       ItemType7       =   3
       BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "lblProvincia"
-         Object.Left            =   7484
-         Object.Top             =   2351
-         Object.Width           =   2670
-         Object.Height          =   225
+         Name            =   "lblCitta"
+         Object.Left            =   7994
+         Object.Top             =   2324
+         Object.Width           =   2895
+         Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -248,32 +248,50 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   737
-         Object.Top             =   3855
-         Object.Width           =   9345
-         Object.Height          =   454
+         Object.Left            =   2098
+         Object.Top             =   4535
+         Object.Width           =   7020
+         Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   12
             Charset         =   0
             Weight          =   400
-            Underline       =   -1  'True
+            Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Si richiede intervento di manutenzione straordinaria per la seguente apparecchiatura/impianto:"
+         Object.Caption         =   "Si richiede intervento straordinario per il seguente apparato/impianto:"
       EndProperty
       ItemType13      =   3
       BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblFax"
-         Object.Left            =   6860
+         Object.Left            =   7370
          Object.Top             =   2608
-         Object.Width           =   3300
-         Object.Height          =   285
+         Object.Width           =   4260
+         Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblProvincia"
+         Object.Left            =   10942
+         Object.Top             =   2324
+         Object.Width           =   671
+         Object.Height          =   315
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -288,22 +306,42 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       Name            =   "corpo"
       Object.Height          =   4560
       KeepTogether    =   -1  'True
-      NumControls     =   9
-      ItemType0       =   6
-      BeginProperty Item0 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
+      NumControls     =   7
+      ItemType0       =   4
+      BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Shape1"
-         Object.Left            =   57
-         Object.Top             =   2154
-         Object.Width           =   10095
-         Object.Height          =   2280
+         Name            =   "txtTipologia"
+         Object.Left            =   907
+         Object.Top             =   340
+         Object.Width           =   3570
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
       EndProperty
       ItemType1       =   4
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTipologia"
-         Object.Left            =   1588
-         Object.Top             =   190
+         Name            =   "txtModello"
+         Object.Left            =   6010
+         Object.Top             =   363
          Object.Width           =   3570
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -329,9 +367,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       ItemType2       =   3
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label6"
-         Object.Left            =   114
-         Object.Top             =   170
+         Name            =   "Label7"
+         Object.Left            =   4535
+         Object.Top             =   340
          Object.Width           =   1590
          Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -343,14 +381,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "TIPOLOGIA"
+         Object.Caption         =   "MODELLO"
       EndProperty
       ItemType3       =   4
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtModello"
-         Object.Left            =   1588
-         Object.Top             =   760
+         Name            =   "txtMatricola"
+         Object.Left            =   6010
+         Object.Top             =   866
          Object.Width           =   3570
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -376,56 +414,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
       ItemType4       =   3
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label7"
-         Object.Left            =   113
-         Object.Top             =   737
-         Object.Width           =   1590
-         Object.Height          =   315
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "MODELLO"
-      EndProperty
-      ItemType5       =   4
-      BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtMatricola"
-         Object.Left            =   1588
-         Object.Top             =   1320
-         Object.Width           =   3570
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         CanGrow         =   -1  'True
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType6       =   3
-      BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   113
-         Object.Top             =   1304
+         Object.Left            =   4535
+         Object.Top             =   850
          Object.Width           =   1590
          Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -439,14 +430,33 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
          EndProperty
          Object.Caption         =   "MATRICOLA"
       EndProperty
-      ItemType7       =   4
-      BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType5       =   3
+      BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label9"
+         Object.Left            =   3402
+         Object.Top             =   1814
+         Object.Width           =   4252
+         Object.Height          =   454
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   -1  'True
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "MOTIVO RICHIESTA INTERVENTO:"
+      EndProperty
+      ItemType6       =   4
+      BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtMotivazioneRichiesta"
-         Object.Left            =   170
-         Object.Top             =   2211
-         Object.Width           =   9915
-         Object.Height          =   2220
+         Object.Left            =   680
+         Object.Top             =   2438
+         Object.Width           =   9348
+         Object.Height          =   1860
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   11.25
@@ -467,32 +477,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType8       =   3
-      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label9"
-         Object.Left            =   57
-         Object.Top             =   1871
-         Object.Width           =   3855
-         Object.Height          =   315
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "MOTIVAZIONE RICHIESTA"
-      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Pie"
       Object.Height          =   2280
-      NumControls     =   8
+      NumControls     =   7
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -586,7 +577,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
       ItemType5       =   3
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -625,15 +616,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaIntervento
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-      EndProperty
-      ItemType7       =   6
-      BeginProperty Item7 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Shape2"
-         Object.Left            =   7370
-         Object.Top             =   56
-         Object.Width           =   2790
-         Object.Height          =   1245
       EndProperty
    EndProperty
    SectionCode4    =   8

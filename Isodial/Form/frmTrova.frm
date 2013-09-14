@@ -4,7 +4,7 @@ Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmTrova 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Seleziona il "
-   ClientHeight    =   5460
+   ClientHeight    =   5505
    ClientLeft      =   750
    ClientTop       =   1710
    ClientWidth     =   7545
@@ -12,7 +12,7 @@ Begin VB.Form frmTrova
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5460
+   ScaleHeight     =   5505
    ScaleWidth      =   7545
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -186,6 +186,24 @@ Begin VB.Form frmTrova
          Top             =   240
          Width           =   1095
       End
+      Begin VB.CommandButton cmdModifica 
+         Caption         =   "& Modifica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   2520
+         TabIndex        =   13
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   1215
+      End
       Begin VB.Label lblVoci 
          AutoSize        =   -1  'True
          Caption         =   "Infermieri in elenco:  "
@@ -252,8 +270,15 @@ Private Sub cmdCambiaData_Click()
 '    End If
 End Sub
 
+Private Sub cmdModifica_Click()
+    frmProduttoreManutentore.Show 1
+End Sub
+
 Private Sub cmdNuovo_Click()
     If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
+        ' Per evitare che una volta selezionato il record
+        ' poi cliccando su nuovo mi carichi il record selezionato
+        tTrova.keyReturn = 0
         ' Lo chiudo per evitare problemi
         Unload frmTrova
         frmProduttoreManutentore.Show 1
@@ -309,15 +334,16 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Accompagnatori in elenco: "
         Case tpPRODUTTORE_MANUTENTORE
-            If ModificaProduttore = True Or ModificaManutentore = True Then
-                cmdNuovo.Visible = True
-            End If
+                If ModificaProduttore = True Or ModificaManutentore = True Then
+                    cmdNuovo.Visible = True
+                End If
+            cmdModifica.Visible = True
             Me.Caption = Me.Caption & "Produttore/Manutentore"
             flxGriglia.FormatString = "| RAGIONE SOCIALE"
             flxGriglia.ColWidth(1) = 6500
             flxGriglia.ColWidth(2) = 0
             flxGriglia.ColWidth(3) = 0
-            testoVoce = "Produttori/Manutentori in elenco: "
+            lblVoci.Visible = False
     End Select
     lblVoci = testoVoce
     With flxGriglia
@@ -449,12 +475,12 @@ Private Sub cmdAvanti_Click()
     ' Se la Tabella Caricata è PRODUTTORE_MANUTENTORE
     ' Se è in modifica Produttore mi carica il nome e la key
         If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaProduttore = True Then
-            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
     ' Se è in modifica Manutentore mi carica il nome e la key
         ElseIf tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaManutentore = True Then
-            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
     ' In tutti gli altri casi carica solo la key
         Else
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
@@ -523,6 +549,7 @@ Private Sub flxGriglia_Click()
         flxGriglia.Col = 0
         Exit Sub
     Else
+        tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
         numCol = IIf(tTrova.Tipo = tpMEDICOBASE, 2, 3)
         Call ColoraFlx(flxGriglia, numCol)
     End If

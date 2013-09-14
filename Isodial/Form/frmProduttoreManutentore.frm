@@ -27,19 +27,9 @@ Begin VB.Form frmProduttoreManutentore
       EndProperty
       Height          =   4815
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   120
       Width           =   7215
-      Begin VB.CommandButton cmdTrova 
-         BackColor       =   &H00C0C0C0&
-         Height          =   450
-         Left            =   1920
-         Picture         =   "frmProduttoreManutentore.frx":0000
-         Style           =   1  'Graphical
-         TabIndex        =   26
-         Top             =   360
-         Width           =   450
-      End
       Begin VB.TextBox txtRagioneSociale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -205,10 +195,10 @@ Begin VB.Form frmProduttoreManutentore
          EndProperty
          Height          =   285
          Left            =   4560
-         MaxLength       =   20
+         MaxLength       =   2
          TabIndex        =   5
          Top             =   1920
-         Width           =   2415
+         Width           =   495
       End
       Begin MSComDlg.CommonDialog cdlStampa 
          Left            =   6240
@@ -232,7 +222,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   42
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   23
          Top             =   3840
          Width           =   1110
       End
@@ -251,7 +241,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   38
          Left            =   120
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   3360
          Width           =   675
       End
@@ -270,7 +260,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   41
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   2400
          Width           =   945
       End
@@ -289,7 +279,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   40
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   4320
          Width           =   1575
       End
@@ -308,7 +298,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   39
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   2880
          Width           =   390
       End
@@ -327,7 +317,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   37
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   1920
          Width           =   585
       End
@@ -346,7 +336,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   36
          Left            =   3840
-         TabIndex        =   19
+         TabIndex        =   17
          Top             =   1920
          Width           =   555
       End
@@ -365,7 +355,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   35
          Left            =   120
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   960
          Width           =   870
       End
@@ -384,7 +374,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   34
          Left            =   120
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   1440
          Width           =   480
       End
@@ -403,7 +393,7 @@ Begin VB.Form frmProduttoreManutentore
          Height          =   240
          Index           =   32
          Left            =   120
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   480
          Width           =   1755
       End
@@ -423,24 +413,6 @@ Begin VB.Form frmProduttoreManutentore
       TabIndex        =   0
       Top             =   4800
       Width           =   7215
-      Begin VB.CommandButton cmdElimina 
-         Caption         =   "&Elimina"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   480
-         Left            =   120
-         TabIndex        =   14
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1215
-      End
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          BeginProperty Font 
@@ -476,24 +448,6 @@ Begin VB.Form frmProduttoreManutentore
          Top             =   240
          Width           =   1335
       End
-      Begin VB.CommandButton cmdStampa 
-         Caption         =   "&Stampa"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   1440
-         TabIndex        =   13
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1335
-      End
    End
 End
 Attribute VB_Name = "frmProduttoreManutentore"
@@ -501,6 +455,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Explicit
 Dim rsProduttoreManutentore As Recordset
 Dim intProduttoreManutentoreKey As Integer
 Dim modifica As Boolean
@@ -568,90 +523,7 @@ Private Sub cmdMemorizza_Click()
     End If
 End Sub
 
-Private Sub cmdStampa_Click()
-    If intProduttoreManutentoreKey = 0 Then
-        MsgBox "Selezionare il medico di base", vbInformation, "Attenzione"
-    Else
-    On Error GoTo gestione
-    cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
-    cdlStampa.CancelError = True
-    cdlStampa.ShowPrinter
-gestione:
-    If Err.Number = cdlCancel Then
-        Exit Sub
-'    Else
-'        MsgBox "Descrizione: " & Err.Description, vbCritical, "Errore n# " & Err.Number
-    End If
-    Printer.FontSize = 16           'grandezza
-    Printer.FontBold = True         'grassetto
-    Printer.FontItalic = True       'corsivo
-    Printer.Print
-    Printer.Print , "                  SCHEDA MEDICO DI BASE"
-    Printer.FontBold = False
-    Printer.FontSize = 12
-    Printer.FontUnderline = True    'sottolineato
-    Printer.Print "                                                                                                                                                                                                        "
-    Printer.FontUnderline = False
-    Printer.Print
-    Printer.Print
-    Printer.Print "Cognome: ", txtCognome.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Nome: ", txtNome.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Città: ", txtCitta.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Indirizzo: ", txtIndirizzo.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "C.A.P.: ", txtCap.Text, , "Prov.:", txtProv.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Telefono: ", txtTelefono.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Studio: ", txtStudio.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Cellulare: ", txtCellulare.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Fax: ", txtFax.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "E-mail: ", txtEmail.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Codice Medico: ", txtCodiceMedico.Text
-    Printer.Print
-    Printer.Print
-    Printer.Print "Riceve: ", txtRiceve.Text
-    Printer.EndDoc
-    End If
-End Sub
-
-Private Sub cmdTrova_Click()
-    Call PulisciTutto
-    tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
-    tTrova.condizione = ""
-    tTrova.condStato = ""
-    Unload frmTrova
-    frmTrova.Show 1
-    intProduttoreManutentoreKey = tTrova.keyReturn
-    Call CaricaProduttoreManutentore
-End Sub
-
-Private Sub cboTipologia_DropDown()
-    Call SetComboWidth(cboTipologia, 280)
-End Sub
-
 Private Sub CaricaProduttoreManutentore()
-    
-    If intProduttoreManutentoreKey = 0 Then
-        Exit Sub
-    Else
     
         modifica = True
         
@@ -671,39 +543,13 @@ Private Sub CaricaProduttoreManutentore()
     
         Set rsProduttoreManutentore = Nothing
     
-    End If
-    
 End Sub
 
-Private Sub cmdElimina_Click()
-    Dim blnElimina As Boolean
-    Dim blnEliminato As Boolean
-    Dim rsDataset As Recordset
-      
-    If intProduttoreManutentoreKey = 0 Then
-        Exit Sub
-    Else
-        blnElimina = IsPossibleDelete("PAZIENTI", "CODICE_MEDICO", intProduttoreManutentoreKey)
-        If blnElimina Then
-            If MsgBox("Sicuro di voler eliminare " & txtCognome & " " & txtNome & "?", vbQuestion + vbYesNo, Me.Caption) = vbYes Then
-                Set rsDataset = New Recordset
-                rsDataset.Open "SELECT * FROM MEDICI_BASE WHERE KEY=" & intProduttoreManutentoreKey, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-                If rsDataset.EOF And rsDataset.BOF Then
-                    MsgBox "Errore nel caricamento dei dati", vbCritical, "Impossibile aggiornare"
-                Else
-                    rsDataset.Delete
-                    blnEliminato = True
-                End If
-                Set rsDataset = Nothing
-            End If
-        Else
-            MsgBox "Impossibile eliminare " & txtCognome & " " & txtNome & " perchè in relazione con altri dati del sistema", vbInformation, Me.Caption
-        End If
-    End If
-            
-    If blnEliminato Then
-        Call PulisciTutto
-        MsgBox "Eliminazione avvenuta con successo", vbInformation, Me.Caption
+Private Sub Form_Load()
+    intProduttoreManutentoreKey = tTrova.keyReturn
+    ' Se mi trovo in fase di modifica vado a caricare direttamente il record
+    If intProduttoreManutentoreKey > 0 Then
+        Call CaricaProduttoreManutentore
     End If
 End Sub
 

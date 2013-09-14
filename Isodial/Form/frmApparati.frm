@@ -206,7 +206,7 @@ Begin VB.Form frmApparati
       TabIndex        =   7
       Top             =   7920
       Width           =   14655
-      Begin VB.CommandButton cmdStampaManutenzione 
+      Begin VB.CommandButton cmdStampaManutenzioneApparato 
          Caption         =   "S&tampa"
          CausesValidation=   0   'False
          BeginProperty Font 
@@ -489,6 +489,85 @@ End Sub
 
 Private Sub cmdStampaApparati_Click()
     frmStampaApparati.Show 1
+End Sub
+
+Private Sub cmdStampaManutenzioneApparato_Click()
+    Dim SQLString As String
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
+    Dim rsDataset As Recordset
+    Dim TotaleReni As Integer
+    
+    
+    If KeyApparato = 0 Then
+        MsgBox "Selezionare l' Apparato", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    
+    SQLString = "SHAPE APPEND " & _
+                "       NEW adVarChar(14) AS TIPO_MANUTENZIONE, " & _
+                "       NEW adVarChar(11) AS DATA_SCADENZA_MANUTENZIONE, " & _
+                "       NEW adVarChar(11) AS DATA_RICHIESTA_MANUTENZIONE, " & _
+                "       NEW adVarChar(11) AS DATA_EFFETTIVA_MANUTENZIONE, " & _
+                "       NEW adVarChar(50) AS DESCRIZIONE_MANUTENZIONE, " & _
+                "       NEW adVarChar(5) AS NUMERO_DOCUMENTO, " & _
+                "       NEW adVarChar(30) AS DETTAGLI_INTERVENTO "
+                
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+
+    ' Stampa dell' Apparato
+    Set rsDataset = New Recordset
+    rsDataset.Open "SELECT * FROM APPARATI WHERE KEY= " & KeyApparato & " ORDER BY KEY DESC ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblNumeroInventario").Caption = rsDataset("NUMERO_INVENTARIO")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblNumeroApparato").Caption = rsDataset("NUMERO_APPARATO")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblNumeroPostazione").Caption = rsDataset("POSTAZIONE")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblTipoApparato").Caption = rsDataset("TIPO_APPARATO")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblStampaApparato").Caption = "Stampa dell' Apparato: " & rsDataset("TIPO_APPARATO")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblModello").Caption = rsDataset("MODELLO")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblMatricola").Caption = rsDataset("MATRICOLA")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblProduttore").Caption = rsDataset("PRODUTTORE")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblAnnoFabbricazione").Caption = Mid(rsDataset("DATA_FABBRICAZIONE"), 7, 11) & ""
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblAnnoCollaudo").Caption = Mid(rsDataset("DATA_COLLAUDO"), 7, 11) & ""
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblDataRottamazione").Caption = rsDataset("DATA_ROTTAMAZIONE") & ""
+    Set rsDataset = Nothing
+    
+    
+    ' Stampa della Manutenzione dell' Apparato
+    Set rsDataset = New Recordset
+    rsDataset.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " ORDER BY CODICE_APPARATO DESC ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        With rsMain
+            Do While Not rsDataset.EOF
+                .AddNew
+                    .Fields("TIPO_MANUTENZIONE") = rsDataset("TIPO_MANUTENZIONE") & ""
+                    .Fields("DATA_SCADENZA_MANUTENZIONE") = rsDataset("DATA_SCADENZA_MANUTENZIONE") & ""
+                    .Fields("DATA_RICHIESTA_MANUTENZIONE") = rsDataset("DATA_RICHIESTA_MANUTENZIONE") & ""
+                    .Fields("DATA_EFFETTIVA_MANUTENZIONE") = rsDataset("DATA_EFFETTIVA_MANUTENZIONE") & ""
+                    .Fields("DESCRIZIONE_MANUTENZIONE") = rsDataset("DESCRIZIONE_MANUTENZIONE") & ""
+                    .Fields("NUMERO_DOCUMENTO") = rsDataset("NUMERO_DOCUMENTO") & ""
+                    .Fields("DETTAGLI_INTERVENTO") = rsDataset("DETTAGLI_INTERVENTO") & ""
+                rsDataset.MoveNext
+            Loop
+        End With
+    End If
+    If rsDataset.RecordCount = 0 Then
+        MsgBox "L' Apparato selezionato non ha Manutenzioni da stampare", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    Set rsDataset = Nothing
+    
+    Set rptManutenzioneApparati.DataSource = rsMain
+    rptManutenzioneApparati.Orientation = rptOrientLandscape
+    rptManutenzioneApparati.TopMargin = 0
+    rptManutenzioneApparati.RightMargin = 0
+    rptManutenzioneApparati.LeftMargin = 0
+    rptManutenzioneApparati.PrintReport True, rptRangeAllPages
+
 End Sub
 
 Private Sub flxManutenzione_Click()

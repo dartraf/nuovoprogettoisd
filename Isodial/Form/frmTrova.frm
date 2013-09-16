@@ -127,7 +127,7 @@ Begin VB.Form frmTrova
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   2420
+         Left            =   2400
          TabIndex        =   11
          Top             =   240
          Visible         =   0   'False
@@ -280,9 +280,7 @@ Private Sub cmdNuovo_Click()
         ' poi cliccando su nuovo mi carichi il record selezionato
         tTrova.keyReturn = 0
         ' Lo chiudo per evitare problemi
-        Unload frmTrova
         frmProduttoreManutentore.Show 1
-        frmTrova.Show 1
     Else
         tTrova.keyReturn = -1
         Unload frmTrova

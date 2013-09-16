@@ -515,10 +515,10 @@ Private Sub cmdMemorizza_Click()
         End If
         
         Set rsProduttoreManutentore = Nothing
-                
-        MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
-        
+                        
         Call PulisciTutto
+        
+        cmdChiudi_Click
 
     End If
 End Sub

@@ -256,7 +256,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Tipo Apparato"
-         Alignment       =   2
       EndProperty
       ItemType13      =   3
       BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -276,7 +275,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Modello"
-         Alignment       =   2
       EndProperty
       ItemType14      =   3
       BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -296,7 +294,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Matricola"
-         Alignment       =   2
       EndProperty
       ItemType15      =   3
       BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -316,7 +313,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Produttore"
-         Alignment       =   2
       EndProperty
       ItemType16      =   3
       BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 

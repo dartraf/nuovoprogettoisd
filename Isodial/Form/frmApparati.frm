@@ -500,7 +500,7 @@ Private Sub cmdStampaManutenzioneApparato_Click()
     
     
     If KeyApparato = 0 Then
-        MsgBox "Selezionare l' Apparato", vbInformation, "Informazione"
+        MsgBox "Selezionare un Apparato", vbInformation, "Informazione"
         Exit Sub
     End If
     
@@ -527,7 +527,7 @@ Private Sub cmdStampaManutenzioneApparato_Click()
         rptManutenzioneApparati.Sections("Intestazione").Controls("lblNumeroApparato").Caption = rsDataset("NUMERO_APPARATO")
         rptManutenzioneApparati.Sections("Intestazione").Controls("lblNumeroPostazione").Caption = rsDataset("POSTAZIONE")
         rptManutenzioneApparati.Sections("Intestazione").Controls("lblTipoApparato").Caption = rsDataset("TIPO_APPARATO")
-        rptManutenzioneApparati.Sections("Intestazione").Controls("lblStampaApparato").Caption = "Stampa dell' Apparato: " & rsDataset("TIPO_APPARATO")
+        rptManutenzioneApparati.Sections("Intestazione").Controls("lblStampaApparato").Caption = "Scheda Manutenzione Apparato" '& rsDataset("TIPO_APPARATO")
         rptManutenzioneApparati.Sections("Intestazione").Controls("lblModello").Caption = rsDataset("MODELLO")
         rptManutenzioneApparati.Sections("Intestazione").Controls("lblMatricola").Caption = rsDataset("MATRICOLA")
         rptManutenzioneApparati.Sections("Intestazione").Controls("lblProduttore").Caption = rsDataset("PRODUTTORE")
@@ -556,7 +556,7 @@ Private Sub cmdStampaManutenzioneApparato_Click()
         End With
     End If
     If rsDataset.RecordCount = 0 Then
-        MsgBox "L' Apparato selezionato non ha Manutenzioni da stampare", vbInformation, "Informazione"
+        MsgBox "NON sono registrate schede di manutenzione per l'apparato selezionato", vbInformation, "ATTENZIONE!!!"
         Exit Sub
     End If
     Set rsDataset = Nothing

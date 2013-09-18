@@ -115,24 +115,6 @@ Begin VB.Form frmTrova
       TabIndex        =   4
       Top             =   4560
       Width           =   7335
-      Begin VB.CommandButton cmdCambiaData 
-         Caption         =   "&Cambio Data/Turno"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   2400
-         TabIndex        =   11
-         Top             =   240
-         Visible         =   0   'False
-         Width           =   1340
-      End
       Begin VB.CommandButton cmdNuovo 
          Caption         =   "&Nuovo"
          BeginProperty Font 
@@ -186,8 +168,26 @@ Begin VB.Form frmTrova
          Top             =   240
          Width           =   1095
       End
+      Begin VB.CommandButton cmdCambiaData 
+         Caption         =   "&Cambio Data/Turno"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   2400
+         TabIndex        =   11
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   1340
+      End
       Begin VB.CommandButton cmdModifica 
-         Caption         =   "& Modifica"
+         Caption         =   "&Modifica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -271,7 +271,11 @@ Private Sub cmdCambiaData_Click()
 End Sub
 
 Private Sub cmdModifica_Click()
+    If tTrova.keyReturn = 0 Then
+        Exit Sub
+    End If
     frmProduttoreManutentore.Show 1
+    tTrova.keyReturn = 0
 End Sub
 
 Private Sub cmdNuovo_Click()
@@ -341,6 +345,7 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(1) = 6500
             flxGriglia.ColWidth(2) = 0
             flxGriglia.ColWidth(3) = 0
+            flxGriglia.ColAlignment(1) = vbLeftJustify
             lblVoci.Visible = False
     End Select
     lblVoci = testoVoce

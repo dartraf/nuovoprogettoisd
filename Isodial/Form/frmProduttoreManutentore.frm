@@ -629,14 +629,6 @@ Private Sub txtCap_LostFocus()
     txtCap.BackColor = vbWhite
 End Sub
 
-Private Sub txtCellulare_GotFocus()
-    txtCellulare.BackColor = colArancione
-End Sub
-
-Private Sub txtCellulare_LostFocus()
-    txtCellulare.BackColor = vbWhite
-End Sub
-
 Private Sub txtCitta_GotFocus()
     txtCitta.BackColor = colArancione
 End Sub

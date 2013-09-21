@@ -190,6 +190,7 @@ Form=Form\frmProduttoreManutentore.frm
 Form=Form\frmAlertApparati.frm
 Designer=Report\rptManutenzioneApparati.Dsr
 ResFile32="Risorse.res"
+Designer=Report\rptRegistroApparati.Dsr
 IconForm="frmCalendario"
 Startup="Sub Main"
 HelpFile=""

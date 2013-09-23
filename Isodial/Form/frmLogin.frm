@@ -324,6 +324,9 @@ Private Sub impostaMenu()
             .mnuImpegnativeDialisi.Enabled = True
             .mnuKtvAnnuale.Enabled = False
             .mnuTsatAnnuale.Enabled = False
+            .mnuCaPAnnuale.Enabled = False
+            .mnuPthAnnuale.Enabled = False
+            .mnuSchedaDialiticaSettimanale.Enabled = False
             .mnuFatturazione.Visible = True
             ' rende inattivi gli altri
             For i = 2 To 6
@@ -347,6 +350,12 @@ Private Sub impostaMenu()
             .mnuStampaMediciBase.Enabled = True
             .mnuMostraFattElaborazione.Enabled = True
             .mnuImpegnativeDialisi.Enabled = True
+            .mnuKtvAnnuale.Enabled = True
+            .mnuTsatAnnuale.Enabled = True
+            .mnuCaPAnnuale.Enabled = True
+            .mnuPthAnnuale.Enabled = True
+            .mnuSchedaDialiticaSettimanale.Enabled = True
+            .mnuappa = True
             For i = 14 To 16
                 .cmdToolbar(i).Enabled = False
             Next i
@@ -361,12 +370,15 @@ Private Sub impostaMenu()
             .mnuImpegnativeDialisi.Enabled = False
             .mnuKtvAnnuale.Enabled = False
             .mnuTsatAnnuale.Enabled = False
+            .mnuCaPAnnuale.Enabled = False
+            .mnuPthAnnuale.Enabled = False
             .mnuSottoDialisi(1).Visible = True
             .mnuSottoDialisi(1).Enabled = False
             .mnuPaziente.Enabled = False
             .mnuArchivi.Enabled = False
             .mnuStrumenti.Enabled = False
             .mnuSottoDialisi(4).Enabled = IsCaposala
+            .mnuappa = False
             For i = 0 To 16
                 .cmdToolbar(i).Enabled = False
             Next i

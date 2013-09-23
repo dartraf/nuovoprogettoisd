@@ -275,6 +275,7 @@ Private Sub cmdModifica_Click()
         Exit Sub
     End If
     frmProduttoreManutentore.Show 1
+    Call ColoraFlx(flxGriglia, 1)
     tTrova.keyReturn = 0
 End Sub
 
@@ -291,9 +292,9 @@ Private Sub cmdNuovo_Click()
     End If
 End Sub
 
-Private Sub Form_Activate()
-    Call Cerca
-End Sub
+'Private Sub Form_Activate()
+'    Call Cerca
+'End Sub
 
 Private Function isDialisi() As Boolean
     If (InStr(1, tTrova.condizione, "IN") > 0 Or InStr(1, tTrova.condizione, "KEY=-1")) And InStr(1, tTrova.condStato, "(-1)") Then
@@ -381,6 +382,7 @@ Private Sub Form_Load()
         cmdCambiaData.Visible = True
         cmdIndietro.Visible = False
     End If
+    Call Cerca
 End Sub
 
 Private Function nomeTabella() As String
@@ -409,63 +411,60 @@ Private Sub Cerca()
     'Ricerca apposita per la tabella PRODUTTORE_MANUTENTORE
     If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
         
-    condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
+        condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
+        strSql = "SELECT * FROM " & nomeTabella & " WHERE RAGIONE_SOCIALE LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & " ORDER BY RAGIONE_SOCIALE"
+        Set rsDatasetCerca = New Recordset
+        rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        Do While Not rsDatasetCerca.EOF
+         With flxGriglia
+             .Rows = .Rows + 1
+             .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
+             .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("RAGIONE_SOCIALE")
+                 rsDatasetCerca.MoveNext
+            End With
+        Loop
         
-    strSql = "SELECT * FROM " & nomeTabella & " WHERE RAGIONE_SOCIALE LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & " ORDER BY RAGIONE_SOCIALE"
-        
-    Set rsDatasetCerca = New Recordset
-    rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    Do While Not rsDatasetCerca.EOF
-        With flxGriglia
-            .Rows = .Rows + 1
-            .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
-            .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("RAGIONE_SOCIALE")
-            rsDatasetCerca.MoveNext
-        End With
-    Loop
-        
-    lblVoci = testoVoce & rsDatasetCerca.RecordCount
-    flxGriglia.Row = 0
-    Set rsDatasetCerca = Nothing
-    
+        lblVoci = testoVoce & rsDatasetCerca.RecordCount
+        flxGriglia.Row = 0
+        Set rsDatasetCerca = Nothing
+
     Else
     
-    condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
-    If tTrova.Tipo = tpPAZIENTE And cboStato.Visible = True And cboStato.Text <> "Tutti" Then
-        If Not isDialisi Then
-             condizione = condizione & " AND STATO=" & cboStato.ItemData(cboStato.ListIndex)
-        Else
-            If cboStato.ListIndex <> 0 Then
-                condizione = " AND STATO=" & cboStato.ItemData(cboStato.ListIndex)
+        condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
+        If tTrova.Tipo = tpPAZIENTE And cboStato.Visible = True And cboStato.Text <> "Tutti" Then
+            If Not isDialisi Then
+                condizione = condizione & " AND STATO=" & cboStato.ItemData(cboStato.ListIndex)
+            Else
+                If cboStato.ListIndex <> 0 Then
+                    condizione = " AND STATO=" & cboStato.ItemData(cboStato.ListIndex)
+                End If
             End If
         End If
+    
+        If tTrova.Tipo = tpINFERMIERE Then
+            condizione = condizione & " AND ELIMINATO=FALSE "
+        End If
+    
+        strSql = "SELECT * FROM " & nomeTabella & " WHERE COGNOME LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & " ORDER BY COGNOME, NOME"
+        Set rsDatasetCerca = New Recordset
+        rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        Do While Not rsDatasetCerca.EOF
+            With flxGriglia
+                .Rows = .Rows + 1
+                .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
+                .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("COGNOME")
+                .TextMatrix(.Rows - 1, 2) = "" & rsDatasetCerca("NOME")
+                If tTrova.Tipo = tpPAZIENTE Then
+                    .TextMatrix(.Rows - 1, 3) = rsDatasetCerca("DATA_NASCITA")
+                End If
+                rsDatasetCerca.MoveNext
+            End With
+            Loop
+        lblVoci = testoVoce & rsDatasetCerca.RecordCount
+        flxGriglia.Row = 0
+        Set rsDatasetCerca = Nothing
+    
     End If
-    
-    If tTrova.Tipo = tpINFERMIERE Then
-        condizione = condizione & " AND ELIMINATO=FALSE "
-    End If
-    
-    strSql = "SELECT * FROM " & nomeTabella & " WHERE COGNOME LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & " ORDER BY COGNOME, NOME"
-    Set rsDatasetCerca = New Recordset
-    rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    Do While Not rsDatasetCerca.EOF
-        With flxGriglia
-            .Rows = .Rows + 1
-            .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
-            .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("COGNOME")
-            .TextMatrix(.Rows - 1, 2) = "" & rsDatasetCerca("NOME")
-            If tTrova.Tipo = tpPAZIENTE Then
-                .TextMatrix(.Rows - 1, 3) = rsDatasetCerca("DATA_NASCITA")
-            End If
-            rsDatasetCerca.MoveNext
-        End With
-    Loop
-    lblVoci = testoVoce & rsDatasetCerca.RecordCount
-    flxGriglia.Row = 0
-    Set rsDatasetCerca = Nothing
-    
-    End If
-    
 End Sub
 
 Private Sub cboStato_Click()

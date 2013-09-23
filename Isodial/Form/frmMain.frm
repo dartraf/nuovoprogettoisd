@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "19/09/2013"
+            TextSave        =   "23/09/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -659,11 +659,6 @@ Begin VB.MDIForm frmMain
       End
       Begin VB.Menu mnuRipristina 
          Caption         =   "&Ripristino Archivi"
-      End
-      Begin VB.Menu mnuBarra 
-         Caption         =   "&Barra degli Strumenti"
-         Checked         =   -1  'True
-         Tag             =   "&Barra degli strumenti|(Checked=-1)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
    End
    Begin VB.Menu mnuStampe 
@@ -989,10 +984,10 @@ Private Sub mnuApriVassoio_Click()
     unHook
 End Sub
 
-Private Sub mnuBarra_Click()
-    mnuBarra.Checked = Not mnuBarra.Checked
-    picContenitore.Visible = mnuBarra.Checked
-End Sub
+'Private Sub mnuBarra_Click()
+'    mnuBarra.Checked = Not mnuBarra.Checked
+'    picContenitore.Visible = mnuBarra.Checked
+'End Sub
 
 Private Sub mnuCaricaPrescrizione_Click()
     frmPrescrizioni.Show
@@ -2117,7 +2112,7 @@ Public Sub SubClassMenuXP()
           mnuIntestazioneFattura.Caption = "Parametri Fattura"
           mnuRipristina.Caption = "&Ripristino Archivi"
           mnuImpostaBackup.Caption = "&N° Backup"
-          mnuBarra.Caption = "&Barra degli Strumenti"
+     '     mnuBarra.Caption = "&Barra degli Strumenti"
     mnuStampe.Caption = "Stam&pe"
           mnuStampaPaz.Caption = "Lista &Pazienti"
           mnuStampaMediciBase.Caption = "Lista &Medici di Base"

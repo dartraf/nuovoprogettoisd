@@ -1135,6 +1135,8 @@ Private Sub CalcoloProxRevFun()
             Case Is = 7
                 ProxRevFun = DateAdd("m", 36, oDataCollaudo(3).data)
         End Select
+    ElseIf oDataCollaudo(3).data = "" Then
+        Exit Sub
     Else
       ' se ci sono schede di manutenzione non modifica la data della prossima revisione funz.
         ProxRevFun = mProxRevFun
@@ -1166,6 +1168,8 @@ Private Sub CalcoloProxRevSic()
             Case Is = 7
                 ProxRevSic = DateAdd("m", 36, oDataCollaudo(3).data)
         End Select
+    ElseIf oDataCollaudo(3).data = "" Then
+        Exit Sub
     Else
       ' se ci sono schede di manutenzione non modifica la data della prossima revisione sic.
         ProxRevSic = mProxRevSic

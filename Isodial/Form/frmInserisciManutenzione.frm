@@ -630,7 +630,7 @@ Private Sub CalcoloProxRevSic()
             End Select
     
         rsDataRevisioneSicurezza("PROXREVSIC") = ProxRevSic
-        rsDataRevisioneFunzionale("LETTO") = False
+        rsDataRevisioneSicurezza("LETTO") = False
         rsDataRevisioneSicurezza.Update
         
     End If

@@ -2,7 +2,7 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Registro Apparati"
-   ClientHeight    =   9570
+   ClientHeight    =   9405
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   15270
@@ -11,10 +11,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    _ExtentX        =   26935
-   _ExtentY        =   16880
+   _ExtentY        =   16589
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   19605
+   ReportWidth     =   16560
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -42,7 +42,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "intestazione"
-      Object.Height          =   4020
+      Object.Height          =   4680
       NumControls     =   22
       ItemType0       =   5
       BeginProperty Item0 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -76,7 +76,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       BeginProperty Item2 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
-         Object.Left            =   11509
+         Object.Left            =   8901
          Object.Top             =   30
          Object.Width           =   3390
          Object.Height          =   1410
@@ -86,7 +86,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       BeginProperty Item3 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
-         Object.Left            =   14911
+         Object.Left            =   12303
          Object.Top             =   30
          Object.Width           =   855
          Object.Height          =   810
@@ -163,56 +163,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType8       =   3
       BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label2"
-         Object.Top             =   3062
-         Object.Width           =   567
-         Object.Height          =   345
-         Object.BorderStyle     =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "N°Inv."
-         Alignment       =   2
-      EndProperty
-      ItemType9       =   3
-      BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label3"
-         Object.Left            =   680
-         Object.Top             =   3061
-         Object.Width           =   795
-         Object.Height          =   345
-         Object.BorderStyle     =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "N°Post."
-         Alignment       =   2
-      EndProperty
-      ItemType10      =   3
-      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label4"
-         Object.Left            =   1587
          Object.Top             =   3062
-         Object.Width           =   2385
+         Object.Width           =   2041
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -222,18 +180,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Tipo Apparato"
          Alignment       =   2
       EndProperty
-      ItemType11      =   3
-      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType9       =   3
+      BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   4083
+         Object.Left            =   2042
          Object.Top             =   3062
-         Object.Width           =   1365
+         Object.Width           =   1360
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -243,18 +201,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Modello"
          Alignment       =   2
       EndProperty
-      ItemType12      =   3
-      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType10      =   3
+      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   5555
+         Object.Left            =   3401
          Object.Top             =   3062
          Object.Width           =   1020
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -263,18 +221,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          EndProperty
          Object.Caption         =   "Matricola"
       EndProperty
-      ItemType13      =   3
-      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType11      =   3
+      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   6690
+         Object.Left            =   4423
          Object.Top             =   3062
-         Object.Width           =   1474
+         Object.Width           =   1246
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -284,79 +242,39 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Produttore"
          Alignment       =   2
       EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label8"
-         Object.Left            =   16554
-         Object.Top             =   3061
-         Object.Width           =   1470
-         Object.Height          =   330
-         Object.BorderStyle     =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Prox. Man. Funz."
-      EndProperty
-      ItemType15      =   3
-      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label9"
-         Object.Left            =   18142
-         Object.Top             =   3061
-         Object.Width           =   1350
-         Object.Height          =   345
-         Object.BorderStyle     =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Prox. Man. Sic."
-      EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType12      =   3
+      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label1"
-         Object.Left            =   8277
+         Object.Left            =   5670
          Object.Top             =   3062
-         Object.Width           =   1350
+         Object.Width           =   1133
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Mod. Acqui."
+         Object.Caption         =   "Mod. Acq."
          Alignment       =   2
       EndProperty
-      ItemType17      =   3
-      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   9751
-         Object.Top             =   3061
-         Object.Width           =   1361
-         Object.Height          =   345
+         Object.Left            =   6803
+         Object.Top             =   2835
+         Object.Width           =   780
+         Object.Height          =   570
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -366,18 +284,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Period. Amm."
          Alignment       =   2
       EndProperty
-      ItemType18      =   3
-      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label13"
-         Object.Left            =   12472
+         Object.Left            =   7596
          Object.Top             =   3062
-         Object.Width           =   1365
+         Object.Width           =   1135
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -387,39 +305,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Dt. Acquisiz"
          Alignment       =   2
       EndProperty
-      ItemType19      =   3
-      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   3
+      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label14"
-         Object.Left            =   11225
-         Object.Top             =   3062
+         Name            =   "Label15"
+         Object.Left            =   8730
+         Object.Top             =   3061
          Object.Width           =   1125
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Anno Fabb."
-         Alignment       =   2
-      EndProperty
-      ItemType20      =   3
-      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label15"
-         Object.Left            =   13946
-         Object.Top             =   3061
-         Object.Width           =   1134
-         Object.Height          =   345
-         Object.BorderStyle     =   1
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -429,18 +326,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Dt. Collaudo"
          Alignment       =   2
       EndProperty
-      ItemType21      =   3
-      BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label16"
-         Object.Left            =   15194
+         Object.Left            =   9865
          Object.Top             =   3061
-         Object.Width           =   1245
+         Object.Width           =   1133
          Object.Height          =   345
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -450,22 +347,127 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Object.Caption         =   "Dt. Dismiss."
          Alignment       =   2
       EndProperty
+      ItemType17      =   3
+      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label2"
+         Object.Left            =   10998
+         Object.Top             =   3061
+         Object.Width           =   1245
+         Object.Height          =   345
+         Object.BorderStyle     =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Dt. Rottamaz."
+         Alignment       =   2
+      EndProperty
+      ItemType18      =   3
+      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label3"
+         Object.Left            =   12246
+         Object.Top             =   2835
+         Object.Width           =   1020
+         Object.Height          =   570
+         Object.BorderStyle     =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Dt. Ultima Verifica Sic."
+         Alignment       =   2
+      EndProperty
+      ItemType19      =   3
+      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label8"
+         Object.Left            =   13266
+         Object.Top             =   2835
+         Object.Width           =   1021
+         Object.Height          =   570
+         Object.BorderStyle     =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Dt. Prox Verifica Sic."
+         Alignment       =   2
+      EndProperty
+      ItemType20      =   3
+      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label9"
+         Object.Left            =   14287
+         Object.Top             =   2835
+         Object.Width           =   1133
+         Object.Height          =   570
+         Object.BorderStyle     =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Dt. Ultima Verifica Fun."
+         Alignment       =   2
+      EndProperty
+      ItemType21      =   3
+      BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label14"
+         Object.Left            =   14400
+         Object.Top             =   1361
+         Object.Width           =   1140
+         Object.Height          =   570
+         Object.BorderStyle     =   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Dt. Prox Verifica Fun."
+         Alignment       =   2
+      EndProperty
    EndProperty
    SectionCode2    =   4
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   1480
+      Object.Height          =   2280
       NumControls     =   14
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtNumeroInventario"
-         Object.Width           =   570
+         Name            =   "txtTipoApparato"
+         Object.Width           =   2041
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -485,13 +487,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType1       =   4
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtNumeroPostazione"
-         Object.Left            =   680
-         Object.Width           =   570
+         Name            =   "txtModello"
+         Object.Left            =   2042
+         Object.Width           =   1360
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -511,13 +513,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType2       =   4
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtTipoApparato"
-         Object.Left            =   1587
-         Object.Width           =   2490
+         Name            =   "txtMatricola"
+         Object.Left            =   3401
+         Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -537,13 +539,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType3       =   4
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtModello"
-         Object.Left            =   4083
-         Object.Width           =   1365
+         Name            =   "txtProduttore"
+         Object.Left            =   4423
+         Object.Width           =   1246
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -563,39 +565,67 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType4       =   4
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtMatricola"
-         Object.Left            =   5555
-         Object.Width           =   1020
+         Name            =   "txtDataProssimaSicurezza"
+         Object.Left            =   13266
+         Object.Width           =   1021
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
       ItemType5       =   4
       BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtProduttore"
-         Object.Left            =   6690
-         Object.Width           =   1474
+         Name            =   "txtDataUltimaFunzionale"
+         Object.Left            =   14287
+         Object.Width           =   1133
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType6       =   4
+      BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtModalitaAcquisizione"
+         Object.Left            =   5670
+         Object.Width           =   1133
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -612,43 +642,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType6       =   4
-      BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtProxRevFun"
-         Object.Left            =   16554
-         Object.Width           =   1020
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Alignment       =   2
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   3
-         EndProperty
-      EndProperty
       ItemType7       =   4
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtProxRevSic"
-         Object.Left            =   18255
-         Object.Width           =   1020
+         Name            =   "txtPeriodoAmmortamento"
+         Object.Left            =   6803
+         Object.Width           =   794
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -657,31 +660,32 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          EndProperty
          Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "dd/MM/yyyy"
+            Type            =   0
+            Format          =   ""
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   3
+            SubFormatType   =   0
          EndProperty
       EndProperty
       ItemType8       =   4
       BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtModalitaAcquisizione"
-         Object.Left            =   8277
-         Object.Width           =   1350
+         Name            =   "txtDataAcquisizione"
+         Object.Left            =   7596
+         Object.Width           =   1135
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -695,131 +699,137 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType9       =   4
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtPeriodoAmmortamento"
-         Object.Left            =   9751
-         Object.Width           =   1361
+         Name            =   "txtDataCollaudo"
+         Object.Left            =   8730
+         Object.Width           =   1125
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
       ItemType10      =   4
       BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtDataAcquisizione"
-         Object.Left            =   12472
-         Object.Width           =   1365
+         Name            =   "txtDataDismissione"
+         Object.Left            =   9865
+         Object.Width           =   1133
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
       ItemType11      =   4
       BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtAnnoFabbricazione"
-         Object.Left            =   11225
-         Object.Width           =   1125
+         Name            =   "txtDataRottamazione"
+         Object.Left            =   10999
+         Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
       ItemType12      =   4
       BeginProperty Item12 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtDataCollaudo"
-         Object.Left            =   13946
-         Object.Width           =   1134
+         Name            =   "txtDataUltimaSicurezza"
+         Object.Left            =   12246
+         Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
       ItemType13      =   4
       BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtDataDismissione"
-         Object.Left            =   15194
-         Object.Width           =   1245
+         Name            =   "txtDataProssimaFunzionale"
+         Object.Left            =   14173
+         Object.Top             =   567
+         Object.Width           =   1140
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
    EndProperty
@@ -1037,15 +1047,20 @@ Private Sub DataReport_Initialize()
         End With
                 
         With .Sections("corpo").Controls
-           .Item("txtNumeroApparato").DataField = "NUMERO_APPARATO"
-           .Item("txtNumeroPostazione").DataField = "POSTAZIONE"
-           .Item("txtTipoApparato").DataField = "TIPO_APPARATO"
-           .Item("txtModello").DataField = "MODELLO"
-           .Item("txtMatricola").DataField = "MATRICOLA"
-           .Item("txtProduttore").DataField = "PRODUTTORE"
-           .Item("txtProxRevFun").DataField = "PROXREVFUN"
-           .Item("txtProxRevSic").DataField = "PROXREVSIC"
-
+            .Item("txtTipoApparato").DataField = "TIPO_APPARATO"
+            .Item("txtModello").DataField = "MODELLO"
+            .Item("txtMatricola").DataField = "MATRICOLA"
+            .Item("txtProduttore").DataField = "PRODUTTORE"
+            .Item("txtModalitaAcquisizione").DataField = "MODALITA_ACQUISIZIONE"
+            .Item("txtPeriodoAmmortamento").DataField = "PERIODO_AMMORTAMENTO"
+            .Item("txtDataAcquisizione").DataField = "DATA_ACQUISIZIONE"
+            .Item("txtDataCollaudo").DataField = "DATA_COLLAUDO"
+            .Item("txtDataDismissione").DataField = "DATA_DISMISSIONE"
+            .Item("txtDataRottamazione").DataField = "DATA_ROTTAMAZIONE"
+            .Item("txtDataUltimaSicurezza").DataField = "DATA_COLLAUDO"  'DA VEDERE SE E' QUESTO IL CAMPO
+            .Item("txtDataProssimaSicurezza").DataField = "PROXREVSIC"
+            .Item("txtDataUltimaFunzionale").DataField = "DATA_COLLAUDO" 'DA VEDERE SE E' QUESTO IL CAMPO
+            .Item("txtDataProssimaFunzionale").DataField = "PROXREVFUN"
          End With
     End With
 

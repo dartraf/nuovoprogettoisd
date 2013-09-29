@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "23/09/2013"
+            TextSave        =   "28/09/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -818,8 +818,16 @@ Begin VB.MDIForm frmMain
          Caption         =   "&Stampa Prescrizione"
       End
    End
-   Begin VB.Menu mnuappa 
-      Caption         =   "Gestione &Apparati"
+   Begin VB.Menu mnuApparati 
+      Caption         =   "&Apparati"
+      Begin VB.Menu mnuSottoApparati 
+         Caption         =   "Gestione A&pparati"
+         Index           =   0
+      End
+      Begin VB.Menu mnuSottoApparati 
+         Caption         =   "Stampa Re&gistro"
+         Index           =   1
+      End
    End
    Begin VB.Menu mnu1 
       Caption         =   "&?"
@@ -954,10 +962,6 @@ End Sub
 
 Private Sub mnuabout_Click()
    frmInfo.Show 1
-End Sub
-
-Private Sub mnuappa_Click()
-   frmApparati.Show 1
 End Sub
 
 Private Sub mnuCaPAnnuale_Click()
@@ -1113,6 +1117,76 @@ Private Sub mnuSchedaDialiticaSettimanale_Click()
     Else
         MsgBox "MODULO DI STAMPA OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
     End If
+End Sub
+
+Private Sub mnuSottoApparati_Click(Index As Integer)
+    Select Case Index
+        Case 0: frmApparati.Show 1
+        Case 1: Call StampaRegistroApparati
+    End Select
+End Sub
+
+Private Sub StampaRegistroApparati()
+    Dim SQLString As String
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
+    Dim rsDataset As Recordset
+    
+    SQLString = "SHAPE APPEND " & _
+                "       NEW adVarChar(50) AS TIPO_APPARATO, " & _
+                "       NEW adVarChar(50) AS MODELLO, " & _
+                "       NEW adVarChar(50) AS MATRICOLA, " & _
+                "       NEW adVarChar(50) AS PRODUTTORE, " & _
+                "       NEW adVarChar(10) AS MODALITA_ACQUISIZIONE, " & _
+                "       NEW adInteger AS PERIODO_AMMORTAMENTO, " & _
+                "       NEW adVarChar(11) AS DATA_ACQUISIZIONE, " & _
+                "       NEW adVarChar(11) AS DATA_COLLAUDO, " & _
+                "       NEW adVarChar(11) AS DATA_DISMISSIONE, " & _
+                "       NEW adVarChar(11) AS DATA_ROTTAMAZIONE, " & _
+                "       NEW adVarChar(11) AS PROXREVSIC, " & _
+                "       NEW adVarChar(11) AS PROXREVFUN "
+                
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+    
+    Set rsDataset = New Recordset
+    
+    rsDataset.Open "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        With rsMain
+            Do While Not rsDataset.EOF
+                .AddNew
+                .Fields("TIPO_APPARATO") = rsDataset("TIPO_APPARATO")
+                .Fields("MODELLO") = rsDataset("MODELLO")
+                .Fields("MATRICOLA") = rsDataset("MATRICOLA")
+                .Fields("PRODUTTORE") = rsDataset("PRODUTTORE")
+                .Fields("MODALITA_ACQUISIZIONE") = rsDataset("MODALITA_ACQUISIZIONE")
+                .Fields("PERIODO_AMMORTAMENTO") = rsDataset("PERIODO_AMMORTAMENTO")
+                .Fields("DATA_ACQUISIZIONE") = rsDataset("DATA_ACQUISIZIONE") & ""
+                .Fields("DATA_COLLAUDO") = rsDataset("DATA_COLLAUDO") & ""
+                .Fields("DATA_DISMISSIONE") = rsDataset("DATA_DISMISSIONE") & ""
+                .Fields("DATA_ROTTAMAZIONE") = rsDataset("DATA_ROTTAMAZIONE") & ""
+                .Fields("PROXREVSIC") = rsDataset("PROXREVSIC") & ""
+                .Fields("PROXREVFUN") = rsDataset("PROXREVFUN") & ""
+                rsDataset.MoveNext
+            Loop
+        End With
+    End If
+        
+    Set rsDataset = Nothing
+    
+    Set rptRegistroApparati.DataSource = rsMain
+    rptRegistroApparati.Orientation = rptOrientLandscape
+    rptRegistroApparati.TopMargin = 0
+    rptRegistroApparati.RightMargin = 0
+    rptRegistroApparati.LeftMargin = 0
+    'rptRegistroApparati.Sections("Intestazione").Controls("lblElenco").Caption = TipoElenco
+    rptRegistroApparati.PrintReport True, rptRangeAllPages
+
 End Sub
 
 Private Sub mnuSottoDialisi_Click(Index As Integer)
@@ -2148,9 +2222,12 @@ Public Sub SubClassMenuXP()
         mnuStampaRiepilogo(7).Caption = "x &Asl - Distretti"
         mnuStampaRiepilogo(8).Caption = "x &Impegnative"
     mnuVassoio.Caption = "PopupVassoio"
-          mnuApriVassoio.Caption = "Ripristina"
+        mnuApriVassoio.Caption = "Ripristina"
+    mnuApparati.Caption = "Apparati"
+        mnuSottoApparati(0).Caption = "Gestione &Apparati"
+        mnuSottoApparati(1).Caption = "Stampa Re&gistro"
     mnu1.Caption = "&?"
-          mnuabout.Caption = "&Informazioni su Isodial..."
+        mnuabout.Caption = "&Informazioni su Isodial..."
           
     '/ Subclassing menu. Warning! Don't remove this comment!!!
 

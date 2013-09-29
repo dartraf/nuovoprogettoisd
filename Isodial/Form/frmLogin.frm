@@ -355,7 +355,7 @@ Private Sub impostaMenu()
             .mnuCaPAnnuale.Enabled = True
             .mnuPthAnnuale.Enabled = True
             .mnuSchedaDialiticaSettimanale.Enabled = True
-            .mnuappa = True
+            .mnuApparati = True
             For i = 14 To 16
                 .cmdToolbar(i).Enabled = False
             Next i
@@ -378,7 +378,7 @@ Private Sub impostaMenu()
             .mnuArchivi.Enabled = False
             .mnuStrumenti.Enabled = False
             .mnuSottoDialisi(4).Enabled = IsCaposala
-            .mnuappa = False
+            .mnuApparati = False
             For i = 0 To 16
                 .cmdToolbar(i).Enabled = False
             Next i

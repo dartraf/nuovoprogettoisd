@@ -231,7 +231,7 @@ Private Sub cmdDisTutAlert_Click()
         data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
         Set rsDataset = New Recordset
         'se si cambia la select cambiarla nella sub->Caricaflx e nel form LOGIN->Sub->ControllaAlertAppa
-        rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
+        rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND ALERT=TRUE AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
         Do While Not rsDataset.EOF
             rsDataset("LETTO") = True
             rsDataset.Update
@@ -274,7 +274,7 @@ Private Sub cmdStampa_Click()
     
     Set rsDataset = New Recordset
     'se si cambia la select cambiarla nella sub->Caricaflx, nella sub->cmdDisTutAlert_Click e nel form LOGIN->Sub->ControllaAlertAppa
-    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND ALERT=TRUE AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
 
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         With rsMain
@@ -360,7 +360,7 @@ Private Sub CaricaFlx()
       
     Set rsDataset = New Recordset
     'se si cambia la select cambiarla nella sub->cmdDisTutAlert_Click e nel form LOGIN->Sub->ControllaAlertAppa
-    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND ALERT=TRUE AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 
     Do While Not rsDataset.EOF
         With flxGriglia

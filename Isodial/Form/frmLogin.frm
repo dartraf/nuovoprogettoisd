@@ -284,7 +284,7 @@ Private Sub ControllaAlertAppa()
     
     data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
     'se si cambia la select cambiarla nel form ALERTAPPARATI->Sub->cmdDisTutAlert_e Sub->Caricaflx
-    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE (PROXREVFUN<#" & data & "# or PROXREVSIC<#" & data & "#) AND ALERT=TRUE AND SOSTITUITO=FALSE AND LETTO=FALSE ORDER BY TIPO_APPARATO,PROXREVFUN,PROXREVSIC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         frmAlertApparati.Show 1
     End If

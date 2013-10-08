@@ -918,28 +918,27 @@ Private Sub cmdTrova_Click(Index As Integer)
     'quando carico il frmTrova
     MantieniDato = tTrova.keyReturn
     
+    ModificaProduttore = True
+        
+    tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
+    tTrova.condizione = ""
+    tTrova.condStato = ""
+    Unload frmTrova
+    frmTrova.Show 1
+    KeyProduttore = tTrova.keyReturn
+                
     If Index = 1 Then
-        ModificaProduttore = True
-        tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
-        tTrova.condizione = ""
-        tTrova.condStato = ""
-        Unload frmTrova
-        frmTrova.Show 1
-        KeyProduttore = tTrova.keyReturn
-        lblProduttore.Caption = tTrova.NomeStriga
+        If tTrova.NomeStriga <> "" Then
+            lblProduttore.Caption = tTrova.NomeStriga
+        End If
         ModificaProduttore = False
     Else
-        ModificaManutentore = True
-        tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
-        tTrova.condizione = ""
-        tTrova.condStato = ""
-        Unload frmTrova
-        frmTrova.Show 1
-        keyManutentore = tTrova.keyReturn
-        lblManutentore.Caption = tTrova.NomeStriga
+        If tTrova.NomeStriga <> "" Then
+            lblManutentore.Caption = tTrova.NomeStriga
+        End If
         ModificaManutentore = False
     End If
-    
+    tTrova.NomeStriga = ""
     tTrova.keyReturn = MantieniDato
 End Sub
 

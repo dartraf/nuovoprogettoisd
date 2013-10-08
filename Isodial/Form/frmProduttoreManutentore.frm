@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmProduttoreManutentore 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Produttore/Manutentore"
@@ -464,7 +464,7 @@ Private Function Completo() As Boolean
     Completo = False
     
     If txtRagioneSociale.Text = "" Then
-        MsgBox "Inserire la REGIONE SOCIALE", vbInformation, "Informazione"
+        MsgBox "Inserire la RAGIONE SOCIALE", vbInformation, "Informazione"
         txtRagioneSociale.SetFocus
         Exit Function
     End If
@@ -480,6 +480,8 @@ Private Sub PulisciTutto()
 End Sub
 
 Private Sub cmdChiudi_Click()
+    ' conserva la ragione sociale se non si clicca su MEMORIZZA
+    mRagioneSociale = txtRagioneSociale
     modifica = False
     Unload Me
 End Sub
@@ -515,8 +517,8 @@ Private Sub cmdMemorizza_Click()
         End If
         
         Set rsProduttoreManutentore = Nothing
-                        
-        Call PulisciTutto
+        mRagioneSociale = txtRagioneSociale
+        tTrova.keyReturn = numKey
         
         cmdChiudi_Click
 

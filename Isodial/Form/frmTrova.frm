@@ -271,26 +271,45 @@ Private Sub cmdCambiaData_Click()
 End Sub
 
 Private Sub cmdModifica_Click()
+    ' esce se non seleziona alcun record e se non è stato inserito un nuovo record
     If tTrova.keyReturn = 0 Then
         Exit Sub
     End If
+
     frmProduttoreManutentore.Show 1
-    Call ColoraFlx(flxGriglia, 1)
-    tTrova.keyReturn = 0
+ 
+    Call Cerca
+    Call Evidenzia_Riga
+
 End Sub
 
 Private Sub cmdNuovo_Click()
     If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE Then
+        Call ColoraFlx(flxGriglia, 1, True)
         ' Per evitare che una volta selezionato il record
-        ' poi cliccando su nuovo mi carichi il record selezionato
+        ' cliccando su NUOVO si carichi il record precedentemente selezionato
         tTrova.keyReturn = 0
-        ' Lo chiudo per evitare problemi
+        mRagioneSociale = ""
         frmProduttoreManutentore.Show 1
+        Call Cerca
+        Call Evidenzia_Riga
     Else
         tTrova.keyReturn = -1
         Unload frmTrova
     End If
 End Sub
+Private Sub Evidenzia_Riga()
+    ' seleziona il record
+    flxGriglia.Row = Esiste(flxGriglia, 1, 0, mRagioneSociale)
+    Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
+    
+    ' si posiziona sul record
+    If flxGriglia.Row > 11 Then
+        flxGriglia.TopRow = flxGriglia.Row
+    End If
+
+End Sub
+
 
 'Private Sub Form_Activate()
 '    Call Cerca
@@ -420,7 +439,7 @@ Private Sub Cerca()
              .Rows = .Rows + 1
              .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
              .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("RAGIONE_SOCIALE")
-                 rsDatasetCerca.MoveNext
+             rsDatasetCerca.MoveNext
             End With
         Loop
         

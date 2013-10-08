@@ -18,13 +18,14 @@ Begin VB.Form frmPaziente
    Begin TabDlg.SSTab tabScheda 
       Height          =   7815
       Left            =   120
-      TabIndex        =   43
+      TabIndex        =   0
       Top             =   120
       Width           =   11895
       _ExtentX        =   20981
       _ExtentY        =   13785
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabsPerRow      =   2
       TabHeight       =   520
       ForeColor       =   255
@@ -39,203 +40,152 @@ Begin VB.Form frmPaziente
       EndProperty
       TabCaption(0)   =   "Scheda Paziente"
       TabPicture(0)   =   "frmPaziente.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Label1(7)"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Label1(6)"
-      Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "Label1(5)"
-      Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "Label1(4)"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "Label1(3)"
-      Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "Label1(2)"
-      Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "Label1(1)"
-      Tab(0).Control(6).Enabled=   0   'False
-      Tab(0).Control(7)=   "Label1(0)"
-      Tab(0).Control(7).Enabled=   0   'False
-      Tab(0).Control(8)=   "Label1(8)"
-      Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "Label1(9)"
-      Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "Label1(10)"
-      Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "Label1(11)"
-      Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "Label1(12)"
-      Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "Label1(13)"
-      Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "Label1(14)"
-      Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "Label1(15)"
-      Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "Label1(16)"
-      Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "Label1(17)"
-      Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "Label1(18)"
-      Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "Label1(19)"
-      Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "Label1(20)"
-      Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "Label1(21)"
-      Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "Label1(22)"
-      Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "Label1(24)"
-      Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "lblCodiceFiscale"
-      Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "Label1(26)"
-      Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "Label1(27)"
-      Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "Label1(28)"
-      Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "Label1(30)"
-      Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "Label1(31)"
-      Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "Label1(43)"
-      Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "Label1(45)"
-      Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "Label1(25)"
-      Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "Label1(29)"
-      Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "Label1(46)"
-      Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "Label1(48)"
-      Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "Label1(49)"
-      Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "lblEta"
-      Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "Label1(23)"
-      Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "oData(2)"
-      Tab(0).Control(39).Enabled=   0   'False
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "cboNazione"
+      Tab(0).Control(1)=   "panSesso"
+      Tab(0).Control(2)=   "cmdTrova(0)"
+      Tab(0).Control(3)=   "chkTrasportoInAmbulanza"
+      Tab(0).Control(4)=   "cboAccompagnatore"
+      Tab(0).Control(5)=   "txtTesseraSanitaria"
+      Tab(0).Control(6)=   "txtKm"
+      Tab(0).Control(7)=   "cboRegione"
+      Tab(0).Control(8)=   "cboComuneResidenza"
+      Tab(0).Control(9)=   "cboEsenzione"
+      Tab(0).Control(10)=   "cboDistretto"
+      Tab(0).Control(11)=   "txtCodiceId"
+      Tab(0).Control(12)=   "picMostraStato"
+      Tab(0).Control(13)=   "cboAsl"
+      Tab(0).Control(14)=   "panRH"
+      Tab(0).Control(15)=   "txtAllergia"
+      Tab(0).Control(16)=   "txtNumCarta"
+      Tab(0).Control(17)=   "cboGSanguigno"
+      Tab(0).Control(18)=   "cboStato"
+      Tab(0).Control(19)=   "cboDocumento"
+      Tab(0).Control(20)=   "txtNote"
+      Tab(0).Control(21)=   "txtProfessione"
+      Tab(0).Control(22)=   "cboCentroProv"
+      Tab(0).Control(23)=   "txtCodiceFiscale"
+      Tab(0).Control(24)=   "txtRilascioCarta"
+      Tab(0).Control(25)=   "txtNumeroProcura"
+      Tab(0).Control(26)=   "txtFax"
+      Tab(0).Control(27)=   "txtCellulare"
+      Tab(0).Control(28)=   "txtEmail"
+      Tab(0).Control(29)=   "txtTelefono"
+      Tab(0).Control(30)=   "txtIndirizzo"
+      Tab(0).Control(31)=   "txtProv(1)"
+      Tab(0).Control(32)=   "txtCAP(1)"
+      Tab(0).Control(33)=   "txtProv(0)"
+      Tab(0).Control(34)=   "txtCAP(0)"
+      Tab(0).Control(35)=   "txtCitta"
+      Tab(0).Control(36)=   "txtCognome"
+      Tab(0).Control(37)=   "txtNome"
+      Tab(0).Control(38)=   "chkEsenteReddito"
+      Tab(0).Control(39)=   "oData(0)"
       Tab(0).Control(40)=   "oData(1)"
-      Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "oData(0)"
-      Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).Control(42)=   "chkEsenteReddito"
-      Tab(0).Control(42).Enabled=   0   'False
-      Tab(0).Control(43)=   "txtNome"
-      Tab(0).Control(43).Enabled=   0   'False
-      Tab(0).Control(44)=   "txtCognome"
-      Tab(0).Control(44).Enabled=   0   'False
-      Tab(0).Control(45)=   "txtCitta"
-      Tab(0).Control(45).Enabled=   0   'False
-      Tab(0).Control(46)=   "txtCAP(0)"
-      Tab(0).Control(46).Enabled=   0   'False
-      Tab(0).Control(47)=   "txtProv(0)"
-      Tab(0).Control(47).Enabled=   0   'False
-      Tab(0).Control(48)=   "txtCAP(1)"
-      Tab(0).Control(48).Enabled=   0   'False
-      Tab(0).Control(49)=   "txtProv(1)"
-      Tab(0).Control(49).Enabled=   0   'False
-      Tab(0).Control(50)=   "txtIndirizzo"
-      Tab(0).Control(50).Enabled=   0   'False
-      Tab(0).Control(51)=   "txtTelefono"
-      Tab(0).Control(51).Enabled=   0   'False
-      Tab(0).Control(52)=   "txtEmail"
-      Tab(0).Control(52).Enabled=   0   'False
-      Tab(0).Control(53)=   "txtCellulare"
-      Tab(0).Control(53).Enabled=   0   'False
-      Tab(0).Control(54)=   "txtFax"
-      Tab(0).Control(54).Enabled=   0   'False
-      Tab(0).Control(55)=   "txtNumeroProcura"
-      Tab(0).Control(55).Enabled=   0   'False
-      Tab(0).Control(56)=   "txtRilascioCarta"
-      Tab(0).Control(56).Enabled=   0   'False
-      Tab(0).Control(57)=   "txtCodiceFiscale"
-      Tab(0).Control(57).Enabled=   0   'False
-      Tab(0).Control(58)=   "cboCentroProv"
-      Tab(0).Control(58).Enabled=   0   'False
-      Tab(0).Control(59)=   "txtProfessione"
-      Tab(0).Control(59).Enabled=   0   'False
-      Tab(0).Control(60)=   "txtNote"
-      Tab(0).Control(60).Enabled=   0   'False
-      Tab(0).Control(61)=   "cboDocumento"
-      Tab(0).Control(61).Enabled=   0   'False
-      Tab(0).Control(62)=   "cboStato"
-      Tab(0).Control(62).Enabled=   0   'False
-      Tab(0).Control(63)=   "cboGSanguigno"
-      Tab(0).Control(63).Enabled=   0   'False
-      Tab(0).Control(64)=   "txtNumCarta"
-      Tab(0).Control(64).Enabled=   0   'False
-      Tab(0).Control(65)=   "txtAllergia"
-      Tab(0).Control(65).Enabled=   0   'False
-      Tab(0).Control(66)=   "panRH"
-      Tab(0).Control(66).Enabled=   0   'False
-      Tab(0).Control(67)=   "cboAsl"
-      Tab(0).Control(67).Enabled=   0   'False
-      Tab(0).Control(68)=   "picMostraStato"
-      Tab(0).Control(68).Enabled=   0   'False
-      Tab(0).Control(69)=   "txtCodiceId"
-      Tab(0).Control(69).Enabled=   0   'False
-      Tab(0).Control(70)=   "cboDistretto"
-      Tab(0).Control(70).Enabled=   0   'False
-      Tab(0).Control(71)=   "cboEsenzione"
-      Tab(0).Control(71).Enabled=   0   'False
-      Tab(0).Control(72)=   "cboComuneResidenza"
-      Tab(0).Control(72).Enabled=   0   'False
-      Tab(0).Control(73)=   "cboRegione"
-      Tab(0).Control(73).Enabled=   0   'False
-      Tab(0).Control(74)=   "txtKm"
-      Tab(0).Control(74).Enabled=   0   'False
-      Tab(0).Control(75)=   "txtTesseraSanitaria"
-      Tab(0).Control(75).Enabled=   0   'False
-      Tab(0).Control(76)=   "cboAccompagnatore"
-      Tab(0).Control(76).Enabled=   0   'False
-      Tab(0).Control(77)=   "chkTrasportoInAmbulanza"
-      Tab(0).Control(77).Enabled=   0   'False
-      Tab(0).Control(78)=   "cmdTrova(0)"
-      Tab(0).Control(78).Enabled=   0   'False
-      Tab(0).Control(79)=   "panSesso"
-      Tab(0).Control(79).Enabled=   0   'False
-      Tab(0).Control(80)=   "cboNazione"
-      Tab(0).Control(80).Enabled=   0   'False
+      Tab(0).Control(41)=   "oData(2)"
+      Tab(0).Control(42)=   "Label1(23)"
+      Tab(0).Control(43)=   "lblEta"
+      Tab(0).Control(44)=   "Label1(49)"
+      Tab(0).Control(45)=   "Label1(48)"
+      Tab(0).Control(46)=   "Label1(46)"
+      Tab(0).Control(47)=   "Label1(29)"
+      Tab(0).Control(48)=   "Label1(25)"
+      Tab(0).Control(49)=   "Label1(45)"
+      Tab(0).Control(50)=   "Label1(43)"
+      Tab(0).Control(51)=   "Label1(31)"
+      Tab(0).Control(52)=   "Label1(30)"
+      Tab(0).Control(53)=   "Label1(28)"
+      Tab(0).Control(54)=   "Label1(27)"
+      Tab(0).Control(55)=   "Label1(26)"
+      Tab(0).Control(56)=   "lblCodiceFiscale"
+      Tab(0).Control(57)=   "Label1(24)"
+      Tab(0).Control(58)=   "Label1(22)"
+      Tab(0).Control(59)=   "Label1(21)"
+      Tab(0).Control(60)=   "Label1(20)"
+      Tab(0).Control(61)=   "Label1(19)"
+      Tab(0).Control(62)=   "Label1(18)"
+      Tab(0).Control(63)=   "Label1(17)"
+      Tab(0).Control(64)=   "Label1(16)"
+      Tab(0).Control(65)=   "Label1(15)"
+      Tab(0).Control(66)=   "Label1(14)"
+      Tab(0).Control(67)=   "Label1(13)"
+      Tab(0).Control(68)=   "Label1(12)"
+      Tab(0).Control(69)=   "Label1(11)"
+      Tab(0).Control(70)=   "Label1(10)"
+      Tab(0).Control(71)=   "Label1(9)"
+      Tab(0).Control(72)=   "Label1(8)"
+      Tab(0).Control(73)=   "Label1(0)"
+      Tab(0).Control(74)=   "Label1(1)"
+      Tab(0).Control(75)=   "Label1(2)"
+      Tab(0).Control(76)=   "Label1(3)"
+      Tab(0).Control(77)=   "Label1(4)"
+      Tab(0).Control(78)=   "Label1(5)"
+      Tab(0).Control(79)=   "Label1(6)"
+      Tab(0).Control(80)=   "Label1(7)"
       Tab(0).ControlCount=   81
       TabCaption(1)   =   "Medico di Base Associato"
       TabPicture(1)   =   "frmPaziente.frx":001C
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "txtRiceve"
-      Tab(1).Control(1)=   "cboTipologia"
-      Tab(1).Control(2)=   "chkPresenzaBarCode"
-      Tab(1).Control(3)=   "txtCodiceRegionaleMedico"
-      Tab(1).Control(4)=   "txtFaxMedico"
-      Tab(1).Control(5)=   "txtEmailMedico"
-      Tab(1).Control(6)=   "txtCellulareMedico"
-      Tab(1).Control(7)=   "txtTelefonoMedico"
-      Tab(1).Control(8)=   "txtStudioMedico"
-      Tab(1).Control(9)=   "txtIndirizzoMedico"
-      Tab(1).Control(10)=   "txtProvMedico"
-      Tab(1).Control(11)=   "txtCapMedico"
-      Tab(1).Control(12)=   "txtCittaMedico"
-      Tab(1).Control(13)=   "txtNomeMedico"
-      Tab(1).Control(14)=   "txtCognomeMedico"
-      Tab(1).Control(15)=   "cmdTrova(1)"
-      Tab(1).Control(16)=   "Label1(47)"
-      Tab(1).Control(17)=   "Label1(50)"
-      Tab(1).Control(18)=   "lblTipologiaMedico(47)"
-      Tab(1).Control(19)=   "Label1(42)"
-      Tab(1).Control(20)=   "Label1(38)"
-      Tab(1).Control(21)=   "Label1(41)"
-      Tab(1).Control(22)=   "Label1(40)"
-      Tab(1).Control(23)=   "Label1(39)"
-      Tab(1).Control(24)=   "Label1(37)"
-      Tab(1).Control(25)=   "Label1(36)"
-      Tab(1).Control(26)=   "Label1(35)"
-      Tab(1).Control(27)=   "Label1(34)"
-      Tab(1).Control(28)=   "Label1(33)"
-      Tab(1).Control(29)=   "Label1(32)"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "Label1(32)"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Label1(33)"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "Label1(34)"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "Label1(35)"
+      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(4)=   "Label1(36)"
+      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(5)=   "Label1(37)"
+      Tab(1).Control(5).Enabled=   0   'False
+      Tab(1).Control(6)=   "Label1(39)"
+      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(7)=   "Label1(40)"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "Label1(41)"
+      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(9)=   "Label1(38)"
+      Tab(1).Control(9).Enabled=   0   'False
+      Tab(1).Control(10)=   "Label1(42)"
+      Tab(1).Control(10).Enabled=   0   'False
+      Tab(1).Control(11)=   "lblTipologiaMedico(47)"
+      Tab(1).Control(11).Enabled=   0   'False
+      Tab(1).Control(12)=   "Label1(50)"
+      Tab(1).Control(12).Enabled=   0   'False
+      Tab(1).Control(13)=   "Label1(47)"
+      Tab(1).Control(13).Enabled=   0   'False
+      Tab(1).Control(14)=   "cmdTrova(1)"
+      Tab(1).Control(14).Enabled=   0   'False
+      Tab(1).Control(15)=   "txtCognomeMedico"
+      Tab(1).Control(15).Enabled=   0   'False
+      Tab(1).Control(16)=   "txtNomeMedico"
+      Tab(1).Control(16).Enabled=   0   'False
+      Tab(1).Control(17)=   "txtCittaMedico"
+      Tab(1).Control(17).Enabled=   0   'False
+      Tab(1).Control(18)=   "txtCapMedico"
+      Tab(1).Control(18).Enabled=   0   'False
+      Tab(1).Control(19)=   "txtProvMedico"
+      Tab(1).Control(19).Enabled=   0   'False
+      Tab(1).Control(20)=   "txtIndirizzoMedico"
+      Tab(1).Control(20).Enabled=   0   'False
+      Tab(1).Control(21)=   "txtStudioMedico"
+      Tab(1).Control(21).Enabled=   0   'False
+      Tab(1).Control(22)=   "txtTelefonoMedico"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "txtCellulareMedico"
+      Tab(1).Control(23).Enabled=   0   'False
+      Tab(1).Control(24)=   "txtEmailMedico"
+      Tab(1).Control(24).Enabled=   0   'False
+      Tab(1).Control(25)=   "txtFaxMedico"
+      Tab(1).Control(25).Enabled=   0   'False
+      Tab(1).Control(26)=   "txtCodiceRegionaleMedico"
+      Tab(1).Control(26).Enabled=   0   'False
+      Tab(1).Control(27)=   "chkPresenzaBarCode"
+      Tab(1).Control(27).Enabled=   0   'False
+      Tab(1).Control(28)=   "cboTipologia"
+      Tab(1).Control(28).Enabled=   0   'False
+      Tab(1).Control(29)=   "txtRiceve"
+      Tab(1).Control(29).Enabled=   0   'False
       Tab(1).ControlCount=   30
       Begin VB.TextBox txtRiceve 
          Enabled         =   0   'False
@@ -249,9 +199,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1005
-         Left            =   -72480
+         Left            =   2520
          MultiLine       =   -1  'True
-         TabIndex        =   117
+         TabIndex        =   65
          Top             =   3000
          Width           =   3495
       End
@@ -267,10 +217,10 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   -67200
+         Left            =   7800
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   118
+         TabIndex        =   66
          Top             =   3000
          Visible         =   0   'False
          Width           =   3255
@@ -289,8 +239,8 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   -68520
-         TabIndex        =   116
+         Left            =   6480
+         TabIndex        =   64
          Top             =   2580
          Width           =   3975
       End
@@ -306,9 +256,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   7
-         TabIndex        =   115
+         TabIndex        =   63
          Top             =   2580
          Width           =   855
       End
@@ -324,9 +274,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67440
+         Left            =   7560
          MaxLength       =   31
-         TabIndex        =   114
+         TabIndex        =   62
          Top             =   2160
          Width           =   3495
       End
@@ -342,9 +292,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   31
-         TabIndex        =   113
+         TabIndex        =   61
          Top             =   2160
          Width           =   3495
       End
@@ -360,9 +310,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67440
+         Left            =   7560
          MaxLength       =   31
-         TabIndex        =   112
+         TabIndex        =   60
          Top             =   1740
          Width           =   3495
       End
@@ -378,9 +328,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   31
-         TabIndex        =   111
+         TabIndex        =   59
          Top             =   1740
          Width           =   3495
       End
@@ -396,9 +346,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67440
+         Left            =   7560
          MaxLength       =   31
-         TabIndex        =   110
+         TabIndex        =   58
          Top             =   1320
          Width           =   3495
       End
@@ -414,9 +364,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   31
-         TabIndex        =   109
+         TabIndex        =   57
          Top             =   1320
          Width           =   3495
       End
@@ -432,9 +382,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -64920
+         Left            =   10080
          MaxLength       =   2
-         TabIndex        =   108
+         TabIndex        =   56
          Top             =   900
          Width           =   975
       End
@@ -450,9 +400,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67440
+         Left            =   7560
          MaxLength       =   5
-         TabIndex        =   107
+         TabIndex        =   55
          Top             =   900
          Width           =   975
       End
@@ -468,9 +418,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   31
-         TabIndex        =   106
+         TabIndex        =   54
          Top             =   900
          Width           =   3495
       End
@@ -486,9 +436,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67440
+         Left            =   7560
          MaxLength       =   31
-         TabIndex        =   105
+         TabIndex        =   53
          Top             =   480
          Width           =   3495
       End
@@ -504,9 +454,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   31
-         TabIndex        =   104
+         TabIndex        =   52
          Top             =   480
          Width           =   3495
       End
@@ -522,18 +472,18 @@ Begin VB.Form frmPaziente
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   315
-         Left            =   2520
+         Left            =   -72480
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   99
+         TabIndex        =   1
          Top             =   470
          Width           =   3495
       End
       Begin VB.Frame panSesso 
          BorderStyle     =   0  'None
          Height          =   495
-         Left            =   7920
-         TabIndex        =   98
+         Left            =   -67080
+         TabIndex        =   118
          Top             =   1320
          Width           =   1455
          Begin VB.OptionButton optSesso 
@@ -551,7 +501,7 @@ Begin VB.Form frmPaziente
             Height          =   375
             Index           =   0
             Left            =   0
-            TabIndex        =   2
+            TabIndex        =   7
             Top             =   10
             Width           =   735
          End
@@ -570,7 +520,7 @@ Begin VB.Form frmPaziente
             Height          =   375
             Index           =   1
             Left            =   720
-            TabIndex        =   3
+            TabIndex        =   8
             Top             =   10
             Width           =   615
          End
@@ -579,10 +529,10 @@ Begin VB.Form frmPaziente
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Index           =   0
-         Left            =   1800
+         Left            =   -73200
          Picture         =   "frmPaziente.frx":0038
          Style           =   1  'Graphical
-         TabIndex        =   59
+         TabIndex        =   2
          Top             =   860
          Width           =   450
       End
@@ -599,8 +549,8 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   6450
-         TabIndex        =   37
+         Left            =   -68550
+         TabIndex        =   44
          Top             =   7365
          Width           =   3015
       End
@@ -615,10 +565,10 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2520
+         Left            =   -72480
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   36
+         TabIndex        =   43
          Top             =   7320
          Width           =   3495
       End
@@ -633,9 +583,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   20
-         TabIndex        =   29
+         TabIndex        =   36
          Top             =   6000
          Width           =   3735
       End
@@ -650,9 +600,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   11040
+         Left            =   -63960
          MaxLength       =   6
-         TabIndex        =   11
+         TabIndex        =   16
          Top             =   2280
          Width           =   615
       End
@@ -668,11 +618,11 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":0491
-         Left            =   2520
+         Left            =   -72480
          List            =   "frmPaziente.frx":0493
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   12
+         TabIndex        =   13
          Top             =   2220
          Width           =   3495
       End
@@ -687,10 +637,10 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2520
+         Left            =   -72480
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   8
+         TabIndex        =   17
          Top             =   2640
          Width           =   3495
       End
@@ -706,11 +656,11 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":0495
-         Left            =   7920
+         Left            =   -67080
          List            =   "frmPaziente.frx":0497
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   24
+         TabIndex        =   31
          Top             =   5160
          Width           =   1335
       End
@@ -726,11 +676,11 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":0499
-         Left            =   5400
+         Left            =   -69600
          List            =   "frmPaziente.frx":049B
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   23
+         TabIndex        =   30
          Top             =   5160
          Width           =   615
       End
@@ -745,19 +695,19 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10920
+         Left            =   -64080
          MaxLength       =   5
-         TabIndex        =   4
+         TabIndex        =   9
          Top             =   1380
          Width           =   735
       End
       Begin VB.PictureBox picMostraStato 
          BorderStyle     =   0  'None
          Height          =   375
-         Left            =   2040
+         Left            =   -72960
          ScaleHeight     =   375
          ScaleWidth      =   375
-         TabIndex        =   58
+         TabIndex        =   80
          Top             =   6460
          Width           =   375
       End
@@ -773,19 +723,19 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":049D
-         Left            =   2520
+         Left            =   -72480
          List            =   "frmPaziente.frx":05D6
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   22
+         TabIndex        =   29
          Top             =   5160
          Width           =   2295
       End
       Begin VB.Frame panRH 
          BorderStyle     =   0  'None
          Height          =   375
-         Left            =   9120
-         TabIndex        =   56
+         Left            =   -65880
+         TabIndex        =   78
          Top             =   6360
          Width           =   2175
          Begin VB.OptionButton optRh 
@@ -802,7 +752,7 @@ Begin VB.Form frmPaziente
             Height          =   495
             Index           =   0
             Left            =   480
-            TabIndex        =   32
+            TabIndex        =   39
             Top             =   0
             Width           =   735
          End
@@ -820,7 +770,7 @@ Begin VB.Form frmPaziente
             Height          =   495
             Index           =   1
             Left            =   1320
-            TabIndex        =   33
+            TabIndex        =   40
             Top             =   0
             Width           =   855
          End
@@ -839,7 +789,7 @@ Begin VB.Form frmPaziente
             Height          =   240
             Index           =   44
             Left            =   0
-            TabIndex        =   57
+            TabIndex        =   79
             Top             =   120
             Width           =   600
             WordWrap        =   -1  'True
@@ -856,9 +806,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   30
-         TabIndex        =   35
+         TabIndex        =   42
          Top             =   6915
          Width           =   3735
       End
@@ -873,9 +823,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   30
-         TabIndex        =   20
+         TabIndex        =   26
          Top             =   4335
          Width           =   3735
       End
@@ -891,10 +841,10 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":0777
-         Left            =   7920
+         Left            =   -67080
          List            =   "frmPaziente.frx":0787
          Style           =   2  'Dropdown List
-         TabIndex        =   31
+         TabIndex        =   38
          Top             =   6450
          Width           =   735
       End
@@ -910,10 +860,10 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":0798
-         Left            =   2520
+         Left            =   -72480
          List            =   "frmPaziente.frx":079A
          Style           =   2  'Dropdown List
-         TabIndex        =   30
+         TabIndex        =   37
          Top             =   6480
          Width           =   3495
       End
@@ -929,10 +879,10 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   315
          ItemData        =   "frmPaziente.frx":079C
-         Left            =   2520
+         Left            =   -72480
          List            =   "frmPaziente.frx":07A9
          Style           =   2  'Dropdown List
-         TabIndex        =   19
+         TabIndex        =   25
          Top             =   4320
          Width           =   3495
       End
@@ -947,9 +897,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   30
-         TabIndex        =   34
+         TabIndex        =   41
          Top             =   6900
          Width           =   3495
       End
@@ -964,9 +914,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   30
-         TabIndex        =   27
+         TabIndex        =   34
          Top             =   5580
          Width           =   3735
       End
@@ -981,9 +931,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2520
+         Left            =   -72480
          Sorted          =   -1  'True
-         TabIndex        =   28
+         TabIndex        =   35
          Top             =   6000
          Width           =   3495
       End
@@ -998,9 +948,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   16
-         TabIndex        =   26
+         TabIndex        =   33
          Top             =   5580
          Width           =   3495
       End
@@ -1015,9 +965,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   30
-         TabIndex        =   21
+         TabIndex        =   27
          Top             =   4740
          Width           =   3495
       End
@@ -1032,9 +982,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   30
-         TabIndex        =   18
+         TabIndex        =   23
          Top             =   3900
          Width           =   3495
       End
@@ -1049,9 +999,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   30
-         TabIndex        =   17
+         TabIndex        =   22
          Top             =   3510
          Width           =   3735
       End
@@ -1066,9 +1016,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   35
-         TabIndex        =   15
+         TabIndex        =   20
          Top             =   3075
          Width           =   3735
       End
@@ -1083,9 +1033,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   30
-         TabIndex        =   16
+         TabIndex        =   21
          Top             =   3480
          Width           =   3495
       End
@@ -1100,9 +1050,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   35
-         TabIndex        =   14
+         TabIndex        =   19
          Top             =   3060
          Width           =   3495
       End
@@ -1117,9 +1067,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   30
-         TabIndex        =   13
+         TabIndex        =   18
          Top             =   2655
          Width           =   3735
       End
@@ -1135,9 +1085,9 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   9360
+         Left            =   -65640
          MaxLength       =   5
-         TabIndex        =   10
+         TabIndex        =   15
          Top             =   2220
          Width           =   735
       End
@@ -1153,9 +1103,9 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   5
-         TabIndex        =   9
+         TabIndex        =   14
          Top             =   2220
          Width           =   735
       End
@@ -1171,9 +1121,9 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   9360
+         Left            =   -65640
          MaxLength       =   5
-         TabIndex        =   7
+         TabIndex        =   12
          Top             =   1800
          Width           =   735
       End
@@ -1189,9 +1139,9 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   5
-         TabIndex        =   6
+         TabIndex        =   11
          Top             =   1800
          Width           =   735
       End
@@ -1206,9 +1156,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   30
-         TabIndex        =   5
+         TabIndex        =   10
          Top             =   1800
          Width           =   3495
       End
@@ -1223,9 +1173,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2520
+         Left            =   -72480
          MaxLength       =   31
-         TabIndex        =   0
+         TabIndex        =   3
          Top             =   960
          Width           =   3495
       End
@@ -1240,9 +1190,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7920
+         Left            =   -67080
          MaxLength       =   31
-         TabIndex        =   1
+         TabIndex        =   4
          Top             =   960
          Width           =   3735
       End
@@ -1258,8 +1208,8 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   9360
-         TabIndex        =   25
+         Left            =   -65640
+         TabIndex        =   32
          Top             =   5160
          Width           =   2415
       End
@@ -1268,18 +1218,18 @@ Begin VB.Form frmPaziente
          Enabled         =   0   'False
          Height          =   450
          Index           =   1
-         Left            =   -73200
+         Left            =   1800
          Picture         =   "frmPaziente.frx":07D4
          Style           =   1  'Graphical
-         TabIndex        =   44
+         TabIndex        =   51
          Top             =   360
          Width           =   450
       End
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   0
-         Left            =   2520
-         TabIndex        =   101
+         Left            =   -72480
+         TabIndex        =   5
          Top             =   1320
          Width           =   2100
          _ExtentX        =   3704
@@ -1291,8 +1241,8 @@ Begin VB.Form frmPaziente
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   1
-         Left            =   7920
-         TabIndex        =   102
+         Left            =   -67080
+         TabIndex        =   24
          Top             =   3840
          Width           =   2100
          _ExtentX        =   3704
@@ -1304,8 +1254,8 @@ Begin VB.Form frmPaziente
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   2
-         Left            =   7920
-         TabIndex        =   103
+         Left            =   -67080
+         TabIndex        =   28
          Top             =   4680
          Width           =   2100
          _ExtentX        =   3704
@@ -1329,7 +1279,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   47
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   122
          Top             =   3000
          Width           =   750
@@ -1349,8 +1299,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   50
-         Left            =   -74880
-         TabIndex        =   120
+         Left            =   120
+         TabIndex        =   121
          Top             =   2580
          Width           =   1890
       End
@@ -1369,8 +1319,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   47
-         Left            =   -68520
-         TabIndex        =   119
+         Left            =   6480
+         TabIndex        =   120
          Top             =   3000
          Visible         =   0   'False
          Width           =   1185
@@ -1389,8 +1339,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   480
          Index           =   23
-         Left            =   120
-         TabIndex        =   100
+         Left            =   -74880
+         TabIndex        =   119
          Top             =   330
          Width           =   2175
          WordWrap        =   -1  'True
@@ -1408,8 +1358,8 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5280
-         TabIndex        =   97
+         Left            =   -69720
+         TabIndex        =   6
          Top             =   1365
          Width           =   735
       End
@@ -1427,8 +1377,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   49
-         Left            =   120
-         TabIndex        =   96
+         Left            =   -74880
+         TabIndex        =   117
          Top             =   7365
          Width           =   1785
       End
@@ -1446,8 +1396,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   345
          Index           =   48
-         Left            =   6480
-         TabIndex        =   95
+         Left            =   -68520
+         TabIndex        =   116
          Top             =   6030
          Width           =   1485
          WordWrap        =   -1  'True
@@ -1465,8 +1415,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Index           =   46
-         Left            =   10200
-         TabIndex        =   94
+         Left            =   -64800
+         TabIndex        =   115
          Top             =   2160
          Width           =   855
       End
@@ -1484,8 +1434,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   29
-         Left            =   6480
-         TabIndex        =   93
+         Left            =   -68520
+         TabIndex        =   114
          Top             =   6480
          Width           =   1320
          WordWrap        =   -1  'True
@@ -1504,8 +1454,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   25
-         Left            =   120
-         TabIndex        =   92
+         Left            =   -74880
+         TabIndex        =   113
          Top             =   2250
          Width           =   2325
       End
@@ -1523,8 +1473,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   45
-         Left            =   9720
-         TabIndex        =   91
+         Left            =   -65280
+         TabIndex        =   112
          Top             =   1395
          Width           =   1035
       End
@@ -1542,8 +1492,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   43
-         Left            =   6480
-         TabIndex        =   90
+         Left            =   -68520
+         TabIndex        =   111
          Top             =   6915
          Width           =   825
       End
@@ -1561,8 +1511,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   31
-         Left            =   120
-         TabIndex        =   89
+         Left            =   -74880
+         TabIndex        =   110
          Top             =   6915
          Width           =   510
       End
@@ -1580,8 +1530,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   30
-         Left            =   120
-         TabIndex        =   88
+         Left            =   -74880
+         TabIndex        =   109
          Top             =   6480
          Width           =   1515
       End
@@ -1599,8 +1549,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   28
-         Left            =   6480
-         TabIndex        =   87
+         Left            =   -68520
+         TabIndex        =   108
          Top             =   5610
          Width           =   1260
       End
@@ -1618,8 +1568,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   27
-         Left            =   120
-         TabIndex        =   86
+         Left            =   -74880
+         TabIndex        =   107
          Top             =   6030
          Width           =   1545
       End
@@ -1637,8 +1587,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   26
-         Left            =   6480
-         TabIndex        =   85
+         Left            =   -68520
+         TabIndex        =   106
          Top             =   5190
          Width           =   1095
       End
@@ -1655,8 +1605,8 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   120
-         TabIndex        =   84
+         Left            =   -74880
+         TabIndex        =   105
          Top             =   5610
          Width           =   2325
       End
@@ -1674,8 +1624,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   195
          Index           =   24
-         Left            =   4920
-         TabIndex        =   83
+         Left            =   -70080
+         TabIndex        =   104
          Top             =   5220
          Width           =   465
       End
@@ -1693,8 +1643,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   22
-         Left            =   120
-         TabIndex        =   82
+         Left            =   -74880
+         TabIndex        =   103
          Top             =   5190
          Width           =   1770
       End
@@ -1712,8 +1662,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   21
-         Left            =   6480
-         TabIndex        =   81
+         Left            =   -68520
+         TabIndex        =   102
          Top             =   4800
          Width           =   135
       End
@@ -1731,8 +1681,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   20
-         Left            =   120
-         TabIndex        =   80
+         Left            =   -74880
+         TabIndex        =   101
          Top             =   4800
          Width           =   1605
       End
@@ -1750,8 +1700,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   19
-         Left            =   6480
-         TabIndex        =   79
+         Left            =   -68520
+         TabIndex        =   100
          Top             =   4365
          Width           =   825
       End
@@ -1769,8 +1719,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   480
          Index           =   18
-         Left            =   120
-         TabIndex        =   78
+         Left            =   -74880
+         TabIndex        =   99
          Top             =   4230
          Width           =   2175
          WordWrap        =   -1  'True
@@ -1789,8 +1739,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   17
-         Left            =   6480
-         TabIndex        =   77
+         Left            =   -68520
+         TabIndex        =   98
          Top             =   3960
          Width           =   345
       End
@@ -1808,8 +1758,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   16
-         Left            =   120
-         TabIndex        =   76
+         Left            =   -74880
+         TabIndex        =   97
          Top             =   3900
          Width           =   1695
       End
@@ -1827,8 +1777,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   15
-         Left            =   120
-         TabIndex        =   75
+         Left            =   -74880
+         TabIndex        =   96
          Top             =   3510
          Width           =   675
       End
@@ -1846,8 +1796,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   14
-         Left            =   6480
-         TabIndex        =   74
+         Left            =   -68520
+         TabIndex        =   95
          Top             =   3510
          Width           =   390
       End
@@ -1865,8 +1815,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   13
-         Left            =   6480
-         TabIndex        =   73
+         Left            =   -68520
+         TabIndex        =   94
          Top             =   3120
          Width           =   870
       End
@@ -1884,8 +1834,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   12
-         Left            =   120
-         TabIndex        =   72
+         Left            =   -74880
+         TabIndex        =   93
          Top             =   3100
          Width           =   870
       End
@@ -1903,8 +1853,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   11
-         Left            =   6480
-         TabIndex        =   71
+         Left            =   -68520
+         TabIndex        =   92
          Top             =   2670
          Width           =   870
       End
@@ -1922,8 +1872,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   10
-         Left            =   6480
-         TabIndex        =   70
+         Left            =   -68520
+         TabIndex        =   91
          Top             =   2235
          Width           =   645
       End
@@ -1941,8 +1891,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   9
-         Left            =   8760
-         TabIndex        =   69
+         Left            =   -66240
+         TabIndex        =   90
          Top             =   2235
          Width           =   555
       End
@@ -1960,8 +1910,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   8
-         Left            =   120
-         TabIndex        =   68
+         Left            =   -74880
+         TabIndex        =   89
          Top             =   2670
          Width           =   2280
       End
@@ -1979,8 +1929,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   120
-         TabIndex        =   67
+         Left            =   -74880
+         TabIndex        =   88
          Top             =   960
          Width           =   1005
       End
@@ -1998,8 +1948,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   1
-         Left            =   6480
-         TabIndex        =   66
+         Left            =   -68520
+         TabIndex        =   87
          Top             =   960
          Width           =   630
       End
@@ -2017,8 +1967,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   120
-         TabIndex        =   65
+         Left            =   -74880
+         TabIndex        =   86
          Top             =   1395
          Width           =   1620
       End
@@ -2036,8 +1986,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   3
-         Left            =   4680
-         TabIndex        =   64
+         Left            =   -70320
+         TabIndex        =   85
          Top             =   1395
          Width           =   465
       End
@@ -2055,8 +2005,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   120
-         TabIndex        =   63
+         Left            =   -74880
+         TabIndex        =   84
          Top             =   1815
          Width           =   1590
       End
@@ -2074,8 +2024,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   5
-         Left            =   6480
-         TabIndex        =   62
+         Left            =   -68520
+         TabIndex        =   83
          Top             =   1395
          Width           =   675
       End
@@ -2093,8 +2043,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   8760
-         TabIndex        =   61
+         Left            =   -66240
+         TabIndex        =   82
          Top             =   1815
          Width           =   555
       End
@@ -2112,8 +2062,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   7
-         Left            =   6480
-         TabIndex        =   60
+         Left            =   -68520
+         TabIndex        =   81
          Top             =   1815
          Width           =   645
       End
@@ -2132,8 +2082,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   42
-         Left            =   -68520
-         TabIndex        =   55
+         Left            =   6480
+         TabIndex        =   77
          Top             =   1320
          Width           =   675
       End
@@ -2152,8 +2102,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   38
-         Left            =   -74880
-         TabIndex        =   54
+         Left            =   120
+         TabIndex        =   76
          Top             =   2160
          Width           =   675
       End
@@ -2172,8 +2122,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   41
-         Left            =   -74880
-         TabIndex        =   53
+         Left            =   120
+         TabIndex        =   75
          Top             =   1740
          Width           =   945
       End
@@ -2192,8 +2142,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   40
-         Left            =   -68520
-         TabIndex        =   52
+         Left            =   6480
+         TabIndex        =   74
          Top             =   1740
          Width           =   945
       End
@@ -2212,8 +2162,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   39
-         Left            =   -68520
-         TabIndex        =   51
+         Left            =   6480
+         TabIndex        =   73
          Top             =   2160
          Width           =   390
       End
@@ -2232,8 +2182,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   37
-         Left            =   -68520
-         TabIndex        =   50
+         Left            =   6480
+         TabIndex        =   72
          Top             =   900
          Width           =   645
       End
@@ -2252,8 +2202,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   36
-         Left            =   -65640
-         TabIndex        =   49
+         Left            =   9360
+         TabIndex        =   71
          Top             =   900
          Width           =   555
       End
@@ -2272,8 +2222,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   35
-         Left            =   -74880
-         TabIndex        =   48
+         Left            =   120
+         TabIndex        =   70
          Top             =   1320
          Width           =   870
       End
@@ -2292,8 +2242,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   34
-         Left            =   -74880
-         TabIndex        =   47
+         Left            =   120
+         TabIndex        =   69
          Top             =   900
          Width           =   480
       End
@@ -2312,8 +2262,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   33
-         Left            =   -68520
-         TabIndex        =   46
+         Left            =   6480
+         TabIndex        =   68
          Top             =   480
          Width           =   630
       End
@@ -2332,8 +2282,8 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   32
-         Left            =   -74880
-         TabIndex        =   45
+         Left            =   120
+         TabIndex        =   67
          Top             =   480
          Width           =   1005
       End
@@ -2341,7 +2291,7 @@ Begin VB.Form frmPaziente
    Begin VB.Frame Frame3 
       Height          =   855
       Left            =   120
-      TabIndex        =   42
+      TabIndex        =   50
       Top             =   7800
       Width           =   11895
       Begin VB.CommandButton cmdMemorizza 
@@ -2357,7 +2307,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   8880
-         TabIndex        =   121
+         TabIndex        =   48
          Top             =   240
          Width           =   1335
       End
@@ -2374,7 +2324,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   4440
-         TabIndex        =   39
+         TabIndex        =   46
          Top             =   240
          Width           =   1215
       End
@@ -2391,7 +2341,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   5880
-         TabIndex        =   40
+         TabIndex        =   47
          Top             =   240
          Width           =   2775
       End
@@ -2409,7 +2359,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   10440
-         TabIndex        =   41
+         TabIndex        =   49
          Top             =   240
          Width           =   1215
       End
@@ -2426,7 +2376,7 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   495
          Left            =   2280
-         TabIndex        =   38
+         TabIndex        =   45
          Top             =   240
          Width           =   1935
       End

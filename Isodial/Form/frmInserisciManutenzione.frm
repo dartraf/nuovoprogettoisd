@@ -388,9 +388,9 @@ Dim ProxRevSic As Date
 'SelezionatoManutenzione = False    Inserisco la nuova manutenzione anche se seleziono con un click l' apparato
 'SelezionatoManutenzione = True     Seleziono la manutenzione desiderata e la carico
 
-Private Sub cboDescrizone_GotFocus(Index As Integer)
-    cboDescrizone(0).BackColor = colArancione
-End Sub
+'Private Sub cboDescrizone_GotFocus(Index As Integer)
+'    cboDescrizone(0).BackColor = colArancione
+'End Sub
 
 Private Sub cboDescrizone_LostFocus(Index As Integer)
     If Len(cboDescrizone(0)) > 120 Then
@@ -404,12 +404,12 @@ Private Sub cboDescrizone_LostFocus(Index As Integer)
         Call GestisciNuovoApparato("DESCRIZIONE_MANUTENZIONE", cboDescrizone(0))
     End If
 
-    cboDescrizone(0).BackColor = vbWhite
+'    cboDescrizone(0).BackColor = vbWhite
 End Sub
 
-Private Sub cboDettagliIntervento_GotFocus(Index As Integer)
-    cboDettagliIntervento(1).BackColor = colArancione
-End Sub
+'Private Sub cboDettagliIntervento_GotFocus(Index As Integer)
+'    cboDettagliIntervento(1).BackColor = colArancione
+'End Sub
 
 Private Sub cboDettagliIntervento_LostFocus(Index As Integer)
     If Len(cboDettagliIntervento(1)) > 120 Then
@@ -423,7 +423,7 @@ Private Sub cboDettagliIntervento_LostFocus(Index As Integer)
         Call GestisciNuovoApparato("DETTAGLIO_MANUTENZIONE", cboDettagliIntervento(1))
     End If
 
-    cboDettagliIntervento(1).BackColor = vbWhite
+ '   cboDettagliIntervento(1).BackColor = vbWhite
 End Sub
 
 Private Sub cmdChiudi_Click()
@@ -435,7 +435,7 @@ Private Sub cmdChiudi_Click()
         KeyReturnManutenzione = -2
         Unload frmInserisciManutenzione
     End If
-                        rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = ""
+    rptRichiestaIntervento.Sections("Intestazione").Controls("lblRagioneSociale").Caption = ""
 
 End Sub
 

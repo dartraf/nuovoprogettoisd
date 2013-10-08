@@ -860,9 +860,9 @@ Private Sub cboModalitaAcquisizione_LostFocus(Index As Integer)
     
 End Sub
 
-Private Sub cboModello_GotFocus(Index As Integer)
-    cboModello(2).BackColor = colArancione
-End Sub
+'Private Sub cboModello_GotFocus(Index As Integer)
+'    cboModello(2).BackColor = colArancione
+'End Sub
 
 Private Sub cboModello_LostFocus(Index As Integer)
     
@@ -877,16 +877,16 @@ Private Sub cboModello_LostFocus(Index As Integer)
         Call GestisciNuovo("APPARATI_MODELLO", cboModello(2))
     End If
     
-    cboModello(2).BackColor = vbWhite
+'    cboModello(2).BackColor = vbWhite
     
 End Sub
 
-Private Sub cboTipoApparato_GotFocus(Index As Integer)
-        cboTipoApparato(0).BackColor = colArancione
-End Sub
+'Private Sub cboTipoApparato_GotFocus(Index As Integer)
+'        cboTipoApparato(0).BackColor = colArancione
+'End Sub
 
 Private Sub cboTipoApparato_LostFocus(Index As Integer)
-
+ 
     If Len(cboTipoApparato(0)) > 30 Then
         MsgBox "NON è possibile memorizzare oltre 30 caratteri", vbCritical, "ATTENZIONE!!!"
         cboTipoApparato(0).Text = ""
@@ -909,7 +909,7 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
         Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
 
-    cboTipoApparato(0).BackColor = vbWhite
+'   cboTipoApparato(0).BackColor = vbWhite
     
 End Sub
 

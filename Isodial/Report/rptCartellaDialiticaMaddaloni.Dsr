@@ -13,7 +13,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
    _ExtentY        =   15769
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   9868
+   ReportWidth     =   9870
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -67,8 +67,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label27"
-         Object.Left            =   7256
-         Object.Top             =   1758
+         Object.Left            =   7710
+         Object.Top             =   1701
          Object.Width           =   1350
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -86,9 +86,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item2 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line1"
-         Object.Left            =   8391
-         Object.Top             =   2041
-         Object.Width           =   855
+         Object.Left            =   9000
+         Object.Top             =   1984
+         Object.Width           =   500
       EndProperty
       ItemType3       =   7
       BeginProperty Item3 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -112,8 +112,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblCodiceID"
-         Object.Left            =   8617
-         Object.Top             =   1758
+         Object.Left            =   9071
+         Object.Top             =   1701
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -125,7 +125,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Alignment       =   2
       EndProperty
       ItemType6       =   3
       BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -201,7 +200,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   18930
-      NumControls     =   113
+      NumControls     =   121
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -623,21 +622,22 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       ItemType18      =   4
       BeginProperty Item18 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtImmunit‡HBV"
-         Object.Left            =   1928
-         Object.Top             =   2551
-         Object.Width           =   1305
-         Object.Height          =   330
+         Name            =   "txtDataHBSAG"
+         Object.Left            =   1588
+         Object.Top             =   2835
+         Object.Width           =   1050
+         Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          CanGrow         =   -1  'True
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   1
             Format          =   "dd/MM/yyyy"
@@ -653,7 +653,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "Label50"
          Object.Top             =   2551
-         Object.Width           =   1870
+         Object.Width           =   1605
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -664,15 +664,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Immunit‡ HBV del"
+         Object.Caption         =   "Immunit‡ HBV:"
       EndProperty
       ItemType20      =   4
       BeginProperty Item20 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHBsAG"
-         Object.Left            =   4138
+         Object.Left            =   2665
          Object.Top             =   2551
-         Object.Width           =   1245
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -698,9 +698,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label51"
-         Object.Left            =   3232
+         Object.Left            =   1588
          Object.Top             =   2551
-         Object.Width           =   915
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -708,10 +708,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HBsAg"
+         Object.Caption         =   "HBsAg ->"
+         Alignment       =   2
       EndProperty
       ItemType22      =   4
       BeginProperty Item22 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -1208,9 +1209,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item43 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHBeAG"
-         Object.Left            =   4138
-         Object.Top             =   3005
-         Object.Width           =   1245
+         Object.Left            =   5953
+         Object.Top             =   2551
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1236,9 +1237,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item44 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
-         Object.Left            =   3232
-         Object.Top             =   3005
-         Object.Width           =   900
+         Object.Left            =   4876
+         Object.Top             =   2551
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1246,18 +1247,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HBeAg"
+         Object.Caption         =   "HBeAg ->"
+         Alignment       =   2
       EndProperty
       ItemType45      =   4
       BeginProperty Item45 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHBsAB"
-         Object.Left            =   6521
+         Object.Left            =   4308
          Object.Top             =   2551
-         Object.Width           =   1245
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1283,9 +1285,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item46 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   5444
+         Object.Left            =   3231
          Object.Top             =   2551
-         Object.Width           =   1065
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1293,18 +1295,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HBsAb"
+         Object.Caption         =   "HBsAb ->"
+         Alignment       =   2
       EndProperty
       ItemType47      =   4
       BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHBeAB"
-         Object.Left            =   6520
-         Object.Top             =   3005
-         Object.Width           =   1245
+         Object.Left            =   7597
+         Object.Top             =   2551
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1330,9 +1333,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item48 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   5443
-         Object.Top             =   3005
-         Object.Width           =   1065
+         Object.Left            =   6519
+         Object.Top             =   2551
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1340,29 +1343,31 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HBeAb"
+         Object.Caption         =   "HBeAb ->"
+         Alignment       =   2
       EndProperty
       ItemType49      =   4
       BeginProperty Item49 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtImmunitaHCV"
-         Object.Left            =   1928
-         Object.Top             =   3459
-         Object.Width           =   1305
-         Object.Height          =   330
+         Name            =   "txtDataHCV"
+         Object.Left            =   1587
+         Object.Top             =   3515
+         Object.Width           =   1050
+         Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          CanGrow         =   -1  'True
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   1
             Format          =   "dd/MM/yyyy"
@@ -1377,8 +1382,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item50 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Top             =   3459
-         Object.Width           =   1870
+         Object.Top             =   3231
+         Object.Width           =   1605
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1389,15 +1394,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Immunit‡ HCV del"
+         Object.Caption         =   "Immunit‡ HCV:"
       EndProperty
       ItemType51      =   4
       BeginProperty Item51 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHCVAb"
-         Object.Left            =   4138
-         Object.Top             =   3459
-         Object.Width           =   1245
+         Object.Left            =   2721
+         Object.Top             =   3231
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1423,9 +1428,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item52 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   3232
-         Object.Top             =   3459
-         Object.Width           =   900
+         Object.Left            =   1587
+         Object.Top             =   3231
+         Object.Width           =   1134
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1433,18 +1438,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HCVAb"
+         Object.Caption         =   "HCVAb ->"
+         Alignment       =   2
       EndProperty
       ItemType53      =   4
       BeginProperty Item53 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHCVRn"
-         Object.Left            =   6520
-         Object.Top             =   3459
-         Object.Width           =   1245
+         Object.Left            =   5101
+         Object.Top             =   3231
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1470,9 +1476,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item54 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label12"
-         Object.Left            =   5443
-         Object.Top             =   3459
-         Object.Width           =   1065
+         Object.Left            =   3230
+         Object.Top             =   3231
+         Object.Width           =   1875
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1480,29 +1486,31 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HCV-Rna"
+         Object.Caption         =   "HCV-Rna qual.->"
+         Alignment       =   2
       EndProperty
       ItemType55      =   4
       BeginProperty Item55 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtImmunitaHIV"
-         Object.Left            =   1928
-         Object.Top             =   3912
-         Object.Width           =   1305
+         Object.Left            =   1587
+         Object.Top             =   4138
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          CanGrow         =   -1  'True
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   1
             Format          =   "dd/MM/yyyy"
@@ -1517,8 +1525,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item56 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
-         Object.Top             =   3912
-         Object.Width           =   1875
+         Object.Top             =   3855
+         Object.Width           =   1605
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1529,15 +1537,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Immunit‡ HIV  del"
+         Object.Caption         =   "Immunit‡ HIV:"
       EndProperty
       ItemType57      =   4
       BeginProperty Item57 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHIV"
-         Object.Left            =   4138
-         Object.Top             =   3912
-         Object.Width           =   1245
+         Object.Left            =   2665
+         Object.Top             =   3855
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1549,6 +1557,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Strikethrough   =   0   'False
          EndProperty
          CanGrow         =   -1  'True
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -1563,9 +1572,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item58 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label13"
-         Object.Left            =   3232
-         Object.Top             =   3912
-         Object.Width           =   900
+         Object.Left            =   1587
+         Object.Top             =   3855
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1573,17 +1582,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HIV"
+         Object.Caption         =   "HIV ->"
+         Alignment       =   2
       EndProperty
       ItemType59      =   3
       BeginProperty Item59 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label14"
-         Object.Left            =   113
-         Object.Top             =   4420
+         Object.Top             =   4422
          Object.Width           =   9000
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2293,9 +2302,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item91 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label36"
-         Object.Left            =   7768
-         Object.Top             =   3005
-         Object.Width           =   795
+         Object.Left            =   8163
+         Object.Top             =   2551
+         Object.Width           =   1050
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -2303,18 +2312,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "HBcAb"
+         Object.Caption         =   "HBcAb ->"
+         Alignment       =   2
       EndProperty
       ItemType92      =   4
       BeginProperty Item92 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHBcAb"
-         Object.Left            =   8561
-         Object.Top             =   3005
-         Object.Width           =   1245
+         Object.Left            =   9240
+         Object.Top             =   2551
+         Object.Width           =   540
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -2834,6 +2844,172 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          Object.Caption         =   "TERAPIA DOMICILIARE"
          Alignment       =   2
       EndProperty
+      ItemType113     =   4
+      BeginProperty Item113 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataHBSAB"
+         Object.Left            =   3231
+         Object.Top             =   2835
+         Object.Width           =   1050
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType114     =   4
+      BeginProperty Item114 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataHBEAG"
+         Object.Left            =   4876
+         Object.Top             =   2835
+         Object.Width           =   1050
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType115     =   4
+      BeginProperty Item115 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataHBEAB"
+         Object.Left            =   6519
+         Object.Top             =   2835
+         Object.Width           =   1050
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType116     =   4
+      BeginProperty Item116 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataHBCAB"
+         Object.Left            =   8163
+         Object.Top             =   2835
+         Object.Width           =   1050
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType117     =   4
+      BeginProperty Item117 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataHCVRNA"
+         Object.Left            =   3230
+         Object.Top             =   3515
+         Object.Width           =   1590
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType118     =   5
+      BeginProperty Item118 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Line2"
+         Object.Top             =   2835
+         Object.Width           =   1500
+      EndProperty
+      ItemType119     =   5
+      BeginProperty Item119 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Line4"
+         Object.Top             =   3515
+         Object.Width           =   1500
+      EndProperty
+      ItemType120     =   5
+      BeginProperty Item120 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Line5"
+         Object.Top             =   4139
+         Object.Width           =   1440
+      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -2996,16 +3172,25 @@ Private Sub DataReport_Initialize()
             
             .Item("txtEmogruppo").DataField = "EMOGRUPPO"
             
-            .Item("txtImmunit‡HBV").DataField = "IMMUNITA_HBV"
+            .Item("txtDataHBSAG").DataField = "DATA_HBSAG"
             .Item("txtHBsAG").DataField = "HBSAG"
+            
+            .Item("txtDataHBSAB").DataField = "DATA_HBSAB"
             .Item("txtHBsAB").DataField = "HBSAB"
             
+            .Item("txtDataHBEAG").DataField = "DATA_HBEAG"
             .Item("txtHBeAG").DataField = "HBEAG"
+            
+            .Item("txtDataHBEAB").DataField = "DATA_HBEAB"
             .Item("txtHBeAB").DataField = "HBEAB"
+            
+            .Item("txtDataHBCAB").DataField = "DATA_HBCAB"
             .Item("txtHBcAb").DataField = "HBCAB"
             
-            .Item("txtImmunitaHCV").DataField = "IMMUNITA_HCV"
+            .Item("txtDataHCV").DataField = "DATA_HCV"
             .Item("txtHCVAb").DataField = "HCVAB"
+            
+            .Item("txtDataHCVRNA").DataField = "DATA_HCVRNA"
             .Item("txtHCVRn").DataField = "HCVRN"
             
             .Item("txtImmunitaHIV").DataField = "IMMUNITA_HIV"

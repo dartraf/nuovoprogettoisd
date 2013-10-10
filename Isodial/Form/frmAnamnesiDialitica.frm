@@ -268,42 +268,42 @@ Begin VB.Form frmAnamnesiDialitica
       TabCaption(1)   =   "Scheda 2"
       TabPicture(1)   =   "frmAnamnesiDialitica.frx":0475
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboDosiUnitaMisura"
-      Tab(1).Control(1)=   "txtFlussoSangue"
-      Tab(1).Control(2)=   "txtSolInfCc"
-      Tab(1).Control(3)=   "cboCartuccia"
-      Tab(1).Control(4)=   "cboSolInfusionale"
-      Tab(1).Control(5)=   "cboSolDialitica"
-      Tab(1).Control(6)=   "txtFlusso"
-      Tab(1).Control(7)=   "cboAnticoagulante(0)"
-      Tab(1).Control(8)=   "cboAnticoagulante(1)"
-      Tab(1).Control(9)=   "txtDose(0)"
-      Tab(1).Control(10)=   "txtDose(1)"
-      Tab(1).Control(11)=   "txtDose(2)"
+      Tab(1).Control(0)=   "Label1(16)"
+      Tab(1).Control(1)=   "Label1(15)"
+      Tab(1).Control(2)=   "Label1(14)"
+      Tab(1).Control(3)=   "Label1(13)"
+      Tab(1).Control(4)=   "Label1(12)"
+      Tab(1).Control(5)=   "Label1(11)"
+      Tab(1).Control(6)=   "Label1(26)"
+      Tab(1).Control(7)=   "Label1(28)"
+      Tab(1).Control(8)=   "Label1(29)"
+      Tab(1).Control(9)=   "Label1(30)"
+      Tab(1).Control(10)=   "Label1(31)"
+      Tab(1).Control(11)=   "Label1(35)"
       Tab(1).Control(12)=   "txtDose(3)"
-      Tab(1).Control(13)=   "Label1(35)"
-      Tab(1).Control(14)=   "Label1(31)"
-      Tab(1).Control(15)=   "Label1(30)"
-      Tab(1).Control(16)=   "Label1(29)"
-      Tab(1).Control(17)=   "Label1(28)"
-      Tab(1).Control(18)=   "Label1(26)"
-      Tab(1).Control(19)=   "Label1(11)"
-      Tab(1).Control(20)=   "Label1(12)"
-      Tab(1).Control(21)=   "Label1(13)"
-      Tab(1).Control(22)=   "Label1(14)"
-      Tab(1).Control(23)=   "Label1(15)"
-      Tab(1).Control(24)=   "Label1(16)"
+      Tab(1).Control(13)=   "txtDose(2)"
+      Tab(1).Control(14)=   "txtDose(1)"
+      Tab(1).Control(15)=   "txtDose(0)"
+      Tab(1).Control(16)=   "cboAnticoagulante(1)"
+      Tab(1).Control(17)=   "cboAnticoagulante(0)"
+      Tab(1).Control(18)=   "txtFlusso"
+      Tab(1).Control(19)=   "cboSolDialitica"
+      Tab(1).Control(20)=   "cboSolInfusionale"
+      Tab(1).Control(21)=   "cboCartuccia"
+      Tab(1).Control(22)=   "txtSolInfCc"
+      Tab(1).Control(23)=   "txtFlussoSangue"
+      Tab(1).Control(24)=   "cboDosiUnitaMisura"
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "cmdEliminaEpo"
-      Tab(2).Control(1)=   "txtNote"
-      Tab(2).Control(2)=   "txtUI"
+      Tab(2).Control(0)=   "Label1(32)"
+      Tab(2).Control(1)=   "lblUnitaMisura"
+      Tab(2).Control(2)=   "Label1(34)"
       Tab(2).Control(3)=   "cboEPO"
-      Tab(2).Control(4)=   "Label1(34)"
-      Tab(2).Control(5)=   "lblUnitaMisura"
-      Tab(2).Control(6)=   "Label1(32)"
+      Tab(2).Control(4)=   "txtUI"
+      Tab(2).Control(5)=   "txtNote"
+      Tab(2).Control(6)=   "cmdEliminaEpo"
       Tab(2).ControlCount=   7
       Begin VB.ComboBox cboCodicePrestaione 
          BeginProperty Font 
@@ -2051,21 +2051,21 @@ Private Function CompletoStorico() As Boolean
     If Not (modFiltro = False And modPeso = False And modLinee = False) Then
         If modFiltro Then
             If oData(1).data = "" Then
-                MsgBox "Inserire la data dell'ultimo tipo di filtro", vbCritical, "Attenzione"
+                MsgBox "Inserire la data dell'ultimo tipo di filtro", vbCritical, "ATTENZIONE!!!"
                 CompletoStorico = False
                 Exit Function
             End If
         End If
         If modPeso Then
             If oData(0).data = "" Then
-                MsgBox "Inserire la data dell'ultimo peso secco", vbCritical, "Attenzione"
+                MsgBox "Inserire la data dell'ultimo peso secco", vbCritical, "ATTENZIONE!!!"
                 CompletoStorico = False
                 Exit Function
             End If
         End If
         If modLinee Then
             If oData(2).data = "" Then
-                MsgBox "Inserire la data dell'ultimo tipo di linee", vbCritical, "Attenzione"
+                MsgBox "Inserire la data dell'ultimo tipo di linee", vbCritical, "ATTENZIONE!!!"
                 CompletoStorico = False
                 Exit Function
             End If
@@ -2158,39 +2158,39 @@ End Sub
 Private Function Completo() As Boolean
     Completo = False
     If intPazientiKey = 0 Then
-        MsgBox "Selezionare il paziente", vbCritical, "Attenzione"
+        MsgBox "Selezionare il paziente", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If cboTipoFiltro.ListIndex = -1 Then
-        MsgBox "Selezionare il tipo di filtro", vbCritical, "Attenzione"
+        MsgBox "Selezionare il tipo di filtro", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If txtPesoSecco = "" Then
-        MsgBox "Inserire il peso secco", vbCritical, "Attenzione"
+        MsgBox "Inserire il peso secco", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If cboTipoLinee.ListIndex = -1 Then
-        MsgBox "Inserire il tipo di linee", vbCritical, "Attenzione"
+        MsgBox "Inserire il tipo di linee", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If oData(0).data = "" Then
-        MsgBox "Inserire la data del peso secco", vbCritical, "Attenzione"
+        MsgBox "Inserire la data del peso secco", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If oData(1).data = "" Then
-        MsgBox "Inserire la data del tipo di filtro", vbCritical, "Attenzione"
+        MsgBox "Inserire la data del tipo di filtro", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If oData(2).data = "" Then
-        MsgBox "Inserire la data del tipo di linee", vbCritical, "Attenzione"
+        MsgBox "Inserire la data del tipo di linee", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If cboAccesso.ListIndex = -1 Then
-        MsgBox "Inserire il tipo di accesso vascolare", vbCritical, "Attenzione"
+        MsgBox "Inserire il tipo di accesso vascolare", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If cboDosiUnitaMisura.ListIndex = -1 Then
-        MsgBox "Selezionare l'unità di misura delle dosi dell'anticoagulante", vbCritical, "Attenzione"
+        MsgBox "Selezionare l'unità di misura delle dosi dell'anticoagulante", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     Completo = True
@@ -2213,11 +2213,11 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
     
     
     If intPazientiKey = 0 Then
-        MsgBox "Selezionare il paziente", vbInformation, "Attenzione"
+        MsgBox "Selezionare il paziente", vbInformation, "ATTENZIONE!!!"
         Exit Sub
     End If
     If Not modifica Then
-        MsgBox "La scheda deve essere prima memorizzata", vbCritical, "Attenzione"
+        MsgBox "Memorizzare prima la scheda", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
     
@@ -2233,13 +2233,19 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
                 "       NEW adVarChar (200) as AFFETTO_IRC, " & _
                 "       NEW adDate as TERAPIA_DIALITCA_DAL, " & _
                 "       NEW adVarChar (20) as EMOGRUPPO, " & _
-                "       NEW adVarChar (10) as IMMUNITA_HBV, " & _
+                "       NEW adVarChar (10) as DATA_HBSAG, " & _
+                "       NEW adVarChar (10) as DATA_HBSAB, " & _
+                "       NEW adVarChar (10) as DATA_HBEAG, " & _
+                "       NEW adVarChar (10) as DATA_HBEAB, " & _
+                "       NEW adVarChar (10) as DATA_HBCAB, "
+   strSqlStampa = strSqlStampa & _
                 "       NEW adVarChar (10) as HBSAG, " & _
                 "       NEW adVarChar (10) as HBSAB, " & _
                 "       NEW adVarChar (10) as HBEAG, " & _
                 "       NEW adVarChar (10) as HBEAB, " & _
                 "       NEW adVarChar (10) as HBCAB, " & _
-                "       NEW adVarChar (10) as IMMUNITA_HCV, " & _
+                "       NEW adVarChar (10) as DATA_HCV, " & _
+                "       NEW adVarChar (10) as DATA_HCVRNA, " & _
                 "       NEW adVarChar (10) as HCVAB, " & _
                 "       NEW adVarChar (10) as HCVRN, " & _
                 "       NEW adVarChar (10) as IMMUNITA_HIV, " & _
@@ -2380,116 +2386,121 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
         rsDataset.Open strSql & "'%HBSAG%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("VALORE") = -2 Then
-                .Fields("HBSAG") = "NEGATIVO"
+                .Fields("HBSAG") = "NEG."
             ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HBSAG") = "POSITIVO"
+                .Fields("HBSAG") = "POS."
             Else
                 .Fields("HBSAG") = rsDataset("VALORE")
             End If
-            .Fields("IMMUNITA_HBV") = CStr(rsDataset("DATA"))
+            .Fields("DATA_HBSAG") = CStr(rsDataset("DATA"))
         Else
             .Fields("HBSAG") = "- -"
-            .Fields("IMMUNITA_HBV") = "- -"
+            .Fields("DATA_HBSAG") = "- -"
         End If
         rsDataset.Close
                                                         
-        rsDataset.Open strSql & "'%HBSAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+        rsDataset.Open strSql & "'HBSAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("VALORE") = -2 Then
-                .Fields("HBSAB") = "NEGATIVO"
+                .Fields("HBSAB") = "NEG."
             ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HBSAB") = "POSITIVO"
+                .Fields("HBSAB") = "POS."
             Else
                 .Fields("HBSAB") = "- -"
             End If
-            .Fields("IMMUNITA_HBV") = CStr(rsDataset("DATA"))
+            .Fields("DATA_HBSAB") = CStr(rsDataset("DATA"))
        Else
             .Fields("HBSAB") = "- -"
-        End If
-        rsDataset.Close
-        
-        rsDataset.Open strSql & "'%HBEAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
-        If Not (rsDataset.EOF And rsDataset.BOF) Then
-            If rsDataset("VALORE") = -2 Then
-                .Fields("HBEAB") = "NEGATIVO"
-            ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HBEAB") = "POSITIVO"
-            Else
-                .Fields("HBEAB") = rsDataset("VALORE")
-            End If
-            .Fields("IMMUNITA_HBV") = CStr(rsDataset("DATA"))
-        Else
-            .Fields("HBEAB") = "- -"
-        End If
-        rsDataset.Close
-        
-        rsDataset.Open strSql & "'%HBCAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
-        If Not (rsDataset.EOF And rsDataset.BOF) Then
-            If rsDataset("VALORE") = -2 Then
-                .Fields("HBCAB") = "NEGATIVO"
-            ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HBCAB") = "POSITIVO"
-            Else
-                .Fields("HBCAB") = rsDataset("VALORE")
-            End If
-            .Fields("IMMUNITA_HBV") = CStr(rsDataset("DATA"))
-        Else
-            .Fields("HBCAB") = "- -"
+            .Fields("DATA_HBSAB") = "- -"
         End If
         rsDataset.Close
         
         rsDataset.Open strSql & "'%HBEAG%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("VALORE") = -2 Then
-                .Fields("HBEAG") = "NEGATIVO"
+                .Fields("HBEAG") = "NEG."
             ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HBEAG") = "POSITIVO"
+                .Fields("HBEAG") = "POS."
             Else
                 .Fields("HBEAG") = rsDataset("VALORE")
             End If
-            .Fields("IMMUNITA_HBV") = CStr(rsDataset("DATA"))
+            .Fields("DATA_HBEAG") = CStr(rsDataset("DATA"))
         Else
             .Fields("HBEAG") = "- -"
+            .Fields("DATA_HBEAG") = "- -"
         End If
         rsDataset.Close
         
+        rsDataset.Open strSql & "'%HBEAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+        If Not (rsDataset.EOF And rsDataset.BOF) Then
+            If rsDataset("VALORE") = -2 Then
+                .Fields("HBEAB") = "NEG."
+            ElseIf rsDataset("VALORE") = -1 Then
+                .Fields("HBEAB") = "POS."
+            Else
+                .Fields("HBEAB") = rsDataset("VALORE")
+            End If
+            .Fields("DATA_HBEAB") = CStr(rsDataset("DATA"))
+        Else
+            .Fields("HBEAB") = "- -"
+            .Fields("DATA_HBEAB") = "- -"
+        End If
+        rsDataset.Close
+        
+        rsDataset.Open strSql & "'%HBCAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+        If Not (rsDataset.EOF And rsDataset.BOF) Then
+            If rsDataset("VALORE") = -2 Then
+                .Fields("HBCAB") = "NEG."
+            ElseIf rsDataset("VALORE") = -1 Then
+                .Fields("HBCAB") = "POS."
+            Else
+                .Fields("HBCAB") = rsDataset("VALORE")
+            End If
+            .Fields("DATA_HBCAB") = CStr(rsDataset("DATA"))
+        Else
+            .Fields("HBCAB") = "- -"
+            .Fields("DATA_HBCAB") = "- -"
+        End If
+        rsDataset.Close
+           
         rsDataset.Open strSql & "'%HCVAB%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("VALORE") = -2 Then
-                .Fields("HCVAB") = "NEGATIVO"
+                .Fields("HCVAB") = "NEG."
             ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HCVAB") = "POSITIVO"
+                .Fields("HCVAB") = "POS."
             Else
                 .Fields("HCVAB") = rsDataset("VALORE")
             End If
-            .Fields("IMMUNITA_HCV") = CStr(rsDataset("DATA"))
+            .Fields("DATA_HCV") = CStr(rsDataset("DATA"))
         Else
             .Fields("HCVAB") = "- -"
-            .Fields("IMMUNITA_HCV") = "- -"
+            .Fields("DATA_HCV") = "- -"
         End If
         rsDataset.Close
 
-        rsDataset.Open strSql & "'%HCVRN%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+        rsDataset.Open strSql & "'HCV-RNA qual%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("VALORE") = -2 Then
-                .Fields("HCVRN") = "NEGATIVO"
+                .Fields("HCVRN") = "NEG."
             ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HCVRN") = "POSITIVO"
+                .Fields("HCVRN") = "POS."
             Else
                 .Fields("HCVRN") = rsDataset("VALORE")
             End If
-            .Fields("IMMUNITA_HCV") = CStr(rsDataset("DATA"))
+            .Fields("DATA_HCVRNA") = CStr(rsDataset("DATA"))
         Else
             .Fields("HCVRN") = "- -"
+            .Fields("DATA_HCVRNA") = "- -"
         End If
         rsDataset.Close
 
         rsDataset.Open strSql & "'%HIV%' order by Data desc", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             If rsDataset("VALORE") = -2 Then
-                .Fields("HIV") = "NEGATIVO"
+                .Fields("HIV") = "NEG."
             ElseIf rsDataset("VALORE") = -1 Then
-                .Fields("HIV") = "POSITIVO"
+                .Fields("HIV") = "POS."
             Else
                 .Fields("HIV") = rsDataset("VALORE")
             End If
@@ -2627,11 +2638,11 @@ End Sub
 
 Private Sub cmdStampa_Click()
     If intPazientiKey = 0 Then
-        MsgBox "Selezionare il paziente", vbInformation, "Attenzione"
+        MsgBox "Selezionare il paziente", vbInformation, "ATTENZIONE!!!"
         Exit Sub
     End If
     If Not modifica Then
-        MsgBox "La scheda deve essere prima memorizzata", vbCritical, "Attenzione"
+        MsgBox "La scheda deve essere prima memorizzata", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     End If
       

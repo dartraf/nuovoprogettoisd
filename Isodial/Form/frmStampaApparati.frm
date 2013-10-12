@@ -2,15 +2,15 @@ VERSION 5.00
 Begin VB.Form frmStampaApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Apparati "
-   ClientHeight    =   3015
+   ClientHeight    =   3480
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   5595
+   ClientWidth     =   5625
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3015
-   ScaleWidth      =   5595
+   ScaleHeight     =   3480
+   ScaleWidth      =   5625
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraStampa 
@@ -23,13 +23,13 @@ Begin VB.Form frmStampaApparati
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2175
+      Height          =   2655
       Left            =   120
       TabIndex        =   0
       Top             =   0
       Width           =   5415
-      Begin VB.CheckBox chkIncludiApparatiRottamati 
-         Caption         =   "Includi Apparati Rottamati"
+      Begin VB.OptionButton optTutti 
+         Caption         =   "Stampa tutti i produttori"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -39,12 +39,21 @@ Begin VB.Form frmStampaApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   735
-         Left            =   3840
-         TabIndex        =   8
+         Height          =   255
+         Left            =   120
+         TabIndex        =   9
          Top             =   360
-         Width           =   1455
+         Width           =   3015
+      End
+      Begin VB.CommandButton cmdTrova 
+         BackColor       =   &H00C0C0C0&
+         Height          =   450
+         Left            =   120
+         Picture         =   "frmStampaApparati.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   7
+         Top             =   720
+         Width           =   450
       End
       Begin VB.OptionButton optApparatiRottamati 
          Caption         =   "Elenco apparati rottamati"
@@ -59,8 +68,8 @@ Begin VB.Form frmStampaApparati
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   7
-         Top             =   1680
+         TabIndex        =   6
+         Top             =   2160
          Width           =   3615
       End
       Begin VB.OptionButton optTipoApparato 
@@ -76,25 +85,8 @@ Begin VB.Form frmStampaApparati
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   6
-         Top             =   960
-         Width           =   3615
-      End
-      Begin VB.OptionButton optProduttore 
-         Caption         =   "Elenco per produttore"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   120
          TabIndex        =   5
-         Top             =   600
+         Top             =   1800
          Width           =   3615
       End
       Begin VB.OptionButton optInventario 
@@ -111,15 +103,33 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   4
-         Top             =   240
+         Top             =   1440
          Width           =   3615
+      End
+      Begin VB.Label lblNomeProduttore 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   720
+         TabIndex        =   8
+         Top             =   840
+         Width           =   4455
       End
    End
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
       TabIndex        =   3
-      Top             =   2040
+      Top             =   2520
       Width           =   5415
       Begin VB.CommandButton cmdEsci 
          Caption         =   "&Chiudi"
@@ -168,45 +178,45 @@ Option Explicit
 Dim strSql As String
 Dim TipoElenco As String
 
+Private Sub optTutti_Click()
+    lblNomeProduttore.Caption = ""
+End Sub
+
 Private Sub cmdAvanti_Click()
+Dim NomeProduttore As String
     
-    If optInventario.Value = False And optProduttore.Value = False And optTipoApparato.Value = False And optApparatiRottamati.Value = False Then
+    If optInventario.Value = False And optTutti.Value = Unchecked And optTipoApparato.Value = False And optApparatiRottamati.Value = False And lblNomeProduttore.Caption = "" Then
         MsgBox "Selezionare il tipo di elenco da stampare", vbInformation, "Informazione"
         Exit Sub
     End If
     
     If optInventario.Value = True Then
-        If chkIncludiApparatiRottamati.Value = Checked Then
-            strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
-        Else
-            strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY NUMERO_INVENTARIO"
-        End If
+        strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco Apparati per N° Inventario"
-        Call StampaApparato
-    
-    ElseIf optProduttore.Value = True Then
-        If chkIncludiApparatiRottamati.Value = Checked Then
-            strSql = "SELECT * FROM APPARATI ORDER BY PRODUTTORE"
-        Else
-            strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY PRODUTTORE"
-        End If
-        TipoElenco = "Elenco Apparati per Produttore"
         Call StampaApparato
         
     ElseIf optTipoApparato.Value = True Then
-        If chkIncludiApparatiRottamati.Value = Checked Then
-            strSql = "SELECT * FROM APPARATI ORDER BY TIPO_APPARATO"
-        Else
-            strSql = "SELECT * FROM APPARATI WHERE IsNull(DATA_ROTTAMAZIONE) ORDER BY TIPO_APPARATO"
-        End If
+        strSql = "SELECT * FROM APPARATI ORDER BY TIPO_APPARATO"
         TipoElenco = "Elenco per Categoria Apparati"
         Call StampaApparato
         
     ElseIf optApparatiRottamati.Value = True Then
-        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE Is Not Null ORDER BY KEY"
+        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE Is Not Null ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco Apparati Rottamati"
         Call StampaApparato
         
+    ' Stampe per Produttore
+    ElseIf optTutti.Value = True Then
+        strSql = "SELECT * FROM APPARATI ORDER BY PRODUTTORE"
+        TipoElenco = "Elenco Apparati per Produttore"
+        Call StampaApparato
+        
+    ElseIf lblNomeProduttore.Caption <> "" Then
+        NomeProduttore = lblNomeProduttore.Caption
+        strSql = "SELECT * FROM APPARATI WHERE PRODUTTORE='" & NomeProduttore & "'" & "ORDER BY NUMERO_INVENTARIO"
+        TipoElenco = "Elenco Apparati per Produttore"
+        Call StampaApparato
+
     End If
     
 End Sub
@@ -260,7 +270,10 @@ Private Sub StampaApparato()
     End If
     
     If rsDataset.RecordCount > 0 Then
-        TotaleReni = rsDataset.RecordCount
+            TotaleReni = rsDataset.RecordCount
+        Else
+            MsgBox "Non sono presenti Apparati da Stampare", vbInformation, "Informazione"
+            Exit Sub
     End If
     
     Set rsDataset = Nothing
@@ -280,6 +293,39 @@ Private Sub cmdEsci_Click()
     Unload frmStampaApparati
 End Sub
 
-Private Sub optApparatiRottamati_Click()
-    chkIncludiApparatiRottamati.Value = Unchecked
+Private Sub cmdTrova_Click()
+    
+    optApparatiRottamati.Value = Unchecked
+    optInventario.Value = Unchecked
+    optTipoApparato.Value = Unchecked
+    optTutti.Value = Unchecked
+    
+    'La variabile ModificaProduttore è vera così
+    'quando carico il formTrova mi carica
+    '1)il cmdNuovo
+    '2)il nome della stringa selezionata
+    ModificaProduttore = True
+        
+    'Azzero la variabile per evitare di ricaricare lo stesso dato
+    tTrova.NomeStriga = ""
+    
+    tTrova.Tipo = tpPRODUTTORE_MANUTENTORE
+    tTrova.condizione = ""
+    tTrova.condStato = ""
+    Unload frmTrova
+    frmTrova.Show 1
+    lblNomeProduttore.Caption = tTrova.NomeStriga
+
+End Sub
+
+Private Sub optApparatiRottamati_GotFocus()
+    lblNomeProduttore.Caption = ""
+End Sub
+
+Private Sub optInventario_GotFocus()
+    lblNomeProduttore.Caption = ""
+End Sub
+
+Private Sub optTipoApparato_GotFocus()
+    lblNomeProduttore.Caption = ""
 End Sub

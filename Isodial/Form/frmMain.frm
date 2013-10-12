@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "08/10/2013"
+            TextSave        =   "12/10/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -637,11 +637,6 @@ Begin VB.MDIForm frmMain
          Index           =   15
          Tag             =   "E.&D.T.A.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
-      Begin VB.Menu mnuSottoTab 
-         Caption         =   "Parco Ren&i Artificiali"
-         Index           =   16
-         Tag             =   "&Gestione reni art.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
-      End
    End
    Begin VB.Menu mnuStrumenti 
       Caption         =   "&Strumenti"
@@ -827,6 +822,10 @@ Begin VB.MDIForm frmMain
       Begin VB.Menu mnuSottoApparati 
          Caption         =   "Stampa Re&gistro"
          Index           =   1
+      End
+      Begin VB.Menu mnuSottoApparati 
+         Caption         =   "Parco Ren&i Artificiali"
+         Index           =   2
       End
    End
    Begin VB.Menu mnu1 
@@ -1123,6 +1122,9 @@ Private Sub mnuSottoApparati_Click(Index As Integer)
     Select Case Index
         Case 0: frmApparati.Show 1
         Case 1: Call StampaRegistroApparati
+        Case 2: tTabelle = tpRENI
+                Unload frmTabelle
+                frmTabelle.Show
     End Select
 End Sub
 
@@ -1261,10 +1263,9 @@ End Sub
 Private Sub mnuSottoTab_Click(Index As Integer)
     Select Case Index
         Case 1: Exit Sub
-        Case 6, 16, 15
+        Case 6, 15
             Select Case Index
                 Case 6: tTabelle = tpESAME
-                Case 16: tTabelle = tpRENI
                 Case 15: tTabelle = tpEDTA
             End Select
             Unload frmTabelle
@@ -2180,7 +2181,6 @@ Public Sub SubClassMenuXP()
           mnuSottoTab(13).Caption = "&Voci per Esami di Laboratorio"
           mnuSottoTab(14).Caption = "Raggruppamento &Esami di Laboratorio"
           mnuSottoTab(15).Caption = "E.D.&T.A."
-          mnuSottoTab(16).Caption = "Parco Ren&i Artificiali"
     mnuStrumenti.Caption = "&Strumenti"
           mnuGesPass.Caption = "&Gestione Utenti"
           mnuImpostaStampa.Caption = "&Intestazione Centro"
@@ -2227,6 +2227,7 @@ Public Sub SubClassMenuXP()
     mnuApparati.Caption = "Apparati"
         mnuSottoApparati(0).Caption = "Gestione &Apparati"
         mnuSottoApparati(1).Caption = "Stampa Re&gistro"
+        mnuSottoApparati(2).Caption = "Parco Ren&i Artificiali"
     mnu1.Caption = "&?"
         mnuabout.Caption = "&Informazioni su Isodial..."
           

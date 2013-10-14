@@ -2,14 +2,14 @@ VERSION 5.00
 Begin VB.Form frmStampaApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Apparati "
-   ClientHeight    =   3480
+   ClientHeight    =   3930
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   5625
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3480
+   ScaleHeight     =   3930
    ScaleWidth      =   5625
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -23,13 +23,13 @@ Begin VB.Form frmStampaApparati
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2655
+      Height          =   3135
       Left            =   120
       TabIndex        =   0
       Top             =   0
       Width           =   5415
       Begin VB.OptionButton optTutti 
-         Caption         =   "Stampa tutti i produttori"
+         Caption         =   "Elenco per tutti i produttori"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -42,17 +42,17 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   9
-         Top             =   360
-         Width           =   3015
+         Top             =   1680
+         Width           =   3135
       End
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
-         Left            =   120
+         Left            =   1400
          Picture         =   "frmStampaApparati.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   7
-         Top             =   720
+         Top             =   240
          Width           =   450
       End
       Begin VB.OptionButton optApparatiRottamati 
@@ -69,11 +69,11 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   6
-         Top             =   2160
+         Top             =   2760
          Width           =   3615
       End
       Begin VB.OptionButton optTipoApparato 
-         Caption         =   "Elenco per categoria apparato"
+         Caption         =   "Elenco per tutte le categorie"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -86,11 +86,11 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   5
-         Top             =   1800
-         Width           =   3615
+         Top             =   2040
+         Width           =   3375
       End
       Begin VB.OptionButton optInventario 
-         Caption         =   "Elenco per n° inventario"
+         Caption         =   "Elenco per n° d'inventario"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -103,8 +103,42 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   4
-         Top             =   1440
+         Top             =   2400
          Width           =   3615
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Elenco per Cat.Appar."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   120
+         TabIndex        =   11
+         Top             =   960
+         Width           =   1215
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Elenco per Produttore"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   120
+         TabIndex        =   10
+         Top             =   240
+         Width           =   1215
       End
       Begin VB.Label lblNomeProduttore 
          BackColor       =   &H00FFFFFF&
@@ -119,17 +153,17 @@ Begin VB.Form frmStampaApparati
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   720
+         Left            =   1920
          TabIndex        =   8
-         Top             =   840
-         Width           =   4455
+         Top             =   360
+         Width           =   3375
       End
    End
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
       TabIndex        =   3
-      Top             =   2520
+      Top             =   3000
       Width           =   5415
       Begin VB.CommandButton cmdEsci 
          Caption         =   "&Chiudi"

@@ -310,11 +310,6 @@ Private Sub Evidenzia_Riga()
 
 End Sub
 
-
-'Private Sub Form_Activate()
-'    Call Cerca
-'End Sub
-
 Private Function isDialisi() As Boolean
     If (InStr(1, tTrova.condizione, "IN") > 0 Or InStr(1, tTrova.condizione, "KEY=-1")) And InStr(1, tTrova.condStato, "(-1)") Then
         isDialisi = True
@@ -356,12 +351,20 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Accompagnatori in elenco: "
         Case tpPRODUTTORE_MANUTENTORE
-                If ModificaProduttore = True Or ModificaManutentore = True Then
-                    cmdNuovo.Visible = True
-                End If
+            If ModificaProduttore = True Or ModificaManutentore = True Then
+                cmdNuovo.Visible = True
+            End If
             cmdModifica.Visible = True
             Me.Caption = Me.Caption & "Produttore/Manutentore"
             flxGriglia.FormatString = "| RAGIONE SOCIALE"
+            flxGriglia.ColWidth(1) = 6500
+            flxGriglia.ColWidth(2) = 0
+            flxGriglia.ColWidth(3) = 0
+            flxGriglia.ColAlignment(1) = vbLeftJustify
+            lblVoci.Visible = False
+        Case tpAPPARATI_TIPO
+            Me.Caption = Me.Caption & "Apparati Tipo"
+            flxGriglia.FormatString = "| CATEGORIA APPARATO"
             flxGriglia.ColWidth(1) = 6500
             flxGriglia.ColWidth(2) = 0
             flxGriglia.ColWidth(3) = 0
@@ -413,6 +416,7 @@ Private Function nomeTabella() As String
         Case tpPSICOLOGI: nomeTabella = "PSICOLOGI"
         Case tpACCOMPAGNATORI: nomeTabella = "ACCOMPAGNATORI"
         Case tpPRODUTTORE_MANUTENTORE: nomeTabella = "PRODUTTORE_MANUTENTORE"
+        Case tpAPPARATI_TIPO: nomeTabella = "APPARATI_TIPO"
     End Select
 End Function
 
@@ -443,10 +447,29 @@ Private Sub Cerca()
             End With
         Loop
         
-        lblVoci = testoVoce & rsDatasetCerca.RecordCount
         flxGriglia.Row = 0
         Set rsDatasetCerca = Nothing
 
+    'Ricerca apposita per la tabella APPARATI_TIPO
+    ElseIf tTrova.Tipo = tpAPPARATI_TIPO Then
+        
+        condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
+        strSql = "SELECT * FROM " & nomeTabella & " WHERE NOME LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & " ORDER BY NOME"
+        Set rsDatasetCerca = New Recordset
+        rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        Do While Not rsDatasetCerca.EOF
+         With flxGriglia
+             .Rows = .Rows + 1
+             .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
+             .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("NOME")
+             rsDatasetCerca.MoveNext
+            End With
+        Loop
+        
+        flxGriglia.Row = 0
+        Set rsDatasetCerca = Nothing
+        
+    'Ricerca per tutte le altre tabelle
     Else
     
         condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
@@ -498,13 +521,20 @@ Private Sub cmdAvanti_Click()
         If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaProduttore = True Then
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
             tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+    
     ' Se è in modifica Manutentore mi carica il nome e la key
         ElseIf tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaManutentore = True Then
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
             tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+    
+    ' Se è caricata la tabella APPARATI_TIPO mi seleziono solo la stringa
+        ElseIf tTrova.Tipo = tpAPPARATI_TIPO Then
+            tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
+    
     ' In tutti gli altri casi carica solo la key
         Else
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
+        
         End If
     Else
         tTrova.keyReturn = 0
@@ -522,16 +552,6 @@ Private Sub cmdIndietro_Click()
     tTrova.keyReturn = 0
     Unload Me
 End Sub
-
-'--Attiva la rotellina del mouse----
-'Private Sub flxGriglia_GotFocus()
-'    Call WheelHook(Me, flxGriglia)
-'End Sub
-
-'Private Sub flxGriglia_LostFocus()
-'    Call WheelUnHook
-'End Sub
-'------------------------------------
 
 Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
     Dim i As Integer

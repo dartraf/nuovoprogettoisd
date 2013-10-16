@@ -198,6 +198,7 @@ Enum tipoTrova
     tpPSICOLOGI
     tpACCOMPAGNATORI
     tpPRODUTTORE_MANUTENTORE
+    tpAPPARATI_TIPO
 End Enum
 Private Type structTrova
     Tipo As tipoTrova                   ' tipo da trovare

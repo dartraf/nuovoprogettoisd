@@ -15,6 +15,1455 @@ Begin VB.Form frmSchedaDialitica
    ScaleHeight     =   7305
    ScaleWidth      =   12105
    ShowInTaskbar   =   0   'False
+   Begin VB.Frame Frame1 
+      Height          =   855
+      Left            =   120
+      TabIndex        =   69
+      Top             =   0
+      Width           =   11895
+      Begin VB.CommandButton cmdTrova 
+         BackColor       =   &H00C0C0C0&
+         Height          =   450
+         Index           =   0
+         Left            =   360
+         Picture         =   "frmSchedaDialitica.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   73
+         Top             =   240
+         Width           =   450
+      End
+      Begin VB.Label lblCognome 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   2160
+         TabIndex        =   76
+         Top             =   360
+         Width           =   3255
+      End
+      Begin VB.Label lblNome 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   6720
+         TabIndex        =   75
+         Top             =   360
+         Width           =   3135
+      End
+      Begin VB.Label lblEta 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   11160
+         TabIndex        =   74
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Cognome"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   0
+         Left            =   1080
+         TabIndex        =   72
+         Top             =   360
+         Width           =   1005
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Nome"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   1
+         Left            =   6000
+         TabIndex        =   71
+         Top             =   360
+         Width           =   630
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Anni"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   3
+         Left            =   10560
+         TabIndex        =   70
+         Top             =   360
+         Width           =   465
+      End
+   End
+   Begin VB.Frame Frame4 
+      Height          =   1335
+      Left            =   120
+      TabIndex        =   42
+      Top             =   720
+      Width           =   11895
+      Begin VB.CommandButton cmdTrova 
+         BackColor       =   &H00C0C0C0&
+         Height          =   405
+         Index           =   1
+         Left            =   380
+         Picture         =   "frmSchedaDialitica.frx":0459
+         Style           =   1  'Graphical
+         TabIndex        =   120
+         Top             =   740
+         Width           =   405
+      End
+      Begin VB.CommandButton cmdCercaOra 
+         Caption         =   "->"
+         Height          =   255
+         Index           =   0
+         Left            =   3840
+         TabIndex        =   1
+         Top             =   360
+         Width           =   375
+      End
+      Begin VB.CommandButton cmdCercaOra 
+         Caption         =   "->"
+         Height          =   255
+         Index           =   1
+         Left            =   6120
+         TabIndex        =   2
+         Top             =   360
+         Width           =   375
+      End
+      Begin VB.Label lblTipo 
+         AutoSize        =   -1  'True
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   240
+         Left            =   10800
+         TabIndex        =   128
+         Top             =   855
+         Width           =   75
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo: "
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   10200
+         TabIndex        =   127
+         Top             =   840
+         Width           =   615
+      End
+      Begin VB.Label lblNumeroRene 
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4200
+         TabIndex        =   126
+         Top             =   840
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "N° rene"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   47
+         Left            =   3360
+         TabIndex        =   125
+         Top             =   840
+         Width           =   780
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Postazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   46
+         Left            =   1080
+         TabIndex        =   124
+         Top             =   840
+         Width           =   1170
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Monitor"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   4
+         Left            =   5640
+         TabIndex        =   123
+         Top             =   840
+         Width           =   780
+      End
+      Begin VB.Label lblPostazione 
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2280
+         TabIndex        =   122
+         Top             =   840
+         Width           =   615
+      End
+      Begin VB.Label lblTipoRene 
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6480
+         TabIndex        =   121
+         Top             =   840
+         Width           =   3615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Turno"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   5
+         Left            =   7560
+         TabIndex        =   49
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ora Fine"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   8
+         Left            =   5160
+         TabIndex        =   48
+         Top             =   360
+         Width           =   900
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ora Inizio"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   14
+         Left            =   2760
+         TabIndex        =   47
+         Top             =   360
+         Width           =   990
+      End
+      Begin VB.Label lblOra 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   0
+         Left            =   4200
+         TabIndex        =   46
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.Label lblOra 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   1
+         Left            =   6480
+         TabIndex        =   45
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.Label lblTurno 
+         AutoSize        =   -1  'True
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   240
+         Left            =   8280
+         TabIndex        =   44
+         Top             =   380
+         Width           =   75
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   2
+         Left            =   360
+         TabIndex        =   43
+         Top             =   360
+         Width           =   510
+      End
+      Begin VB.Label lblData 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   1080
+         TabIndex        =   0
+         Top             =   360
+         Width           =   1215
+      End
+   End
+   Begin VB.Frame fraScheda 
+      Height          =   4455
+      Left            =   120
+      TabIndex        =   61
+      Top             =   1920
+      Width           =   11895
+      Begin VB.TextBox txtPressioneMax 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   0
+         Left            =   3960
+         MaxLength       =   3
+         TabIndex        =   6
+         Top             =   600
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMax 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   3
+         Left            =   6480
+         MaxLength       =   3
+         TabIndex        =   15
+         Top             =   600
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMax 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   1
+         Left            =   4800
+         MaxLength       =   3
+         TabIndex        =   9
+         Top             =   600
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMax 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   4
+         Left            =   7320
+         MaxLength       =   3
+         TabIndex        =   18
+         Top             =   600
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMax 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   2
+         Left            =   5640
+         MaxLength       =   3
+         TabIndex        =   12
+         Top             =   600
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMin 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   4
+         Left            =   7320
+         MaxLength       =   3
+         TabIndex        =   19
+         Top             =   960
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMin 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   3
+         Left            =   6480
+         MaxLength       =   3
+         TabIndex        =   16
+         Top             =   960
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMin 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   2
+         Left            =   5640
+         MaxLength       =   3
+         TabIndex        =   13
+         Top             =   960
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMin 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   1
+         Left            =   4800
+         MaxLength       =   3
+         TabIndex        =   10
+         Top             =   960
+         Width           =   615
+      End
+      Begin VB.TextBox txtPressioneMin 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   0
+         Left            =   3960
+         MaxLength       =   3
+         TabIndex        =   7
+         Top             =   960
+         Width           =   615
+      End
+      Begin VB.TextBox txtFC 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   0
+         Left            =   3960
+         MaxLength       =   3
+         TabIndex        =   8
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.TextBox txtFC 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   1
+         Left            =   4800
+         MaxLength       =   3
+         TabIndex        =   11
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.TextBox txtFC 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   2
+         Left            =   6480
+         MaxLength       =   3
+         TabIndex        =   17
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.TextBox txtFC 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   3
+         Left            =   5640
+         MaxLength       =   3
+         TabIndex        =   14
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.TextBox txtFC 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   4
+         Left            =   7320
+         MaxLength       =   3
+         TabIndex        =   20
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.TextBox txtPesoIniziale 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1800
+         MaxLength       =   5
+         TabIndex        =   3
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.TextBox txtIncremento 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1800
+         MaxLength       =   5
+         TabIndex        =   5
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.TextBox txtPesoFinale 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1800
+         MaxLength       =   5
+         TabIndex        =   4
+         Top             =   840
+         Width           =   605
+      End
+      Begin VB.CheckBox chkErrata 
+         Caption         =   "Scheda Annullata"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   9360
+         TabIndex        =   23
+         Top             =   3510
+         Width           =   2325
+      End
+      Begin VB.TextBox txtConplicanze 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1245
+         Left            =   1920
+         MultiLine       =   -1  'True
+         ScrollBars      =   2  'Vertical
+         TabIndex        =   21
+         Top             =   2040
+         Width           =   9855
+      End
+      Begin VB.CheckBox chkConferma 
+         Caption         =   "Conferma Avvenuta Somministrazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4920
+         TabIndex        =   22
+         Top             =   3510
+         Width           =   4335
+      End
+      Begin VB.Line Line5 
+         X1              =   9360
+         X2              =   9540
+         Y1              =   1800
+         Y2              =   1800
+      End
+      Begin VB.Line Line4 
+         X1              =   0
+         X2              =   120
+         Y1              =   0
+         Y2              =   0
+      End
+      Begin VB.Line Line3 
+         X1              =   0
+         X2              =   120
+         Y1              =   0
+         Y2              =   0
+      End
+      Begin VB.Line Line2 
+         X1              =   9360
+         X2              =   9545
+         Y1              =   1440
+         Y2              =   1440
+      End
+      Begin VB.Line Line1 
+         X1              =   9360
+         X2              =   9360
+         Y1              =   1440
+         Y2              =   1800
+      End
+      Begin VB.Label Label8 
+         Caption         =   "P.A."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   9645
+         TabIndex        =   141
+         Top             =   1335
+         Width           =   495
+      End
+      Begin VB.Label Label7 
+         Caption         =   "P.V."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   9645
+         TabIndex        =   140
+         Top             =   1680
+         Width           =   495
+      End
+      Begin VB.Label Label6 
+         Caption         =   "C.E.C."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   8640
+         TabIndex        =   139
+         Top             =   1485
+         Width           =   735
+      End
+      Begin VB.Label Label5 
+         Caption         =   "Tot. Sangue Trattato (lt.)"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   8640
+         TabIndex        =   138
+         Top             =   795
+         Width           =   1335
+      End
+      Begin VB.Label Label4 
+         Caption         =   "Kt/v"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   8640
+         TabIndex        =   137
+         Top             =   480
+         Width           =   495
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Valori Rilevati dal monitor"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   8520
+         TabIndex        =   136
+         Top             =   195
+         Width           =   2895
+      End
+      Begin VB.Label lblUI 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3720
+         TabIndex        =   119
+         Top             =   3480
+         Width           =   855
+      End
+      Begin VB.Label lblEpo 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1920
+         TabIndex        =   118
+         Top             =   3480
+         Width           =   1095
+      End
+      Begin VB.Label lblNomeMedico 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   6120
+         TabIndex        =   117
+         Top             =   3960
+         Width           =   3375
+      End
+      Begin VB.Label lblCognomeMedico 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   2640
+         TabIndex        =   116
+         Top             =   3960
+         Width           =   3495
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "P.A. Max"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   53
+         Left            =   2880
+         TabIndex        =   91
+         Top             =   600
+         Width           =   915
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Finale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   17
+         Left            =   7320
+         TabIndex        =   90
+         Top             =   240
+         Width           =   660
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "3ª ora"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   16
+         Left            =   6480
+         TabIndex        =   89
+         Top             =   240
+         Width           =   630
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "1ª ora"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   12
+         Left            =   4800
+         TabIndex        =   88
+         Top             =   240
+         Width           =   630
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "P.A. Min"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   11
+         Left            =   2880
+         TabIndex        =   87
+         Top             =   960
+         Width           =   855
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "F.C."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   44
+         Left            =   3360
+         TabIndex        =   86
+         Top             =   1320
+         Width           =   420
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Iniziale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   15
+         Left            =   3960
+         TabIndex        =   85
+         Top             =   240
+         Width           =   750
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "2ª ora"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   45
+         Left            =   5640
+         TabIndex        =   84
+         Top             =   240
+         Width           =   630
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Peso Finale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   9
+         Left            =   240
+         TabIndex        =   83
+         Top             =   840
+         Width           =   1260
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Peso Iniziale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   10
+         Left            =   240
+         TabIndex        =   82
+         Top             =   360
+         Width           =   1350
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Incremento Pond. (Kg)"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   480
+         Index           =   13
+         Left            =   240
+         TabIndex        =   81
+         Top             =   1200
+         Width           =   1335
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Diario infermieristico"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   480
+         Index           =   24
+         Left            =   240
+         TabIndex        =   65
+         Top             =   2040
+         Width           =   1470
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Scheda compilata da:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Index           =   39
+         Left            =   240
+         TabIndex        =   64
+         Top             =   3960
+         Width           =   2295
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label lblUnitaMisura 
+         Alignment       =   1  'Right Justify
+         AutoSize        =   -1  'True
+         Caption         =   "UI"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   3120
+         TabIndex        =   63
+         Top             =   3510
+         Width           =   480
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Eritropoietina"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   22
+         Left            =   240
+         TabIndex        =   62
+         Top             =   3510
+         Width           =   1410
+      End
+   End
+   Begin VB.Frame Frame2 
+      Height          =   975
+      Left            =   120
+      TabIndex        =   29
+      Top             =   6240
+      Width           =   11895
+      Begin VB.CommandButton cmdTerapia 
+         Caption         =   "&Terapia"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   2520
+         TabIndex        =   25
+         Top             =   240
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdKtv 
+         Caption         =   "Calcola &Kt/V"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   7080
+         TabIndex        =   26
+         Top             =   240
+         Width           =   1455
+      End
+      Begin VB.CommandButton cmdChiudi 
+         Caption         =   "&Chiudi"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   10440
+         TabIndex        =   28
+         Top             =   240
+         Width           =   1215
+      End
+      Begin VB.CommandButton cmdMostraInfo 
+         Caption         =   "&Scheda Dialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   240
+         TabIndex        =   24
+         Top             =   240
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdMemorizza 
+         Caption         =   "&Memorizza"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   8760
+         TabIndex        =   27
+         Top             =   240
+         Width           =   1455
+      End
+   End
    Begin TabDlg.SSTab tabSchede 
       Height          =   4305
       Left            =   120
@@ -38,7 +1487,7 @@ Begin VB.Form frmSchedaDialitica
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "Scheda dialitica 1"
-      TabPicture(0)   =   "frmSchedaDialitica.frx":0000
+      TabPicture(0)   =   "frmSchedaDialitica.frx":08B2
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label1(27)"
       Tab(0).Control(0).Enabled=   0   'False
@@ -130,28 +1579,28 @@ Begin VB.Form frmSchedaDialitica
       Tab(0).Control(43).Enabled=   0   'False
       Tab(0).ControlCount=   44
       TabCaption(1)   =   "Scheda dialitica 2"
-      TabPicture(1)   =   "frmSchedaDialitica.frx":001C
+      TabPicture(1)   =   "frmSchedaDialitica.frx":08CE
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(6)"
-      Tab(1).Control(1)=   "Label1(7)"
-      Tab(1).Control(2)=   "Label1(18)"
-      Tab(1).Control(3)=   "Label1(19)"
-      Tab(1).Control(4)=   "Label1(20)"
-      Tab(1).Control(5)=   "Label1(21)"
-      Tab(1).Control(6)=   "lblFlusso"
-      Tab(1).Control(7)=   "lblFlussoSangue"
-      Tab(1).Control(8)=   "lblSolDialitica"
-      Tab(1).Control(9)=   "lblSolInfusionale"
-      Tab(1).Control(10)=   "lblCartuccia"
-      Tab(1).Control(11)=   "lblSolInfCc"
+      Tab(1).Control(0)=   "lblSolInfCc"
+      Tab(1).Control(1)=   "lblCartuccia"
+      Tab(1).Control(2)=   "lblSolInfusionale"
+      Tab(1).Control(3)=   "lblSolDialitica"
+      Tab(1).Control(4)=   "lblFlussoSangue"
+      Tab(1).Control(5)=   "lblFlusso"
+      Tab(1).Control(6)=   "Label1(21)"
+      Tab(1).Control(7)=   "Label1(20)"
+      Tab(1).Control(8)=   "Label1(19)"
+      Tab(1).Control(9)=   "Label1(18)"
+      Tab(1).Control(10)=   "Label1(7)"
+      Tab(1).Control(11)=   "Label1(6)"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
-      TabPicture(2)   =   "frmSchedaDialitica.frx":0038
+      TabPicture(2)   =   "frmSchedaDialitica.frx":08EA
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(36)"
-      Tab(2).Control(1)=   "Label1(37)"
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(3)=   "flxGriglia(0)"
+      Tab(2).Control(0)=   "flxGriglia(0)"
+      Tab(2).Control(1)=   "flxGriglia(1)"
+      Tab(2).Control(2)=   "Label1(37)"
+      Tab(2).Control(3)=   "Label1(36)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -165,7 +1614,7 @@ Begin VB.Form frmSchedaDialitica
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
-         FormatString    =   $"frmSchedaDialitica.frx":0054
+         FormatString    =   $"frmSchedaDialitica.frx":0906
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -179,7 +1628,7 @@ Begin VB.Form frmSchedaDialitica
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
-         FormatString    =   $"frmSchedaDialitica.frx":00EC
+         FormatString    =   $"frmSchedaDialitica.frx":099E
       End
       Begin VB.Label lblDoseUnitaMisura 
          BackColor       =   &H00FFFFFF&
@@ -195,7 +1644,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   6360
-         TabIndex        =   137
+         TabIndex        =   135
          Top             =   2880
          Width           =   375
       End
@@ -214,7 +1663,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   55
          Left            =   8880
-         TabIndex        =   136
+         TabIndex        =   134
          Top             =   2880
          Width           =   1275
       End
@@ -232,7 +1681,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   135
+         TabIndex        =   133
          Top             =   2880
          Width           =   615
       End
@@ -251,7 +1700,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   54
          Left            =   6840
-         TabIndex        =   134
+         TabIndex        =   132
          Top             =   2880
          Width           =   1320
       End
@@ -269,7 +1718,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   8160
-         TabIndex        =   133
+         TabIndex        =   131
          Top             =   2880
          Width           =   615
       End
@@ -288,7 +1737,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   48
          Left            =   8760
-         TabIndex        =   132
+         TabIndex        =   130
          Top             =   3855
          Width           =   480
       End
@@ -306,7 +1755,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   9480
-         TabIndex        =   131
+         TabIndex        =   129
          Top             =   3840
          Width           =   615
       End
@@ -324,7 +1773,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   -64560
-         TabIndex        =   117
+         TabIndex        =   115
          Top             =   1440
          Width           =   615
       End
@@ -342,7 +1791,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   -72000
-         TabIndex        =   116
+         TabIndex        =   114
          Top             =   1920
          Width           =   5655
       End
@@ -360,7 +1809,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   -72000
-         TabIndex        =   115
+         TabIndex        =   113
          Top             =   1440
          Width           =   5655
       End
@@ -378,7 +1827,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   -72000
-         TabIndex        =   114
+         TabIndex        =   112
          Top             =   960
          Width           =   5655
       End
@@ -396,7 +1845,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   -67680
-         TabIndex        =   113
+         TabIndex        =   111
          Top             =   480
          Width           =   615
       End
@@ -414,7 +1863,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   -72000
-         TabIndex        =   112
+         TabIndex        =   110
          Top             =   480
          Width           =   615
       End
@@ -432,7 +1881,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   7800
-         TabIndex        =   111
+         TabIndex        =   109
          Top             =   3840
          Width           =   615
       End
@@ -450,7 +1899,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   6360
-         TabIndex        =   110
+         TabIndex        =   108
          Top             =   3840
          Width           =   615
       End
@@ -468,7 +1917,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   4440
-         TabIndex        =   109
+         TabIndex        =   107
          Top             =   3840
          Width           =   615
       End
@@ -486,7 +1935,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   3000
-         TabIndex        =   108
+         TabIndex        =   106
          Top             =   3840
          Width           =   615
       End
@@ -504,7 +1953,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   107
+         TabIndex        =   105
          Top             =   3360
          Width           =   1095
       End
@@ -522,7 +1971,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   5760
-         TabIndex        =   106
+         TabIndex        =   104
          Top             =   2880
          Width           =   615
       End
@@ -540,7 +1989,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   105
+         TabIndex        =   103
          Top             =   2400
          Width           =   1095
       End
@@ -558,7 +2007,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   6720
-         TabIndex        =   104
+         TabIndex        =   102
          Top             =   2400
          Width           =   1335
       End
@@ -576,7 +2025,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   5160
-         TabIndex        =   103
+         TabIndex        =   101
          Top             =   2400
          Width           =   855
       End
@@ -594,7 +2043,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   2520
-         TabIndex        =   102
+         TabIndex        =   100
          Top             =   2400
          Width           =   855
       End
@@ -613,7 +2062,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   285
          Index           =   1
          Left            =   2520
-         TabIndex        =   101
+         TabIndex        =   99
          Top             =   3360
          Width           =   5535
       End
@@ -632,7 +2081,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   285
          Index           =   0
          Left            =   2520
-         TabIndex        =   100
+         TabIndex        =   98
          Top             =   2880
          Width           =   1695
       End
@@ -650,7 +2099,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   2520
-         TabIndex        =   99
+         TabIndex        =   97
          Top             =   1920
          Width           =   4455
       End
@@ -668,7 +2117,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   2520
-         TabIndex        =   98
+         TabIndex        =   96
          Top             =   1440
          Width           =   4455
       End
@@ -686,7 +2135,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   2520
-         TabIndex        =   97
+         TabIndex        =   95
          Top             =   960
          Width           =   4455
       End
@@ -704,7 +2153,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   8160
-         TabIndex        =   96
+         TabIndex        =   94
          Top             =   960
          Width           =   3495
       End
@@ -722,7 +2171,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   8160
-         TabIndex        =   95
+         TabIndex        =   93
          Top             =   480
          Width           =   3495
       End
@@ -740,7 +2189,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Left            =   2520
-         TabIndex        =   94
+         TabIndex        =   92
          Top             =   480
          Width           =   4455
       End
@@ -759,7 +2208,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   49
          Left            =   240
-         TabIndex        =   82
+         TabIndex        =   80
          Top             =   480
          Width           =   1380
       End
@@ -778,7 +2227,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   50
          Left            =   240
-         TabIndex        =   81
+         TabIndex        =   79
          Top             =   1920
          Width           =   2040
       End
@@ -797,7 +2246,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   51
          Left            =   7275
-         TabIndex        =   80
+         TabIndex        =   78
          Top             =   480
          Width           =   705
       End
@@ -816,7 +2265,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   52
          Left            =   7275
-         TabIndex        =   79
+         TabIndex        =   77
          Top             =   960
          Width           =   705
       End
@@ -835,7 +2284,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   32
          Left            =   240
-         TabIndex        =   70
+         TabIndex        =   68
          Top             =   3840
          Width           =   1380
       End
@@ -854,7 +2303,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   23
          Left            =   7320
-         TabIndex        =   69
+         TabIndex        =   67
          Top             =   3840
          Width           =   420
       End
@@ -873,7 +2322,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   240
          Index           =   43
          Left            =   5520
-         TabIndex        =   68
+         TabIndex        =   66
          Top             =   3840
          Width           =   690
       End
@@ -1258,1360 +2707,6 @@ Begin VB.Form frmSchedaDialitica
          Width           =   1275
       End
    End
-   Begin VB.Frame Frame1 
-      Height          =   855
-      Left            =   120
-      TabIndex        =   71
-      Top             =   0
-      Width           =   11895
-      Begin VB.CommandButton cmdTrova 
-         BackColor       =   &H00C0C0C0&
-         Height          =   450
-         Index           =   0
-         Left            =   360
-         Picture         =   "frmSchedaDialitica.frx":0184
-         Style           =   1  'Graphical
-         TabIndex        =   75
-         Top             =   240
-         Width           =   450
-      End
-      Begin VB.Label lblCognome 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2160
-         TabIndex        =   78
-         Top             =   360
-         Width           =   3255
-      End
-      Begin VB.Label lblNome 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6720
-         TabIndex        =   77
-         Top             =   360
-         Width           =   3135
-      End
-      Begin VB.Label lblEta 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   11160
-         TabIndex        =   76
-         Top             =   360
-         Width           =   615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Cognome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   0
-         Left            =   1080
-         TabIndex        =   74
-         Top             =   360
-         Width           =   1005
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Nome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   1
-         Left            =   6000
-         TabIndex        =   73
-         Top             =   360
-         Width           =   630
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Anni"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   3
-         Left            =   10560
-         TabIndex        =   72
-         Top             =   360
-         Width           =   465
-      End
-   End
-   Begin VB.Frame Frame4 
-      Height          =   1335
-      Left            =   120
-      TabIndex        =   42
-      Top             =   720
-      Width           =   11895
-      Begin VB.CommandButton cmdTrova 
-         BackColor       =   &H00C0C0C0&
-         Height          =   405
-         Index           =   1
-         Left            =   380
-         Picture         =   "frmSchedaDialitica.frx":05DD
-         Style           =   1  'Graphical
-         TabIndex        =   122
-         Top             =   740
-         Width           =   405
-      End
-      Begin VB.CommandButton cmdCercaOra 
-         Caption         =   "->"
-         Height          =   255
-         Index           =   0
-         Left            =   3840
-         TabIndex        =   1
-         Top             =   360
-         Width           =   375
-      End
-      Begin VB.CommandButton cmdCercaOra 
-         Caption         =   "->"
-         Height          =   255
-         Index           =   1
-         Left            =   6120
-         TabIndex        =   2
-         Top             =   360
-         Width           =   375
-      End
-      Begin VB.Label lblTipo 
-         AutoSize        =   -1  'True
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   240
-         Left            =   10800
-         TabIndex        =   130
-         Top             =   855
-         Width           =   75
-      End
-      Begin VB.Label Label2 
-         AutoSize        =   -1  'True
-         Caption         =   "Tipo: "
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   10200
-         TabIndex        =   129
-         Top             =   840
-         Width           =   615
-      End
-      Begin VB.Label lblNumeroRene 
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4200
-         TabIndex        =   128
-         Top             =   840
-         Width           =   615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "N° rene"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   47
-         Left            =   3360
-         TabIndex        =   127
-         Top             =   840
-         Width           =   780
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Postazione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   46
-         Left            =   1080
-         TabIndex        =   126
-         Top             =   840
-         Width           =   1170
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Monitor"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   4
-         Left            =   5640
-         TabIndex        =   125
-         Top             =   840
-         Width           =   780
-      End
-      Begin VB.Label lblPostazione 
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   2280
-         TabIndex        =   124
-         Top             =   840
-         Width           =   615
-      End
-      Begin VB.Label lblTipoRene 
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6480
-         TabIndex        =   123
-         Top             =   840
-         Width           =   3615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Turno"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   5
-         Left            =   7560
-         TabIndex        =   49
-         Top             =   360
-         Width           =   615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ora Fine"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   8
-         Left            =   5160
-         TabIndex        =   48
-         Top             =   360
-         Width           =   900
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ora Inizio"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   14
-         Left            =   2760
-         TabIndex        =   47
-         Top             =   360
-         Width           =   990
-      End
-      Begin VB.Label lblOra 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   0
-         Left            =   4200
-         TabIndex        =   46
-         Top             =   360
-         Width           =   615
-      End
-      Begin VB.Label lblOra 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   1
-         Left            =   6480
-         TabIndex        =   45
-         Top             =   360
-         Width           =   615
-      End
-      Begin VB.Label lblTurno 
-         AutoSize        =   -1  'True
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   240
-         Left            =   8280
-         TabIndex        =   44
-         Top             =   380
-         Width           =   75
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Data"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   2
-         Left            =   360
-         TabIndex        =   43
-         Top             =   360
-         Width           =   510
-      End
-      Begin VB.Label lblData 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1080
-         TabIndex        =   0
-         Top             =   360
-         Width           =   1215
-      End
-   End
-   Begin VB.Frame fraScheda 
-      Height          =   4455
-      Left            =   120
-      TabIndex        =   61
-      Top             =   1920
-      Width           =   11895
-      Begin VB.TextBox txtPressioneMax 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   0
-         Left            =   6600
-         MaxLength       =   3
-         TabIndex        =   6
-         Top             =   720
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMax 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   3
-         Left            =   9120
-         MaxLength       =   3
-         TabIndex        =   15
-         Top             =   720
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMax 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   1
-         Left            =   7440
-         MaxLength       =   3
-         TabIndex        =   9
-         Top             =   720
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMax 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   4
-         Left            =   9960
-         MaxLength       =   3
-         TabIndex        =   18
-         Top             =   720
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMax 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   2
-         Left            =   8280
-         MaxLength       =   3
-         TabIndex        =   12
-         Top             =   720
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMin 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   4
-         Left            =   9960
-         MaxLength       =   3
-         TabIndex        =   19
-         Top             =   1080
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMin 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   3
-         Left            =   9120
-         MaxLength       =   3
-         TabIndex        =   16
-         Top             =   1080
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMin 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   2
-         Left            =   8280
-         MaxLength       =   3
-         TabIndex        =   13
-         Top             =   1080
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMin 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   1
-         Left            =   7440
-         MaxLength       =   3
-         TabIndex        =   10
-         Top             =   1080
-         Width           =   615
-      End
-      Begin VB.TextBox txtPressioneMin 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   0
-         Left            =   6600
-         MaxLength       =   3
-         TabIndex        =   7
-         Top             =   1080
-         Width           =   615
-      End
-      Begin VB.TextBox txtFC 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   0
-         Left            =   6600
-         MaxLength       =   3
-         TabIndex        =   8
-         Top             =   1440
-         Width           =   615
-      End
-      Begin VB.TextBox txtFC 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   1
-         Left            =   7440
-         MaxLength       =   3
-         TabIndex        =   11
-         Top             =   1440
-         Width           =   615
-      End
-      Begin VB.TextBox txtFC 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   2
-         Left            =   9120
-         MaxLength       =   3
-         TabIndex        =   17
-         Top             =   1440
-         Width           =   615
-      End
-      Begin VB.TextBox txtFC 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   3
-         Left            =   8280
-         MaxLength       =   3
-         TabIndex        =   14
-         Top             =   1440
-         Width           =   615
-      End
-      Begin VB.TextBox txtFC 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   4
-         Left            =   9960
-         MaxLength       =   3
-         TabIndex        =   20
-         Top             =   1440
-         Width           =   615
-      End
-      Begin VB.TextBox txtPesoIniziale 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2760
-         MaxLength       =   5
-         TabIndex        =   3
-         Top             =   360
-         Width           =   615
-      End
-      Begin VB.TextBox txtIncremento 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2760
-         MaxLength       =   5
-         TabIndex        =   5
-         Top             =   1320
-         Width           =   615
-      End
-      Begin VB.TextBox txtPesoFinale 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2760
-         MaxLength       =   5
-         TabIndex        =   4
-         Top             =   840
-         Width           =   605
-      End
-      Begin VB.CheckBox chkErrata 
-         Caption         =   "Scheda Annullata"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   9360
-         TabIndex        =   23
-         Top             =   3390
-         Width           =   2325
-      End
-      Begin VB.TextBox txtConplicanze 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1245
-         Left            =   1920
-         MultiLine       =   -1  'True
-         ScrollBars      =   2  'Vertical
-         TabIndex        =   21
-         Top             =   1920
-         Width           =   9855
-      End
-      Begin VB.CheckBox chkConferma 
-         Caption         =   "Conferma Avvenuta Somministrazione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4920
-         TabIndex        =   22
-         Top             =   3390
-         Width           =   4335
-      End
-      Begin VB.Label lblUI 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3720
-         TabIndex        =   121
-         Top             =   3360
-         Width           =   855
-      End
-      Begin VB.Label lblEpo 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   1920
-         TabIndex        =   120
-         Top             =   3360
-         Width           =   1095
-      End
-      Begin VB.Label lblNomeMedico 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   8160
-         TabIndex        =   119
-         Top             =   3960
-         Width           =   3375
-      End
-      Begin VB.Label lblCognomeMedico 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3120
-         TabIndex        =   118
-         Top             =   3960
-         Width           =   3495
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "P.A. Max"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   53
-         Left            =   5280
-         TabIndex        =   93
-         Top             =   720
-         Width           =   915
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Finale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   17
-         Left            =   9960
-         TabIndex        =   92
-         Top             =   360
-         Width           =   660
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "3ª ora"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   16
-         Left            =   9120
-         TabIndex        =   91
-         Top             =   360
-         Width           =   630
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "1ª ora"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   12
-         Left            =   7440
-         TabIndex        =   90
-         Top             =   360
-         Width           =   630
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "P.A. Min"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   11
-         Left            =   5280
-         TabIndex        =   89
-         Top             =   1080
-         Width           =   855
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "F.C."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   44
-         Left            =   5760
-         TabIndex        =   88
-         Top             =   1440
-         Width           =   420
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Iniziale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   15
-         Left            =   6600
-         TabIndex        =   87
-         Top             =   360
-         Width           =   750
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "2ª ora"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   45
-         Left            =   8280
-         TabIndex        =   86
-         Top             =   360
-         Width           =   630
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Peso Finale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   9
-         Left            =   240
-         TabIndex        =   85
-         Top             =   840
-         Width           =   1260
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Peso Iniziale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   10
-         Left            =   240
-         TabIndex        =   84
-         Top             =   360
-         Width           =   1350
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Incremento Pond. (Kg)"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   13
-         Left            =   240
-         TabIndex        =   83
-         Top             =   1320
-         Width           =   2295
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Diario infermieristico"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   480
-         Index           =   24
-         Left            =   240
-         TabIndex        =   67
-         Top             =   1920
-         Width           =   1470
-         WordWrap        =   -1  'True
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Scheda compilata da:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   480
-         Index           =   39
-         Left            =   240
-         TabIndex        =   66
-         Top             =   3720
-         Width           =   1575
-         WordWrap        =   -1  'True
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Cognome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   40
-         Left            =   1920
-         TabIndex        =   65
-         Top             =   3960
-         Width           =   1005
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Nome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   41
-         Left            =   7200
-         TabIndex        =   64
-         Top             =   3960
-         Width           =   630
-      End
-      Begin VB.Label lblUnitaMisura 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         Caption         =   "UI"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   3120
-         TabIndex        =   63
-         Top             =   3390
-         Width           =   480
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Eritropoietina"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   22
-         Left            =   240
-         TabIndex        =   62
-         Top             =   3390
-         Width           =   1410
-      End
-   End
-   Begin VB.Frame Frame2 
-      Height          =   975
-      Left            =   120
-      TabIndex        =   29
-      Top             =   6240
-      Width           =   11895
-      Begin VB.CommandButton cmdTerapia 
-         Caption         =   "&Terapia"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   2520
-         TabIndex        =   25
-         Top             =   240
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdKtv 
-         Caption         =   "Calcola &Kt/V"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   7080
-         TabIndex        =   26
-         Top             =   240
-         Width           =   1455
-      End
-      Begin VB.CommandButton cmdChiudi 
-         Caption         =   "&Chiudi"
-         CausesValidation=   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   10440
-         TabIndex        =   28
-         Top             =   240
-         Width           =   1215
-      End
-      Begin VB.CommandButton cmdMostraInfo 
-         Caption         =   "&Scheda Dialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   240
-         TabIndex        =   24
-         Top             =   240
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdMemorizza 
-         Caption         =   "&Memorizza"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   8760
-         TabIndex        =   27
-         Top             =   240
-         Width           =   1455
-      End
-   End
 End
 Attribute VB_Name = "frmSchedaDialitica"
 Attribute VB_GlobalNameSpace = False
@@ -2854,8 +2949,8 @@ Private Function Completo() As Boolean
             Exit Function
         End If
     End If
-    If CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 6 Then
-        MsgBox "Differenza peso iniziale-finale maggiore di 6 Kg", vbCritical, "Attenzione"
+    If CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 7 Then
+        MsgBox "Differenza peso iniziale-finale maggiore di 7 Kg", vbCritical, "Attenzione"
         Exit Function
     End If
     If Abs(CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - PesoSeccoDialitico) > 5 Then

@@ -5,7 +5,7 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmSchedaStraordinaria 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Seduta supplementare"
-   ClientHeight    =   8760
+   ClientHeight    =   8670
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   12105
@@ -13,14 +13,14 @@ Begin VB.Form frmSchedaStraordinaria
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8760
+   ScaleHeight     =   8670
    ScaleWidth      =   12105
    ShowInTaskbar   =   0   'False
    Begin TabDlg.SSTab tabSchede 
-      Height          =   6080
+      Height          =   6075
       Left            =   120
       TabIndex        =   64
-      Top             =   1800
+      Top             =   1725
       Width           =   11895
       _ExtentX        =   20981
       _ExtentY        =   10716
@@ -42,162 +42,176 @@ Begin VB.Form frmSchedaStraordinaria
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label1(39)"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Label1(40)"
+      Tab(0).Control(1)=   "Label1(22)"
       Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "Label1(41)"
+      Tab(0).Control(2)=   "lblUnitaMisura"
       Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "Label1(22)"
+      Tab(0).Control(3)=   "Label1(24)"
       Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "lblUnitaMisura"
+      Tab(0).Control(4)=   "Label1(13)"
       Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "Label1(24)"
+      Tab(0).Control(5)=   "Label1(10)"
       Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "Label1(13)"
+      Tab(0).Control(6)=   "Label1(9)"
       Tab(0).Control(6).Enabled=   0   'False
-      Tab(0).Control(7)=   "Label1(10)"
+      Tab(0).Control(7)=   "Label1(45)"
       Tab(0).Control(7).Enabled=   0   'False
-      Tab(0).Control(8)=   "Label1(9)"
+      Tab(0).Control(8)=   "Label1(15)"
       Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "Label1(45)"
+      Tab(0).Control(9)=   "Label1(44)"
       Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "Label1(15)"
+      Tab(0).Control(10)=   "Label1(11)"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "Label1(44)"
+      Tab(0).Control(11)=   "Label1(12)"
       Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "Label1(11)"
+      Tab(0).Control(12)=   "Label1(16)"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "Label1(12)"
+      Tab(0).Control(13)=   "Label1(17)"
       Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "Label1(16)"
+      Tab(0).Control(14)=   "Label1(53)"
       Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "Label1(17)"
+      Tab(0).Control(15)=   "lblCognomeMedico"
       Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "Label1(53)"
+      Tab(0).Control(16)=   "lblNomeMedico"
       Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "lblCognomeMedico"
+      Tab(0).Control(17)=   "Line5"
       Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "lblNomeMedico"
+      Tab(0).Control(18)=   "Line2"
       Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "txtConplicanze"
+      Tab(0).Control(19)=   "Line1"
       Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "txtUI"
+      Tab(0).Control(20)=   "Label8"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "chkConferma"
+      Tab(0).Control(21)=   "Label7"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "cboEPO"
+      Tab(0).Control(22)=   "Label6"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "chkErrata"
+      Tab(0).Control(23)=   "Label5"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "txtPesoFinale"
+      Tab(0).Control(24)=   "Label4"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "txtIncremento"
+      Tab(0).Control(25)=   "Label3"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "txtPesoIniziale"
+      Tab(0).Control(26)=   "txtConplicanze"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "txtFC(4)"
+      Tab(0).Control(27)=   "txtUI"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "txtFC(3)"
+      Tab(0).Control(28)=   "chkConferma"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "txtFC(2)"
+      Tab(0).Control(29)=   "cboEPO"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "txtFC(1)"
+      Tab(0).Control(30)=   "chkErrata"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "txtFC(0)"
+      Tab(0).Control(31)=   "txtPesoFinale"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "txtPressioneMin(0)"
+      Tab(0).Control(32)=   "txtIncremento"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "txtPressioneMin(1)"
+      Tab(0).Control(33)=   "txtPesoIniziale"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "txtPressioneMin(2)"
+      Tab(0).Control(34)=   "txtFC(4)"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "txtPressioneMin(3)"
+      Tab(0).Control(35)=   "txtFC(3)"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "txtPressioneMin(4)"
+      Tab(0).Control(36)=   "txtFC(2)"
       Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "txtPressioneMax(2)"
+      Tab(0).Control(37)=   "txtFC(1)"
       Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "txtPressioneMax(4)"
+      Tab(0).Control(38)=   "txtFC(0)"
       Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "txtPressioneMax(1)"
+      Tab(0).Control(39)=   "txtPressioneMin(0)"
       Tab(0).Control(39).Enabled=   0   'False
-      Tab(0).Control(40)=   "txtPressioneMax(3)"
+      Tab(0).Control(40)=   "txtPressioneMin(1)"
       Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "txtPressioneMax(0)"
+      Tab(0).Control(41)=   "txtPressioneMin(2)"
       Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).ControlCount=   42
+      Tab(0).Control(42)=   "txtPressioneMin(3)"
+      Tab(0).Control(42).Enabled=   0   'False
+      Tab(0).Control(43)=   "txtPressioneMin(4)"
+      Tab(0).Control(43).Enabled=   0   'False
+      Tab(0).Control(44)=   "txtPressioneMax(2)"
+      Tab(0).Control(44).Enabled=   0   'False
+      Tab(0).Control(45)=   "txtPressioneMax(4)"
+      Tab(0).Control(45).Enabled=   0   'False
+      Tab(0).Control(46)=   "txtPressioneMax(1)"
+      Tab(0).Control(46).Enabled=   0   'False
+      Tab(0).Control(47)=   "txtPressioneMax(3)"
+      Tab(0).Control(47).Enabled=   0   'False
+      Tab(0).Control(48)=   "txtPressioneMax(0)"
+      Tab(0).Control(48).Enabled=   0   'False
+      Tab(0).ControlCount=   49
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaStraordinaria.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(27)"
-      Tab(1).Control(1)=   "Label1(33)"
-      Tab(1).Control(2)=   "Label1(34)"
-      Tab(1).Control(3)=   "Label1(42)"
-      Tab(1).Control(4)=   "Label1(25)"
-      Tab(1).Control(5)=   "Label1(26)"
-      Tab(1).Control(6)=   "Label1(38)"
-      Tab(1).Control(7)=   "Label1(35)"
-      Tab(1).Control(8)=   "Label1(29)"
-      Tab(1).Control(9)=   "Label1(21)"
-      Tab(1).Control(10)=   "Label1(20)"
-      Tab(1).Control(11)=   "Label1(19)"
-      Tab(1).Control(12)=   "Label1(18)"
-      Tab(1).Control(13)=   "Label1(28)"
-      Tab(1).Control(14)=   "Label1(5)"
-      Tab(1).Control(15)=   "Label1(7)"
-      Tab(1).Control(16)=   "Label1(6)"
-      Tab(1).Control(17)=   "Label1(23)"
-      Tab(1).Control(18)=   "Label1(43)"
-      Tab(1).Control(19)=   "Label1(31)"
-      Tab(1).Control(20)=   "Label1(30)"
-      Tab(1).Control(21)=   "Label1(32)"
-      Tab(1).Control(22)=   "Label1(46)"
-      Tab(1).Control(23)=   "Label1(47)"
-      Tab(1).Control(24)=   "Label1(48)"
-      Tab(1).Control(25)=   "Label1(49)"
-      Tab(1).Control(26)=   "Label1(52)"
-      Tab(1).Control(27)=   "Label1(54)"
-      Tab(1).Control(28)=   "Label1(55)"
-      Tab(1).Control(29)=   "oData(1)"
-      Tab(1).Control(30)=   "txtPesoSecco"
-      Tab(1).Control(31)=   "txtUltimoPeso"
-      Tab(1).Control(32)=   "txtOre"
-      Tab(1).Control(33)=   "txtDoseAltroAnticoagulante"
-      Tab(1).Control(34)=   "txtDoseIniziale"
-      Tab(1).Control(35)=   "txtSolInfCc"
-      Tab(1).Control(36)=   "cboTipoDialisi"
-      Tab(1).Control(37)=   "txtMinuti"
-      Tab(1).Control(38)=   "cboAnticoagulante(0)"
-      Tab(1).Control(39)=   "cboAnticoagulante(1)"
-      Tab(1).Control(40)=   "cboSolDialitica"
-      Tab(1).Control(41)=   "cboSolInf"
-      Tab(1).Control(42)=   "cboCartuccia"
-      Tab(1).Control(43)=   "txtFlussoSangue"
-      Tab(1).Control(44)=   "txtFlusso"
-      Tab(1).Control(45)=   "txtCalcio"
-      Tab(1).Control(46)=   "txtBicarbonato"
-      Tab(1).Control(47)=   "txtSodio"
-      Tab(1).Control(48)=   "txtPotassio"
-      Tab(1).Control(49)=   "cboTipoAgo(1)"
-      Tab(1).Control(50)=   "cboTipoAgo(0)"
-      Tab(1).Control(51)=   "cboAccesso"
-      Tab(1).Control(52)=   "cboTipoLinee"
-      Tab(1).Control(53)=   "txtGlucosio"
-      Tab(1).Control(54)=   "txtDoseIntermedia"
-      Tab(1).Control(55)=   "txtDoseFinale"
-      Tab(1).Control(56)=   "cboDosiUnitaMisura"
-      Tab(1).Control(57)=   "cboTipoFiltro"
+      Tab(1).Control(0)=   "cboTipoFiltro"
+      Tab(1).Control(1)=   "cboDosiUnitaMisura"
+      Tab(1).Control(2)=   "txtDoseFinale"
+      Tab(1).Control(3)=   "txtDoseIntermedia"
+      Tab(1).Control(4)=   "txtGlucosio"
+      Tab(1).Control(5)=   "cboTipoLinee"
+      Tab(1).Control(6)=   "cboAccesso"
+      Tab(1).Control(7)=   "cboTipoAgo(0)"
+      Tab(1).Control(8)=   "cboTipoAgo(1)"
+      Tab(1).Control(9)=   "txtPotassio"
+      Tab(1).Control(10)=   "txtSodio"
+      Tab(1).Control(11)=   "txtBicarbonato"
+      Tab(1).Control(12)=   "txtCalcio"
+      Tab(1).Control(13)=   "txtFlusso"
+      Tab(1).Control(14)=   "txtFlussoSangue"
+      Tab(1).Control(15)=   "cboCartuccia"
+      Tab(1).Control(16)=   "cboSolInf"
+      Tab(1).Control(17)=   "cboSolDialitica"
+      Tab(1).Control(18)=   "cboAnticoagulante(1)"
+      Tab(1).Control(19)=   "cboAnticoagulante(0)"
+      Tab(1).Control(20)=   "txtMinuti"
+      Tab(1).Control(21)=   "cboTipoDialisi"
+      Tab(1).Control(22)=   "txtSolInfCc"
+      Tab(1).Control(23)=   "txtDoseIniziale"
+      Tab(1).Control(24)=   "txtDoseAltroAnticoagulante"
+      Tab(1).Control(25)=   "txtOre"
+      Tab(1).Control(26)=   "txtUltimoPeso"
+      Tab(1).Control(27)=   "txtPesoSecco"
+      Tab(1).Control(28)=   "oData(1)"
+      Tab(1).Control(29)=   "Label1(55)"
+      Tab(1).Control(30)=   "Label1(54)"
+      Tab(1).Control(31)=   "Label1(52)"
+      Tab(1).Control(32)=   "Label1(49)"
+      Tab(1).Control(33)=   "Label1(48)"
+      Tab(1).Control(34)=   "Label1(47)"
+      Tab(1).Control(35)=   "Label1(46)"
+      Tab(1).Control(36)=   "Label1(32)"
+      Tab(1).Control(37)=   "Label1(30)"
+      Tab(1).Control(38)=   "Label1(31)"
+      Tab(1).Control(39)=   "Label1(43)"
+      Tab(1).Control(40)=   "Label1(23)"
+      Tab(1).Control(41)=   "Label1(6)"
+      Tab(1).Control(42)=   "Label1(7)"
+      Tab(1).Control(43)=   "Label1(5)"
+      Tab(1).Control(44)=   "Label1(28)"
+      Tab(1).Control(45)=   "Label1(18)"
+      Tab(1).Control(46)=   "Label1(19)"
+      Tab(1).Control(47)=   "Label1(20)"
+      Tab(1).Control(48)=   "Label1(21)"
+      Tab(1).Control(49)=   "Label1(29)"
+      Tab(1).Control(50)=   "Label1(35)"
+      Tab(1).Control(51)=   "Label1(38)"
+      Tab(1).Control(52)=   "Label1(26)"
+      Tab(1).Control(53)=   "Label1(25)"
+      Tab(1).Control(54)=   "Label1(42)"
+      Tab(1).Control(55)=   "Label1(34)"
+      Tab(1).Control(56)=   "Label1(33)"
+      Tab(1).Control(57)=   "Label1(27)"
       Tab(1).ControlCount=   58
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaStraordinaria.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(37)"
-      Tab(2).Control(1)=   "Label1(36)"
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(3)=   "flxGriglia(0)"
-      Tab(2).Control(4)=   "cmdInserisci(0)"
-      Tab(2).Control(5)=   "cmdInserisci(1)"
-      Tab(2).Control(6)=   "txtAppo"
-      Tab(2).Control(7)=   "cboMedicinali"
+      Tab(2).Control(0)=   "cboMedicinali"
+      Tab(2).Control(1)=   "txtAppo"
+      Tab(2).Control(2)=   "cmdInserisci(1)"
+      Tab(2).Control(3)=   "cmdInserisci(0)"
+      Tab(2).Control(4)=   "flxGriglia(0)"
+      Tab(2).Control(5)=   "flxGriglia(1)"
+      Tab(2).Control(6)=   "Label1(36)"
+      Tab(2).Control(7)=   "Label1(37)"
       Tab(2).ControlCount=   8
       Begin VB.ComboBox cboTipoFiltro 
          BeginProperty Font 
@@ -212,7 +226,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   315
          Left            =   -72360
          Sorted          =   -1  'True
-         TabIndex        =   139
+         TabIndex        =   137
          Text            =   "cboTipoAgo"
          Top             =   960
          Width           =   4215
@@ -232,7 +246,7 @@ Begin VB.Form frmSchedaStraordinaria
          Left            =   -68160
          List            =   "frmSchedaStraordinaria.frx":005E
          Style           =   2  'Dropdown List
-         TabIndex        =   138
+         TabIndex        =   136
          Top             =   2880
          Width           =   615
       End
@@ -250,7 +264,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   285
          Left            =   -63840
          MaxLength       =   6
-         TabIndex        =   136
+         TabIndex        =   134
          Top             =   2880
          Width           =   615
       End
@@ -268,7 +282,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   285
          Left            =   -66000
          MaxLength       =   6
-         TabIndex        =   134
+         TabIndex        =   132
          Top             =   2880
          Width           =   615
       End
@@ -286,7 +300,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   285
          Left            =   -65760
          MaxLength       =   5
-         TabIndex        =   132
+         TabIndex        =   130
          Top             =   5680
          Width           =   615
       End
@@ -303,7 +317,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   6600
+         Left            =   3960
          MaxLength       =   3
          TabIndex        =   3
          Top             =   960
@@ -322,7 +336,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   3
-         Left            =   9480
+         Left            =   6480
          MaxLength       =   3
          TabIndex        =   12
          Top             =   960
@@ -341,7 +355,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   7560
+         Left            =   4800
          MaxLength       =   3
          TabIndex        =   6
          Top             =   960
@@ -360,7 +374,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   4
-         Left            =   10440
+         Left            =   7320
          MaxLength       =   3
          TabIndex        =   15
          Top             =   960
@@ -379,7 +393,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   2
-         Left            =   8520
+         Left            =   5640
          MaxLength       =   3
          TabIndex        =   9
          Top             =   960
@@ -471,7 +485,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   4
-         Left            =   10440
+         Left            =   7320
          MaxLength       =   3
          TabIndex        =   16
          Top             =   1320
@@ -490,7 +504,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   3
-         Left            =   9480
+         Left            =   6480
          MaxLength       =   3
          TabIndex        =   13
          Top             =   1320
@@ -509,7 +523,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   2
-         Left            =   8520
+         Left            =   5640
          MaxLength       =   3
          TabIndex        =   10
          Top             =   1320
@@ -528,7 +542,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   7560
+         Left            =   4800
          MaxLength       =   3
          TabIndex        =   7
          Top             =   1320
@@ -547,7 +561,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   6600
+         Left            =   3960
          MaxLength       =   3
          TabIndex        =   4
          Top             =   1320
@@ -566,7 +580,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   6600
+         Left            =   3960
          MaxLength       =   3
          TabIndex        =   5
          Top             =   1680
@@ -585,7 +599,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   7560
+         Left            =   4800
          MaxLength       =   3
          TabIndex        =   8
          Top             =   1680
@@ -604,7 +618,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   2
-         Left            =   9480
+         Left            =   6480
          MaxLength       =   3
          TabIndex        =   14
          Top             =   1680
@@ -623,7 +637,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   3
-         Left            =   8520
+         Left            =   5640
          MaxLength       =   3
          TabIndex        =   11
          Top             =   1680
@@ -642,7 +656,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Index           =   4
-         Left            =   10440
+         Left            =   7320
          MaxLength       =   3
          TabIndex        =   17
          Top             =   1680
@@ -660,7 +674,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2760
+         Left            =   1920
          MaxLength       =   5
          TabIndex        =   0
          Top             =   720
@@ -678,7 +692,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2760
+         Left            =   1920
          MaxLength       =   5
          TabIndex        =   2
          Top             =   1680
@@ -696,7 +710,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2760
+         Left            =   1920
          MaxLength       =   5
          TabIndex        =   1
          Top             =   1200
@@ -837,7 +851,7 @@ Begin VB.Form frmSchedaStraordinaria
          Left            =   -74760
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   89
+         TabIndex        =   87
          Top             =   1320
          Visible         =   0   'False
          Width           =   3255
@@ -864,7 +878,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   285
          Left            =   -66240
          MaxLength       =   3
-         TabIndex        =   88
+         TabIndex        =   86
          Top             =   1320
          Visible         =   0   'False
          Width           =   600
@@ -1241,7 +1255,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   375
          Index           =   1
          Left            =   -68520
-         TabIndex        =   141
+         TabIndex        =   139
          Top             =   2350
          Width           =   2100
          _ExtentX        =   3704
@@ -1249,6 +1263,126 @@ Begin VB.Form frmSchedaStraordinaria
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Valori Rilevati dal monitor"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   8400
+         TabIndex        =   146
+         Top             =   480
+         Width           =   2895
+      End
+      Begin VB.Label Label4 
+         Caption         =   "Kt/v"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   8520
+         TabIndex        =   145
+         Top             =   765
+         Width           =   495
+      End
+      Begin VB.Label Label5 
+         Caption         =   "Tot. Sangue Trattato (lt.)"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   8520
+         TabIndex        =   144
+         Top             =   1080
+         Width           =   1335
+      End
+      Begin VB.Label Label6 
+         Caption         =   "C.E.C."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   8520
+         TabIndex        =   143
+         Top             =   1770
+         Width           =   675
+      End
+      Begin VB.Label Label7 
+         Caption         =   "P.V."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   9525
+         TabIndex        =   142
+         Top             =   1965
+         Width           =   495
+      End
+      Begin VB.Label Label8 
+         Caption         =   "P.A."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   9525
+         TabIndex        =   141
+         Top             =   1620
+         Width           =   495
+      End
+      Begin VB.Line Line1 
+         X1              =   9240
+         X2              =   9240
+         Y1              =   1725
+         Y2              =   2085
+      End
+      Begin VB.Line Line2 
+         X1              =   9240
+         X2              =   9425
+         Y1              =   1725
+         Y2              =   1725
+      End
+      Begin VB.Line Line5 
+         X1              =   9240
+         X2              =   9420
+         Y1              =   2085
+         Y2              =   2085
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -1265,7 +1399,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   55
          Left            =   -65160
-         TabIndex        =   137
+         TabIndex        =   135
          Top             =   2880
          Width           =   1275
       End
@@ -1284,7 +1418,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   54
          Left            =   -67350
-         TabIndex        =   135
+         TabIndex        =   133
          Top             =   2880
          Width           =   1320
       End
@@ -1303,7 +1437,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   52
          Left            =   -66360
-         TabIndex        =   133
+         TabIndex        =   131
          Top             =   5685
          Width           =   480
       End
@@ -1320,9 +1454,9 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   8160
-         TabIndex        =   121
-         Top             =   5520
+         Left            =   6120
+         TabIndex        =   119
+         Top             =   5400
          Width           =   3375
       End
       Begin VB.Label lblCognomeMedico 
@@ -1338,9 +1472,9 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2880
-         TabIndex        =   120
-         Top             =   5520
+         Left            =   2640
+         TabIndex        =   118
+         Top             =   5400
          Width           =   3495
       End
       Begin VB.Label Label1 
@@ -1357,8 +1491,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   53
-         Left            =   5280
-         TabIndex        =   118
+         Left            =   2880
+         TabIndex        =   116
          Top             =   960
          Width           =   915
       End
@@ -1377,7 +1511,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   49
          Left            =   -74760
-         TabIndex        =   117
+         TabIndex        =   115
          Top             =   480
          Width           =   1380
       End
@@ -1396,7 +1530,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   48
          Left            =   -74760
-         TabIndex        =   116
+         TabIndex        =   114
          Top             =   1920
          Width           =   2040
       End
@@ -1415,7 +1549,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   47
          Left            =   -67200
-         TabIndex        =   115
+         TabIndex        =   113
          Top             =   960
          Width           =   705
       End
@@ -1434,7 +1568,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   46
          Left            =   -67200
-         TabIndex        =   114
+         TabIndex        =   112
          Top             =   480
          Width           =   705
       End
@@ -1452,8 +1586,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   17
-         Left            =   10440
-         TabIndex        =   113
+         Left            =   7320
+         TabIndex        =   111
          Top             =   600
          Width           =   660
       End
@@ -1471,8 +1605,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   16
-         Left            =   9480
-         TabIndex        =   112
+         Left            =   6480
+         TabIndex        =   110
          Top             =   600
          Width           =   630
       End
@@ -1490,8 +1624,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   12
-         Left            =   7560
-         TabIndex        =   111
+         Left            =   4800
+         TabIndex        =   109
          Top             =   600
          Width           =   630
       End
@@ -1509,8 +1643,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   11
-         Left            =   5280
-         TabIndex        =   110
+         Left            =   2880
+         TabIndex        =   108
          Top             =   1320
          Width           =   855
       End
@@ -1528,8 +1662,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   44
-         Left            =   5760
-         TabIndex        =   109
+         Left            =   3360
+         TabIndex        =   107
          Top             =   1680
          Width           =   420
       End
@@ -1547,8 +1681,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   15
-         Left            =   6560
-         TabIndex        =   108
+         Left            =   3960
+         TabIndex        =   106
          Top             =   600
          Width           =   750
       End
@@ -1566,8 +1700,8 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Index           =   45
-         Left            =   8520
-         TabIndex        =   107
+         Left            =   5640
+         TabIndex        =   105
          Top             =   600
          Width           =   630
       End
@@ -1586,7 +1720,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   9
          Left            =   240
-         TabIndex        =   106
+         TabIndex        =   104
          Top             =   1200
          Width           =   1260
       End
@@ -1605,7 +1739,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   10
          Left            =   240
-         TabIndex        =   105
+         TabIndex        =   103
          Top             =   720
          Width           =   1350
       End
@@ -1621,12 +1755,13 @@ Begin VB.Form frmSchedaStraordinaria
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   240
+         Height          =   480
          Index           =   13
          Left            =   240
-         TabIndex        =   104
-         Top             =   1680
-         Width           =   2295
+         TabIndex        =   102
+         Top             =   1560
+         Width           =   1335
+         WordWrap        =   -1  'True
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -1643,7 +1778,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   32
          Left            =   -74760
-         TabIndex        =   96
+         TabIndex        =   94
          Top             =   5680
          Width           =   1380
       End
@@ -1662,7 +1797,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   30
          Left            =   -70800
-         TabIndex        =   95
+         TabIndex        =   93
          Top             =   5685
          Width           =   270
       End
@@ -1681,7 +1816,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   31
          Left            =   -72360
-         TabIndex        =   94
+         TabIndex        =   92
          Top             =   5680
          Width           =   435
       End
@@ -1700,7 +1835,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   43
          Left            =   -69480
-         TabIndex        =   93
+         TabIndex        =   91
          Top             =   5685
          Width           =   690
       End
@@ -1719,7 +1854,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   23
          Left            =   -67680
-         TabIndex        =   92
+         TabIndex        =   90
          Top             =   5680
          Width           =   300
       End
@@ -1738,7 +1873,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   6
          Left            =   -74760
-         TabIndex        =   91
+         TabIndex        =   89
          Top             =   3840
          Width           =   2670
       End
@@ -1757,7 +1892,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   7
          Left            =   -70200
-         TabIndex        =   90
+         TabIndex        =   88
          Top             =   3840
          Width           =   2805
       End
@@ -1776,7 +1911,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   5
          Left            =   -64680
-         TabIndex        =   87
+         TabIndex        =   85
          Top             =   2400
          Width           =   615
       End
@@ -1795,7 +1930,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   36
          Left            =   -73080
-         TabIndex        =   86
+         TabIndex        =   84
          Top             =   480
          Width           =   2175
       End
@@ -1814,7 +1949,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   37
          Left            =   -66840
-         TabIndex        =   85
+         TabIndex        =   83
          Top             =   480
          Width           =   2190
       End
@@ -1833,7 +1968,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   28
          Left            =   -74760
-         TabIndex        =   84
+         TabIndex        =   82
          Top             =   3360
          Width           =   2100
       End
@@ -1852,7 +1987,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   18
          Left            =   -74760
-         TabIndex        =   83
+         TabIndex        =   81
          Top             =   4260
          Width           =   1950
       End
@@ -1871,7 +2006,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   19
          Left            =   -74760
-         TabIndex        =   82
+         TabIndex        =   80
          Top             =   4740
          Width           =   2220
       End
@@ -1890,7 +2025,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   20
          Left            =   -66360
-         TabIndex        =   81
+         TabIndex        =   79
          Top             =   4740
          Width           =   1125
       End
@@ -1909,7 +2044,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   21
          Left            =   -74760
-         TabIndex        =   80
+         TabIndex        =   78
          Top             =   5215
          Width           =   990
       End
@@ -1928,7 +2063,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   29
          Left            =   -74760
-         TabIndex        =   79
+         TabIndex        =   77
          Top             =   2895
          Width           =   1560
       End
@@ -1947,7 +2082,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   35
          Left            =   -70200
-         TabIndex        =   78
+         TabIndex        =   76
          Top             =   2880
          Width           =   1365
       End
@@ -1966,7 +2101,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   38
          Left            =   -66360
-         TabIndex        =   77
+         TabIndex        =   75
          Top             =   4005
          Width           =   570
       End
@@ -1985,7 +2120,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   26
          Left            =   -74760
-         TabIndex        =   76
+         TabIndex        =   74
          Top             =   960
          Width           =   1335
       End
@@ -2004,7 +2139,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   25
          Left            =   -74760
-         TabIndex        =   75
+         TabIndex        =   73
          Top             =   1440
          Width           =   1470
       End
@@ -2023,7 +2158,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   480
          Index           =   24
          Left            =   240
-         TabIndex        =   74
+         TabIndex        =   72
          Top             =   2400
          Width           =   1470
          WordWrap        =   -1  'True
@@ -2042,7 +2177,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Left            =   3360
-         TabIndex        =   73
+         TabIndex        =   71
          Top             =   4680
          Width           =   240
       End
@@ -2061,47 +2196,9 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   22
          Left            =   240
-         TabIndex        =   72
+         TabIndex        =   70
          Top             =   4680
          Width           =   1410
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Nome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   41
-         Left            =   7440
-         TabIndex        =   71
-         Top             =   5520
-         Width           =   630
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Cognome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   40
-         Left            =   1800
-         TabIndex        =   70
-         Top             =   5520
-         Width           =   1005
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2191,19 +2288,19 @@ Begin VB.Form frmSchedaStraordinaria
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   480
+         Height          =   240
          Index           =   39
          Left            =   240
          TabIndex        =   69
-         Top             =   5280
-         Width           =   1455
+         Top             =   5400
+         Width           =   2295
          WordWrap        =   -1  'True
       End
    End
    Begin VB.Frame Frame1 
       Height          =   735
       Left            =   120
-      TabIndex        =   97
+      TabIndex        =   95
       Top             =   0
       Width           =   11895
       Begin VB.CommandButton cmdTrova 
@@ -2241,7 +2338,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Left            =   2520
-         TabIndex        =   103
+         TabIndex        =   101
          Top             =   240
          Width           =   3255
       End
@@ -2259,7 +2356,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Left            =   7080
-         TabIndex        =   102
+         TabIndex        =   100
          Top             =   240
          Width           =   3135
       End
@@ -2277,7 +2374,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   285
          Left            =   11040
-         TabIndex        =   101
+         TabIndex        =   99
          Top             =   240
          Width           =   615
       End
@@ -2296,7 +2393,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   0
          Left            =   1440
-         TabIndex        =   100
+         TabIndex        =   98
          Top             =   240
          Width           =   1005
       End
@@ -2315,7 +2412,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   1
          Left            =   6240
-         TabIndex        =   99
+         TabIndex        =   97
          Top             =   240
          Width           =   630
       End
@@ -2334,7 +2431,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   3
          Left            =   10440
-         TabIndex        =   98
+         TabIndex        =   96
          Top             =   240
          Width           =   465
       End
@@ -2352,7 +2449,7 @@ Begin VB.Form frmSchedaStraordinaria
          Left            =   260
          Picture         =   "frmSchedaStraordinaria.frx":0776
          Style           =   1  'Graphical
-         TabIndex        =   123
+         TabIndex        =   121
          Top             =   690
          Width           =   405
       End
@@ -2378,7 +2475,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   375
          Index           =   0
          Left            =   960
-         TabIndex        =   140
+         TabIndex        =   138
          Top             =   240
          Width           =   2100
          _ExtentX        =   3704
@@ -2401,7 +2498,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   240
          Left            =   10200
-         TabIndex        =   131
+         TabIndex        =   129
          Top             =   795
          Width           =   615
       End
@@ -2419,7 +2516,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   255
          Left            =   5160
-         TabIndex        =   130
+         TabIndex        =   128
          Top             =   795
          Width           =   615
       End
@@ -2438,7 +2535,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   4
          Left            =   4320
-         TabIndex        =   129
+         TabIndex        =   127
          Top             =   795
          Width           =   780
       End
@@ -2457,7 +2554,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   50
          Left            =   960
-         TabIndex        =   128
+         TabIndex        =   126
          Top             =   795
          Width           =   1170
       End
@@ -2475,7 +2572,7 @@ Begin VB.Form frmSchedaStraordinaria
          ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   10800
-         TabIndex        =   127
+         TabIndex        =   125
          Top             =   810
          Width           =   75
       End
@@ -2494,7 +2591,7 @@ Begin VB.Form frmSchedaStraordinaria
          Height          =   240
          Index           =   51
          Left            =   6360
-         TabIndex        =   126
+         TabIndex        =   124
          Top             =   795
          Width           =   780
       End
@@ -2512,7 +2609,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   255
          Left            =   2160
-         TabIndex        =   125
+         TabIndex        =   123
          Top             =   795
          Width           =   615
       End
@@ -2530,7 +2627,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   255
          Left            =   7200
-         TabIndex        =   124
+         TabIndex        =   122
          Top             =   795
          Width           =   2895
       End
@@ -2549,7 +2646,7 @@ Begin VB.Form frmSchedaStraordinaria
          ForeColor       =   &H000000FF&
          Height          =   180
          Left            =   8880
-         TabIndex        =   122
+         TabIndex        =   120
          Top             =   360
          Visible         =   0   'False
          Width           =   615
@@ -2671,7 +2768,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   615
          Left            =   5640
-         TabIndex        =   142
+         TabIndex        =   140
          Top             =   240
          Width           =   1575
       End
@@ -2689,7 +2786,7 @@ Begin VB.Form frmSchedaStraordinaria
          EndProperty
          Height          =   615
          Left            =   7440
-         TabIndex        =   119
+         TabIndex        =   117
          Top             =   240
          Width           =   1215
       End
@@ -3210,8 +3307,8 @@ Private Function Completo() As Boolean
             Exit Function
         End If
     End If
-    If CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 6 Then
-        MsgBox "Differenza peso iniziale-finale maggiore di 6 Kg", vbCritical, "Attenzione"
+    If CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 7 Then
+        MsgBox "Differenza peso iniziale-finale maggiore di 7 Kg", vbCritical, "Attenzione"
         Exit Function
     End If
     If Abs(CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - PesoSeccoDialitico) > 5 Then

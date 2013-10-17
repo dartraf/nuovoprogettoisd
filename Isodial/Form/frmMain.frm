@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "12/10/2013"
+            TextSave        =   "17/10/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -654,6 +654,9 @@ Begin VB.MDIForm frmMain
       End
       Begin VB.Menu mnuRipristina 
          Caption         =   "&Ripristino Archivi"
+      End
+      Begin VB.Menu mnuEsportaDb 
+         Caption         =   "&Esporta Database"
       End
    End
    Begin VB.Menu mnuStampe 
@@ -1054,6 +1057,30 @@ End Sub
 
 Private Sub mnuImpostaBackup_Click()
     frmBackup.Show
+End Sub
+Private Sub mnuEsportaDb_Click()
+    ' zippa i db
+    
+    Dim MYUSER As ZIPUSERFUNCTIONS
+    Dim retcode As Long
+
+    MYUSER.DLLPrnt = Puntatore(AddressOf Stampa_messaggi_zip)
+    MYUSER.DLLPASSWORD = 0&
+    MYUSER.DLLCOMMENT = 0&
+    MYUSER.DLLSERVICE = 0&
+    retcode = ZpInit(MYUSER)
+
+    Dim MYOPT As ZPOPT
+    retcode = ZpSetOptions(MYOPT)
+
+    Dim files As ZIPnames
+    
+    files.s(0) = (structApri.pathDB) & "\Centro.mdb"
+    files.s(1) = (structApri.pathDB) & "\Connessioni.mdb"
+    retcode = ZpArchive(2, Environ$("USERPROFILE") & "\Desktop\Db " & Left(structIntestazione.sRagione, 12) & " " & Day(date) & "_" & Month(date) & "_" & Year(date) & ".zip", files)
+    
+    MsgBox "Database esportati correttamente", vbInformation, "Esporta DataBases"
+
 End Sub
 
 Private Sub mnuImpostaStampa_Click()
@@ -1933,7 +1960,7 @@ Private Sub mnuStampaPaz_Click()
     
     
     If tFiltroStato.statoPaziente = TPOSPITE Then
-        strSql = "  SELECT      COGNOME, PAZIENTI.NOME as PAZIENTINOME, CODICE_FISCALE, INDIRIZZO, COMUNI.NOME as COMUNINOME, CODICE_DOCUMENTO, TELEFONO, CELLULARE, TIPO_DOCUMENTO, MAX(DATA_PARTENZA) AS DATA_P, MAX(DATA_ARRIVO) AS DATA_A " & _
+        strSql = "  SELECT      COGNOME, PAZIENTI.NOME as PAZIENTINOME, DATA_NASCITA, CODICE_FISCALE, INDIRIZZO, COMUNI.NOME as COMUNINOME, CODICE_DOCUMENTO, TELEFONO, CELLULARE, TIPO_DOCUMENTO, MAX(DATA_PARTENZA) AS DATA_P, MAX(DATA_ARRIVO) AS DATA_A " & _
                  "  FROM        ((PAZIENTI " & _
                  "              LEFT OUTER JOIN PAZIENTI_OSPITI ON PAZIENTI_OSPITI.CODICE_PAZIENTE=PAZIENTI.KEY) " & _
                  "              INNER JOIN COMUNI ON COMUNI.KEY=PAZIENTI.CODICE_COMUNE_RESIDENZA) " & _
@@ -1945,7 +1972,7 @@ Private Sub mnuStampaPaz_Click()
         End If
     ElseIf tFiltroStato.statoPaziente = tpDIALISI Then
         ' In dialisi
-        strSql = "  SELECT  COGNOME, PAZIENTI.NOME as PAZIENTINOME, CODICE_FISCALE, INDIRIZZO, COMUNI.NOME as COMUNINOME, CODICE_DOCUMENTO, TELEFONO, CELLULARE, TIPO_DOCUMENTO, DATA_INIZIO, DATA1 " & _
+        strSql = "  SELECT  COGNOME, PAZIENTI.NOME as PAZIENTINOME, DATA_NASCITA, CODICE_FISCALE, INDIRIZZO, COMUNI.NOME as COMUNINOME, CODICE_DOCUMENTO, TELEFONO, CELLULARE, TIPO_DOCUMENTO, DATA_INIZIO, DATA1 " & _
                  "  FROM    ((PAZIENTI " & _
                  "          LEFT OUTER JOIN ANAMNESI_NEFROLOGICHE ON ANAMNESI_NEFROLOGICHE.CODICE_PAZIENTE=PAZIENTI.KEY) " & _
                  "          INNER JOIN COMUNI ON COMUNI.KEY=PAZIENTI.CODICE_COMUNE_RESIDENZA) "
@@ -1957,7 +1984,7 @@ Private Sub mnuStampaPaz_Click()
                  "  ORDER BY COGNOME"
     Else
         ' Deceduti, trapiantati, trasferiti, ambulatoriale
-        strSql = "  SELECT  COGNOME, PAZIENTI.NOME as PAZIENTINOME, CODICE_FISCALE, INDIRIZZO, COMUNI.NOME as COMUNINOME, CODICE_DOCUMENTO, TELEFONO, CELLULARE, TIPO_DOCUMENTO, STATODATA, DATA1 " & _
+        strSql = "  SELECT  COGNOME, PAZIENTI.NOME as PAZIENTINOME, DATA_NASCITA, CODICE_FISCALE, INDIRIZZO, COMUNI.NOME as COMUNINOME, CODICE_DOCUMENTO, TELEFONO, CELLULARE, TIPO_DOCUMENTO, STATODATA, DATA1 " & _
                  "  FROM    ((PAZIENTI " & _
                  "          LEFT OUTER JOIN ANAMNESI_NEFROLOGICHE ON ANAMNESI_NEFROLOGICHE.CODICE_PAZIENTE=PAZIENTI.KEY) " & _
                  "          INNER JOIN COMUNI ON COMUNI.KEY=PAZIENTI.CODICE_COMUNE_RESIDENZA) " & _
@@ -1999,7 +2026,7 @@ Private Sub mnuStampaPaz_Click()
         rptPazienti.Sections("intestazione").Controls.Item("lblDataPrima").Caption = "Data " & Choose(tFiltroStato.statoPaziente + 1, "inizio dialisi in sede", "di   decesso", "di trasferimento", "di trapianto", "di     arrivo", "inizio dialisi in sede")
         rptPazienti.Sections("intestazione").Controls.Item("lblDataSeconda").Caption = "Data " & IIf(tFiltroStato.statoPaziente = 4, "di partenza", "inizio dialisi")
         rptPazienti.Sections("Section5").Controls.Item("lblPazienti").Caption = numPazienti
-        rptPazienti.LeftMargin = 5
+        rptPazienti.LeftMargin = 0
         rptPazienti.RightMargin = 0.1
         
         rptPazienti.TopMargin = 0
@@ -2187,6 +2214,7 @@ Public Sub SubClassMenuXP()
           mnuIntestazioneFattura.Caption = "Parametri Fattura"
           mnuRipristina.Caption = "&Ripristino Archivi"
           mnuImpostaBackup.Caption = "&N° Backup"
+          mnuEsportaDb.Caption = "&Esporta Database"
      '     mnuBarra.Caption = "&Barra degli Strumenti"
     mnuStampe.Caption = "Stam&pe"
           mnuStampaPaz.Caption = "Lista &Pazienti"

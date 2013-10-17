@@ -5,16 +5,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
    ClientHeight    =   7620
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   12165
+   ClientWidth     =   12420
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
-   _ExtentX        =   21458
+   _ExtentX        =   21908
    _ExtentY        =   13441
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   14970
+   ReportWidth     =   15645
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -42,8 +42,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "intestazione"
-      Object.Height          =   1590
-      NumControls     =   13
+      Object.Height          =   1601
+      NumControls     =   14
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -85,9 +85,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label3"
-         Object.Left            =   4649
+         Object.Left            =   5328
          Object.Top             =   1133
-         Object.Width           =   907
+         Object.Width           =   900
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -104,7 +104,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
-         Object.Left            =   7483
+         Object.Left            =   8162
          Object.Top             =   1133
          Object.Width           =   1590
          Object.Height          =   225
@@ -123,7 +123,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   9185
+         Object.Left            =   9864
          Object.Top             =   1133
          Object.Width           =   1020
          Object.Height          =   225
@@ -142,7 +142,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   10319
+         Object.Left            =   10998
          Object.Top             =   1133
          Object.Width           =   1020
          Object.Height          =   225
@@ -161,7 +161,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   11566
+         Object.Left            =   12245
          Object.Top             =   1134
          Object.Width           =   1245
          Object.Height          =   225
@@ -199,7 +199,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDataPrima"
-         Object.Left            =   12699
+         Object.Left            =   13378
          Object.Top             =   907
          Object.Width           =   1245
          Object.Height          =   450
@@ -219,9 +219,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   2721
+         Object.Left            =   3740
          Object.Top             =   1134
-         Object.Width           =   1800
+         Object.Width           =   1245
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -238,7 +238,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDataSeconda"
-         Object.Left            =   13833
+         Object.Left            =   14512
          Object.Top             =   907
          Object.Width           =   1020
          Object.Height          =   450
@@ -294,19 +294,38 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Caption         =   "al 12/12/2012"
          CanGrow         =   -1  'True
       EndProperty
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label9"
+         Object.Left            =   2540
+         Object.Top             =   1134
+         Object.Width           =   1140
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Data Nascita"
+      EndProperty
    EndProperty
    SectionCode2    =   4
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   495
-      NumControls     =   12
+      NumControls     =   13
       ItemType0       =   5
       BeginProperty Item0 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line1"
          Object.Top             =   340
-         Object.Width           =   14850
+         Object.Width           =   15500
       EndProperty
       ItemType1       =   4
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -363,7 +382,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtIndirizzo"
-         Object.Left            =   4649
+         Object.Left            =   5328
          Object.Width           =   2715
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -389,7 +408,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCitta"
-         Object.Left            =   7483
+         Object.Left            =   8162
          Object.Width           =   1590
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -415,7 +434,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTelefono"
-         Object.Left            =   9185
+         Object.Left            =   9864
          Object.Width           =   1020
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -441,7 +460,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCellulare"
-         Object.Left            =   10319
+         Object.Left            =   10998
          Object.Width           =   1020
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -467,7 +486,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTipo"
-         Object.Left            =   11452
+         Object.Left            =   12131
          Object.Width           =   450
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -494,7 +513,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodice"
-         Object.Left            =   11906
+         Object.Left            =   12585
          Object.Width           =   1020
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -520,8 +539,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataPrima"
-         Object.Left            =   12926
-         Object.Width           =   900
+         Object.Left            =   13605
+         Object.Width           =   850
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -546,7 +565,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodiceFiscale"
-         Object.Left            =   2721
+         Object.Left            =   3530
          Object.Width           =   1815
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -572,8 +591,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
       BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataSeconda"
-         Object.Left            =   13946
-         Object.Width           =   1020
+         Object.Left            =   14625
+         Object.Width           =   850
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -584,6 +603,33 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType12      =   4
+      BeginProperty Item12 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataNascita"
+         Object.Left            =   2608
+         Object.Width           =   850
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -803,6 +849,7 @@ Private Sub DataReport_Initialize()
         With .Sections("corpo").Controls
             .Item("txtCognome").DataField = "COGNOME"
             .Item("txtNome").DataField = "PAZIENTINOME"
+            .Item("txtDataNascita").DataField = "DATA_NASCITA"
             .Item("txtCodiceFiscale").DataField = "CODICE_FISCALE"
             .Item("txtIndirizzo").DataField = "INDIRIZZO"
             .Item("txtCitta").DataField = "COMUNINOME"

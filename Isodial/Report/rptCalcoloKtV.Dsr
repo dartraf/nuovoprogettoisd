@@ -314,9 +314,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   114
          Object.Top             =   681
-         Object.Width           =   2490
+         Object.Width           =   2670
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -327,7 +326,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Urea Post-Dialisi (mg/dl)"
+         Object.Caption         =   "Azotemia Post-Dialisi (mg/dl)"
       EndProperty
       ItemType1       =   5
       BeginProperty Item1 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -623,9 +622,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
       BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   114
+         Object.Left            =   43
          Object.Top             =   1135
-         Object.Width           =   2490
+         Object.Width           =   2670
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -636,13 +635,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Urea Pre-Dialisi (mg/dl)"
+         Object.Caption         =   "Azotemia Pre-Dialisi (mg/dl)"
       EndProperty
       ItemType17      =   3
       BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label17"
-         Object.Left            =   114
+         Object.Left            =   43
          Object.Top             =   2949
          Object.Width           =   2490
          Object.Height          =   345
@@ -661,7 +660,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
       BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label19"
-         Object.Left            =   114
          Object.Top             =   3402
          Object.Width           =   2490
          Object.Height          =   345
@@ -680,7 +678,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
       BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label20"
-         Object.Left            =   114
+         Object.Left            =   43
          Object.Top             =   2042
          Object.Width           =   2490
          Object.Height          =   345
@@ -699,7 +697,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
       BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label21"
-         Object.Left            =   114
+         Object.Left            =   43
          Object.Top             =   1588
          Object.Width           =   2490
          Object.Height          =   345
@@ -718,7 +716,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
       BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label23"
-         Object.Left            =   114
+         Object.Left            =   43
          Object.Top             =   2495
          Object.Width           =   2490
          Object.Height          =   345

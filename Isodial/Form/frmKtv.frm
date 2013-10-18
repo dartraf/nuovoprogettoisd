@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mschrt20.ocx"
 Begin VB.Form frmKtv 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Calcolo Kt/V"
@@ -130,7 +130,7 @@ Begin VB.Form frmKtv
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            MouseIcon       =   "frmKtv.frx":0199
+            MouseIcon       =   "frmKtv.frx":01A1
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -156,7 +156,7 @@ Begin VB.Form frmKtv
          Height          =   4575
          Index           =   0
          Left            =   -74880
-         OleObjectBlob   =   "frmKtv.frx":02F3
+         OleObjectBlob   =   "frmKtv.frx":02FB
          TabIndex        =   1
          Top             =   480
          Width           =   12735
@@ -165,7 +165,7 @@ Begin VB.Form frmKtv
          Height          =   4575
          Index           =   1
          Left            =   -74880
-         OleObjectBlob   =   "frmKtv.frx":2F86
+         OleObjectBlob   =   "frmKtv.frx":2F8E
          TabIndex        =   9
          Top             =   480
          Width           =   12735
@@ -275,7 +275,7 @@ Begin VB.Form frmKtv
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   360
-         Picture         =   "frmKtv.frx":5C19
+         Picture         =   "frmKtv.frx":5C21
          Style           =   1  'Graphical
          TabIndex        =   16
          Top             =   240

@@ -1007,7 +1007,7 @@ Dim valore As Integer
     ElseIf cboModalitaAcquisizione(1).Text = "" Then
         MsgBox "Inserire la Modalità di Acquisizione", vbCritical, "ATTENZIONE!!!"
         Exit Sub
-    ElseIf oDataRottamazione(0).txtBox = "" Then
+    ElseIf oDataRottamazione(0).txtBox = "" And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
         MsgBox "Inserire la Data di Rottamazione", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf cboFunzionalita.ListIndex = -1 Then

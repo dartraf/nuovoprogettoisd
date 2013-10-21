@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "17/10/2013"
+            TextSave        =   "21/10/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1075,11 +1075,15 @@ Private Sub mnuEsportaDb_Click()
 
     Dim files As ZIPnames
     
+    If MsgBox("I Databases verranno esportati sul desktop in un file compresso .zip - CONFERMI?", vbQuestion + vbYesNo + vbDefaultButton2, "ESPORTA DATABASES") = vbNo Then
+        Exit Sub
+    End If
+    
     files.s(0) = (structApri.pathDB) & "\Centro.mdb"
     files.s(1) = (structApri.pathDB) & "\Connessioni.mdb"
     retcode = ZpArchive(2, Environ$("USERPROFILE") & "\Desktop\Db " & Left(structIntestazione.sRagione, 12) & " " & Day(date) & "_" & Month(date) & "_" & Year(date) & ".zip", files)
     
-    MsgBox "Database esportati correttamente", vbInformation, "Esporta DataBases"
+    MsgBox "Databases esportati correttamente", vbInformation, "Esporta DataBases"
 
 End Sub
 

@@ -242,6 +242,7 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim rsDatasetCerca As Recordset
 Dim testoVoce As String
+Dim mcboStato As Boolean
 
 Private Sub cmdCambiaData_Click()
  ' scelta = False
@@ -320,6 +321,7 @@ End Function
 
 Private Sub Form_Load()
     Dim i As Integer
+    mcboStato = False
     
     tTrova.keyReturn = 0
     Select Case tTrova.Tipo
@@ -388,6 +390,7 @@ Private Sub Form_Load()
     Call RicaricaComboBox("SELECT KEY, NOME FROM TIPO_STATO WHERE KEY IN " & tTrova.condStato & " ORDER BY KEY", "NOME", cboStato)
     
     If cboStato.ListCount <> 0 And tTrova.Tipo = tpPAZIENTE Then
+        mcboStato = True
         cboStato.Visible = True
         cboStato.ListIndex = 0
         If InStr(1, tTrova.condStato, "-1") <> 0 And Not isDialisi Then
@@ -473,7 +476,7 @@ Private Sub Cerca()
     Else
     
         condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
-        If tTrova.Tipo = tpPAZIENTE And cboStato.Visible = True And cboStato.Text <> "Tutti" Then
+        If tTrova.Tipo = tpPAZIENTE And mcboStato = True And cboStato.Text <> "Tutti" Then
             If Not isDialisi Then
                 condizione = condizione & " AND STATO=" & cboStato.ItemData(cboStato.ListIndex)
             Else

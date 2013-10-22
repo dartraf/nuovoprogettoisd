@@ -16,7 +16,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraComuni 
       Height          =   1695
       Left            =   6480
-      TabIndex        =   167
+      TabIndex        =   166
       Top             =   6480
       Width           =   6015
       Begin VB.ComboBox cboRegComuni 
@@ -32,7 +32,7 @@ Begin VB.Form frmInput
          Height          =   315
          Left            =   1680
          Style           =   2  'Dropdown List
-         TabIndex        =   170
+         TabIndex        =   169
          Top             =   1200
          Width           =   4095
       End
@@ -49,7 +49,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1680
          MaxLength       =   25
-         TabIndex        =   169
+         TabIndex        =   168
          Top             =   720
          Width           =   4095
       End
@@ -66,7 +66,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1680
          MaxLength       =   6
-         TabIndex        =   168
+         TabIndex        =   167
          Top             =   240
          Width           =   975
       End
@@ -85,7 +85,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   45
          Left            =   120
-         TabIndex        =   173
+         TabIndex        =   172
          Top             =   300
          Width           =   1470
       End
@@ -103,7 +103,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   172
+         TabIndex        =   171
          Top             =   720
          Width           =   855
       End
@@ -122,7 +122,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   44
          Left            =   120
-         TabIndex        =   171
+         TabIndex        =   170
          Top             =   1200
          Width           =   900
       End
@@ -250,7 +250,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   375
          Left            =   3720
-         TabIndex        =   166
+         TabIndex        =   165
          Top             =   1560
          Width           =   2415
       End
@@ -334,7 +334,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraEsenzioni 
       Height          =   1185
       Left            =   6480
-      TabIndex        =   156
+      TabIndex        =   155
       Top             =   5400
       Width           =   6015
       Begin VB.OptionButton optTicketRicetta 
@@ -352,7 +352,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   3600
-         TabIndex        =   159
+         TabIndex        =   158
          Top             =   720
          Width           =   1695
       End
@@ -369,7 +369,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   2160
          MaxLength       =   10
-         TabIndex        =   157
+         TabIndex        =   156
          Top             =   225
          Width           =   1575
       End
@@ -388,7 +388,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   2160
-         TabIndex        =   158
+         TabIndex        =   157
          Top             =   720
          Value           =   -1  'True
          Width           =   1095
@@ -408,7 +408,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   39
          Left            =   120
-         TabIndex        =   161
+         TabIndex        =   160
          Top             =   720
          Width           =   1770
       End
@@ -427,7 +427,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   40
          Left            =   120
-         TabIndex        =   160
+         TabIndex        =   159
          Top             =   240
          Width           =   1875
       End
@@ -584,7 +584,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraTerapiaStraordinaria 
       Height          =   1695
       Left            =   6480
-      TabIndex        =   148
+      TabIndex        =   147
       Top             =   4080
       Width           =   6015
       Begin VB.TextBox txtNoteStraordinarie 
@@ -599,7 +599,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   285
          Left            =   1320
-         TabIndex        =   152
+         TabIndex        =   151
          Top             =   1200
          Width           =   4455
       End
@@ -617,7 +617,7 @@ Begin VB.Form frmInput
          Left            =   1320
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   149
+         TabIndex        =   148
          Top             =   240
          Width           =   4455
       End
@@ -635,7 +635,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1320
          MaxLength       =   3
-         TabIndex        =   150
+         TabIndex        =   149
          Top             =   720
          Width           =   495
       End
@@ -652,7 +652,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   255
          Left            =   2520
-         TabIndex        =   151
+         TabIndex        =   150
          Top             =   720
          Width           =   3255
       End
@@ -671,7 +671,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   38
          Left            =   120
-         TabIndex        =   155
+         TabIndex        =   154
          Top             =   1230
          Width           =   510
       End
@@ -689,7 +689,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   154
+         TabIndex        =   153
          Top             =   300
          Width           =   930
       End
@@ -708,7 +708,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   37
          Left            =   120
-         TabIndex        =   153
+         TabIndex        =   152
          Top             =   780
          Width           =   1080
       End
@@ -1459,7 +1459,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   43
          Left            =   3600
-         TabIndex        =   165
+         TabIndex        =   164
          Top             =   360
          Width           =   1350
       End
@@ -1478,7 +1478,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   42
          Left            =   120
-         TabIndex        =   164
+         TabIndex        =   163
          Top             =   1320
          Width           =   780
       End
@@ -1497,7 +1497,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   41
          Left            =   120
-         TabIndex        =   163
+         TabIndex        =   162
          Top             =   2205
          Width           =   1905
       End
@@ -1517,7 +1517,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   9
          Left            =   2160
-         TabIndex        =   162
+         TabIndex        =   161
          Top             =   2220
          Width           =   1215
       End
@@ -1786,390 +1786,6 @@ Begin VB.Form frmInput
          TabIndex        =   99
          Top             =   1680
          Width           =   1035
-      End
-   End
-   Begin VB.Frame fraTerapia 
-      Height          =   2535
-      Left            =   6480
-      TabIndex        =   64
-      Top             =   600
-      Width           =   6015
-      Begin VB.OptionButton optSomministrazione 
-         Caption         =   "Postdialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00808080&
-         Height          =   255
-         Index           =   1
-         Left            =   1680
-         TabIndex        =   147
-         Top             =   2640
-         Width           =   1455
-      End
-      Begin VB.OptionButton optSomministrazione 
-         Caption         =   "Intradialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   255
-         Index           =   0
-         Left            =   120
-         TabIndex        =   146
-         Top             =   2640
-         Value           =   -1  'True
-         Width           =   1455
-      End
-      Begin VB.CheckBox chkConfermaSomministrazione 
-         Caption         =   "Conferma Somministazione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Left            =   3360
-         TabIndex        =   145
-         Top             =   2520
-         Width           =   1935
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Tutti"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   7
-         Left            =   5040
-         TabIndex        =   21
-         Top             =   2160
-         Width           =   855
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Do"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   6
-         Left            =   4320
-         TabIndex        =   20
-         Top             =   2160
-         Width           =   735
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Sa"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   5
-         Left            =   3600
-         TabIndex        =   19
-         Top             =   2160
-         Width           =   615
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Ve"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   4
-         Left            =   2880
-         TabIndex        =   18
-         Top             =   2160
-         Width           =   615
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Gi"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   3
-         Left            =   2280
-         TabIndex        =   17
-         Top             =   2160
-         Width           =   615
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Me"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   2
-         Left            =   1560
-         TabIndex        =   16
-         Top             =   2160
-         Width           =   735
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Ma"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   1
-         Left            =   840
-         TabIndex        =   15
-         Top             =   2160
-         Width           =   735
-      End
-      Begin VB.CheckBox chkGiorni 
-         Caption         =   "Lu"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   0
-         Left            =   120
-         TabIndex        =   14
-         Top             =   2160
-         Width           =   615
-      End
-      Begin VB.TextBox txtPosologia 
-         Alignment       =   1  'Right Justify
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   4920
-         MaxLength       =   6
-         TabIndex        =   12
-         Top             =   720
-         Width           =   855
-      End
-      Begin VB.ComboBox cboMedicinali 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Left            =   1680
-         Sorted          =   -1  'True
-         Style           =   2  'Dropdown List
-         TabIndex        =   10
-         Top             =   240
-         Width           =   4095
-      End
-      Begin VB.TextBox txtSomministrazione 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2040
-         TabIndex        =   13
-         Top             =   1320
-         Width           =   3735
-      End
-      Begin VB.PictureBox picData 
-         AutoSize        =   -1  'True
-         BorderStyle     =   0  'None
-         Height          =   360
-         Index           =   0
-         Left            =   3000
-         ScaleHeight     =   360
-         ScaleWidth      =   360
-         TabIndex        =   11
-         ToolTipText     =   "Cerca data"
-         Top             =   720
-         Width           =   360
-      End
-      Begin VB.Label Label8 
-         AutoSize        =   -1  'True
-         Caption         =   "Intervallo"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   120
-         TabIndex        =   144
-         Top             =   1800
-         Width           =   975
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Posologia"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   36
-         Left            =   3720
-         TabIndex        =   143
-         Top             =   780
-         Width           =   1080
-      End
-      Begin VB.Label lblMedicinaleTerapie 
-         AutoSize        =   -1  'True
-         Caption         =   "Farmaco"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   120
-         TabIndex        =   68
-         Top             =   300
-         Width           =   930
-      End
-      Begin VB.Label lblNoteTerapie 
-         AutoSize        =   -1  'True
-         Caption         =   "Somministrazione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Left            =   120
-         TabIndex        =   67
-         Top             =   1320
-         Width           =   1845
-      End
-      Begin VB.Label lblData 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   0
-         Left            =   1680
-         TabIndex        =   66
-         Top             =   780
-         Width           =   1215
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Data"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   4
-         Left            =   120
-         TabIndex        =   65
-         Top             =   840
-         Width           =   510
       End
    End
    Begin VB.Frame fraEpisodi 
@@ -2937,6 +2553,373 @@ Begin VB.Form frmInput
          Width           =   1380
       End
    End
+   Begin VB.Frame fraTerapia 
+      Height          =   3135
+      Left            =   6480
+      TabIndex        =   64
+      Top             =   600
+      Width           =   6015
+      Begin VB.OptionButton optSomministrazione 
+         Caption         =   "Postdialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00808080&
+         Height          =   255
+         Index           =   1
+         Left            =   3000
+         TabIndex        =   146
+         Top             =   2640
+         Width           =   1455
+      End
+      Begin VB.OptionButton optSomministrazione 
+         Caption         =   "Intradialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Index           =   0
+         Left            =   1440
+         TabIndex        =   145
+         Top             =   2640
+         Value           =   -1  'True
+         Width           =   1455
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Tutti"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   7
+         Left            =   5040
+         TabIndex        =   21
+         Top             =   2160
+         Width           =   855
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Do"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   6
+         Left            =   4320
+         TabIndex        =   20
+         Top             =   2160
+         Width           =   735
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Sa"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   5
+         Left            =   3600
+         TabIndex        =   19
+         Top             =   2160
+         Width           =   615
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Ve"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   4
+         Left            =   2880
+         TabIndex        =   18
+         Top             =   2160
+         Width           =   615
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Gi"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   3
+         Left            =   2280
+         TabIndex        =   17
+         Top             =   2160
+         Width           =   615
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Me"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   2
+         Left            =   1560
+         TabIndex        =   16
+         Top             =   2160
+         Width           =   735
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Ma"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   1
+         Left            =   840
+         TabIndex        =   15
+         Top             =   2160
+         Width           =   735
+      End
+      Begin VB.CheckBox chkGiorni 
+         Caption         =   "Lu"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   0
+         Left            =   120
+         TabIndex        =   14
+         Top             =   2160
+         Width           =   615
+      End
+      Begin VB.TextBox txtPosologia 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   4920
+         MaxLength       =   6
+         TabIndex        =   12
+         Top             =   720
+         Width           =   855
+      End
+      Begin VB.ComboBox cboMedicinali 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1680
+         Sorted          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   10
+         Top             =   240
+         Width           =   4095
+      End
+      Begin VB.TextBox txtSomministrazione 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   2040
+         TabIndex        =   13
+         Top             =   1320
+         Width           =   3735
+      End
+      Begin VB.PictureBox picData 
+         AutoSize        =   -1  'True
+         BorderStyle     =   0  'None
+         Height          =   360
+         Index           =   0
+         Left            =   3000
+         ScaleHeight     =   360
+         ScaleWidth      =   360
+         TabIndex        =   11
+         ToolTipText     =   "Cerca data"
+         Top             =   720
+         Width           =   360
+      End
+      Begin VB.Label Label8 
+         AutoSize        =   -1  'True
+         Caption         =   "Intervallo"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   120
+         TabIndex        =   144
+         Top             =   1800
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Posologia"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   36
+         Left            =   3720
+         TabIndex        =   143
+         Top             =   780
+         Width           =   1080
+      End
+      Begin VB.Label lblMedicinaleTerapie 
+         AutoSize        =   -1  'True
+         Caption         =   "Farmaco"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   120
+         TabIndex        =   68
+         Top             =   300
+         Width           =   930
+      End
+      Begin VB.Label lblNoteTerapie 
+         AutoSize        =   -1  'True
+         Caption         =   "Somministrazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   120
+         TabIndex        =   67
+         Top             =   1320
+         Width           =   1845
+      End
+      Begin VB.Label lblData 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   0
+         Left            =   1680
+         TabIndex        =   66
+         Top             =   780
+         Width           =   1215
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   4
+         Left            =   120
+         TabIndex        =   65
+         Top             =   840
+         Width           =   510
+      End
+   End
 End
 Attribute VB_Name = "frmInput"
 Attribute VB_GlobalNameSpace = False
@@ -3473,7 +3456,7 @@ Private Sub cmdInserisci_Click()
         For i = 0 To 7
             tInput.v_valori(5) = tInput.v_valori(5) & IIf(chkGiorni(i).Value = Checked, 1, 0) & "-"
         Next i
-        tInput.v_valori(5) = tInput.v_valori(5) & IIf(chkConfermaSomministrazione.Value = Checked, 1, 0) & "-"
+       ' tInput.v_valori(5) = tInput.v_valori(5) & IIf(chkConfermaSomministrazione.Value = Checked, 1, 0) & "-"
         tInput.v_valori(5) = Mid(tInput.v_valori(5), 1, Len(tInput.v_valori(5)) - 1)
         If tInput.Tipo = tpITERAPIADIALITICA Then
             tInput.v_valori(6) = txtSomministrazione & ""
@@ -3874,11 +3857,11 @@ Private Sub txtQuantita_Change()
 End Sub
 
 Private Sub txtPostazione_GotFocus()
-    txtPostazione.BackColor = colArancione
+    txtpostazione.BackColor = colArancione
 End Sub
 
 Private Sub txtPostazione_LostFocus()
-    txtPostazione.BackColor = vbWhite
+    txtpostazione.BackColor = vbWhite
 End Sub
 
 Private Sub txtNumeroRene_GotFocus()

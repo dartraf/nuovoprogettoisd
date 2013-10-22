@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmTerapiaDomiciliare 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "TERAPIA DOMICILIARE"
@@ -244,7 +244,7 @@ Begin VB.Form frmTerapiaDomiciliare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDomiciliare.frx":0657
+         MouseIcon       =   "frmTerapiaDomiciliare.frx":066D
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -287,7 +287,7 @@ Begin VB.Form frmTerapiaDomiciliare
          Height          =   255
          Index           =   0
          Left            =   11280
-         Picture         =   "frmTerapiaDomiciliare.frx":07B1
+         Picture         =   "frmTerapiaDomiciliare.frx":07C7
          TabIndex        =   12
          Top             =   200
          Width           =   1695
@@ -305,7 +305,7 @@ Begin VB.Form frmTerapiaDomiciliare
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          MousePointer    =   15
-         FormatString    =   $"frmTerapiaDomiciliare.frx":08FB
+         FormatString    =   $"frmTerapiaDomiciliare.frx":0911
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -315,7 +315,7 @@ Begin VB.Form frmTerapiaDomiciliare
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDomiciliare.frx":09BD
+         MouseIcon       =   "frmTerapiaDomiciliare.frx":09CE
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True

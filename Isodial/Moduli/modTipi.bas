@@ -203,6 +203,7 @@ End Enum
 Private Type structTrova
     Tipo As tipoTrova                   ' tipo da trovare
     keyReturn As Integer                ' codice_XXX restituito dal frmTrova
+    keyGestioneApparato As Integer      ' codice_XXX per la gestione della GestioneApparati
     condizione As String                ' condizione di ricerca sql
     condStato As String                 ' condizione di caricamento dello stato nel cboStato
     NomeStriga As String                      ' nome_XXX restituito dal frmTrova in caso della tabella PRODUTTORE_MANUTENTORE

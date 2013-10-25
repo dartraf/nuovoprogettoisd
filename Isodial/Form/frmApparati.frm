@@ -850,10 +850,11 @@ Private Sub flxGriglia_DblClick()
     
     ' Seleziono la key dell' apparato e la passo
     ' la passo con la variabile, altrimenti da errore
-    tTrova.keyReturn = KeyApparato
-    MantieniKeyReturn = tTrova.keyReturn
+    
+    tTrova.keyGestioneApparato = KeyApparato
+    MantieniKeyReturn = tTrova.keyGestioneApparato
     cmdInserisci_Click
-    tTrova.keyReturn = 0    'per evitare di ricaricare l'apparato
+    tTrova.keyGestioneApparato = 0    'per evitare di ricaricare l'apparato
 End Sub
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)

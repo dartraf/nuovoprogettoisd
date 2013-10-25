@@ -835,9 +835,8 @@ Dim mProxRevSic As Variant
 Dim PostazionePrec As String
 Dim cboTipoApparatoPrec As String
 Dim cboTipoRenePrec As String
-Dim MantieniDato As Integer
+'Dim MantieniDato As Integer
 Dim KeyProduttore As Integer
-Dim keyManutentore As Integer
 
 Private Sub cboModalitaAcquisizione_GotFocus(Index As Integer)
     cboModalitaAcquisizione(1).BackColor = colArancione
@@ -860,10 +859,6 @@ Private Sub cboModalitaAcquisizione_LostFocus(Index As Integer)
     
 End Sub
 
-'Private Sub cboModello_GotFocus(Index As Integer)
-'    cboModello(2).BackColor = colArancione
-'End Sub
-
 Private Sub cboModello_LostFocus(Index As Integer)
     
     If Len(cboModello(2)) > 30 Then
@@ -876,14 +871,8 @@ Private Sub cboModello_LostFocus(Index As Integer)
     If cboModello(2).Text <> "" Then
         Call GestisciNuovo("APPARATI_MODELLO", cboModello(2))
     End If
-    
-'    cboModello(2).BackColor = vbWhite
-    
+        
 End Sub
-
-'Private Sub cboTipoApparato_GotFocus(Index As Integer)
-'        cboTipoApparato(0).BackColor = colArancione
-'End Sub
 
 Private Sub cboTipoApparato_LostFocus(Index As Integer)
  
@@ -909,14 +898,12 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
         Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
 
-'   cboTipoApparato(0).BackColor = vbWhite
-    
 End Sub
 
 Private Sub cmdTrova_Click(Index As Integer)
     'Salvo la key dell' apparato per evitare che si perda
     'quando carico il frmTrova
-    MantieniDato = tTrova.keyReturn
+'    MantieniDato = tTrova.keyReturn
     
     ModificaProduttore = True
         
@@ -939,7 +926,9 @@ Private Sub cmdTrova_Click(Index As Integer)
         ModificaManutentore = False
     End If
     tTrova.NomeStriga = ""
-    tTrova.keyReturn = MantieniDato
+
+'    tTrova.keyReturn = MantieniDato
+
 End Sub
 
 Private Sub oDataCollaudo_LostFocus(Index As Integer)
@@ -962,7 +951,6 @@ End Sub
 Private Sub cmdMemorizza_Click()
 Dim v_Nomi() As Variant
 Dim v_Val() As Variant
-'Dim numKey As Integer
 Dim valore As Integer
 
     '' Controlli sui campi
@@ -979,7 +967,7 @@ Dim valore As Integer
     ElseIf cboTipoApparato(0).Text = "" Then
         MsgBox "Inserire la Categoria a cui appartiene l'Apparato", vbCritical, "ATTENZIONE!!!"
         Exit Sub
-    ElseIf (IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) = False Or IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) = False) And cboTipoApparato(0) <> "RENE ARTIFICIALE" And tTrova.keyReturn <> 0 Then
+    ElseIf (IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) = False Or IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) = False) And cboTipoApparato(0) <> "RENE ARTIFICIALE" And tTrova.keyGestioneApparato <> 0 Then
         MsgBox "MODIFICA CATEGORIA APPARATO NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
         cboTipoApparato(0) = cboTipoApparatoPrec
         txtpostazione = PostazionePrec
@@ -1080,12 +1068,12 @@ Dim valore As Integer
 
     v_Nomi = Array("KEY", "NUMERO_INVENTARIO", "NUMERO_APPARATO", "TIPO_APPARATO", "MODELLO", "POSTAZIONE", "TIPO", "MATRICOLA", "PRODUTTORE", "MANUTENTORE", "DATA_FABBRICAZIONE" _
                     , "DATA_COLLAUDO", "NOTE_COLLAUDO", "DATA_DISMISSIONE", "MODALITA_ACQUISIZIONE", "DATA_ACQUISIZIONE", "DATA_ROTTAMAZIONE", "PERIODO_AMMORTAMENTO" _
-                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT", "KEY_PRODUTTORE", "KEY_MANUTENTORE")
+                    , "FUNZIONALITA", "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT", "KEY_PRODUTTORE")
                     
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text, UCase(txtpostazione), valore, txtMatricola, lblProduttore.Caption, lblManutentore.Caption, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                     , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text, IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), txtPeriodoAmmortamento _
-                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False), KeyProduttore, keyManutentore)
+                    , cboFunzionalita.ListIndex, cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False), KeyProduttore)
 
     If ModificaApparato = True Then
         rsMemorizzaApparecchiature.Open "SELECT * FROM APPARATI WHERE KEY=" & NumeroApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -1214,7 +1202,7 @@ Private Function NumInvent() As Boolean
     Else
         rsDataset.Open "SELECT KEY,NUMERO_INVENTARIO FROM APPARATI WHERE NUMERO_INVENTARIO=" & txtNumeroInventario, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
-            If rsDataset("KEY") <> tTrova.keyReturn Then
+            If rsDataset("KEY") <> tTrova.keyGestioneApparato Then
                 If MsgBox("Numero Inventario già in uso." & vbCrLf & "Si preferisce assegnare il valore " & massimo + 1 & " scelto dal sistema?", vbCritical + vbYesNo, "ATTENZIONE!!!!!!") = vbYes Then
                     txtNumeroInventario = massimo + 1
                     NumInvent = False
@@ -1241,7 +1229,7 @@ Private Function NumPost() As Boolean
    rsDataset.Open "SELECT KEY,POSTAZIONE FROM APPARATI WHERE POSTAZIONE ='" & txtpostazione & "'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 
    If Not (rsDataset.EOF And rsDataset.BOF) Then
-    If rsDataset("KEY") <> tTrova.keyReturn And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
+    If rsDataset("KEY") <> tTrova.keyGestioneApparato And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
         If MsgBox("Postazione già presente." & vbCrLf & "Vuoi duplicarla?", vbQuestion + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
             NumPost = False
         Else
@@ -1267,7 +1255,7 @@ Private Function NumApp() As Boolean
    rsDataset.Open "SELECT KEY,NUMERO_APPARATO FROM APPARATI WHERE NUMERO_APPARATO =" & txtNumeroApparato, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 
    If Not (rsDataset.EOF And rsDataset.BOF) Then
-    If rsDataset("KEY") <> tTrova.keyReturn Then
+    If rsDataset("KEY") <> tTrova.keyGestioneApparato Then
         MsgBox "Numero di Apparato/Rene già esistente", vbCritical, "ATTENZIONE!!!"
         NumApp = True
     End If
@@ -1299,10 +1287,9 @@ Private Sub Pulisci()
     txtNumeroInventario.SetFocus
     txtNumeroInventario_GotFocus
     NumeroApparato = 0
-    tTrova.keyReturn = 0
-    MantieniDato = 0
+    tTrova.keyGestioneApparato = 0
+    'MantieniDato = 0
     KeyProduttore = 0
-    keyManutentore = 0
     cboFunzionalita.ListIndex = -1
     cboSicurezza.ListIndex = -1
     ProxRevFun = ""
@@ -1317,7 +1304,7 @@ End Sub
 
 Private Sub Form_Load()
 
-    If tTrova.keyReturn = 0 And tInput.mantieniDati = True Then  'predispone il form all'inserimento del rene
+    If tTrova.keyGestioneApparato = 0 And tInput.mantieniDati = True Then  'predispone il form all'inserimento del rene
         Label1(16).Enabled = True                                'in rottamazione da sostituire
         Label1(17).Enabled = True
         txtpostazione.Enabled = True
@@ -1327,10 +1314,10 @@ Private Sub Form_Load()
         txtpostazione = tInput.v_valori(1)
         cboTipoRene.ListIndex = 0
 
-    ElseIf tTrova.keyReturn = 0 Then
+    ElseIf tTrova.keyGestioneApparato = 0 Then
         txtNumeroInventario = GetNumero("APPARATI")
     Else
-        NumeroApparato = tTrova.keyReturn
+        NumeroApparato = tTrova.keyGestioneApparato
         Call CaricaApparato
     End If
 End Sub

@@ -3778,6 +3778,7 @@ Private Sub cmdCarica_Click()
     Dim rsDataset As Recordset
     Set rsDataset = New Recordset
     Dim strSql As String
+    Dim ricerca As Boolean
     
     Select Case tabSchede.Tab
         Case 0
@@ -3847,13 +3848,16 @@ Private Sub cmdCarica_Click()
                         .Rows = .Rows + 1
                         .TextMatrix(.Rows - 1, 0) = rsDataset("MEDICINALINOME")
                         .TextMatrix(.Rows - 1, 1) = rsDataset("POSOLOGIA")
-                        .TextMatrix(.Rows - 1, 2) = IIf(CBool(rsDataset("CONFERMA_SOMMINISTRAZIONE")), icsCAS, "")
+                        If ricerca Then
+                            .TextMatrix(.Rows - 1, 2) = IIf(CBool(rsDataset("CONFERMA_SOMMINISTRAZIONE")), icsCAS, "")
+                        End If '
                         .TextMatrix(.Rows - 1, 3) = rsDataset("NOTE")
                     End With
                 End If
                 rsDataset.MoveNext
             Loop
             rsDataset.Close
+            ricerca = False
     End Select
     Set rsDataset = Nothing
 End Sub

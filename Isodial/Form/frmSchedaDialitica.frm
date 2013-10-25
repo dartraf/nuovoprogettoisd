@@ -691,26 +691,26 @@ Begin VB.Form frmSchedaDialitica
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":08CE
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblSolInfCc"
-      Tab(1).Control(1)=   "lblCartuccia"
-      Tab(1).Control(2)=   "lblSolInfusionale"
-      Tab(1).Control(3)=   "lblSolDialitica"
-      Tab(1).Control(4)=   "lblFlussoSangue"
-      Tab(1).Control(5)=   "lblFlusso"
-      Tab(1).Control(6)=   "Label1(21)"
-      Tab(1).Control(7)=   "Label1(20)"
-      Tab(1).Control(8)=   "Label1(19)"
-      Tab(1).Control(9)=   "Label1(18)"
-      Tab(1).Control(10)=   "Label1(7)"
-      Tab(1).Control(11)=   "Label1(6)"
+      Tab(1).Control(0)=   "Label1(6)"
+      Tab(1).Control(1)=   "Label1(7)"
+      Tab(1).Control(2)=   "Label1(18)"
+      Tab(1).Control(3)=   "Label1(19)"
+      Tab(1).Control(4)=   "Label1(20)"
+      Tab(1).Control(5)=   "Label1(21)"
+      Tab(1).Control(6)=   "lblFlusso"
+      Tab(1).Control(7)=   "lblFlussoSangue"
+      Tab(1).Control(8)=   "lblSolDialitica"
+      Tab(1).Control(9)=   "lblSolInfusionale"
+      Tab(1).Control(10)=   "lblCartuccia"
+      Tab(1).Control(11)=   "lblSolInfCc"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":08EA
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "flxGriglia(0)"
-      Tab(2).Control(1)=   "flxGriglia(1)"
-      Tab(2).Control(2)=   "Label1(37)"
-      Tab(2).Control(3)=   "Label1(36)"
+      Tab(2).Control(0)=   "Label1(36)"
+      Tab(2).Control(1)=   "Label1(37)"
+      Tab(2).Control(2)=   "flxGriglia(1)"
+      Tab(2).Control(3)=   "flxGriglia(0)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -3356,6 +3356,7 @@ Private Sub CaricaPaziente()
     Dim data As Date
     Dim giorno As Integer
     Dim strSql As String
+    Dim ricerca As Boolean
     
     If intPazientiKey = 0 Then
         Exit Sub
@@ -3456,9 +3457,10 @@ Private Sub CaricaPaziente()
     data = DateValue(Month(laData) & "/" & Day(laData) & "/" & Year(laData))
     rsDataset.Open "SELECT * FROM SCHEDE_DIALISI WHERE SPECIALE=FALSE AND CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & data & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
+        ricerca = True
         strSql = "SELECT * FROM STORICO_TERAPIA_DIALISI WHERE CODICE_DIALISI=" & rsDataset("KEY")
     Else
-        strSql = "SELECT M.NOME AS MEDICINALE, (SOMMINISTRAZIONE-1) AS TIPO, POSOLOGIA, CONFERMA_SOMMINISTRAZIONE, NOTE FROM (TERAPIE_DIALITICHE T INNER JOIN MEDICINALI M ON M.KEY=T.CODICE_MEDICINALE) WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND SOSPESA=FALSE AND (TUTTI_GIORNI=TRUE OR GIORNO" & giorno & "=TRUE) ORDER BY DATA DESC"
+        strSql = "SELECT M.NOME AS MEDICINALE, (SOMMINISTRAZIONE-1) AS TIPO, POSOLOGIA, NOTE FROM (TERAPIE_DIALITICHE T INNER JOIN MEDICINALI M ON M.KEY=T.CODICE_MEDICINALE) WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND SOSPESA=FALSE AND (TUTTI_GIORNI=TRUE OR GIORNO" & giorno & "=TRUE) ORDER BY DATA DESC"
     End If
     rsDataset.Close
     
@@ -3472,14 +3474,17 @@ Private Sub CaricaPaziente()
                 .Rows = .Rows + 1
                 .TextMatrix(.Rows - 1, 0) = rsDataset("MEDICINALE")
                 .TextMatrix(.Rows - 1, 1) = rsDataset("POSOLOGIA") & ""
-                .TextMatrix(.Rows - 1, 2) = IIf(CBool(rsDataset("CONFERMA_SOMMINISTRAZIONE")), icsCAS, "")
+                If ricerca Then
+                  .TextMatrix(.Rows - 1, 2) = IIf(CBool(rsDataset("CONFERMA_SOMMINISTRAZIONE")), icsCAS, "")
+                End If
                 .TextMatrix(.Rows - 1, 3) = rsDataset("NOTE") & ""
             End With
         End If
         rsDataset.MoveNext
     Loop
     rsDataset.Close
-    
+    ricerca = False
+                      
     rsDataset.Open "SELECT * FROM SCHEDE_DIALISI WHERE SPECIALE=FALSE AND CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & data & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         strSql = "SELECT    STORICO_DIALISI_GIORNALIERA.TP_RENE, APPARATI.* " & _

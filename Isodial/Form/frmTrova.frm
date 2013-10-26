@@ -329,6 +329,7 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(3) = 0
             Me.Caption = Me.Caption & "medico di base"
             testoVoce = "Medici in elenco: "
+            
         Case tpPAZIENTE
             Me.Caption = Me.Caption & "paziente"
             If Not isDialisi Then
@@ -336,27 +337,40 @@ Private Sub Form_Load()
             Else
                 testoVoce = "Pazienti in turno: "
             End If
+            
         Case tpMEDICOREFER
             Me.Caption = Me.Caption & "medico refertante"
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Medici in elenco: "
+            
         Case tpINFERMIERE
             Me.Caption = Me.Caption & "infermiere"
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Infermieri in elenco: "
+        
         Case tpPSICOLOGI
             Me.Caption = Me.Caption & "psicologo"
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Psicologi in elenco: "
+        
         Case tpACCOMPAGNATORI
             Me.Caption = Me.Caption & "accompagnatori"
             flxGriglia.ColWidth(3) = 0
             testoVoce = "Accompagnatori in elenco: "
+        
         Case tpPRODUTTORE_MANUTENTORE
             If ModificaProduttore = True Or ModificaManutentore = True Then
                 cmdNuovo.Visible = True
             End If
             cmdModifica.Visible = True
+            
+            ' Se mi trovo nel frmStampaApparati, nella selezione del produttore
+            ' non devo far comparire i tasti Nuovo e Modifica
+            If StampaApparati = True Then
+                cmdNuovo.Visible = False
+                cmdModifica.Visible = False
+            End If
+            
             Me.Caption = Me.Caption & "Produttore/Manutentore"
             flxGriglia.FormatString = "| RAGIONE SOCIALE"
             flxGriglia.ColWidth(1) = 6500
@@ -364,6 +378,7 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(3) = 0
             flxGriglia.ColAlignment(1) = vbLeftJustify
             lblVoci.Visible = False
+        
         Case tpAPPARATI_TIPO
             Me.Caption = Me.Caption & "Apparati Tipo"
             flxGriglia.FormatString = "| CATEGORIA APPARATO"
@@ -372,6 +387,7 @@ Private Sub Form_Load()
             flxGriglia.ColWidth(3) = 0
             flxGriglia.ColAlignment(1) = vbLeftJustify
             lblVoci.Visible = False
+    
     End Select
     lblVoci = testoVoce
     With flxGriglia
@@ -521,7 +537,7 @@ Private Sub cmdAvanti_Click()
     If flxGriglia.Row <> 0 Then
     ' Se la Tabella Caricata è PRODUTTORE_MANUTENTORE
     ' Se è in modifica Produttore mi carica il nome e la key
-        If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaProduttore = True Then
+        If tTrova.Tipo = tpPRODUTTORE_MANUTENTORE And ModificaProduttore = True Or StampaApparati = True Then
             tTrova.keyReturn = flxGriglia.TextMatrix(flxGriglia.Row, 0)
             tTrova.NomeStriga = flxGriglia.TextMatrix(flxGriglia.Row, 1)
     

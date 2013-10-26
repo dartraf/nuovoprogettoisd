@@ -82,6 +82,7 @@ Public sostituito As Boolean
 
 Public ModificaProduttore As Boolean    ' variabile per il formApparatiInput per caricare il formTrova
 Public ModificaManutentore As Boolean   ' variabile per il formApparatiInput per caricare il formTrova
+Public StampaApparati As Boolean        ' variabile per il formStampaApparati per caricare il formTrova
 Public MantieniKeyReturn As Integer     ' variabile per il form Apparati
 Public KeyApparato As Integer           ' variabile apparato che viene passata per manutenzione CODICE_APPARATO
 Public KeyReturnManutenzione As Integer ' variabile Key per la selezione della manutenzione

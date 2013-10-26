@@ -2,14 +2,14 @@ VERSION 5.00
 Begin VB.Form frmStampaApparati 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Apparati "
-   ClientHeight    =   4545
+   ClientHeight    =   4200
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   5625
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4545
+   ScaleHeight     =   4200
    ScaleWidth      =   5625
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -23,7 +23,7 @@ Begin VB.Form frmStampaApparati
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   3735
+      Height          =   3375
       Left            =   120
       TabIndex        =   0
       Top             =   0
@@ -34,7 +34,7 @@ Begin VB.Form frmStampaApparati
          Left            =   1395
          Picture         =   "frmStampaApparati.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   960
          Width           =   450
       End
@@ -52,7 +52,7 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   9
-         Top             =   2160
+         Top             =   1800
          Width           =   3135
       End
       Begin VB.CommandButton cmdTrova 
@@ -79,7 +79,7 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   6
-         Top             =   3240
+         Top             =   2880
          Width           =   3615
       End
       Begin VB.OptionButton optTipoApparato 
@@ -96,7 +96,7 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   5
-         Top             =   2520
+         Top             =   2160
          Width           =   3375
       End
       Begin VB.OptionButton optInventario 
@@ -113,7 +113,7 @@ Begin VB.Form frmStampaApparati
          Height          =   255
          Left            =   120
          TabIndex        =   4
-         Top             =   2880
+         Top             =   2520
          Width           =   3615
       End
       Begin VB.Label lblNomeCategoria 
@@ -130,7 +130,7 @@ Begin VB.Form frmStampaApparati
          EndProperty
          Height          =   285
          Left            =   1920
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   1080
          Width           =   3375
       End
@@ -147,27 +147,9 @@ Begin VB.Form frmStampaApparati
          EndProperty
          Height          =   495
          Left            =   120
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   960
          Width           =   1215
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Elenco per Categora Apparato:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   -1  'True
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   375
-         Left            =   120
-         TabIndex        =   11
-         Top             =   1800
-         Width           =   3495
       End
       Begin VB.Label Label1 
          Caption         =   "Elenco per Produttore"
@@ -209,7 +191,7 @@ Begin VB.Form frmStampaApparati
       Height          =   855
       Left            =   120
       TabIndex        =   3
-      Top             =   3600
+      Top             =   3240
       Width           =   5415
       Begin VB.CommandButton cmdEsci 
          Caption         =   "&Chiudi"
@@ -410,11 +392,11 @@ Private Sub cmdTrova_Click()
     optTuttiProduttori.Value = Unchecked
     lblNomeCategoria.Caption = ""
     
-    'La variabile ModificaProduttore è vera così
+    'La variabile StampaApparati è vera in modo tale che
     'quando carico il formTrova mi carica
-    '1)il cmdNuovo
+    '1)il cmdNuovo e cmdModifica non visibili
     '2)il nome della stringa selezionata
-    ModificaProduttore = True
+    StampaApparati = True
         
     'Azzero la variabile per evitare di ricaricare lo stesso dato
     tTrova.NomeStriga = ""
@@ -425,6 +407,8 @@ Private Sub cmdTrova_Click()
     Unload frmTrova
     frmTrova.Show 1
     lblNomeProduttore.Caption = tTrova.NomeStriga
+    
+    StampaApparati = False
 
 End Sub
 

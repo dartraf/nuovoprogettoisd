@@ -1160,6 +1160,8 @@ Public Sub StampaNonaParte(formPazienti As Boolean, codicePaziente As Integer, O
     SQLString = "SHAPE APPEND " & _
                 "   NEW adDate AS DATA, " & _
                 "   NEW adLongVarChar AS INTERVENTO, " & _
+                "   NEW adDate AS DATA_CHIUSURA_ACCESSO , " & _
+                "   NEW adLongVarChar AS CAUSA_CHIUSURA_ACCESSO, " & _
                 "   NEW adVarChar (100) AS OPERATORE1, " & _
                 "   NEW adVarChar (100) AS OPERATORE2, " & _
                 "   NEW adInteger AS ANESTESIA, " & _
@@ -1180,6 +1182,8 @@ Public Sub StampaNonaParte(formPazienti As Boolean, codicePaziente As Integer, O
                 .AddNew
                 .Fields("DATA") = rsAccessi("DATA")
                 .Fields("INTERVENTO") = rsAccessi("INTERVENTO")
+                .Fields("DATA_CHIUSURA_ACCESSO") = rsAccessi("DATA_CHIUSURA_ACCESSO")
+                .Fields("CAUSA_CHIUSURA_ACCESSO") = rsAccessi("CAUSA_CHIUSURA_ACCESSO")
                 .Fields("OPERATORE1") = DatiMedico(rsAccessi("CODICE_MEDICO1"))
                 .Fields("OPERATORE2") = DatiMedico(rsAccessi("CODICE_MEDICO2"))
                 .Fields("ANESTESIA") = rsAccessi("ANESTESIA")

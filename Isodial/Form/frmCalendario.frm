@@ -70,7 +70,7 @@ Begin VB.Form frmCalendario
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      StartOfWeek     =   16121858
+      StartOfWeek     =   49348610
       TitleBackColor  =   -2147483645
       CurrentDate     =   38969
       MinDate         =   2

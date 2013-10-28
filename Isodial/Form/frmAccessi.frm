@@ -3,16 +3,16 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmAccessi 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "ACCESSI VASCOLARI"
-   ClientHeight    =   5445
+   ClientHeight    =   6840
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   12255
+   ClientWidth     =   12225
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   5445
-   ScaleWidth      =   12255
+   ScaleHeight     =   6840
+   ScaleWidth      =   12225
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
@@ -223,7 +223,7 @@ Begin VB.Form frmAccessi
       Height          =   1335
       Left            =   120
       TabIndex        =   14
-      Top             =   2040
+      Top             =   3360
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
@@ -442,7 +442,7 @@ Begin VB.Form frmAccessi
       Height          =   1455
       Left            =   120
       TabIndex        =   21
-      Top             =   3240
+      Top             =   4560
       Width           =   12015
       Begin VB.TextBox txtDati 
          BeginProperty Font 
@@ -559,7 +559,7 @@ Begin VB.Form frmAccessi
       Height          =   855
       Left            =   120
       TabIndex        =   10
-      Top             =   4560
+      Top             =   5880
       Width           =   12015
       Begin VB.CommandButton cmdElimina 
          Caption         =   "&Elimina"
@@ -629,6 +629,81 @@ Begin VB.Form frmAccessi
          TabIndex        =   9
          Top             =   240
          Width           =   1335
+      End
+   End
+   Begin VB.Frame Frame6 
+      Height          =   1455
+      Left            =   120
+      TabIndex        =   38
+      Top             =   2040
+      Width           =   12015
+      Begin VB.TextBox txtCausaChiusuraAccesso 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   765
+         Left            =   2280
+         MultiLine       =   -1  'True
+         ScrollBars      =   2  'Vertical
+         TabIndex        =   39
+         Top             =   600
+         Width           =   9495
+      End
+      Begin DataTimeBox.uDataTimeBox oDataChiusuraAccesso 
+         Height          =   375
+         Left            =   2280
+         TabIndex        =   40
+         Top             =   175
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Causa Chiusura Accesso"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   480
+         Index           =   14
+         Left            =   240
+         TabIndex        =   42
+         Top             =   840
+         Width           =   1845
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Data Chiusura Accesso"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   480
+         Index           =   13
+         Left            =   240
+         TabIndex        =   41
+         Top             =   240
+         Width           =   1575
       End
    End
 End
@@ -795,6 +870,8 @@ Private Sub CaricaScheda()
     If Not (rsAccessi.EOF And rsAccessi.BOF) Then
         txtIntervento = rsAccessi("INTERVENTO") & ""
         txtDati = rsAccessi("DATI") & ""
+        oDataChiusuraAccesso.data = rsAccessi("DATA_CHIUSURA_ACCESSO") & ""
+        txtCausaChiusuraAccesso = rsAccessi("CAUSA_CHIUSURA_ACCESSO") & ""
         intMedicoKey(0) = rsAccessi("CODICE_MEDICO1")
         Call CaricaMedico(0)
         intMedicoKey(1) = rsAccessi("CODICE_MEDICO2")
@@ -855,6 +932,8 @@ Private Sub Pulisci()
     Next i
     txtDati = ""
     txtIntervento = ""
+    oDataChiusuraAccesso.Pulisci
+    txtCausaChiusuraAccesso = ""
     For i = 0 To 1
         lblCognomeMed(i) = ""
         lblNomeMed(i) = ""
@@ -872,6 +951,7 @@ Private Sub PulisciTutto()
     intMedicoKey(0) = 0
     intMedicoKey(1) = 0
     oData.Pulisci
+    oDataChiusuraAccesso.Pulisci
     Call PulisciForm(Me)
     cmdTrova(0).SetFocus
     For i = 0 To 2
@@ -911,9 +991,9 @@ Private Sub cmdMemorizza_Click()
         If Not modifica Then
             keyId = GetNumero("ACCESSI_VASCOLARI_TAB")
         End If
-        v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "INTERVENTO", "CODICE_MEDICO1", _
+        v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "INTERVENTO", "DATA_CHIUSURA_ACCESSO", "CAUSA_CHIUSURA_ACCESSO", "CODICE_MEDICO1", _
                         "CODICE_MEDICO2", "ANESTESIA", "DATI")
-        v_Val = Array(keyId, intPazientiKey, oData.data, txtIntervento, intMedicoKey(0), intMedicoKey(1), GestisciOpt, txtDati)
+        v_Val = Array(keyId, intPazientiKey, oData.data, txtIntervento, oDataChiusuraAccesso.data, txtCausaChiusuraAccesso, intMedicoKey(0), intMedicoKey(1), GestisciOpt, txtDati)
         Set rsAccessi = New Recordset
         If modifica Then
             rsAccessi.Open "SELECT * FROM ACCESSI_VASCOLARI_TAB WHERE KEY=" & keyId, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
@@ -1031,13 +1111,13 @@ End Sub
 Private Sub oData_OnDataChange()
     If IsDate(oData.data) Then
         Call CaricaScheda
-    Else
-        If oData.data = "" Then Pulisci
+    ElseIf oData.data = "" Then
+        Call Pulisci
     End If
 End Sub
 
 Private Sub oData_OnElencaClick()
-    If ControlloChiusuraForm(blnModificato, Me.Caption) Then
+        If ControlloChiusuraForm(blnModificato, Me.Caption) Then
         tElenca.Tipo = tpACCESSO
         tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey
         frmElencaDate.Show 1
@@ -1047,6 +1127,14 @@ End Sub
 
 Private Sub optAnestesia_KeyPress(Index As Integer, KeyAscii As Integer)
     Call InvioTab(KeyAscii)
+End Sub
+
+Private Sub txtCausaChiusuraAccesso_GotFocus()
+    txtCausaChiusuraAccesso.BackColor = colArancione
+End Sub
+
+Private Sub txtCausaChiusuraAccesso_LostFocus()
+    txtCausaChiusuraAccesso.BackColor = vbWhite
 End Sub
 
 Private Sub txtDati_GotFocus()
@@ -1072,6 +1160,10 @@ Private Sub txtIntervento_Change()
 End Sub
 
 Private Sub txtDati_Change()
+    blnModificato = True
+End Sub
+
+Private Sub txtCausaChiusuraAccesso_Change()
     blnModificato = True
 End Sub
 

@@ -2,7 +2,7 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Accessi Vascolari"
-   ClientHeight    =   7500
+   ClientHeight    =   9390
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   10350
@@ -10,7 +10,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
    _ExtentX        =   18256
-   _ExtentY        =   13229
+   _ExtentY        =   16563
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   9647
@@ -336,9 +336,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   4797
+      Object.Height          =   6387
       KeepTogether    =   -1  'True
-      NumControls     =   13
+      NumControls     =   17
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -386,7 +386,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
             Name            =   "Times New Roman"
             Size            =   12
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -426,14 +426,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Descrizione intervento"
+         Object.Caption         =   "Descrizione intervento:"
       EndProperty
       ItemType5       =   3
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
-         Object.Left            =   1588
-         Object.Top             =   2098
+         Object.Left            =   1587
+         Object.Top             =   3571
          Object.Width           =   1995
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -452,7 +452,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "txtOperatore1"
          Object.Left            =   3628
-         Object.Top             =   2098
+         Object.Top             =   3572
          Object.Width           =   5715
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -479,7 +479,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "Label5"
          Object.Left            =   1588
-         Object.Top             =   2552
+         Object.Top             =   4026
          Object.Width           =   1995
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -498,7 +498,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "txtOperatore2"
          Object.Left            =   3628
-         Object.Top             =   2552
+         Object.Top             =   4026
          Object.Width           =   5715
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -525,7 +525,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   1587
-         Object.Top             =   3005
+         Object.Top             =   4479
          Object.Width           =   1185
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -544,7 +544,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "txtAnestesia"
          Object.Left            =   2778
-         Object.Top             =   3005
+         Object.Top             =   4479
          Object.Width           =   6570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -571,7 +571,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "txtDati"
          Object.Left            =   1587
-         Object.Top             =   4026
+         Object.Top             =   5500
          Object.Width           =   7770
          Object.Height          =   675
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -599,7 +599,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
          _Version        =   393216
          Name            =   "Label7"
          Object.Left            =   1587
-         Object.Top             =   3629
+         Object.Top             =   5103
          Object.Width           =   4140
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -612,6 +612,87 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "Dati rilevanti"
+      EndProperty
+      ItemType13      =   4
+      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataChiusuraAccesso"
+         Object.Left            =   170
+         Object.Top             =   2155
+         Object.Width           =   1305
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType14      =   5
+      BeginProperty Item14 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Line4"
+         Object.Left            =   170
+         Object.Top             =   2438
+         Object.Width           =   1140
+      EndProperty
+      ItemType15      =   4
+      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtCausaChiusuraAccesso"
+         Object.Left            =   1587
+         Object.Top             =   2438
+         Object.Width           =   7815
+         Object.Height          =   855
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label3"
+         Object.Left            =   1587
+         Object.Top             =   2098
+         Object.Width           =   4140
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Causa chiusura accesso:"
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -757,6 +838,8 @@ Private Sub DataReport_Initialize()
         With .Sections("corpo").Controls
             .Item("txtData").DataField = "DATA"
             .Item("txtDescrizione").DataField = "INTERVENTO"
+            .Item("txtDataChiusuraAccesso").DataField = "DATA_CHIUSURA_ACCESSO"
+            .Item("txtCausaChiusuraAccesso").DataField = "CAUSA_CHIUSURA_ACCESSO"
             .Item("txtOperatore1").DataField = "OPERATORE1"
             .Item("txtOperatore2").DataField = "OPERATORE2"
             .Item("txtAnestesia").DataField = "ANESTESIA"

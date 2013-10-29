@@ -15,229 +15,6 @@ Begin VB.Form frmSchedaDialitica
    ScaleHeight     =   7305
    ScaleWidth      =   12105
    ShowInTaskbar   =   0   'False
-   Begin VB.Frame Frame2 
-      Height          =   975
-      Left            =   120
-      TabIndex        =   33
-      Top             =   6240
-      Width           =   11895
-      Begin VB.CommandButton cmdTerapia 
-         Caption         =   "&Terapia"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   2520
-         TabIndex        =   29
-         Top             =   240
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdKtv 
-         Caption         =   "Calcola &Kt/V"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   7080
-         TabIndex        =   30
-         Top             =   240
-         Width           =   1455
-      End
-      Begin VB.CommandButton cmdChiudi 
-         Caption         =   "&Chiudi"
-         CausesValidation=   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   10440
-         TabIndex        =   32
-         Top             =   240
-         Width           =   1215
-      End
-      Begin VB.CommandButton cmdMostraInfo 
-         Caption         =   "&Scheda Dialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   240
-         TabIndex        =   28
-         Top             =   240
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdMemorizza 
-         Caption         =   "&Memorizza"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   8760
-         TabIndex        =   31
-         Top             =   240
-         Width           =   1455
-      End
-   End
-   Begin VB.Frame Frame1 
-      Height          =   855
-      Left            =   120
-      TabIndex        =   73
-      Top             =   0
-      Width           =   11895
-      Begin VB.CommandButton cmdTrova 
-         BackColor       =   &H00C0C0C0&
-         Height          =   450
-         Index           =   0
-         Left            =   360
-         Picture         =   "frmSchedaDialitica.frx":0000
-         Style           =   1  'Graphical
-         TabIndex        =   77
-         Top             =   240
-         Width           =   450
-      End
-      Begin VB.Label lblCognome 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2160
-         TabIndex        =   80
-         Top             =   360
-         Width           =   3255
-      End
-      Begin VB.Label lblNome 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6720
-         TabIndex        =   79
-         Top             =   360
-         Width           =   3135
-      End
-      Begin VB.Label lblEta 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   11160
-         TabIndex        =   78
-         Top             =   360
-         Width           =   615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Cognome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   0
-         Left            =   1080
-         TabIndex        =   76
-         Top             =   360
-         Width           =   1005
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Nome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   1
-         Left            =   6000
-         TabIndex        =   75
-         Top             =   360
-         Width           =   630
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Anni"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   3
-         Left            =   10560
-         TabIndex        =   74
-         Top             =   360
-         Width           =   465
-      End
-   End
    Begin TabDlg.SSTab tabSchede 
       Height          =   4305
       Left            =   120
@@ -261,7 +38,7 @@ Begin VB.Form frmSchedaDialitica
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "Scheda dialitica 1"
-      TabPicture(0)   =   "frmSchedaDialitica.frx":0459
+      TabPicture(0)   =   "frmSchedaDialitica.frx":0000
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label1(27)"
       Tab(0).Control(0).Enabled=   0   'False
@@ -353,7 +130,7 @@ Begin VB.Form frmSchedaDialitica
       Tab(0).Control(43).Enabled=   0   'False
       Tab(0).ControlCount=   44
       TabCaption(1)   =   "Scheda dialitica 2"
-      TabPicture(1)   =   "frmSchedaDialitica.frx":0475
+      TabPicture(1)   =   "frmSchedaDialitica.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Label1(6)"
       Tab(1).Control(1)=   "Label1(7)"
@@ -369,7 +146,7 @@ Begin VB.Form frmSchedaDialitica
       Tab(1).Control(11)=   "lblSolInfCc"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
-      TabPicture(2)   =   "frmSchedaDialitica.frx":0491
+      TabPicture(2)   =   "frmSchedaDialitica.frx":0038
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "Label1(36)"
       Tab(2).Control(1)=   "Label1(37)"
@@ -388,7 +165,7 @@ Begin VB.Form frmSchedaDialitica
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
-         FormatString    =   $"frmSchedaDialitica.frx":04AD
+         FormatString    =   $"frmSchedaDialitica.frx":0054
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -402,7 +179,7 @@ Begin VB.Form frmSchedaDialitica
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
-         FormatString    =   $"frmSchedaDialitica.frx":0545
+         FormatString    =   $"frmSchedaDialitica.frx":00EC
       End
       Begin VB.Label lblDoseUnitaMisura 
          BackColor       =   &H00FFFFFF&
@@ -1479,6 +1256,135 @@ Begin VB.Form frmSchedaDialitica
          TabIndex        =   35
          Top             =   2400
          Width           =   1275
+      End
+   End
+   Begin VB.Frame Frame1 
+      Height          =   855
+      Left            =   120
+      TabIndex        =   73
+      Top             =   0
+      Width           =   11895
+      Begin VB.CommandButton cmdTrova 
+         BackColor       =   &H00C0C0C0&
+         Height          =   450
+         Index           =   0
+         Left            =   360
+         Picture         =   "frmSchedaDialitica.frx":0184
+         Style           =   1  'Graphical
+         TabIndex        =   77
+         Top             =   240
+         Width           =   450
+      End
+      Begin VB.Label lblCognome 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   2160
+         TabIndex        =   80
+         Top             =   360
+         Width           =   3255
+      End
+      Begin VB.Label lblNome 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   6720
+         TabIndex        =   79
+         Top             =   360
+         Width           =   3135
+      End
+      Begin VB.Label lblEta 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   11160
+         TabIndex        =   78
+         Top             =   360
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Cognome"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   0
+         Left            =   1080
+         TabIndex        =   76
+         Top             =   360
+         Width           =   1005
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Nome"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   1
+         Left            =   6000
+         TabIndex        =   75
+         Top             =   360
+         Width           =   630
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Anni"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   3
+         Left            =   10560
+         TabIndex        =   74
+         Top             =   360
+         Width           =   465
       End
    End
    Begin VB.Frame Frame4 
@@ -2816,6 +2722,100 @@ Begin VB.Form frmSchedaDialitica
          Width           =   1410
       End
    End
+   Begin VB.Frame Frame2 
+      Height          =   975
+      Left            =   120
+      TabIndex        =   33
+      Top             =   6240
+      Width           =   11895
+      Begin VB.CommandButton cmdTerapia 
+         Caption         =   "&Terapia"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   2520
+         TabIndex        =   29
+         Top             =   240
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdKtv 
+         Caption         =   "Calcola &Kt/V"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   7080
+         TabIndex        =   30
+         Top             =   240
+         Width           =   1455
+      End
+      Begin VB.CommandButton cmdChiudi 
+         Caption         =   "&Chiudi"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   10440
+         TabIndex        =   32
+         Top             =   240
+         Width           =   1215
+      End
+      Begin VB.CommandButton cmdMostraInfo 
+         Caption         =   "&Scheda Dialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   240
+         TabIndex        =   28
+         Top             =   240
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdMemorizza 
+         Caption         =   "&Memorizza"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   8760
+         TabIndex        =   31
+         Top             =   240
+         Width           =   1455
+      End
+   End
 End
 Attribute VB_Name = "frmSchedaDialitica"
 Attribute VB_GlobalNameSpace = False
@@ -3750,7 +3750,7 @@ Private Sub cmdMemorizza_Click()
             rsDialisi.Open "SCHEDE_DIALISI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
             rsDialisi.AddNew
             i = 1
-            Do While i <> UBound(v_Nomi)
+            Do While i <= UBound(v_Nomi) ' modificato qui
                 rsDialisi(v_Nomi(i)) = v_Val(i)
                 i = i + 1
             Loop
@@ -4033,8 +4033,6 @@ Private Sub txtPvExtracorporeo_GotFocus()
 End Sub
 
 Private Sub txtPvExtracorporeo_KeyPress(KeyAscii As Integer)
-    ' quando inserisce la virgola(44) cambia con il punto(46)
-    If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
 End Sub
 

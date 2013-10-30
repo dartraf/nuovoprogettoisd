@@ -861,7 +861,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDichiarazioneDiResponsabilit‡Bar
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Ai sensi della legge 196/2003, autorizzo l'utilizzo dei dati personali forniti per gli scopi legati alla presente dichiarazione."
+         Object.Caption         =   $"rptDichiarazioneDiResponsabilitaBartoli.dsx":0000
       EndProperty
       ItemType33      =   3
       BeginProperty Item33 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 

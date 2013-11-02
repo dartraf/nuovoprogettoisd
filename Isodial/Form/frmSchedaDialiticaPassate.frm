@@ -138,122 +138,74 @@ Begin VB.Form frmSchedaDialiticaPassate
       Tab(0).Control(47).Enabled=   0   'False
       Tab(0).Control(48)=   "Label3"
       Tab(0).Control(48).Enabled=   0   'False
-      Tab(0).ControlCount=   49
+      Tab(0).Control(49)=   "lblKtvRilevato"
+      Tab(0).Control(49).Enabled=   0   'False
+      Tab(0).Control(50)=   "lblTotSangueRilevato"
+      Tab(0).Control(50).Enabled=   0   'False
+      Tab(0).Control(51)=   "lblPaExtracorporeo"
+      Tab(0).Control(51).Enabled=   0   'False
+      Tab(0).Control(52)=   "lblPvExtracorporeo"
+      Tab(0).Control(52).Enabled=   0   'False
+      Tab(0).ControlCount=   53
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaDialiticaPassate.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "lblOreDialisi"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "lblDataUltimoPeso"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "lblUltimoPeso"
-      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "lblPesoSecco"
-      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "lblAnticoagulante(1)"
-      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "lblAnticoagulante(0)"
-      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "lblAccessoVascolare"
-      Tab(1).Control(6).Enabled=   0   'False
       Tab(1).Control(7)=   "lblTipoDialisi"
-      Tab(1).Control(7).Enabled=   0   'False
       Tab(1).Control(8)=   "lblFiltro"
-      Tab(1).Control(8).Enabled=   0   'False
       Tab(1).Control(9)=   "lblAgo2"
-      Tab(1).Control(9).Enabled=   0   'False
       Tab(1).Control(10)=   "lblAgo1"
-      Tab(1).Control(10).Enabled=   0   'False
       Tab(1).Control(11)=   "lblTipoLinee"
-      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).Control(12)=   "Label1(49)"
-      Tab(1).Control(12).Enabled=   0   'False
       Tab(1).Control(13)=   "Label1(50)"
-      Tab(1).Control(13).Enabled=   0   'False
       Tab(1).Control(14)=   "Label1(51)"
-      Tab(1).Control(14).Enabled=   0   'False
       Tab(1).Control(15)=   "Label1(52)"
-      Tab(1).Control(15).Enabled=   0   'False
       Tab(1).Control(16)=   "Label1(42)"
-      Tab(1).Control(16).Enabled=   0   'False
       Tab(1).Control(17)=   "Label1(29)"
-      Tab(1).Control(17).Enabled=   0   'False
       Tab(1).Control(18)=   "Label1(28)"
-      Tab(1).Control(18).Enabled=   0   'False
       Tab(1).Control(19)=   "Label1(33)"
-      Tab(1).Control(19).Enabled=   0   'False
       Tab(1).Control(20)=   "Label1(34)"
-      Tab(1).Control(20).Enabled=   0   'False
       Tab(1).Control(21)=   "Label1(46)"
-      Tab(1).Control(21).Enabled=   0   'False
       Tab(1).Control(22)=   "Label1(54)"
-      Tab(1).Control(22).Enabled=   0   'False
       Tab(1).Control(23)=   "Label1(55)"
-      Tab(1).Control(23).Enabled=   0   'False
       Tab(1).Control(24)=   "lblFlussoSangue"
-      Tab(1).Control(24).Enabled=   0   'False
       Tab(1).Control(25)=   "lblFlusso"
-      Tab(1).Control(25).Enabled=   0   'False
       Tab(1).Control(26)=   "Label1(7)"
-      Tab(1).Control(26).Enabled=   0   'False
       Tab(1).Control(27)=   "Label1(6)"
-      Tab(1).Control(27).Enabled=   0   'False
       Tab(1).Control(28)=   "lblSolInfCc"
-      Tab(1).Control(28).Enabled=   0   'False
       Tab(1).Control(29)=   "lblCartuccia"
-      Tab(1).Control(29).Enabled=   0   'False
       Tab(1).Control(30)=   "lblSolInfusionale"
-      Tab(1).Control(30).Enabled=   0   'False
       Tab(1).Control(31)=   "lblSolDialitica"
-      Tab(1).Control(31).Enabled=   0   'False
       Tab(1).Control(32)=   "Label1(21)"
-      Tab(1).Control(32).Enabled=   0   'False
       Tab(1).Control(33)=   "Label1(20)"
-      Tab(1).Control(33).Enabled=   0   'False
       Tab(1).Control(34)=   "Label1(19)"
-      Tab(1).Control(34).Enabled=   0   'False
       Tab(1).Control(35)=   "Label1(18)"
-      Tab(1).Control(35).Enabled=   0   'False
       Tab(1).Control(36)=   "lblCalcio"
-      Tab(1).Control(36).Enabled=   0   'False
       Tab(1).Control(37)=   "lblBicarbonato"
-      Tab(1).Control(37).Enabled=   0   'False
       Tab(1).Control(38)=   "lblPotassio"
-      Tab(1).Control(38).Enabled=   0   'False
       Tab(1).Control(39)=   "lblSodio"
-      Tab(1).Control(39).Enabled=   0   'False
       Tab(1).Control(40)=   "Label1(32)"
-      Tab(1).Control(40).Enabled=   0   'False
       Tab(1).Control(41)=   "Label1(23)"
-      Tab(1).Control(41).Enabled=   0   'False
       Tab(1).Control(42)=   "Label1(43)"
-      Tab(1).Control(42).Enabled=   0   'False
       Tab(1).Control(43)=   "Label1(31)"
-      Tab(1).Control(43).Enabled=   0   'False
       Tab(1).Control(44)=   "Label1(30)"
-      Tab(1).Control(44).Enabled=   0   'False
       Tab(1).Control(45)=   "Label1(27)"
-      Tab(1).Control(45).Enabled=   0   'False
       Tab(1).Control(46)=   "lblGlucosio"
-      Tab(1).Control(46).Enabled=   0   'False
       Tab(1).Control(47)=   "lblDoseUnitaMisura"
-      Tab(1).Control(47).Enabled=   0   'False
       Tab(1).Control(48)=   "Label1(35)"
-      Tab(1).Control(48).Enabled=   0   'False
       Tab(1).Control(49)=   "lblDoseFinale"
-      Tab(1).Control(49).Enabled=   0   'False
       Tab(1).Control(50)=   "Label1(38)"
-      Tab(1).Control(50).Enabled=   0   'False
       Tab(1).Control(51)=   "lblDoseIntermedia"
-      Tab(1).Control(51).Enabled=   0   'False
       Tab(1).Control(52)=   "lblDoseAltroAnticoagulante"
-      Tab(1).Control(52).Enabled=   0   'False
       Tab(1).Control(53)=   "lblDoseIniziale"
-      Tab(1).Control(53).Enabled=   0   'False
       Tab(1).Control(54)=   "Label1(48)"
-      Tab(1).Control(54).Enabled=   0   'False
       Tab(1).Control(55)=   "Label1(56)"
-      Tab(1).Control(55).Enabled=   0   'False
       Tab(1).ControlCount=   56
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialiticaPassate.frx":0038
@@ -308,6 +260,100 @@ Begin VB.Form frmSchedaDialiticaPassate
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+      End
+      Begin VB.Label lblPvExtracorporeo 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   10080
+         TabIndex        =   138
+         Top             =   1920
+         Width           =   615
+      End
+      Begin VB.Label lblPaExtracorporeo 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   10080
+         TabIndex        =   137
+         Top             =   1560
+         Width           =   615
+      End
+      Begin VB.Label lblTotSangueRilevato 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty DataFormat 
+            Type            =   1
+            Format          =   "0,00"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   1
+         EndProperty
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   10080
+         TabIndex        =   136
+         Top             =   1200
+         Width           =   615
+      End
+      Begin VB.Label lblKtvRilevato 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty DataFormat 
+            Type            =   1
+            Format          =   "0,00"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   1
+         EndProperty
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   10080
+         TabIndex        =   135
+         Top             =   840
+         Width           =   615
       End
       Begin VB.Label Label3 
          Caption         =   "Valori Rilevati dal monitor:"
@@ -2839,6 +2885,7 @@ Private Sub CaricaScheda()
         lblOra(0) = rsDialisi("ORA_INIZIO")
         lblOra(1) = rsDialisi("ORA_FINE")
         ora = Int(Left(lblOra(0), 2))
+        
         If ora < 13 Then
             lblTurno = "MAT"
         ElseIf ora > 12 And ora <= 18 Then
@@ -2846,17 +2893,27 @@ Private Sub CaricaScheda()
         Else
             lblTurno = "SER"
         End If
+        
         lblPesoIniziale = VirgolaOrPunto(rsDialisi("PESO_INIZIO"), ",")
         lblPesoFinale = VirgolaOrPunto(rsDialisi("PESO_FINE"), ",")
         lblIncremento = VirgolaOrPunto(rsDialisi("INCREMENTO"), ",")
+        
         For i = 0 To 4
             lblPressioneMax(i) = rsDialisi("PA_MAX" & i + 1)
             lblPressioneMin(i) = rsDialisi("PA_MIN" & i + 1)
         Next i
+        
         For i = 0 To 4
             lblFC(i) = rsDialisi("FC" & i + 1)
         Next i
+        
+        lblKtvRilevato = VirgolaOrPunto(rsDialisi("KTV_RILEVATO") & "", ",")
+        lblTotSangueRilevato = VirgolaOrPunto(rsDialisi("TOT_SANGUE_RILEVATO") & "", ",")
+        lblPaExtracorporeo = rsDialisi("PA_EXTRACORPOREA") & ""
+        lblPvExtracorporeo = rsDialisi("PV_EXTRACORPOREA") & ""
+        
         lblComplicanze = rsDialisi("COMPLICANZE")
+        
         If CBool(rsDialisi("CONFERMA_SOMM")) Then
             lblConferma.ForeColor = &H8000&
             lblConferma = "Somministrata"
@@ -2864,12 +2921,14 @@ Private Sub CaricaScheda()
             lblConferma.ForeColor = vbRed
             lblConferma = "Non Somministrata"
         End If
+        
         If CBool(rsDialisi("ERRATA")) Then
             lblErrata = "SCHEDA ANNULLATA"
             lblErrata.ForeColor = vbRed
         Else
             lblErrata = ""
         End If
+        
         Call CaricaMedico(rsDialisi("CODICE_DOTTORE"))
         codice_storico_dialisi = rsDialisi("CODICE_STORICO_DIALISI")
         rsDialisi.Close

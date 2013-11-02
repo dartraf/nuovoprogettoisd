@@ -2978,10 +2978,10 @@ Private Sub CaricaScheda()
             txtFC(i) = rsDialisi("FC" & i + 1)
         Next i
         
-        txtKtvRilevato = VirgolaOrPunto(rsDialisi("KTV_RILEVATO"), ",")
-        txtTotSangueRilevato = VirgolaOrPunto(rsDialisi("TOT_SANGUE_RILEVATO"), ",")
-        txtPaExtracorporeo = rsDialisi("PA_EXTRACORPOREA")
-        txtPvExtracorporeo = rsDialisi("PV_EXTRACORPOREA")
+        txtKtvRilevato = VirgolaOrPunto(rsDialisi("KTV_RILEVATO") & "", ",")
+        txtTotSangueRilevato = VirgolaOrPunto(rsDialisi("TOT_SANGUE_RILEVATO") & "", ",")
+        txtPaExtracorporeo = rsDialisi("PA_EXTRACORPOREA") & ""
+        txtPvExtracorporeo = rsDialisi("PV_EXTRACORPOREA") & ""
         
         txtConplicanze = rsDialisi("COMPLICANZE")
         chkConferma.Value = IIf(CBool(rsDialisi("CONFERMA_SOMM")), Checked, Unchecked)

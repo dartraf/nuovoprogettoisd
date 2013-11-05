@@ -150,76 +150,76 @@ Begin VB.Form frmSchedaStraordinaria
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaStraordinaria.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboTipoFiltro"
-      Tab(1).Control(1)=   "cboDosiUnitaMisura"
-      Tab(1).Control(2)=   "txtDoseFinale"
-      Tab(1).Control(3)=   "txtDoseIntermedia"
-      Tab(1).Control(4)=   "txtGlucosio"
-      Tab(1).Control(5)=   "cboTipoLinee"
-      Tab(1).Control(6)=   "cboAccesso"
-      Tab(1).Control(7)=   "cboTipoAgo(0)"
-      Tab(1).Control(8)=   "cboTipoAgo(1)"
-      Tab(1).Control(9)=   "txtPotassio"
-      Tab(1).Control(10)=   "txtSodio"
-      Tab(1).Control(11)=   "txtBicarbonato"
-      Tab(1).Control(12)=   "txtCalcio"
-      Tab(1).Control(13)=   "txtFlusso"
-      Tab(1).Control(14)=   "txtFlussoSangue"
-      Tab(1).Control(15)=   "cboCartuccia"
-      Tab(1).Control(16)=   "cboSolInf"
-      Tab(1).Control(17)=   "cboSolDialitica"
-      Tab(1).Control(18)=   "cboAnticoagulante(1)"
-      Tab(1).Control(19)=   "cboAnticoagulante(0)"
-      Tab(1).Control(20)=   "txtMinuti"
-      Tab(1).Control(21)=   "cboTipoDialisi"
-      Tab(1).Control(22)=   "txtSolInfCc"
-      Tab(1).Control(23)=   "txtDoseIniziale"
-      Tab(1).Control(24)=   "txtDoseAltroAnticoagulante"
-      Tab(1).Control(25)=   "txtOre"
-      Tab(1).Control(26)=   "txtUltimoPeso"
-      Tab(1).Control(27)=   "txtPesoSecco"
-      Tab(1).Control(28)=   "oData(1)"
-      Tab(1).Control(29)=   "Label1(55)"
-      Tab(1).Control(30)=   "Label1(54)"
-      Tab(1).Control(31)=   "Label1(52)"
-      Tab(1).Control(32)=   "Label1(49)"
-      Tab(1).Control(33)=   "Label1(48)"
-      Tab(1).Control(34)=   "Label1(47)"
-      Tab(1).Control(35)=   "Label1(46)"
-      Tab(1).Control(36)=   "Label1(32)"
-      Tab(1).Control(37)=   "Label1(30)"
-      Tab(1).Control(38)=   "Label1(31)"
-      Tab(1).Control(39)=   "Label1(43)"
-      Tab(1).Control(40)=   "Label1(23)"
-      Tab(1).Control(41)=   "Label1(6)"
-      Tab(1).Control(42)=   "Label1(7)"
-      Tab(1).Control(43)=   "Label1(5)"
-      Tab(1).Control(44)=   "Label1(28)"
-      Tab(1).Control(45)=   "Label1(18)"
-      Tab(1).Control(46)=   "Label1(19)"
-      Tab(1).Control(47)=   "Label1(20)"
-      Tab(1).Control(48)=   "Label1(21)"
-      Tab(1).Control(49)=   "Label1(29)"
-      Tab(1).Control(50)=   "Label1(35)"
-      Tab(1).Control(51)=   "Label1(38)"
-      Tab(1).Control(52)=   "Label1(26)"
-      Tab(1).Control(53)=   "Label1(25)"
-      Tab(1).Control(54)=   "Label1(42)"
-      Tab(1).Control(55)=   "Label1(34)"
-      Tab(1).Control(56)=   "Label1(33)"
-      Tab(1).Control(57)=   "Label1(27)"
+      Tab(1).Control(0)=   "Label1(27)"
+      Tab(1).Control(1)=   "Label1(33)"
+      Tab(1).Control(2)=   "Label1(34)"
+      Tab(1).Control(3)=   "Label1(42)"
+      Tab(1).Control(4)=   "Label1(25)"
+      Tab(1).Control(5)=   "Label1(26)"
+      Tab(1).Control(6)=   "Label1(38)"
+      Tab(1).Control(7)=   "Label1(35)"
+      Tab(1).Control(8)=   "Label1(29)"
+      Tab(1).Control(9)=   "Label1(21)"
+      Tab(1).Control(10)=   "Label1(20)"
+      Tab(1).Control(11)=   "Label1(19)"
+      Tab(1).Control(12)=   "Label1(18)"
+      Tab(1).Control(13)=   "Label1(28)"
+      Tab(1).Control(14)=   "Label1(5)"
+      Tab(1).Control(15)=   "Label1(7)"
+      Tab(1).Control(16)=   "Label1(6)"
+      Tab(1).Control(17)=   "Label1(23)"
+      Tab(1).Control(18)=   "Label1(43)"
+      Tab(1).Control(19)=   "Label1(31)"
+      Tab(1).Control(20)=   "Label1(30)"
+      Tab(1).Control(21)=   "Label1(32)"
+      Tab(1).Control(22)=   "Label1(46)"
+      Tab(1).Control(23)=   "Label1(47)"
+      Tab(1).Control(24)=   "Label1(48)"
+      Tab(1).Control(25)=   "Label1(49)"
+      Tab(1).Control(26)=   "Label1(52)"
+      Tab(1).Control(27)=   "Label1(54)"
+      Tab(1).Control(28)=   "Label1(55)"
+      Tab(1).Control(29)=   "oData(1)"
+      Tab(1).Control(30)=   "txtPesoSecco"
+      Tab(1).Control(31)=   "txtUltimoPeso"
+      Tab(1).Control(32)=   "txtOre"
+      Tab(1).Control(33)=   "txtDoseAltroAnticoagulante"
+      Tab(1).Control(34)=   "txtDoseIniziale"
+      Tab(1).Control(35)=   "txtSolInfCc"
+      Tab(1).Control(36)=   "cboTipoDialisi"
+      Tab(1).Control(37)=   "txtMinuti"
+      Tab(1).Control(38)=   "cboAnticoagulante(0)"
+      Tab(1).Control(39)=   "cboAnticoagulante(1)"
+      Tab(1).Control(40)=   "cboSolDialitica"
+      Tab(1).Control(41)=   "cboSolInf"
+      Tab(1).Control(42)=   "cboCartuccia"
+      Tab(1).Control(43)=   "txtFlussoSangue"
+      Tab(1).Control(44)=   "txtFlusso"
+      Tab(1).Control(45)=   "txtCalcio"
+      Tab(1).Control(46)=   "txtBicarbonato"
+      Tab(1).Control(47)=   "txtSodio"
+      Tab(1).Control(48)=   "txtPotassio"
+      Tab(1).Control(49)=   "cboTipoAgo(1)"
+      Tab(1).Control(50)=   "cboTipoAgo(0)"
+      Tab(1).Control(51)=   "cboAccesso"
+      Tab(1).Control(52)=   "cboTipoLinee"
+      Tab(1).Control(53)=   "txtGlucosio"
+      Tab(1).Control(54)=   "txtDoseIntermedia"
+      Tab(1).Control(55)=   "txtDoseFinale"
+      Tab(1).Control(56)=   "cboDosiUnitaMisura"
+      Tab(1).Control(57)=   "cboTipoFiltro"
       Tab(1).ControlCount=   58
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaStraordinaria.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "cboMedicinali"
-      Tab(2).Control(1)=   "txtAppo"
-      Tab(2).Control(2)=   "cmdInserisci(1)"
-      Tab(2).Control(3)=   "cmdInserisci(0)"
-      Tab(2).Control(4)=   "flxGriglia(0)"
-      Tab(2).Control(5)=   "flxGriglia(1)"
-      Tab(2).Control(6)=   "Label1(36)"
-      Tab(2).Control(7)=   "Label1(37)"
+      Tab(2).Control(0)=   "Label1(37)"
+      Tab(2).Control(1)=   "Label1(36)"
+      Tab(2).Control(2)=   "flxGriglia(1)"
+      Tab(2).Control(3)=   "flxGriglia(0)"
+      Tab(2).Control(4)=   "cmdInserisci(0)"
+      Tab(2).Control(5)=   "cmdInserisci(1)"
+      Tab(2).Control(6)=   "txtAppo"
+      Tab(2).Control(7)=   "cboMedicinali"
       Tab(2).ControlCount=   8
       Begin VB.TextBox txtKtvRilevato 
          Alignment       =   1  'Right Justify
@@ -242,7 +242,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10200
          MaxLength       =   4
          TabIndex        =   18
          Top             =   840
@@ -269,7 +269,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10200
          MaxLength       =   4
          TabIndex        =   19
          Top             =   1215
@@ -296,7 +296,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10200
          MaxLength       =   4
          TabIndex        =   21
          Top             =   1965
@@ -323,7 +323,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10200
          MaxLength       =   4
          TabIndex        =   20
          Top             =   1605
@@ -1391,6 +1391,7 @@ Begin VB.Form frmSchedaStraordinaria
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   8400
          TabIndex        =   150
@@ -1409,7 +1410,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   8520
+         Left            =   8640
          TabIndex        =   149
          Top             =   765
          Width           =   495
@@ -1426,7 +1427,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   8520
+         Left            =   8640
          TabIndex        =   148
          Top             =   1080
          Width           =   1335
@@ -1443,7 +1444,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   8520
+         Left            =   8640
          TabIndex        =   147
          Top             =   1770
          Width           =   675
@@ -1460,7 +1461,7 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   9525
+         Left            =   9645
          TabIndex        =   146
          Top             =   1965
          Width           =   495
@@ -1477,26 +1478,26 @@ Begin VB.Form frmSchedaStraordinaria
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   9525
+         Left            =   9645
          TabIndex        =   145
          Top             =   1620
          Width           =   495
       End
       Begin VB.Line Line1 
-         X1              =   9240
-         X2              =   9240
+         X1              =   9360
+         X2              =   9360
          Y1              =   1725
          Y2              =   2085
       End
       Begin VB.Line Line2 
-         X1              =   9240
-         X2              =   9425
+         X1              =   9360
+         X2              =   9545
          Y1              =   1725
          Y2              =   1725
       End
       Begin VB.Line Line5 
-         X1              =   9240
-         X2              =   9420
+         X1              =   9360
+         X2              =   9540
          Y1              =   2085
          Y2              =   2085
       End
@@ -3574,20 +3575,23 @@ gestione:
     SalvaDatiTerapia = False
 End Function
 
-Private Sub SalvaBackup(v_Val() As Variant)
-    Dim rsDataset As Recordset
-    Dim v_campi() As Variant
-    Dim v_valori() As Variant
-    v_campi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_DIALISI", "CODICE_PAZIENTE", "ORA_INIZIO", "ORA_FINE", "PESO_INIZIO", "INCREMENTO", "PESO_FINE", _
-                  "PA_MAX1", "PA_MAX2", "PA_MAX3", "PA_MAX4", "PA_MAX5", "PA_MIN1", "PA_MIN2", "PA_MIN3", "PA_MIN4", "PA_MIN5", "FC1", "FC2", "FC3", "FC4", "FC5", "COMPLICANZE", "SPECIALE", "CODICE_STORICO_DIALISI", "CONFERMA_SOMM", "ERRATA")
-    v_valori = Array(tAccesso.key, date, Time, v_Val(1), v_Val(2), v_Val(4), v_Val(5), v_Val(6), v_Val(7), v_Val(8), _
-                    v_Val(9), v_Val(10), v_Val(11), v_Val(12), v_Val(13), v_Val(14), v_Val(15), v_Val(16), v_Val(17), v_Val(18), v_Val(19), v_Val(20), v_Val(21), v_Val(22), v_Val(23), v_Val(26), v_Val(29), v_Val(27), v_Val(28), v_Val(30))
-    Set rsDataset = New Recordset
-    rsDataset.Open "BACKUP_SCHEDE_DIALISI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
-    rsDataset.AddNew v_campi, v_valori
-    rsDataset.Update
-    Set rsDataset = Nothing
-End Sub
+'Private Sub SalvaBackup(v_Val() As Variant)
+'    Dim rsDataset As Recordset
+'    Dim v_campi() As Variant
+'    Dim v_valori() As Variant
+    
+'    v_campi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_DIALISI", "CODICE_PAZIENTE", "ORA_INIZIO", "ORA_FINE", "PESO_INIZIO", "INCREMENTO", "PESO_FINE", _
+                  "PA_MAX1", "PA_MAX2", "PA_MAX3", "PA_MAX4", "PA_MAX5", "PA_MIN1", "PA_MIN2", "PA_MIN3", "PA_MIN4", "PA_MIN5", "FC1", "FC2", "FC3", "FC4", "FC5", "COMPLICANZE", "SPECIALE", "CODICE_STORICO_DIALISI", "CONFERMA_SOMM", "ERRATA", "KTV_RILEVATO", "TOT_SANGUE_RILEVATO", "PA_EXTRACORPOREA", "PV_EXTRACORPOREA")
+'    v_valori = Array(tAccesso.key, date, Time, v_Val(1), v_Val(2), v_Val(4), v_Val(5), v_Val(6), v_Val(7), v_Val(8), _
+                    v_Val(9), v_Val(10), v_Val(11), v_Val(12), v_Val(13), v_Val(14), v_Val(15), v_Val(16), v_Val(17), v_Val(18), v_Val(19), v_Val(20), v_Val(21), v_Val(22), v_Val(23), v_Val(26), v_Val(29), v_Val(27), v_Val(28), v_Val(30), v_Val(31), v_Val(32), v_Val(33), v_Val(34))
+    
+'    Set rsDataset = New Recordset
+    
+'    rsDataset.Open "BACKUP_SCHEDE_DIALISI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
+'    rsDataset.AddNew v_campi, v_valori
+'    rsDataset.Update
+'    Set rsDataset = Nothing
+'End Sub
 
 Private Sub flxGriglia_Click(Index As Integer)
     Dim vCol As Integer
@@ -3782,6 +3786,10 @@ Private Sub cmdStampa_Click()
                     "       NEW adLongVarChar as FARMACO_TERAPIA_POST, " & _
                     "       NEW adLongVarChar as SOMM_TERAPIA_POST, " & _
                     "       NEW adLongVarChar as POS_TERAPIA_POST, " & _
+                    "       NEW adVarChar (4) as KTV_RILEVATO, " & _
+                    "       NEW adVarChar (4) as TOT_SANGUE_RILEVATO, " & _
+                    "       NEW adVarChar (4) as PA_EXTRACORPOREO, " & _
+                    "       NEW adVarChar (4) as PV_EXTRACORPOREO, " & _
                     "       NEW adLongVarChar as NOTE_TERAPIA_POST "
 
 
@@ -3827,6 +3835,11 @@ Private Sub cmdStampa_Click()
         .Fields("FC_INIZIALE_2") = txtFC(2)
         .Fields("FC_INIZIALE_3") = txtFC(3)
         .Fields("FC_FINALE") = txtFC(4)
+        
+        .Fields("KTV_RILEVATO") = txtKtvRilevato.Text
+        .Fields("TOT_SANGUE_RILEVATO") = txtTotSangueRilevato.Text
+        .Fields("PA_EXTRACORPOREO") = txtPaExtracorporeo.Text
+        .Fields("PV_EXTRACORPOREO") = txtPvExtracorporeo.Text
         
         .Fields("DIARIO_INFERMIERISTICO") = txtConplicanze
         
@@ -4094,10 +4107,11 @@ Private Sub cmdMemorizza_Click()
         If Not SalvaDatiTerapia Then Exit Sub
         cnPrinc.CommitTrans
         
-        If TRACCIATO Then
+        'If TRACCIATO Then
             ' effettua il backup della scheda di dialisi in connessioni
-            Call SalvaBackup(v_Val)
-        End If
+        '    Call SalvaBackup(v_Val)
+        'End If
+        
         Call PulisciTutto(True)
         MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
         cmdMemorizza.Enabled = False

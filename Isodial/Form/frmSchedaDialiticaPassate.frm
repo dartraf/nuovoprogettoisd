@@ -150,70 +150,70 @@ Begin VB.Form frmSchedaDialiticaPassate
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaDialiticaPassate.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblOreDialisi"
-      Tab(1).Control(1)=   "lblDataUltimoPeso"
-      Tab(1).Control(2)=   "lblUltimoPeso"
-      Tab(1).Control(3)=   "lblPesoSecco"
-      Tab(1).Control(4)=   "lblAnticoagulante(1)"
-      Tab(1).Control(5)=   "lblAnticoagulante(0)"
-      Tab(1).Control(6)=   "lblAccessoVascolare"
-      Tab(1).Control(7)=   "lblTipoDialisi"
-      Tab(1).Control(8)=   "lblFiltro"
-      Tab(1).Control(9)=   "lblAgo2"
-      Tab(1).Control(10)=   "lblAgo1"
-      Tab(1).Control(11)=   "lblTipoLinee"
-      Tab(1).Control(12)=   "Label1(49)"
-      Tab(1).Control(13)=   "Label1(50)"
-      Tab(1).Control(14)=   "Label1(51)"
-      Tab(1).Control(15)=   "Label1(52)"
-      Tab(1).Control(16)=   "Label1(42)"
-      Tab(1).Control(17)=   "Label1(29)"
-      Tab(1).Control(18)=   "Label1(28)"
-      Tab(1).Control(19)=   "Label1(33)"
-      Tab(1).Control(20)=   "Label1(34)"
-      Tab(1).Control(21)=   "Label1(46)"
-      Tab(1).Control(22)=   "Label1(54)"
-      Tab(1).Control(23)=   "Label1(55)"
-      Tab(1).Control(24)=   "lblFlussoSangue"
-      Tab(1).Control(25)=   "lblFlusso"
-      Tab(1).Control(26)=   "Label1(7)"
-      Tab(1).Control(27)=   "Label1(6)"
-      Tab(1).Control(28)=   "lblSolInfCc"
-      Tab(1).Control(29)=   "lblCartuccia"
-      Tab(1).Control(30)=   "lblSolInfusionale"
-      Tab(1).Control(31)=   "lblSolDialitica"
-      Tab(1).Control(32)=   "Label1(21)"
-      Tab(1).Control(33)=   "Label1(20)"
-      Tab(1).Control(34)=   "Label1(19)"
-      Tab(1).Control(35)=   "Label1(18)"
-      Tab(1).Control(36)=   "lblCalcio"
-      Tab(1).Control(37)=   "lblBicarbonato"
-      Tab(1).Control(38)=   "lblPotassio"
-      Tab(1).Control(39)=   "lblSodio"
-      Tab(1).Control(40)=   "Label1(32)"
-      Tab(1).Control(41)=   "Label1(23)"
-      Tab(1).Control(42)=   "Label1(43)"
-      Tab(1).Control(43)=   "Label1(31)"
-      Tab(1).Control(44)=   "Label1(30)"
-      Tab(1).Control(45)=   "Label1(27)"
-      Tab(1).Control(46)=   "lblGlucosio"
-      Tab(1).Control(47)=   "lblDoseUnitaMisura"
-      Tab(1).Control(48)=   "Label1(35)"
-      Tab(1).Control(49)=   "lblDoseFinale"
-      Tab(1).Control(50)=   "Label1(38)"
-      Tab(1).Control(51)=   "lblDoseIntermedia"
-      Tab(1).Control(52)=   "lblDoseAltroAnticoagulante"
-      Tab(1).Control(53)=   "lblDoseIniziale"
-      Tab(1).Control(54)=   "Label1(48)"
-      Tab(1).Control(55)=   "Label1(56)"
+      Tab(1).Control(0)=   "Label1(56)"
+      Tab(1).Control(1)=   "Label1(48)"
+      Tab(1).Control(2)=   "lblDoseIniziale"
+      Tab(1).Control(3)=   "lblDoseAltroAnticoagulante"
+      Tab(1).Control(4)=   "lblDoseIntermedia"
+      Tab(1).Control(5)=   "Label1(38)"
+      Tab(1).Control(6)=   "lblDoseFinale"
+      Tab(1).Control(7)=   "Label1(35)"
+      Tab(1).Control(8)=   "lblDoseUnitaMisura"
+      Tab(1).Control(9)=   "lblGlucosio"
+      Tab(1).Control(10)=   "Label1(27)"
+      Tab(1).Control(11)=   "Label1(30)"
+      Tab(1).Control(12)=   "Label1(31)"
+      Tab(1).Control(13)=   "Label1(43)"
+      Tab(1).Control(14)=   "Label1(23)"
+      Tab(1).Control(15)=   "Label1(32)"
+      Tab(1).Control(16)=   "lblSodio"
+      Tab(1).Control(17)=   "lblPotassio"
+      Tab(1).Control(18)=   "lblBicarbonato"
+      Tab(1).Control(19)=   "lblCalcio"
+      Tab(1).Control(20)=   "Label1(18)"
+      Tab(1).Control(21)=   "Label1(19)"
+      Tab(1).Control(22)=   "Label1(20)"
+      Tab(1).Control(23)=   "Label1(21)"
+      Tab(1).Control(24)=   "lblSolDialitica"
+      Tab(1).Control(25)=   "lblSolInfusionale"
+      Tab(1).Control(26)=   "lblCartuccia"
+      Tab(1).Control(27)=   "lblSolInfCc"
+      Tab(1).Control(28)=   "Label1(6)"
+      Tab(1).Control(29)=   "Label1(7)"
+      Tab(1).Control(30)=   "lblFlusso"
+      Tab(1).Control(31)=   "lblFlussoSangue"
+      Tab(1).Control(32)=   "Label1(55)"
+      Tab(1).Control(33)=   "Label1(54)"
+      Tab(1).Control(34)=   "Label1(46)"
+      Tab(1).Control(35)=   "Label1(34)"
+      Tab(1).Control(36)=   "Label1(33)"
+      Tab(1).Control(37)=   "Label1(28)"
+      Tab(1).Control(38)=   "Label1(29)"
+      Tab(1).Control(39)=   "Label1(42)"
+      Tab(1).Control(40)=   "Label1(52)"
+      Tab(1).Control(41)=   "Label1(51)"
+      Tab(1).Control(42)=   "Label1(50)"
+      Tab(1).Control(43)=   "Label1(49)"
+      Tab(1).Control(44)=   "lblTipoLinee"
+      Tab(1).Control(45)=   "lblAgo1"
+      Tab(1).Control(46)=   "lblAgo2"
+      Tab(1).Control(47)=   "lblFiltro"
+      Tab(1).Control(48)=   "lblTipoDialisi"
+      Tab(1).Control(49)=   "lblAccessoVascolare"
+      Tab(1).Control(50)=   "lblAnticoagulante(0)"
+      Tab(1).Control(51)=   "lblAnticoagulante(1)"
+      Tab(1).Control(52)=   "lblPesoSecco"
+      Tab(1).Control(53)=   "lblUltimoPeso"
+      Tab(1).Control(54)=   "lblDataUltimoPeso"
+      Tab(1).Control(55)=   "lblOreDialisi"
       Tab(1).ControlCount=   56
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialiticaPassate.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(37)"
-      Tab(2).Control(1)=   "Label1(36)"
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(3)=   "flxGriglia(0)"
+      Tab(2).Control(0)=   "flxGriglia(0)"
+      Tab(2).Control(1)=   "flxGriglia(1)"
+      Tab(2).Control(2)=   "Label1(36)"
+      Tab(2).Control(3)=   "Label1(37)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   5055
@@ -275,7 +275,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10320
          TabIndex        =   138
          Top             =   1920
          Width           =   615
@@ -294,7 +294,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10320
          TabIndex        =   137
          Top             =   1560
          Width           =   615
@@ -322,7 +322,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10320
          TabIndex        =   136
          Top             =   1200
          Width           =   615
@@ -350,7 +350,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10080
+         Left            =   10320
          TabIndex        =   135
          Top             =   840
          Width           =   615
@@ -366,6 +366,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   8520
          TabIndex        =   134
@@ -384,7 +385,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   8520
+         Left            =   8760
          TabIndex        =   133
          Top             =   765
          Width           =   495
@@ -401,7 +402,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   8520
+         Left            =   8760
          TabIndex        =   132
          Top             =   1080
          Width           =   1335
@@ -418,7 +419,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   8520
+         Left            =   8760
          TabIndex        =   131
          Top             =   1770
          Width           =   675
@@ -435,7 +436,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   9525
+         Left            =   9765
          TabIndex        =   130
          Top             =   1965
          Width           =   495
@@ -452,26 +453,26 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   9525
+         Left            =   9765
          TabIndex        =   129
          Top             =   1620
          Width           =   495
       End
       Begin VB.Line Line1 
-         X1              =   9240
-         X2              =   9240
+         X1              =   9480
+         X2              =   9480
          Y1              =   1725
          Y2              =   2085
       End
       Begin VB.Line Line2 
-         X1              =   9240
-         X2              =   9425
+         X1              =   9480
+         X2              =   9665
          Y1              =   1725
          Y2              =   1725
       End
       Begin VB.Line Line5 
-         X1              =   9240
-         X2              =   9420
+         X1              =   9480
+         X2              =   9660
          Y1              =   2085
          Y2              =   2085
       End
@@ -3186,6 +3187,10 @@ Private Sub cmdStampa_Click()
                     "       NEW adLongVarChar as FARMACO_TERAPIA_POST, " & _
                     "       NEW adLongVarChar as SOMM_TERAPIA_POST, " & _
                     "       NEW adLongVarChar as POS_TERAPIA_POST, " & _
+                    "       NEW adVarChar (4) as KTV_RILEVATO, " & _
+                    "       NEW adVarChar (4) as TOT_SANGUE_RILEVATO, " & _
+                    "       NEW adVarChar (4) as PA_EXTRACORPOREO, " & _
+                    "       NEW adVarChar (4) as PV_EXTRACORPOREO, " & _
                     "       NEW adLongVarChar as NOTE_TERAPIA_POST "
 
 
@@ -3231,6 +3236,11 @@ Private Sub cmdStampa_Click()
         .Fields("FC_INIZIALE_2") = lblFC(2)
         .Fields("FC_INIZIALE_3") = lblFC(3)
         .Fields("FC_FINALE") = lblFC(4)
+        
+        .Fields("KTV_RILEVATO") = lblKtvRilevato.Caption
+        .Fields("TOT_SANGUE_RILEVATO") = lblTotSangueRilevato.Caption
+        .Fields("PA_EXTRACORPOREO") = lblPaExtracorporeo.Caption
+        .Fields("PV_EXTRACORPOREO") = lblPvExtracorporeo.Caption
         
         .Fields("DIARIO_INFERMIERISTICO") = lblComplicanze
         

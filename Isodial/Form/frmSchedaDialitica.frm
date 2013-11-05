@@ -132,26 +132,26 @@ Begin VB.Form frmSchedaDialitica
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(6)"
-      Tab(1).Control(1)=   "Label1(7)"
-      Tab(1).Control(2)=   "Label1(18)"
-      Tab(1).Control(3)=   "Label1(19)"
-      Tab(1).Control(4)=   "Label1(20)"
-      Tab(1).Control(5)=   "Label1(21)"
-      Tab(1).Control(6)=   "lblFlusso"
-      Tab(1).Control(7)=   "lblFlussoSangue"
-      Tab(1).Control(8)=   "lblSolDialitica"
-      Tab(1).Control(9)=   "lblSolInfusionale"
-      Tab(1).Control(10)=   "lblCartuccia"
-      Tab(1).Control(11)=   "lblSolInfCc"
+      Tab(1).Control(0)=   "lblSolInfCc"
+      Tab(1).Control(1)=   "lblCartuccia"
+      Tab(1).Control(2)=   "lblSolInfusionale"
+      Tab(1).Control(3)=   "lblSolDialitica"
+      Tab(1).Control(4)=   "lblFlussoSangue"
+      Tab(1).Control(5)=   "lblFlusso"
+      Tab(1).Control(6)=   "Label1(21)"
+      Tab(1).Control(7)=   "Label1(20)"
+      Tab(1).Control(8)=   "Label1(19)"
+      Tab(1).Control(9)=   "Label1(18)"
+      Tab(1).Control(10)=   "Label1(7)"
+      Tab(1).Control(11)=   "Label1(6)"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(36)"
-      Tab(2).Control(1)=   "Label1(37)"
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(3)=   "flxGriglia(0)"
+      Tab(2).Control(0)=   "flxGriglia(0)"
+      Tab(2).Control(1)=   "flxGriglia(1)"
+      Tab(2).Control(2)=   "Label1(37)"
+      Tab(2).Control(3)=   "Label1(36)"
       Tab(2).ControlCount=   4
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
@@ -3316,20 +3316,23 @@ Private Sub cmdChiudi_Click()
     Unload Me
 End Sub
 
-Private Sub SalvaBackup(v_Val() As Variant)
-    Dim rsDataset As Recordset
-    Dim v_campi() As Variant
-    Dim v_valori() As Variant
-    v_campi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_DIALISI", "CODICE_PAZIENTE", "ORA_INIZIO", "ORA_FINE", "PESO_INIZIO", "INCREMENTO", "PESO_FINE", _
-                  "PA_MAX1", "PA_MAX2", "PA_MAX3", "PA_MAX4", "PA_MAX5", "PA_MIN1", "PA_MIN2", "PA_MIN3", "PA_MIN4", "PA_MIN5", "FC1", "FC2", "FC3", "FC4", "FC5", "COMPLICANZE", "SPECIALE", "CODICE_STORICO_DIALISI", "CONFERMA_SOMM", "ERRATA")
-    v_valori = Array(tAccesso.key, date, Time, v_Val(1), v_Val(2), v_Val(4), v_Val(5), v_Val(6), v_Val(7), v_Val(8), _
-                    v_Val(9), v_Val(10), v_Val(11), v_Val(12), v_Val(13), v_Val(14), v_Val(15), v_Val(16), v_Val(17), v_Val(18), v_Val(19), v_Val(20), v_Val(21), v_Val(22), v_Val(23), v_Val(26), v_Val(29), v_Val(27), v_Val(28), v_Val(30))
-    Set rsDataset = New Recordset
-    rsDataset.Open "BACKUP_SCHEDE_DIALISI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
-    rsDataset.AddNew v_campi, v_valori
-    rsDataset.Update
-    Set rsDataset = Nothing
-End Sub
+'Private Sub SalvaBackup(v_Val() As Variant)
+'    Dim rsDataset As Recordset
+'    Dim v_campi() As Variant
+'    Dim v_valori() As Variant
+    
+'    v_campi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_DIALISI", "CODICE_PAZIENTE", "ORA_INIZIO", "ORA_FINE", "PESO_INIZIO", "INCREMENTO", "PESO_FINE", _
+                  "PA_MAX1", "PA_MAX2", "PA_MAX3", "PA_MAX4", "PA_MAX5", "PA_MIN1", "PA_MIN2", "PA_MIN3", "PA_MIN4", "PA_MIN5", "FC1", "FC2", "FC3", "FC4", "FC5", "COMPLICANZE", "SPECIALE", "CODICE_STORICO_DIALISI", "CONFERMA_SOMM", "ERRATA", "KTV_RILEVATO", "TOT_SANGUE_RILEVATO", "PA_EXTRACORPOREA", "PV_EXTRACORPOREA")
+'    v_valori = Array(tAccesso.key, date, Time, v_Val(1), v_Val(2), v_Val(4), v_Val(5), v_Val(6), v_Val(7), v_Val(8), _
+                    v_Val(9), v_Val(10), v_Val(11), v_Val(12), v_Val(13), v_Val(14), v_Val(15), v_Val(16), v_Val(17), v_Val(18), v_Val(19), v_Val(20), v_Val(21), v_Val(22), v_Val(23), v_Val(26), v_Val(29), v_Val(27), v_Val(28), v_Val(30), v_Val(31), v_Val(32), v_Val(33), v_Val(34))
+    
+'    Set rsDataset = New Recordset
+'    rsDataset.Open "BACKUP_SCHEDE_DIALISI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
+'    rsDataset.AddNew v_campi, v_valori
+'    rsDataset.Update
+    
+'    Set rsDataset = Nothing
+'End Sub
 
 Private Function getTempo(Tipo As Byte) As Byte
     Dim i As Integer
@@ -3764,10 +3767,10 @@ Private Sub cmdMemorizza_Click()
         If Not SalvaDatiTerapia Then Exit Sub
         cnPrinc.CommitTrans
         
-        If TRACCIATO Then
+        'If TRACCIATO Then
             ' effettua il backup della scheda di dialisi in connessioni
-            Call SalvaBackup(v_Val)
-        End If
+        '    Call SalvaBackup(v_Val)
+        'End If
         Call PulisciTutto
         MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
         cmdMemorizza.Enabled = False

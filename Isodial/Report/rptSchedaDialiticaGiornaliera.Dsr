@@ -41,14 +41,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Intestazione"
-      Object.Height          =   3420
+      Object.Height          =   3136
       NumControls     =   16
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblCartellaClinica"
          Object.Left            =   1644
-         Object.Top             =   2154
+         Object.Top             =   1871
          Object.Width           =   4260
          Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -68,7 +68,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "lbllavbel23"
          Object.Left            =   113
-         Object.Top             =   3062
+         Object.Top             =   2779
          Object.Width           =   915
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -87,7 +87,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label22"
          Object.Left            =   5329
-         Object.Top             =   3062
+         Object.Top             =   2779
          Object.Width           =   1530
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -106,7 +106,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "lblPaziente"
          Object.Left            =   1077
-         Object.Top             =   3074
+         Object.Top             =   2791
          Object.Width           =   4080
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -124,7 +124,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "lblDataNascita"
          Object.Left            =   6917
-         Object.Top             =   3074
+         Object.Top             =   2791
          Object.Width           =   1425
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -142,7 +142,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label70"
          Object.Left            =   8561
-         Object.Top             =   3062
+         Object.Top             =   2779
          Object.Width           =   570
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -161,7 +161,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "lblEta"
          Object.Left            =   9184
-         Object.Top             =   3074
+         Object.Top             =   2791
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -199,7 +199,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "lblGiorno"
          Object.Left            =   5556
-         Object.Top             =   2170
+         Object.Top             =   1887
          Object.Width           =   2265
          Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -218,9 +218,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label50"
          Object.Left            =   3344
-         Object.Top             =   2551
+         Object.Top             =   2268
          Object.Width           =   1245
-         Object.Height          =   284
+         Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -237,7 +237,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "lblSchedaCompilataDa"
          Object.Left            =   4421
-         Object.Top             =   2565
+         Object.Top             =   2282
          Object.Width           =   2715
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -327,8 +327,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   10755
-      NumControls     =   122
+      Object.Height          =   11249
+      NumControls     =   130
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -711,7 +711,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label11"
          Object.Left            =   3514
-         Object.Top             =   6462
+         Object.Top             =   6972
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -730,7 +730,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtPotassio"
          Object.Left            =   6235
-         Object.Top             =   4960
+         Object.Top             =   5470
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -757,7 +757,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtSolDialitica"
          Object.Left            =   1361
-         Object.Top             =   7511
+         Object.Top             =   8021
          Object.Width           =   3345
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1000,7 +1000,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label16"
          Object.Left            =   113
-         Object.Top             =   2269
+         Object.Top             =   2268
          Object.Width           =   1305
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1207,7 +1207,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label24"
          Object.Left            =   113
-         Object.Top             =   2778
+         Object.Top             =   3288
          Object.Width           =   2040
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1226,7 +1226,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label25"
          Object.Left            =   3345
-         Object.Top             =   5953
+         Object.Top             =   6463
          Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1245,7 +1245,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label26"
          Object.Left            =   8164
-         Object.Top             =   7484
+         Object.Top             =   7994
          Object.Width           =   1185
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1264,7 +1264,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtDoseAltroAnticoagulante"
          Object.Left            =   4082
-         Object.Top             =   6502
+         Object.Top             =   7012
          Object.Width           =   960
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1291,7 +1291,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label30"
          Object.Left            =   4762
-         Object.Top             =   4421
+         Object.Top             =   4931
          Object.Width           =   1365
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1310,7 +1310,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtDoseIniziale"
          Object.Left            =   4622
-         Object.Top             =   5990
+         Object.Top             =   6500
          Object.Width           =   555
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1337,7 +1337,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label31"
          Object.Left            =   3516
-         Object.Top             =   4928
+         Object.Top             =   5438
          Object.Width           =   1815
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1356,7 +1356,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtSolInfCc"
          Object.Left            =   9241
-         Object.Top             =   7511
+         Object.Top             =   8021
          Object.Width           =   450
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1383,7 +1383,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label32"
          Object.Left            =   113
-         Object.Top             =   5438
+         Object.Top             =   5948
          Object.Width           =   1860
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1402,7 +1402,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtConplicanze"
          Object.Left            =   2211
-         Object.Top             =   2810
+         Object.Top             =   3320
          Object.Width           =   7380
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1429,7 +1429,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label33"
          Object.Left            =   113
-         Object.Top             =   7482
+         Object.Top             =   7992
          Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1448,7 +1448,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtTipoLinea"
          Object.Left            =   1475
-         Object.Top             =   4462
+         Object.Top             =   4972
          Object.Width           =   3180
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1475,7 +1475,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label34"
          Object.Left            =   113
-         Object.Top             =   7989
+         Object.Top             =   8499
          Object.Width           =   1065
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1494,8 +1494,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtAnticoagulante"
          Object.Left            =   1587
-         Object.Top             =   5990
-         Object.Width           =   1644
+         Object.Top             =   6500
+         Object.Width           =   1635
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1521,7 +1521,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label35"
          Object.Left            =   4761
-         Object.Top             =   7482
+         Object.Top             =   7992
          Object.Width           =   1530
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1540,7 +1540,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtPesoSecco"
          Object.Left            =   1644
-         Object.Top             =   3948
+         Object.Top             =   4458
          Object.Width           =   900
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1567,7 +1567,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label36"
          Object.Left            =   113
-         Object.Top             =   5953
+         Object.Top             =   6463
          Object.Width           =   1470
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1586,7 +1586,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtSolInfusionale"
          Object.Left            =   6236
-         Object.Top             =   7511
+         Object.Top             =   8021
          Object.Width           =   1755
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1613,7 +1613,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Line1"
          Object.Left            =   57
-         Object.Top             =   3288
+         Object.Top             =   3798
          Object.Width           =   9690
       EndProperty
       ItemType57      =   3
@@ -1621,7 +1621,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label37"
          Object.Left            =   2948
-         Object.Top             =   3345
+         Object.Top             =   3855
          Object.Width           =   3915
          Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1641,7 +1641,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label29"
          Object.Left            =   113
-         Object.Top             =   3909
+         Object.Top             =   4419
          Object.Width           =   1635
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1660,7 +1660,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtUltimoPeso"
          Object.Left            =   4422
-         Object.Top             =   3948
+         Object.Top             =   4458
          Object.Width           =   840
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1687,7 +1687,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label38"
          Object.Left            =   2778
-         Object.Top             =   3909
+         Object.Top             =   4419
          Object.Width           =   1650
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1706,7 +1706,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtOreDialisi"
          Object.Left            =   8448
-         Object.Top             =   3948
+         Object.Top             =   4458
          Object.Width           =   1305
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1733,7 +1733,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label39"
          Object.Left            =   7143
-         Object.Top             =   3912
+         Object.Top             =   4422
          Object.Width           =   1305
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1752,7 +1752,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtUltimoPesoDel"
          Object.Left            =   5783
-         Object.Top             =   3948
+         Object.Top             =   4458
          Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1779,7 +1779,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label40"
          Object.Left            =   5386
-         Object.Top             =   3912
+         Object.Top             =   4422
          Object.Width           =   390
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1798,7 +1798,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label41"
          Object.Left            =   113
-         Object.Top             =   4418
+         Object.Top             =   4928
          Object.Width           =   1350
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1817,7 +1817,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtTipoFiltro"
          Object.Left            =   6067
-         Object.Top             =   4462
+         Object.Top             =   4972
          Object.Width           =   3570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1844,7 +1844,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtTipoDialisi"
          Object.Left            =   1247
-         Object.Top             =   4960
+         Object.Top             =   5470
          Object.Width           =   2220
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1871,7 +1871,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label42"
          Object.Left            =   113
-         Object.Top             =   4929
+         Object.Top             =   5439
          Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1890,7 +1890,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label28"
          Object.Left            =   5839
-         Object.Top             =   4929
+         Object.Top             =   5439
          Object.Width           =   390
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1909,7 +1909,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtCalcio"
          Object.Left            =   8221
-         Object.Top             =   4960
+         Object.Top             =   5470
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1936,7 +1936,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label43"
          Object.Left            =   7882
-         Object.Top             =   4931
+         Object.Top             =   5441
          Object.Width           =   405
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1955,7 +1955,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtBicarbonato"
          Object.Left            =   7370
-         Object.Top             =   4960
+         Object.Top             =   5470
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1982,7 +1982,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label44"
          Object.Left            =   6634
-         Object.Top             =   4929
+         Object.Top             =   5439
          Object.Width           =   795
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2001,7 +2001,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtSodio"
          Object.Left            =   5329
-         Object.Top             =   4960
+         Object.Top             =   5470
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2028,7 +2028,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtAccessoVascolare"
          Object.Left            =   1928
-         Object.Top             =   5467
+         Object.Top             =   5977
          Object.Width           =   2670
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2055,7 +2055,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtFlussoDialisi"
          Object.Left            =   2666
-         Object.Top             =   7001
+         Object.Top             =   7511
          Object.Width           =   1410
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2082,7 +2082,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label45"
          Object.Left            =   113
-         Object.Top             =   6968
+         Object.Top             =   7478
          Object.Width           =   2490
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2101,7 +2101,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtAgo1"
          Object.Left            =   5500
-         Object.Top             =   5467
+         Object.Top             =   5977
          Object.Width           =   1530
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2128,7 +2128,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label46"
          Object.Left            =   4763
-         Object.Top             =   5440
+         Object.Top             =   5950
          Object.Width           =   735
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2147,7 +2147,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtAgo2"
          Object.Left            =   7938
-         Object.Top             =   5467
+         Object.Top             =   5977
          Object.Width           =   1530
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2174,7 +2174,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label47"
          Object.Left            =   7201
-         Object.Top             =   5440
+         Object.Top             =   5950
          Object.Width           =   735
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2193,7 +2193,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtAltroAnticoagulante"
          Object.Left            =   2075
-         Object.Top             =   6492
+         Object.Top             =   7002
          Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2220,7 +2220,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label48"
          Object.Left            =   113
-         Object.Top             =   6462
+         Object.Top             =   6972
          Object.Width           =   1980
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2239,7 +2239,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtFlussoSangue"
          Object.Left            =   7371
-         Object.Top             =   7001
+         Object.Top             =   7511
          Object.Width           =   1425
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2266,7 +2266,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label49"
          Object.Left            =   4762
-         Object.Top             =   6968
+         Object.Top             =   7478
          Object.Width           =   2550
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2285,7 +2285,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtCartuccia"
          Object.Left            =   1247
-         Object.Top             =   8021
+         Object.Top             =   8531
          Object.Width           =   7365
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2447,7 +2447,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtFarmacoTerapiaIntra"
          Object.Left            =   113
-         Object.Top             =   9128
+         Object.Top             =   9638
          Object.Width           =   2775
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2475,7 +2475,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Line2"
          Object.Left            =   57
-         Object.Top             =   8504
+         Object.Top             =   9014
          Object.Width           =   9690
       EndProperty
       ItemType94      =   3
@@ -2483,7 +2483,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label27"
          Object.Left            =   2381
-         Object.Top             =   8561
+         Object.Top             =   9071
          Object.Width           =   5160
          Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2503,7 +2503,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtNoteTerapiaIntra"
          Object.Left            =   6746
-         Object.Top             =   9128
+         Object.Top             =   9638
          Object.Width           =   2880
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2531,7 +2531,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtPosTerapiaIntra"
          Object.Left            =   2948
-         Object.Top             =   9128
+         Object.Top             =   9638
          Object.Width           =   855
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2559,7 +2559,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Line3"
          Object.Left            =   57
-         Object.Top             =   9638
+         Object.Top             =   10148
          Object.Width           =   9690
       EndProperty
       ItemType98      =   3
@@ -2567,7 +2567,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label60"
          Object.Left            =   2381
-         Object.Top             =   9695
+         Object.Top             =   10205
          Object.Width           =   5160
          Object.Height          =   390
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2587,7 +2587,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtFarmacoTerapiaPost"
          Object.Left            =   113
-         Object.Top             =   10263
+         Object.Top             =   10773
          Object.Width           =   2775
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2615,7 +2615,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtNoteTerapiaPost"
          Object.Left            =   6746
-         Object.Top             =   10263
+         Object.Top             =   10773
          Object.Width           =   2880
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2643,7 +2643,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtPosTerapiaPost"
          Object.Left            =   2948
-         Object.Top             =   10263
+         Object.Top             =   10773
          Object.Width           =   855
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2766,7 +2766,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtSomministrazioneTerapiaIntra"
          Object.Left            =   3855
-         Object.Top             =   9128
+         Object.Top             =   9638
          Object.Width           =   2835
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2794,7 +2794,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtSomministrazioneTerapiaPost"
          Object.Left            =   3855
-         Object.Top             =   10262
+         Object.Top             =   10772
          Object.Width           =   2835
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2960,7 +2960,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtGlucosio"
          Object.Left            =   9186
-         Object.Top             =   4960
+         Object.Top             =   5470
          Object.Width           =   570
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2988,7 +2988,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label53"
          Object.Left            =   8674
-         Object.Top             =   4932
+         Object.Top             =   5442
          Object.Width           =   510
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3007,7 +3007,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label54"
          Object.Left            =   7824
-         Object.Top             =   5953
+         Object.Top             =   6463
          Object.Width           =   1245
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3026,7 +3026,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtDoseFinale"
          Object.Left            =   9016
-         Object.Top             =   5990
+         Object.Top             =   6500
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3053,7 +3053,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "Label55"
          Object.Left            =   5727
-         Object.Top             =   5953
+         Object.Top             =   6463
          Object.Width           =   1305
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3072,7 +3072,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtDoseIntermedia"
          Object.Left            =   6917
-         Object.Top             =   5990
+         Object.Top             =   6500
          Object.Width           =   570
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3099,7 +3099,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
          _Version        =   393216
          Name            =   "txtDoseUnitaMisura"
          Object.Left            =   5102
-         Object.Top             =   5990
+         Object.Top             =   6500
          Object.Width           =   345
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -3120,6 +3120,194 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             LCID            =   1040
             SubFormatType   =   0
          EndProperty
+      EndProperty
+      ItemType122     =   4
+      BeginProperty Item122 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtKtvRilevato"
+         Object.Left            =   1304
+         Object.Top             =   2810
+         Object.Width           =   450
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType123     =   3
+      BeginProperty Item123 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label56"
+         Object.Left            =   113
+         Object.Top             =   2779
+         Object.Width           =   1304
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Kt/v Rilevato:"
+      EndProperty
+      ItemType124     =   4
+      BeginProperty Item124 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtTotaleSangueRilevato"
+         Object.Left            =   4025
+         Object.Top             =   2810
+         Object.Width           =   390
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType125     =   3
+      BeginProperty Item125 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label57"
+         Object.Left            =   2097
+         Object.Top             =   2779
+         Object.Width           =   1935
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Tot. Sangue Trattato:"
+      EndProperty
+      ItemType126     =   4
+      BeginProperty Item126 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtPAExtracorporeo"
+         Object.Left            =   6633
+         Object.Top             =   2810
+         Object.Width           =   390
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType127     =   3
+      BeginProperty Item127 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label58"
+         Object.Left            =   4762
+         Object.Top             =   2779
+         Object.Width           =   1875
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "P.A. Extracorporeo:"
+      EndProperty
+      ItemType128     =   4
+      BeginProperty Item128 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtPVExtracorporeo"
+         Object.Left            =   9244
+         Object.Top             =   2810
+         Object.Width           =   390
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType129     =   3
+      BeginProperty Item129 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label64"
+         Object.Left            =   7370
+         Object.Top             =   2778
+         Object.Width           =   1860
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "P.V. Extracorporeo:"
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -3274,6 +3462,11 @@ Private Sub DataReport_Initialize()
             .Item("txtFCIniziale3Ora").DataField = "FC_INIZIALE_3"
             .Item("txtFCFinale").DataField = "FC_FINALE"
             
+            .Item("txtKtvRilevato").DataField = "KTV_RILEVATO"
+            .Item("txtTotaleSangueRilevato").DataField = "TOT_SANGUE_RILEVATO"
+            .Item("txtPAExtracorporeo").DataField = "PA_EXTRACORPOREO"
+            .Item("txtPVExtracorporeo").DataField = "PV_EXTRACORPOREO"
+
             .Item("txtConplicanze").DataField = "DIARIO_INFERMIERISTICO"
             
             '                       SCHEDA DIALITICA

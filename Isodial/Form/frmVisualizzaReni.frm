@@ -6,12 +6,12 @@ Begin VB.Form frmVisualizzaReni
    ClientHeight    =   4200
    ClientLeft      =   60
    ClientTop       =   330
-   ClientWidth     =   8400
+   ClientWidth     =   10155
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   4200
-   ScaleWidth      =   8400
+   ScaleWidth      =   10155
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.Frame fraListaMain 
@@ -28,21 +28,21 @@ Begin VB.Form frmVisualizzaReni
       Left            =   120
       TabIndex        =   3
       Top             =   0
-      Width           =   8175
+      Width           =   9975
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3015
          Left            =   120
          TabIndex        =   4
          Top             =   240
-         Width           =   7935
-         _ExtentX        =   13996
+         Width           =   9735
+         _ExtentX        =   17171
          _ExtentY        =   5318
          _Version        =   393216
-         Cols            =   6
+         Cols            =   7
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          ScrollBars      =   2
-         FormatString    =   "| Postazione    | N° Rene   | Monitor                                         | Matricola           |Tipo             "
+         FormatString    =   $"frmVisualizzaReni.frx":0000
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -59,7 +59,7 @@ Begin VB.Form frmVisualizzaReni
       Left            =   120
       TabIndex        =   0
       Top             =   3240
-      Width           =   8175
+      Width           =   9735
       Begin VB.CommandButton cmdConferma 
          Caption         =   "&Conferma"
          BeginProperty Font 
@@ -72,7 +72,7 @@ Begin VB.Form frmVisualizzaReni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   5160
+         Left            =   6600
          TabIndex        =   2
          Top             =   240
          Width           =   1335
@@ -90,7 +90,7 @@ Begin VB.Form frmVisualizzaReni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   6720
+         Left            =   8160
          TabIndex        =   1
          Top             =   240
          Width           =   1335
@@ -152,7 +152,7 @@ End Sub
 Private Sub CaricaFlx()
     flxGriglia.Rows = 1
     Set rsReni = New Recordset
-    rsReni.Open "APPARATI ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+    rsReni.Open "APPARATI WHERE TIPO_APPARATO = 'RENE ARTIFICIALE' ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
     If Not (rsReni.BOF And rsReni.EOF) Then
         Do While Not rsReni.EOF
             If IsNull(rsReni("DATA_ROTTAMAZIONE")) Or rsReni("DATA_ROTTAMAZIONE") > date Or CBool(rsReni("SOSTITUITO")) = False Then
@@ -163,12 +163,13 @@ Private Sub CaricaFlx()
                     .TextMatrix(.Rows - 1, 2) = rsReni("NUMERO_APPARATO") & ""
                     .TextMatrix(.Rows - 1, 3) = rsReni("MODELLO")
                     .TextMatrix(.Rows - 1, 4) = rsReni("MATRICOLA")
+                    .TextMatrix(.Rows - 1, 5) = rsReni("PRODUTTORE")
                     If rsReni("TIPO") = 0 Then
-                        .TextMatrix(.Rows - 1, 5) = "NEG"
+                        .TextMatrix(.Rows - 1, 6) = "NEG"
                     ElseIf rsReni("TIPO") = 1 Then
-                        .TextMatrix(.Rows - 1, 5) = "HCV POS"
+                        .TextMatrix(.Rows - 1, 6) = "HCV POS"
                     Else
-                        .TextMatrix(.Rows - 1, 5) = "HBV POS"
+                        .TextMatrix(.Rows - 1, 6) = "HBV POS"
                     End If
                 End With
             End If
@@ -191,7 +192,7 @@ Private Sub cmdConferma_Click()
             tReni.postazione = .TextMatrix(.Row, 1)
             tReni.numero_apparato = .TextMatrix(.Row, 2)
             tReni.monitor = .TextMatrix(.Row, 3)
-            tReni.Tipo = .TextMatrix(.Row, 5)
+            tReni.Tipo = .TextMatrix(.Row, 6)
             Unload Me
         End If
     End With

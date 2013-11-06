@@ -469,7 +469,7 @@ Private Sub CaricaFlx()
     If tTabelle = tpESENZIONI Or tTabelle = tpDISTRETTI Or tTabelle = tpNOMENCLATORE Or tTabelle = tpTIPOLOGIEMEDICO Then
         strSql = strSql & " WHERE (NOT KEY=-1) ORDER BY CODICE"
     ElseIf tTabelle = tpRENI Then
-        strSql = strSql & " ORDER BY SOSTITUITO DESC, DATA_ROTTAMAZIONE DESC, POSTAZIONE"
+        strSql = strSql & " WHERE TIPO_APPARATO = 'RENE ARTIFICIALE' ORDER BY SOSTITUITO DESC, DATA_ROTTAMAZIONE DESC, POSTAZIONE"
     Else
         strSql = strSql & " ORDER BY NOME"
     End If

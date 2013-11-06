@@ -3125,7 +3125,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
       BeginProperty Item122 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtKtvRilevato"
-         Object.Left            =   1304
+         Object.Left            =   1330
          Object.Top             =   2810
          Object.Width           =   450
          Object.Height          =   330
@@ -3172,7 +3172,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
       BeginProperty Item124 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtTotaleSangueRilevato"
-         Object.Left            =   4025
+         Object.Left            =   4253
          Object.Top             =   2810
          Object.Width           =   390
          Object.Height          =   330
@@ -3200,9 +3200,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
       BeginProperty Item125 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label57"
-         Object.Left            =   2097
+         Object.Left            =   1960
          Object.Top             =   2779
-         Object.Width           =   1935
+         Object.Width           =   2325
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -3213,13 +3213,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Tot. Sangue Trattato:"
+         Object.Caption         =   "Tot. Sangue Trattato (lt):"
       EndProperty
       ItemType126     =   4
       BeginProperty Item126 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtPAExtracorporeo"
-         Object.Left            =   6633
+         Object.Left            =   6746
          Object.Top             =   2810
          Object.Width           =   390
          Object.Height          =   330
@@ -3247,7 +3247,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
       BeginProperty Item127 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label58"
-         Object.Left            =   4762
+         Object.Left            =   4875
          Object.Top             =   2779
          Object.Width           =   1875
          Object.Height          =   345
@@ -3260,7 +3260,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "P.A. Extracorporeo:"
+         Object.Caption         =   "P.A. Extracorporea:"
       EndProperty
       ItemType128     =   4
       BeginProperty Item128 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -3307,7 +3307,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "P.V. Extracorporeo:"
+         Object.Caption         =   "P.V. Extracorporea:"
       EndProperty
    EndProperty
    SectionCode3    =   7

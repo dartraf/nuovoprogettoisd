@@ -2405,6 +2405,7 @@ Begin VB.Form frmSchedaStraordinaria
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   240
          Index           =   39
          Left            =   240

@@ -1723,6 +1723,100 @@ Begin VB.Form frmSchedaDialitica
          Width           =   1215
       End
    End
+   Begin VB.Frame Frame2 
+      Height          =   975
+      Left            =   120
+      TabIndex        =   33
+      Top             =   6240
+      Width           =   11895
+      Begin VB.CommandButton cmdTerapia 
+         Caption         =   "&Terapia"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   2520
+         TabIndex        =   29
+         Top             =   240
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdKtv 
+         Caption         =   "Calcola &Kt/V"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   7080
+         TabIndex        =   30
+         Top             =   240
+         Width           =   1455
+      End
+      Begin VB.CommandButton cmdChiudi 
+         Caption         =   "&Chiudi"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   10440
+         TabIndex        =   32
+         Top             =   240
+         Width           =   1215
+      End
+      Begin VB.CommandButton cmdMostraInfo 
+         Caption         =   "&Scheda Dialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   240
+         TabIndex        =   28
+         Top             =   240
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdMemorizza 
+         Caption         =   "&Memorizza"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   8760
+         TabIndex        =   31
+         Top             =   240
+         Width           =   1455
+      End
+   End
    Begin VB.Frame fraScheda 
       Height          =   4455
       Left            =   120
@@ -2675,6 +2769,7 @@ Begin VB.Form frmSchedaDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   360
          Index           =   39
          Left            =   240
@@ -2720,100 +2815,6 @@ Begin VB.Form frmSchedaDialitica
          TabIndex        =   66
          Top             =   3510
          Width           =   1410
-      End
-   End
-   Begin VB.Frame Frame2 
-      Height          =   975
-      Left            =   120
-      TabIndex        =   33
-      Top             =   6240
-      Width           =   11895
-      Begin VB.CommandButton cmdTerapia 
-         Caption         =   "&Terapia"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   2520
-         TabIndex        =   29
-         Top             =   240
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdKtv 
-         Caption         =   "Calcola &Kt/V"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   7080
-         TabIndex        =   30
-         Top             =   240
-         Width           =   1455
-      End
-      Begin VB.CommandButton cmdChiudi 
-         Caption         =   "&Chiudi"
-         CausesValidation=   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   10440
-         TabIndex        =   32
-         Top             =   240
-         Width           =   1215
-      End
-      Begin VB.CommandButton cmdMostraInfo 
-         Caption         =   "&Scheda Dialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   240
-         TabIndex        =   28
-         Top             =   240
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdMemorizza 
-         Caption         =   "&Memorizza"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   615
-         Left            =   8760
-         TabIndex        =   31
-         Top             =   240
-         Width           =   1455
       End
    End
 End

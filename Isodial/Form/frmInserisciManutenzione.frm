@@ -19,6 +19,20 @@ Begin VB.Form frmInserisciManutenzione
       TabIndex        =   0
       Top             =   0
       Width           =   9975
+      Begin DataTimeBox.uDataTimeBox oDataScadenzaManutenzione 
+         Height          =   375
+         Index           =   1
+         Left            =   2640
+         TabIndex        =   1
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
       Begin VB.CheckBox chkSicurezza 
          Caption         =   "Verifica Sicurezza Elettrica"
          BeginProperty Font 
@@ -79,20 +93,6 @@ Begin VB.Form frmInserisciManutenzione
          Left            =   2640
          TabIndex        =   3
          Top             =   720
-         Width           =   2100
-         _ExtentX        =   3704
-         _ExtentY        =   661
-         DataBox         =   -1  'True
-         TimeBox         =   0   'False
-         VisibleElenca   =   0   'False
-      End
-      Begin DataTimeBox.uDataTimeBox oDataScadenzaManutenzione 
-         Height          =   375
-         Index           =   1
-         Left            =   2640
-         TabIndex        =   1
-         Top             =   240
-         Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -450,10 +450,10 @@ Dim numKey As Integer
         If oDataRichiestaManutenzione(0).txtBox = "" Then
             MsgBox "Inserire la Data di Richiesta Manutenzione", vbInformation, "Informazione"
             Exit Sub
-        ElseIf oDataRichiestaManutenzione(0).data > date Then
+        ElseIf CDate(oDataRichiestaManutenzione(0).data) > date Then
             MsgBox "La Data della Richiesta Straordinaria non può essere successiva alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
-        ElseIf oDataEffettivaManutenzione(1).data > date Then
+        ElseIf CDate(oDataEffettivaManutenzione(1).data) > date Then
             MsgBox "La Data di Effettiva Manutenzione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
         ElseIf cboDescrizone(0).Text = "" Then
@@ -465,10 +465,10 @@ Dim numKey As Integer
         If oDataScadenzaManutenzione(1).txtBox = "" Then
             MsgBox "Inserire la Data di Scadenza Manutenzione", vbInformation, "Informazione"
             Exit Sub
-        ElseIf oDataScadenzaManutenzione(1).data > date Then
+        ElseIf CDate(oDataScadenzaManutenzione(1).data) > date Then
             MsgBox "La Data di Scadenza Manutenzione non può essere successiva alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
-        ElseIf oDataEffettivaManutenzione(1).data > date Then
+        ElseIf CDate(oDataEffettivaManutenzione(1).data) > date Then
             MsgBox "La Data di Effettiva Manutenzione non può essere superiore alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
         ElseIf chkFunzionalità.Value = Unchecked And chkSicurezza.Value = Unchecked Then

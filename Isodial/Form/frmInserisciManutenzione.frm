@@ -22,7 +22,7 @@ Begin VB.Form frmInserisciManutenzione
       Begin DataTimeBox.uDataTimeBox oDataScadenzaManutenzione 
          Height          =   375
          Index           =   1
-         Left            =   2640
+         Left            =   2520
          TabIndex        =   1
          Top             =   240
          Visible         =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmInserisciManutenzione
       Begin DataTimeBox.uDataTimeBox oDataEffettivaManutenzione 
          Height          =   375
          Index           =   1
-         Left            =   2640
+         Left            =   2520
          TabIndex        =   3
          Top             =   720
          Width           =   2100
@@ -103,7 +103,7 @@ Begin VB.Form frmInserisciManutenzione
       Begin DataTimeBox.uDataTimeBox oDataRichiestaManutenzione 
          Height          =   375
          Index           =   0
-         Left            =   2640
+         Left            =   2520
          TabIndex        =   2
          Top             =   240
          Visible         =   0   'False
@@ -218,11 +218,11 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   315
-         Left            =   2640
-         MaxLength       =   5
+         Left            =   2520
+         MaxLength       =   10
          TabIndex        =   7
          Top             =   240
-         Width           =   735
+         Width           =   1335
       End
       Begin VB.ComboBox cboDettagliIntervento 
          BeginProperty Font 
@@ -236,11 +236,11 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   5880
+         Left            =   6120
          Sorted          =   -1  'True
          TabIndex        =   8
          Top             =   240
-         Width           =   3975
+         Width           =   3735
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -256,7 +256,7 @@ Begin VB.Form frmInserisciManutenzione
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   3840
+         Left            =   4080
          TabIndex        =   19
          Top             =   240
          Width           =   1905

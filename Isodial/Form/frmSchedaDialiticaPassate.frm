@@ -1066,6 +1066,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   285
          Left            =   2640
          TabIndex        =   89
@@ -1084,6 +1085,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   285
          Left            =   6120
          TabIndex        =   88
@@ -2296,6 +2298,7 @@ Begin VB.Form frmSchedaDialiticaPassate
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   240
          Index           =   39
          Left            =   240

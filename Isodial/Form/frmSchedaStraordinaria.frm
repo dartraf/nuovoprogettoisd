@@ -1570,6 +1570,7 @@ Begin VB.Form frmSchedaStraordinaria
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   285
          Left            =   6120
          TabIndex        =   123
@@ -1588,6 +1589,7 @@ Begin VB.Form frmSchedaStraordinaria
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00C00000&
          Height          =   285
          Left            =   2640
          TabIndex        =   122

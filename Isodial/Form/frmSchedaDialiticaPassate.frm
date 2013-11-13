@@ -42,7 +42,7 @@ Begin VB.Form frmSchedaDialiticaPassate
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "lblErrata"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Label1(39)"
+      Tab(0).Control(1)=   "lblSchedaCompilataDa(39)"
       Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "lblConferma"
       Tab(0).Control(2).Enabled=   0   'False
@@ -78,75 +78,71 @@ Begin VB.Form frmSchedaDialiticaPassate
       Tab(0).Control(17).Enabled=   0   'False
       Tab(0).Control(18)=   "lblEpo"
       Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "lblNomeMedico"
+      Tab(0).Control(19)=   "lblComplicanze"
       Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "lblCognomeMedico"
+      Tab(0).Control(20)=   "lblPesoIniziale"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "lblComplicanze"
+      Tab(0).Control(21)=   "lblPesoFinale"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "lblPesoIniziale"
+      Tab(0).Control(22)=   "lblIncremento"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "lblPesoFinale"
+      Tab(0).Control(23)=   "lblPressioneMax(0)"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "lblIncremento"
+      Tab(0).Control(24)=   "lblPressioneMax(1)"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "lblPressioneMax(0)"
+      Tab(0).Control(25)=   "lblPressioneMax(2)"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "lblPressioneMax(1)"
+      Tab(0).Control(26)=   "lblPressioneMax(3)"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "lblPressioneMax(2)"
+      Tab(0).Control(27)=   "lblPressioneMax(4)"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "lblPressioneMax(3)"
+      Tab(0).Control(28)=   "lblPressioneMin(0)"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "lblPressioneMax(4)"
+      Tab(0).Control(29)=   "lblPressioneMin(1)"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "lblPressioneMin(0)"
+      Tab(0).Control(30)=   "lblPressioneMin(2)"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "lblPressioneMin(1)"
+      Tab(0).Control(31)=   "lblPressioneMin(3)"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "lblPressioneMin(2)"
+      Tab(0).Control(32)=   "lblPressioneMin(4)"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "lblPressioneMin(3)"
+      Tab(0).Control(33)=   "lblFC(0)"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "lblPressioneMin(4)"
+      Tab(0).Control(34)=   "lblFC(1)"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "lblFC(0)"
+      Tab(0).Control(35)=   "lblFC(2)"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "lblFC(1)"
+      Tab(0).Control(36)=   "lblFC(3)"
       Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "lblFC(2)"
+      Tab(0).Control(37)=   "lblFC(4)"
       Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "lblFC(3)"
+      Tab(0).Control(38)=   "Line5"
       Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "lblFC(4)"
+      Tab(0).Control(39)=   "Line2"
       Tab(0).Control(39).Enabled=   0   'False
-      Tab(0).Control(40)=   "Line5"
+      Tab(0).Control(40)=   "Line1"
       Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "Line2"
+      Tab(0).Control(41)=   "Label8"
       Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).Control(42)=   "Line1"
+      Tab(0).Control(42)=   "Label7"
       Tab(0).Control(42).Enabled=   0   'False
-      Tab(0).Control(43)=   "Label8"
+      Tab(0).Control(43)=   "Label6"
       Tab(0).Control(43).Enabled=   0   'False
-      Tab(0).Control(44)=   "Label7"
+      Tab(0).Control(44)=   "Label5"
       Tab(0).Control(44).Enabled=   0   'False
-      Tab(0).Control(45)=   "Label6"
+      Tab(0).Control(45)=   "Label4"
       Tab(0).Control(45).Enabled=   0   'False
-      Tab(0).Control(46)=   "Label5"
+      Tab(0).Control(46)=   "Label3"
       Tab(0).Control(46).Enabled=   0   'False
-      Tab(0).Control(47)=   "Label4"
+      Tab(0).Control(47)=   "lblKtvRilevato"
       Tab(0).Control(47).Enabled=   0   'False
-      Tab(0).Control(48)=   "Label3"
+      Tab(0).Control(48)=   "lblTotSangueRilevato"
       Tab(0).Control(48).Enabled=   0   'False
-      Tab(0).Control(49)=   "lblKtvRilevato"
+      Tab(0).Control(49)=   "lblPaExtracorporeo"
       Tab(0).Control(49).Enabled=   0   'False
-      Tab(0).Control(50)=   "lblTotSangueRilevato"
+      Tab(0).Control(50)=   "lblPvExtracorporeo"
       Tab(0).Control(50).Enabled=   0   'False
-      Tab(0).Control(51)=   "lblPaExtracorporeo"
-      Tab(0).Control(51).Enabled=   0   'False
-      Tab(0).Control(52)=   "lblPvExtracorporeo"
-      Tab(0).Control(52).Enabled=   0   'False
-      Tab(0).ControlCount=   53
+      Tab(0).ControlCount=   51
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaDialiticaPassate.frx":001C
       Tab(1).ControlEnabled=   0   'False
@@ -276,7 +272,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   138
+         TabIndex        =   136
          Top             =   1920
          Width           =   615
       End
@@ -295,7 +291,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   137
+         TabIndex        =   135
          Top             =   1560
          Width           =   615
       End
@@ -323,7 +319,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   136
+         TabIndex        =   134
          Top             =   1200
          Width           =   615
       End
@@ -351,7 +347,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   10320
-         TabIndex        =   135
+         TabIndex        =   133
          Top             =   840
          Width           =   615
       End
@@ -369,7 +365,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   8520
-         TabIndex        =   134
+         TabIndex        =   132
          Top             =   480
          Width           =   2895
       End
@@ -386,7 +382,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   255
          Left            =   8760
-         TabIndex        =   133
+         TabIndex        =   131
          Top             =   765
          Width           =   495
       End
@@ -403,7 +399,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   495
          Left            =   8760
-         TabIndex        =   132
+         TabIndex        =   130
          Top             =   1080
          Width           =   1335
       End
@@ -420,7 +416,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   255
          Left            =   8760
-         TabIndex        =   131
+         TabIndex        =   129
          Top             =   1770
          Width           =   675
       End
@@ -437,7 +433,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   255
          Left            =   9765
-         TabIndex        =   130
+         TabIndex        =   128
          Top             =   1965
          Width           =   495
       End
@@ -454,7 +450,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   300
          Left            =   9765
-         TabIndex        =   129
+         TabIndex        =   127
          Top             =   1620
          Width           =   495
       End
@@ -491,7 +487,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   56
          Left            =   -65040
-         TabIndex        =   127
+         TabIndex        =   125
          Top             =   3360
          Width           =   495
       End
@@ -510,7 +506,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   48
          Left            =   -70080
-         TabIndex        =   126
+         TabIndex        =   124
          Top             =   2880
          Width           =   1365
       End
@@ -528,7 +524,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   -68640
-         TabIndex        =   125
+         TabIndex        =   123
          Top             =   2880
          Width           =   615
       End
@@ -546,7 +542,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   -64320
-         TabIndex        =   124
+         TabIndex        =   122
          Top             =   3360
          Width           =   1095
       End
@@ -564,7 +560,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   -65760
-         TabIndex        =   123
+         TabIndex        =   121
          Top             =   2880
          Width           =   615
       End
@@ -583,7 +579,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   38
          Left            =   -67440
-         TabIndex        =   122
+         TabIndex        =   120
          Top             =   2880
          Width           =   1590
       End
@@ -601,7 +597,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   -63720
-         TabIndex        =   121
+         TabIndex        =   119
          Top             =   2880
          Width           =   615
       End
@@ -620,7 +616,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   35
          Left            =   -65040
-         TabIndex        =   120
+         TabIndex        =   118
          Top             =   2880
          Width           =   1275
       End
@@ -638,7 +634,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   -68040
-         TabIndex        =   119
+         TabIndex        =   117
          Top             =   2880
          Width           =   375
       End
@@ -656,7 +652,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   -65280
-         TabIndex        =   118
+         TabIndex        =   116
          Top             =   5640
          Width           =   615
       End
@@ -675,7 +671,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   27
          Left            =   -65880
-         TabIndex        =   117
+         TabIndex        =   115
          Top             =   5640
          Width           =   480
       End
@@ -695,46 +691,6 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   4
          Left            =   7440
-         TabIndex        =   108
-         Top             =   1680
-         Width           =   615
-      End
-      Begin VB.Label lblFC 
-         Alignment       =   1  'Right Justify
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   3
-         Left            =   6600
-         TabIndex        =   107
-         Top             =   1680
-         Width           =   615
-      End
-      Begin VB.Label lblFC 
-         Alignment       =   1  'Right Justify
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   2
-         Left            =   5760
          TabIndex        =   106
          Top             =   1680
          Width           =   615
@@ -753,9 +709,49 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
+         Index           =   3
+         Left            =   6600
+         TabIndex        =   105
+         Top             =   1680
+         Width           =   615
+      End
+      Begin VB.Label lblFC 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   2
+         Left            =   5760
+         TabIndex        =   104
+         Top             =   1680
+         Width           =   615
+      End
+      Begin VB.Label lblFC 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
          Index           =   1
          Left            =   4920
-         TabIndex        =   105
+         TabIndex        =   103
          Top             =   1680
          Width           =   615
       End
@@ -775,7 +771,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   0
          Left            =   4080
-         TabIndex        =   104
+         TabIndex        =   102
          Top             =   1680
          Width           =   615
       End
@@ -795,46 +791,6 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   4
          Left            =   7440
-         TabIndex        =   103
-         Top             =   1320
-         Width           =   615
-      End
-      Begin VB.Label lblPressioneMin 
-         Alignment       =   1  'Right Justify
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   3
-         Left            =   6600
-         TabIndex        =   102
-         Top             =   1320
-         Width           =   615
-      End
-      Begin VB.Label lblPressioneMin 
-         Alignment       =   1  'Right Justify
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   2
-         Left            =   5760
          TabIndex        =   101
          Top             =   1320
          Width           =   615
@@ -853,9 +809,49 @@ Begin VB.Form frmSchedaDialiticaPassate
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
+         Index           =   3
+         Left            =   6600
+         TabIndex        =   100
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.Label lblPressioneMin 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   2
+         Left            =   5760
+         TabIndex        =   99
+         Top             =   1320
+         Width           =   615
+      End
+      Begin VB.Label lblPressioneMin 
+         Alignment       =   1  'Right Justify
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
          Index           =   1
          Left            =   4920
-         TabIndex        =   100
+         TabIndex        =   98
          Top             =   1320
          Width           =   615
       End
@@ -875,7 +871,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   0
          Left            =   4080
-         TabIndex        =   99
+         TabIndex        =   97
          Top             =   1320
          Width           =   615
       End
@@ -895,7 +891,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   4
          Left            =   7440
-         TabIndex        =   98
+         TabIndex        =   96
          Top             =   960
          Width           =   615
       End
@@ -915,7 +911,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   3
          Left            =   6600
-         TabIndex        =   97
+         TabIndex        =   95
          Top             =   960
          Width           =   615
       End
@@ -935,7 +931,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   2
          Left            =   5760
-         TabIndex        =   96
+         TabIndex        =   94
          Top             =   960
          Width           =   615
       End
@@ -955,7 +951,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   1
          Left            =   4920
-         TabIndex        =   95
+         TabIndex        =   93
          Top             =   960
          Width           =   615
       End
@@ -975,7 +971,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   285
          Index           =   0
          Left            =   4080
-         TabIndex        =   94
+         TabIndex        =   92
          Top             =   960
          Width           =   615
       End
@@ -994,7 +990,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   1800
-         TabIndex        =   93
+         TabIndex        =   91
          Top             =   1680
          Width           =   615
       End
@@ -1013,7 +1009,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   1800
-         TabIndex        =   92
+         TabIndex        =   90
          Top             =   1200
          Width           =   615
       End
@@ -1032,7 +1028,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   285
          Left            =   1800
-         TabIndex        =   91
+         TabIndex        =   89
          Top             =   720
          Width           =   615
       End
@@ -1050,47 +1046,9 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   1965
          Left            =   1800
-         TabIndex        =   90
+         TabIndex        =   88
          Top             =   2400
          Width           =   9975
-      End
-      Begin VB.Label lblCognomeMedico 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   285
-         Left            =   2640
-         TabIndex        =   89
-         Top             =   5520
-         Width           =   3495
-      End
-      Begin VB.Label lblNomeMedico 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   285
-         Left            =   6120
-         TabIndex        =   88
-         Top             =   5520
-         Width           =   3375
       End
       Begin VB.Label lblEpo 
          BackColor       =   &H00FFFFFF&
@@ -2286,7 +2244,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Top             =   4800
          Width           =   1380
       End
-      Begin VB.Label Label1 
+      Begin VB.Label lblSchedaCompilataDa 
          AutoSize        =   -1  'True
          Caption         =   "Scheda compilata da:"
          BeginProperty Font 
@@ -2295,16 +2253,16 @@ Begin VB.Form frmSchedaDialiticaPassate
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   240
          Index           =   39
-         Left            =   240
+         Left            =   120
          TabIndex        =   23
          Top             =   5520
-         Width           =   2295
+         Width           =   8295
          WordWrap        =   -1  'True
       End
       Begin VB.Label lblErrata 
@@ -2464,7 +2422,7 @@ Begin VB.Form frmSchedaDialiticaPassate
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Left            =   960
-         TabIndex        =   128
+         TabIndex        =   126
          Top             =   240
          Width           =   2100
          _ExtentX        =   3704
@@ -2488,7 +2446,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   26
          Left            =   10200
-         TabIndex        =   116
+         TabIndex        =   114
          Top             =   720
          Width           =   555
       End
@@ -2506,7 +2464,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   255
          Left            =   4440
-         TabIndex        =   115
+         TabIndex        =   113
          Top             =   720
          Width           =   615
       End
@@ -2525,7 +2483,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   47
          Left            =   3600
-         TabIndex        =   114
+         TabIndex        =   112
          Top             =   720
          Width           =   780
       End
@@ -2544,7 +2502,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   4
          Left            =   240
-         TabIndex        =   113
+         TabIndex        =   111
          Top             =   720
          Width           =   1170
       End
@@ -2562,7 +2520,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   10800
-         TabIndex        =   112
+         TabIndex        =   110
          Top             =   735
          Width           =   75
       End
@@ -2581,7 +2539,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          Height          =   240
          Index           =   25
          Left            =   5520
-         TabIndex        =   111
+         TabIndex        =   109
          Top             =   720
          Width           =   780
       End
@@ -2599,7 +2557,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   255
          Left            =   1560
-         TabIndex        =   110
+         TabIndex        =   108
          Top             =   720
          Width           =   615
       End
@@ -2617,7 +2575,7 @@ Begin VB.Form frmSchedaDialiticaPassate
          EndProperty
          Height          =   255
          Left            =   6480
-         TabIndex        =   109
+         TabIndex        =   107
          Top             =   720
          Width           =   3615
       End
@@ -2867,8 +2825,7 @@ End Sub
 Private Sub CaricaMedico(codice_medico As Integer)
     Dim rsDataset As New Recordset
     rsDataset.Open "SELECT * FROM LOGIN WHERE KEY=" & codice_medico, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    lblCognomeMedico = rsDataset("COGNOME")
-    lblNomeMedico = rsDataset("NOME")
+    lblSchedaCompilataDa(39) = "Scheda compilata da: " & rsDataset("COGNOME") & " " & rsDataset("NOME")
     Set rsDataset = Nothing
 End Sub
 
@@ -3073,8 +3030,7 @@ Private Sub PulisciLabel()
     lblCartuccia = ""
     lblEpo = ""
     lblUI = ""
-    lblCognomeMedico = ""
-    lblNomeMedico = ""
+    lblSchedaCompilataDa(39) = "Scheda compilata da: "
     lblComplicanze = ""
     lblPesoIniziale = ""
     lblPesoFinale = ""
@@ -3307,7 +3263,7 @@ Private Sub cmdStampa_Click()
     rptSchedaDialiticaGiornaliera.Sections("Intestazione").Controls.Item("lblGiorno").Caption = oData.data
     rptSchedaDialiticaGiornaliera.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
     rptSchedaDialiticaGiornaliera.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
-    rptSchedaDialiticaGiornaliera.Sections("Intestazione").Controls.Item("lblSchedaCompilataDa").Caption = lblCognomeMedico & " " & lblNomeMedico
+    rptSchedaDialiticaGiornaliera.Sections("Intestazione").Controls.Item("lblSchedaCompilataDa").Caption = lblSchedaCompilataDa(39).Caption
     rptSchedaDialiticaGiornaliera.PrintReport True, rptRangeAllPages
     
     Set rsDialisi = Nothing

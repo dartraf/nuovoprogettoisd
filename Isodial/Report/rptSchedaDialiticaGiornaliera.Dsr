@@ -42,7 +42,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
       _Version        =   393216
       Name            =   "Intestazione"
       Object.Height          =   3136
-      NumControls     =   16
+      NumControls     =   15
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -216,42 +216,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
       ItemType10      =   3
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label50"
-         Object.Left            =   3344
-         Object.Top             =   2268
-         Object.Width           =   1245
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "registrata da:"
-      EndProperty
-      ItemType11      =   3
-      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "lblSchedaCompilataDa"
-         Object.Left            =   4421
-         Object.Top             =   2282
-         Object.Width           =   2715
+         Object.Left            =   1701
+         Object.Top             =   2268
+         Object.Width           =   6075
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
       EndProperty
-      ItemType12      =   3
-      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType11      =   3
+      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblRagione"
          Object.Left            =   113
@@ -268,8 +250,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType13      =   3
-      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType12      =   3
+      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTipo"
          Object.Left            =   113
@@ -286,8 +268,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblAltro"
          Object.Left            =   113
@@ -304,8 +286,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaDialiticaGiornaliera
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType15      =   3
-      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDirettoreSanitario"
          Object.Left            =   113

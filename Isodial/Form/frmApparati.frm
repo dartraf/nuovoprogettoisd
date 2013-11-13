@@ -677,7 +677,7 @@ Private Sub Form_Load()
         .ColWidth(4) = .ColWidth(4) * 1.1
         .ColWidth(5) = .ColWidth(5) * 4.2
         .ColWidth(6) = .ColWidth(6) * 1.1
-        .ColWidth(7) = .ColWidth(7) * 4.7
+        .ColWidth(7) = .ColWidth(7) * 4.5
         
         .TextMatrix(0, 1) = "Tipo Manutenz."
         .TextMatrix(0, 2) = "Scad.Man."

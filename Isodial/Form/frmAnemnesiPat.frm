@@ -403,6 +403,7 @@ Dim keyId As Integer
 Dim rsDisco As Recordset
 Dim intPazientiKey As Integer
 Dim blnModificato As Boolean
+Dim VisualizzaUtenteModificatorePat As Boolean
 
 '' Apre frmTrova se non c'è nessun paziente gia caricato
 Private Sub Form_Activate()
@@ -546,6 +547,22 @@ Private Sub PulisciTutto()
     lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: "
     cmdTrova.SetFocus
     blnModificato = False
+End Sub
+
+'' Pulisce solo i campi
+Private Sub PulisciCampi()
+    Dim i As Integer
+    chkStampa.Value = Checked
+    txtFamiliare.Text = ""
+    txtPatologica.Text = ""
+    For i = 1 To 11
+        v_stampa(i) = True
+        v_testo(i) = ""
+        flxGriglia.Row = i - 1
+        flxGriglia.CellBackColor = vbWhite
+    Next i
+    lblUtenteModificatoreFamiliare = "Ultimo aggiornamento del dr./dr.ssa: "
+    lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: "
 End Sub
 
 Private Sub cmdStampa_Click()
@@ -702,10 +719,14 @@ Private Sub flxGriglia_Click()
     End If
     If rsDisco.RecordCount <> 0 Then
         If Not IsNull(rsDisco.Fields("UTENTE_MODIFICATORE" & i)) Then
-            lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsDisco.Fields("UTENTE_MODIFICATORE" & i))
+            If VisualizzaUtenteModificatorePat = False Then
+                lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: "
+            Else
+                lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsDisco.Fields("UTENTE_MODIFICATORE" & i))
+            End If
         Else
             lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: "
-        End If
+            End If
     Else
         lblUtenteModificatorePat = "Ultimo aggiornamento del dr./dr.ssa: "
     End If
@@ -766,9 +787,14 @@ Private Sub CaricaPaziente()
     If rsAnamnesi.BOF And rsAnamnesi.EOF Then
         ' il paziente non ha una scheda clinica
         modifica = False
+        ' pulisco i campi per evitare di caricare i valori ad un paziente senza dati
+        ' con l' anamnesi di un paziente caricato precedentemente con i valori
+        VisualizzaUtenteModificatorePat = False
+        Call PulisciCampi
     Else
         keyId = rsAnamnesi("KEY")
         modifica = True
+        VisualizzaUtenteModificatorePat = True
         ' carica tutto nei vattori
         With rsAnamnesi
             For i = 2 To 11

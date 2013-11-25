@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmInput 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Inserimento Valori"
@@ -16,7 +17,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraComuni 
       Height          =   1695
       Left            =   6480
-      TabIndex        =   166
+      TabIndex        =   164
       Top             =   6480
       Width           =   6015
       Begin VB.ComboBox cboRegComuni 
@@ -32,7 +33,7 @@ Begin VB.Form frmInput
          Height          =   315
          Left            =   1680
          Style           =   2  'Dropdown List
-         TabIndex        =   169
+         TabIndex        =   167
          Top             =   1200
          Width           =   4095
       End
@@ -49,7 +50,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1680
          MaxLength       =   25
-         TabIndex        =   168
+         TabIndex        =   166
          Top             =   720
          Width           =   4095
       End
@@ -66,7 +67,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1680
          MaxLength       =   6
-         TabIndex        =   167
+         TabIndex        =   165
          Top             =   240
          Width           =   975
       End
@@ -85,7 +86,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   45
          Left            =   120
-         TabIndex        =   172
+         TabIndex        =   170
          Top             =   300
          Width           =   1470
       End
@@ -103,7 +104,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   171
+         TabIndex        =   169
          Top             =   720
          Width           =   855
       End
@@ -122,7 +123,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   44
          Left            =   120
-         TabIndex        =   170
+         TabIndex        =   168
          Top             =   1200
          Width           =   900
       End
@@ -130,7 +131,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraVoci 
       Height          =   2055
       Left            =   6480
-      TabIndex        =   59
+      TabIndex        =   58
       Top             =   5880
       Width           =   6255
       Begin VB.CheckBox chkStampaVoce 
@@ -250,7 +251,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   375
          Left            =   3720
-         TabIndex        =   165
+         TabIndex        =   163
          Top             =   1560
          Width           =   2415
       End
@@ -269,7 +270,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   1200
          Width           =   1125
       End
@@ -288,7 +289,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   3
          Left            =   120
-         TabIndex        =   62
+         TabIndex        =   61
          Top             =   1680
          Width           =   1185
       End
@@ -307,7 +308,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   2
          Left            =   120
-         TabIndex        =   61
+         TabIndex        =   60
          Top             =   720
          Width           =   1560
       End
@@ -326,7 +327,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   60
+         TabIndex        =   59
          Top             =   240
          Width           =   735
       End
@@ -334,7 +335,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraEsenzioni 
       Height          =   1185
       Left            =   6480
-      TabIndex        =   155
+      TabIndex        =   153
       Top             =   5400
       Width           =   6015
       Begin VB.OptionButton optTicketRicetta 
@@ -352,7 +353,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   3600
-         TabIndex        =   158
+         TabIndex        =   156
          Top             =   720
          Width           =   1695
       End
@@ -369,7 +370,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   2160
          MaxLength       =   10
-         TabIndex        =   156
+         TabIndex        =   154
          Top             =   225
          Width           =   1575
       End
@@ -388,7 +389,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   2160
-         TabIndex        =   157
+         TabIndex        =   155
          Top             =   720
          Value           =   -1  'True
          Width           =   1095
@@ -408,7 +409,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   39
          Left            =   120
-         TabIndex        =   160
+         TabIndex        =   158
          Top             =   720
          Width           =   1770
       End
@@ -427,7 +428,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   40
          Left            =   120
-         TabIndex        =   159
+         TabIndex        =   157
          Top             =   240
          Width           =   1875
       End
@@ -435,7 +436,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraNomenclatore 
       Height          =   1695
       Left            =   6480
-      TabIndex        =   127
+      TabIndex        =   125
       Top             =   4680
       Width           =   6015
       Begin VB.TextBox txtImportoScontato 
@@ -451,7 +452,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   4800
          MaxLength       =   6
-         TabIndex        =   131
+         TabIndex        =   129
          Top             =   1200
          Width           =   975
       End
@@ -468,7 +469,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1440
          MaxLength       =   6
-         TabIndex        =   130
+         TabIndex        =   128
          Top             =   1200
          Width           =   975
       End
@@ -485,7 +486,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1440
          MaxLength       =   10
-         TabIndex        =   128
+         TabIndex        =   126
          Top             =   240
          Width           =   975
       End
@@ -502,7 +503,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1440
          MaxLength       =   100
-         TabIndex        =   129
+         TabIndex        =   127
          Top             =   720
          Width           =   4335
       End
@@ -521,7 +522,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   33
          Left            =   2880
-         TabIndex        =   135
+         TabIndex        =   133
          Top             =   1200
          Width           =   1740
       End
@@ -540,7 +541,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   32
          Left            =   120
-         TabIndex        =   134
+         TabIndex        =   132
          Top             =   1200
          Width           =   795
       End
@@ -557,7 +558,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   435
          Left            =   120
-         TabIndex        =   133
+         TabIndex        =   131
          Top             =   675
          Width           =   1215
       End
@@ -576,7 +577,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   31
          Left            =   120
-         TabIndex        =   132
+         TabIndex        =   130
          Top             =   300
          Width           =   750
       End
@@ -584,7 +585,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraTerapiaStraordinaria 
       Height          =   1695
       Left            =   6480
-      TabIndex        =   147
+      TabIndex        =   145
       Top             =   4080
       Width           =   6015
       Begin VB.TextBox txtNoteStraordinarie 
@@ -599,7 +600,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   285
          Left            =   1320
-         TabIndex        =   151
+         TabIndex        =   149
          Top             =   1200
          Width           =   4455
       End
@@ -617,7 +618,7 @@ Begin VB.Form frmInput
          Left            =   1320
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   148
+         TabIndex        =   146
          Top             =   240
          Width           =   4455
       End
@@ -635,7 +636,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1320
          MaxLength       =   3
-         TabIndex        =   149
+         TabIndex        =   147
          Top             =   720
          Width           =   495
       End
@@ -652,7 +653,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   255
          Left            =   2520
-         TabIndex        =   150
+         TabIndex        =   148
          Top             =   720
          Width           =   3255
       End
@@ -671,7 +672,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   38
          Left            =   120
-         TabIndex        =   154
+         TabIndex        =   152
          Top             =   1230
          Width           =   510
       End
@@ -689,7 +690,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   153
+         TabIndex        =   151
          Top             =   300
          Width           =   930
       End
@@ -708,7 +709,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   37
          Left            =   120
-         TabIndex        =   152
+         TabIndex        =   150
          Top             =   780
          Width           =   1080
       End
@@ -716,7 +717,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraAsl 
       Height          =   1695
       Left            =   6480
-      TabIndex        =   136
+      TabIndex        =   134
       Top             =   3480
       Width           =   6015
       Begin VB.TextBox txtCodiceAsl 
@@ -732,7 +733,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1680
          MaxLength       =   3
-         TabIndex        =   137
+         TabIndex        =   135
          Top             =   240
          Width           =   975
       End
@@ -749,7 +750,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1680
          MaxLength       =   25
-         TabIndex        =   138
+         TabIndex        =   136
          Top             =   720
          Width           =   4095
       End
@@ -766,7 +767,7 @@ Begin VB.Form frmInput
          Height          =   315
          Left            =   1680
          Style           =   2  'Dropdown List
-         TabIndex        =   139
+         TabIndex        =   137
          Top             =   1200
          Width           =   4095
       End
@@ -785,7 +786,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   35
          Left            =   120
-         TabIndex        =   142
+         TabIndex        =   140
          Top             =   1200
          Width           =   900
       End
@@ -803,7 +804,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   141
+         TabIndex        =   139
          Top             =   720
          Width           =   1110
       End
@@ -822,7 +823,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   34
          Left            =   120
-         TabIndex        =   140
+         TabIndex        =   138
          Top             =   300
          Width           =   1230
       End
@@ -830,7 +831,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraPrestazione 
       Height          =   2055
       Left            =   6480
-      TabIndex        =   107
+      TabIndex        =   105
       Top             =   2880
       Width           =   6015
       Begin VB.PictureBox picData 
@@ -841,7 +842,7 @@ Begin VB.Form frmInput
          Left            =   3360
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   112
+         TabIndex        =   110
          ToolTipText     =   "Cerca data"
          Top             =   1560
          Width           =   360
@@ -854,7 +855,7 @@ Begin VB.Form frmInput
          Left            =   3360
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   111
+         TabIndex        =   109
          ToolTipText     =   "Cerca data"
          Top             =   1080
          Width           =   360
@@ -872,7 +873,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   5280
          MaxLength       =   2
-         TabIndex        =   110
+         TabIndex        =   108
          Text            =   "1"
          Top             =   720
          Width           =   495
@@ -891,7 +892,7 @@ Begin VB.Form frmInput
          Left            =   1560
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   108
+         TabIndex        =   106
          Top             =   240
          Width           =   4215
       End
@@ -909,7 +910,7 @@ Begin VB.Form frmInput
          Left            =   1560
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   109
+         TabIndex        =   107
          Top             =   720
          Width           =   1695
       End
@@ -928,7 +929,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   7
          Left            =   120
-         TabIndex        =   119
+         TabIndex        =   117
          Top             =   1680
          Width           =   1740
       End
@@ -948,7 +949,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   8
          Left            =   2040
-         TabIndex        =   118
+         TabIndex        =   116
          Top             =   1620
          Width           =   1215
       End
@@ -967,7 +968,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   6
          Left            =   120
-         TabIndex        =   117
+         TabIndex        =   115
          Top             =   1200
          Width           =   1830
       End
@@ -987,7 +988,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   7
          Left            =   2040
-         TabIndex        =   116
+         TabIndex        =   114
          Top             =   1140
          Width           =   1215
       End
@@ -1005,7 +1006,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   4200
-         TabIndex        =   115
+         TabIndex        =   113
          Top             =   750
          Width           =   870
       End
@@ -1023,7 +1024,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   114
+         TabIndex        =   112
          Top             =   285
          Width           =   1245
       End
@@ -1041,7 +1042,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   113
+         TabIndex        =   111
          Top             =   765
          Width           =   750
       End
@@ -1049,7 +1050,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraColture 
       Height          =   2415
       Left            =   6480
-      TabIndex        =   92
+      TabIndex        =   90
       Top             =   2400
       Width           =   6015
       Begin VB.PictureBox picData 
@@ -1060,7 +1061,7 @@ Begin VB.Form frmInput
          Left            =   3360
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   49
+         TabIndex        =   48
          ToolTipText     =   "Cerca data"
          Top             =   240
          Width           =   360
@@ -1069,7 +1070,7 @@ Begin VB.Form frmInput
          BorderStyle     =   0  'None
          Height          =   375
          Left            =   2040
-         TabIndex        =   97
+         TabIndex        =   95
          Top             =   1920
          Width           =   2055
          Begin VB.OptionButton optEsitoBagno 
@@ -1087,7 +1088,7 @@ Begin VB.Form frmInput
             Height          =   255
             Index           =   0
             Left            =   0
-            TabIndex        =   54
+            TabIndex        =   53
             Top             =   90
             Width           =   735
          End
@@ -1106,7 +1107,7 @@ Begin VB.Form frmInput
             Height          =   255
             Index           =   1
             Left            =   840
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   90
             Width           =   975
          End
@@ -1124,7 +1125,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   2040
          MaxLength       =   25
-         TabIndex        =   53
+         TabIndex        =   52
          Top             =   1560
          Width           =   3735
       End
@@ -1141,7 +1142,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   2040
          MaxLength       =   25
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   720
          Width           =   3735
       End
@@ -1160,7 +1161,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   2040
-         TabIndex        =   51
+         TabIndex        =   50
          Top             =   1170
          Width           =   735
       End
@@ -1179,7 +1180,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   2880
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   1170
          Width           =   1095
       End
@@ -1199,7 +1200,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   6
          Left            =   2040
-         TabIndex        =   104
+         TabIndex        =   102
          Top             =   300
          Width           =   1215
       End
@@ -1218,7 +1219,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   29
          Left            =   120
-         TabIndex        =   103
+         TabIndex        =   101
          Top             =   280
          Width           =   510
       End
@@ -1237,7 +1238,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   28
          Left            =   120
-         TabIndex        =   96
+         TabIndex        =   94
          Top             =   720
          Width           =   1770
       End
@@ -1256,7 +1257,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   27
          Left            =   120
-         TabIndex        =   95
+         TabIndex        =   93
          Top             =   1170
          Width           =   540
       End
@@ -1275,7 +1276,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   26
          Left            =   120
-         TabIndex        =   94
+         TabIndex        =   92
          Top             =   1560
          Width           =   1785
       End
@@ -1294,7 +1295,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   25
          Left            =   120
-         TabIndex        =   93
+         TabIndex        =   91
          Top             =   2000
          Width           =   540
       End
@@ -1302,7 +1303,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraRene 
       Height          =   2655
       Left            =   6480
-      TabIndex        =   70
+      TabIndex        =   68
       Top             =   1800
       Width           =   6015
       Begin VB.TextBox txtNumeroRene 
@@ -1318,7 +1319,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   5280
          MaxLength       =   3
-         TabIndex        =   38
+         TabIndex        =   37
          Top             =   360
          Width           =   495
       End
@@ -1330,7 +1331,7 @@ Begin VB.Form frmInput
          Left            =   3480
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   44
+         TabIndex        =   43
          ToolTipText     =   "Cerca data"
          Top             =   2160
          Width           =   360
@@ -1350,7 +1351,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   2
          Left            =   4320
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   840
          Value           =   -1  'True
          Width           =   855
@@ -1370,7 +1371,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   3120
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   840
          Width           =   975
       End
@@ -1389,7 +1390,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   1920
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   840
          Width           =   975
       End
@@ -1406,7 +1407,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1920
          MaxLength       =   3
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   360
          Width           =   495
       End
@@ -1423,7 +1424,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1920
          MaxLength       =   25
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   1755
          Width           =   3855
       End
@@ -1440,7 +1441,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1920
          MaxLength       =   25
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   1305
          Width           =   3855
       End
@@ -1459,7 +1460,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   43
          Left            =   3600
-         TabIndex        =   164
+         TabIndex        =   162
          Top             =   360
          Width           =   1350
       End
@@ -1478,7 +1479,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   42
          Left            =   120
-         TabIndex        =   163
+         TabIndex        =   161
          Top             =   1320
          Width           =   780
       End
@@ -1497,7 +1498,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   41
          Left            =   120
-         TabIndex        =   162
+         TabIndex        =   160
          Top             =   2205
          Width           =   1905
       End
@@ -1517,7 +1518,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   9
          Left            =   2160
-         TabIndex        =   161
+         TabIndex        =   159
          Top             =   2220
          Width           =   1215
       End
@@ -1536,7 +1537,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   14
          Left            =   120
-         TabIndex        =   73
+         TabIndex        =   71
          Top             =   1800
          Width           =   975
       End
@@ -1555,7 +1556,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   13
          Left            =   120
-         TabIndex        =   72
+         TabIndex        =   70
          Top             =   840
          Width           =   1275
       End
@@ -1574,7 +1575,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   12
          Left            =   120
-         TabIndex        =   71
+         TabIndex        =   69
          Top             =   360
          Width           =   1170
       End
@@ -1582,7 +1583,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraPassword 
       Height          =   2295
       Left            =   6480
-      TabIndex        =   98
+      TabIndex        =   96
       Top             =   1200
       Width           =   6015
       Begin VB.TextBox txtCognomePass 
@@ -1598,7 +1599,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1560
          MaxLength       =   35
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   240
          Width           =   3255
       End
@@ -1615,7 +1616,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1560
          MaxLength       =   35
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   720
          Width           =   3255
       End
@@ -1632,7 +1633,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1560
          MaxLength       =   20
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   1200
          Width           =   2055
       End
@@ -1649,7 +1650,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   1560
          MaxLength       =   20
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   1680
          Width           =   2055
       End
@@ -1668,7 +1669,7 @@ Begin VB.Form frmInput
          Height          =   375
          Index           =   0
          Left            =   3840
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   1080
          Value           =   -1  'True
          Width           =   1575
@@ -1688,7 +1689,7 @@ Begin VB.Form frmInput
          Height          =   375
          Index           =   1
          Left            =   3840
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   1440
          Width           =   1935
       End
@@ -1707,7 +1708,7 @@ Begin VB.Form frmInput
          Height          =   375
          Index           =   2
          Left            =   3840
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   1800
          Width           =   1815
       End
@@ -1726,7 +1727,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   8
          Left            =   120
-         TabIndex        =   102
+         TabIndex        =   100
          Top             =   300
          Width           =   1005
       End
@@ -1745,7 +1746,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   9
          Left            =   120
-         TabIndex        =   101
+         TabIndex        =   99
          Top             =   750
          Width           =   630
       End
@@ -1764,7 +1765,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   10
          Left            =   120
-         TabIndex        =   100
+         TabIndex        =   98
          Top             =   1245
          Width           =   1320
       End
@@ -1783,7 +1784,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   11
          Left            =   120
-         TabIndex        =   99
+         TabIndex        =   97
          Top             =   1680
          Width           =   1035
       End
@@ -1791,7 +1792,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraEpisodi 
       Height          =   1215
       Left            =   120
-      TabIndex        =   79
+      TabIndex        =   77
       Top             =   7080
       Width           =   6015
       Begin VB.TextBox txtNoteEpisodi 
@@ -1807,7 +1808,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   840
          MaxLength       =   35
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   720
          Width           =   4935
       End
@@ -1819,7 +1820,7 @@ Begin VB.Form frmInput
          Left            =   2160
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   32
+         TabIndex        =   31
          ToolTipText     =   "Cerca data"
          Top             =   240
          Width           =   360
@@ -1839,7 +1840,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   19
          Left            =   120
-         TabIndex        =   82
+         TabIndex        =   80
          Top             =   750
          Width           =   510
       End
@@ -1859,7 +1860,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   3
          Left            =   840
-         TabIndex        =   81
+         TabIndex        =   79
          Top             =   300
          Width           =   1215
       End
@@ -1878,7 +1879,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   18
          Left            =   120
-         TabIndex        =   80
+         TabIndex        =   78
          Top             =   360
          Width           =   510
       End
@@ -1886,7 +1887,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraSieroconversioni 
       Height          =   1215
       Left            =   120
-      TabIndex        =   87
+      TabIndex        =   85
       Top             =   6480
       Width           =   6015
       Begin VB.CheckBox chkSieroconversioni 
@@ -1903,7 +1904,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   3360
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   750
          Width           =   975
       End
@@ -1921,7 +1922,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   2040
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   750
          Width           =   975
       End
@@ -1933,7 +1934,7 @@ Begin VB.Form frmInput
          Left            =   3360
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   36
+         TabIndex        =   35
          ToolTipText     =   "Cerca data"
          Top             =   240
          Width           =   360
@@ -1954,7 +1955,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   5
          Left            =   2040
-         TabIndex        =   90
+         TabIndex        =   88
          Top             =   300
          Width           =   1215
       End
@@ -1973,7 +1974,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   23
          Left            =   120
-         TabIndex        =   89
+         TabIndex        =   87
          Top             =   360
          Width           =   510
       End
@@ -1992,7 +1993,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   22
          Left            =   120
-         TabIndex        =   88
+         TabIndex        =   86
          Top             =   750
          Width           =   1770
       End
@@ -2000,7 +2001,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraTrasfusioni 
       Height          =   1215
       Left            =   120
-      TabIndex        =   83
+      TabIndex        =   81
       Top             =   5880
       Width           =   6015
       Begin VB.PictureBox picData 
@@ -2011,7 +2012,7 @@ Begin VB.Form frmInput
          Left            =   2760
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   34
+         TabIndex        =   33
          ToolTipText     =   "Cerca data"
          Top             =   240
          Width           =   360
@@ -2029,7 +2030,7 @@ Begin VB.Form frmInput
          Height          =   315
          Left            =   1440
          Sorted          =   -1  'True
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   720
          Width           =   4335
       End
@@ -2048,7 +2049,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   21
          Left            =   120
-         TabIndex        =   86
+         TabIndex        =   84
          Top             =   750
          Width           =   1245
       End
@@ -2067,7 +2068,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   20
          Left            =   120
-         TabIndex        =   85
+         TabIndex        =   83
          Top             =   360
          Width           =   510
       End
@@ -2087,7 +2088,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   4
          Left            =   1440
-         TabIndex        =   84
+         TabIndex        =   82
          Top             =   300
          Width           =   1215
       End
@@ -2095,7 +2096,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraDistretti 
       Height          =   1215
       Left            =   120
-      TabIndex        =   120
+      TabIndex        =   118
       Top             =   5280
       Width           =   6015
       Begin VB.ComboBox cboAslAppartenenza 
@@ -2111,7 +2112,7 @@ Begin VB.Form frmInput
          Height          =   315
          Left            =   2040
          Style           =   2  'Dropdown List
-         TabIndex        =   123
+         TabIndex        =   121
          Top             =   720
          Width           =   3735
       End
@@ -2128,7 +2129,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   4800
          MaxLength       =   4
-         TabIndex        =   122
+         TabIndex        =   120
          Top             =   240
          Width           =   975
       End
@@ -2145,7 +2146,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   2040
          MaxLength       =   5
-         TabIndex        =   121
+         TabIndex        =   119
          Top             =   240
          Width           =   975
       End
@@ -2164,7 +2165,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   15
          Left            =   120
-         TabIndex        =   126
+         TabIndex        =   124
          Top             =   300
          Width           =   1680
       End
@@ -2182,7 +2183,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   3720
-         TabIndex        =   125
+         TabIndex        =   123
          Top             =   300
          Width           =   885
       End
@@ -2201,7 +2202,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   30
          Left            =   120
-         TabIndex        =   124
+         TabIndex        =   122
          Top             =   795
          Width           =   1755
       End
@@ -2209,7 +2210,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraRicoveri 
       Height          =   1215
       Left            =   120
-      TabIndex        =   74
+      TabIndex        =   72
       Top             =   4680
       Width           =   6015
       Begin VB.TextBox txtNoteRicoveri 
@@ -2225,7 +2226,7 @@ Begin VB.Form frmInput
          Height          =   285
          Left            =   840
          MaxLength       =   35
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   720
          Width           =   4935
       End
@@ -2237,7 +2238,7 @@ Begin VB.Form frmInput
          Left            =   5400
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   30
+         TabIndex        =   29
          ToolTipText     =   "Cerca data"
          Top             =   240
          Width           =   360
@@ -2250,7 +2251,7 @@ Begin VB.Form frmInput
          Left            =   2160
          ScaleHeight     =   360
          ScaleWidth      =   360
-         TabIndex        =   29
+         TabIndex        =   28
          ToolTipText     =   "Cerca data"
          Top             =   240
          Width           =   360
@@ -2270,7 +2271,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   24
          Left            =   120
-         TabIndex        =   91
+         TabIndex        =   89
          Top             =   720
          Width           =   510
       End
@@ -2290,7 +2291,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   2
          Left            =   4080
-         TabIndex        =   78
+         TabIndex        =   76
          Top             =   300
          Width           =   1215
       End
@@ -2309,7 +2310,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   17
          Left            =   3480
-         TabIndex        =   77
+         TabIndex        =   75
          Top             =   300
          Width           =   225
       End
@@ -2328,7 +2329,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   16
          Left            =   120
-         TabIndex        =   76
+         TabIndex        =   74
          Top             =   300
          Width           =   375
       End
@@ -2348,7 +2349,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   840
-         TabIndex        =   75
+         TabIndex        =   73
          Top             =   300
          Width           =   1215
       End
@@ -2374,7 +2375,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   2880
-         TabIndex        =   69
+         TabIndex        =   67
          Top             =   1200
          Width           =   1500
       End
@@ -2415,7 +2416,7 @@ Begin VB.Form frmInput
          List            =   "frmInput.frx":0002
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   106
+         TabIndex        =   104
          Top             =   240
          Visible         =   0   'False
          Width           =   3735
@@ -2468,7 +2469,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   720
          Width           =   630
       End
@@ -2487,7 +2488,7 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   1
          Left            =   120
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   240
          Width           =   1005
       End
@@ -2495,7 +2496,7 @@ Begin VB.Form frmInput
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
-      TabIndex        =   58
+      TabIndex        =   57
       Top             =   1080
       Width           =   6015
       Begin VB.CheckBox chkInserisci 
@@ -2511,7 +2512,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   495
          Left            =   120
-         TabIndex        =   105
+         TabIndex        =   103
          Top             =   240
          Visible         =   0   'False
          Width           =   2295
@@ -2531,7 +2532,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   495
          Left            =   4680
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   240
          Width           =   1140
       End
@@ -2548,17 +2549,34 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   495
          Left            =   3120
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   240
          Width           =   1380
       End
    End
    Begin VB.Frame fraTerapia 
-      Height          =   3135
+      Height          =   3015
       Left            =   6480
-      TabIndex        =   64
+      TabIndex        =   63
       Top             =   600
       Width           =   6015
+      Begin VB.PictureBox picData 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000006&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   360
+         Index           =   0
+         Left            =   3360
+         ScaleHeight     =   360
+         ScaleWidth      =   360
+         TabIndex        =   172
+         ToolTipText     =   "Cerca data"
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   360
+      End
       Begin VB.OptionButton optSomministrazione 
          Caption         =   "Postdialitica"
          BeginProperty Font 
@@ -2574,7 +2592,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   3000
-         TabIndex        =   146
+         TabIndex        =   144
          Top             =   2640
          Width           =   1455
       End
@@ -2593,7 +2611,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   1440
-         TabIndex        =   145
+         TabIndex        =   143
          Top             =   2640
          Value           =   -1  'True
          Width           =   1455
@@ -2612,7 +2630,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   7
          Left            =   5040
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   2160
          Width           =   855
       End
@@ -2630,7 +2648,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   6
          Left            =   4320
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   2160
          Width           =   735
       End
@@ -2648,7 +2666,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   5
          Left            =   3600
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   2160
          Width           =   615
       End
@@ -2666,7 +2684,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   4
          Left            =   2880
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   2160
          Width           =   615
       End
@@ -2684,7 +2702,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   3
          Left            =   2280
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   2160
          Width           =   615
       End
@@ -2702,7 +2720,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   2
          Left            =   1560
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   2160
          Width           =   735
       End
@@ -2720,7 +2738,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   1
          Left            =   840
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   2160
          Width           =   735
       End
@@ -2738,7 +2756,7 @@ Begin VB.Form frmInput
          Height          =   255
          Index           =   0
          Left            =   120
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   2160
          Width           =   615
       End
@@ -2753,10 +2771,10 @@ Begin VB.Form frmInput
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   285
+         Height          =   315
          Left            =   4920
          MaxLength       =   6
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   720
          Width           =   855
       End
@@ -2771,12 +2789,12 @@ Begin VB.Form frmInput
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   1680
+         Left            =   1440
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   10
          Top             =   240
-         Width           =   4095
+         Width           =   4335
       End
       Begin VB.TextBox txtSomministrazione 
          BeginProperty Font 
@@ -2790,26 +2808,47 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   285
          Left            =   2040
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   1320
          Width           =   3735
       End
-      Begin VB.PictureBox picData 
-         AutoSize        =   -1  'True
-         BorderStyle     =   0  'None
-         Height          =   360
+      Begin DataTimeBox.uDataTimeBox oData 
+         Height          =   375
          Index           =   0
-         Left            =   3000
-         ScaleHeight     =   360
-         ScaleWidth      =   360
-         TabIndex        =   11
-         ToolTipText     =   "Cerca data"
-         Top             =   720
-         Width           =   360
+         Left            =   1440
+         TabIndex        =   171
+         Top             =   660
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin VB.Label lblData 
+         Alignment       =   2  'Center
+         BackColor       =   &H80000009&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   0
+         Left            =   2160
+         TabIndex        =   173
+         Top             =   3180
+         Visible         =   0   'False
+         Width           =   1215
       End
       Begin VB.Label Label8 
          AutoSize        =   -1  'True
-         Caption         =   "Intervallo"
+         Caption         =   "Intervallo:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -2821,9 +2860,9 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   144
+         TabIndex        =   142
          Top             =   1800
-         Width           =   975
+         Width           =   1035
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2840,8 +2879,8 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   36
          Left            =   3720
-         TabIndex        =   143
-         Top             =   780
+         TabIndex        =   141
+         Top             =   750
          Width           =   1080
       End
       Begin VB.Label lblMedicinaleTerapie 
@@ -2858,7 +2897,7 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   68
+         TabIndex        =   66
          Top             =   300
          Width           =   930
       End
@@ -2876,29 +2915,9 @@ Begin VB.Form frmInput
          EndProperty
          Height          =   240
          Left            =   120
-         TabIndex        =   67
+         TabIndex        =   65
          Top             =   1320
          Width           =   1845
-      End
-      Begin VB.Label lblData 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   0
-         Left            =   1680
-         TabIndex        =   66
-         Top             =   780
-         Width           =   1215
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2915,8 +2934,8 @@ Begin VB.Form frmInput
          Height          =   240
          Index           =   4
          Left            =   120
-         TabIndex        =   65
-         Top             =   840
+         TabIndex        =   64
+         Top             =   750
          Width           =   510
       End
    End
@@ -2938,17 +2957,20 @@ Dim v_prestazioni() As prestazioni
 
 Private Sub Form_Activate()
     Select Case tInput.Tipo
+    
         Case tpISINGOLO, tpIESAMI
             txtCognome.SetFocus
             If tInput.mantieniDati Then
                 txtCognome = tInput.v_valori(1)
             End If
+        
         Case tpICOMPOSTO:
             txtCognome.SetFocus
             If tInput.mantieniDati Then
                 txtNome = tInput.v_valori(1)
                 txtCognome = tInput.v_valori(2)
             End If
+        
         Case tpIVOCI:
             txtVoce.SetFocus
             If tInput.mantieniDati Then
@@ -2964,11 +2986,13 @@ Private Sub Form_Activate()
                 chkStampaVoce.Value = Unchecked
                 chkEsameDaStampare.Value = Unchecked
             End If
+        
         Case tpITIPIESAMILAB
             cboVoci.SetFocus
             If tInput.mantieniDati Then
                 cboVoci.ListIndex = GetCboListIndex(CInt(tInput.v_valori(1)), cboVoci)
             End If
+        
         Case tpIPASSWORD
             txtCognomePass.SetFocus
             If tInput.mantieniDati Then
@@ -2987,19 +3011,19 @@ Private Sub Form_Activate()
                     chkInserisci.Value = IIf(CBool(tInput.v_valori(6)), Checked, Unchecked)
                 End If
             End If
+        
         Case tpITERAPIADOMICILIARE, tpITERAPIADIALITICA
             cboMedicinali.SetFocus
+        
         Case tpITERAPIESTRAORDINARIE
             cboMedicinaliStraordinaria.SetFocus
-'        Case tpIRENI
-'            txtpostazione.SetFocus
-'            If (txtpostazione = "" Or tInput.v_valori(1) <> txtpostazione) And tInput.v_valori(1) <> "" Then
-'                txtpostazione = tInput.v_valori(1)
-'            End If
+        
         Case tpICOLTURE
             txtColtureAcqua.SetFocus
+        
         Case tpIPRESCRIZIONI
             cboPrescrizioni.SetFocus
+        
         Case tpIDISTRETTI
             txtCodiceDistretto.SetFocus
             If tInput.mantieniDati Then
@@ -3007,6 +3031,7 @@ Private Sub Form_Activate()
                 txtNomeDistretto = tInput.v_valori(2)
                 cboAslAppartenenza.ListIndex = GetCboListIndex(CInt(tInput.v_valori(3)), cboAslAppartenenza)
             End If
+        
         Case tpINOMENCLATORE
             txtCodicePrestazione.SetFocus
             If tInput.mantieniDati Then
@@ -3015,6 +3040,7 @@ Private Sub Form_Activate()
                 txtImporto = tInput.v_valori(3)
                 txtImportoScontato = tInput.v_valori(4)
             End If
+        
         Case tpICOMUNI
            txtCodIstat.SetFocus
            If tInput.mantieniDati Then
@@ -3022,6 +3048,7 @@ Private Sub Form_Activate()
                 txtComune = tInput.v_valori(2)
                 cboRegComuni.ListIndex = GetCboListIndex(CInt(tInput.v_valori(3)), cboRegComuni)
             End If
+        
         Case tpIASL
             txtCodiceAsl.SetFocus
             If tInput.mantieniDati Then
@@ -3029,6 +3056,7 @@ Private Sub Form_Activate()
                 txtNomeAsl = tInput.v_valori(2)
                 cboRegione.ListIndex = GetCboListIndex(CInt(tInput.v_valori(3)), cboRegione)
             End If
+        
         Case tpIESENZIONE
             txtCodiceEsenzione.SetFocus
             If tInput.mantieniDati Then
@@ -3039,6 +3067,7 @@ Private Sub Form_Activate()
                     optTicketRicetta(1).Value = True
                 End If
             End If
+            
     End Select
 End Sub
 
@@ -3053,12 +3082,14 @@ Private Sub Form_Load()
     Next i
     
     Select Case tInput.Tipo
+        
         Case tpISINGOLO
             fraTabelle.Height = 700
             fraPulsanti.Top = fraTabelle.Height - 135
             If tTabelle = tpESAME Then
                 Label1(1) = "Esame"
             End If
+        
         Case tpICOMPOSTO
             If tTabelle = tpRegioni Then
                 Label1(1) = "Codice Regione"
@@ -3077,10 +3108,12 @@ Private Sub Form_Load()
                 lblNome = "E.D.T.A."
                 txtNome.MaxLength = 150
             End If
+        
         Case tpIESAMI
             fraTabelle.Height = 615
             fraPulsanti.Top = fraTabelle.Height - 135
             Label1(1) = "Gruppo Esami"
+        
         Case tpIVOCI
             frmInput.Width = 6570
             fraPulsanti.Width = 6255
@@ -3090,6 +3123,7 @@ Private Sub Form_Load()
             fraVoci.Left = fraTabelle.Left
             fraVoci.ZOrder
             fraPulsanti.Top = fraVoci.Height - 135
+        
         Case tpITIPIESAMILAB
             fraTabelle.Height = 615
             fraPulsanti.Top = fraTabelle.Height - 135
@@ -3097,12 +3131,14 @@ Private Sub Form_Load()
             Me.Caption = "Inserimento Esami"
             cboVoci.Visible = True
             Call RicaricaComboBox("VOCI_ESAMI", "NOME", cboVoci)
+        
         Case tpIPASSWORD
             fraPassword.Top = fraTabelle.Top
             fraPassword.Left = fraTabelle.Left
             fraPassword.ZOrder
             fraPulsanti.Top = fraPassword.Height - 135
             chkInserisci.Visible = False
+        
         Case tpITERAPIADOMICILIARE, tpITERAPIADIALITICA
             If tInput.Tipo = tpITERAPIADIALITICA Then
                 fraTerapia.Height = 3015
@@ -3115,11 +3151,7 @@ Private Sub Form_Load()
             fraTerapia.ZOrder
             fraPulsanti.Top = fraTerapia.Height - 135
             Call RicaricaComboBox("MEDICINALI", "NOME", cboMedicinali)
- '       Case tpIRENI
- '           fraRene.Top = fraTabelle.Top
- '           fraRene.Left = fraTabelle.Left
- '           fraRene.ZOrder
- '           fraPulsanti.Top = fraRene.Height - 135
+        
         Case tpIPRESCRIZIONI
             fraPrestazione.Top = fraTabelle.Top
             fraPrestazione.Left = fraTabelle.Left
@@ -3148,66 +3180,78 @@ Private Sub Form_Load()
             rsDataset.Close
             
             Set rsDataset = Nothing
+        
         Case tpIRICOVERI
             fraRicoveri.Top = fraTabelle.Top
             fraRicoveri.Left = fraTabelle.Left
             fraRicoveri.ZOrder
             fraPulsanti.Top = fraRicoveri.Height - 135
+        
         Case tpIEPISODI
             fraEpisodi.Top = fraTabelle.Top
             fraEpisodi.Left = fraTabelle.Left
             fraEpisodi.ZOrder
             fraPulsanti.Top = fraEpisodi.Height - 135
+        
         Case tpITRASFUSIONI
             fraTrasfusioni.Top = fraTabelle.Top
             fraTrasfusioni.Left = fraTabelle.Left
             fraTrasfusioni.ZOrder
             fraPulsanti.Top = fraTrasfusioni.Height - 135
             Call RicaricaComboBox("TIPO_TRASFUSIONI", "NOME", cboTrasfusioni)
+        
         Case tpISIEROCONVERSIONI
             fraSieroconversioni.Top = fraTabelle.Top
             fraSieroconversioni.Left = fraTabelle.Left
             fraSieroconversioni.ZOrder
             fraPulsanti.Top = fraSieroconversioni.Height - 135
+        
         Case tpICOLTURE
             fraColture.Top = fraTabelle.Top
             fraColture.Left = fraTabelle.Left
             fraColture.ZOrder
             fraPulsanti.Top = fraColture.Height - 135
+        
         Case tpITERAPIESTRAORDINARIE
             fraTerapiaStraordinaria.Top = fraTabelle.Top
             fraTerapiaStraordinaria.Left = fraTabelle.Left
             fraTerapiaStraordinaria.ZOrder
             fraPulsanti.Top = fraTerapiaStraordinaria.Height - 135
             Call RicaricaComboBox("MEDICINALI", "NOME", cboMedicinaliStraordinaria)
+        
         Case tpIDISTRETTI
             fraDistretti.Top = fraTabelle.Top
             fraDistretti.Left = fraTabelle.Left
             fraDistretti.ZOrder
             fraPulsanti.Top = fraDistretti.Height - 135
             Call RicaricaComboBox("ASL", "NOME", cboAslAppartenenza)
+        
         Case tpINOMENCLATORE
             fraNomenclatore.Top = fraTabelle.Top
             fraNomenclatore.Left = fraTabelle.Left
             fraNomenclatore.ZOrder
             fraPulsanti.Top = fraNomenclatore.Height - 135
+        
         Case tpICOMUNI
             fraComuni.Top = fraTabelle.Top
             fraComuni.Left = fraTabelle.Left
             fraComuni.ZOrder
             fraPulsanti.Top = fraAsl.Height - 135
             Call RicaricaComboBox("REGIONI ORDER BY NOME", "NOME", cboRegComuni)
+        
         Case tpIASL
             fraAsl.Top = fraTabelle.Top
             fraAsl.Left = fraTabelle.Left
             fraAsl.ZOrder
             fraPulsanti.Top = fraAsl.Height - 135
             Call RicaricaComboBox("REGIONI ORDER BY NOME", "NOME", cboRegione)
+        
         Case tpIESENZIONE
             fraEsenzioni.Top = fraTabelle.Top
             fraEsenzioni.Left = fraTabelle.Left
             fraEsenzioni.ZOrder
             fraPulsanti.Top = fraEsenzioni.Height - 135
+            
     End Select
     Me.Height = fraPulsanti.Top + fraPulsanti.Height + 480
     Call TakeCloseOff(Me.hWnd)
@@ -3343,6 +3387,7 @@ Private Sub cmdInserisci_Click()
     Select Case tInput.Tipo
     Case tpISINGOLO:
         tInput.v_valori(1) = UCase(txtCognome)                       ' obbligatorio per singolo
+    
     Case tpICOMPOSTO:
         If txtNome = "" Or txtCognome = "" Then
             MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!"
@@ -3351,8 +3396,10 @@ Private Sub cmdInserisci_Click()
             tInput.v_valori(1) = txtNome                       ' obbligatorio per composto
             tInput.v_valori(2) = txtCognome
         End If
+    
     Case tpIESAMI:
         tInput.v_valori(1) = txtCognome
+    
     Case tpIVOCI:
         If txtValoreMin = "" Then
             txtValoreMin = 0
@@ -3381,6 +3428,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(5) = IIf(txtValoreMax = "", 0, txtValoreMax)
         tInput.v_valori(6) = IIf(chkStampaVoce.Value = Checked, True, False)
         tInput.v_valori(7) = IIf(chkEsameDaStampare.Value = Checked, True, False)
+    
     Case tpITIPIESAMILAB:
         If cboVoci.Text = "" Then
             MsgBox "Selezionare l' esame", vbInformation, "Informazione"
@@ -3388,6 +3436,7 @@ Private Sub cmdInserisci_Click()
             Else
             tInput.v_valori(1) = cboVoci.ItemData(cboVoci.ListIndex)           ' obbligatorio per tipi esami lab
         End If
+    
     Case tpIPASSWORD:
         If txtCognomePass = "" Then
             MsgBox "Il campo COGNOME è obbligatorio", vbInformation, "Informazione"
@@ -3419,6 +3468,8 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(4) = txtPass
         tInput.v_valori(5) = GestisciOpt
         tInput.v_valori(6) = (chkInserisci.Value = Checked)
+        
+    'Terapia Domiciliare e Dialitica
     Case tpITERAPIADOMICILIARE, tpITERAPIADIALITICA:
         If cboMedicinali.ListIndex = -1 Then
             MsgBox "Selezionare il farmaco", vbCritical, "ATTENZIONE!!!!!!"
@@ -3426,11 +3477,11 @@ Private Sub cmdInserisci_Click()
         Else
             tInput.v_valori(2) = cboMedicinali.ListIndex
         End If
-        If lblData(0) = "" Then
+        If oData(0).data = "" Then
             MsgBox "Inserire la data di inizio terapia", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         Else
-            tInput.v_valori(1) = lblData(0)
+            tInput.v_valori(1) = oData(0).data
         End If
         If txtPosologia = "" Then
             MsgBox "Inserire la posologia", vbCritical, "ATTENZIONE!!!!!!"
@@ -3461,29 +3512,7 @@ Private Sub cmdInserisci_Click()
         If tInput.Tipo = tpITERAPIADIALITICA Then
             tInput.v_valori(6) = txtSomministrazione & ""
         End If
- '   Case tpIRENI:
- '       If txtpostazione = "" Then
- '           MsgBox "Inserire la postazione", vbCritical, "ATTENZIONE!!!!!!"
- '           Exit Sub
- '       End If
- '       If txtTipoRene = "" Then
- '           MsgBox "Inserire il monitor", vbCritical, "ATTENZIONE!!!!!!"
- '           Exit Sub
- '       End If
- '       If txtMatricola = "" Then
- '           MsgBox "Inserire la matricola", vbCritical, "ATTENZIONE!!!!!!"
- '           Exit Sub
- '       End If
- '       If txtNumeroRene = "" Then
- '           MsgBox "Inserire il numero rene", vbCritical, "ATTENZIONE!!!!!!"
- '           Exit Sub
- '       End If
- '       tInput.v_valori(1) = txtpostazione
- '       tInput.v_valori(2) = txtTipoRene
- '       tInput.v_valori(3) = txtMatricola
- '       tInput.v_valori(4) = IIf(optTipoRene(0).Value, 1, IIf(optTipoRene(1).Value, 2, 0))
- '       tInput.v_valori(5) = lblData(9)
- '       tInput.v_valori(6) = txtNumeroRene
+    
     Case tpIRICOVERI
         tInput.v_valori(3) = txtNoteRicoveri & ""
         If lblData(1) <> "" Then
@@ -3492,6 +3521,7 @@ Private Sub cmdInserisci_Click()
         If lblData(2) <> "" Then
             tInput.v_valori(2) = lblData(2)
         End If
+    
     Case tpIPRESCRIZIONI
         If lblData(7) = "" Or lblData(8) = "" Then
             MsgBox "Inserire le date", vbCritical, "ATTENZIONE!!!!!!"
@@ -3517,25 +3547,30 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(2) = txtQuantita
         tInput.v_valori(3) = lblData(7)
         tInput.v_valori(4) = lblData(8)
+    
     Case tpIEPISODI
         tInput.v_valori(1) = lblData(3)
         tInput.v_valori(2) = txtNoteEpisodi & ""
+    
     Case tpITRASFUSIONI
         If cboTrasfusioni.Text <> "" Then
             Call GestisciNuovo("TIPO_TRASFUSIONI", cboTrasfusioni)
         End If
         tInput.v_valori(1) = lblData(4)
         tInput.v_valori(2) = cboTrasfusioni.ItemData(cboTrasfusioni.ListIndex)
+    
     Case tpISIEROCONVERSIONI
         tInput.v_valori(1) = lblData(5)
         tInput.v_valori(2) = IIf(chkSieroconversioni(0).Value = Checked, True, False)
         tInput.v_valori(3) = IIf(chkSieroconversioni(1).Value = Checked, True, False)
+    
     Case tpICOLTURE
         tInput.v_valori(1) = lblData(6)
         tInput.v_valori(2) = txtColtureAcqua
         tInput.v_valori(3) = GestisciOptTre(optEsitoAcqua)
         tInput.v_valori(4) = txtColtureBagno
         tInput.v_valori(5) = GestisciOptTre(optEsitoBagno)
+    
     Case tpITERAPIESTRAORDINARIE
         If cboMedicinaliStraordinaria.ListIndex = -1 Then
             MsgBox "Selezionare il farmaco", vbCritical, "ATTENZIONE!!!"
@@ -3546,6 +3581,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(2) = txtPosologiaStraordinaria
         tInput.v_valori(3) = IIf(chkConfermaStraordinaria.Value = Checked, 1, 0)
         tInput.v_valori(4) = txtNoteStraordinarie
+    
     Case tpIDISTRETTI
         If cboAslAppartenenza.ListIndex = -1 Or txtCodiceDistretto = "" Or txtNomeDistretto = "" Then
             MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!"
@@ -3554,6 +3590,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(1) = txtCodiceDistretto
         tInput.v_valori(2) = txtNomeDistretto
         tInput.v_valori(3) = cboAslAppartenenza.ItemData(cboAslAppartenenza.ListIndex)
+    
     Case tpINOMENCLATORE
         If txtCodicePrestazione = "" Or txtNomePrestazione = "" Or txtImporto = "" Or txtImportoScontato = "" Then
             MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!"
@@ -3563,6 +3600,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(2) = txtNomePrestazione
         tInput.v_valori(3) = IIf(txtImporto = "", "0.00", txtImporto)
         tInput.v_valori(4) = IIf(txtImportoScontato = "", "0.00", txtImportoScontato)
+    
     Case tpICOMUNI
         If cboRegComuni.ListIndex = -1 Or txtCodIstat = "" Or txtComune = "" Then
             MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!!!!"
@@ -3575,6 +3613,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(1) = txtCodIstat
         tInput.v_valori(2) = txtComune
         tInput.v_valori(3) = cboRegComuni.ItemData(cboRegComuni.ListIndex)
+    
     Case tpIASL
         If cboRegione.ListIndex = -1 Or txtCodiceAsl = "" Or txtNomeAsl = "" Then
             MsgBox "Inserire tutti i valori", vbCritical, "ATTENZIONE!!!!!!"
@@ -3583,6 +3622,7 @@ Private Sub cmdInserisci_Click()
         tInput.v_valori(1) = txtCodiceAsl
         tInput.v_valori(2) = txtNomeAsl
         tInput.v_valori(3) = cboRegione.ItemData(cboRegione.ListIndex)
+    
     Case tpIESENZIONE
         tInput.v_valori(1) = txtCodiceEsenzione
         If txtCodiceEsenzione = "" Then
@@ -3594,7 +3634,6 @@ Private Sub cmdInserisci_Click()
         Else
             tInput.v_valori(2) = False
         End If
-
 
     End Select
     Unload Me
@@ -3681,6 +3720,10 @@ End Sub
 
 Private Sub lblData_Click(Index As Integer)
     lblData(Index) = ""
+End Sub
+
+Private Sub oData_OnDataClick(Index As Integer)
+    oData(Index).Pulisci
 End Sub
 
 Private Sub optEsitoBagno_LostFocus(Index As Integer)
@@ -3857,11 +3900,11 @@ Private Sub txtQuantita_Change()
 End Sub
 
 Private Sub txtPostazione_GotFocus()
-    txtpostazione.BackColor = colArancione
+    txtPostazione.BackColor = colArancione
 End Sub
 
 Private Sub txtPostazione_LostFocus()
-    txtpostazione.BackColor = vbWhite
+    txtPostazione.BackColor = vbWhite
 End Sub
 
 Private Sub txtNumeroRene_GotFocus()

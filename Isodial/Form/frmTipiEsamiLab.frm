@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmTipiEsamiLab 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Tabella Raggruppamento Esami di Laboratorio"
@@ -147,6 +148,15 @@ Begin VB.Form frmTipiEsamiLab
       TabIndex        =   2
       Top             =   3360
       Width           =   8055
+      Begin WheelCatch.WheelCatcher WheelCatcher1 
+         Height          =   480
+         Left            =   2040
+         TabIndex        =   17
+         Top             =   360
+         Width           =   480
+         _ExtentX        =   847
+         _ExtentY        =   847
+      End
       Begin VB.TextBox txtDesrizioneEsame 
          Appearance      =   0  'Flat
          BackColor       =   &H8000000F&
@@ -1245,5 +1255,24 @@ Private Sub txtAppo_LostFocus()
             Call ModificaDati
         End If
     End If
+End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+On Error GoTo gestione
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
+' Evita crash in caso di griglia non completa
+gestione:
 End Sub
 

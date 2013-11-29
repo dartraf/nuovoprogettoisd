@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmTabSingoloElenco 
    BorderStyle     =   5  'Sizable ToolWindow
    ClientHeight    =   4050
@@ -28,6 +29,15 @@ Begin VB.Form frmTabSingoloElenco
       TabIndex        =   5
       Top             =   0
       Width           =   9495
+      Begin WheelCatch.WheelCatcher WheelCatcher1 
+         Height          =   480
+         Left            =   1320
+         TabIndex        =   9
+         Top             =   360
+         Width           =   480
+         _ExtentX        =   847
+         _ExtentY        =   847
+      End
       Begin VB.TextBox txtAppo 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -575,5 +585,24 @@ Private Sub txtAppo_LostFocus()
             End If
         End If
     End If
+End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+On Error GoTo gestione
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
+' Evita crash in caso di griglia non completa
+gestione:
 End Sub
 

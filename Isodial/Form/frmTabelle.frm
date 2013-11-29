@@ -272,7 +272,7 @@ Private Sub Form_Load()
     Dim i As Integer
     Dim intTop As Single
     Dim intLeft As Single
-   
+
     Call GetCenterForm(Me.Height, Me.Width, intTop, intLeft)
     Me.Top = intTop
     Me.Left = intLeft
@@ -374,7 +374,7 @@ Private Sub Form_Load()
     Else
         ' altro
         Select Case tTabelle
-            Case tpESAME
+            Case tpesame
                 flxGriglia.ColWidth(1) = flxGriglia.ColWidth(1) * 2
                 nomeTabella = "ESAMI"
                 Me.Caption = Me.Caption & "Tipo di esame"
@@ -560,7 +560,7 @@ Private Sub SalvaModifiche()
         ElseIf tTabelle = tpDISTRETTI Then
             v_Nomi = Array("KEY", "CODICE", "NOME", "CODICE_ASL")
             v_Val = Array(keyId, .TextMatrix(vRow, 1), .TextMatrix(vRow, 2), GetNumeroDaNome("ASL", "NOME", .TextMatrix(vRow, 3)))
-        ElseIf tTabelle = tpESAME Then
+        ElseIf tTabelle = tpesame Then
             v_Nomi = Array("KEY", "NOME", "CODICE_ORGANO")
             v_Val = Array(keyId, .TextMatrix(vRow, 1), keyOrgano)
         ElseIf tTabelle = tpNOMENCLATORE Then
@@ -583,7 +583,7 @@ Private Sub SalvaModifiche()
         rsTabelle.Update v_Nomi, v_Val
         Set rsTabelle = Nothing
         ' aggiorna la flx
-        If tTabelle = tpESAME Then
+        If tTabelle = tpesame Then
             lstOrgani_Click
         ElseIf tTabelle = tpNOMENCLATORE And (vCol = 3 Or vCol = 4) Then
             Call AggiornaRicette(keyId)
@@ -665,7 +665,7 @@ Private Sub cmdElimina_Click()
                 Case tpasl
                 Case tpCOMUNI
                 Case tpDISTRETTI
-                Case tpESAME
+                Case tpesame
                 Case tpESENZIONI
                 Case tpEDTA
                     blnElimina = IsPossibleDelete("ANAMNESI_NEFROLOGICHE", "CODICE_EDTA", intKey)
@@ -748,7 +748,7 @@ Private Sub cmdInserisci_Click()
     Dim num As Integer
     Dim primo As Boolean
     
-    If tTabelle = tpESAME And lstOrgani.ListIndex = -1 Then
+    If tTabelle = tpesame And lstOrgani.ListIndex = -1 Then
         MsgBox "Selezionare l'organo a cui associare il nuovo esame", vbCritical, "Attenzione"
         Exit Sub
     End If
@@ -756,7 +756,7 @@ Private Sub cmdInserisci_Click()
     Select Case tTabelle
         Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA
             tInput.Tipo = tpICOMPOSTO
-        Case tpESAME
+        Case tpesame
             tInput.Tipo = tpISINGOLO
         Case tpDISTRETTI
             tInput.Tipo = tpIDISTRETTI
@@ -795,7 +795,7 @@ Private Sub cmdInserisci_Click()
     If Not (tInput.v_valori(1) = "" And tInput.v_valori(2) = "") Then
         num = GetNumero(nomeTabella)
         Select Case tTabelle
-            Case tpESAME
+            Case tpesame
                 v_Nomi = Array("KEY", "NOME", "CODICE_ORGANO")
                 v_Val = Array(num, tInput.v_valori(1), keyOrgano)
             Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA
@@ -829,7 +829,7 @@ Private Sub cmdInserisci_Click()
         
         ' aggiorna la flx
         flxGriglia.Rows = 1
-        If tTabelle = tpESAME Then
+        If tTabelle = tpesame Then
             lstOrgani_Click
         Else
             Call CaricaFlx
@@ -991,7 +991,7 @@ Private Sub txtAppo_GotFocus()
     txtAppo.SelStart = 0
     txtAppo.SelLength = Len(txtAppo)
     Select Case tTabelle
-        Case tpESAME
+        Case tpesame
             txtAppo.MaxLength = 50
         Case tpESENZIONI
             txtAppo.MaxLength = 10
@@ -1093,12 +1093,12 @@ End Sub
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
 ' se NON è stata selezionata una riga esce e NON attiva lo scroll
-'    If flxGriglia.Row = 0 Then
-'       Exit Sub
-'    End If
+    If flxGriglia.Row = 0 And tTabelle = tpesame Then
+       Exit Sub
+    End If
 
     Select Case CtrlHwnd
-
+    
         Case flxGriglia.hWnd
             If flxGriglia.TopRow - Rotation > 0 Then
                flxGriglia.TopRow = flxGriglia.TopRow - Rotation

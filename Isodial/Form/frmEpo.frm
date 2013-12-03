@@ -1,7 +1,8 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mschrt20.ocx"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmEpo 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Dose Eritropoietina per Paziente"
@@ -70,6 +71,15 @@ Begin VB.Form frmEpo
          TabIndex        =   1
          Top             =   480
          Width           =   11415
+         Begin WheelCatch.WheelCatcher WheelCatcher1 
+            Height          =   480
+            Left            =   3000
+            TabIndex        =   15
+            Top             =   840
+            Width           =   480
+            _ExtentX        =   847
+            _ExtentY        =   847
+         End
          Begin VB.ComboBox cboAnno 
             BeginProperty Font 
                Name            =   "MS Sans Serif"
@@ -591,3 +601,23 @@ Private Sub tabScheda_Click(PreviousTab As Integer)
         Call AggiornaGrafico(tabScheda.Tab - 1)
     End If
 End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+On Error GoTo gestione
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
+' Evita crash in caso di griglia non completa
+gestione:
+End Sub
+

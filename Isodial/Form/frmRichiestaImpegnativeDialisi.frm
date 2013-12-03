@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmRichiestaImpegnativeDialisi 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Richiesta Impegnative Dialisi"
@@ -337,6 +338,15 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       TabIndex        =   18
       Top             =   2760
       Width           =   7095
+      Begin WheelCatch.WheelCatcher WheelCatcher1 
+         Height          =   480
+         Left            =   5280
+         TabIndex        =   25
+         Top             =   1320
+         Width           =   480
+         _ExtentX        =   847
+         _ExtentY        =   847
+      End
       Begin VB.ComboBox cboPrestazioni 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -576,17 +586,16 @@ Private Sub CaricaFlx()
             Set rsPazienti = Nothing
             Exit Sub
          ElseIf GetNumeroDialisiFuture(rsPazienti("KEY")) = 0 Then
- '    elimina pazienti con zero dialisi
-            rsPazienti.MoveNext
+ '    elimina pazienti con turni di dialisi non definiti
+         Else
+            With flxGriglia
+                .Rows = .Rows + 1
+                .TextMatrix(.Rows - 1, 0) = rsPazienti("KEY")
+                .TextMatrix(.Rows - 1, 1) = rsPazienti("COGNOME") & " " & rsPazienti("NOME")
+                .TextMatrix(.Rows - 1, 2) = GetNumeroDialisiFuture(rsPazienti("KEY"))
+                .TextMatrix(.Rows - 1, 3) = CaricaCodicePrestazione(rsPazienti("KEY"))
+            End With
          End If
-   
-        With flxGriglia
-            .Rows = .Rows + 1
-            .TextMatrix(.Rows - 1, 0) = rsPazienti("KEY")
-            .TextMatrix(.Rows - 1, 1) = rsPazienti("COGNOME") & " " & rsPazienti("NOME")
-            .TextMatrix(.Rows - 1, 2) = GetNumeroDialisiFuture(rsPazienti("KEY"))
-            .TextMatrix(.Rows - 1, 3) = CaricaCodicePrestazione(rsPazienti("KEY"))
-        End With
         rsPazienti.MoveNext
     Loop
     rsPazienti.Close
@@ -864,6 +873,25 @@ Private Sub txtAppo_LostFocus()
         End If
         flxGriglia.TextMatrix(vRow, 2) = (txtAppo.Text)
     End If
+End Sub
+
+Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
+On Error GoTo gestione
+' se NON è stata selezionata una riga esce e NON attiva lo scroll
+'    If flxGriglia.Row = 0 Then
+'       Exit Sub
+'    End If
+
+    Select Case CtrlHwnd
+
+        Case flxGriglia.hWnd
+            If flxGriglia.TopRow - Rotation > 0 Then
+               flxGriglia.TopRow = flxGriglia.TopRow - Rotation
+            End If
+    
+        End Select
+' Evita crash in caso di griglia non completa
+gestione:
 End Sub
 
 

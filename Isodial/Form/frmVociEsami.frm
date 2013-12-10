@@ -3,18 +3,51 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmVociEsami 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Voci per Esami di Laboratorio"
-   ClientHeight    =   4935
+   Caption         =   "Esami di Laboratorio"
+   ClientHeight    =   5640
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   14580
+   ClientWidth     =   15060
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4935
-   ScaleWidth      =   14580
+   ScaleHeight     =   5640
+   ScaleWidth      =   15060
    ShowInTaskbar   =   0   'False
+   Begin VB.Frame Frame2 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   11
+      Top             =   0
+      Width           =   14895
+      Begin VB.TextBox txtCerca 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   420
+         Left            =   840
+         TabIndex        =   0
+         Top             =   210
+         Width           =   3615
+      End
+      Begin VB.CommandButton cmdCerca 
+         BackColor       =   &H00C0C0C0&
+         Height          =   400
+         Left            =   240
+         Picture         =   "frmVociEsami.frx":0000
+         Style           =   1  'Graphical
+         TabIndex        =   12
+         Top             =   210
+         Width           =   400
+      End
+   End
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -28,12 +61,12 @@ Begin VB.Form frmVociEsami
       Height          =   4215
       Left            =   120
       TabIndex        =   5
-      Top             =   0
-      Width           =   14415
+      Top             =   600
+      Width           =   14895
       Begin WheelCatch.WheelCatcher WheelCatcher1 
          Height          =   480
          Left            =   2640
-         TabIndex        =   9
+         TabIndex        =   10
          Top             =   480
          Width           =   480
          _ExtentX        =   847
@@ -52,7 +85,7 @@ Begin VB.Form frmVociEsami
          Height          =   285
          Left            =   240
          MaxLength       =   45
-         TabIndex        =   6
+         TabIndex        =   7
          Top             =   960
          Visible         =   0   'False
          Width           =   5025
@@ -60,19 +93,19 @@ Begin VB.Form frmVociEsami
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3855
          Left            =   120
-         TabIndex        =   0
+         TabIndex        =   1
          TabStop         =   0   'False
          Top             =   240
-         Width           =   14175
-         _ExtentX        =   25003
+         Width           =   14655
+         _ExtentX        =   25850
          _ExtentY        =   6800
          _Version        =   393216
-         Cols            =   8
+         Cols            =   9
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          ScrollBars      =   2
-         MousePointer    =   99
-         FormatString    =   $"frmVociEsami.frx":0000
+         MousePointer    =   15
+         FormatString    =   $"frmVociEsami.frx":014E
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -82,7 +115,7 @@ Begin VB.Form frmVociEsami
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmVociEsami.frx":00C8
+         MouseIcon       =   "frmVociEsami.frx":0215
       End
    End
    Begin VB.Frame fraPulsanti 
@@ -97,14 +130,14 @@ Begin VB.Form frmVociEsami
       EndProperty
       Height          =   855
       Left            =   120
-      TabIndex        =   7
-      Top             =   4080
-      Width           =   14415
+      TabIndex        =   8
+      Top             =   4680
+      Width           =   14895
       Begin VB.Frame fraPulsantiInterno 
          BorderStyle     =   0  'None
          Height          =   640
-         Left            =   8280
-         TabIndex        =   8
+         Left            =   8760
+         TabIndex        =   9
          Top             =   120
          Width           =   5895
          Begin VB.CommandButton cmdChiudi 
@@ -120,8 +153,8 @@ Begin VB.Form frmVociEsami
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   4560
-            TabIndex        =   1
+            Left            =   4680
+            TabIndex        =   6
             Top             =   120
             Width           =   1215
          End
@@ -137,7 +170,7 @@ Begin VB.Form frmVociEsami
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   1680
+            Left            =   2040
             TabIndex        =   3
             Top             =   120
             Width           =   1215
@@ -155,8 +188,8 @@ Begin VB.Form frmVociEsami
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   240
-            TabIndex        =   4
+            Left            =   720
+            TabIndex        =   2
             Top             =   120
             Visible         =   0   'False
             Width           =   1215
@@ -173,8 +206,8 @@ Begin VB.Form frmVociEsami
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   3120
-            TabIndex        =   2
+            Left            =   3360
+            TabIndex        =   4
             Top             =   120
             Width           =   1215
          End
@@ -188,7 +221,12 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Dim rsDatasetCerca As Recordset
 Dim rsVoci As Recordset
+Dim rsAssEsami As Recordset
+Dim rsGruppo As Recordset
+Dim keyGruppo As Integer
+
 Dim lettera As String
 Dim vRow As Integer         ' riga selezionata
 Dim vCol As Integer         ' colonna selezionata
@@ -225,7 +263,7 @@ Private Sub Form_Load()
         .ColAlignment(1) = vbLeftJustify
         .ColWidth(0) = 0
         .Row = 0
-        For i = 1 To 7
+        For i = 1 To 8
             .Col = i
             .CellFontBold = True
         Next i
@@ -281,6 +319,7 @@ Private Sub SalvaModifiche()
 End Sub
 
 Private Sub CaricaFlx()
+    Dim strSql As String
     ' azzera la griglia
     flxGriglia.Rows = 1
     vCol = 0
@@ -289,7 +328,10 @@ Private Sub CaricaFlx()
     objAnnulla.Refresh
     cmdAnnulla.Enabled = False
     Set rsVoci = New Recordset
+    Set rsGruppo = New Recordset
+    Set rsAssEsami = New Recordset
     rsVoci.Open "VOCI_ESAMI ORDER BY NOME", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
+ 
     If Not (rsVoci.BOF And rsVoci.EOF) Then
         Do While Not rsVoci.EOF
             With flxGriglia
@@ -314,10 +356,31 @@ Private Sub CaricaFlx()
                 Else
                     .TextMatrix(.Rows - 1, 7) = ""
                 End If
+                    
+            'cerca il codice del gruppo associato all'esame
+                strSql = "SELECT CODICE_GRUPPO FROM ASSOCIAZIONE_ESAMI_LAB WHERE CODICE_ESAME =" & rsVoci("KEY")
+                rsAssEsami.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                If Not (rsAssEsami.BOF Or rsAssEsami.EOF) Then
+                    keyGruppo = rsAssEsami("CODICE_GRUPPO")
+                End If
+                rsAssEsami.Close
+        
+            'cerca il gruppo associato all'esame
+                If keyGruppo <> 0 Then
+                    strSql = "SELECT * FROM GRUPPI_ESAMI WHERE KEY =" & keyGruppo
+                    rsGruppo.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                    .TextMatrix(.Rows - 1, 8) = rsGruppo("NOME")
+                    rsGruppo.Close
+                Else
+                    .TextMatrix(.Rows - 1, 8) = ""
+                End If
+                
                 rsVoci.MoveNext
             End With
         Loop
         Set rsVoci = Nothing
+        Set rsGruppo = Nothing
+        Set rsAssEsami = Nothing
         flxGriglia.Row = 0
     End If
 End Sub
@@ -530,6 +593,8 @@ Private Sub flxGriglia_DblClick()
                 .TextMatrix(.Row, 7) = ""
             End If
             Call SalvaModifiche
+        ElseIf .Col = 8 Then
+           'non permette l'editing della colonna
         Else
             ' altri campi
             txtAppo.Left = .colPos(.Col) + .Left + 45
@@ -702,6 +767,93 @@ Private Sub txtAppo_Validate(Cancel As Boolean)
     Else
         Cancel = False
     End If
+End Sub
+
+Private Sub txtCerca_Change()
+    Call Cerca
+End Sub
+
+Private Sub txtCerca_GotFocus()
+    txtCerca.BackColor = colArancione
+End Sub
+
+Private Sub txtCerca_KeyPress(KeyAscii As Integer)
+    If KeyAscii = vbKeyEscape Then
+        cmdChiudi_Click
+    End If
+End Sub
+
+Private Sub txtCerca_LostFocus()
+    txtCerca.BackColor = vbWhite
+End Sub
+
+Private Sub Cerca()
+    ' cerca l'esame
+    Dim chiaveRic As String
+    Dim strSql As String
+    Dim condizione As String
+    
+    ' pulisce la flx azzerando le righe
+    flxGriglia.Rows = 1
+    chiaveRic = UCase(txtCerca.Text)
+        
+        condizione = IIf(tTrova.condizione <> "", " AND ", "") & tTrova.condizione
+        strSql = "SELECT * FROM VOCI_ESAMI WHERE NOME LIKE '" & Apostrophe(chiaveRic) & "%' " & condizione & "ORDER BY NOME"
+        Set rsDatasetCerca = New Recordset
+        Set rsGruppo = New Recordset
+        Set rsAssEsami = New Recordset
+        rsDatasetCerca.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        Do While Not rsDatasetCerca.EOF
+         With flxGriglia
+            .Rows = .Rows + 1
+            .TextMatrix(.Rows - 1, 0) = rsDatasetCerca("KEY")
+            .TextMatrix(.Rows - 1, 1) = rsDatasetCerca("NOME")
+            .TextMatrix(.Rows - 1, 2) = rsDatasetCerca("PN")
+            If CBool(rsDatasetCerca("PN")) Then
+                .TextMatrix(.Rows - 1, 2) = icsPOSNEG
+            Else
+                .TextMatrix(.Rows - 1, 2) = ""
+            End If
+            .TextMatrix(.Rows - 1, 3) = rsDatasetCerca("UNITA")
+            .TextMatrix(.Rows - 1, 4) = VirgolaOrPunto(rsDatasetCerca("MIN"), ",")
+            .TextMatrix(.Rows - 1, 5) = VirgolaOrPunto(rsDatasetCerca("MAX"), ",")
+            If rsDatasetCerca("STAMPA") Then
+                .TextMatrix(.Rows - 1, 6) = icsSTAMPA
+            Else
+                .TextMatrix(.Rows - 1, 6) = ""
+            End If
+            If rsDatasetCerca("ESAMI_DA_STAMPARE") Then
+              .TextMatrix(.Rows - 1, 7) = icsSTAMPA_ESAMI
+            Else
+              .TextMatrix(.Rows - 1, 7) = ""
+            End If
+           
+           'cerca il codice del gruppo associato all'esame
+            strSql = "SELECT CODICE_GRUPPO FROM ASSOCIAZIONE_ESAMI_LAB WHERE CODICE_ESAME =" & rsDatasetCerca("KEY")
+            rsAssEsami.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+            If Not (rsAssEsami.BOF Or rsAssEsami.EOF) Then
+                keyGruppo = rsAssEsami("CODICE_GRUPPO")
+            End If
+            rsAssEsami.Close
+        
+            'cerca il gruppo associato all'esame
+            If keyGruppo <> 0 Then
+                strSql = "SELECT * FROM GRUPPI_ESAMI WHERE KEY =" & keyGruppo
+                rsGruppo.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                .TextMatrix(.Rows - 1, 8) = rsGruppo("NOME")
+                rsGruppo.Close
+             Else
+                .TextMatrix(.Rows - 1, 8) = ""
+             End If
+                       
+            rsDatasetCerca.MoveNext
+            End With
+        Loop
+        keyGruppo = 0
+        flxGriglia.Row = 0
+        Set rsDatasetCerca = Nothing
+        Set rsGruppo = Nothing
+        Set rsAssEsami = Nothing
 End Sub
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)

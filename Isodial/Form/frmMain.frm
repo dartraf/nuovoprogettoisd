@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "12/11/2013"
+            TextSave        =   "06/12/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -618,17 +618,17 @@ Begin VB.MDIForm frmMain
          Tag             =   "&Anticoagulanti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Titoli per Diario &Clinico"
+         Caption         =   "Titoli Diario &Clinico"
          Index           =   12
          Tag             =   "Titoli per &diario clinico|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "&Voci per Esami di Laboratorio"
+         Caption         =   "&Esami di Laboratorio"
          Index           =   13
          Tag             =   "&Voci per esami di lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Raggruppamento &Esami di Laboratorio"
+         Caption         =   "Raggr&uppamento Esami di Laboratorio"
          Index           =   14
          Tag             =   "Raggruppamento esami di &lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -1296,7 +1296,7 @@ Private Sub mnuSottoTab_Click(Index As Integer)
         Case 1: Exit Sub
         Case 6, 15
             Select Case Index
-                Case 6: tTabelle = tpESAME
+                Case 6: tTabelle = tpesame
                 Case 15: tTabelle = tpEDTA
             End Select
             Unload frmTabelle
@@ -2208,9 +2208,9 @@ Public Sub SubClassMenuXP()
           mnuSottoTab(9).Caption = "&Aghi"
           mnuSottoTab(10).Caption = "Far&maci in uso"
           mnuSottoTab(11).Caption = "A&nticoagulanti"
-          mnuSottoTab(12).Caption = "Titoli per Diario &Clinico"
-          mnuSottoTab(13).Caption = "&Voci per Esami di Laboratorio"
-          mnuSottoTab(14).Caption = "Raggruppamento &Esami di Laboratorio"
+          mnuSottoTab(12).Caption = "Titoli Diario &Clinico"
+          mnuSottoTab(13).Caption = "&Esami di Laboratorio"
+          mnuSottoTab(14).Caption = "Raggr&uppamento Esami di Laboratorio"
           mnuSottoTab(15).Caption = "E.D.&T.A."
     mnuStrumenti.Caption = "&Strumenti"
           mnuGesPass.Caption = "&Gestione Utenti"

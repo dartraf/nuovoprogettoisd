@@ -317,7 +317,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   10665
-      NumControls     =   81
+      NumControls     =   82
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -1604,7 +1604,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Valore (cc)"
+         Object.Caption         =   "Valore (    )"
       EndProperty
       ItemType55      =   3
       BeginProperty Item55 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -2230,6 +2230,35 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          Object.Caption         =   "Codice Prestazione"
       EndProperty
+      ItemType81      =   4
+      BeginProperty Item81 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtUnitaValoreSoluzioneInfusionale"
+         Object.Left            =   7680
+         Object.Top             =   7597
+         Object.Width           =   405
+         Object.Height          =   330
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CanGrow         =   -1  'True
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -2338,6 +2367,8 @@ Dim WithEvents sdfZero  As StdDataFormat
 Attribute sdfZero.VB_VarHelpID = -1
 Dim WithEvents sdfDosiUnitaMisura As StdDataFormat
 Attribute sdfDosiUnitaMisura.VB_VarHelpID = -1
+Dim WithEvents sdfUnitaValoreSoluzioneInfusionale As StdDataFormat
+Attribute sdfUnitaValoreSoluzioneInfusionale.VB_VarHelpID = -1
 Dim WithEvents sdfCodicePrestazione As StdDataFormat
 Attribute sdfCodicePrestazione.VB_VarHelpID = -1
 
@@ -2358,6 +2389,7 @@ Private Sub DataReport_Initialize()
     Set sdfEpo = New StdDataFormat
     Set sdfZero = New StdDataFormat
     Set sdfDosiUnitaMisura = New StdDataFormat
+    Set sdfUnitaValoreSoluzioneInfusionale = New StdDataFormat
     Set sdfCodicePrestazione = New StdDataFormat
         
     With Me
@@ -2419,6 +2451,7 @@ Private Sub DataReport_Initialize()
             .Item("txtFlusso").DataField = "FLUSSO"
             .Item("txtSoluzioneDialitica").DataField = "SOL_DIALITICA"
             .Item("txtSoluzioneInfusionale").DataField = "SOL_INFUSIONALE"
+            .Item("txtUnitaValoreSoluzioneInfusionale").DataField = "UNITA_VAL_SOL_INF"
             .Item("txtSoluzioneInfusionaleCC").DataField = "VALORE_CC"
             .Item("txtCartuccia").DataField = "CARTUCCIA"
             .Item("txtEritropoietina").DataField = "EPO"
@@ -2428,6 +2461,7 @@ Private Sub DataReport_Initialize()
             .Item("txtEsame2").DataField = "ESAME2"
             .Item("txtEsame3").DataField = "ESAME3"
             Set .Item("txtDosiUnitaMisura").DataFormat = sdfDosiUnitaMisura
+            Set .Item("txtUnitaValoreSoluzioneInfusionale").DataFormat = sdfUnitaValoreSoluzioneInfusionale
             Set .Item("txtDiuresi").DataFormat = sdfSiNo
             Set .Item("txtEritropoietina").DataFormat = sdfEpo
             Set .Item("txtDoseIniziale").DataFormat = sdfZero
@@ -2475,5 +2509,13 @@ Private Sub sdfDosiUnitaMisura_Format(ByVal DataValue As StdFormat.StdDataValue)
         DataValue = "UI"
     Else
         DataValue = "cc"
+    End If
+End Sub
+
+Private Sub sdfUnitaValoreSoluzioneInfusionale_Format(ByVal DataValue As StdFormat.StdDataValue)
+    If DataValue = 0 Then
+        DataValue = "cc"
+    Else
+        DataValue = "lt"
     End If
 End Sub

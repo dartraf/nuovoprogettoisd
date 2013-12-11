@@ -1617,7 +1617,8 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
                 "       NEW adVarChar (70) as ESAME3, " & _
                 "       NEW adVarChar (50) as AGO1, " & _
                 "       NEW adVarChar (50) as AGO2, " & _
-                "       NEW adVarChar (30) as DOSI_UNITA_MISURA, " & _
+                "       NEW adVarChar (5) as DOSI_UNITA_MISURA, " & _
+                "       NEW adVarChar (5) as UNITA_VAL_SOL_INF, " & _
                 "       NEW adSingle as CODICE_PRESTAZIONE, " & _
                 "       NEW adSingle as GLUCOSIO "
 
@@ -1688,6 +1689,7 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
             .Fields("SOL_DIALITICA") = rsTabelle("SOL_DIALITICHENOME")
             .Fields("SOL_INFUSIONALE") = rsTabelle("SOL_INFUSIONALINOME")
             .Fields("VALORE_CC") = rsTabelle("SOL_INF_CC")
+            .Fields("UNITA_VAL_SOL_INF") = rsTabelle("UNITA_VAL_SOL_INF")
             .Fields("CARTUCCIA") = rsTabelle("CARTUCCENOME")
             .Fields("EPO") = rsTabelle("EPO")
             If .Fields("EPO") = 2 Or .Fields("EPO") = 3 Then

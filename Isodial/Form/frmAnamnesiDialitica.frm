@@ -272,34 +272,6 @@ Begin VB.Form frmAnamnesiDialitica
       TabCaption(1)   =   "Scheda 2"
       TabPicture(1)   =   "frmAnamnesiDialitica.frx":0475
       Tab(1).ControlEnabled=   0   'False
-<<<<<<< .mine
-      Tab(1).Control(0)=   "Label1(16)"
-      Tab(1).Control(1)=   "Label1(15)"
-      Tab(1).Control(2)=   "Label1(14)"
-      Tab(1).Control(3)=   "Label1(13)"
-      Tab(1).Control(4)=   "Label1(12)"
-      Tab(1).Control(5)=   "Label1(11)"
-      Tab(1).Control(6)=   "Label1(26)"
-      Tab(1).Control(7)=   "Label1(28)"
-      Tab(1).Control(8)=   "Label1(29)"
-      Tab(1).Control(9)=   "Label1(30)"
-      Tab(1).Control(10)=   "Label1(31)"
-      Tab(1).Control(11)=   "Label1(35)"
-      Tab(1).Control(12)=   "txtDose(3)"
-      Tab(1).Control(13)=   "txtDose(2)"
-      Tab(1).Control(14)=   "txtDose(1)"
-      Tab(1).Control(15)=   "txtDose(0)"
-      Tab(1).Control(16)=   "cboAnticoagulante(1)"
-      Tab(1).Control(17)=   "cboAnticoagulante(0)"
-      Tab(1).Control(18)=   "txtFlusso"
-      Tab(1).Control(19)=   "cboSolDialitica"
-      Tab(1).Control(20)=   "cboSolInfusionale"
-      Tab(1).Control(21)=   "cboCartuccia"
-      Tab(1).Control(22)=   "txtSolInfCc"
-      Tab(1).Control(23)=   "txtFlussoSangue"
-      Tab(1).Control(24)=   "cboDosiUnitaMisura"
-      Tab(1).ControlCount=   25
-=======
       Tab(1).Control(0)=   "cboUnitàValoreInfusionale"
       Tab(1).Control(1)=   "cboDosiUnitaMisura"
       Tab(1).Control(2)=   "txtFlussoSangue"
@@ -327,7 +299,6 @@ Begin VB.Form frmAnamnesiDialitica
       Tab(1).Control(24)=   "Label1(15)"
       Tab(1).Control(25)=   "Label1(16)"
       Tab(1).ControlCount=   26
->>>>>>> .r220
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
@@ -1103,7 +1074,7 @@ Begin VB.Form frmAnamnesiDialitica
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Ritmo Dialisi Settimanale"
+         Caption         =   "Ritmo Dialisi Settimanale:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1118,7 +1089,7 @@ Begin VB.Form frmAnamnesiDialitica
          Left            =   240
          TabIndex        =   95
          Top             =   480
-         Width           =   2625
+         Width           =   2685
       End
       Begin VB.Label lblRitmoDialisiSettimanale 
          BeginProperty Font 

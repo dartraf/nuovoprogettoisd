@@ -1245,6 +1245,13 @@ End Sub
 Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
     Dim i As Integer
     
+    ' Premendo invio, simula la dobbia pressione del mouse
+    If KeyAscii = 13 Then
+        vRow = flxGriglia.Row
+        Call flxGriglia_DblClick
+     End If
+    
+    ' Funzione per la ricerca
     If flxGriglia.Rows = 1 Then Exit Sub
     If flxGriglia.Row = flxGriglia.Rows - 1 Then
         i = 1
@@ -1266,6 +1273,7 @@ Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
             i = i + 1
         End If
     Loop Until i = flxGriglia.Row
+    
 End Sub
 
 '' Carica i dati del paziente

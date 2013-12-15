@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmScanDocumenti 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scansione documenti paziente"
@@ -208,6 +208,23 @@ Begin VB.Form frmScanDocumenti
       TabIndex        =   6
       Top             =   720
       Width           =   4455
+      Begin VB.CommandButton cmdMarkers 
+         Caption         =   "Markers"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   1560
+         TabIndex        =   18
+         Top             =   840
+         Width           =   1335
+      End
       Begin VB.CommandButton cmdGestioneReferti 
          Caption         =   "&Gestione Documenti"
          BeginProperty Font 
@@ -338,6 +355,7 @@ Dim vRow As Integer
 Dim vCol As Integer
 Dim rsScan As Recordset
 Dim intPazientiKey As Integer
+Dim DicituraMarkers As Boolean
 
 Private Aggiorna As Boolean
 
@@ -345,6 +363,10 @@ Public Property Let LetAggiorna(ByVal vaggiorna As Boolean)
     Aggiorna = vaggiorna
     Call CaricaFlx
 End Property
+
+Private Sub cmdMarkers_Click()
+    DicituraMarkers = True
+End Sub
 
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
@@ -625,7 +647,13 @@ Private Sub cmdInserisci_Click()
     Dim nomeFile As String
     Dim caratteriSpeciali As Boolean
     
-    nomeFile = "Nuovo documento"
+    If DicituraMarkers = True Then
+        nomeFile = "Markers Virali Trimestrali"
+        DicituraMarkers = False
+    Else
+        nomeFile = "Nuovo documento"
+    End If
+    
     If intPazientiKey <> 0 Then
         Do
             caratteriSpeciali = False

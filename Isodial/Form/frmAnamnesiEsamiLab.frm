@@ -1245,9 +1245,10 @@ End Sub
 Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
     Dim i As Integer
     
-    ' Premendo invio, simula la dobbia pressione del mouse
+    ' Premendo invio, simula la doppia pressione del mouse
     If KeyAscii = 13 Then
         vRow = flxGriglia.Row
+        Call flxGriglia_Click
         Call flxGriglia_DblClick
      End If
     

@@ -4,30 +4,30 @@ Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmScanDocumenti 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scansione documenti paziente"
-   ClientHeight    =   2985
+   ClientHeight    =   3225
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   12330
+   ClientWidth     =   12225
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   2985
-   ScaleWidth      =   12330
+   ScaleHeight     =   3225
+   ScaleWidth      =   12225
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   8
+      TabIndex        =   12
       Top             =   0
-      Width           =   12135
+      Width           =   12015
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   360
          Picture         =   "frmScanDocumenti.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   12
+         TabIndex        =   8
          Top             =   240
          Width           =   450
       End
@@ -45,7 +45,7 @@ Begin VB.Form frmScanDocumenti
          EndProperty
          Height          =   285
          Left            =   2160
-         TabIndex        =   15
+         TabIndex        =   18
          Top             =   360
          Width           =   3255
       End
@@ -63,7 +63,7 @@ Begin VB.Form frmScanDocumenti
          EndProperty
          Height          =   285
          Left            =   6720
-         TabIndex        =   14
+         TabIndex        =   17
          Top             =   360
          Width           =   3135
       End
@@ -81,7 +81,7 @@ Begin VB.Form frmScanDocumenti
          EndProperty
          Height          =   285
          Left            =   11160
-         TabIndex        =   13
+         TabIndex        =   16
          Top             =   360
          Width           =   615
       End
@@ -100,7 +100,7 @@ Begin VB.Form frmScanDocumenti
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   11
+         TabIndex        =   15
          Top             =   360
          Width           =   1005
       End
@@ -119,7 +119,7 @@ Begin VB.Form frmScanDocumenti
          Height          =   240
          Index           =   1
          Left            =   6000
-         TabIndex        =   10
+         TabIndex        =   14
          Top             =   360
          Width           =   630
       End
@@ -138,15 +138,15 @@ Begin VB.Form frmScanDocumenti
          Height          =   240
          Index           =   3
          Left            =   10560
-         TabIndex        =   9
+         TabIndex        =   13
          Top             =   360
          Width           =   465
       End
    End
    Begin VB.Frame Frame2 
-      Height          =   2175
+      Height          =   2415
       Left            =   120
-      TabIndex        =   4
+      TabIndex        =   9
       Top             =   720
       Width           =   7695
       Begin VB.TextBox txtAppo 
@@ -171,19 +171,19 @@ Begin VB.Form frmScanDocumenti
          Height          =   285
          Left            =   2280
          MaxLength       =   35
-         TabIndex        =   5
+         TabIndex        =   10
          Top             =   960
          Visible         =   0   'False
          Width           =   3120
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   1815
+         Height          =   2055
          Left            =   120
          TabIndex        =   7
          Top             =   240
          Width           =   7455
          _ExtentX        =   13150
-         _ExtentY        =   3201
+         _ExtentY        =   3625
          _Version        =   393216
          Cols            =   3
          FixedCols       =   0
@@ -203,130 +203,130 @@ Begin VB.Form frmScanDocumenti
       End
    End
    Begin VB.Frame Frame4 
-      Height          =   2175
+      Height          =   2415
       Left            =   7800
-      TabIndex        =   6
+      TabIndex        =   11
       Top             =   720
-      Width           =   4455
+      Width           =   4335
       Begin VB.CommandButton cmdMarkers 
          Caption         =   "Markers"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
+         Height          =   570
          Left            =   1560
-         TabIndex        =   18
-         Top             =   840
-         Width           =   1335
+         TabIndex        =   1
+         Top             =   240
+         Width           =   1215
       End
       Begin VB.CommandButton cmdGestioneReferti 
          Caption         =   "&Gestione Documenti"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
-         Left            =   120
-         TabIndex        =   17
-         Top             =   1280
-         Width           =   1335
+         Height          =   570
+         Left            =   1560
+         TabIndex        =   4
+         Top             =   960
+         Width           =   1215
       End
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
-         Left            =   1560
-         TabIndex        =   16
-         Top             =   1280
-         Width           =   1335
+         Height          =   570
+         Left            =   240
+         TabIndex        =   3
+         Top             =   960
+         Width           =   1215
       End
       Begin VB.CommandButton cmdVisualizza 
          Caption         =   "&Visualizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
-         Left            =   1560
-         TabIndex        =   1
-         Top             =   360
-         Width           =   1335
+         Height          =   570
+         Left            =   2880
+         TabIndex        =   2
+         Top             =   240
+         Width           =   1215
       End
       Begin VB.CommandButton cmdElimina 
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
-         Left            =   3000
-         TabIndex        =   2
-         Top             =   360
-         Width           =   1335
+         Height          =   570
+         Left            =   2880
+         TabIndex        =   5
+         Top             =   960
+         Width           =   1215
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
-         Left            =   3000
-         TabIndex        =   3
-         Top             =   1280
-         Width           =   1335
+         Height          =   570
+         Left            =   240
+         TabIndex        =   6
+         Top             =   1680
+         Width           =   1215
       End
       Begin VB.CommandButton cmdInserisci 
          Caption         =   "&Nuovo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
-         Left            =   120
+         Height          =   570
+         Left            =   240
          TabIndex        =   0
-         Top             =   360
-         Width           =   1335
+         Top             =   240
+         Width           =   1215
       End
    End
    Begin MSComDlg.CommonDialog cdlApri 
@@ -338,8 +338,8 @@ Begin VB.Form frmScanDocumenti
    End
    Begin VB.Image imgAppo 
       Height          =   495
-      Left            =   12120
-      Top             =   1080
+      Left            =   12000
+      Top             =   720
       Visible         =   0   'False
       Width           =   255
    End
@@ -366,6 +366,7 @@ End Property
 
 Private Sub cmdMarkers_Click()
     DicituraMarkers = True
+    Call cmdInserisci_Click
 End Sub
 
 Private Sub Form_Activate()
@@ -398,6 +399,7 @@ Private Sub Form_Load()
         Next i
         .MousePointer = flexCustom
     End With
+    
     flxGriglia.ColAlignment(1) = vbLeftJustify
     flxGriglia.Rows = 1
 End Sub

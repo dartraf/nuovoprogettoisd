@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmStampaFiltri 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa "
@@ -478,6 +478,7 @@ Private Sub StampaKtvAnnuale()
     Dim strSingoloPaziente As String
     Dim strStato As String
     Dim cont As Integer
+    Dim media_ann As Currency
     Dim i As Integer
     Dim condizione  As String
     
@@ -512,7 +513,6 @@ Private Sub StampaKtvAnnuale()
             "       NEW adCurrency AS MESE11, " & _
             "       NEW adCurrency AS MESE12, " & _
             "       NEW adCurrency AS MEDIA "
-
     
     ' apre la connessione per lo shape
     Set cnConn = New ADODB.Connection
@@ -554,9 +554,11 @@ Private Sub StampaKtvAnnuale()
         MsgBox "Nessun paziente presente nel turno selezionato", vbInformation, "Informazione"
         Exit Sub
     ElseIf rsMain.RecordCount > 0 Then rsMain.MoveFirst
-    
+     
+        media_ann = 0
     Do While Not rsMain.EOF
         cont = 0
+        
         For i = 1 To 12
             If Not IsNull(rsMain("MESE" & i)) Then
                 rsMain("MEDIA") = rsMain("MEDIA") + rsMain("MESE" & i)
@@ -565,12 +567,12 @@ Private Sub StampaKtvAnnuale()
         Next i
         If cont <> 0 Then
             rsMain("MEDIA") = rsMain("MEDIA") / cont
+            media_ann = media_ann + rsMain("MEDIA")
         Else
             rsMain("MEDIA") = Null
         End If
         rsMain.MoveNext
     Loop
-    
     
     Set rsDataset = Nothing
     
@@ -581,6 +583,7 @@ Private Sub StampaKtvAnnuale()
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
         rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblMedia_Ann").Caption = Int(media_ann / rsMain.RecordCount * 100) / 100
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
@@ -595,6 +598,7 @@ Private Sub StampaTsatAnnuale()
     Dim strSingoloPaziente As String
     Dim strStato As String
     Dim cont As Integer
+    Dim media_ann As Currency
     Dim i As Integer
     Dim condizione As String
     
@@ -672,6 +676,7 @@ Private Sub StampaTsatAnnuale()
         MsgBox "Nessun paziente presente nel turno selezionato", vbInformation, "Informazione"
         Exit Sub
     ElseIf rsMain.RecordCount > 0 Then rsMain.MoveFirst
+        media_ann = 0
     
     Do While Not rsMain.EOF
         cont = 0
@@ -683,6 +688,7 @@ Private Sub StampaTsatAnnuale()
         Next i
         If cont <> 0 Then
             rsMain("MEDIA") = rsMain("MEDIA") / cont
+            media_ann = media_ann + rsMain("MEDIA")
         Else
             rsMain("MEDIA") = Null
         End If
@@ -698,6 +704,7 @@ Private Sub StampaTsatAnnuale()
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
         rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblMedia_Ann").Caption = Int(media_ann / rsMain.RecordCount * 100) / 100
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
@@ -714,6 +721,7 @@ Private Sub StampaPthAnnuale()
     Dim strSingoloPaziente As String
     Dim strStato As String
     Dim cont As Integer
+    Dim media_ann As Currency
     Dim i As Integer
     Dim condizione As String
     Dim keyEsame As Integer
@@ -797,6 +805,7 @@ Private Sub StampaPthAnnuale()
     'DoEvents
     
    Set rsDataselect = New Recordset
+   media_ann = 0
    cont = 0
    rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME, STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " AND (STATODATA IS NULL OR YEAR(STATODATA)=" & cboAnno.Text & ") ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 '   rsDataset.Open "SELECT PAZIENTI.KEY,COGNOME,NOME,STATO FROM PAZIENTI left outer join turni on turni.codice_paziente=pazienti.key WHERE " & strStato & " " & strSingoloPaziente & condizione & " ORDER BY COGNOME, NOME, PAZIENTI.KEY", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
@@ -849,6 +858,7 @@ Private Sub StampaPthAnnuale()
 
           If cont <> 0 Then
             .Fields("MEDIA") = Int(SommaMedia / cont * 100) / 100
+            media_ann = media_ann + rsMain("MEDIA")
           End If
 
           .Update
@@ -884,6 +894,7 @@ Private Sub StampaPthAnnuale()
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
         rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblMedia_Ann").Caption = Int(media_ann / rsMain.RecordCount * 100) / 100
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If
@@ -898,6 +909,7 @@ Private Sub StampaCAPAnnuale()
     Dim strSingoloPaziente As String
     Dim strStato As String
     Dim cont As Integer
+    Dim media_ann As Currency
     Dim i As Integer
     Dim condizione As String
     
@@ -975,7 +987,8 @@ Private Sub StampaCAPAnnuale()
         MsgBox "Nessun paziente presente nel turno selezionato", vbInformation, "Informazione"
         Exit Sub
     ElseIf rsMain.RecordCount > 0 Then rsMain.MoveFirst
-    
+        
+        media_ann = 0
     Do While Not rsMain.EOF
         cont = 0
         For i = 1 To 12
@@ -986,6 +999,7 @@ Private Sub StampaCAPAnnuale()
         Next i
         If cont <> 0 Then
             rsMain("MEDIA") = Int(rsMain("MEDIA") / cont * 100) / 100
+            media_ann = media_ann + rsMain("MEDIA")
         Else
             rsMain("MEDIA") = Null
         End If
@@ -1001,6 +1015,7 @@ Private Sub StampaCAPAnnuale()
         rptKtvTsatCapAnnuale.RightMargin = 0
         rptKtvTsatCapAnnuale.TopMargin = 0
         rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblPazienti").Caption = rsMain.RecordCount
+        rptKtvTsatCapAnnuale.Sections("Section5").Controls.Item("lblMedia_Ann").Caption = Int(media_ann / rsMain.RecordCount * 100) / 100
         rptKtvTsatCapAnnuale.PrintReport True, rptRangeAllPages
     End If
     End If

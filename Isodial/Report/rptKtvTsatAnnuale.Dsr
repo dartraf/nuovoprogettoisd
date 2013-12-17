@@ -1030,7 +1030,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale
       _Version        =   393216
       Name            =   "Section5"
       Object.Height          =   585
-      NumControls     =   2
+      NumControls     =   4
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -1066,6 +1066,43 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptKtvTsatCapAnnuale
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   "TOTALE PAZIENTI:"
+      EndProperty
+      ItemType2       =   3
+      BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label23"
+         Object.Left            =   3005
+         Object.Top             =   57
+         Object.Width           =   1814
+         Object.Height          =   300
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "MEDIA TOTALE:"
+      EndProperty
+      ItemType3       =   3
+      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblmedia_ann"
+         Object.Left            =   4762
+         Object.Top             =   57
+         Object.Width           =   681
+         Object.Height          =   255
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
       EndProperty
    EndProperty
 End
@@ -1115,7 +1152,7 @@ Private Sub DataReport_Initialize()
             .Item("txtMese11").DataField = "MESE11"
             .Item("txtMese12").DataField = "MESE12"
             .Item("txtMedia").DataField = "MEDIA"
-        End With
+         End With
         
         With .Sections("Pie").Controls
             .Item("lblDa").Caption = "da: " & tAccesso.cognome & " " & tAccesso.nome

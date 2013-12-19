@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmScanDocumenti 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scansione documenti paziente"
@@ -209,7 +209,7 @@ Begin VB.Form frmScanDocumenti
       Top             =   720
       Width           =   4335
       Begin VB.CommandButton cmdMarkers 
-         Caption         =   "Markers"
+         Caption         =   "Markers Virali Trim."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -237,8 +237,8 @@ Begin VB.Form frmScanDocumenti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   570
-         Left            =   1560
-         TabIndex        =   4
+         Left            =   2880
+         TabIndex        =   5
          Top             =   960
          Width           =   1215
       End
@@ -288,8 +288,8 @@ Begin VB.Form frmScanDocumenti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   570
-         Left            =   2880
-         TabIndex        =   5
+         Left            =   1560
+         TabIndex        =   4
          Top             =   960
          Width           =   1215
       End
@@ -306,7 +306,7 @@ Begin VB.Form frmScanDocumenti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   570
-         Left            =   240
+         Left            =   2880
          TabIndex        =   6
          Top             =   1680
          Width           =   1215

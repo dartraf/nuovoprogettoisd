@@ -1149,7 +1149,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          Name            =   "Label70"
          Object.Left            =   3402
          Object.Top             =   60
-         Object.Width           =   570
+         Object.Width           =   530
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1166,7 +1166,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item43 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label22"
-         Object.Left            =   6010
+         Object.Left            =   6050
          Object.Top             =   60
          Object.Width           =   960
          Object.Height          =   285
@@ -1258,9 +1258,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAnni"
-         Object.Left            =   4026
+         Object.Left            =   3950
          Object.Top             =   110
-         Object.Width           =   450
+         Object.Width           =   400
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -4761,9 +4761,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item289 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label107"
-         Object.Left            =   4536
+         Object.Left            =   4360
          Object.Top             =   60
-         Object.Width           =   795
+         Object.Width           =   1150
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -4774,15 +4774,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Altezza"
+         Object.Caption         =   "Altezza cm."
       EndProperty
       ItemType290     =   4
       BeginProperty Item290 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAltezza"
-         Object.Left            =   5387
+         Object.Left            =   5550
          Object.Top             =   110
-         Object.Width           =   510
+         Object.Width           =   450
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

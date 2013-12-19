@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmStampaFiltri 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa "
@@ -1061,6 +1061,7 @@ Private Sub StampaSchedaDialiticaSettimanale()
     strSqlStampa = "    NEW adVarChar (50) as COGNOME, " & _
                 "       NEW adVarChar (50) as NOME, " & _
                 "       NEW adInteger AS ANNI, " & _
+                "       NEW adInteger AS ALTEZZA, " & _
                 "       NEW adInteger AS CODICE_PAZIENTE, " & _
                 "       NEW adVarChar (20) as EMOGRUPPO, " & _
                 "       NEW adVarChar (50) as ACCESSO_VASCOLARE, " & _
@@ -1154,6 +1155,7 @@ Private Sub StampaSchedaDialiticaSettimanale()
             .Fields("CODICE_PAZIENTE") = rsDataset("CODICE_ID")
             .Fields("COGNOME") = IIf(Len(rsDataset("COGNOME")) >= 3, Left(rsDataset("COGNOME"), 3), rsDataset("COGNOME"))
             .Fields("NOME") = IIf(Len(rsDataset("PAZIENTI.NOME")) >= 3, Left(rsDataset("PAZIENTI.NOME"), 3), rsDataset("PAZIENTI.NOME"))
+            .Fields("ALTEZZA") = rsDataset("ALTEZZA")
             
             Dim somma As Integer
             If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
@@ -1397,6 +1399,7 @@ End Sub
 
 Private Sub cmdAvanti_Click()
     Select Case tStampa
+        'Modulo Bartoli
         Case tpSCHEDADIALITICASETTIMANALE
             Call StampaSchedaDialiticaSettimanale
         Case tpKTVANNUALE

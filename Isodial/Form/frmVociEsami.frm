@@ -235,17 +235,6 @@ Const icsPOSNEG As String = "  X "
 Const icsSTAMPA As String = "               X  "
 Const icsSTAMPA_ESAMI As String = "                         X  "
 
-'Private Sub wheelMouse_MouseScroll(MouseKeys As Long, Rotation As Long, X As Long, Y As Long, ControlHWnd As Long)
-'    If ControlHWnd = flxGriglia.hWnd Then
-'        If flxGriglia.TopRow - Rotation > 0 Then
-'            If flxGriglia.TopRow - Rotation < flxGriglia.Rows Then
-'                flxGriglia.TopRow = flxGriglia.TopRow - Rotation
-'            End If
-'        End If
-'    End If
-'End Sub
-'----------------------------------
-
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
 End Sub
@@ -479,6 +468,8 @@ Private Sub cmdInserisci_Click()
     Dim v_Val() As Variant
     Dim num As Integer
     Dim primo As Boolean
+    Dim ValoreMin As String
+    Dim ValoreMax As String
     
     
     primo = True
@@ -505,8 +496,12 @@ Private Sub cmdInserisci_Click()
         v_Nomi(6) = "MAX"
         v_Nomi(7) = "STAMPA"
         v_Nomi(8) = "ESAMI_DA_STAMPARE"
+        
         num = GetNumero("VOCI_ESAMI")
-        v_Val = Array(num, tInput.v_valori(1), CBool(tInput.v_valori(2)), tInput.v_valori(3), CDbl(tInput.v_valori(4)), CDbl(tInput.v_valori(5)), CBool(tInput.v_valori(6)), CBool(tInput.v_valori(7)))
+        ValoreMin = tInput.v_valori(4)
+        ValoreMax = tInput.v_valori(5)
+        
+        v_Val = Array(num, tInput.v_valori(1), CBool(tInput.v_valori(2)), tInput.v_valori(3), ValoreMin, ValoreMax, CBool(tInput.v_valori(6)), CBool(tInput.v_valori(7)))
         
         Set rsVoci = New Recordset
         rsVoci.Open "VOCI_ESAMI", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -525,7 +520,6 @@ Private Sub cmdInserisci_Click()
             flxGriglia.TopRow = flxGriglia.Row
         End If
         
- '       MsgBox "Inserimento effettuato", vbInformation, "Inserimento"
     End If
 End Sub
 

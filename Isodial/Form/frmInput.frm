@@ -3086,7 +3086,7 @@ Private Sub Form_Load()
         Case tpISINGOLO
             fraTabelle.Height = 700
             fraPulsanti.Top = fraTabelle.Height - 135
-            If tTabelle = tpESAME Then
+            If tTabelle = tpesame Then
                 Label1(1) = "Esame"
             End If
         
@@ -3900,11 +3900,11 @@ Private Sub txtQuantita_Change()
 End Sub
 
 Private Sub txtPostazione_GotFocus()
-    txtPostazione.BackColor = colArancione
+    txtpostazione.BackColor = colArancione
 End Sub
 
 Private Sub txtPostazione_LostFocus()
-    txtPostazione.BackColor = vbWhite
+    txtpostazione.BackColor = vbWhite
 End Sub
 
 Private Sub txtNumeroRene_GotFocus()
@@ -4080,7 +4080,7 @@ Private Sub txtImporto_Validate(Cancel As Boolean)
 End Sub
 
 Private Sub txtValoreMax_Change()
-    If Not (lettera = "," Or lettera = "") Then
+    If Not (lettera = "." Or lettera = "") Then
         Call OnlyNumber(txtValoreMax, lettera)
     End If
 End Sub
@@ -4102,7 +4102,7 @@ Private Sub txtValoreMax_Validate(Cancel As Boolean)
 End Sub
 
 Private Sub txtValoreMin_Change()
-    If Not (lettera = "," Or lettera = "") Then
+    If Not (lettera = "." Or lettera = "") Then
         Call OnlyNumber(txtValoreMin, lettera)
     End If
 End Sub

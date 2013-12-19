@@ -159,7 +159,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   30450
-      NumControls     =   289
+      NumControls     =   291
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -257,9 +257,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtEmogruppo"
-         Object.Left            =   8561
-         Object.Top             =   90
-         Object.Width           =   1305
+         Object.Left            =   8788
+         Object.Top             =   110
+         Object.Width           =   1360
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -285,7 +285,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label48"
-         Object.Left            =   7427
+         Object.Left            =   7654
          Object.Top             =   60
          Object.Width           =   1185
          Object.Height          =   285
@@ -1147,7 +1147,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item42 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label70"
-         Object.Left            =   3515
+         Object.Left            =   3402
          Object.Top             =   60
          Object.Width           =   570
          Object.Height          =   285
@@ -1166,9 +1166,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item43 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label22"
-         Object.Left            =   4819
+         Object.Left            =   6010
          Object.Top             =   60
-         Object.Width           =   1875
+         Object.Width           =   960
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1179,7 +1179,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Matricola Paziente"
+         Object.Caption         =   "Matr.Paz."
       EndProperty
       ItemType44      =   4
       BeginProperty Item44 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -1258,9 +1258,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAnni"
-         Object.Left            =   4139
+         Object.Left            =   4026
          Object.Top             =   110
-         Object.Width           =   630
+         Object.Width           =   450
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1285,7 +1285,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
       BeginProperty Item48 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodiceID"
-         Object.Left            =   6745
+         Object.Left            =   7029
          Object.Top             =   110
          Object.Width           =   630
          Object.Height          =   345
@@ -4757,6 +4757,52 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptModuloBartoli
          EndProperty
          Object.Caption         =   "Flusso Qb (ml/min)"
       EndProperty
+      ItemType289     =   3
+      BeginProperty Item289 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label107"
+         Object.Left            =   4536
+         Object.Top             =   60
+         Object.Width           =   795
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Altezza"
+      EndProperty
+      ItemType290     =   4
+      BeginProperty Item290 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtAltezza"
+         Object.Left            =   5387
+         Object.Top             =   110
+         Object.Width           =   510
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -4826,6 +4872,7 @@ Private Sub DataReport_Initialize()
             .Item("txtCognome").DataField = "COGNOME"
             .Item("txtNome").DataField = "NOME"
             .Item("txtAnni").DataField = "ANNI"
+            .Item("txtAltezza").DataField = "ALTEZZA"
             .Item("txtCodiceID").DataField = "CODICE_PAZIENTE"
                                                                                  
             .Item("txtEmogruppo").DataField = "EMOGRUPPO"

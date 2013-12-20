@@ -30,6 +30,276 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       TabIndex        =   11
       Top             =   840
       Width           =   10575
+      Begin VB.CheckBox chkEritemaMedio 
+         Caption         =   "Medio"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   41
+         Top             =   360
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check15 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7680
+         TabIndex        =   40
+         Top             =   1800
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check14 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7680
+         TabIndex        =   39
+         Top             =   1440
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check13 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7680
+         TabIndex        =   38
+         Top             =   1080
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check12 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7680
+         TabIndex        =   37
+         Top             =   720
+         Width           =   1215
+      End
+      Begin VB.CheckBox chkEritemaGrave 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7680
+         TabIndex        =   36
+         Top             =   360
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check10 
+         Caption         =   "Medio"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   35
+         Top             =   1800
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check9 
+         Caption         =   "Medio"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   34
+         Top             =   1440
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check8 
+         Caption         =   "Medio"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   33
+         Top             =   1080
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check7 
+         Caption         =   "Medio"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   32
+         Top             =   720
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check5 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   31
+         Top             =   1800
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check4 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   30
+         Top             =   1440
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check3 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   29
+         Top             =   1080
+         Width           =   1215
+      End
+      Begin VB.CheckBox Check2 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   28
+         Top             =   720
+         Width           =   1215
+      End
+      Begin VB.CheckBox chkEritemaLieve 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   27
+         Top             =   360
+         Width           =   1215
+      End
       Begin VB.OptionButton optNoEritema 
          Caption         =   "No"
          BeginProperty Font 
@@ -43,7 +313,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2400
-         TabIndex        =   36
+         TabIndex        =   21
          Top             =   360
          Width           =   855
       End
@@ -60,7 +330,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2400
-         TabIndex        =   35
+         TabIndex        =   20
          Top             =   720
          Width           =   855
       End
@@ -77,7 +347,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2400
-         TabIndex        =   34
+         TabIndex        =   19
          Top             =   1080
          Width           =   855
       End
@@ -94,7 +364,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2400
-         TabIndex        =   33
+         TabIndex        =   18
          Top             =   1440
          Width           =   855
       End
@@ -111,7 +381,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2400
-         TabIndex        =   32
+         TabIndex        =   17
          Top             =   1800
          Width           =   855
       End
@@ -128,7 +398,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   3600
-         TabIndex        =   31
+         TabIndex        =   16
          Top             =   360
          Width           =   735
       End
@@ -145,7 +415,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   3600
-         TabIndex        =   30
+         TabIndex        =   15
          Top             =   720
          Width           =   735
       End
@@ -162,7 +432,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   3600
-         TabIndex        =   29
+         TabIndex        =   14
          Top             =   1080
          Width           =   735
       End
@@ -179,7 +449,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   3600
-         TabIndex        =   28
+         TabIndex        =   13
          Top             =   1440
          Width           =   735
       End
@@ -196,279 +466,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   3600
-         TabIndex        =   27
-         Top             =   1800
-         Width           =   735
-      End
-      Begin VB.OptionButton optEritemaLieve 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   26
-         Top             =   360
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option12 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   25
-         Top             =   720
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option13 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   24
-         Top             =   1080
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option14 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   23
-         Top             =   1440
-         Width           =   975
-      End
-      Begin VB.OptionButton Option15 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   22
-         Top             =   1800
-         Width           =   975
-      End
-      Begin VB.OptionButton optEritemaMeno 
-         Caption         =   "Meno"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   21
-         Top             =   360
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option17 
-         Caption         =   "Meno"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   20
-         Top             =   720
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option18 
-         Caption         =   "Meno"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   19
-         Top             =   1080
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option19 
-         Caption         =   "Meno"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   18
-         Top             =   1440
-         Width           =   975
-      End
-      Begin VB.OptionButton Option20 
-         Caption         =   "Meno"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   17
-         Top             =   1800
-         Width           =   1095
-      End
-      Begin VB.OptionButton optEritemaGrave 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7560
-         TabIndex        =   16
-         Top             =   360
-         Width           =   1095
-      End
-      Begin VB.OptionButton Option22 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7560
-         TabIndex        =   15
-         Top             =   720
-         Width           =   1215
-      End
-      Begin VB.OptionButton Option23 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7560
-         TabIndex        =   14
-         Top             =   1080
-         Width           =   1215
-      End
-      Begin VB.OptionButton Option24 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7560
-         TabIndex        =   13
-         Top             =   1440
-         Width           =   1215
-      End
-      Begin VB.OptionButton Option25 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7560
          TabIndex        =   12
          Top             =   1800
-         Width           =   1095
+         Width           =   735
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -485,7 +485,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   11
          Left            =   120
-         TabIndex        =   41
+         TabIndex        =   26
          Top             =   360
          Width           =   810
       End
@@ -504,7 +504,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   2
          Left            =   120
-         TabIndex        =   40
+         TabIndex        =   25
          Top             =   720
          Width           =   720
       End
@@ -523,7 +523,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   4
          Left            =   120
-         TabIndex        =   39
+         TabIndex        =   24
          Top             =   1080
          Width           =   900
       End
@@ -542,7 +542,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   38
+         TabIndex        =   23
          Top             =   1440
          Width           =   1200
       End
@@ -561,7 +561,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   6
          Left            =   120
-         TabIndex        =   37
+         TabIndex        =   22
          Top             =   1800
          Width           =   1680
       End
@@ -696,9 +696,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    End
    Begin VB.Frame Frame4 
       Height          =   855
-      Left            =   960
+      Left            =   1080
       TabIndex        =   8
-      Top             =   7080
+      Top             =   3360
       Width           =   7815
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -753,6 +753,21 @@ Dim PazienteKey As Integer
 Dim keyId As Integer
 Dim modifica As Boolean
 
+Private Sub chkEritemaGrave_GotFocus()
+    chkEritemaLieve.Value = Unchecked
+    chkEritemaMedio.Value = Unchecked
+End Sub
+
+Private Sub chkEritemaLieve_GotFocus()
+    chkEritemaLieve.Value = Unchecked
+    chkEritemaGrave.Value = Unchecked
+End Sub
+
+Private Sub chkEritemaMedio_GotFocus()
+    chkEritemaLieve.Value = Unchecked
+    chkEritemaGrave.Value = Unchecked
+End Sub
+
 Private Sub cmdChiudi_Click()
     Unload frmSchedeSorveglianzaFAV
 End Sub
@@ -766,9 +781,9 @@ Private Sub cmdMemorizza_Click()
         keyId = GetNumero("SCHEDA_SORV_FAV")
     End If
              
-    v_Nomi = Array("KEY", "KEY_PAZIENTE", "ERITEMA")
+    v_Nomi = Array("KEY", "KEY_PAZIENTE", "ERI_SI_NO", "ERI_VALORE")
     
-    v_Val = Array(keyId, PazienteKey, GestisciOptEritema)
+    v_Val = Array(keyId, PazienteKey, GestisciSiNoEritema, GestisciOptEritema)
         
     Set rsDataset = New Recordset
         If modifica = False Then
@@ -786,16 +801,20 @@ Private Sub cmdMemorizza_Click()
     
 End Sub
 
-Private Function GestisciOptEritema() As String
+Private Function GestisciSiNoEritema() As String
     If optNoEritema.Value = True Then
-        GestisciOptEritema = "NO"
-    ElseIf optSiEritema.Value = True Then
-        GestisciOptEritema = "SI"
-    ElseIf optEritemaLieve.Value = True Then
+        GestisciSiNoEritema = "NO"
+    Else
+        GestisciSiNoEritema = "SI"
+    End If
+End Function
+
+Private Function GestisciOptEritema() As String
+    If chkEritemaLieve.Value = Checked Then
         GestisciOptEritema = "LIEVE"
-    ElseIf optEritemaMeno.Value = True Then
-        GestisciOptEritema = "MENO"
-    ElseIf optEritemaGrave.Value = True Then
+    ElseIf chkEritemaMedio.Value = Checked Then
+        GestisciOptEritema = "MEDIO"
+    ElseIf chkEritemaGrave.Value = Checked Then
         GestisciOptEritema = "GRAVE"
     End If
 End Function
@@ -811,8 +830,20 @@ Private Sub Form_Activate()
     End If
 End Sub
 
+Private Sub Pulisci() ' da finire
+    optNoEritema.Value = False
+    optSiEritema.Value = False
+    chkEritemaLieve.Value = Unchecked
+    chkEritemaMedio.Value = Unchecked
+    chkEritemaGrave.Value = Unchecked
+    chkEritemaLieve.Enabled = False
+    chkEritemaMedio.Enabled = False
+    chkEritemaGrave.Enabled = False
+End Sub
+
 Private Sub cmdTrova_Click()
     ' pulisce per evitare problemi
+    Call Pulisci
     tTrova.Tipo = tpPAZIENTE
     tTrova.condizione = ""
     tTrova.condStato = ""
@@ -864,7 +895,8 @@ Private Sub CaricaValori()
     rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
     
     If Not (rsDataset.EOF And rsDataset.BOF) Then
-        Call CaricaOptEritema
+        Call CaricaSiNoEritema
+        Call CaricaValoreEritema
         'da inserire qui
         modifica = True
     Else
@@ -876,30 +908,40 @@ Private Sub CaricaValori()
     
 End Sub
 
-Private Sub CaricaOptEritema()
-    If rsDataset("ERITEMA") = "NO" Then
+Private Sub CaricaValoreEritema()
+    If rsDataset("ERI_VALORE") = "LIEVE" Then
+        chkEritemaLieve.Value = Checked
+    ElseIf rsDataset("ERI_VALORE") = "MEDIO" Then
+        chkEritemaMedio.Value = Checked
+    ElseIf rsDataset("ERI_VALORE") = "GRAVE" Then
+        chkEritemaGrave.Value = Checked
+    End If
+End Sub
+
+Private Sub CaricaSiNoEritema()
+    If rsDataset("ERI_SI_NO") = "NO" Then
         optNoEritema.Value = True
-    ElseIf rsDataset("ERITEMA") = "SI" Then
+    Else
         optSiEritema.Value = True
-    ElseIf rsDataset("ERITEMA") = "LIEVE" Then
-        optEritemaLieve.Value = True
-    ElseIf rsDataset("ERITEMA") = "MENO" Then
-        optEritemaMeno.Value = True
-    ElseIf rsDataset("ERITEMA") = "GRAVE" Then
-        optEritemaGrave.Value = True
+        chkEritemaLieve.Enabled = True
+        chkEritemaMedio.Enabled = True
+        chkEritemaGrave.Enabled = True
     End If
 End Sub
 
 Private Sub optNoEritema_GotFocus()
-    optEritemaLieve.Enabled = False
-    optEritemaMeno.Enabled = False
-    optEritemaGrave.Enabled = False
+    chkEritemaLieve.Enabled = False
+    chkEritemaMedio.Enabled = False
+    chkEritemaGrave.Enabled = False
+    chkEritemaLieve.Value = Unchecked
+    chkEritemaMedio.Value = Unchecked
+    chkEritemaGrave.Value = Unchecked
 End Sub
 
 Private Sub optSiEritema_GotFocus()
-    optEritemaLieve.Enabled = True
-    optEritemaMeno.Enabled = True
-    optEritemaGrave.Enabled = True
+    chkEritemaLieve.Enabled = True
+    chkEritemaMedio.Enabled = True
+    chkEritemaGrave.Enabled = True
 End Sub
 
 

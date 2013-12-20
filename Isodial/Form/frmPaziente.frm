@@ -2541,13 +2541,18 @@ Private Sub Memorizza()
             Exit Sub
         End If
         Call SuperUcase(Me)
+        
         If cboCentroProv.Text <> "" Then
             Call GestisciNuovo("CENTRI_PROVENIENZA", cboCentroProv)
         End If
+        
         If txtKm = "" Then
             txtKm = 0
         End If
         
+        If txtAltezza.Text = "" Then
+            txtAltezza.Text = 0
+        End If
         
         v_Nomi = Array("COGNOME", "NOME", "CODICE_ID", "DATA_NASCITA", "SESSO", "CITTA_NASCITA", _
                     "CODICE_COMUNE_RESIDENZA", "CODICE_REGIONE", "NAZIONIID", "CAP_NASCITA", "CAP_RESIDENZA", "PROV_NASCITA", "PROV_RESIDENZA", _

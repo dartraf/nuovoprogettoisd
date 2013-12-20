@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Begin VB.Form frmSchedeSorveglianzaIAV 
+Begin VB.Form frmSchedeSorveglianzaFAV 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Schede Sorveglianza IAV"
+   Caption         =   "Schede Sorveglianza FAV"
    ClientHeight    =   8940
    ClientLeft      =   45
    ClientTop       =   315
@@ -14,8 +13,561 @@ Begin VB.Form frmSchedeSorveglianzaIAV
    ScaleHeight     =   8940
    ScaleWidth      =   12990
    ShowInTaskbar   =   0   'False
+   Begin VB.Frame frmSegni 
+      Caption         =   "Segni e Sintomi locali"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   2295
+      Left            =   0
+      TabIndex        =   11
+      Top             =   840
+      Width           =   10575
+      Begin VB.OptionButton optNoEritema 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2400
+         TabIndex        =   36
+         Top             =   360
+         Width           =   855
+      End
+      Begin VB.OptionButton optNoDolore 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2400
+         TabIndex        =   35
+         Top             =   720
+         Width           =   855
+      End
+      Begin VB.OptionButton optNoGonfiore 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2400
+         TabIndex        =   34
+         Top             =   1080
+         Width           =   855
+      End
+      Begin VB.OptionButton optNoInfiltrazione 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2400
+         TabIndex        =   33
+         Top             =   1440
+         Width           =   855
+      End
+      Begin VB.OptionButton optNoPresenzaFremiti 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2400
+         TabIndex        =   32
+         Top             =   1800
+         Width           =   855
+      End
+      Begin VB.OptionButton optSiEritema 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3600
+         TabIndex        =   31
+         Top             =   360
+         Width           =   735
+      End
+      Begin VB.OptionButton optSiDolore 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3600
+         TabIndex        =   30
+         Top             =   720
+         Width           =   735
+      End
+      Begin VB.OptionButton optSiGonfiore 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3600
+         TabIndex        =   29
+         Top             =   1080
+         Width           =   735
+      End
+      Begin VB.OptionButton optSiInfiltrazione 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3600
+         TabIndex        =   28
+         Top             =   1440
+         Width           =   735
+      End
+      Begin VB.OptionButton optSiPresenzaFremiti 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3600
+         TabIndex        =   27
+         Top             =   1800
+         Width           =   735
+      End
+      Begin VB.OptionButton optEritemaLieve 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   26
+         Top             =   360
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option12 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   25
+         Top             =   720
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option13 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   24
+         Top             =   1080
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option14 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   23
+         Top             =   1440
+         Width           =   975
+      End
+      Begin VB.OptionButton Option15 
+         Caption         =   "Lieve"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   4680
+         TabIndex        =   22
+         Top             =   1800
+         Width           =   975
+      End
+      Begin VB.OptionButton optEritemaMeno 
+         Caption         =   "Meno"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   21
+         Top             =   360
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option17 
+         Caption         =   "Meno"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   20
+         Top             =   720
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option18 
+         Caption         =   "Meno"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   19
+         Top             =   1080
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option19 
+         Caption         =   "Meno"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   18
+         Top             =   1440
+         Width           =   975
+      End
+      Begin VB.OptionButton Option20 
+         Caption         =   "Meno"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   17
+         Top             =   1800
+         Width           =   1095
+      End
+      Begin VB.OptionButton optEritemaGrave 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7560
+         TabIndex        =   16
+         Top             =   360
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option22 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7560
+         TabIndex        =   15
+         Top             =   720
+         Width           =   1215
+      End
+      Begin VB.OptionButton Option23 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7560
+         TabIndex        =   14
+         Top             =   1080
+         Width           =   1215
+      End
+      Begin VB.OptionButton Option24 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7560
+         TabIndex        =   13
+         Top             =   1440
+         Width           =   1215
+      End
+      Begin VB.OptionButton Option25 
+         Caption         =   "Grave"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   7560
+         TabIndex        =   12
+         Top             =   1800
+         Width           =   1095
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Eritema"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   11
+         Left            =   120
+         TabIndex        =   41
+         Top             =   360
+         Width           =   810
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Dolore"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   2
+         Left            =   120
+         TabIndex        =   40
+         Top             =   720
+         Width           =   720
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Gonfiore"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   4
+         Left            =   120
+         TabIndex        =   39
+         Top             =   1080
+         Width           =   900
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Infiltrazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   5
+         Left            =   120
+         TabIndex        =   38
+         Top             =   1440
+         Width           =   1200
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Presenza fremiti"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   6
+         Left            =   120
+         TabIndex        =   37
+         Top             =   1800
+         Width           =   1680
+      End
+   End
    Begin VB.Frame Frame1 
-      Height          =   855
+      Height          =   975
       Left            =   0
       TabIndex        =   0
       Top             =   0
@@ -142,22 +694,15 @@ Begin VB.Form frmSchedeSorveglianzaIAV
          Width           =   3255
       End
    End
-   Begin VB.Frame Frame3 
-      Height          =   6495
-      Left            =   0
-      TabIndex        =   10
-      Top             =   720
-      Width           =   12855
-      Begin VB.TextBox txtAppo 
-         BeginProperty DataFormat 
-            Type            =   0
-            Format          =   "0"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
+   Begin VB.Frame Frame4 
+      Height          =   855
+      Left            =   960
+      TabIndex        =   8
+      Top             =   7080
+      Width           =   7815
+      Begin VB.CommandButton cmdMemorizza 
+         Caption         =   "&Memorizza"
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -167,46 +712,12 @@ Begin VB.Form frmSchedeSorveglianzaIAV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   285
-         Left            =   1200
-         MaxLength       =   35
-         TabIndex        =   11
-         Top             =   1440
-         Visible         =   0   'False
-         Width           =   3120
+         Height          =   495
+         Left            =   5040
+         TabIndex        =   10
+         Top             =   240
+         Width           =   1215
       End
-      Begin MSFlexGridLib.MSFlexGrid flxGrigliaSintomi 
-         Height          =   2055
-         Left            =   120
-         TabIndex        =   12
-         Top             =   360
-         Width           =   5655
-         _ExtentX        =   9975
-         _ExtentY        =   3625
-         _Version        =   393216
-         Cols            =   3
-         FixedCols       =   0
-         ScrollTrack     =   -1  'True
-         MousePointer    =   15
-         FormatString    =   "| Segni e Sintomi locali                         | Valore                       "
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         MouseIcon       =   "frmSchedeSorveglianzaIAV.frx":0459
-      End
-   End
-   Begin VB.Frame Frame4 
-      Height          =   855
-      Left            =   0
-      TabIndex        =   8
-      Top             =   7080
-      Width           =   7815
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
@@ -220,33 +731,79 @@ Begin VB.Form frmSchedeSorveglianzaIAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   6480
+         Left            =   6360
          TabIndex        =   9
          Top             =   240
-         Width           =   1095
+         Width           =   1215
       End
    End
 End
-Attribute VB_Name = "frmSchedeSorveglianzaIAV"
+Attribute VB_Name = "frmSchedeSorveglianzaFAV"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim rsDataset As Recordset
-Dim rsSintomi As Recordset
-Dim intPazientiKey As Integer
-Dim vRow As Integer
-Dim vCol As Integer
+Dim PazienteKey As Integer
+'Dim ColRosso As Long
+'Dim ColNero As Long
+'ColRosso = &HFF&
+'ColNero = &H80000012
+Dim keyId As Integer
+Dim modifica As Boolean
 
 Private Sub cmdChiudi_Click()
-    Unload frmSchedeSorveglianzaIAV
+    Unload frmSchedeSorveglianzaFAV
 End Sub
+
+Private Sub cmdMemorizza_Click()
+    Dim v_Val() As Variant
+    Dim v_Nomi() As Variant
+
+    
+    If Not modifica Then
+        keyId = GetNumero("SCHEDA_SORV_FAV")
+    End If
+             
+    v_Nomi = Array("KEY", "KEY_PAZIENTE", "ERITEMA")
+    
+    v_Val = Array(keyId, PazienteKey, GestisciOptEritema)
+        
+    Set rsDataset = New Recordset
+        If modifica = False Then
+            rsDataset.Open "SCHEDA_SORV_FAV", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+            rsDataset.AddNew v_Nomi, v_Val
+            rsDataset.Update
+            modifica = True
+        Else
+            rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            rsDataset.Update v_Nomi, v_Val
+        End If
+    Set rsDataset = Nothing
+
+    MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
+    
+End Sub
+
+Private Function GestisciOptEritema() As String
+    If optNoEritema.Value = True Then
+        GestisciOptEritema = "NO"
+    ElseIf optSiEritema.Value = True Then
+        GestisciOptEritema = "SI"
+    ElseIf optEritemaLieve.Value = True Then
+        GestisciOptEritema = "LIEVE"
+    ElseIf optEritemaMeno.Value = True Then
+        GestisciOptEritema = "MENO"
+    ElseIf optEritemaGrave.Value = True Then
+        GestisciOptEritema = "GRAVE"
+    End If
+End Function
 
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
     
-    If intPazientiKey = 0 Then
+    If PazienteKey = 0 Then
         cmdTrova_Click
         If tTrova.keyReturn = 0 Then
             Unload Me
@@ -254,45 +811,20 @@ Private Sub Form_Activate()
     End If
 End Sub
 
-Private Sub Form_Load()
-    Dim i As Integer
-    Dim intTop As Single
-    Dim intLeft As Single
-   
-    Call GetCenterForm(Me.Height, Me.Width, intTop, intLeft)
-    Me.Top = intTop
-    Me.Left = intLeft
-    
-    With flxGrigliaSintomi
-        .ColWidth(0) = 0
-        .Row = 0
-        For i = 1 To 2
-            .Col = i
-            .CellFontBold = True
-            .ColAlignment(i) = vbLeftJustify
-        Next i
-        .MousePointer = flexCustom
-    End With
-    
-    flxGrigliaSintomi.ColAlignment(1) = vbLeftJustify
-    flxGrigliaSintomi.Rows = 1
-End Sub
-
 Private Sub cmdTrova_Click()
     ' pulisce per evitare problemi
-    flxGrigliaSintomi.Rows = 1
     tTrova.Tipo = tpPAZIENTE
     tTrova.condizione = ""
     tTrova.condStato = ""
     frmTrova.Show 1
     If tTrova.keyReturn <> -1 Then
-        If intPazientiKey = tTrova.keyReturn Then
-            intPazientiKey = 0
+        If PazienteKey = tTrova.keyReturn Then
+            PazienteKey = 0
             Call CaricaPaziente
-            intPazientiKey = tTrova.keyReturn
+            PazienteKey = tTrova.keyReturn
             Call CaricaPaziente
         Else
-            intPazientiKey = tTrova.keyReturn
+            PazienteKey = tTrova.keyReturn
             Call CaricaPaziente
         End If
     End If
@@ -300,14 +832,12 @@ End Sub
 
 Private Sub CaricaPaziente()
     
-    If intPazientiKey = 0 Then
-        ' pulisce la griglia
-        ' pulisce la flx azzerando le righe
-        flxGrigliaSintomi.Rows = 1
+    If PazienteKey = 0 Then
+    
     Else
         ' carica i dati del paziente
         Set rsDataset = New Recordset
-        rsDataset.Open "SELECT COGNOME,NOME,DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        rsDataset.Open "SELECT COGNOME,NOME,DATA_NASCITA FROM PAZIENTI WHERE KEY=" & PazienteKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         lblCognome = rsDataset("COGNOME")
         lblNome = rsDataset("NOME")
         Dim somma As Integer
@@ -322,127 +852,54 @@ Private Sub CaricaPaziente()
         Set rsDataset = Nothing
        
         ' cerca i riferimenti al paziente
-        Call CaricaFlxSintomi
+        Call CaricaValori
     
     End If
 End Sub
 
-Private Sub CaricaFlxSintomi()
+Private Sub CaricaValori()
     
-    ' Carico i Sintomi all' interno della colonna 1
-    With flxGrigliaSintomi
-        .Rows = .Rows + 1
-            .TextMatrix(1, 1) = "Eritema"
-        .Rows = .Rows + 1
-            .TextMatrix(2, 1) = "Dolore"
-        .Rows = .Rows + 1
-            .TextMatrix(3, 1) = "Gonfiore"
-        .Rows = .Rows + 1
-            .TextMatrix(4, 1) = "Infiltrazione"
-        .Rows = .Rows + 1
-            .TextMatrix(5, 1) = "Presenza Fremito"
-    End With
-                
-    Set rsSintomi = New Recordset
+    Set rsDataset = New Recordset
     
-    rsSintomi.Open "SELECT * FROM SCHEDA_SORV_IAV WHERE KEY_PAZIENTE= " & intPazientiKey & " ORDER BY KEY DESC ", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-
-    If Not (rsSintomi.BOF And rsSintomi.EOF) Then
-        Do While Not rsSintomi.EOF
-            With flxGrigliaSintomi
-                .TextMatrix(1, 0) = rsSintomi("KEY")
-                .TextMatrix(1, 2) = rsSintomi("ERITEMA") & ""
-                .TextMatrix(2, 2) = rsSintomi("DOLORE") & ""
-                .TextMatrix(3, 2) = rsSintomi("GONFIORE") & ""
-                .TextMatrix(4, 2) = rsSintomi("INFILTRAZIONE") & ""
-                .TextMatrix(5, 2) = rsSintomi("PRESENZA_FREMITO") & ""
-                rsSintomi.MoveNext
-            End With
-        Loop
-        Set rsSintomi = Nothing
-        flxGrigliaSintomi.Row = 0
-    End If
-        
-End Sub
-
-Private Sub flxGrigliaSintomi_Click()
-    flxGrigliaSintomi.SetFocus
-    If VerificaClickFlx(flxGrigliaSintomi) = False Then
-        ' discolora
-        Call ColoraFlx(flxGrigliaSintomi, flxGrigliaSintomi.Cols - 1, True)
-        ' annulla le row e col
-        flxGrigliaSintomi.Row = 0
-        flxGrigliaSintomi.Col = 0
+    rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+    
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        Call CaricaOptEritema
+        'da inserire qui
+        modifica = True
     Else
-        vCol = flxGrigliaSintomi.Col
-        vRow = flxGrigliaSintomi.Row
-        Call ColoraFlx(flxGrigliaSintomi, flxGrigliaSintomi.Cols - 1)
+        'Se non trova il paziente associato vuol dire che è in fase di inserimento
+        modifica = False
+    End If
+    
+    Set rsDataset = Nothing
+    
+End Sub
+
+Private Sub CaricaOptEritema()
+    If rsDataset("ERITEMA") = "NO" Then
+        optNoEritema.Value = True
+    ElseIf rsDataset("ERITEMA") = "SI" Then
+        optSiEritema.Value = True
+    ElseIf rsDataset("ERITEMA") = "LIEVE" Then
+        optEritemaLieve.Value = True
+    ElseIf rsDataset("ERITEMA") = "MENO" Then
+        optEritemaMeno.Value = True
+    ElseIf rsDataset("ERITEMA") = "GRAVE" Then
+        optEritemaGrave.Value = True
     End If
 End Sub
 
-Private Sub flxGrigliaSintomi_DblClick()
-    If VerificaClickFlx(flxGrigliaSintomi) = False Then Exit Sub
-     
-    With flxGrigliaSintomi
-        .SetFocus
-        
-        ' Se la colonna è quella dei valori
-        If .Col = 2 Then
-        
-        ' Scrive i valori in rosso
-        flxGrigliaSintomi.CellForeColor = vbRed
-       '     Call objAnnulla.Add(.TextMatrix(.Row, .Col), .Col, .TextMatrix(.Row, 0))
-       '     cmdAnnulla.Enabled = True
-       ' Con la pressione del muose mi cambia tutti i valori
-                If .TextMatrix(.Row, 2) = "" Then
-                    .TextMatrix(.Row, 2) = "SI"
-                ElseIf .TextMatrix(.Row, 2) = "SI" Then
-                    .TextMatrix(.Row, 2) = "NO"
-                ElseIf .TextMatrix(.Row, 2) = "NO" Then
-                    .TextMatrix(.Row, 2) = "LIEVE"
-                ElseIf .TextMatrix(.Row, 2) = "LIEVE" Then
-                    .TextMatrix(.Row, 2) = "MENO"
-                ElseIf .TextMatrix(.Row, 2) = "MENO" Then
-                    .TextMatrix(.Row, 2) = "GRAVE"
-                ElseIf .TextMatrix(.Row, 2) = "GRAVE" Then
-                    .TextMatrix(.Row, 2) = ""
-                End If
-                Call SalvaModificheSintomi
-        End If
-    End With
+Private Sub optNoEritema_GotFocus()
+    optEritemaLieve.Enabled = False
+    optEritemaMeno.Enabled = False
+    optEritemaGrave.Enabled = False
 End Sub
 
-Private Sub SalvaModificheSintomi()
-    Dim keyId As Integer
-    Dim v_Nomi(1 To 7) As Variant
-    Dim v_Val(1 To 7) As Variant
-    Dim rsSalvaModificheSintomi As Recordset
-    
-    v_Nomi(1) = "KEY"
-    v_Nomi(2) = "KEY_PAZIENTE"
-    v_Nomi(3) = "ERITEMA"
-    v_Nomi(4) = "DOLORE"
-    v_Nomi(5) = "GONFIORE"
-    v_Nomi(6) = "INFILTRAZIONE"
-    v_Nomi(7) = "PRESENZA_FREMITO"
-    
-    With flxGrigliaSintomi
-        keyId = .TextMatrix(1, 0)
-        v_Val(1) = .TextMatrix(1, 0)
-        v_Val(2) = intPazientiKey
-        v_Val(3) = .TextMatrix(1, 2)
-        v_Val(4) = .TextMatrix(2, 2)
-        v_Val(5) = .TextMatrix(3, 2)
-        v_Val(6) = .TextMatrix(4, 2)
-        v_Val(7) = .TextMatrix(5, 2)
-        
-        Set rsSalvaModificheSintomi = New Recordset
-        rsSalvaModificheSintomi.Open "SELECT * FROM SCHEDA_SORV_IAV WHERE KEY=" & keyId, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-        rsSalvaModificheSintomi.Update v_Nomi, v_Val
-        Set rsSalvaModificheSintomi = Nothing
-        
-    End With
-
+Private Sub optSiEritema_GotFocus()
+    optEritemaLieve.Enabled = True
+    optEritemaMeno.Enabled = True
+    optEritemaGrave.Enabled = True
 End Sub
 
 

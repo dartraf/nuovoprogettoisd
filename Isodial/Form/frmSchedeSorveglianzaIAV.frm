@@ -2,17 +2,595 @@ VERSION 5.00
 Begin VB.Form frmSchedeSorveglianzaFAV 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Schede Sorveglianza FAV"
-   ClientHeight    =   8940
+   ClientHeight    =   9945
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   12990
+   ClientWidth     =   13080
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8940
-   ScaleWidth      =   12990
+   ScaleHeight     =   9945
+   ScaleWidth      =   13080
    ShowInTaskbar   =   0   'False
+   StartUpPosition =   2  'CenterScreen
+   Begin VB.Frame fraPortataRicircolo 
+      Caption         =   "Valutazione Portate e Ricircolo"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   3015
+      Left            =   120
+      TabIndex        =   58
+      Top             =   6000
+      Width           =   12855
+      Begin VB.TextBox txtPortataIndicatori 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   64
+         Top             =   360
+         Width           =   4575
+      End
+      Begin VB.TextBox txtRicircoloIndicatori 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   63
+         Top             =   1680
+         Width           =   4575
+      End
+      Begin VB.TextBox txtPortataParametri 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   62
+         Top             =   720
+         Width           =   4575
+      End
+      Begin VB.TextBox txtRicircoloParametri 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   61
+         Top             =   2040
+         Width           =   4575
+      End
+      Begin VB.TextBox txtPortataTollAccettate 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   60
+         Top             =   1080
+         Width           =   4575
+      End
+      Begin VB.TextBox txtRicircoloTollAccettate 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   59
+         Top             =   2400
+         Width           =   4575
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Portata:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   23
+         Left            =   120
+         TabIndex        =   73
+         Top             =   360
+         Width           =   825
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ricircolo:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   22
+         Left            =   120
+         TabIndex        =   72
+         Top             =   1680
+         Width           =   1005
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Indicatori"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   21
+         Left            =   1800
+         TabIndex        =   71
+         Top             =   360
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Indicatori"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   20
+         Left            =   1800
+         TabIndex        =   70
+         Top             =   1680
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Parametri"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   19
+         Left            =   1800
+         TabIndex        =   69
+         Top             =   720
+         Width           =   1020
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Parametri"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   18
+         Left            =   1800
+         TabIndex        =   68
+         Top             =   2040
+         Width           =   1020
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Toll. Accettate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   17
+         Left            =   1320
+         TabIndex        =   67
+         Top             =   1080
+         Width           =   1515
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Toll. Accettate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   16
+         Left            =   1320
+         TabIndex        =   66
+         Top             =   2400
+         Width           =   1515
+      End
+      Begin VB.Label Label3 
+         Caption         =   "DECIDERE LUNGHEZZA CAMPI ANCHE AGG DB"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   18
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   2295
+         Left            =   7920
+         TabIndex        =   65
+         Top             =   240
+         Width           =   2535
+      End
+   End
+   Begin VB.Frame fraRilevazione 
+      Caption         =   "Rilevazione Pressione"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   3015
+      Left            =   120
+      TabIndex        =   42
+      Top             =   3120
+      Width           =   12855
+      Begin VB.TextBox txtRientroTollAccettate 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   56
+         Top             =   2400
+         Width           =   4575
+      End
+      Begin VB.TextBox txtAspirazioneTollAccettate 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   55
+         Top             =   1080
+         Width           =   4575
+      End
+      Begin VB.TextBox txtRientroParametri 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   52
+         Top             =   2040
+         Width           =   4575
+      End
+      Begin VB.TextBox txtAspirazioneParametri 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   51
+         Top             =   720
+         Width           =   4575
+      End
+      Begin VB.TextBox txtRientroIndicatore 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   48
+         Top             =   1680
+         Width           =   4575
+      End
+      Begin VB.TextBox txtAspirazioneIndicatore 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3000
+         MaxLength       =   15
+         TabIndex        =   47
+         Top             =   360
+         Width           =   4575
+      End
+      Begin VB.Label Label2 
+         Caption         =   "DECIDERE LUNGHEZZA CAMPI ANCHE AGG DB"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   18
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   2295
+         Left            =   7920
+         TabIndex        =   57
+         Top             =   240
+         Width           =   2535
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Toll. Accettate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   15
+         Left            =   1320
+         TabIndex        =   54
+         Top             =   2400
+         Width           =   1515
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Toll. Accettate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   14
+         Left            =   1320
+         TabIndex        =   53
+         Top             =   1080
+         Width           =   1515
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Parametri"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   13
+         Left            =   1800
+         TabIndex        =   50
+         Top             =   2040
+         Width           =   1020
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Parametri"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   12
+         Left            =   1800
+         TabIndex        =   49
+         Top             =   720
+         Width           =   1020
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Indicatori"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   10
+         Left            =   1800
+         TabIndex        =   46
+         Top             =   1680
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Indicatori"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   9
+         Left            =   1800
+         TabIndex        =   45
+         Top             =   360
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "In Rientro:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   8
+         Left            =   120
+         TabIndex        =   44
+         Top             =   1680
+         Width           =   1065
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "In Aspirazione:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   7
+         Left            =   120
+         TabIndex        =   43
+         Top             =   360
+         Width           =   1545
+      End
+   End
    Begin VB.Frame frmSegni 
       Caption         =   "Segni e Sintomi locali"
       BeginProperty Font 
@@ -25,11 +603,11 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FF0000&
-      Height          =   2295
-      Left            =   0
+      Height          =   2415
+      Left            =   120
       TabIndex        =   11
       Top             =   840
-      Width           =   10575
+      Width           =   12855
       Begin VB.CheckBox chkEritemaMedio 
          Caption         =   "Medio"
          Enabled         =   0   'False
@@ -568,7 +1146,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    End
    Begin VB.Frame Frame1 
       Height          =   975
-      Left            =   0
+      Left            =   120
       TabIndex        =   0
       Top             =   0
       Width           =   12855
@@ -696,9 +1274,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    End
    Begin VB.Frame Frame4 
       Height          =   855
-      Left            =   1080
+      Left            =   120
       TabIndex        =   8
-      Top             =   3360
+      Top             =   8880
       Width           =   7815
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -780,10 +1358,18 @@ Private Sub cmdMemorizza_Click()
     If Not modifica Then
         keyId = GetNumero("SCHEDA_SORV_FAV")
     End If
-             
-    v_Nomi = Array("KEY", "KEY_PAZIENTE", "ERI_SI_NO", "ERI_VALORE")
     
-    v_Val = Array(keyId, PazienteKey, GestisciSiNoEritema, GestisciOptEritema)
+    v_Nomi = Array("KEY", "KEY_PAZIENTE", "ERI_SI_NO", "ERI_VALORE", _
+            "ASP_INDICATORI", "ASP_PARAMETRI", "ASP_TOLL_ACCET", _
+            "RIE_INDICATORI", "RIE_PARAMETRI", "RIE_TOLL_ACCET", _
+            "POR_INDICATORI", "POR_PARAMETRI", "P0R_TOLL_ACCET", _
+            "RIC_INDICATORI", "RIC_PARAMETRI", "RIC_TOLL_ACCET")
+
+    v_Val = Array(keyId, PazienteKey, GestisciSiNoEritema, GestisciOptEritema, _
+            txtAspirazioneIndicatore, txtAspirazioneParametri, txtAspirazioneTollAccettate, _
+            txtRientroIndicatore, txtRientroParametri, txtRientroTollAccettate, _
+            txtPortataIndicatori, txtPortataParametri, txtPortataTollAccettate, _
+            txtRicircoloIndicatori, txtRicircoloParametri, txtRicircoloTollAccettate)
         
     Set rsDataset = New Recordset
         If modifica = False Then
@@ -820,8 +1406,6 @@ Private Function GestisciOptEritema() As String
 End Function
 
 Private Sub Form_Activate()
-    If Not RidisponiForms(Me) Then Exit Sub
-    
     If PazienteKey = 0 Then
         cmdTrova_Click
         If tTrova.keyReturn = 0 Then
@@ -831,6 +1415,7 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Pulisci() ' da finire
+    'Eritema
     optNoEritema.Value = False
     optSiEritema.Value = False
     chkEritemaLieve.Value = Unchecked
@@ -839,10 +1424,25 @@ Private Sub Pulisci() ' da finire
     chkEritemaLieve.Enabled = False
     chkEritemaMedio.Enabled = False
     chkEritemaGrave.Enabled = False
+    
+    'Rilevazioni
+    txtAspirazioneIndicatore.Text = ""
+    txtAspirazioneParametri.Text = ""
+    txtAspirazioneTollAccettate.Text = ""
+    txtRientroIndicatore.Text = ""
+    txtRientroParametri.Text = ""
+    txtRientroTollAccettate.Text = ""
+    
+    'Portate e Ricircolo
+    txtPortataIndicatori.Text = ""
+    txtPortataParametri.Text = ""
+    txtPortataTollAccettate.Text = ""
+    txtRicircoloIndicatori.Text = ""
+    txtRicircoloParametri.Text = ""
+    txtRicircoloTollAccettate.Text = ""
 End Sub
 
 Private Sub cmdTrova_Click()
-    ' pulisce per evitare problemi
     Call Pulisci
     tTrova.Tipo = tpPAZIENTE
     tTrova.condizione = ""
@@ -898,6 +1498,10 @@ Private Sub CaricaValori()
         Call CaricaSiNoEritema
         Call CaricaValoreEritema
         'da inserire qui
+        
+        
+        Call CaricaRilevazionePressione
+        Call CaricaPortataRicircolo
         modifica = True
     Else
         'Se non trova il paziente associato vuol dire che è in fase di inserimento
@@ -906,6 +1510,24 @@ Private Sub CaricaValori()
     
     Set rsDataset = Nothing
     
+End Sub
+
+Private Sub CaricaPortataRicircolo()
+    txtPortataIndicatori.Text = rsDataset("POR_INDICATORI") & ""
+    txtPortataParametri.Text = rsDataset("POR_PARAMETRI") & ""
+    txtPortataTollAccettate.Text = rsDataset("P0R_TOLL_ACCET") & ""
+    txtRicircoloIndicatori.Text = rsDataset("RIC_INDICATORI") & ""
+    txtRicircoloParametri.Text = rsDataset("RIC_PARAMETRI") & ""
+    txtRicircoloTollAccettate.Text = rsDataset("RIC_TOLL_ACCET") & ""
+End Sub
+
+Private Sub CaricaRilevazionePressione()
+    txtAspirazioneIndicatore.Text = rsDataset("ASP_INDICATORI") & ""
+    txtAspirazioneParametri.Text = rsDataset("ASP_PARAMETRI") & ""
+    txtAspirazioneTollAccettate.Text = rsDataset("ASP_TOLL_ACCET") & ""
+    txtRientroIndicatore.Text = rsDataset("RIE_INDICATORI") & ""
+    txtRientroParametri.Text = rsDataset("RIE_PARAMETRI") & ""
+    txtRientroTollAccettate.Text = rsDataset("RIE_TOLL_ACCET") & ""
 End Sub
 
 Private Sub CaricaValoreEritema()
@@ -944,4 +1566,99 @@ Private Sub optSiEritema_GotFocus()
     chkEritemaGrave.Enabled = True
 End Sub
 
+Private Sub txtAspirazioneIndicatore_GotFocus()
+    txtAspirazioneIndicatore.BackColor = colArancione
+End Sub
+
+Private Sub txtAspirazioneIndicatore_LostFocus()
+    txtAspirazioneIndicatore.BackColor = vbWhite
+End Sub
+
+Private Sub txtAspirazioneParametri_GotFocus()
+    txtAspirazioneParametri.BackColor = colArancione
+End Sub
+
+Private Sub txtAspirazioneParametri_LostFocus()
+    txtAspirazioneParametri.BackColor = vbWhite
+End Sub
+
+Private Sub txtAspirazioneTollAccettate_GotFocus()
+    txtAspirazioneTollAccettate.BackColor = colArancione
+End Sub
+
+Private Sub txtAspirazioneTollAccettate_LostFocus()
+    txtAspirazioneTollAccettate.BackColor = vbWhite
+End Sub
+
+Private Sub txtPortataIndicatori_GotFocus()
+    txtPortataIndicatori.BackColor = colArancione
+End Sub
+
+Private Sub txtPortataIndicatori_LostFocus()
+    txtPortataIndicatori.BackColor = vbWhite
+End Sub
+
+Private Sub txtPortataParametri_GotFocus()
+    txtPortataParametri.BackColor = colArancione
+End Sub
+
+Private Sub txtPortataParametri_LostFocus()
+    txtPortataParametri.BackColor = vbWhite
+End Sub
+
+Private Sub txtPortataTollAccettate_GotFocus()
+    txtPortataTollAccettate.BackColor = colArancione
+End Sub
+
+Private Sub txtPortataTollAccettate_LostFocus()
+     txtPortataTollAccettate.BackColor = vbWhite
+End Sub
+
+Private Sub txtRicircoloIndicatori_GotFocus()
+    txtRicircoloIndicatori.BackColor = colArancione
+End Sub
+
+Private Sub txtRicircoloIndicatori_LostFocus()
+    txtRicircoloIndicatori.BackColor = vbWhite
+End Sub
+
+Private Sub txtRicircoloParametri_GotFocus()
+    txtRicircoloParametri.BackColor = colArancione
+End Sub
+
+Private Sub txtRicircoloParametri_LostFocus()
+    txtRicircoloParametri.BackColor = vbWhite
+End Sub
+
+Private Sub txtRicircoloTollAccettate_GotFocus()
+    txtRicircoloTollAccettate.BackColor = colArancione
+End Sub
+
+Private Sub txtRicircoloTollAccettate_LostFocus()
+    txtRicircoloTollAccettate.BackColor = vbWhite
+End Sub
+
+Private Sub txtRientroIndicatore_GotFocus()
+    txtRientroIndicatore.BackColor = colArancione
+End Sub
+
+Private Sub txtRientroIndicatore_LostFocus()
+    txtRientroIndicatore.BackColor = vbWhite
+End Sub
+
+Private Sub txtRientroParametri_GotFocus()
+    txtRientroParametri.BackColor = colArancione
+End Sub
+
+Private Sub txtRientroParametri_LostFocus()
+    txtRientroParametri.BackColor = vbWhite
+End Sub
+
+Private Sub txtRientroTollAccettate_GotFocus()
+    txtRientroTollAccettate.BackColor = colArancione
+End Sub
+
+Private Sub txtRientroTollAccettate_LostFocus()
+    txtRientroTollAccettate.BackColor = vbWhite
+End Sub
 

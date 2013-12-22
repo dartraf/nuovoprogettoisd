@@ -344,7 +344,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "20/12/2013"
+            TextSave        =   "21/12/2013"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -963,8 +963,8 @@ gestione:
 End Sub
 
 Private Sub mnuabout_Click()
-  frmSchedeSorveglianzaFAV.Show
-  ' frmInfo.Show 1
+  frmSchedeSorveglianzaFAV.Show 1
+ '  frmInfo.Show 1
 End Sub
 
 Private Sub mnuCaPAnnuale_Click()

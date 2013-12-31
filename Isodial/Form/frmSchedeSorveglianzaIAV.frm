@@ -2,35 +2,309 @@ VERSION 5.00
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmSchedeSorveglianzaFAV 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Schede Sorveglianza FAV"
-   ClientHeight    =   7905
+   Caption         =   "Scheda Sorveglianza FAV"
+   ClientHeight    =   7875
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   13080
+   ClientWidth     =   11490
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7905
-   ScaleWidth      =   13080
+   ScaleHeight     =   7875
+   ScaleWidth      =   11490
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
-   Begin VB.Frame fraPortataRicircolo 
-      Caption         =   "Valutazione Portate e Ricircolo"
+   Begin VB.Frame fraRilevazione 
+      Caption         =   "Rilevazione Pressione"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
          Charset         =   0
          Weight          =   700
-         Underline       =   0   'False
+         Underline       =   -1  'True
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FF0000&
-      Height          =   1695
+      Height          =   1720
       Left            =   120
-      TabIndex        =   47
-      Top             =   4680
-      Width           =   12855
+      TabIndex        =   72
+      Top             =   3400
+      Width           =   10935
+      Begin VB.TextBox txtAspirazioneIndicatore 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1800
+         MaxLength       =   30
+         TabIndex        =   78
+         Top             =   600
+         Width           =   3375
+      End
+      Begin VB.TextBox txtRientroIndicatore 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   7320
+         MaxLength       =   30
+         TabIndex        =   77
+         Top             =   600
+         Width           =   3375
+      End
+      Begin VB.TextBox txtAspirazioneParametri 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1800
+         MaxLength       =   30
+         TabIndex        =   76
+         Top             =   960
+         Width           =   3375
+      End
+      Begin VB.TextBox txtRientroParametri 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   7320
+         MaxLength       =   30
+         TabIndex        =   75
+         Top             =   960
+         Width           =   3375
+      End
+      Begin VB.TextBox txtAspirazioneTollAccettate 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1800
+         MaxLength       =   30
+         TabIndex        =   74
+         Top             =   1320
+         Width           =   3375
+      End
+      Begin VB.TextBox txtRientroTollAccettate 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   7320
+         MaxLength       =   30
+         TabIndex        =   73
+         Top             =   1320
+         Width           =   3375
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "In Aspirazione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   240
+         Index           =   7
+         Left            =   2760
+         TabIndex        =   86
+         Top             =   240
+         Width           =   1590
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "In Rientro"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   240
+         Index           =   8
+         Left            =   8400
+         TabIndex        =   85
+         Top             =   240
+         Width           =   1110
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Indicatori"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   9
+         Left            =   600
+         TabIndex        =   84
+         Top             =   600
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Indicatori"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   10
+         Left            =   6120
+         TabIndex        =   83
+         Top             =   600
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Parametri"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   12
+         Left            =   600
+         TabIndex        =   82
+         Top             =   960
+         Width           =   1020
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Parametri"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   13
+         Left            =   6120
+         TabIndex        =   81
+         Top             =   960
+         Width           =   1020
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Toll. Accettate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   14
+         Left            =   120
+         TabIndex        =   80
+         Top             =   1320
+         Width           =   1515
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Toll. Accettate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   15
+         Left            =   5640
+         TabIndex        =   79
+         Top             =   1320
+         Width           =   1515
+      End
+   End
+   Begin VB.Frame fraPortataRicircolo 
+      Caption         =   "Valutazione Portata e Ricircolo"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   1720
+      Left            =   120
+      TabIndex        =   12
+      Top             =   5160
+      Width           =   10935
       Begin VB.TextBox txtPortataIndicatori 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -42,10 +316,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   3000
+         Left            =   1800
          MaxLength       =   30
-         TabIndex        =   53
-         Top             =   360
+         TabIndex        =   18
+         Top             =   600
          Width           =   3375
       End
       Begin VB.TextBox txtRicircoloIndicatori 
@@ -59,10 +333,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   9360
+         Left            =   7320
          MaxLength       =   30
-         TabIndex        =   52
-         Top             =   360
+         TabIndex        =   17
+         Top             =   600
          Width           =   3375
       End
       Begin VB.TextBox txtPortataParametri 
@@ -76,10 +350,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   3000
+         Left            =   1800
          MaxLength       =   30
-         TabIndex        =   51
-         Top             =   720
+         TabIndex        =   16
+         Top             =   960
          Width           =   3375
       End
       Begin VB.TextBox txtRicircoloParametri 
@@ -93,10 +367,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   9360
+         Left            =   7320
          MaxLength       =   30
-         TabIndex        =   50
-         Top             =   720
+         TabIndex        =   15
+         Top             =   960
          Width           =   3375
       End
       Begin VB.TextBox txtPortataTollAccettate 
@@ -110,10 +384,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   3000
+         Left            =   1800
          MaxLength       =   30
-         TabIndex        =   49
-         Top             =   1080
+         TabIndex        =   14
+         Top             =   1320
          Width           =   3375
       End
       Begin VB.TextBox txtRicircoloTollAccettate 
@@ -127,10 +401,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   9360
+         Left            =   7320
          MaxLength       =   30
-         TabIndex        =   48
-         Top             =   1080
+         TabIndex        =   13
+         Top             =   1320
          Width           =   3375
       End
       Begin VB.Label Label1 
@@ -147,48 +421,50 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   17
-         Left            =   1320
-         TabIndex        =   55
-         Top             =   1080
+         Left            =   120
+         TabIndex        =   20
+         Top             =   1320
          Width           =   1515
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Portata:"
+         Caption         =   "Portata"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00FF0000&
          Height          =   240
          Index           =   23
-         Left            =   120
-         TabIndex        =   61
-         Top             =   360
-         Width           =   825
+         Left            =   3000
+         TabIndex        =   26
+         Top             =   240
+         Width           =   870
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Ricircolo:"
+         Caption         =   "Ricircolo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00FF0000&
          Height          =   240
          Index           =   22
-         Left            =   6960
-         TabIndex        =   60
-         Top             =   360
-         Width           =   1005
+         Left            =   8520
+         TabIndex        =   25
+         Top             =   240
+         Width           =   1050
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -204,9 +480,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   21
-         Left            =   1800
-         TabIndex        =   59
-         Top             =   360
+         Left            =   600
+         TabIndex        =   24
+         Top             =   600
          Width           =   975
       End
       Begin VB.Label Label1 
@@ -223,9 +499,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   20
-         Left            =   8160
-         TabIndex        =   58
-         Top             =   360
+         Left            =   6120
+         TabIndex        =   23
+         Top             =   600
          Width           =   975
       End
       Begin VB.Label Label1 
@@ -242,9 +518,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   19
-         Left            =   1800
-         TabIndex        =   57
-         Top             =   720
+         Left            =   600
+         TabIndex        =   22
+         Top             =   960
          Width           =   1020
       End
       Begin VB.Label Label1 
@@ -261,9 +537,9 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   18
-         Left            =   8160
-         TabIndex        =   56
-         Top             =   720
+         Left            =   6120
+         TabIndex        =   21
+         Top             =   960
          Width           =   1020
       End
       Begin VB.Label Label1 
@@ -280,319 +556,58 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   16
-         Left            =   7680
-         TabIndex        =   54
-         Top             =   1080
+         Left            =   5640
+         TabIndex        =   19
+         Top             =   1320
          Width           =   1515
-      End
-   End
-   Begin VB.Frame fraRilevazione 
-      Caption         =   "Rilevazione Pressione"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   1695
-      Left            =   120
-      TabIndex        =   32
-      Top             =   3120
-      Width           =   12855
-      Begin VB.TextBox txtRientroTollAccettate 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   9360
-         MaxLength       =   30
-         TabIndex        =   46
-         Top             =   1080
-         Width           =   3375
-      End
-      Begin VB.TextBox txtAspirazioneTollAccettate 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3000
-         MaxLength       =   30
-         TabIndex        =   45
-         Top             =   1080
-         Width           =   3375
-      End
-      Begin VB.TextBox txtRientroParametri 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   9360
-         MaxLength       =   30
-         TabIndex        =   42
-         Top             =   720
-         Width           =   3375
-      End
-      Begin VB.TextBox txtAspirazioneParametri 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3000
-         MaxLength       =   30
-         TabIndex        =   41
-         Top             =   720
-         Width           =   3375
-      End
-      Begin VB.TextBox txtRientroIndicatore 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   9360
-         MaxLength       =   30
-         TabIndex        =   38
-         Top             =   360
-         Width           =   3375
-      End
-      Begin VB.TextBox txtAspirazioneIndicatore 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3000
-         MaxLength       =   30
-         TabIndex        =   37
-         Top             =   360
-         Width           =   3375
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Toll. Accettate"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   15
-         Left            =   7680
-         TabIndex        =   44
-         Top             =   1080
-         Width           =   1515
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Toll. Accettate"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   14
-         Left            =   1320
-         TabIndex        =   43
-         Top             =   1080
-         Width           =   1515
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Parametri"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   13
-         Left            =   8160
-         TabIndex        =   40
-         Top             =   720
-         Width           =   1020
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Parametri"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   12
-         Left            =   1800
-         TabIndex        =   39
-         Top             =   720
-         Width           =   1020
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Indicatori"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   10
-         Left            =   8160
-         TabIndex        =   36
-         Top             =   360
-         Width           =   975
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Indicatori"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   9
-         Left            =   1800
-         TabIndex        =   35
-         Top             =   360
-         Width           =   975
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "In Rientro:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   8
-         Left            =   6960
-         TabIndex        =   34
-         Top             =   360
-         Width           =   1065
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "In Aspirazione:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   7
-         Left            =   120
-         TabIndex        =   33
-         Top             =   360
-         Width           =   1545
       End
    End
    Begin VB.Frame Frame8 
       Height          =   2415
       Left            =   120
-      TabIndex        =   77
-      Top             =   840
+      TabIndex        =   42
+      Top             =   955
       Width           =   3735
-      Begin VB.Frame Frame9 
-         Height          =   855
-         Left            =   120
-         TabIndex        =   81
-         Top             =   1320
-         Width           =   735
-         Begin VB.OptionButton optNoAccessoVascolare 
-            Caption         =   "No"
-            Height          =   255
-            Left            =   0
-            TabIndex        =   83
-            Top             =   480
-            Width           =   615
-         End
-         Begin VB.OptionButton optSiAccessoVascolare 
-            Caption         =   "Si"
-            Height          =   255
-            Left            =   0
-            TabIndex        =   82
-            Top             =   120
-            Width           =   495
-         End
+      Begin VB.OptionButton optNoAccessoVascolare 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2640
+         TabIndex        =   69
+         Top             =   1080
+         Width           =   615
+      End
+      Begin VB.OptionButton optSiAccessoVascolare 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   68
+         Top             =   1080
+         Width           =   495
       End
       Begin DataTimeBox.uDataTimeBox oDataNuovoAccessoVascolare 
          Height          =   375
          Index           =   2
-         Left            =   840
-         TabIndex        =   78
-         Top             =   1380
+         Left            =   1560
+         TabIndex        =   43
+         Top             =   1605
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -600,17 +615,54 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
       End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "COMPILATORE"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   195
+         Index           =   24
+         Left            =   120
+         TabIndex        =   71
+         Top             =   480
+         Width           =   1425
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Data Nuovo Accesso Vasc."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   120
+         TabIndex        =   70
+         Top             =   1560
+         Width           =   1335
+      End
       Begin VB.Label lblNomeCognomeUtente 
          Height          =   255
          Index           =   0
-         Left            =   840
-         TabIndex        =   85
+         Left            =   1560
+         TabIndex        =   47
          Top             =   480
-         Width           =   2685
+         Width           =   2085
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Si è reso necessario eseguire un nuovo accesso vascolare?"
+         Caption         =   "E' stato necessario eseguire un nuovo accesso vascolare?"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -620,10 +672,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   480
+         Height          =   585
          Index           =   28
          Left            =   120
-         TabIndex        =   84
+         TabIndex        =   46
          Top             =   840
          Width           =   3465
          WordWrap        =   -1  'True
@@ -631,14 +683,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Begin VB.Label lblTipUtente 
          Height          =   255
          Index           =   27
-         Left            =   840
-         TabIndex        =   80
+         Left            =   1560
+         TabIndex        =   45
          Top             =   240
-         Width           =   2685
+         Width           =   2085
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Utente:"
+         Caption         =   "UTENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -651,9 +703,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   195
          Index           =   26
          Left            =   120
-         TabIndex        =   79
-         Top             =   360
-         Width           =   645
+         TabIndex        =   44
+         Top             =   240
+         Width           =   1425
+         WordWrap        =   -1  'True
       End
    End
    Begin VB.Frame frmSegni 
@@ -671,14 +724,68 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Height          =   2415
       Left            =   3840
       TabIndex        =   11
-      Top             =   840
-      Width           =   9135
+      Top             =   955
+      Width           =   7215
       Begin VB.Frame Frame7 
          Height          =   495
-         Left            =   2280
-         TabIndex        =   66
+         Left            =   120
+         TabIndex        =   31
          Top             =   240
-         Width           =   2175
+         Width           =   6975
+         Begin VB.CheckBox chkEritemaLieve 
+            Caption         =   "Lieve"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   3720
+            TabIndex        =   50
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkEritemaGrave 
+            Caption         =   "Grave"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   5880
+            TabIndex        =   49
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkEritemaMedio 
+            Caption         =   "Medio"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   4770
+            TabIndex        =   48
+            Top             =   120
+            Width           =   1095
+         End
          Begin VB.OptionButton optSiEritema 
             Caption         =   "Si"
             BeginProperty Font 
@@ -691,10 +798,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   1320
-            TabIndex        =   68
+            Left            =   2880
+            TabIndex        =   33
             Top             =   120
-            Width           =   735
+            Width           =   855
          End
          Begin VB.OptionButton optNoEritema 
             Caption         =   "No"
@@ -708,18 +815,91 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   120
-            TabIndex        =   67
+            Left            =   2040
+            TabIndex        =   32
             Top             =   120
             Width           =   855
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Eritema"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   11
+            Left            =   120
+            TabIndex        =   63
+            Top             =   120
+            Width           =   810
          End
       End
       Begin VB.Frame Frame6 
          Height          =   495
-         Left            =   2280
-         TabIndex        =   65
-         Top             =   600
-         Width           =   2175
+         Left            =   120
+         TabIndex        =   30
+         Top             =   615
+         Width           =   6975
+         Begin VB.CheckBox chkDoloreLieve 
+            Caption         =   "Lieve"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   3720
+            TabIndex        =   53
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkDoloreMedio 
+            Caption         =   "Medio"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   4770
+            TabIndex        =   52
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkDoloreGrave 
+            Caption         =   "Grave"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   5880
+            TabIndex        =   51
+            Top             =   120
+            Width           =   975
+         End
          Begin VB.OptionButton optSiDolore 
             Caption         =   "Si"
             BeginProperty Font 
@@ -732,8 +912,8 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   1320
-            TabIndex        =   70
+            Left            =   2880
+            TabIndex        =   35
             Top             =   120
             Width           =   735
          End
@@ -749,20 +929,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   120
-            TabIndex        =   69
+            Left            =   2040
+            TabIndex        =   34
             Top             =   120
             Width           =   855
          End
-      End
-      Begin VB.Frame Frame5 
-         Height          =   495
-         Left            =   2280
-         TabIndex        =   64
-         Top             =   1680
-         Width           =   2175
-         Begin VB.OptionButton optSiPresenzaFremiti 
-            Caption         =   "Si"
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Dolore"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   9.75
@@ -772,77 +946,74 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Height          =   255
-            Left            =   1320
-            TabIndex        =   76
-            Top             =   120
-            Width           =   735
-         End
-         Begin VB.OptionButton optNoPresenzaFremiti 
-            Caption         =   "No"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
+            Height          =   240
+            Index           =   2
             Left            =   120
-            TabIndex        =   75
+            TabIndex        =   64
             Top             =   120
-            Width           =   855
-         End
-      End
-      Begin VB.Frame Frame3 
-         Height          =   495
-         Left            =   2280
-         TabIndex        =   63
-         Top             =   1320
-         Width           =   2175
-         Begin VB.OptionButton optSiInfiltrazione 
-            Caption         =   "Si"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   1320
-            TabIndex        =   74
-            Top             =   120
-            Width           =   735
-         End
-         Begin VB.OptionButton optNoInfiltrazione 
-            Caption         =   "No"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   120
-            TabIndex        =   73
-            Top             =   120
-            Width           =   855
+            Width           =   720
          End
       End
       Begin VB.Frame Frame2 
-         Height          =   495
-         Left            =   2280
-         TabIndex        =   62
-         Top             =   960
-         Width           =   2175
+         Height          =   500
+         Left            =   120
+         TabIndex        =   27
+         Top             =   1005
+         Width           =   6975
+         Begin VB.CheckBox chkGonfioreLieve 
+            Caption         =   "Lieve"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   3720
+            TabIndex        =   56
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkGonfioreMedio 
+            Caption         =   "Medio"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   4770
+            TabIndex        =   55
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkGonfioreGrave 
+            Caption         =   "Grave"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   5880
+            TabIndex        =   54
+            Top             =   120
+            Width           =   975
+         End
          Begin VB.OptionButton optSiGonfiore 
             Caption         =   "Si"
             BeginProperty Font 
@@ -855,8 +1026,8 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   1320
-            TabIndex        =   72
+            Left            =   2880
+            TabIndex        =   37
             Top             =   120
             Width           =   735
          End
@@ -872,388 +1043,270 @@ Begin VB.Form frmSchedeSorveglianzaFAV
                Strikethrough   =   0   'False
             EndProperty
             Height          =   255
-            Left            =   120
-            TabIndex        =   71
+            Left            =   2040
+            TabIndex        =   36
             Top             =   120
             Width           =   855
          End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Gonfiore"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   4
+            Left            =   120
+            TabIndex        =   65
+            Top             =   120
+            Width           =   900
+         End
       End
-      Begin VB.CheckBox chkEritemaMedio 
-         Caption         =   "Medio"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   31
-         Top             =   360
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkPresenzaFremitiGrave 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7680
-         TabIndex        =   30
-         Top             =   1800
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkInfiltrazioneGrave 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7680
-         TabIndex        =   29
-         Top             =   1440
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkGonfioreGrave 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7680
+      Begin VB.Frame Frame3 
+         Height          =   495
+         Left            =   120
          TabIndex        =   28
-         Top             =   1080
-         Width           =   1215
+         Top             =   1395
+         Width           =   6975
+         Begin VB.CheckBox chkInfiltrazioneLieve 
+            Caption         =   "Lieve"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   3720
+            TabIndex        =   59
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkInfiltrazioneMedio 
+            Caption         =   "Medio"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   4770
+            TabIndex        =   58
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkInfiltrazioneGrave 
+            Caption         =   "Grave"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   5880
+            TabIndex        =   57
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.OptionButton optSiInfiltrazione 
+            Caption         =   "Si"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   2880
+            TabIndex        =   39
+            Top             =   120
+            Width           =   735
+         End
+         Begin VB.OptionButton optNoInfiltrazione 
+            Caption         =   "No"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   2040
+            TabIndex        =   38
+            Top             =   120
+            Width           =   855
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Infiltrazione"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   5
+            Left            =   120
+            TabIndex        =   66
+            Top             =   120
+            Width           =   1200
+         End
       End
-      Begin VB.CheckBox chkDoloreGrave 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7680
-         TabIndex        =   27
-         Top             =   720
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkEritemaGrave 
-         Caption         =   "Grave"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7680
-         TabIndex        =   26
-         Top             =   360
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkPresenzaFremitiMedio 
-         Caption         =   "Medio"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   25
-         Top             =   1800
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkInfiltrazioneMedio 
-         Caption         =   "Medio"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   24
-         Top             =   1440
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkGonfioreMedio 
-         Caption         =   "Medio"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   23
-         Top             =   1080
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkDoloreMedio 
-         Caption         =   "Medio"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   6120
-         TabIndex        =   22
-         Top             =   720
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkPresenzaFremitiLieve 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   21
-         Top             =   1800
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkInfiltrazioneLieve 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   20
-         Top             =   1440
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkGonfioreLieve 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   19
-         Top             =   1080
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkDoloreLieve 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   18
-         Top             =   720
-         Width           =   1215
-      End
-      Begin VB.CheckBox chkEritemaLieve 
-         Caption         =   "Lieve"
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4680
-         TabIndex        =   17
-         Top             =   360
-         Width           =   1215
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Eritema"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   11
+      Begin VB.Frame Frame5 
+         Height          =   495
          Left            =   120
-         TabIndex        =   16
-         Top             =   360
-         Width           =   810
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Dolore"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   2
-         Left            =   120
-         TabIndex        =   15
-         Top             =   720
-         Width           =   720
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Gonfiore"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   4
-         Left            =   120
-         TabIndex        =   14
-         Top             =   1080
-         Width           =   900
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Infiltrazione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   5
-         Left            =   120
-         TabIndex        =   13
-         Top             =   1440
-         Width           =   1200
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Presenza fremiti"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   6
-         Left            =   120
-         TabIndex        =   12
-         Top             =   1800
-         Width           =   1680
+         TabIndex        =   29
+         Top             =   1785
+         Width           =   6975
+         Begin VB.CheckBox chkPresenzaFremitiLieve 
+            Caption         =   "Lieve"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   3720
+            TabIndex        =   62
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkPresenzaFremitiMedio 
+            Caption         =   "Medio"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   4770
+            TabIndex        =   61
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.CheckBox chkPresenzaFremitiGrave 
+            Caption         =   "Grave"
+            Enabled         =   0   'False
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   5880
+            TabIndex        =   60
+            Top             =   120
+            Width           =   975
+         End
+         Begin VB.OptionButton optSiPresenzaFremiti 
+            Caption         =   "Si"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   2880
+            TabIndex        =   41
+            Top             =   120
+            Width           =   735
+         End
+         Begin VB.OptionButton optNoPresenzaFremiti 
+            Caption         =   "No"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   2040
+            TabIndex        =   40
+            Top             =   120
+            Width           =   855
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            Caption         =   "Presenza Fremiti"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   6
+            Left            =   120
+            TabIndex        =   67
+            Top             =   120
+            Width           =   1875
+         End
       End
    End
    Begin VB.Frame Frame1 
-      Height          =   975
+      Height          =   970
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   12855
+      Width           =   10935
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
-         Left            =   360
+         Left            =   120
          Picture         =   "frmSchedeSorveglianzaIAV.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   1
@@ -1274,7 +1327,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   3
-         Left            =   11280
+         Left            =   9480
          TabIndex        =   7
          Top             =   360
          Width           =   465
@@ -1293,7 +1346,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   1
-         Left            =   6480
+         Left            =   5400
          TabIndex        =   6
          Top             =   360
          Width           =   630
@@ -1312,7 +1365,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   1080
+         Left            =   720
          TabIndex        =   5
          Top             =   360
          Width           =   1005
@@ -1330,7 +1383,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   11880
+         Left            =   10080
          TabIndex        =   4
          Top             =   360
          Width           =   615
@@ -1348,7 +1401,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7200
+         Left            =   6120
          TabIndex        =   3
          Top             =   360
          Width           =   3135
@@ -1366,7 +1419,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2280
+         Left            =   1920
          TabIndex        =   2
          Top             =   360
          Width           =   3255
@@ -1374,16 +1427,16 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    End
    Begin VB.Frame Frame4 
       Height          =   855
-      Left            =   360
+      Left            =   120
       TabIndex        =   8
-      Top             =   6360
-      Width           =   7815
+      Top             =   6785
+      Width           =   10935
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1391,17 +1444,17 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   5040
+         Left            =   7920
          TabIndex        =   10
          Top             =   240
-         Width           =   1215
+         Width           =   1335
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1409,10 +1462,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   6360
+         Left            =   9360
          TabIndex        =   9
          Top             =   240
-         Width           =   1215
+         Width           =   1335
       End
    End
 End

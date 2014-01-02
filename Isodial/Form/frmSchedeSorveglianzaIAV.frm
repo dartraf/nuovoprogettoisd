@@ -3,15 +3,15 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmSchedeSorveglianzaFAV 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Sorveglianza FAV"
-   ClientHeight    =   7875
+   ClientHeight    =   7890
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   11490
+   ClientWidth     =   11130
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7875
-   ScaleWidth      =   11490
+   ScaleHeight     =   7890
+   ScaleWidth      =   11130
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraRilevazione 
@@ -26,7 +26,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FF0000&
-      Height          =   1720
+      Height          =   1845
       Left            =   120
       TabIndex        =   72
       Top             =   3400
@@ -300,10 +300,10 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FF0000&
-      Height          =   1720
+      Height          =   1845
       Left            =   120
       TabIndex        =   12
-      Top             =   5160
+      Top             =   5280
       Width           =   10935
       Begin VB.TextBox txtPortataIndicatori 
          BeginProperty Font 
@@ -727,6 +727,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Top             =   955
       Width           =   7215
       Begin VB.Frame Frame7 
+         BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
          TabIndex        =   31
@@ -841,6 +842,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          End
       End
       Begin VB.Frame Frame6 
+         BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
          TabIndex        =   30
@@ -955,6 +957,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          End
       End
       Begin VB.Frame Frame2 
+         BorderStyle     =   0  'None
          Height          =   500
          Left            =   120
          TabIndex        =   27
@@ -1069,6 +1072,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          End
       End
       Begin VB.Frame Frame3 
+         BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
          TabIndex        =   28
@@ -1183,6 +1187,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          End
       End
       Begin VB.Frame Frame5 
+         BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
          TabIndex        =   29
@@ -1429,7 +1434,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Height          =   855
       Left            =   120
       TabIndex        =   8
-      Top             =   6785
+      Top             =   6960
       Width           =   10935
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -1586,7 +1591,8 @@ Private Sub cmdMemorizza_Click()
             "ASP_INDICATORI", "ASP_PARAMETRI", "ASP_TOLL_ACCET", _
             "RIE_INDICATORI", "RIE_PARAMETRI", "RIE_TOLL_ACCET", _
             "POR_INDICATORI", "POR_PARAMETRI", "P0R_TOLL_ACCET", _
-            "RIC_INDICATORI", "RIC_PARAMETRI", "RIC_TOLL_ACCET")
+            "RIC_INDICATORI", "RIC_PARAMETRI", "RIC_TOLL_ACCET", _
+            "ACC_VAS_SI_NO", "ACC_VAS_DATA")
 
     v_Val = Array(keyId, PazienteKey, GestisciSiNoEritema, GestisciOptEritema, _
             GestisciSiNoDolore, GestisciOptDolore, _
@@ -1596,7 +1602,8 @@ Private Sub cmdMemorizza_Click()
             txtAspirazioneIndicatore, txtAspirazioneParametri, txtAspirazioneTollAccettate, _
             txtRientroIndicatore, txtRientroParametri, txtRientroTollAccettate, _
             txtPortataIndicatori, txtPortataParametri, txtPortataTollAccettate, _
-            txtRicircoloIndicatori, txtRicircoloParametri, txtRicircoloTollAccettate)
+            txtRicircoloIndicatori, txtRicircoloParametri, txtRicircoloTollAccettate, _
+            GestisciSiNoAccessoVascolare, IIf(oDataNuovoAccessoVascolare(2).data = "", Null, oDataNuovoAccessoVascolare(2).data))
         
     Set rsDataset = New Recordset
         If modifica = False Then
@@ -1614,10 +1621,18 @@ Private Sub cmdMemorizza_Click()
     
 End Sub
 
+Private Function GestisciSiNoAccessoVascolare() As String
+    If optNoAccessoVascolare.Value = True Then
+        GestisciSiNoAccessoVascolare = "NO"
+    ElseIf optSiAccessoVascolare.Value = True Then
+        GestisciSiNoAccessoVascolare = "SI"
+    End If
+End Function
+
 Private Function GestisciSiNoPresenzaFremiti() As String
     If optNoPresenzaFremiti.Value = True Then
         GestisciSiNoPresenzaFremiti = "NO"
-    Else
+    ElseIf optSiPresenzaFremiti.Value = True Then
         GestisciSiNoPresenzaFremiti = "SI"
     End If
 End Function
@@ -1635,7 +1650,7 @@ End Function
 Private Function GestisciSiNoInfiltrazione() As String
     If optNoInfiltrazione.Value = True Then
         GestisciSiNoInfiltrazione = "NO"
-    Else
+    ElseIf optSiInfiltrazione.Value = True Then
         GestisciSiNoInfiltrazione = "SI"
     End If
 End Function
@@ -1653,7 +1668,7 @@ End Function
 Private Function GestisciSiNoGonfiore() As String
     If optNoGonfiore.Value = True Then
         GestisciSiNoGonfiore = "NO"
-    Else
+    ElseIf optSiGonfiore.Value = True Then
         GestisciSiNoGonfiore = "SI"
     End If
 End Function
@@ -1671,7 +1686,7 @@ End Function
 Private Function GestisciSiNoDolore() As String
     If optNoDolore.Value = True Then
         GestisciSiNoDolore = "NO"
-    Else
+    ElseIf optSiDolore.Value = True Then
         GestisciSiNoDolore = "SI"
     End If
 End Function
@@ -1689,7 +1704,7 @@ End Function
 Private Function GestisciSiNoEritema() As String
     If optNoEritema.Value = True Then
         GestisciSiNoEritema = "NO"
-    Else
+    ElseIf optSiEritema.Value = True Then
         GestisciSiNoEritema = "SI"
     End If
 End Function
@@ -1779,6 +1794,11 @@ Private Sub Pulisci()
     txtRicircoloIndicatori.Text = ""
     txtRicircoloParametri.Text = ""
     txtRicircoloTollAccettate.Text = ""
+    
+    'Accesso Vascolare
+    optSiAccessoVascolare.Value = False
+    optNoAccessoVascolare.Value = False
+    oDataNuovoAccessoVascolare(2).Pulisci
 End Sub
 
 Private Sub cmdTrova_Click()
@@ -1849,6 +1869,9 @@ Private Sub CaricaValori()
         
         Call CaricaRilevazionePressione
         Call CaricaPortataRicircolo
+        
+        Call CaricaAccessoVascolare
+        
         modifica = True
     Else
         'Se non trova il paziente associato vuol dire che è in fase di inserimento
@@ -1857,6 +1880,15 @@ Private Sub CaricaValori()
     
     Set rsDataset = Nothing
     
+End Sub
+
+Private Sub CaricaAccessoVascolare()
+    If rsDataset("ACC_VAS_SI_NO") = "NO" Then
+        optNoAccessoVascolare.Value = True
+    ElseIf rsDataset("ACC_VAS_SI_NO") = "SI" Then
+        optSiAccessoVascolare.Value = True
+        oDataNuovoAccessoVascolare(2).data = rsDataset("ACC_VAS_DATA") & ""
+    End If
 End Sub
 
 Private Sub CaricaPortataRicircolo()

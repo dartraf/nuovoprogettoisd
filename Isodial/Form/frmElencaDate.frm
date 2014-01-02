@@ -123,10 +123,12 @@ Private Sub Form_Load()
             nomeTabella = "ANAMNESI_ESAMI"
             Me.Top = (Screen.Height - Me.Height) / 2 - 500
             Me.Left = (Screen.Width - Me.Width) / 2
+        Case tpSCHEDA_SORV_FAV
+            nomeTabella = "SCHEDA_SORV_FAV"
     End Select
     flxGriglia.Rows = 1
     
-            If nomeTabella = "MON_TRAT_ACQUE" Then
+    If nomeTabella = "MON_TRAT_ACQUE" Then
         Set rsElenca = New Recordset
         rsElenca.Open "SELECT DISTINCT DATA, KEY FROM " & nomeTabella & " " & tElenca.condizione & " ORDER BY DATA DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         Do While Not rsElenca.EOF
@@ -160,34 +162,6 @@ Private Sub Form_Load()
     laData = ""
 End Sub
 
-'' Permette il funzionamento della rotellina del mouse nella flx
-'Public Sub MouseWheel(flx As MSFlexGrid, ByVal MouseKeys As Long, ByVal Rotation As Long, ByVal Xpos As Long, ByVal Ypos As Long)
-'    Dim NewValue As Long
-'    Dim Lstep As Single
-
-'    On Error Resume Next
-'    With flx
-'        Lstep = .Height / .RowHeight(0)
-'        Lstep = Int(Lstep)
-'        If Lstep < 10 Then
-'            Lstep = 10
-'        End If
-'        If Rotation > 0 Then
-'            NewValue = .TopRow - Int(Lstep / 3)
-'            If NewValue < 1 Then
-'                NewValue = 1
-'            End If
-'        Else
-'            NewValue = .TopRow + Int(Lstep / 3)
-'            If NewValue > .Rows - 1 Then
-'                NewValue = .Rows - 1
-'            End If
-'        End If
-'        .TopRow = NewValue
-'    End With
-'End Sub
-'----------------------------------------
-
 Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyEscape Then
         Unload Me
@@ -216,15 +190,6 @@ Private Sub flxGriglia_DblClick()
         Unload Me
     End If
 End Sub
-
-'Private Sub flxGriglia_GotFocus()
-    'Call WheelHook(Me, flxGriglia)
-'End Sub
-
-'Private Sub flxGriglia_LostFocus()
-    'Call WheelUnHook
-'End Sub
-'-------------------------------
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)
 On Error GoTo gestione

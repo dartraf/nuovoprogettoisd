@@ -582,7 +582,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Left            =   2640
          TabIndex        =   69
-         Top             =   1080
+         Top             =   1560
          Width           =   615
       End
       Begin VB.OptionButton optSiAccessoVascolare 
@@ -599,7 +599,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Left            =   2040
          TabIndex        =   68
-         Top             =   1080
+         Top             =   1560
          Width           =   495
       End
       Begin DataTimeBox.uDataTimeBox oDataNuovoAccessoVascolare 
@@ -607,13 +607,44 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Index           =   2
          Left            =   1560
          TabIndex        =   43
-         Top             =   1605
+         Top             =   1965
+         Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
+      End
+      Begin DataTimeBox.uDataTimeBox oDataScheda 
+         Height          =   375
+         Index           =   0
+         Left            =   1560
+         TabIndex        =   88
+         Top             =   240
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   -1  'True
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Data Scheda"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   120
+         TabIndex        =   87
+         Top             =   315
+         Width           =   1245
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -631,7 +662,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Index           =   24
          Left            =   120
          TabIndex        =   71
-         Top             =   480
+         Top             =   960
          Width           =   1425
          WordWrap        =   -1  'True
       End
@@ -646,10 +677,11 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
+         Height          =   375
          Left            =   120
          TabIndex        =   70
-         Top             =   1560
+         Top             =   1920
+         Visible         =   0   'False
          Width           =   1335
       End
       Begin VB.Label lblNomeCognomeUtente 
@@ -657,7 +689,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Index           =   0
          Left            =   1560
          TabIndex        =   47
-         Top             =   480
+         Top             =   960
          Width           =   2085
       End
       Begin VB.Label Label1 
@@ -672,11 +704,11 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   585
+         Height          =   555
          Index           =   28
          Left            =   120
          TabIndex        =   46
-         Top             =   840
+         Top             =   1320
          Width           =   3465
          WordWrap        =   -1  'True
       End
@@ -685,7 +717,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Index           =   27
          Left            =   1560
          TabIndex        =   45
-         Top             =   240
+         Top             =   720
          Width           =   2085
       End
       Begin VB.Label Label1 
@@ -704,7 +736,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Index           =   26
          Left            =   120
          TabIndex        =   44
-         Top             =   240
+         Top             =   720
          Width           =   1425
          WordWrap        =   -1  'True
       End
@@ -1578,12 +1610,17 @@ Private Sub cmdMemorizza_Click()
     Dim v_Val() As Variant
     Dim v_Nomi() As Variant
 
+    If oDataScheda(0).data = "" Then
+        MsgBox "Inserire la Data della Scheda", vbCritical, "ATTENZIONE!!!!"
+        Exit Sub
+    End If
     
     If Not modifica Then
         keyId = GetNumero("SCHEDA_SORV_FAV")
     End If
     
-    v_Nomi = Array("KEY", "KEY_PAZIENTE", "ERI_SI_NO", "ERI_VALORE", _
+    v_Nomi = Array("KEY", "KEY_PAZIENTE", "DATA", _
+            "ERI_SI_NO", "ERI_VALORE", _
             "DOL_SI_NO", "DOL_VALORE", _
             "GON_SI_NO", "GON_VALORE", _
             "INF_SI_NO", "INF_VALORE", _
@@ -1594,7 +1631,8 @@ Private Sub cmdMemorizza_Click()
             "RIC_INDICATORI", "RIC_PARAMETRI", "RIC_TOLL_ACCET", _
             "ACC_VAS_SI_NO", "ACC_VAS_DATA")
 
-    v_Val = Array(keyId, PazienteKey, GestisciSiNoEritema, GestisciOptEritema, _
+    v_Val = Array(keyId, PazienteKey, oDataScheda(0).data, _
+            GestisciSiNoEritema, GestisciOptEritema, _
             GestisciSiNoDolore, GestisciOptDolore, _
             GestisciSiNoGonfiore, GestisciOptGonfiore, _
             GestisciSiNoInfiltrazione, GestisciOptInfiltrazione, _
@@ -1729,6 +1767,7 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Pulisci()
+   
     'Eritema
     optNoEritema.Value = False
     optSiEritema.Value = False
@@ -1799,10 +1838,13 @@ Private Sub Pulisci()
     optSiAccessoVascolare.Value = False
     optNoAccessoVascolare.Value = False
     oDataNuovoAccessoVascolare(2).Pulisci
+    Label2.Visible = False
+    oDataNuovoAccessoVascolare(2).Visible = False
 End Sub
 
 Private Sub cmdTrova_Click()
     Call Pulisci
+    oDataScheda(0).Pulisci
     lblTipUtente(27).Caption = Choose(tAccesso.Tipo, "Medico", "Infermiere", "Contabile", "Amministratore")
     lblNomeCognomeUtente(0).Caption = tAccesso.cognome & " " & tAccesso.nome
     tTrova.Tipo = tpPAZIENTE
@@ -1843,17 +1885,20 @@ Private Sub CaricaPaziente()
         lblEta = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
         Set rsDataset = Nothing
        
-        ' cerca i riferimenti al paziente
-        Call CaricaValori
-    
     End If
 End Sub
 
 Private Sub CaricaValori()
+    Dim data As Date
+    
+    ' la data americana
+    data = oDataScheda(0).DataAmericana
     
     Set rsDataset = New Recordset
+
+    rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey & " AND DATA=#" & data & "#", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
     
-    rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+    Call Pulisci
     
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         Call CaricaSiNoEritema
@@ -1887,6 +1932,8 @@ Private Sub CaricaAccessoVascolare()
         optNoAccessoVascolare.Value = True
     ElseIf rsDataset("ACC_VAS_SI_NO") = "SI" Then
         optSiAccessoVascolare.Value = True
+        Label2.Visible = True
+        oDataNuovoAccessoVascolare(2).Visible = True
         oDataNuovoAccessoVascolare(2).data = rsDataset("ACC_VAS_DATA") & ""
     End If
 End Sub
@@ -2018,6 +2065,31 @@ Private Sub oDataNuovoAccessoVascolare_OnDataClick(Index As Integer)
     oDataNuovoAccessoVascolare(2).Pulisci
 End Sub
 
+Private Sub oDataScheda_OnDataChange(Index As Integer)
+    If IsDate(oDataScheda(0).data) Then
+        Call CaricaValori
+    ElseIf oDataScheda(0).data = "" Then
+        Call Pulisci
+    End If
+End Sub
+
+Private Sub oDataScheda_OnDataClick(Index As Integer)
+    oDataScheda(0).Pulisci
+    Call Pulisci
+End Sub
+
+Private Sub oDataScheda_OnElencaClick(Index As Integer)
+    tElenca.Tipo = tpSCHEDA_SORV_FAV
+    tElenca.condizione = "WHERE KEY_PAZIENTE=" & PazienteKey
+    frmElencaDate.Show 1
+    If laData <> "" Then oDataScheda(0).data = laData
+End Sub
+
+Private Sub optNoAccessoVascolare_GotFocus()
+    Label2.Visible = False
+    oDataNuovoAccessoVascolare(2).Visible = False
+End Sub
+
 Private Sub optNoDolore_GotFocus()
     chkDoloreLieve.Enabled = False
     chkDoloreMedio.Enabled = False
@@ -2061,6 +2133,11 @@ Private Sub optNoPresenzaFremiti_GotFocus()
     chkPresenzaFremitiLieve.Value = Unchecked
     chkPresenzaFremitiMedio.Value = Unchecked
     chkPresenzaFremitiGrave.Value = Unchecked
+End Sub
+
+Private Sub optSiAccessoVascolare_GotFocus()
+    Label2.Visible = True
+    oDataNuovoAccessoVascolare(2).Visible = True
 End Sub
 
 Private Sub optSiDolore_GotFocus()

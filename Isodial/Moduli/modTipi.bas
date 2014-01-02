@@ -225,7 +225,7 @@ Enum tipoTabella
     tpDISTRETTI
     ' altri
     tpNOMENCLATORE
-    tpESAME
+    tpesame
     tpRENI
 End Enum
 Public tTabelle As tipoTabella
@@ -244,6 +244,7 @@ Enum tipoElenca
     tpMON_TRAT_ACQUE
     tpPRESCRIZIONI
     tpESPORTAESAMI                  ' KTV O TSAT
+    tpSCHEDA_SORV_FAV
 End Enum
 Private Type structElenca
     Tipo As tipoElenca              ' tipo passato ad elenca

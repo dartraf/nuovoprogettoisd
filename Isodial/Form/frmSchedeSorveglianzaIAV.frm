@@ -1769,7 +1769,7 @@ End Sub
 Private Sub Pulisci()
    
     'Eritema
-    optNoEritema.Value = False
+    optNoEritema.Value = True
     optSiEritema.Value = False
     chkEritemaLieve.Value = Unchecked
     chkEritemaMedio.Value = Unchecked
@@ -1779,7 +1779,7 @@ Private Sub Pulisci()
     chkEritemaGrave.Enabled = False
     
     'Dolore
-    optNoDolore.Value = False
+    optNoDolore.Value = True
     optSiDolore.Value = False
     chkDoloreLieve.Value = Unchecked
     chkDoloreMedio.Value = Unchecked
@@ -1789,7 +1789,7 @@ Private Sub Pulisci()
     chkDoloreGrave.Enabled = False
     
     'Gonfiore
-    optNoGonfiore.Value = False
+    optNoGonfiore.Value = True
     optSiGonfiore.Value = False
     chkGonfioreLieve.Value = Unchecked
     chkGonfioreMedio.Value = Unchecked
@@ -1799,7 +1799,7 @@ Private Sub Pulisci()
     chkGonfioreGrave.Enabled = False
     
     'Infiltrazione
-    optNoInfiltrazione.Value = False
+    optNoInfiltrazione.Value = True
     optSiInfiltrazione.Value = False
     chkInfiltrazioneLieve.Value = Unchecked
     chkInfiltrazioneMedio.Value = Unchecked
@@ -1809,7 +1809,7 @@ Private Sub Pulisci()
     chkInfiltrazioneGrave.Enabled = False
     
     'Presenza fremiti
-    optNoPresenzaFremiti.Value = False
+    optNoPresenzaFremiti.Value = True
     optSiPresenzaFremiti.Value = False
     chkPresenzaFremitiLieve.Value = Unchecked
     chkPresenzaFremitiMedio.Value = Unchecked
@@ -1835,8 +1835,8 @@ Private Sub Pulisci()
     txtRicircoloTollAccettate.Text = ""
     
     'Accesso Vascolare
+    optNoAccessoVascolare.Value = True
     optSiAccessoVascolare.Value = False
-    optNoAccessoVascolare.Value = False
     oDataNuovoAccessoVascolare(2).Pulisci
     Label2.Visible = False
     oDataNuovoAccessoVascolare(2).Visible = False

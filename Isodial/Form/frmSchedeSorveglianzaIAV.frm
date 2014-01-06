@@ -630,7 +630,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          VisibleElenca   =   -1  'True
       End
       Begin VB.Label Label3 
-         Caption         =   "Data Scheda"
+         Caption         =   "Scheda compilata il"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -640,11 +640,11 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   255
+         Height          =   375
          Left            =   120
          TabIndex        =   87
-         Top             =   315
-         Width           =   1245
+         Top             =   210
+         Width           =   1005
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -1884,6 +1884,9 @@ Private Sub CaricaPaziente()
         End If
         lblEta = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
         Set rsDataset = Nothing
+       
+        ' Di default vado a caricare la data di sistema
+        oDataScheda(0).data = date
        
     End If
 End Sub

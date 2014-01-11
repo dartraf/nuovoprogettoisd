@@ -192,6 +192,7 @@ Designer=Report\rptManutenzioneApparati.Dsr
 Designer=Report\rptRegistroApparati.Dsr
 Form=Form\frmSchedeSorveglianzaIAV.frm
 ResFile32="Risorse.res"
+Designer=Report\rptSchedaSorveglianzaFav.Dsr
 IconForm="frmCalendario"
 Startup="Sub Main"
 HelpFile=""

@@ -629,6 +629,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          TimeBox         =   0   'False
          VisibleElenca   =   -1  'True
       End
+      Begin VB.Label lblNomeUtente 
+         Height          =   255
+         Index           =   1
+         Left            =   1560
+         TabIndex        =   89
+         Top             =   1110
+         Width           =   2085
+      End
       Begin VB.Label Label3 
          Caption         =   "Scheda compilata il"
          BeginProperty Font 
@@ -684,12 +692,12 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Visible         =   0   'False
          Width           =   1335
       End
-      Begin VB.Label lblNomeCognomeUtente 
+      Begin VB.Label lblCognomeUtente 
          Height          =   255
          Index           =   0
          Left            =   1560
          TabIndex        =   47
-         Top             =   960
+         Top             =   870
          Width           =   2085
       End
       Begin VB.Label Label1 
@@ -712,12 +720,12 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Width           =   3465
          WordWrap        =   -1  'True
       End
-      Begin VB.Label lblTipUtente 
+      Begin VB.Label lblTipoUtente 
          Height          =   255
          Index           =   27
          Left            =   1560
          TabIndex        =   45
-         Top             =   720
+         Top             =   630
          Width           =   2085
       End
       Begin VB.Label Label1 
@@ -1629,7 +1637,8 @@ Private Sub cmdMemorizza_Click()
             "RIE_INDICATORI", "RIE_PARAMETRI", "RIE_TOLL_ACCET", _
             "POR_INDICATORI", "POR_PARAMETRI", "P0R_TOLL_ACCET", _
             "RIC_INDICATORI", "RIC_PARAMETRI", "RIC_TOLL_ACCET", _
-            "ACC_VAS_SI_NO", "ACC_VAS_DATA")
+            "ACC_VAS_SI_NO", "ACC_VAS_DATA", _
+            "UTENTE_COMP_TIPO", "UTENTE_COMP_COGNOME", "UTENTE_COMP_NOME")
 
     v_Val = Array(keyId, PazienteKey, oDataScheda(0).data, _
             GestisciSiNoEritema, GestisciOptEritema, _
@@ -1641,7 +1650,8 @@ Private Sub cmdMemorizza_Click()
             txtRientroIndicatore, txtRientroParametri, txtRientroTollAccettate, _
             txtPortataIndicatori, txtPortataParametri, txtPortataTollAccettate, _
             txtRicircoloIndicatori, txtRicircoloParametri, txtRicircoloTollAccettate, _
-            GestisciSiNoAccessoVascolare, IIf(oDataNuovoAccessoVascolare(2).data = "", Null, oDataNuovoAccessoVascolare(2).data))
+            GestisciSiNoAccessoVascolare, IIf(oDataNuovoAccessoVascolare(2).data = "", Null, oDataNuovoAccessoVascolare(2).data), _
+            GestisciTipoUtenteCompilatore, GestisciCognomeUtenteCompilatore, GestisciNomeUtenteCompilatore)
         
     Set rsDataset = New Recordset
         If modifica = False Then
@@ -1658,6 +1668,30 @@ Private Sub cmdMemorizza_Click()
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
     
 End Sub
+
+Private Function GestisciTipoUtenteCompilatore() As String
+    If Choose(tAccesso.Tipo, "Medico", "Infermiere", "Contabile", "Amministratore") <> lblTipoUtente(27).Caption Then
+        GestisciTipoUtenteCompilatore = Choose(tAccesso.Tipo, "Medico", "Infermiere", "Contabile", "Amministratore")
+    Else
+        GestisciTipoUtenteCompilatore = lblTipoUtente(27).Caption
+    End If
+End Function
+
+Private Function GestisciCognomeUtenteCompilatore() As String
+    If tAccesso.cognome <> lblCognomeUtente(0).Caption Then
+        GestisciCognomeUtenteCompilatore = tAccesso.cognome
+    Else
+        GestisciCognomeUtenteCompilatore = lblCognomeUtente(0).Caption
+    End If
+End Function
+
+Private Function GestisciNomeUtenteCompilatore() As String
+    If tAccesso.nome <> lblNomeUtente(1).Caption Then
+        GestisciNomeUtenteCompilatore = tAccesso.nome
+    Else
+        GestisciNomeUtenteCompilatore = lblNomeUtente(1).Caption
+    End If
+End Function
 
 Private Function GestisciSiNoAccessoVascolare() As String
     If optNoAccessoVascolare.Value = True Then
@@ -1845,8 +1879,9 @@ End Sub
 Private Sub cmdTrova_Click()
     Call Pulisci
     oDataScheda(0).Pulisci
-    lblTipUtente(27).Caption = Choose(tAccesso.Tipo, "Medico", "Infermiere", "Contabile", "Amministratore")
-    lblNomeCognomeUtente(0).Caption = tAccesso.cognome & " " & tAccesso.nome
+    lblTipoUtente(27).Caption = Choose(tAccesso.Tipo, "Medico", "Infermiere", "Contabile", "Amministratore")
+    lblCognomeUtente(0).Caption = tAccesso.cognome
+    lblNomeUtente(1).Caption = tAccesso.nome
     tTrova.Tipo = tpPAZIENTE
     tTrova.condizione = ""
     tTrova.condStato = ""
@@ -1920,6 +1955,8 @@ Private Sub CaricaValori()
         
         Call CaricaAccessoVascolare
         
+        Call CaricaUtenteCompilatore
+        
         modifica = True
     Else
         'Se non trova il paziente associato vuol dire che è in fase di inserimento
@@ -1928,6 +1965,12 @@ Private Sub CaricaValori()
     
     Set rsDataset = Nothing
     
+End Sub
+
+Private Sub CaricaUtenteCompilatore()
+    lblTipoUtente(27).Caption = rsDataset("UTENTE_COMP_TIPO") & ""
+    lblCognomeUtente(0).Caption = rsDataset("UTENTE_COMP_COGNOME") & ""
+    lblNomeUtente(1).Caption = rsDataset("UTENTE_COMP_NOME") & ""
 End Sub
 
 Private Sub CaricaAccessoVascolare()

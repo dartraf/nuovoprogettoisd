@@ -1476,6 +1476,24 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       TabIndex        =   8
       Top             =   6960
       Width           =   10935
+      Begin VB.CommandButton cmdStampa 
+         Caption         =   "&Stampa"
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   6480
+         TabIndex        =   90
+         Top             =   240
+         Width           =   1335
+      End
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          CausesValidation=   0   'False
@@ -1790,6 +1808,107 @@ Private Function GestisciOptEritema() As String
         GestisciOptEritema = "GRAVE"
     End If
 End Function
+
+Private Sub cmdStampa_Click()
+    Dim SQLString As String
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
+    Dim rsDataset As Recordset
+    Dim data As Date
+    
+    'CARICA IL PAZIENTE
+    Set rsDataset = New Recordset
+    rsDataset.Open "SELECT * FROM PAZIENTI WHERE KEY=" & PazienteKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    structIntestazione.sPaziente = rsDataset("COGNOME") & " " & rsDataset("NOME")
+    Set rsDataset = Nothing
+    
+    SQLString = "SHAPE APPEND " & _
+                "       NEW adVarChar(2) AS ERI_SI_NO, " & _
+                "       NEW adVarChar(6) AS ERI_VALORE, " & _
+                "       NEW adVarChar(2) AS DOL_SI_NO, " & _
+                "       NEW adVarChar(6) AS DOL_VALORE, " & _
+                "       NEW adVarChar(2) AS GON_SI_NO, " & _
+                "       NEW adVarChar(6) AS GON_VALORE, " & _
+                "       NEW adVarChar(2) AS INF_SI_NO, " & _
+                "       NEW adVarChar(6) AS INF_VALORE, " & _
+                "       NEW adVarChar(2) AS PRE_FRE_SI_NO, " & _
+                "       NEW adVarChar(6) AS PRE_FRE_VALORE, " & _
+                "       NEW adVarChar(30) AS ASP_INDICATORI, " & _
+                "       NEW adVarChar(30) AS ASP_PARAMETRI, " & _
+                "       NEW adVarChar(30) AS ASP_TOLL_ACCET, " & _
+                "       NEW adVarChar(30) AS RIE_INDICATORI, " & _
+                "       NEW adVarChar(30) AS RIE_PARAMETRI, " & _
+                "       NEW adVarChar(30) AS RIE_TOLL_ACCET, "
+    SQLString = SQLString & _
+                "       NEW adVarChar(30) AS POR_INDICATORI, " & _
+                "       NEW adVarChar(30) AS POR_PARAMETRI, " & _
+                "       NEW adVarChar(30) AS P0R_TOLL_ACCET, " & _
+                "       NEW adVarChar(30) AS RIC_INDICATORI, " & _
+                "       NEW adVarChar(30) AS RIC_PARAMETRI, " & _
+                "       NEW adVarChar(30) AS RIC_TOLL_ACCET, " & _
+                "       NEW adVarChar(30) AS ACC_VAS_SI_NO_DATA "
+                
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
+    
+    ' CARICO LA DATA AMERICANA PER LA RICERCA
+    data = oDataScheda(0).DataAmericana
+    
+    Set rsDataset = New Recordset
+    rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey & " AND DATA=#" & data & "#", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+    If Not (rsDataset.EOF And rsDataset.BOF) Then
+        With rsMain
+            Do While Not rsDataset.EOF
+                .AddNew
+                .Fields("ERI_SI_NO") = rsDataset("ERI_SI_NO")
+                .Fields("ERI_VALORE") = rsDataset("ERI_VALORE")
+                .Fields("DOL_SI_NO") = rsDataset("DOL_SI_NO")
+                .Fields("DOL_VALORE") = rsDataset("DOL_VALORE")
+                .Fields("GON_SI_NO") = rsDataset("GON_SI_NO")
+                .Fields("GON_VALORE") = rsDataset("GON_VALORE")
+                .Fields("INF_SI_NO") = rsDataset("INF_SI_NO")
+                .Fields("INF_VALORE") = rsDataset("INF_VALORE")
+                .Fields("PRE_FRE_SI_NO") = rsDataset("PRE_FRE_SI_NO")
+                .Fields("PRE_FRE_VALORE") = rsDataset("PRE_FRE_VALORE")
+                .Fields("ASP_INDICATORI") = rsDataset("ASP_INDICATORI")
+                .Fields("ASP_PARAMETRI") = rsDataset("ASP_PARAMETRI")
+                .Fields("ASP_TOLL_ACCET") = rsDataset("ASP_TOLL_ACCET")
+                .Fields("RIE_INDICATORI") = rsDataset("RIE_INDICATORI")
+                .Fields("RIE_PARAMETRI") = rsDataset("RIE_PARAMETRI")
+                .Fields("RIE_TOLL_ACCET") = rsDataset("RIE_TOLL_ACCET")
+                .Fields("POR_INDICATORI") = rsDataset("POR_INDICATORI")
+                .Fields("POR_PARAMETRI") = rsDataset("POR_PARAMETRI")
+                .Fields("P0R_TOLL_ACCET") = rsDataset("P0R_TOLL_ACCET")
+                .Fields("RIC_INDICATORI") = rsDataset("RIC_INDICATORI")
+                .Fields("RIC_PARAMETRI") = rsDataset("RIC_PARAMETRI")
+                .Fields("RIC_TOLL_ACCET") = rsDataset("RIC_TOLL_ACCET")
+                .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO") & "   " & rsDataset("ACC_VAS_DATA")
+                rsDataset.MoveNext
+            Loop
+        End With
+    End If
+    
+    If rsDataset.RecordCount = 0 Then
+        MsgBox "Non sono presenti Schede di Sorveglianza FAV da stampare con la data selezionata", vbInformation, "Informazione"
+        Exit Sub
+    End If
+    Set rsDataset = Nothing
+    
+    Set rptSchedaSorveglianzaFav.DataSource = rsMain
+    'rptStampaApparati.TopMargin = 0
+    'rptStampaApparati.RightMargin = 0
+    'rptStampaApparati.LeftMargin = 0
+    rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblDataScheda").Caption = oDataScheda(0).data
+    rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
+    rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblTipoUtenteCompilatore").Caption = lblTipoUtente(27).Caption
+    rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblCognomeNomeUtenteCompilatore").Caption = lblCognomeUtente(0).Caption & " " & lblNomeUtente(1).Caption
+    rptSchedaSorveglianzaFav.PrintReport True, rptRangeAllPages
+
+End Sub
 
 Private Sub Form_Activate()
     If PazienteKey = 0 Then

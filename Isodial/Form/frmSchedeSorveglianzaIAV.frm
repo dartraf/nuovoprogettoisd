@@ -1886,14 +1886,14 @@ Private Sub cmdStampa_Click()
                 .Fields("RIC_INDICATORI") = rsDataset("RIC_INDICATORI")
                 .Fields("RIC_PARAMETRI") = rsDataset("RIC_PARAMETRI")
                 .Fields("RIC_TOLL_ACCET") = rsDataset("RIC_TOLL_ACCET")
-                .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO") & "   " & rsDataset("ACC_VAS_DATA")
+                .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO") & "    in data " & rsDataset("ACC_VAS_DATA")
                 rsDataset.MoveNext
             Loop
         End With
     End If
     
     If rsDataset.RecordCount = 0 Then
-        MsgBox "Non sono presenti Schede di Sorveglianza FAV da stampare con la data selezionata", vbInformation, "Informazione"
+        MsgBox "Scheda NON presente con la data selezionata", vbInformation, "Informazione"
         Exit Sub
     End If
     Set rsDataset = Nothing

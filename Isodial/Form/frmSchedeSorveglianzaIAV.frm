@@ -725,7 +725,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Index           =   27
          Left            =   1560
          TabIndex        =   45
-         Top             =   630
+         Top             =   600
          Width           =   2085
       End
       Begin VB.Label Label1 
@@ -1627,12 +1627,61 @@ Private Sub cmdChiudi_Click()
     Unload frmSchedeSorveglianzaFAV
 End Sub
 
+Private Function ControlloSiNonCompleto() As Boolean
+    If optSiEritema.Value = True Then
+        If chkEritemaLieve.Value = Unchecked And chkEritemaMedio.Value = Unchecked And chkEritemaGrave.Value = Unchecked Then
+            MsgBox "Selezionare un Sintome Locale dell' Eritema", vbInformation, "Informazione"
+            ControlloSiNonCompleto = True
+            Exit Function
+        End If
+    End If
+        
+    If optSiDolore.Value = True Then
+        If chkDoloreLieve.Value = Unchecked And chkDoloreMedio.Value = Unchecked And chkDoloreGrave.Value = Unchecked Then
+            MsgBox "Selezionare un Sintome Locale dell' Dolore", vbInformation, "Informazione"
+            ControlloSiNonCompleto = True
+            Exit Function
+        End If
+    End If
+    
+    If optSiGonfiore.Value = True Then
+        If chkGonfioreLieve.Value = Unchecked And chkGonfioreMedio.Value = Unchecked And chkGonfioreGrave.Value = Unchecked Then
+            MsgBox "Selezionare un Sintome Locale del Gonfiore", vbInformation, "Informazione"
+            ControlloSiNonCompleto = True
+            Exit Function
+        End If
+    End If
+    
+    If optSiInfiltrazione.Value = True Then
+        If chkInfiltrazioneLieve.Value = Unchecked And chkInfiltrazioneMedio.Value = Unchecked And chkInfiltrazioneGrave.Value = Unchecked Then
+            MsgBox "Selezionare un Sintome Locale dell' Infiltrazione", vbInformation, "Informazione"
+            ControlloSiNonCompleto = True
+            Exit Function
+        End If
+    End If
+    
+    If optSiPresenzaFremiti.Value = True Then
+        If chkPresenzaFremitiLieve.Value = Unchecked And chkPresenzaFremitiMedio.Value = Unchecked And chkPresenzaFremitiGrave.Value = Unchecked Then
+            MsgBox "Selezionare un Sintome Locale della Presenza Fremiti", vbInformation, "Informazione"
+            ControlloSiNonCompleto = True
+            Exit Function
+        End If
+    End If
+    
+End Function
+
 Private Sub cmdMemorizza_Click()
     Dim v_Val() As Variant
     Dim v_Nomi() As Variant
 
     If oDataScheda(0).data = "" Then
         MsgBox "Inserire la Data della Scheda", vbCritical, "ATTENZIONE!!!!"
+        Exit Sub
+    End If
+    
+    'Controllo per evitare di Memorizzare il campo "SI"
+    'senza selezionare nessun sintomo LIEVE MEDIO GRAVE
+    If ControlloSiNonCompleto = True Then
         Exit Sub
     End If
     
@@ -1673,7 +1722,7 @@ Private Sub cmdMemorizza_Click()
             rsDataset.Update
             modifica = True
         Else
-            rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY_PAZIENTE=" & PazienteKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            rsDataset.Open "SELECT * FROM SCHEDA_SORV_FAV WHERE KEY=" & keyId, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
             rsDataset.Update v_Nomi, v_Val
         End If
     Set rsDataset = Nothing
@@ -1988,6 +2037,13 @@ Private Sub Pulisci()
     oDataNuovoAccessoVascolare(2).Pulisci
     Label2.Visible = False
     oDataNuovoAccessoVascolare(2).Visible = False
+    
+    'Quando pulisco carico l' utente che ha effettuato il login
+    'per evitare di caricare l'utente di una shceda precedente
+    lblTipoUtente(27).Caption = Choose(tAccesso.Tipo, "Medico", "Infermiere", "Contabile", "Amministratore")
+    lblCognomeUtente(0).Caption = tAccesso.cognome
+    lblNomeUtente(1).Caption = tAccesso.nome
+    
 End Sub
 
 Private Sub cmdTrova_Click()

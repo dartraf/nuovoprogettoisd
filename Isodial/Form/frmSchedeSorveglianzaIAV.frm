@@ -1479,6 +1479,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
          CausesValidation=   0   'False
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1592,20 +1593,15 @@ Private Sub chkGonfioreMedio_Click()
     chkGonfioreGrave.Value = Unchecked
 End Sub
 
-
 Private Sub chkInfiltrazioneGrave_GotFocus()
     chkInfiltrazioneLieve.Value = Unchecked
     chkInfiltrazioneMedio.Value = Unchecked
 End Sub
 
-
-
 Private Sub chkInfiltrazioneLieve_GotFocus()
     chkInfiltrazioneMedio.Value = Unchecked
     chkInfiltrazioneGrave.Value = Unchecked
 End Sub
-
-
 
 Private Sub chkInfiltrazioneMedio_GotFocus()
     chkInfiltrazioneLieve.Value = Unchecked
@@ -1621,7 +1617,6 @@ Private Sub chkPresenzaFremitiLieve_GotFocus()
     chkPresenzaFremitiMedio.Value = Unchecked
     chkPresenzaFremitiGrave.Value = Unchecked
 End Sub
-
 
 Private Sub chkPresenzaFremitiMedio_GotFocus()
     chkPresenzaFremitiLieve.Value = Unchecked
@@ -1684,7 +1679,7 @@ Private Sub cmdMemorizza_Click()
     Set rsDataset = Nothing
 
     MsgBox "Salvataggio effettuato", vbInformation, "Salvataggio"
-    
+    cmdStampa.Enabled = True
 End Sub
 
 Private Function GestisciTipoUtenteCompilatore() As String
@@ -2077,9 +2072,11 @@ Private Sub CaricaValori()
         Call CaricaUtenteCompilatore
         
         modifica = True
+        cmdStampa.Enabled = True
     Else
         'Se non trova il paziente associato vuol dire che è in fase di inserimento
         modifica = False
+        cmdStampa.Enabled = False
     End If
     
     Set rsDataset = Nothing

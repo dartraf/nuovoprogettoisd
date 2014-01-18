@@ -1624,6 +1624,9 @@ Private Sub chkPresenzaFremitiMedio_GotFocus()
 End Sub
 
 Private Sub cmdChiudi_Click()
+    'Lo pongo = 0 per evitare che quando chiudo e riapro
+    'non mi apre automaticamente il form trova
+    PazienteKey = 0
     Unload frmSchedeSorveglianzaFAV
 End Sub
 
@@ -1677,6 +1680,13 @@ Private Sub cmdMemorizza_Click()
     If oDataScheda(0).data = "" Then
         MsgBox "Inserire la Data della Scheda", vbCritical, "ATTENZIONE!!!!"
         Exit Sub
+    End If
+    
+    If optSiAccessoVascolare.Value = True Then
+        If oDataNuovoAccessoVascolare(2).data = "" Then
+            MsgBox "Inserire la Data del Nuovo Accesso Vascolare", vbInformation, "Informazione"
+            Exit Sub
+        End If
     End If
     
     'Controllo per evitare di Memorizzare il campo "SI"
@@ -1964,6 +1974,9 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Pulisci()
+    
+    'Azzero per evitare problemi in fase di modifica o inserimento
+    keyId = 0
    
     'Eritema
     optNoEritema.Value = True
@@ -2109,6 +2122,7 @@ Private Sub CaricaValori()
     Call Pulisci
     
     If Not (rsDataset.EOF And rsDataset.BOF) Then
+        keyId = rsDataset("KEY")
         Call CaricaSiNoEritema
         Call CaricaSiNoDolore
         Call CaricaSiNoGonfiore

@@ -28,7 +28,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       ForeColor       =   &H00FF0000&
       Height          =   1845
       Left            =   120
-      TabIndex        =   72
+      TabIndex        =   80
       Top             =   3400
       Width           =   10935
       Begin VB.TextBox txtAspirazioneIndicatore 
@@ -44,7 +44,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   78
+         TabIndex        =   34
          Top             =   600
          Width           =   3375
       End
@@ -61,7 +61,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   77
+         TabIndex        =   37
          Top             =   600
          Width           =   3375
       End
@@ -78,7 +78,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   76
+         TabIndex        =   35
          Top             =   960
          Width           =   3375
       End
@@ -95,7 +95,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   75
+         TabIndex        =   38
          Top             =   960
          Width           =   3375
       End
@@ -112,7 +112,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   74
+         TabIndex        =   36
          Top             =   1320
          Width           =   3375
       End
@@ -129,7 +129,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   73
+         TabIndex        =   39
          Top             =   1320
          Width           =   3375
       End
@@ -149,7 +149,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   7
          Left            =   2760
-         TabIndex        =   86
+         TabIndex        =   88
          Top             =   240
          Width           =   1590
       End
@@ -169,7 +169,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   8
          Left            =   8400
-         TabIndex        =   85
+         TabIndex        =   87
          Top             =   240
          Width           =   1110
       End
@@ -188,7 +188,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   9
          Left            =   600
-         TabIndex        =   84
+         TabIndex        =   86
          Top             =   600
          Width           =   975
       End
@@ -207,7 +207,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   10
          Left            =   6120
-         TabIndex        =   83
+         TabIndex        =   85
          Top             =   600
          Width           =   975
       End
@@ -226,7 +226,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   12
          Left            =   600
-         TabIndex        =   82
+         TabIndex        =   84
          Top             =   960
          Width           =   1020
       End
@@ -245,7 +245,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   13
          Left            =   6120
-         TabIndex        =   81
+         TabIndex        =   83
          Top             =   960
          Width           =   1020
       End
@@ -264,7 +264,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   14
          Left            =   120
-         TabIndex        =   80
+         TabIndex        =   82
          Top             =   1320
          Width           =   1515
       End
@@ -283,7 +283,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   15
          Left            =   5640
-         TabIndex        =   79
+         TabIndex        =   81
          Top             =   1320
          Width           =   1515
       End
@@ -302,7 +302,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       ForeColor       =   &H00FF0000&
       Height          =   1845
       Left            =   120
-      TabIndex        =   12
+      TabIndex        =   54
       Top             =   5280
       Width           =   10935
       Begin VB.TextBox txtPortataIndicatori 
@@ -318,7 +318,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   18
+         TabIndex        =   40
          Top             =   600
          Width           =   3375
       End
@@ -335,7 +335,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   17
+         TabIndex        =   43
          Top             =   600
          Width           =   3375
       End
@@ -352,7 +352,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   16
+         TabIndex        =   41
          Top             =   960
          Width           =   3375
       End
@@ -369,7 +369,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   15
+         TabIndex        =   44
          Top             =   960
          Width           =   3375
       End
@@ -386,7 +386,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   14
+         TabIndex        =   42
          Top             =   1320
          Width           =   3375
       End
@@ -403,7 +403,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   13
+         TabIndex        =   45
          Top             =   1320
          Width           =   3375
       End
@@ -422,7 +422,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   17
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   56
          Top             =   1320
          Width           =   1515
       End
@@ -442,7 +442,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   23
          Left            =   3000
-         TabIndex        =   26
+         TabIndex        =   62
          Top             =   240
          Width           =   870
       End
@@ -462,7 +462,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   22
          Left            =   8520
-         TabIndex        =   25
+         TabIndex        =   61
          Top             =   240
          Width           =   1050
       End
@@ -481,7 +481,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   21
          Left            =   600
-         TabIndex        =   24
+         TabIndex        =   60
          Top             =   600
          Width           =   975
       End
@@ -500,7 +500,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   20
          Left            =   6120
-         TabIndex        =   23
+         TabIndex        =   59
          Top             =   600
          Width           =   975
       End
@@ -519,7 +519,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   19
          Left            =   600
-         TabIndex        =   22
+         TabIndex        =   58
          Top             =   960
          Width           =   1020
       End
@@ -538,7 +538,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   18
          Left            =   6120
-         TabIndex        =   21
+         TabIndex        =   57
          Top             =   960
          Width           =   1020
       End
@@ -557,7 +557,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   16
          Left            =   5640
-         TabIndex        =   19
+         TabIndex        =   55
          Top             =   1320
          Width           =   1515
       End
@@ -565,7 +565,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    Begin VB.Frame Frame8 
       Height          =   2415
       Left            =   120
-      TabIndex        =   42
+      TabIndex        =   68
       Top             =   955
       Width           =   3735
       Begin VB.OptionButton optNoAccessoVascolare 
@@ -581,7 +581,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2640
-         TabIndex        =   69
+         TabIndex        =   7
          Top             =   1560
          Width           =   615
       End
@@ -598,7 +598,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   255
          Left            =   2040
-         TabIndex        =   68
+         TabIndex        =   6
          Top             =   1560
          Width           =   495
       End
@@ -606,7 +606,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   375
          Index           =   2
          Left            =   1560
-         TabIndex        =   43
+         TabIndex        =   8
          Top             =   1965
          Visible         =   0   'False
          Width           =   2100
@@ -620,7 +620,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   375
          Index           =   0
          Left            =   1560
-         TabIndex        =   88
+         TabIndex        =   5
          Top             =   240
          Width           =   2100
          _ExtentX        =   3704
@@ -633,7 +633,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Index           =   1
          Left            =   1560
-         TabIndex        =   89
+         TabIndex        =   90
          Top             =   1110
          Width           =   2085
       End
@@ -650,7 +650,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   87
+         TabIndex        =   89
          Top             =   210
          Width           =   1005
       End
@@ -669,7 +669,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   195
          Index           =   24
          Left            =   120
-         TabIndex        =   71
+         TabIndex        =   79
          Top             =   960
          Width           =   1425
          WordWrap        =   -1  'True
@@ -687,7 +687,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   70
+         TabIndex        =   78
          Top             =   1920
          Visible         =   0   'False
          Width           =   1335
@@ -696,7 +696,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Index           =   0
          Left            =   1560
-         TabIndex        =   47
+         TabIndex        =   72
          Top             =   870
          Width           =   2085
       End
@@ -715,7 +715,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   555
          Index           =   28
          Left            =   120
-         TabIndex        =   46
+         TabIndex        =   71
          Top             =   1320
          Width           =   3465
          WordWrap        =   -1  'True
@@ -724,7 +724,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Index           =   27
          Left            =   1560
-         TabIndex        =   45
+         TabIndex        =   70
          Top             =   600
          Width           =   2085
       End
@@ -743,7 +743,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   195
          Index           =   26
          Left            =   120
-         TabIndex        =   44
+         TabIndex        =   69
          Top             =   720
          Width           =   1425
          WordWrap        =   -1  'True
@@ -763,15 +763,15 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       ForeColor       =   &H00FF0000&
       Height          =   2415
       Left            =   3840
-      TabIndex        =   11
+      TabIndex        =   53
       Top             =   955
       Width           =   7215
       Begin VB.Frame Frame7 
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   31
-         Top             =   240
+         TabIndex        =   67
+         Top             =   350
          Width           =   6975
          Begin VB.CheckBox chkEritemaLieve 
             Caption         =   "Lieve"
@@ -787,7 +787,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   3720
-            TabIndex        =   50
+            TabIndex        =   11
             Top             =   120
             Width           =   975
          End
@@ -805,7 +805,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   5880
-            TabIndex        =   49
+            TabIndex        =   13
             Top             =   120
             Width           =   975
          End
@@ -823,7 +823,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   4770
-            TabIndex        =   48
+            TabIndex        =   12
             Top             =   120
             Width           =   1095
          End
@@ -840,7 +840,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2880
-            TabIndex        =   33
+            TabIndex        =   10
             Top             =   120
             Width           =   855
          End
@@ -857,7 +857,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2040
-            TabIndex        =   32
+            TabIndex        =   9
             Top             =   120
             Width           =   855
          End
@@ -876,7 +876,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   11
             Left            =   120
-            TabIndex        =   63
+            TabIndex        =   73
             Top             =   120
             Width           =   810
          End
@@ -885,8 +885,8 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   30
-         Top             =   615
+         TabIndex        =   66
+         Top             =   725
          Width           =   6975
          Begin VB.CheckBox chkDoloreLieve 
             Caption         =   "Lieve"
@@ -902,7 +902,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   3720
-            TabIndex        =   53
+            TabIndex        =   16
             Top             =   120
             Width           =   975
          End
@@ -920,7 +920,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   4770
-            TabIndex        =   52
+            TabIndex        =   17
             Top             =   120
             Width           =   975
          End
@@ -938,7 +938,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   5880
-            TabIndex        =   51
+            TabIndex        =   18
             Top             =   120
             Width           =   975
          End
@@ -955,7 +955,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2880
-            TabIndex        =   35
+            TabIndex        =   15
             Top             =   120
             Width           =   735
          End
@@ -972,7 +972,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2040
-            TabIndex        =   34
+            TabIndex        =   14
             Top             =   120
             Width           =   855
          End
@@ -991,7 +991,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   2
             Left            =   120
-            TabIndex        =   64
+            TabIndex        =   74
             Top             =   120
             Width           =   720
          End
@@ -1000,8 +1000,8 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   500
          Left            =   120
-         TabIndex        =   27
-         Top             =   1005
+         TabIndex        =   63
+         Top             =   1115
          Width           =   6975
          Begin VB.CheckBox chkGonfioreLieve 
             Caption         =   "Lieve"
@@ -1017,7 +1017,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   3720
-            TabIndex        =   56
+            TabIndex        =   21
             Top             =   120
             Width           =   975
          End
@@ -1035,7 +1035,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   4770
-            TabIndex        =   55
+            TabIndex        =   22
             Top             =   120
             Width           =   975
          End
@@ -1053,7 +1053,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   5880
-            TabIndex        =   54
+            TabIndex        =   23
             Top             =   120
             Width           =   975
          End
@@ -1070,7 +1070,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2880
-            TabIndex        =   37
+            TabIndex        =   20
             Top             =   120
             Width           =   735
          End
@@ -1087,7 +1087,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2040
-            TabIndex        =   36
+            TabIndex        =   19
             Top             =   120
             Width           =   855
          End
@@ -1106,7 +1106,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   4
             Left            =   120
-            TabIndex        =   65
+            TabIndex        =   75
             Top             =   120
             Width           =   900
          End
@@ -1115,8 +1115,8 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   28
-         Top             =   1395
+         TabIndex        =   64
+         Top             =   1505
          Width           =   6975
          Begin VB.CheckBox chkInfiltrazioneLieve 
             Caption         =   "Lieve"
@@ -1132,7 +1132,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   3720
-            TabIndex        =   59
+            TabIndex        =   26
             Top             =   120
             Width           =   975
          End
@@ -1150,7 +1150,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   4770
-            TabIndex        =   58
+            TabIndex        =   27
             Top             =   120
             Width           =   975
          End
@@ -1168,7 +1168,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   5880
-            TabIndex        =   57
+            TabIndex        =   28
             Top             =   120
             Width           =   975
          End
@@ -1185,7 +1185,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2880
-            TabIndex        =   39
+            TabIndex        =   25
             Top             =   120
             Width           =   735
          End
@@ -1202,7 +1202,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2040
-            TabIndex        =   38
+            TabIndex        =   24
             Top             =   120
             Width           =   855
          End
@@ -1221,7 +1221,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   5
             Left            =   120
-            TabIndex        =   66
+            TabIndex        =   76
             Top             =   120
             Width           =   1200
          End
@@ -1230,8 +1230,8 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   29
-         Top             =   1785
+         TabIndex        =   65
+         Top             =   1895
          Width           =   6975
          Begin VB.CheckBox chkPresenzaFremitiLieve 
             Caption         =   "Lieve"
@@ -1247,7 +1247,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   3720
-            TabIndex        =   62
+            TabIndex        =   31
             Top             =   120
             Width           =   975
          End
@@ -1265,7 +1265,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   4770
-            TabIndex        =   61
+            TabIndex        =   32
             Top             =   120
             Width           =   975
          End
@@ -1283,7 +1283,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   5880
-            TabIndex        =   60
+            TabIndex        =   33
             Top             =   120
             Width           =   975
          End
@@ -1300,7 +1300,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2880
-            TabIndex        =   41
+            TabIndex        =   30
             Top             =   120
             Width           =   735
          End
@@ -1317,7 +1317,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             EndProperty
             Height          =   255
             Left            =   2040
-            TabIndex        =   40
+            TabIndex        =   29
             Top             =   120
             Width           =   855
          End
@@ -1336,10 +1336,52 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   6
             Left            =   120
-            TabIndex        =   67
+            TabIndex        =   77
             Top             =   120
             Width           =   1875
          End
+      End
+      Begin VB.Label Label1 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         Caption         =   "Gravità"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   240
+         Index           =   27
+         Left            =   4800
+         TabIndex        =   92
+         Top             =   140
+         Width           =   885
+      End
+      Begin VB.Label Label1 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         Caption         =   "Presenza"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   240
+         Index           =   25
+         Left            =   2310
+         TabIndex        =   91
+         Top             =   140
+         Width           =   1125
       End
    End
    Begin VB.Frame Frame1 
@@ -1373,7 +1415,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   3
          Left            =   9480
-         TabIndex        =   7
+         TabIndex        =   51
          Top             =   360
          Width           =   465
       End
@@ -1392,7 +1434,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   1
          Left            =   5400
-         TabIndex        =   6
+         TabIndex        =   50
          Top             =   360
          Width           =   630
       End
@@ -1411,7 +1453,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   0
          Left            =   720
-         TabIndex        =   5
+         TabIndex        =   49
          Top             =   360
          Width           =   1005
       End
@@ -1473,7 +1515,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   8
+      TabIndex        =   52
       Top             =   6960
       Width           =   10935
       Begin VB.CommandButton cmdStampa 
@@ -1491,7 +1533,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   495
          Left            =   6480
-         TabIndex        =   90
+         TabIndex        =   46
          Top             =   240
          Width           =   1335
       End
@@ -1509,7 +1551,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   495
          Left            =   7920
-         TabIndex        =   10
+         TabIndex        =   47
          Top             =   240
          Width           =   1335
       End
@@ -1527,7 +1569,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   495
          Left            =   9360
-         TabIndex        =   9
+         TabIndex        =   48
          Top             =   240
          Width           =   1335
       End
@@ -1633,7 +1675,7 @@ End Sub
 Private Function ControlloSiNonCompleto() As Boolean
     If optSiEritema.Value = True Then
         If chkEritemaLieve.Value = Unchecked And chkEritemaMedio.Value = Unchecked And chkEritemaGrave.Value = Unchecked Then
-            MsgBox "Selezionare un Sintome Locale dell' Eritema", vbInformation, "Informazione"
+            MsgBox "Specificare la gravità dell'ERITEMA", vbInformation, "Informazione"
             ControlloSiNonCompleto = True
             Exit Function
         End If
@@ -1641,7 +1683,7 @@ Private Function ControlloSiNonCompleto() As Boolean
         
     If optSiDolore.Value = True Then
         If chkDoloreLieve.Value = Unchecked And chkDoloreMedio.Value = Unchecked And chkDoloreGrave.Value = Unchecked Then
-            MsgBox "Selezionare un Sintome Locale dell' Dolore", vbInformation, "Informazione"
+            MsgBox "Specificare la gravità del DOLORE", vbInformation, "Informazione"
             ControlloSiNonCompleto = True
             Exit Function
         End If
@@ -1649,7 +1691,7 @@ Private Function ControlloSiNonCompleto() As Boolean
     
     If optSiGonfiore.Value = True Then
         If chkGonfioreLieve.Value = Unchecked And chkGonfioreMedio.Value = Unchecked And chkGonfioreGrave.Value = Unchecked Then
-            MsgBox "Selezionare un Sintome Locale del Gonfiore", vbInformation, "Informazione"
+            MsgBox "Specificare la gravità del GONFIORE", vbInformation, "Informazione"
             ControlloSiNonCompleto = True
             Exit Function
         End If
@@ -1657,7 +1699,7 @@ Private Function ControlloSiNonCompleto() As Boolean
     
     If optSiInfiltrazione.Value = True Then
         If chkInfiltrazioneLieve.Value = Unchecked And chkInfiltrazioneMedio.Value = Unchecked And chkInfiltrazioneGrave.Value = Unchecked Then
-            MsgBox "Selezionare un Sintome Locale dell' Infiltrazione", vbInformation, "Informazione"
+            MsgBox "Specificare la gravità dell'INFILTRAZIONE", vbInformation, "Informazione"
             ControlloSiNonCompleto = True
             Exit Function
         End If
@@ -1665,7 +1707,7 @@ Private Function ControlloSiNonCompleto() As Boolean
     
     If optSiPresenzaFremiti.Value = True Then
         If chkPresenzaFremitiLieve.Value = Unchecked And chkPresenzaFremitiMedio.Value = Unchecked And chkPresenzaFremitiGrave.Value = Unchecked Then
-            MsgBox "Selezionare un Sintome Locale della Presenza Fremiti", vbInformation, "Informazione"
+            MsgBox "Specificare la gravità dei FREMITI", vbInformation, "Informazione"
             ControlloSiNonCompleto = True
             Exit Function
         End If

@@ -18,7 +18,7 @@ Begin VB.Form frmEsamiStrumentali
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   22
+      TabIndex        =   31
       Top             =   0
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -28,7 +28,7 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   360
          Picture         =   "frmEsamiStrumentali.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   26
+         TabIndex        =   0
          Top             =   240
          Width           =   450
       End
@@ -46,7 +46,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   2280
-         TabIndex        =   35
+         TabIndex        =   1
          Top             =   360
          Width           =   3255
       End
@@ -64,7 +64,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   6840
-         TabIndex        =   34
+         TabIndex        =   2
          Top             =   360
          Width           =   3135
       End
@@ -82,7 +82,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   11160
-         TabIndex        =   33
+         TabIndex        =   3
          Top             =   360
          Width           =   615
       End
@@ -101,7 +101,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   25
+         TabIndex        =   34
          Top             =   360
          Width           =   1005
       End
@@ -120,7 +120,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   1
          Left            =   6000
-         TabIndex        =   24
+         TabIndex        =   33
          Top             =   360
          Width           =   630
       End
@@ -139,7 +139,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   3
          Left            =   10440
-         TabIndex        =   23
+         TabIndex        =   32
          Top             =   360
          Width           =   465
       End
@@ -147,7 +147,7 @@ Begin VB.Form frmEsamiStrumentali
    Begin VB.Frame Frame2 
       Height          =   1095
       Left            =   120
-      TabIndex        =   17
+      TabIndex        =   27
       Top             =   720
       Width           =   12015
       Begin VB.CheckBox chkFiltra 
@@ -156,7 +156,7 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   2400
          Picture         =   "frmEsamiStrumentali.frx":0459
          Style           =   1  'Graphical
-         TabIndex        =   21
+         TabIndex        =   6
          ToolTipText     =   "Filtra esami effettuati"
          Top             =   680
          Width           =   375
@@ -167,7 +167,7 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   2400
          Picture         =   "frmEsamiStrumentali.frx":05A3
          Style           =   1  'Graphical
-         TabIndex        =   0
+         TabIndex        =   4
          ToolTipText     =   "Filtra esami effettuati"
          Top             =   240
          Width           =   375
@@ -186,7 +186,7 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   2880
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   2
+         TabIndex        =   7
          Top             =   680
          Width           =   5655
       End
@@ -204,14 +204,14 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   2880
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   1
+         TabIndex        =   5
          Top             =   240
          Width           =   5655
       End
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Left            =   9480
-         TabIndex        =   39
+         TabIndex        =   8
          Top             =   600
          Width           =   2100
          _ExtentX        =   3704
@@ -235,7 +235,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   9
          Left            =   8880
-         TabIndex        =   20
+         TabIndex        =   30
          Top             =   675
          Width           =   510
       End
@@ -254,7 +254,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   4
          Left            =   360
-         TabIndex        =   19
+         TabIndex        =   29
          Top             =   675
          Width           =   1530
       End
@@ -273,15 +273,16 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   2
          Left            =   360
-         TabIndex        =   18
+         TabIndex        =   28
          Top             =   240
          Width           =   1815
       End
    End
    Begin VB.Frame Frame3 
+      Enabled         =   0   'False
       Height          =   3615
       Left            =   120
-      TabIndex        =   12
+      TabIndex        =   22
       Top             =   1680
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -291,7 +292,7 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   1680
          Picture         =   "frmEsamiStrumentali.frx":06ED
          Style           =   1  'Graphical
-         TabIndex        =   3
+         TabIndex        =   9
          Top             =   240
          Width           =   450
       End
@@ -309,7 +310,7 @@ Begin VB.Form frmEsamiStrumentali
          Left            =   120
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   5
+         TabIndex        =   13
          Top             =   1320
          Width           =   11655
       End
@@ -326,7 +327,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   375
          Left            =   7800
-         TabIndex        =   4
+         TabIndex        =   12
          Top             =   840
          Value           =   1  'Checked
          Width           =   3975
@@ -345,7 +346,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   3600
-         TabIndex        =   37
+         TabIndex        =   10
          Top             =   360
          Width           =   3255
       End
@@ -363,7 +364,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   8640
-         TabIndex        =   36
+         TabIndex        =   11
          Top             =   360
          Width           =   3135
       End
@@ -383,7 +384,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   8
          Left            =   120
-         TabIndex        =   16
+         TabIndex        =   26
          Top             =   960
          Width           =   2175
       End
@@ -402,7 +403,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   7
          Left            =   2400
-         TabIndex        =   15
+         TabIndex        =   25
          Top             =   360
          Width           =   1005
       End
@@ -421,7 +422,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   6
          Left            =   7800
-         TabIndex        =   14
+         TabIndex        =   24
          Top             =   360
          Width           =   630
       End
@@ -440,7 +441,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   13
+         TabIndex        =   23
          Top             =   360
          Width           =   1470
       End
@@ -448,7 +449,7 @@ Begin VB.Form frmEsamiStrumentali
    Begin VB.Frame Frame5 
       Height          =   855
       Left            =   120
-      TabIndex        =   27
+      TabIndex        =   35
       Top             =   5160
       Width           =   12015
       Begin VB.Label Label1 
@@ -466,7 +467,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   41
          Left            =   7560
-         TabIndex        =   32
+         TabIndex        =   38
          Top             =   480
          Width           =   630
       End
@@ -485,7 +486,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   40
          Left            =   2400
-         TabIndex        =   31
+         TabIndex        =   37
          Top             =   480
          Width           =   1005
       End
@@ -504,7 +505,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   480
          Index           =   39
          Left            =   240
-         TabIndex        =   30
+         TabIndex        =   36
          Top             =   240
          Width           =   1680
          WordWrap        =   -1  'True
@@ -523,7 +524,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   3600
-         TabIndex        =   29
+         TabIndex        =   14
          Top             =   430
          Width           =   3375
       End
@@ -541,7 +542,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   285
          Left            =   8400
-         TabIndex        =   28
+         TabIndex        =   15
          Top             =   430
          Width           =   3375
       End
@@ -549,7 +550,7 @@ Begin VB.Form frmEsamiStrumentali
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   11
+      TabIndex        =   20
       Top             =   5880
       Width           =   12015
       Begin VB.CommandButton cmdGestioneReferti 
@@ -565,7 +566,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   495
          Left            =   3360
-         TabIndex        =   6
+         TabIndex        =   16
          Top             =   240
          Width           =   1935
       End
@@ -582,7 +583,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   495
          Left            =   5640
-         TabIndex        =   7
+         TabIndex        =   17
          Top             =   240
          Width           =   1335
       End
@@ -599,7 +600,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   495
          Left            =   7320
-         TabIndex        =   8
+         TabIndex        =   18
          Top             =   240
          Width           =   1215
       End
@@ -617,7 +618,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   495
          Left            =   10560
-         TabIndex        =   10
+         TabIndex        =   21
          Top             =   240
          Width           =   1215
       End
@@ -634,7 +635,7 @@ Begin VB.Form frmEsamiStrumentali
          EndProperty
          Height          =   495
          Left            =   8880
-         TabIndex        =   9
+         TabIndex        =   19
          Top             =   240
          Width           =   1335
       End
@@ -652,7 +653,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   38
+         TabIndex        =   39
          Top             =   360
          Width           =   3315
       End
@@ -916,7 +917,10 @@ Private Sub CaricaScheda()
     If cboEsami.ListIndex = -1 Then Exit Sub
     
     ' la data americana
-    data = oData.DataAmericana
+    data = Month(oData.data) & "/" & Day(oData.data) & "/" & Year(oData.data)
+    
+    'data = oData.DataAmericana in questa sub da errore incrementando il giorno di 2
+    
     Set rsEsami = New Recordset
     rsEsami.Open "SELECT * FROM ESAMI_STRUMENTALI WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_ORGANO=" & cboOrgano.ItemData(cboOrgano.ListIndex) & " AND CODICE_ESAME=" & cboEsami.ItemData(cboEsami.ListIndex) & " AND DATA=#" & data & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsEsami.EOF And rsEsami.BOF Then
@@ -1233,6 +1237,16 @@ Private Sub CaricaPaziente()
 End Sub
 
 Private Sub oData_OnCalendarClick(blnProsegui As Boolean)
+    If cboOrgano.ListIndex = -1 Then
+        MsgBox "Selezionare l' Organo/Apparato", vbInformation, "Informazione"
+        blnProsegui = False
+        Exit Sub
+    ElseIf cboEsami.ListIndex = -1 Then
+        MsgBox "Selezionare il Tipo di Esame", vbInformation, "Informazione"
+        blnProsegui = False
+        Exit Sub
+    End If
+    
     blnProsegui = ControlloChiusuraForm(blnModificato, Me.Caption)
 End Sub
 
@@ -1241,37 +1255,49 @@ Private Sub oData_OnDataChange()
     Call Pulisci(False)
     If oData.data <> "" Then
         Call CaricaScheda
+        Frame3.Enabled = True
     End If
 End Sub
 
 Private Sub oData_OnDataClick()
-    If ControlloChiusuraForm(blnModificato, Me.Caption) Then
+    If cboOrgano.ListIndex = -1 Then
+        MsgBox "Selezionare l' Organo/Apparato", vbInformation, "Informazione"
+        Exit Sub
+    ElseIf cboEsami.ListIndex = -1 Then
+        MsgBox "Selezionare il Tipo di Esame", vbInformation, "Informazione"
+        oData.Pulisci
+        Exit Sub
+    ElseIf ControlloChiusuraForm(blnModificato, Me.Caption) Then
         oData.Pulisci
     End If
 End Sub
 
 Private Sub oData_OnElencaClick()
-
     If cboOrgano.ListIndex = -1 Then
         MsgBox "Selezionare l' Organo/Apparato", vbInformation, "Informazione"
         Exit Sub
     ElseIf cboEsami.ListIndex = -1 Then
         MsgBox "Selezionare il Tipo di Esame", vbInformation, "Informazione"
         Exit Sub
-    End If
-    
-    If ControlloChiusuraForm(blnModificato, Me.Caption) Then
+    ElseIf ControlloChiusuraForm(blnModificato, Me.Caption) Then
         ' setta le variabili che saranno viste dal frmElencaDate
         tElenca.Tipo = tpESAMISTRUMENTALI
         tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_ORGANO=" & cboOrgano.ItemData(cboOrgano.ListIndex) & " AND CODICE_ESAME=" & cboEsami.ItemData(cboEsami.ListIndex)
         frmElencaDate.Show 1
         If laData <> "" Then oData.data = laData
+    Else
+        Frame3.Enabled = True
     End If
-    
 End Sub
 
 Private Sub txtReferto_GotFocus()
-    txtReferto.BackColor = colArancione
+ ' se la data non è presente NON abilita a scrivere nel frame3
+   If oData.data = "" Then
+       Frame3.Enabled = False
+       Exit Sub
+   Else
+       txtReferto.BackColor = colArancione
+   End If
 End Sub
 
 Private Sub txtReferto_LostFocus()
@@ -1297,3 +1323,4 @@ Private Sub Upd_rsDisco()
       Next i
       rsDisco.Update
 End Sub
+

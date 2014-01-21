@@ -2837,8 +2837,12 @@ Private Sub CaricaScheda()
     
     If oData.data = "" Then Exit Sub
     If intPazientiKey = 0 Then Exit Sub
+    
     ' la data americana
-    data = oData.DataAmericana
+    data = Month(oData.data) & "/" & Day(oData.data) & "/" & Year(oData.data)
+    
+    'data = oData.DataAmericana in questa sub da errore incrementando il giorno di 2
+
     Set rsDialisi = New Recordset
     rsDialisi.Open "SELECT * FROM SCHEDE_DIALISI WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & data & "#", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDialisi.EOF And rsDialisi.BOF) Then

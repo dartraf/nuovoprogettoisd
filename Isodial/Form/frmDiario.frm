@@ -251,6 +251,7 @@ Begin VB.Form frmDiario
       Top             =   1800
       Width           =   12015
       Begin VB.TextBox txtDati 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -712,17 +713,20 @@ End Sub
 
 '' Carica la scheda nel form e nel rsDisco
 Private Sub CaricaScheda()
+    Dim data As Date
     Dim i As Integer
     Dim strSql As String
     
     If intPazientiKey <> 0 And oDataTimeBox.data <> "" And cboTitolo.ListIndex <> -1 Then
         Call Pulisci
-        
+            ' la data americana
+            data = Month(oDataTimeBox.data) & "/" & Day(oDataTimeBox.data) & "/" & Year(oDataTimeBox.data)
+    
         strSql = "SELECT    DIARI_CLINICI.* " & _
                 "FROM       (DIARI_CLINICI " & _
                 "           INNER JOIN TITOLI_DIARIO ON TITOLI_DIARIO.KEY=DIARI_CLINICI.CODICE_TITOLO) " & _
                 "WHERE      (CODICE_PAZIENTE=" & intPazientiKey & ") AND " & _
-                "           (DATA=#" & oDataTimeBox.DataAmericana & "#) AND " & _
+                "           (DATA=#" & data & "#) AND " & _
                 "           (TITOLI_DIARIO.KEY=" & cboTitolo.ItemData(cboTitolo.ListIndex) & ")"
         Set rsDiario = New Recordset
         rsDiario.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
@@ -913,28 +917,54 @@ Private Sub cboTitolo_Click()
 End Sub
 
 Private Sub oDataTimeBox_OnCalendarClick(blnProsegui As Boolean)
+    If cboTitolo.ListIndex = -1 Then
+        MsgBox "Selezionare il Titolo del Diario", vbInformation, "Informazione"
+        blnProsegui = False
+        Exit Sub
+    End If
     blnProsegui = ControlloChiusuraForm(blnModificato, Me.Caption)
 End Sub
 
 Private Sub oDataTimeBox_OnDataChange()
     If IsDate(oDataTimeBox.data) Then
         Call CaricaScheda
+        txtDati.Enabled = True
     Else
         If oDataTimeBox.data = "" Then Pulisci
     End If
 End Sub
 
+Private Sub oDataTimeBox_OnDataClick()
+    If cboTitolo.ListIndex = -1 Then
+        MsgBox "Selezionare il Titolo del Diario", vbInformation, "Informazione"
+        Exit Sub
+    ElseIf ControlloChiusuraForm(blnModificato, Me.Caption) Then
+        oDataTimeBox.Pulisci
+    End If
+End Sub
+
 Private Sub oDataTimeBox_OnElencaClick()
-    If ControlloChiusuraForm(blnModificato, Me.Caption) Then
+    If cboTitolo.ListIndex = -1 Then
+        MsgBox "Selezionare il Titolo del Diario", vbInformation, "Informazione"
+        Exit Sub
+    ElseIf ControlloChiusuraForm(blnModificato, Me.Caption) Then
         tElenca.Tipo = tpDIARIO
         tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_TITOLO=" & cboTitolo.ItemData(cboTitolo.ListIndex)
         frmElencaDate.Show 1
         If laData <> "" Then oDataTimeBox.data = laData
+    Else
+        txtDati.Enabled = True
     End If
 End Sub
 
 Private Sub txtDati_GotFocus()
+ ' se la data non è presente NON abilita a scrivere nel txtdati
+   If oDataTimeBox.data = "" Then
+       txtDati.Enabled = False
+       Exit Sub
+   Else
     txtDati.BackColor = colArancione
+   End If
 End Sub
 
 Private Sub txtDati_LostFocus()

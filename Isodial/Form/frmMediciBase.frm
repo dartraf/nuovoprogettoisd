@@ -685,6 +685,7 @@ Dim intMediciBaseKey As Integer
 
 Private Sub cmdElimina_Click()
     Dim blnElimina As Boolean
+    Dim blnElimina2 As Boolean
     Dim blnEliminato As Boolean
     Dim rsDataset As Recordset
       
@@ -692,7 +693,9 @@ Private Sub cmdElimina_Click()
         Exit Sub
     Else
         blnElimina = IsPossibleDelete("PAZIENTI", "CODICE_MEDICO", intMediciBaseKey)
-        If blnElimina Then
+        blnElimina2 = IsPossibleDelete("RICETTE", "CODICE_MEDICO", intMediciBaseKey)
+        
+        If blnElimina And blnElimina2 Then
             If MsgBox("Sicuro di voler eliminare " & txtCognome & " " & txtNome & "?", vbQuestion + vbYesNo, Me.Caption) = vbYes Then
                 Set rsDataset = New Recordset
                 rsDataset.Open "SELECT * FROM MEDICI_BASE WHERE KEY=" & intMediciBaseKey, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText

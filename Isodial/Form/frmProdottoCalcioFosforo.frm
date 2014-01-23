@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mschrt20.ocx"
 Begin VB.Form frmProdottoCalcioFosforo 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Calcolo Prodotto Ca / P"
@@ -468,6 +468,13 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Private Sub SalvaModifiche()
+    ' controllo abilitazione modulo
+    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_SM2 Then
+    Else
+        MsgBox "MODULO OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        Exit Sub
+    End If
+
     Dim nome_campo As String
     
     With flxGriglia

@@ -54,13 +54,9 @@ Begin VB.Form frmRimborsiSpese
       TabPicture(1)   =   "frmRimborsiSpese.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "cboDa"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "cboA"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "Label1(4)"
-      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "Label1(0)"
-      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).ControlCount=   4
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
@@ -705,6 +701,12 @@ Private Sub cmdChiudi_Click()
 End Sub
 
 Private Sub cmdRielabora_Click()
+   If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
+   Else
+       MsgBox "MODULO DI STAMPA OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+       Exit Sub
+   End If
+
     On Error GoTo gestione
     Dim condizione As String
     Dim rsDataset As New Recordset

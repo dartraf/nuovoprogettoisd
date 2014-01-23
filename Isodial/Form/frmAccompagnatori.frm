@@ -851,6 +851,12 @@ Private Sub CaricaAccompagnatore()
 End Sub
 
 Private Sub cmdMemorizza_Click()
+   If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
+   Else
+       MsgBox "MODULO OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+       Exit Sub
+   End If
+       
     Dim v_Nomi() As Variant
     Dim v_Val() As Variant
     Dim numKey As Integer

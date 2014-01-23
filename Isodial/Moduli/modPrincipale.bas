@@ -253,11 +253,11 @@ End Sub
 ' @return
 ' @remarks
 Private Sub VerificaFunzionalita()
-If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
+'If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
    structApri.F1abiliata = True
-Else
-   structApri.F1abiliata = False
-End If
+'Else
+'   structApri.F1abiliata = False
+'End If
     
 '    On Error GoTo gestione
 '    Dim rsDataset As New Recordset

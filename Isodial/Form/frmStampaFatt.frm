@@ -684,6 +684,12 @@ Private Sub CaricaFlx()
 End Sub
 
 Private Sub StampaModuloFirmePaziente()
+    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
+    Else
+        MsgBox "MODULO DI STAMPA OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        Exit Sub
+    End If
+
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape

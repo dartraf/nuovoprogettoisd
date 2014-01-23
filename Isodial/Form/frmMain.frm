@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "31/12/2013"
+            TextSave        =   "23/01/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -909,50 +909,54 @@ End Sub
 Private Sub CaricaRibbonTab()
     On Error GoTo gestione
     
-    Const TAB_PAZIENTI As Integer = 1
+ '   Const TAB_PAZIENTI As Integer = 1
     
     ribTab.Width = picRibTab.Width
     ribTab.Theme = 1
 
     ' immagini 32x32
-    Set ribTab.zImg = imgListRibbonTab
-    ribTab.ButtonCenter = False
-
+ '   Set ribTab.zImg = imgListRibbonTab
+ '   ribTab.ButtonCenter = False
+'ribTab.ImageList = imgListRibbonTab
     '# Add Tabs ---   ID - Caption
-    ribTab.AddTab TAB_PAZIENTI, "Gestione Pazienti"
+    ribTab.AddTab "1", "Gestione Pazienti"
     ribTab.AddTab "2", "Gestione Emodialisi"
     ribTab.AddTab "3", "Gestione Indicatori"
-    ribTab.AddTab "4", "Setup Tabella"
+    ribTab.AddTab "4", "Setup Tabelle"
     ribTab.AddTab "5", "Strumenti"
     ribTab.AddTab "6", "Stampe"
     ribTab.AddTab "7", "Fatturazione"
-    ribTab.AddTab "8", "?"
+    ribTab.AddTab "8", "Apparati"
+    ribTab.AddTab "9", "?"
     
     '# Add Cats ---   ID - Tab - Caption - ShowDialogButton
-    ribTab.AddCat "1", TAB_PAZIENTI, "Informazioni Generali", False
-    ribTab.AddCat "2", TAB_PAZIENTI, "Anamnesi", False
-    ribTab.AddCat "3", TAB_PAZIENTI, "Esami", False
-    ribTab.AddCat "4", "1", "Terapia", False
+    ribTab.AddCat "1", "1", "Anagrafica Generale", False
+    ribTab.AddCat "2", "1", "Anamnesi", True
+    ribTab.AddCat "3", "1", "Esami", True
+    ribTab.AddCat "4", "1", "Terapia", True
     ribTab.AddCat "5", "1", "Accessi Vascolari", False
     ribTab.AddCat "6", "1", "Diario clinico", False
+    ribTab.AddCat "7", "1", "Scansione Documenti Pazienti", False
     
-    ribTab.AddCat "7", "2", "Turni e reni", False
-    ribTab.AddCat "8", "2", "Sedute dialitiche", False
-    ribTab.AddCat "9", "2", "Piano di lavoro", False
-    ribTab.AddCat "10", "2", "Consumi e previsioni", False
+    ribTab.AddCat "1", "2", "Turni Pazienti", True
+    ribTab.AddCat "2", "2", "Seduta Dialitica Giornaliera", True
+    ribTab.AddCat "3", "2", "Seduta Supplementare", False
+    ribTab.AddCat "4", "2", "Piano di Lavoro", False
+    ribTab.AddCat "5", "2", "Consumi e Previsioni", False
    
-    ribTab.AddCat "11", "3", "Indicatori", False
-    ribTab.AddCat "12", "3", "Scansioni", False
+ '   ribTab.AddCat "11", "3", "Indicatori", False
+ '   ribTab.AddCat "12", "3", "Scansioni", False
     
-    ribTab.AddCat "14", "4", "Tabelle", False
+ '   ribTab.AddCat "14", "4", "Tabelle", False
     
     
     
     '# Add Button ---    ID - Cat - Capt. - Icons -   More Arrow   - ToolTip
-    ribTab.AddButton "0", "1", "Info", 1
-    ribTab.AddButton "1", "2", "Dialitica", 2, False, "Anamnesi Dialitica"
-    ribTab.AddButton "2", "2", "Nefrologica", 3, False, "Anamnesi Nefrologica"
-    
+  '  ribTab.AddButton "0", "1", "Info", 1
+  '  ribTab.AddButton "1", "2", "Dialitica", 2, False, "Anamnesi Dialitica"
+  '  ribTab.AddButton "2", "2", "Nefrologica", 3, False, "Anamnesi Nefrologica"
+  '   ribTab.AddButton "3", "2", "Nefrologica", 4, False, "Anamnesi Nefrologica"
+   
     '# Repaint Ribbon
     ribTab.Refresh
 
@@ -1015,33 +1019,20 @@ Private Sub mnuGesPass_Click()
 End Sub
 
 Private Sub mnuGestioneFileC_Click()
-    If structIntestazione.sCodiceSTS = CODICESTS_MOSCATI Or structIntestazione.sCodiceSTS = CODICESTS_GAMMADIAL Or structIntestazione.sCodiceSTS = CODICESTS_CGA Or structIntestazione.sCodiceSTS = CODICESTS_DIALIFE Or structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or structIntestazione.sCodiceSTS = CODICESTS_SBIAGIO Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRON Or structIntestazione.sCodiceSTS = CODICESTS_DELTA Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_LA_PECCERELLA Or structIntestazione.sCodiceSTS = CODICESTS_SANNIOMEDICA Or structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or structIntestazione.sCodiceSTS = CODICESTS_HELIOS Then
-        tFileRicette = tpFILEC
-        frmGestioneFileRicette.Show
-    Else
-        MsgBox "MODULO PER GENERARE I FILE 'C' OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
-    End If
+    tFileRicette = tpFILEC
+    frmGestioneFileRicette.Show
 End Sub
 
 Private Sub mnuGestioneFileXml_Click()
-    If structIntestazione.sCodiceSTS = CODICESTS_MOSCATI Or structIntestazione.sCodiceSTS = CODICESTS_GAMMADIAL Or structIntestazione.sCodiceSTS = CODICESTS_CGA Or structIntestazione.sCodiceSTS = CODICESTS_DIALIFE Or structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or structIntestazione.sCodiceSTS = CODICESTS_SBIAGIO Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRON Or structIntestazione.sCodiceSTS = CODICESTS_DELTA Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_LA_PECCERELLA Or structIntestazione.sCodiceSTS = CODICESTS_SANNIOMEDICA Or structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or structIntestazione.sCodiceSTS = CODICESTS_HELIOS Then
-        tFileRicette = tpFILEXML
-        frmGestioneFileRicette.Show
-    Else
-        MsgBox "MODULO PER GENERARE IL FILE 'XML' OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
-    End If
+    tFileRicette = tpFILEXML
+    frmGestioneFileRicette.Show
 End Sub
 
 Private Sub mnugestioneIndicatoriSotto_Click(Index As Integer)
     Select Case Index
         Case 1: frmKtv.Show
         Case 2: frmTsat.Show
-        Case 3:
-                If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_SM2 Then
-                    frmProdottoCalcioFosforo.Show
-                Else
-                    MsgBox "MODULO OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
-                End If
+        Case 3: frmProdottoCalcioFosforo.Show
         Case 4: frmEventi.Show
         Case 5: frmColture.Show
         Case 6: frmEpo.Show
@@ -1103,12 +1094,8 @@ Private Sub mnuKtvAnnuale_Click()
 End Sub
 
 Private Sub mnuModuloFirmePaziente_Click()
-    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
-        tStampa = tpMODULOFIRMEPAZIENTE
-        frmStampaFogliViaggio.Show 1
-    Else
-        MsgBox "MODULO DI STAMPA OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
-    End If
+    tStampa = tpMODULOFIRMEPAZIENTE
+    frmStampaFogliViaggio.Show 1
 End Sub
 
 Private Sub mnuMostraFattElaborazione_Click()
@@ -1142,12 +1129,8 @@ Private Sub mnuRipristina_Click()
 End Sub
 
 Private Sub mnuSchedaDialiticaSettimanale_Click()
-    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
-        tStampa = tpSCHEDADIALITICASETTIMANALE
-        frmStampaFiltri.Show 1
-    Else
-        MsgBox "MODULO DI STAMPA OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
-    End If
+    tStampa = tpSCHEDADIALITICASETTIMANALE
+    frmStampaFiltri.Show 1
 End Sub
 
 Private Sub mnuSottoApparati_Click(Index As Integer)

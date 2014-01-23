@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmStampaFiltri 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa "
@@ -1022,6 +1022,12 @@ Private Sub StampaCAPAnnuale()
 End Sub
 
 Private Sub StampaSchedaDialiticaSettimanale()
+    If structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
+    Else
+        MsgBox "MODULO DI STAMPA OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        Exit Sub
+    End If
+
     Dim strSqlStampa As String
     Dim strSql As String
     Dim i As Integer

@@ -1716,6 +1716,11 @@ Private Function ControlloSiNonCompleto() As Boolean
 End Function
 
 Private Sub cmdMemorizza_Click()
+    If structIntestazione.sCodiceSTS <> CODICESTS_BARTOLI Then
+        MsgBox "MODULO OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        Exit Sub
+    End If
+
     Dim v_Val() As Variant
     Dim v_Nomi() As Variant
 

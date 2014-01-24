@@ -1,17 +1,17 @@
 VERSION 5.00
+Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmAccompagnatori 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Accompagnatori"
-   ClientHeight    =   6645
+   ClientHeight    =   7065
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   10440
    LinkTopic       =   "Form1"
-   LockControls    =   -1  'True
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   6645
+   ScaleHeight     =   7065
    ScaleWidth      =   10440
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame3 
@@ -25,10 +25,10 @@ Begin VB.Form frmAccompagnatori
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1215
+      Height          =   1335
       Left            =   120
-      TabIndex        =   35
-      Top             =   4680
+      TabIndex        =   36
+      Top             =   4920
       Width           =   10215
       Begin VB.TextBox txtTipo 
          BeginProperty Font 
@@ -43,7 +43,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   6000
          MaxLength       =   15
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   360
          Width           =   2175
       End
@@ -60,7 +60,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   25
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   840
          Width           =   2655
       End
@@ -77,7 +77,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   15
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   360
          Width           =   1935
       End
@@ -96,7 +96,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   9
          Left            =   120
-         TabIndex        =   38
+         TabIndex        =   39
          Top             =   840
          Width           =   1245
       End
@@ -115,7 +115,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   8
          Left            =   5400
-         TabIndex        =   37
+         TabIndex        =   38
          Top             =   360
          Width           =   495
       End
@@ -134,7 +134,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   7
          Left            =   120
-         TabIndex        =   36
+         TabIndex        =   37
          Top             =   375
          Width           =   645
       End
@@ -150,23 +150,11 @@ Begin VB.Form frmAccompagnatori
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1215
+      Height          =   1335
       Left            =   120
-      TabIndex        =   31
-      Top             =   3360
+      TabIndex        =   32
+      Top             =   3480
       Width           =   10215
-      Begin VB.PictureBox picDataRilascio 
-         AutoSize        =   -1  'True
-         BorderStyle     =   0  'None
-         Height          =   360
-         Left            =   8520
-         ScaleHeight     =   360
-         ScaleWidth      =   360
-         TabIndex        =   14
-         ToolTipText     =   "Cerca data"
-         Top             =   320
-         Width           =   360
-      End
       Begin VB.TextBox txtPatente 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -180,7 +168,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   10
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   360
          Width           =   1455
       End
@@ -197,9 +185,21 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   15
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   840
          Width           =   1935
+      End
+      Begin DataTimeBox.uDataTimeBox oDataRilascio 
+         Height          =   375
+         Left            =   7200
+         TabIndex        =   12
+         Top             =   320
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -216,28 +216,9 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   3
          Left            =   120
-         TabIndex        =   34
+         TabIndex        =   35
          Top             =   375
          Width           =   825
-      End
-      Begin VB.Label lblDataRilascio 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   7200
-         TabIndex        =   13
-         Top             =   375
-         Width           =   1215
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -254,7 +235,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   4
          Left            =   5400
-         TabIndex        =   33
+         TabIndex        =   34
          Top             =   375
          Width           =   1680
       End
@@ -273,7 +254,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   32
+         TabIndex        =   33
          Top             =   840
          Width           =   1395
       End
@@ -289,9 +270,9 @@ Begin VB.Form frmAccompagnatori
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   3255
+      Height          =   3375
       Left            =   120
-      TabIndex        =   19
+      TabIndex        =   20
       Top             =   0
       Width           =   10215
       Begin VB.CommandButton cmdTrova 
@@ -300,7 +281,7 @@ Begin VB.Form frmAccompagnatori
          Left            =   1320
          Picture         =   "frmAccompagnatori.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   42
+         TabIndex        =   19
          Top             =   360
          Width           =   450
       End
@@ -317,7 +298,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   25
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   1440
          Width           =   3255
       End
@@ -334,7 +315,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   6720
          MaxLength       =   15
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   2880
          Width           =   1815
       End
@@ -355,18 +336,6 @@ Begin VB.Form frmAccompagnatori
          Top             =   480
          Width           =   3255
       End
-      Begin VB.PictureBox picData 
-         AutoSize        =   -1  'True
-         BorderStyle     =   0  'None
-         Height          =   360
-         Left            =   3240
-         ScaleHeight     =   360
-         ScaleWidth      =   360
-         TabIndex        =   3
-         ToolTipText     =   "Cerca data"
-         Top             =   930
-         Width           =   360
-      End
       Begin VB.TextBox txtProv 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -380,7 +349,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   8640
          MaxLength       =   2
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   1920
          Width           =   615
       End
@@ -397,7 +366,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   6720
          MaxLength       =   5
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   1920
          Width           =   855
       End
@@ -414,7 +383,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   16
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   2400
          Width           =   2055
       End
@@ -431,7 +400,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   25
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   1920
          Width           =   3255
       End
@@ -448,7 +417,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   6720
          MaxLength       =   25
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   1440
          Width           =   3255
       End
@@ -482,9 +451,21 @@ Begin VB.Form frmAccompagnatori
          Height          =   285
          Left            =   1920
          MaxLength       =   15
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   2880
          Width           =   2055
+      End
+      Begin DataTimeBox.uDataTimeBox oDataNascita 
+         Height          =   375
+         Left            =   1920
+         TabIndex        =   2
+         Top             =   920
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -501,7 +482,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   6
          Left            =   120
-         TabIndex        =   30
+         TabIndex        =   31
          Top             =   1485
          Width           =   1590
       End
@@ -520,28 +501,9 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   1
          Left            =   5400
-         TabIndex        =   29
+         TabIndex        =   30
          Top             =   2880
          Width           =   945
-      End
-      Begin VB.Label lblDataNascita 
-         Alignment       =   2  'Center
-         BackColor       =   &H80000009&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1920
-         TabIndex        =   2
-         Top             =   960
-         Width           =   1215
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -558,7 +520,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   32
          Left            =   120
-         TabIndex        =   28
+         TabIndex        =   29
          Top             =   480
          Width           =   1005
       End
@@ -577,7 +539,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   33
          Left            =   5400
-         TabIndex        =   27
+         TabIndex        =   28
          Top             =   480
          Width           =   630
       End
@@ -596,7 +558,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   480
          Index           =   34
          Left            =   5400
-         TabIndex        =   26
+         TabIndex        =   27
          Top             =   1320
          Width           =   1125
          WordWrap        =   -1  'True
@@ -616,7 +578,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   35
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   26
          Top             =   1950
          Width           =   870
       End
@@ -635,7 +597,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   36
          Left            =   8040
-         TabIndex        =   24
+         TabIndex        =   25
          Top             =   1950
          Width           =   555
       End
@@ -654,7 +616,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   37
          Left            =   5400
-         TabIndex        =   23
+         TabIndex        =   24
          Top             =   1950
          Width           =   585
       End
@@ -673,7 +635,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   41
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   23
          Top             =   2430
          Width           =   1575
       End
@@ -692,7 +654,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   22
          Top             =   960
          Width           =   1620
       End
@@ -711,7 +673,7 @@ Begin VB.Form frmAccompagnatori
          Height          =   240
          Index           =   2
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   2880
          Width           =   945
       End
@@ -719,8 +681,8 @@ Begin VB.Form frmAccompagnatori
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   39
-      Top             =   5760
+      TabIndex        =   40
+      Top             =   6120
       Width           =   10215
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -735,7 +697,7 @@ Begin VB.Form frmAccompagnatori
          EndProperty
          Height          =   495
          Left            =   7080
-         TabIndex        =   41
+         TabIndex        =   17
          Top             =   240
          Width           =   1335
       End
@@ -753,7 +715,7 @@ Begin VB.Form frmAccompagnatori
          EndProperty
          Height          =   495
          Left            =   8760
-         TabIndex        =   40
+         TabIndex        =   18
          Top             =   240
          Width           =   1215
       End
@@ -795,8 +757,6 @@ Private Sub Form_Load()
     Call GetCenterForm(Me.Height, Me.Width, intTop, intLeft)
     Me.Top = intTop
     Me.Left = intLeft
-    picData.Picture = LoadResPicture("cal1", 0)
-    picDataRilascio.Picture = LoadResPicture("cal1", 0)
 End Sub
 
 '' Determina se la scheda è completa prima del salvataggio
@@ -817,9 +777,9 @@ End Function
 '' Pulisce tutta la scheda
 Private Sub PulisciTutto()
     intAccompagnatoreKey = 0
+    oDataNascita.Pulisci
+    oDataRilascio.Pulisci
     modifica = False
-    lblDataNascita = ""
-    lblDataRilascio = ""
     Call PulisciForm(Me)
     txtCognome.SetFocus
 End Sub
@@ -833,7 +793,7 @@ Private Sub CaricaAccompagnatore()
     txtCognome = rsDataset("COGNOME")
     txtNome = rsDataset("NOME")
     txtComuneProvNascita = rsDataset("CITTA_NASCITA")
-    lblDataNascita = rsDataset("DATA_NASCITA") & ""
+    oDataNascita.data = rsDataset("DATA_NASCITA") & ""
     txtCitta = rsDataset("CITTA")
     txtIndirizzo = rsDataset("INDIRIZZO")
     txtCap = rsDataset("CAP")
@@ -843,7 +803,7 @@ Private Sub CaricaAccompagnatore()
     txtTelefono = rsDataset("TELEFONO")
     txtEnteEmittente = rsDataset("ENTE_EMITTENTE")
     txtPatente = rsDataset("PATENTE")
-    lblDataRilascio = rsDataset("DATA_RILASCIO") & ""
+    oDataRilascio.data = rsDataset("DATA_RILASCIO") & ""
     txtTarga = rsDataset("TARGA")
     txtTipo = rsDataset("TIPO")
     txtProprietario = rsDataset("PROPRIETARIO")
@@ -871,7 +831,7 @@ Private Sub cmdMemorizza_Click()
             numKey = GetNumero("ACCOMPAGNATORI")
         End If
         v_Nomi = Array("KEY", "COGNOME", "NOME", "CITTA_NASCITA", "DATA_NASCITA", "CODICE_FISCALE", "INDIRIZZO", "CAP", "CITTA", "PROV", "TELEFONO", "CELLULARE", "PATENTE", "DATA_RILASCIO", "ENTE_EMITTENTE", "TARGA", "TIPO", "PROPRIETARIO")
-        v_Val = Array(numKey, txtCognome, txtNome, txtComuneProvNascita, IIf(lblDataNascita = "", Null, lblDataNascita), txtCodiceFiscale, txtIndirizzo, txtCap, txtCitta, txtProv, txtTelefono, txtCellulare, txtPatente, IIf(lblDataRilascio = "", Null, lblDataRilascio), txtEnteEmittente, txtTarga, txtTipo, txtProprietario)
+        v_Val = Array(numKey, txtCognome, txtNome, txtComuneProvNascita, IIf(oDataNascita.data = "", Null, oDataNascita.data), txtCodiceFiscale, txtIndirizzo, txtCap, txtCitta, txtProv, txtTelefono, txtCellulare, txtPatente, IIf(oDataRilascio.data = "", Null, oDataRilascio.data), txtEnteEmittente, txtTarga, txtTipo, txtProprietario)
         If modifica Then
             rsDataset.Open "SELECT * FROM ACCOMPAGNATORI WHERE KEY=" & intAccompagnatoreKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
             rsDataset.Update v_Nomi, v_Val
@@ -898,30 +858,12 @@ Private Sub cmdTrova_Click()
     Call CaricaAccompagnatore
 End Sub
 
-Private Sub picData_Click()
-    frmCalendario.Show 1
-    If laData <> "" Then lblDataNascita = laData
+Private Sub oDataNascita_OnDataClick()
+    oDataNascita.Pulisci
 End Sub
 
-Private Sub picData_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    picData.Picture = LoadResPicture("cal2", 0)
-End Sub
-
-Private Sub picData_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    picData.Picture = LoadResPicture("cal1", 0)
-End Sub
-
-Private Sub picDataRilascio_Click()
-    frmCalendario.Show 1
-    If laData <> "" Then lblDataRilascio = laData
-End Sub
-
-Private Sub picDataRilascio_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    picDataRilascio.Picture = LoadResPicture("cal2", 0)
-End Sub
-
-Private Sub picDataRilascio_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    picDataRilascio.Picture = LoadResPicture("cal1", 0)
+Private Sub oDataRilascio_OnDataClick()
+    oDataRilascio.Pulisci
 End Sub
 
 Private Sub txtCap_GotFocus()

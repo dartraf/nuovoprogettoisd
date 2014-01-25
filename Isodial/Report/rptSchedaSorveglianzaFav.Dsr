@@ -1336,7 +1336,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaSorveglianzaFav
       BeginProperty Item41 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAccessoVascolare"
-         Object.Left            =   6066
+         Object.Left            =   5896
          Object.Top             =   8334
          Object.Width           =   2265
          Object.Height          =   345

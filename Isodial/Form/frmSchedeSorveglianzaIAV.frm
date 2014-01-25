@@ -1987,7 +1987,11 @@ Private Sub cmdStampa_Click()
                 .Fields("RIC_INDICATORI") = rsDataset("RIC_INDICATORI")
                 .Fields("RIC_PARAMETRI") = rsDataset("RIC_PARAMETRI")
                 .Fields("RIC_TOLL_ACCET") = rsDataset("RIC_TOLL_ACCET")
-                .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO") & "    in data " & rsDataset("ACC_VAS_DATA")
+                If rsDataset("ACC_VAS_SI_NO") = "SI" Then
+                    .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO") & "    in data  " & rsDataset("ACC_VAS_DATA")
+                Else
+                    .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO")
+                End If
                 rsDataset.MoveNext
             Loop
         End With
@@ -2000,9 +2004,6 @@ Private Sub cmdStampa_Click()
     Set rsDataset = Nothing
     
     Set rptSchedaSorveglianzaFav.DataSource = rsMain
-    'rptStampaApparati.TopMargin = 0
-    'rptStampaApparati.RightMargin = 0
-    'rptStampaApparati.LeftMargin = 0
     rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblDataScheda").Caption = oDataScheda(0).data
     rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblPaziente").Caption = structIntestazione.sPaziente
     rptSchedaSorveglianzaFav.Sections("Intestazione").Controls.Item("lblTipoUtenteCompilatore").Caption = lblTipoUtente(27).Caption
@@ -2155,6 +2156,33 @@ Private Sub CaricaPaziente()
        
     End If
 End Sub
+
+'Private Sub CaricaPaziente()
+    
+'    If PazienteKey = 0 Then
+    
+'    Else
+        ' carica i dati del paziente
+'        Set rsDataset = New Recordset
+'        rsDataset.Open "SELECT COGNOME,NOME,DATA_NASCITA FROM PAZIENTI WHERE KEY=" & PazienteKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'        lblCognome = rsDataset("COGNOME")
+'        lblNome = rsDataset("NOME")
+'        Dim somma As Integer
+'        If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
+'            somma = -1
+'        ElseIf Month(rsDataset("DATA_NASCITA")) = Month(date) And Day(rsDataset("DATA_NASCITA")) > Day(date) Then
+'            somma = -1
+'        Else
+'            somma = 0
+'        End If
+'        lblEta = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
+'        Set rsDataset = Nothing
+       
+        ' Di default vado a caricare la data di sistema
+'        oDataScheda(0).data = date
+       
+'    End If
+'End Sub
 
 Private Sub CaricaValori()
     Dim data As Date
@@ -2367,6 +2395,7 @@ End Sub
 Private Sub optNoAccessoVascolare_GotFocus()
     Label2.Visible = False
     oDataNuovoAccessoVascolare(2).Visible = False
+    oDataNuovoAccessoVascolare(2).txtBox = ""
 End Sub
 
 Private Sub optNoDolore_GotFocus()

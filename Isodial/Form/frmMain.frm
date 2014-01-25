@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "23/01/2014"
+            TextSave        =   "24/01/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -545,6 +545,10 @@ Begin VB.MDIForm frmMain
          Caption         =   "Esami &Periodici"
          Index           =   10
          Tag             =   "Esami &Periodici|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
+      End
+      Begin VB.Menu mnuGestioneIndicatoriSotto 
+         Caption         =   "&Scheda Rilevazione FAV"
+         Index           =   11
       End
    End
    Begin VB.Menu mnuArchivi 
@@ -968,8 +972,7 @@ gestione:
 End Sub
 
 Private Sub mnuabout_Click()
-  frmSchedeSorveglianzaFAV.Show 1
- '  frmInfo.Show 1
+   frmInfo.Show 1
 End Sub
 
 Private Sub mnuCaPAnnuale_Click()
@@ -1040,6 +1043,7 @@ Private Sub mnugestioneIndicatoriSotto_Click(Index As Integer)
         Case 8: frmTrattamentoAcque.Show
         Case 9: frmTrapianti.Show
         Case 10: frmEsamiPeriodici.Show
+        Case 11: frmSchedeSorveglianzaFAV.Show 1
     End Select
 End Sub
 
@@ -2177,6 +2181,8 @@ Public Sub SubClassMenuXP()
           mnuGestioneIndicatoriSotto(8).Caption = "&Trattamento Acque"
           mnuGestioneIndicatoriSotto(9).Caption = "&Pazienti Candidati al Trapianto"
           mnuGestioneIndicatoriSotto(10).Caption = "Esami Periodici in &ED"
+          mnuGestioneIndicatoriSotto(11).Caption = "&Scheda Rilevazione FAV"
+          
     mnuArchivi.Caption = "&Setup Tabelle"
           mnuSottoTab(1).Caption = "&Organigramma"
           mnuSottoTabOrgan(2).Caption = "&Medici in Dialisi"
@@ -2196,6 +2202,7 @@ Public Sub SubClassMenuXP()
           mnuSottoTab(13).Caption = "&Esami di Laboratorio"
           mnuSottoTab(14).Caption = "Raggr&uppamento Esami di Laboratorio"
           mnuSottoTab(15).Caption = "E.D.&T.A."
+          
     mnuStrumenti.Caption = "&Strumenti"
           mnuGesPass.Caption = "&Gestione Utenti"
           mnuImpostaStampa.Caption = "&Intestazione Centro"
@@ -2204,6 +2211,7 @@ Public Sub SubClassMenuXP()
           mnuImpostaBackup.Caption = "&N° Backup"
           mnuEsportaDb.Caption = "&Esporta Database"
      '     mnuBarra.Caption = "&Barra degli Strumenti"
+     
     mnuStampe.Caption = "Stam&pe"
           mnuStampaPaz.Caption = "Lista &Pazienti"
           mnuStampaMediciBase.Caption = "Lista &Medici di Base"
@@ -2214,6 +2222,7 @@ Public Sub SubClassMenuXP()
           mnuKtvAnnuale.Caption = "&KT/V Annuale"
           mnuTsatAnnuale.Caption = "&TSAT %  Annuale"
           mnuSchedaDialiticaSettimanale.Caption = "&Scheda Dialitica Settimanale"
+          
     mnuFatturazione.Caption = "&Fatturazione"
         mnuTabelleFatturazione.Caption = "&Tabelle"
         mnuTabFatt(0).Caption = "&Regioni"
@@ -2238,12 +2247,15 @@ Public Sub SubClassMenuXP()
         mnuStampaRiepilogo(6).Caption = "x Ma&zzetta - Singola"
         mnuStampaRiepilogo(7).Caption = "x &Asl - Distretti"
         mnuStampaRiepilogo(8).Caption = "x &Impegnative"
+        
     mnuVassoio.Caption = "PopupVassoio"
         mnuApriVassoio.Caption = "Ripristina"
+        
     mnuApparati.Caption = "Apparati"
         mnuSottoApparati(0).Caption = "Gestione &Apparati"
         mnuSottoApparati(1).Caption = "Stampa Re&gistro"
         mnuSottoApparati(2).Caption = "Parco Ren&i Artificiali"
+        
     mnu1.Caption = "&?"
         mnuabout.Caption = "&Informazioni su Isodial..."
           

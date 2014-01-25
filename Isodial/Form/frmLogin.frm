@@ -297,6 +297,7 @@ Private Sub impostaMenu()
     Dim i  As Integer
     With frmMain
         Select Case tAccesso.Tipo
+          
           Case tpAMASTER
             .mnuGestioneIndicatori.Visible = True
             .mnuStampaPaz.Enabled = True
@@ -310,12 +311,19 @@ Private Sub impostaMenu()
             .mnuSottoDialisi(5).Enabled = True
             .mnuKtvAnnuale.Enabled = True
             .mnuTsatAnnuale.Enabled = True
+            .mnuApparati.Enabled = True
+            .mnuCaPAnnuale.Enabled = True
+            .mnuPthAnnuale.Enabled = True
+            For i = 1 To 10
+            .mnuGestioneIndicatoriSotto(i).Enabled = True
+            Next i
             For i = 1 To 4
                 .mnuSottoDialisi(i).Visible = True
             Next i
             For i = 1 To 6
                 .mnuSottoPaz(i).Visible = True
             Next i
+          
           Case tpACONTABILE
             .mnuStampe.Enabled = True
             .mnuStampaPaz.Enabled = True
@@ -342,6 +350,7 @@ Private Sub impostaMenu()
             For i = 1 To 13
                 .cmdToolbar(i).Enabled = False
             Next i
+          
           Case tpAMEDICO
             .mnuSottoDialisi(5).Enabled = True
             .mnuGestioneIndicatori.Visible = True
@@ -362,10 +371,15 @@ Private Sub impostaMenu()
             For i = 1 To 4
                 .mnuSottoDialisi(i).Visible = True
             Next i
+          
           Case tpAINFERMIERE
             .mnuStampe.Enabled = True
             .mnuStampaPaz.Enabled = False
             .mnuStampaMediciBase.Enabled = False
+            .mnuGestioneIndicatori.Visible = True
+            For i = 1 To 10
+            .mnuGestioneIndicatoriSotto(i).Enabled = False
+            Next i
             .mnuMostraFattElaborazione.Enabled = True
             .mnuImpegnativeDialisi.Enabled = False
             .mnuKtvAnnuale.Enabled = False
@@ -386,6 +400,7 @@ Private Sub impostaMenu()
             .mnuSottoDialisi(3).Visible = True
             .cmdToolbar(12).Enabled = True
             .mnuSottoDialisi(5).Enabled = False
+        
         End Select
         .mnuImpostaBackup.Visible = structApri.server
         .mnuRipristina.Visible = structApri.server

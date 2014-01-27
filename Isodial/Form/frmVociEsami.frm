@@ -808,7 +808,7 @@ Private Sub Cerca()
             Else
                 .TextMatrix(.Rows - 1, 2) = ""
             End If
-            .TextMatrix(.Rows - 1, 3) = rsDatasetCerca("UNITA")
+            .TextMatrix(.Rows - 1, 3) = rsDatasetCerca("UNITA") & ""
             .TextMatrix(.Rows - 1, 4) = VirgolaOrPunto(rsDatasetCerca("MIN"), ",")
             .TextMatrix(.Rows - 1, 5) = VirgolaOrPunto(rsDatasetCerca("MAX"), ",")
             If rsDatasetCerca("STAMPA") Then

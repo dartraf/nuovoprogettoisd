@@ -266,8 +266,8 @@ Private Sub optTuttiProduttori_Click()
 End Sub
 
 Private Sub cmdAvanti_Click()
-Dim NomeProduttore As String
-Dim NomeCategoria As String
+    Dim NomeProduttore As String
+    Dim NomeCategoria As String
     
     If optInventario.Value = False And optTuttiProduttori.Value = Unchecked And optTipoApparato.Value = False And optApparatiRottamati.Value = False And lblNomeProduttore.Caption = "" And lblNomeCategoria.Caption = "" Then
         MsgBox "Selezionare il tipo di elenco da stampare", vbInformation, "Informazione"
@@ -280,7 +280,7 @@ Dim NomeCategoria As String
         Call StampaApparato
         
     ElseIf optApparatiRottamati.Value = True Then
-        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE Is Not Null ORDER BY NUMERO_INVENTARIO"
+        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE is not null and DATA_ROTTAMAZIONE < date() ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco Apparati Rottamati"
         Call StampaApparato
         

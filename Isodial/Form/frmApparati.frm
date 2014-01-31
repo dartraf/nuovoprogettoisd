@@ -345,6 +345,15 @@ Private Sub cmdEliminaApparato_Click()
     
     ElseIf Not IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) Or Not IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) Then
         MsgBox "ELIMINAZIONE NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
+'    If MsgBox("ELIMINAZIONE NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo" & crlf & "Vuoi renderlo NON VISIBILE?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
+      
+      
+      'STO QUA----->>>>>
+        
+        
+ '       Call CaricaFlx
+ '       Exit Sub
+ '   End If
     
  '   ElseIf IsPossibleDelete("APPARATI", "DATA_ROTTAMAZIONE", KeyApparato) Then
  '       MsgBox "ELIMINAZIONE NON PERMESSA!!! - Apparato con DATA di ROTTAMAZIONE attribuita", vbInformation, "ATTENZIONE!!!"
@@ -370,7 +379,7 @@ Private Sub EliminaApparato()
 End Sub
 
 Private Sub cmdEliminaManutenzioneApparato_Click()
-    
+    Dim MCodiceApparato As Integer
     KeyReturnManutenzione = MantieniDatoManutenzione
     
     If KeyReturnManutenzione = 0 Then
@@ -378,17 +387,28 @@ Private Sub cmdEliminaManutenzioneApparato_Click()
     End If
     
     Set rsEliminaManutenzione = New Recordset
+    Set rsApparati = New Recordset
         
         rsEliminaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY= " & KeyReturnManutenzione, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
-        If IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = False Or rsEliminaManutenzione("NUMERO_DOCUMENTO") <> "" Or rsEliminaManutenzione("DETTAGLI_INTERVENTO") <> "" Then
-            MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di valori in uno dei campi:" & vbCrLf & "- Data Effettiva Manutenzione" & vbCrLf & "- N° Documento di Lavoro" & vbCrLf & "- Dettagli Intervento", vbInformation, "ATTENZIONE!!!"
-            Exit Sub
-        ElseIf MsgBox("Sicuro di voler eliminare la scheda di manutenzione selezionata?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
-            Call EliminaManutenzione
-            Call CaricaFlxManutenzione
+        MCodiceApparato = rsEliminaManutenzione("CODICE_APPARATO")
+        rsApparati.Open "SELECT * FROM APPARATI WHERE (PROXREVSIC Is NOT Null or PROXREVFUN Is NOT Null) AND KEY= " & MCodiceApparato, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        
+        If (rsApparati.EOF Or rsApparati.BOF) Then
+            If MsgBox("Sicuro di voler eliminare la scheda di manutenzione selezionata?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
+                Call EliminaManutenzione
+                Call CaricaFlxManutenzione
+            End If
+        Else
+            MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di automatismi sulle date di manutenzione", vbInformation, "ATTENZIONE!!!"
         End If
-    
+ 
+        
+ '       If rsEliminaManutenzione("TIPO_MANUTENZIONE") <> "STRAORDINARIA" And (IsNull(rsEliminaManutenzione("DATA_EFFETTIVA_MANUTENZIONE")) = False Or rsEliminaManutenzione("NUMERO_DOCUMENTO") <> "" Or rsEliminaManutenzione("DETTAGLI_INTERVENTO") <> "") Then
+ '           MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di valori in uno dei campi:" & vbCrLf & "- Data Effettiva Manutenzione" & vbCrLf & "- N° Documento di Lavoro" & vbCrLf & "- Dettagli Intervento", vbInformation, "ATTENZIONE!!!"
+ '           Exit Sub
+ '       End If
+    Set rsApparati = Nothing
     Set rsEliminaManutenzione = Nothing
            
 End Sub

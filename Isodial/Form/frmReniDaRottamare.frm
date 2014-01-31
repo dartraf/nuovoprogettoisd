@@ -199,7 +199,7 @@ Private Sub CaricaFlx()
     data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
     flxGriglia.Rows = 1
     Set rsDataset = New Recordset
-    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND TIPO_APPARATO = 'RENE ARTIFICIALE' AND SOSTITUITO=FALSE ORDER BY POSTAZIONE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         With flxGriglia
             .Rows = .Rows + 1

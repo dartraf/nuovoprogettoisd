@@ -193,6 +193,14 @@ Begin VB.Form frmStampaApparati
       TabIndex        =   3
       Top             =   3240
       Width           =   5415
+      Begin VB.CheckBox Check1 
+         Caption         =   "Check1"
+         Height          =   255
+         Left            =   140
+         TabIndex        =   14
+         Top             =   360
+         Width           =   255
+      End
       Begin VB.CommandButton cmdEsci 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
@@ -228,6 +236,24 @@ Begin VB.Form frmStampaApparati
          TabIndex        =   1
          Top             =   240
          Width           =   1260
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Includi Apparati Rottamati"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   400
+         TabIndex        =   15
+         Top             =   240
+         Width           =   1695
+         WordWrap        =   -1  'True
       End
    End
 End
@@ -268,43 +294,64 @@ End Sub
 Private Sub cmdAvanti_Click()
     Dim NomeProduttore As String
     Dim NomeCategoria As String
+    Dim IncludiRott As String
     
     If optInventario.Value = False And optTuttiProduttori.Value = Unchecked And optTipoApparato.Value = False And optApparatiRottamati.Value = False And lblNomeProduttore.Caption = "" And lblNomeCategoria.Caption = "" Then
         MsgBox "Selezionare il tipo di elenco da stampare", vbInformation, "Informazione"
         Exit Sub
     End If
     
+    If Check1 = False Then
+        IncludiRott = "WHERE DATA_ROTTAMAZIONE is null or DATA_ROTTAMAZIONE > date()"
+    Else
+        IncludiRott = ""
+    End If
+    
+    ' Stampa x N° D'INVENTARIO--->OK!!!
     If optInventario.Value = True Then
-        strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
+        strSql = "SELECT * FROM APPARATI " & IncludiRott & " ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco Apparati per N° Inventario"
         Call StampaApparato
         
+    ' Stampa APPARATI ROTTAMATI
     ElseIf optApparatiRottamati.Value = True Then
-        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE is not null and DATA_ROTTAMAZIONE < date() ORDER BY NUMERO_INVENTARIO"
+        strSql = "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE is not null and DATA_ROTTAMAZIONE <= date() ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco Apparati Rottamati"
         Call StampaApparato
         
-    ' Stampe per Produttore
+    ' Stampa TUTTI i Produttori
     ElseIf optTuttiProduttori.Value = True Then
-        strSql = "SELECT * FROM APPARATI ORDER BY PRODUTTORE"
+        strSql = "SELECT * FROM APPARATI " & IncludiRott & " ORDER BY PRODUTTORE"
         TipoElenco = "Elenco Apparati per Produttore"
         Call StampaApparato
         
+    ' Stampa SINGOLO Produttore
     ElseIf lblNomeProduttore.Caption <> "" Then
+        If Check1 = False Then
+            IncludiRott = "AND (DATA_ROTTAMAZIONE > date() OR DATA_ROTTAMAZIONE IS NULL)"
+        Else
+            IncludiRott = ""
+        End If
         NomeProduttore = lblNomeProduttore.Caption
-        strSql = "SELECT * FROM APPARATI WHERE PRODUTTORE='" & NomeProduttore & "'" & "ORDER BY NUMERO_INVENTARIO"
+        strSql = "SELECT * FROM APPARATI WHERE PRODUTTORE='" & NomeProduttore & "' " & IncludiRott & " ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco Apparati per Produttore"
         Call StampaApparato
         
-    ' Stampe per Categoria
+    ' Stampa TUTTE le Categorie
     ElseIf optTipoApparato.Value = True Then
-        strSql = "SELECT * FROM APPARATI ORDER BY TIPO_APPARATO"
+        strSql = "SELECT * FROM APPARATI " & IncludiRott & " ORDER BY TIPO_APPARATO"
         TipoElenco = "Elenco per Categoria Apparati"
         Call StampaApparato
-        
+    
+    ' Stampa SINGOLA Categoria
     ElseIf lblNomeCategoria.Caption <> "" Then
+        If Check1 = False Then
+            IncludiRott = "AND (DATA_ROTTAMAZIONE > date() OR DATA_ROTTAMAZIONE IS NULL)"
+        Else
+            IncludiRott = ""
+        End If
         NomeCategoria = lblNomeCategoria.Caption
-        strSql = "SELECT * FROM APPARATI WHERE TIPO_APPARATO='" & NomeCategoria & "'" & "ORDER BY NUMERO_INVENTARIO"
+        strSql = "SELECT * FROM APPARATI WHERE TIPO_APPARATO='" & NomeCategoria & "' " & IncludiRott & " ORDER BY NUMERO_INVENTARIO"
         TipoElenco = "Elenco per Categoria Apparati"
         Call StampaApparato
         

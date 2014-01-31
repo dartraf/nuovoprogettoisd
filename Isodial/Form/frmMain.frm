@@ -208,7 +208,7 @@ Begin VB.MDIForm frmMain
          Height          =   800
          Index           =   7
          Left            =   6660
-         Picture         =   "frmMain.frx":10753
+         Picture         =   "frmMain.frx":1073C
          Style           =   1  'Graphical
          TabIndex        =   10
          ToolTipText     =   "Terapia Domiciliare"
@@ -219,44 +219,44 @@ Begin VB.MDIForm frmMain
          BackColor       =   &H00C0C0C0&
          Height          =   800
          Index           =   6
-         Left            =   4970
-         Picture         =   "frmMain.frx":10ED8
+         Left            =   4990
+         Picture         =   "frmMain.frx":10F28
          Style           =   1  'Graphical
          TabIndex        =   8
          ToolTipText     =   "Esami di Laboratorio - Consultazione"
          Top             =   0
-         Width           =   800
+         Width           =   810
       End
       Begin VB.CommandButton cmdToolbar 
          BackColor       =   &H00C0C0C0&
          Height          =   800
          Index           =   5
-         Left            =   4165
-         Picture         =   "frmMain.frx":11811
+         Left            =   4180
+         Picture         =   "frmMain.frx":11815
          Style           =   1  'Graphical
          TabIndex        =   7
          ToolTipText     =   "Esami di Laboratorio - Registrazione"
          Top             =   0
-         Width           =   800
+         Width           =   810
       End
       Begin VB.CommandButton cmdToolbar 
          BackColor       =   &H00C0C0C0&
          Height          =   800
          Index           =   4
-         Left            =   3370
-         Picture         =   "frmMain.frx":12066
+         Left            =   3350
+         Picture         =   "frmMain.frx":120C1
          Style           =   1  'Graphical
          TabIndex        =   6
          ToolTipText     =   "Esami Strumentali"
          Top             =   0
-         Width           =   800
+         Width           =   840
       End
       Begin VB.CommandButton cmdToolbar 
          BackColor       =   &H00C0C0C0&
          Height          =   800
          Index           =   3
          Left            =   2495
-         Picture         =   "frmMain.frx":12991
+         Picture         =   "frmMain.frx":12AA6
          Style           =   1  'Graphical
          TabIndex        =   5
          ToolTipText     =   "Anamnesi Dialitica"
@@ -268,7 +268,7 @@ Begin VB.MDIForm frmMain
          Height          =   800
          Index           =   2
          Left            =   1690
-         Picture         =   "frmMain.frx":13259
+         Picture         =   "frmMain.frx":1336E
          Style           =   1  'Graphical
          TabIndex        =   4
          ToolTipText     =   "Anamnesi Nefrologica"
@@ -280,7 +280,7 @@ Begin VB.MDIForm frmMain
          Height          =   800
          Index           =   1
          Left            =   890
-         Picture         =   "frmMain.frx":13B22
+         Picture         =   "frmMain.frx":13C37
          Style           =   1  'Graphical
          TabIndex        =   3
          ToolTipText     =   "Anamnesi Patologica"
@@ -292,7 +292,7 @@ Begin VB.MDIForm frmMain
          Height          =   800
          Index           =   0
          Left            =   0
-         Picture         =   "frmMain.frx":143D9
+         Picture         =   "frmMain.frx":144EE
          Style           =   1  'Graphical
          TabIndex        =   2
          ToolTipText     =   "Anagrafica Generale"
@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "27/01/2014"
+            TextSave        =   "31/01/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 

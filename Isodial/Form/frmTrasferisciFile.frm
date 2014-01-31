@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmTrasferisciFile 
    BackColor       =   &H00808080&
    BorderStyle     =   0  'None
@@ -10,9 +10,11 @@ Begin VB.Form frmTrasferisciFile
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
+   Moveable        =   0   'False
    ScaleHeight     =   675
    ScaleWidth      =   4515
    ShowInTaskbar   =   0   'False
+   StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.ProgressBar ProgressBar1 
       Height          =   495
       Left            =   90
@@ -50,7 +52,7 @@ End Sub
 Private Sub Form_Activate()
    Dim lettera As String
    Me.Left = 5420
-   Me.Top = 6800
+   Me.Top = 6900
     
     'ATTENZIONE - NON CAMBIARE L'ORDINE DEGLI ELSEIF
     If VerificaDiscoRimovibile(lettera) = False Then

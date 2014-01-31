@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmDisconnetti 
    BackColor       =   &H8000000A&
    BorderStyle     =   0  'None
@@ -14,7 +14,7 @@ Begin VB.Form frmDisconnetti
    ScaleHeight     =   2760
    ScaleWidth      =   4575
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   1  'CenterOwner
+   StartUpPosition =   2  'CenterScreen
    Begin VB.CheckBox chkSpegni 
       BackColor       =   &H00808080&
       Caption         =   "Spegni il pc al termine del backup"

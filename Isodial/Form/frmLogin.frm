@@ -25,11 +25,11 @@ Begin VB.Form frmLogin
          Strikethrough   =   0   'False
       EndProperty
       Height          =   345
-      Left            =   600
+      Left            =   840
       TabIndex        =   0
       ToolTipText     =   "Inserisci il codice utente"
       Top             =   135
-      Width           =   2325
+      Width           =   2085
    End
    Begin VB.CommandButton cmdOK 
       Caption         =   "&OK"
@@ -79,26 +79,19 @@ Begin VB.Form frmLogin
       EndProperty
       Height          =   345
       IMEMode         =   3  'DISABLE
-      Left            =   600
+      Left            =   840
       PasswordChar    =   "*"
       TabIndex        =   1
       ToolTipText     =   "Inserisci la password"
       Top             =   600
-      Width           =   2325
+      Width           =   2085
    End
    Begin VB.Image Image2 
-      Height          =   330
-      Left            =   120
+      Height          =   720
+      Left            =   53
       Picture         =   "frmLogin.frx":0000
-      Top             =   600
-      Width           =   360
-   End
-   Begin VB.Image Image1 
-      Height          =   330
-      Left            =   120
-      Picture         =   "frmLogin.frx":018A
-      Top             =   120
-      Width           =   360
+      Top             =   169
+      Width           =   720
    End
 End
 Attribute VB_Name = "frmLogin"
@@ -269,7 +262,7 @@ Private Sub ControllaReni()
     
     data = DateValue(Month(date + 30) & "/" & Day(date + 30) & "/" & Year(date + 30))
     
-    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE DATA_ROTTAMAZIONE<#" & data & "# AND SOSTITUITO=FALSE AND TIPO_APPARATO = 'RENE ARTIFICIALE'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         frmReniDaRottamare.Show 1
     End If

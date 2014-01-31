@@ -450,6 +450,9 @@ Dim numKey As Integer
         If oDataRichiestaManutenzione(0).txtBox = "" Then
             MsgBox "Inserire la Data di Richiesta Manutenzione", vbInformation, "Informazione"
             Exit Sub
+        ElseIf oDataEffettivaManutenzione(1).txtBox = "" Then
+            MsgBox "Inserire la Data di Effettiva Manutenzione", vbInformation, "Informazione"
+            Exit Sub
         ElseIf CDate(oDataRichiestaManutenzione(0).data) > date Then
             MsgBox "La Data della Richiesta Straordinaria non può essere successiva alla Data Odierna", vbInformation, "Informazione"
             Exit Sub
@@ -464,6 +467,9 @@ Dim numKey As Integer
     ElseIf tTabellaManutenzione = tpMANUTENZIONEORDINARIA Then
         If oDataScadenzaManutenzione(1).txtBox = "" Then
             MsgBox "Inserire la Data di Scadenza Manutenzione", vbInformation, "Informazione"
+            Exit Sub
+        ElseIf oDataEffettivaManutenzione(1).txtBox = "" Then
+            MsgBox "Inserire la Data di Effettiva Manutenzione", vbInformation, "Informazione"
             Exit Sub
         ElseIf CDate(oDataScadenzaManutenzione(1).data) > date Then
             MsgBox "La Data di Scadenza Manutenzione non può essere successiva alla Data Odierna", vbInformation, "Informazione"

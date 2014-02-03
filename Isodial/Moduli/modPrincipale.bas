@@ -38,6 +38,9 @@ End Type
 ' @return
 ' @remarks
 Sub Main()
+    Dim ret As Long
+    Dim datadb As Date
+    
     Call CaricaPercorso
     Call VerificaErrori
   '  Call ControlloFileEsterni    controlla la versione delle librerie
@@ -51,6 +54,21 @@ Sub Main()
     Else
         isCorrotto = False
     End If
+    ' controlla che la data di sistema sia quella corrente
+    datadb = CDate(Left(FileDateTime(structApri.pathDB + "\centro.mdb"), 10))
+    datadb = DateValue(Month(datadb + 30) & "/" & Day(datadb + 30) & "/" & Year(datadb + 30))
+    If datadb > date Then
+        MsgBox ("IMPOSSIBILE AVVIARE ISODIAL - La data di sistema non è corretta"), vbCritical, "ATTENZIONE!!!"
+        ' chiude la connessione
+        Set cnPrinc = Nothing
+        Set cnTrac = Nothing
+        ' chiude la condivisione
+        Call Shell("NET SHARE RISORSA /DELETE", vbHide)
+        ' smonta il volume
+        ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe /d X /q /s /f", vbHide)
+        End
+    End If
+
     frmMain.Show
     frmLogin.Show 1
 End Sub

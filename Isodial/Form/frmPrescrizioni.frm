@@ -18,7 +18,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   46
+      TabIndex        =   49
       Top             =   0
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -28,7 +28,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   360
          Picture         =   "frmPrescrizioni.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   50
+         TabIndex        =   0
          Top             =   240
          Width           =   450
       End
@@ -46,7 +46,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   285
          Left            =   2160
-         TabIndex        =   53
+         TabIndex        =   55
          Top             =   360
          Width           =   3255
       End
@@ -64,7 +64,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   285
          Left            =   6720
-         TabIndex        =   52
+         TabIndex        =   54
          Top             =   360
          Width           =   3135
       End
@@ -82,7 +82,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   285
          Left            =   11040
-         TabIndex        =   51
+         TabIndex        =   53
          Top             =   360
          Width           =   615
       End
@@ -101,7 +101,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   3
          Left            =   10440
-         TabIndex        =   49
+         TabIndex        =   52
          Top             =   360
          Width           =   465
       End
@@ -120,7 +120,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   1
          Left            =   6000
-         TabIndex        =   48
+         TabIndex        =   51
          Top             =   360
          Width           =   630
       End
@@ -139,7 +139,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   47
+         TabIndex        =   50
          Top             =   360
          Width           =   1005
       End
@@ -147,7 +147,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame Frame3 
       Height          =   2200
       Left            =   120
-      TabIndex        =   28
+      TabIndex        =   33
       Top             =   720
       Width           =   12015
       Begin VB.CheckBox chkPresenzaBarCode 
@@ -164,7 +164,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   255
          Left            =   5520
-         TabIndex        =   9
+         TabIndex        =   12
          Top             =   1800
          Width           =   3615
       End
@@ -183,7 +183,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   5520
          List            =   "frmPrescrizioni.frx":045B
          Style           =   2  'Dropdown List
-         TabIndex        =   1
+         TabIndex        =   2
          Top             =   240
          Width           =   855
       End
@@ -203,7 +203,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   2280
          List            =   "frmPrescrizioni.frx":045F
          Style           =   2  'Dropdown List
-         TabIndex        =   0
+         TabIndex        =   1
          Top             =   240
          Width           =   2175
       End
@@ -220,8 +220,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   7680
          MaxLength       =   4
-         TabIndex        =   5
-         TabStop         =   0   'False
+         TabIndex        =   7
          Top             =   1034
          Width           =   735
       End
@@ -238,7 +237,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   255
          Left            =   9360
-         TabIndex        =   4
+         TabIndex        =   5
          Top             =   652
          Value           =   1  'Checked
          Width           =   1695
@@ -256,8 +255,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   7680
          MaxLength       =   5
-         TabIndex        =   3
-         TabStop         =   0   'False
+         TabIndex        =   4
          Top             =   652
          Width           =   735
       End
@@ -274,8 +272,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   7710
          MaxLength       =   3
-         TabIndex        =   6
-         TabStop         =   0   'False
+         TabIndex        =   9
          Top             =   1416
          Width           =   615
       End
@@ -292,8 +289,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   8565
          MaxLength       =   5
-         TabIndex        =   7
-         TabStop         =   0   'False
+         TabIndex        =   10
          Top             =   1416
          Width           =   720
       End
@@ -312,7 +308,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   2280
          List            =   "frmPrescrizioni.frx":0471
          Style           =   2  'Dropdown List
-         TabIndex        =   8
+         TabIndex        =   11
          Top             =   1800
          Width           =   1215
       End
@@ -329,8 +325,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   2280
          MaxLength       =   15
-         TabIndex        =   2
-         TabStop         =   0   'False
+         TabIndex        =   3
          Top             =   652
          Width           =   1695
       End
@@ -338,7 +333,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   375
          Index           =   0
          Left            =   2280
-         TabIndex        =   74
+         TabIndex        =   8
          Top             =   1350
          Width           =   2100
          _ExtentX        =   3704
@@ -351,7 +346,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   375
          Index           =   1
          Left            =   2280
-         TabIndex        =   75
+         TabIndex        =   6
          Top             =   960
          Width           =   2100
          _ExtentX        =   3704
@@ -375,7 +370,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   7
          Left            =   120
-         TabIndex        =   67
+         TabIndex        =   69
          Top             =   652
          Width           =   1530
       End
@@ -394,7 +389,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   10
          Left            =   5550
-         TabIndex        =   66
+         TabIndex        =   68
          Top             =   1416
          Width           =   1515
       End
@@ -413,7 +408,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   9
          Left            =   5550
-         TabIndex        =   65
+         TabIndex        =   67
          Top             =   652
          Width           =   1980
       End
@@ -432,7 +427,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   6
          Left            =   5550
-         TabIndex        =   64
+         TabIndex        =   66
          Top             =   1034
          Width           =   2040
       End
@@ -451,7 +446,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   32
          Left            =   4800
-         TabIndex        =   45
+         TabIndex        =   48
          Top             =   270
          Width           =   540
       End
@@ -471,7 +466,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   12
          Left            =   120
-         TabIndex        =   43
+         TabIndex        =   46
          Top             =   270
          Width           =   2100
       End
@@ -490,7 +485,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   11
          Left            =   8385
-         TabIndex        =   42
+         TabIndex        =   45
          Top             =   1416
          Width           =   90
       End
@@ -509,7 +504,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   4
          Left            =   120
-         TabIndex        =   41
+         TabIndex        =   44
          Top             =   1800
          Width           =   2085
       End
@@ -528,7 +523,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   8
          Left            =   120
-         TabIndex        =   37
+         TabIndex        =   42
          Top             =   1034
          Width           =   1215
       End
@@ -547,7 +542,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   2
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   34
          Top             =   1416
          Width           =   1920
       End
@@ -555,7 +550,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame Frame2 
       Height          =   1000
       Left            =   120
-      TabIndex        =   30
+      TabIndex        =   35
       Top             =   2760
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -565,7 +560,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   360
          Picture         =   "frmPrescrizioni.frx":0497
          Style           =   1  'Graphical
-         TabIndex        =   10
+         TabIndex        =   13
          Top             =   240
          Width           =   450
       End
@@ -583,7 +578,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   285
          Left            =   2280
-         TabIndex        =   56
+         TabIndex        =   58
          Top             =   240
          Width           =   3255
       End
@@ -601,7 +596,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   285
          Left            =   7800
-         TabIndex        =   55
+         TabIndex        =   57
          Top             =   240
          Width           =   3135
       End
@@ -619,7 +614,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   285
          Left            =   3120
-         TabIndex        =   54
+         TabIndex        =   56
          Top             =   600
          Width           =   975
       End
@@ -638,7 +633,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   13
          Left            =   1080
-         TabIndex        =   44
+         TabIndex        =   47
          Top             =   240
          Width           =   1005
       End
@@ -657,7 +652,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   33
          Left            =   6960
-         TabIndex        =   32
+         TabIndex        =   37
          Top             =   240
          Width           =   630
       End
@@ -676,7 +671,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   37
          Left            =   1080
-         TabIndex        =   31
+         TabIndex        =   36
          Top             =   600
          Width           =   1800
       End
@@ -684,7 +679,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame Frame4 
       Height          =   1000
       Left            =   120
-      TabIndex        =   33
+      TabIndex        =   38
       Top             =   3600
       Width           =   12015
       Begin VB.ComboBox cboTipoErogazione 
@@ -700,7 +695,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   315
          Left            =   4080
          Style           =   2  'Dropdown List
-         TabIndex        =   14
+         TabIndex        =   17
          Top             =   600
          Width           =   5055
       End
@@ -717,7 +712,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   255
          Left            =   6000
-         TabIndex        =   13
+         TabIndex        =   16
          Top             =   250
          Width           =   3615
       End
@@ -735,7 +730,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   1560
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   11
+         TabIndex        =   14
          Top             =   240
          Width           =   1335
       End
@@ -752,7 +747,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   255
          Left            =   3360
-         TabIndex        =   12
+         TabIndex        =   15
          Top             =   240
          Width           =   2535
       End
@@ -771,7 +766,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   14
          Left            =   120
-         TabIndex        =   63
+         TabIndex        =   65
          Top             =   600
          Width           =   3840
       End
@@ -790,7 +785,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   36
+         TabIndex        =   41
          Top             =   250
          Width           =   1095
       End
@@ -798,7 +793,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame fraPrestazioni 
       Height          =   1815
       Left            =   120
-      TabIndex        =   34
+      TabIndex        =   39
       Top             =   4440
       Width           =   12015
       Begin VB.CommandButton cmdInserisci 
@@ -849,7 +844,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   240
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   40
+         TabIndex        =   18
          Top             =   720
          Visible         =   0   'False
          Width           =   1095
@@ -868,7 +863,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   960
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   39
+         TabIndex        =   19
          Top             =   720
          Visible         =   0   'False
          Width           =   5535
@@ -895,7 +890,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   6480
          MaxLength       =   2
-         TabIndex        =   38
+         TabIndex        =   43
          Top             =   720
          Visible         =   0   'False
          Width           =   360
@@ -903,7 +898,7 @@ Begin VB.Form frmPrescrizioni
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   975
          Left            =   120
-         TabIndex        =   19
+         TabIndex        =   32
          Top             =   240
          Width           =   11775
          _ExtentX        =   20770
@@ -940,7 +935,7 @@ Begin VB.Form frmPrescrizioni
          ForeColor       =   &H000000FF&
          Height          =   240
          Left            =   3720
-         TabIndex        =   62
+         TabIndex        =   64
          Top             =   1320
          Width           =   315
       End
@@ -959,7 +954,7 @@ Begin VB.Form frmPrescrizioni
          ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   4200
-         TabIndex        =   61
+         TabIndex        =   63
          Top             =   1320
          Width           =   1365
       End
@@ -977,7 +972,7 @@ Begin VB.Form frmPrescrizioni
          ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   2400
-         TabIndex        =   60
+         TabIndex        =   62
          Top             =   1320
          Width           =   1395
       End
@@ -995,7 +990,7 @@ Begin VB.Form frmPrescrizioni
          ForeColor       =   &H000000FF&
          Height          =   240
          Left            =   2040
-         TabIndex        =   59
+         TabIndex        =   61
          Top             =   1320
          Width           =   315
       End
@@ -1013,7 +1008,7 @@ Begin VB.Form frmPrescrizioni
          ForeColor       =   &H00C00000&
          Height          =   240
          Left            =   120
-         TabIndex        =   58
+         TabIndex        =   60
          Top             =   1320
          Width           =   1935
       End
@@ -1030,7 +1025,7 @@ Begin VB.Form frmPrescrizioni
          ForeColor       =   &H000000FF&
          Height          =   240
          Left            =   5760
-         TabIndex        =   57
+         TabIndex        =   59
          Top             =   1320
          Width           =   795
       End
@@ -1038,7 +1033,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame fraPazientiEsteri 
       Height          =   1450
       Left            =   120
-      TabIndex        =   68
+      TabIndex        =   70
       Top             =   4440
       Width           =   12015
       Begin VB.TextBox txtNumeroIdentificazioneTessera 
@@ -1054,7 +1049,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   3360
          MaxLength       =   20
-         TabIndex        =   18
+         TabIndex        =   31
          TabStop         =   0   'False
          Top             =   1005
          Width           =   2535
@@ -1072,7 +1067,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   9600
          MaxLength       =   20
-         TabIndex        =   17
+         TabIndex        =   30
          TabStop         =   0   'False
          Top             =   650
          Width           =   2175
@@ -1090,7 +1085,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   285
          Left            =   3360
          MaxLength       =   28
-         TabIndex        =   16
+         TabIndex        =   29
          TabStop         =   0   'False
          Top             =   650
          Width           =   2535
@@ -1108,7 +1103,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   315
          Left            =   1800
          Style           =   2  'Dropdown List
-         TabIndex        =   15
+         TabIndex        =   28
          Top             =   240
          Width           =   6615
       End
@@ -1140,7 +1135,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   19
          Left            =   6000
-         TabIndex        =   73
+         TabIndex        =   75
          Top             =   1035
          Width           =   3480
       End
@@ -1159,7 +1154,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   18
          Left            =   120
-         TabIndex        =   72
+         TabIndex        =   74
          Top             =   1005
          Width           =   3030
       End
@@ -1178,7 +1173,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   17
          Left            =   6000
-         TabIndex        =   71
+         TabIndex        =   73
          Top             =   650
          Width           =   3225
       End
@@ -1197,7 +1192,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   16
          Left            =   120
-         TabIndex        =   70
+         TabIndex        =   72
          Top             =   650
          Width           =   3150
       End
@@ -1216,7 +1211,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   240
          Index           =   15
          Left            =   120
-         TabIndex        =   69
+         TabIndex        =   71
          Top             =   240
          Width           =   1200
       End
@@ -1224,7 +1219,7 @@ Begin VB.Form frmPrescrizioni
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
-      TabIndex        =   35
+      TabIndex        =   40
       Top             =   6120
       Width           =   12015
       Begin VB.CommandButton cmdCancellaRicetta 
@@ -1240,7 +1235,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   495
          Left            =   3720
-         TabIndex        =   26
+         TabIndex        =   23
          Top             =   240
          Width           =   1335
       End
@@ -1258,7 +1253,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   495
          Left            =   10440
-         TabIndex        =   25
+         TabIndex        =   27
          Top             =   240
          Width           =   1335
       End
@@ -1275,7 +1270,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   495
          Left            =   8760
-         TabIndex        =   22
+         TabIndex        =   26
          Top             =   240
          Width           =   1335
       End
@@ -1292,7 +1287,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   495
          Left            =   7080
-         TabIndex        =   23
+         TabIndex        =   25
          Top             =   240
          Width           =   1335
       End
@@ -1326,7 +1321,7 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   495
          Left            =   240
-         TabIndex        =   27
+         TabIndex        =   22
          Top             =   240
          Width           =   2415
       End

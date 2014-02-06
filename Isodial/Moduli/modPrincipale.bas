@@ -56,7 +56,7 @@ Sub Main()
     End If
     ' controlla che la data di sistema sia quella corrente
     datadb = CDate(Left(FileDateTime(structApri.pathDB + "\centro.mdb"), 10))
-    datadb = DateValue(Month(datadb + 30) & "/" & Day(datadb + 30) & "/" & Year(datadb + 30))
+'    datadb = DateValue(Month(datadb) & "/" & Day(datadb) & "/" & Year(datadb))
     If datadb > date Then
         MsgBox ("IMPOSSIBILE AVVIARE ISODIAL - La data di sistema non è corretta"), vbCritical, "ATTENZIONE!!!"
         ' chiude la connessione

@@ -380,6 +380,8 @@ End Sub
 
 Private Sub cmdEliminaManutenzioneApparato_Click()
     Dim MCodiceApparato As Integer
+    Dim MTipo_Manutenzione As String
+    
     KeyReturnManutenzione = MantieniDatoManutenzione
     
     If KeyReturnManutenzione = 0 Then
@@ -392,15 +394,16 @@ Private Sub cmdEliminaManutenzioneApparato_Click()
         rsEliminaManutenzione.Open "SELECT * FROM MANUTENZIONE_APPARATI WHERE KEY= " & KeyReturnManutenzione, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
         MCodiceApparato = rsEliminaManutenzione("CODICE_APPARATO")
+        MTipo_Manutenzione = rsEliminaManutenzione("TIPO_MANUTENZIONE")
         rsApparati.Open "SELECT * FROM APPARATI WHERE (PROXREVSIC Is NOT Null or PROXREVFUN Is NOT Null) AND KEY= " & MCodiceApparato, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
-        If (rsApparati.EOF Or rsApparati.BOF) Then
+        If (rsApparati.EOF Or rsApparati.BOF) Or MTipo_Manutenzione = "STRAORDINARIA" Then
             If MsgBox("Sicuro di voler eliminare la scheda di manutenzione selezionata?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
                 Call EliminaManutenzione
                 Call CaricaFlxManutenzione
             End If
         Else
-            MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di automatismi sulle date di manutenzione", vbInformation, "ATTENZIONE!!!"
+            MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di automatismi sulle date di manutenzione ordinaria", vbInformation, "ATTENZIONE!!!"
         End If
  
         
@@ -465,11 +468,13 @@ Private Sub CaricaFunSic()
             With flxGriglia
 
                 .Row = flxgrigliarow
+                .Col = 8
                 .CellForeColor = vbRed
-                .TextMatrix(.Row, 8) = rsApparati("PROXREVFUN") & ""
+                .TextMatrix(.Row, .Col) = rsApparati("PROXREVFUN") & ""
                 
+                .Col = 9
                 .CellForeColor = vbRed
-                .TextMatrix(.Row, 9) = rsApparati("PROXREVSIC") & ""
+                .TextMatrix(.Row, .Col) = rsApparati("PROXREVSIC") & ""
                 
                 rsApparati.MoveNext
             End With
@@ -814,7 +819,7 @@ Private Sub cmdInserisci_Click()
     If MantieniKeyReturn = 0 Then
         flxManutenzione.Rows = 1
     End If
-    
+
     frmApparatiInput.Show 1
     Call CaricaFlx
     

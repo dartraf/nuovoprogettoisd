@@ -1,19 +1,19 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmTerapiaDialitica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "TERAPIA DIALITICA"
-   ClientHeight    =   7785
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   14850
+   ClientHeight    =   7788
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   14844
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   7785
-   ScaleWidth      =   14850
+   ScaleHeight     =   7788
+   ScaleWidth      =   14844
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
@@ -36,7 +36,7 @@ Begin VB.Form frmTerapiaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmTerapiaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmTerapiaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -109,7 +109,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -128,7 +128,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -153,7 +153,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Sospendi terapia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -180,7 +180,7 @@ Begin VB.Form frmTerapiaDialitica
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -197,7 +197,7 @@ Begin VB.Form frmTerapiaDialitica
       Begin VB.ComboBox cboMedicinali 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -219,31 +219,31 @@ Begin VB.Form frmTerapiaDialitica
          TabIndex        =   7
          Top             =   480
          Width           =   14415
-         _ExtentX        =   25426
-         _ExtentY        =   4471
+         _ExtentX        =   25421
+         _ExtentY        =   4466
          _Version        =   393216
-         Cols            =   14
+         Cols            =   17
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          MousePointer    =   15
          FormatString    =   $"frmTerapiaDialitica.frx":05A3
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDialitica.frx":068C
+         MouseIcon       =   "frmTerapiaDialitica.frx":06D4
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Terapia Corrente:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -269,7 +269,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Riprendi terapia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -279,7 +279,7 @@ Begin VB.Form frmTerapiaDialitica
          Height          =   255
          Index           =   0
          Left            =   12720
-         Picture         =   "frmTerapiaDialitica.frx":07E6
+         Picture         =   "frmTerapiaDialitica.frx":082E
          TabIndex        =   13
          Top             =   180
          Width           =   1695
@@ -290,31 +290,31 @@ Begin VB.Form frmTerapiaDialitica
          TabIndex        =   11
          Top             =   480
          Width           =   14415
-         _ExtentX        =   25426
-         _ExtentY        =   4471
+         _ExtentX        =   25421
+         _ExtentY        =   4466
          _Version        =   393216
-         Cols            =   15
+         Cols            =   18
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          MousePointer    =   15
-         FormatString    =   $"frmTerapiaDialitica.frx":0930
+         FormatString    =   $"frmTerapiaDialitica.frx":0978
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDialitica.frx":0A0D
+         MouseIcon       =   "frmTerapiaDialitica.frx":0A9E
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Terapia Sospesa:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -340,7 +340,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Stampa TERAPIA SOSPESA"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -357,7 +357,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Stampa TERAPIA CORRENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -374,7 +374,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -392,7 +392,7 @@ Begin VB.Form frmTerapiaDialitica
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -409,7 +409,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -426,7 +426,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "&Inserisci"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -444,7 +444,7 @@ Begin VB.Form frmTerapiaDialitica
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -503,23 +503,6 @@ Public Property Let LetAttiva(ByVal attiva As Boolean)
     attivaPass = attiva
 End Property
 
-'Private Sub wheelMouse_MouseScroll(MouseKeys As Long, Rotation As Long, X As Long, Y As Long, ControlHWnd As Long)
-'    If ControlHWnd = flxGriglia.hWnd Then
-'        If flxGriglia.TopRow - Rotation > 0 Then
-'            If flxGriglia.TopRow - Rotation < flxGriglia.Rows Then
-'                flxGriglia.TopRow = flxGriglia.TopRow - Rotation
-'            End If
-'        End If
-'    ElseIf ControlHWnd = flxGrigliaSospese.hWnd Then
-'        If flxGrigliaSospese.TopRow - Rotation > 0 Then
-'            If flxGrigliaSospese.TopRow - Rotation < flxGrigliaSospese.Rows Then
-'                flxGrigliaSospese.TopRow = flxGrigliaSospese.TopRow - Rotation
-'            End If
-'        End If
-'    End If
-'End Sub
-'------------------------------------------
-
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
     
@@ -548,10 +531,11 @@ Private Sub Form_Load()
     Me.Top = intTop
     Me.Left = intLeft
     
+    ' Griglia Terapia Corrento
     With flxGriglia
         .ColWidth(0) = 0
         .Row = 0
-        For i = 1 To 13
+        For i = 1 To 16
             .Col = i
             .CellFontBold = True
             .ColAlignment(i) = vbLeftJustify
@@ -559,10 +543,12 @@ Private Sub Form_Load()
         .MousePointer = flexCustom
         .Rows = 1
     End With
+    
+    ' Griglia Terapia Sospese
     With flxGrigliaSospese
         .ColWidth(0) = 0
         .Row = 0
-        For i = 1 To 14
+        For i = 1 To 17
             .Col = i
             .CellFontBold = True
             .ColAlignment(i) = vbLeftJustify
@@ -571,9 +557,11 @@ Private Sub Form_Load()
         .Rows = 1
     End With
     stoPulendo = False
+    
     ' carica l'oggetto
     Set objAnnulla = New CAnnulla
     Call ApriRsDisconnesso
+    
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -642,8 +630,10 @@ Private Sub Confronta()
         Next i
         nome_campi = Left(nome_campi, Len(nome_campi) - 3)
         valori = Left(valori, Len(valori) - 3)
-        v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "TIPO_TERAPIA", "NOME_CAMPI", "VECCHI_VALORI")
-        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rsTerapia("KEY"), 1, nome_campi, valori)
+        'vedere se funziona con l'aggiunta della data
+        v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "TIPO_TERAPIA", "NOME_CAMPI", "VECCHI_VALORI") ', "DATA_1", "DATA_2", "DATA_3")
+        'vedere se deve memorizzare il campo data dal db centro
+        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rsTerapia("KEY"), 1, nome_campi, valori) ', rsTerapia("DATA_1"), rsTerapia("DATA_2"), rsTerapia("DATA_3"))
         Set rsDataset = New Recordset
         rsDataset.Open "M_TERAPIE", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
         rsDataset.AddNew v_Nomi, v_Val
@@ -674,12 +664,15 @@ Private Sub SalvaModifiche()
         Case 1
             nome = "DATA"
             valore = flxGriglia.TextMatrix(vRow, vCol)
+        
         Case 2
             nome = "CODICE_MEDICINALE"
             valore = GetNumeroDaNome("MEDICINALI", "NOME", flxGriglia.TextMatrix(vRow, vCol))
+        
         Case 3
             nome = "POSOLOGIA"
             valore = flxGriglia.TextMatrix(vRow, vCol)
+        
         Case 4
             nome = "SOMMINISTRAZIONE"
             Select Case flxGriglia.TextMatrix(flxGriglia.Rows - 1, 4)
@@ -690,18 +683,23 @@ Private Sub SalvaModifiche()
                 Case "Postdialitica"
                     valore = 2
             End Select
+        
         Case 5
             nome = "NOTE"
             valore = flxGriglia.TextMatrix(vRow, vCol)
+        
         Case 6 To 12
             nome = "GIORNO" & vCol - 5
             valore = IIf(flxGriglia.TextMatrix(vRow, vCol) = icsGIORNI, True, False)
+        
         Case 13
             nome = "TUTTI_GIORNI"
             valore = IIf(flxGriglia.TextMatrix(vRow, vCol) = icsGIORNI, True, False)
- '       Case 14
- '           nome = "CONFERMA_SOMMINISTRAZIONE"
- '           valore = IIf(flxGriglia.TextMatrix(vRow, vCol) = icsCAS, True, False)
+        
+        Case 14, 15, 16
+            nome = "DATA_" & vCol - 13
+            valore = flxGriglia.TextMatrix(vRow, vCol)
+    
     End Select
     
     Set rsTerapia = New Recordset
@@ -741,7 +739,8 @@ Private Sub CaricaScheda()
     objAnnulla.Refresh
     cmdAnnulla.Enabled = False
     If intPazientiKey = 0 Then Exit Sub
-
+    
+    ' Carica le terapie correnti
     strSql = "SELECT    TERAPIE_DIALITICHE.*, MEDICINALI.NOME AS MEDICINALINOME " & _
             "FROM       (TERAPIE_DIALITICHE " & _
             "           INNER JOIN MEDICINALI ON TERAPIE_DIALITICHE.CODICE_MEDICINALE=MEDICINALI.KEY) " & _
@@ -761,10 +760,12 @@ Private Sub CaricaScheda()
         Do While Not rsTerapia.EOF
             With flxGriglia
                 .Rows = .Rows + 1
+                
                 .TextMatrix(.Rows - 1, 0) = rsTerapia("KEY")
                 .TextMatrix(.Rows - 1, 1) = rsTerapia("DATA")
                 .TextMatrix(.Rows - 1, 2) = rsTerapia("MEDICINALINOME")
                 .TextMatrix(.Rows - 1, 3) = rsTerapia("POSOLOGIA")
+                
                 Select Case rsTerapia("SOMMINISTRAZIONE")
                     Case 0
                         .TextMatrix(.Rows - 1, 4) = ""
@@ -773,12 +774,18 @@ Private Sub CaricaScheda()
                     Case 2
                         .TextMatrix(.Rows - 1, 4) = "Postdialitica"
                 End Select
+                
                 .TextMatrix(.Rows - 1, 5) = rsTerapia("NOTE")
+                
                 For i = 1 To 7
                     .TextMatrix(.Rows - 1, 5 + i) = IIf(CBool(rsTerapia("GIORNO" & i)) = True, icsGIORNI, "")
                 Next i
+                
                 .TextMatrix(.Rows - 1, 13) = IIf(CBool(rsTerapia("TUTTI_GIORNI")) = True, icsGIORNI, "")
-   '             .TextMatrix(.Rows - 1, 14) = IIf(CBool(rsTerapia("CONFERMA_SOMMINISTRAZIONE")) = True, icsCAS, "")
+                
+                .TextMatrix(.Rows - 1, 14) = rsTerapia("DATA_1") & ""
+                .TextMatrix(.Rows - 1, 15) = rsTerapia("DATA_2") & ""
+                .TextMatrix(.Rows - 1, 16) = rsTerapia("DATA_3") & ""
                 
                 ' aggiorna i dati nel rsDisco
                 rsDisco.AddNew
@@ -794,7 +801,7 @@ Private Sub CaricaScheda()
     rsTerapia.Close
     flxGriglia.Row = 0
     
-    ' carica le sospese
+    ' Carica le terapie sospese
     strSql = "SELECT      TERAPIE_DIALITICHE.*, MEDICINALI.NOME AS MEDICINALINOME " & _
             "FROM       (TERAPIE_DIALITICHE " & _
             "           INNER JOIN MEDICINALI ON TERAPIE_DIALITICHE.CODICE_MEDICINALE=MEDICINALI.KEY) " & _
@@ -806,11 +813,13 @@ Private Sub CaricaScheda()
         Do While Not rsTerapia.EOF
             With flxGrigliaSospese
                 .Rows = .Rows + 1
+                
                 .TextMatrix(.Rows - 1, 0) = rsTerapia("KEY")
                 .TextMatrix(.Rows - 1, 1) = rsTerapia("DATA_SOSPESA")
                 .TextMatrix(.Rows - 1, 2) = rsTerapia("DATA")
                 .TextMatrix(.Rows - 1, 3) = rsTerapia("MEDICINALINOME")
                 .TextMatrix(.Rows - 1, 4) = rsTerapia("POSOLOGIA")
+                
                 Select Case rsTerapia("SOMMINISTRAZIONE")
                     Case 0
                         .TextMatrix(.Rows - 1, 5) = ""
@@ -819,12 +828,17 @@ Private Sub CaricaScheda()
                     Case 2
                         .TextMatrix(.Rows - 1, 5) = "Postdialitica"
                 End Select
+                
                 .TextMatrix(.Rows - 1, 6) = rsTerapia("NOTE")
+                
                 For i = 1 To 7
                     .TextMatrix(.Rows - 1, 6 + i) = IIf(CBool(rsTerapia("GIORNO" & i)) = True, icsGIORNI, "")
                 Next i
+                
                 .TextMatrix(.Rows - 1, 14) = IIf(CBool(rsTerapia("TUTTI_GIORNI")) = True, icsGIORNI, "")
-   '             .TextMatrix(.Rows - 1, 15) = IIf(CBool(rsTerapia("CONFERMA_SOMMINISTRAZIONE")) = True, icsCAS, "")
+                .TextMatrix(.Rows - 1, 15) = rsTerapia("DATA_1") & ""
+                .TextMatrix(.Rows - 1, 16) = rsTerapia("DATA_2") & ""
+                .TextMatrix(.Rows - 1, 17) = rsTerapia("DATA_3") & ""
                 
                 ' aggiorna i dati nel rsDisco
                 rsDisco.AddNew
@@ -853,9 +867,10 @@ Private Sub SalvaEliminazione(flx As MSFlexGrid)
     Dim v_giorni(1 To 8) As Boolean
     Dim colonna As Integer
     
-    v_nome = Array("KEY", "CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "DATA_TERAPIA", "CODICE_MEDICINALE", "POSOLOGIA", "SOMMINISTRAZIONE", "NOTE", "GIORNO1", "GIORNO2", "GIORNO3", "GIORNO4", "GIORNO5", "GIORNO6", "GIORNO7", "TUTTI_GIORNI", "SOSPESA", "DATA_SOSPESA")
+    v_nome = Array("KEY", "CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "DATA_TERAPIA", "CODICE_MEDICINALE", "POSOLOGIA", "SOMMINISTRAZIONE", "NOTE", "GIORNO1", "GIORNO2", "GIORNO3", "GIORNO4", "GIORNO5", "GIORNO6", "GIORNO7", "TUTTI_GIORNI", "SOSPESA", "DATA_SOSPESA", "DATA_1", "DATA_2", "DATA_3")
     
     With flx
+    
         If .Name = flxGrigliaSospese.Name Then
             colonna = 1
             sospesa = True
@@ -865,6 +880,7 @@ Private Sub SalvaEliminazione(flx As MSFlexGrid)
             sospesa = False
             data_sospesa = Null
         End If
+        
         Select Case .TextMatrix(.Row, 4 + colonna)
             Case ""
                 somministrazione = 0
@@ -873,11 +889,14 @@ Private Sub SalvaEliminazione(flx As MSFlexGrid)
             Case "Postdialitica"
                 somministrazione = 2
         End Select
+        
         For i = 1 To 8
             v_giorni(i) = IIf(.TextMatrix(.Row, 5 + colonna + i) = icsGIORNI, True, False)
         Next i
-'        conferma = IIf(.TextMatrix(.Row, 12 + colonna) = icsCAS, True, False)
-        v_Val = Array(GetNumeroTracciatura("E_TERAPIE_DIALITICHE"), tAccesso.key, date, Time, intPazientiKey, .TextMatrix(.Row, 1 + colonna), GetNumeroDaNome("MEDICINALI", "NOME", .TextMatrix(.Row, 2 + colonna)), .TextMatrix(.Row, 3 + colonna), somministrazione, .TextMatrix(.Row, 5 + colonna), v_giorni(1), v_giorni(2), v_giorni(3), v_giorni(4), v_giorni(5), v_giorni(6), v_giorni(7), v_giorni(8), sospesa, data_sospesa)
+
+        'conferma = IIf(.TextMatrix(.Row, 12 + colonna) = icsCAS, True, False)
+        v_Val = Array(GetNumeroTracciatura("E_TERAPIE_DIALITICHE"), tAccesso.key, date, Time, intPazientiKey, .TextMatrix(.Row, 1 + colonna), GetNumeroDaNome("MEDICINALI", "NOME", .TextMatrix(.Row, 2 + colonna)), .TextMatrix(.Row, 3 + colonna), somministrazione, .TextMatrix(.Row, 5 + colonna), v_giorni(1), v_giorni(2), v_giorni(3), v_giorni(4), v_giorni(5), v_giorni(6), v_giorni(7), v_giorni(8), sospesa, data_sospesa, IIf(.TextMatrix(.Row, 14 + colonna) = "", Null, .TextMatrix(.Row, 14 + colonna)), IIf(.TextMatrix(.Row, 15 + colonna) = "", Null, .TextMatrix(.Row, 15 + colonna)), IIf(.TextMatrix(.Row, 16 + colonna) = "", Null, .TextMatrix(.Row, 16 + colonna)))
+    
     End With
     
     rsDataset.Open "E_TERAPIE_DIALITICHE", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -924,8 +943,8 @@ Private Sub cmdSposta_Click(Index As Integer)
                 v_bool(i) = IIf(.TextMatrix(.Row, 7 + i) = icsGIORNI, True, False)
             Next i
    '         v_bool(8) = IIf(.TextMatrix(.Row, 14) = icsCAS, True, False)
-            v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "CODICE_MEDICINALE", "POSOLOGIA", "SOMMINISTRAZIONE", "NOTE", "GIORNO1", "GIORNO2", "GIORNO3", "GIORNO4", "GIORNO5", "GIORNO6", "GIORNO7", "TUTTI_GIORNI")
-            v_Val = Array(num, intPazientiKey, date, GetNumeroDaNome("MEDICINALI", "NOME", .TextMatrix(.Row, 3)), .TextMatrix(.Row, 4), IIf(.TextMatrix(.Row, 5) = "Intradialitica", 1, 2), .TextMatrix(.Row, 6), v_bool(0), v_bool(1), v_bool(2), v_bool(3), v_bool(4), v_bool(5), v_bool(6), v_bool(7))
+            v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "CODICE_MEDICINALE", "POSOLOGIA", "SOMMINISTRAZIONE", "NOTE", "GIORNO1", "GIORNO2", "GIORNO3", "GIORNO4", "GIORNO5", "GIORNO6", "GIORNO7", "TUTTI_GIORNI", "DATA_1", "DATA_2", "DATA_3")
+            v_Val = Array(num, intPazientiKey, date, GetNumeroDaNome("MEDICINALI", "NOME", .TextMatrix(.Row, 3)), .TextMatrix(.Row, 4), IIf(.TextMatrix(.Row, 5) = "Intradialitica", 1, 2), .TextMatrix(.Row, 6), v_bool(0), v_bool(1), v_bool(2), v_bool(3), v_bool(4), v_bool(5), v_bool(6), v_bool(7), IIf(.TextMatrix(vRow, 15) = "", Null, .TextMatrix(vRow, 15)), IIf(.TextMatrix(vRow, 16) = "", Null, .TextMatrix(vRow, 16)), IIf(.TextMatrix(vRow, 17) = "", Null, .TextMatrix(vRow, 17)))
         End With
         
         rsTerapia.Open "TERAPIE_DIALITICHE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -934,7 +953,9 @@ Private Sub cmdSposta_Click(Index As Integer)
         rsTerapia.Close
         
         Call CaricaScheda
+        
     Else
+    
         'sospende
         If flxGriglia.Row = 0 Then Exit Sub
             
@@ -1046,6 +1067,7 @@ Private Sub cmdStampa_Click()
     structIntestazione.sDataPaziente = rsTerapia("DATA_NASCITA")
     Set rsTerapia = Nothing
     
+    ' Seleziono sia la terapia corrente che sospesa da stampare
     If chkTerapiaCorrente.Value = Checked And chkTerapiaSospesa.Value = Checked Then
         If flxGriglia.Rows = 1 And flxGrigliaSospese.Rows = 1 Then
             MsgBox "Non sono presenti terapie da stampare", vbInformation, "INFORMAZIONE"
@@ -1053,6 +1075,8 @@ Private Sub cmdStampa_Click()
         Else
             Call StampaSettimaParte(False, intPazientiKey)
         End If
+        
+    ' Seleziono solo da stampare la terapia corrente
     ElseIf chkTerapiaCorrente.Value = Checked Then
         If flxGriglia.Rows = 1 Then
             MsgBox "Non sono presenti terapie da stampare", vbInformation, "INFORMAZIONE"
@@ -1060,6 +1084,8 @@ Private Sub cmdStampa_Click()
         Else
             Call StampaTerapiaDialiticaCorrente(intPazientiKey)
         End If
+        
+    ' Seleziono solo la terapia sospesa da stampare
     ElseIf chkTerapiaSospesa.Value = Checked Then
         If flxGrigliaSospese.Rows = 1 Then
             MsgBox "Non sono presenti terapie da stampare", vbInformation, "INFORMAZIONE"
@@ -1133,6 +1159,7 @@ Private Sub flxGriglia_DblClick()
     With flxGriglia
         .SetFocus
         Select Case .Col
+            
             Case 1      ' data
                 frmCalendario.Show 1
                 Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
@@ -1141,12 +1168,14 @@ Private Sub flxGriglia_DblClick()
                 Call SalvaModifiche
                 ' cambia colonna per evitave di ricaricare il calendario
                 .Col = 0
+            
             Case 2      ' medicinale
                 cboMedicinali.Left = .colPos(.Col) + .Left + 45
                 cboMedicinali.Top = .rowPos(.Row) + .Top + 45
                 cboMedicinali.ListIndex = GetIndex(cboMedicinali, .TextMatrix(.Row, .Col))
                 cboMedicinali.Visible = True
                 cboMedicinali.SetFocus
+            
             Case 3, 5     ' posologia, note
                 If .Col = 3 Then
                     txtAppo.MaxLength = 6
@@ -1159,11 +1188,13 @@ Private Sub flxGriglia_DblClick()
                 txtAppo.Text = .TextMatrix(.Row, .Col)
                 txtAppo.Visible = True
                 txtAppo.SetFocus
+            
             Case 4
                 Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
                 cmdAnnulla.Enabled = True
                 Call GestisciPosologia
                 Call SalvaModifiche
+            
             Case 6 To 13       ' giorni
                 Call objAnnulla.Add(.TextMatrix(.Row, .Col), .Col, .TextMatrix(.Row, 0))
                 cmdAnnulla.Enabled = True
@@ -1180,15 +1211,16 @@ Private Sub flxGriglia_DblClick()
                     .TextMatrix(.Row, vCol) = ""
                 End If
                 Call SalvaModifiche
- '           Case 14             ' cas
- '               Call objAnnulla.Add(.TextMatrix(.Row, .Col), .Col, .TextMatrix(.Row, 0))
- '               cmdAnnulla.Enabled = True
- '               If .TextMatrix(.Row, vCol) = "" Then
- '                   .TextMatrix(.Row, vCol) = icsCAS
- '               Else
- '                   .TextMatrix(.Row, vCol) = ""
- '               End If
- '               Call SalvaModifiche
+            
+            Case 14, 15, 16     ' data del medicinale
+                frmCalendario.Show 1
+                Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
+                cmdAnnulla.Enabled = True
+                .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
+                Call SalvaModifiche
+                ' cambia colonna per evitave di ricaricare il calendario
+                .Col = 0
+        
         End Select
     End With
 End Sub

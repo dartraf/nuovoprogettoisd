@@ -2,21 +2,21 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Terapia Dialitica"
-   ClientHeight    =   8805
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   11670
+   ClientHeight    =   8808
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   11664
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   20585
-   _ExtentY        =   15531
+   _ExtentX        =   20595
+   _ExtentY        =   15536
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   11115
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -99,7 +99,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -117,7 +117,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -154,7 +154,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -172,7 +172,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.25
+            Size            =   26.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -211,7 +211,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -249,7 +249,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -267,7 +267,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -285,7 +285,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   1020
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -303,7 +303,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -316,9 +316,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "livel1"
-      Object.Height          =   1425
+      Object.Height          =   1404
       ForcePageBreak  =   1
-      NumControls     =   9
+      NumControls     =   12
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -329,7 +329,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -348,7 +348,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -367,7 +367,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -386,7 +386,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -405,7 +405,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -424,7 +424,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -451,7 +451,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -479,7 +479,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -496,13 +496,70 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
             SubFormatType   =   0
          EndProperty
       EndProperty
+      ItemType9       =   3
+      BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label7"
+         Object.Left            =   7540
+         Object.Top             =   113
+         Object.Width           =   850
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Data 1"
+      EndProperty
+      ItemType10      =   3
+      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label8"
+         Object.Left            =   8674
+         Object.Top             =   113
+         Object.Width           =   850
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Data 2"
+      EndProperty
+      ItemType11      =   3
+      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label9"
+         Object.Left            =   9751
+         Object.Top             =   113
+         Object.Width           =   850
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Data 3"
+      EndProperty
    EndProperty
    SectionCode3    =   4
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   345
-      NumControls     =   6
+      Object.Height          =   1290
+      NumControls     =   9
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -512,7 +569,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -538,7 +595,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -564,7 +621,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -590,7 +647,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -616,7 +673,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -642,7 +699,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -657,6 +714,87 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
             FirstWeekOfYear =   0
             LCID            =   1040
             SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType6       =   4
+      BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtData1"
+         Object.Left            =   7654
+         Object.Top             =   510
+         Object.Width           =   852
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType7       =   4
+      BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtData2"
+         Object.Left            =   8731
+         Object.Top             =   510
+         Object.Width           =   852
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      ItemType8       =   4
+      BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtData3"
+         Object.Left            =   9808
+         Object.Top             =   510
+         Object.Width           =   852
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
          EndProperty
       EndProperty
    EndProperty
@@ -682,7 +820,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -741,7 +879,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_7
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -823,6 +961,16 @@ Private Sub DataReport_Initialize()
             .Item("txtGiorni").DataMember = "Res1"
             .Item("txtDataSospesa").DataField = "DATA_SOSPESA"
             .Item("txtDataSospesa").DataMember = "Res1"
+            
+            .Item("txtData1").DataField = "DATA_1"
+            .Item("txtData1").DataMember = "Res1"
+            
+            .Item("txtData2").DataField = "DATA_2"
+            .Item("txtData2").DataMember = "Res1"
+            
+            .Item("txtData3").DataField = "DATA_3"
+            .Item("txtData3").DataMember = "Res1"
+            
             Set .Item("txtSomministrazione").DataFormat = sdfSomministrazione
         End With
         With .Sections("Pie").Controls

@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.Form frmLogin 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Accesso"
-   ClientHeight    =   1575
-   ClientLeft      =   2835
+   ClientHeight    =   1572
+   ClientLeft      =   2832
    ClientTop       =   3360
-   ClientWidth     =   3090
+   ClientWidth     =   3096
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -17,7 +17,7 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtUserName 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -36,7 +36,7 @@ Begin VB.Form frmLogin
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmLogin
       Caption         =   "&Esci"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -70,7 +70,7 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtPassword 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -87,11 +87,11 @@ Begin VB.Form frmLogin
       Width           =   2085
    End
    Begin VB.Image Image2 
-      Height          =   720
-      Left            =   53
+      Height          =   576
+      Left            =   120
       Picture         =   "frmLogin.frx":0000
-      Top             =   169
-      Width           =   720
+      Top             =   240
+      Width           =   576
    End
 End
 Attribute VB_Name = "frmLogin"

@@ -2303,6 +2303,9 @@ Public Sub StampaTerapiaDialiticaCorrente(codicePaziente As Integer)
                 "       (( SHAPE APPEND " & _
                 "           NEW adInteger AS LINK1, " & _
                 "           NEW adDate AS DATA, " & _
+                "           NEW adVarChar(10) AS DATA_1, " & _
+                "           NEW adVarChar(10) AS DATA_2, " & _
+                "           NEW adVarChar(10) AS DATA_3, " & _
                 "           NEW adVarChar(50) AS MEDICINALE, " & _
                 "           NEW adLongVarChar AS POSOLOGIAENOTE, " & _
                 "           NEW adInteger AS SOMMINISTRAZIONE, " & _
@@ -2345,6 +2348,10 @@ Public Sub StampaTerapiaDialiticaCorrente(codicePaziente As Integer)
                     .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
                     .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                     .Fields("DATA_SOSPESA") = ""
+                    .Fields("DATA_1") = rsTerapia("DATA_1") & ""
+                    .Fields("DATA_2") = rsTerapia("DATA_2") & ""
+                    .Fields("DATA_3") = rsTerapia("DATA_3") & ""
+                    
                     If CBool(rsTerapia("TUTTI_GIORNI")) Then
                         .Fields("GIORNI") = "Tutti"
                     Else
@@ -2406,6 +2413,9 @@ Public Sub StampaTerapiaDialiticaSospesa(codicePaziente As Integer)
                 "       (( SHAPE APPEND " & _
                 "           NEW adInteger AS LINK1, " & _
                 "           NEW adDate AS DATA, " & _
+                "           NEW adVarChar(10) AS DATA_1, " & _
+                "           NEW adVarChar(10) AS DATA_2, " & _
+                "           NEW adVarChar(10) AS DATA_3, " & _
                 "           NEW adVarChar(50) AS MEDICINALE, " & _
                 "           NEW adLongVarChar AS POSOLOGIAENOTE, " & _
                 "           NEW adInteger AS SOMMINISTRAZIONE, " & _
@@ -2448,6 +2458,10 @@ Public Sub StampaTerapiaDialiticaSospesa(codicePaziente As Integer)
                     .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
                     .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                     .Fields("DATA_SOSPESA") = rsTerapia("DATA_SOSPESA")
+                    .Fields("DATA_1") = rsTerapia("DATA_1") & ""
+                    .Fields("DATA_2") = rsTerapia("DATA_2") & ""
+                    .Fields("DATA_3") = rsTerapia("DATA_3") & ""
+                    
                     If CBool(rsTerapia("TUTTI_GIORNI")) Then
                         .Fields("GIORNI") = "Tutti"
                     Else
@@ -2508,6 +2522,9 @@ Public Sub StampaSettimaParte(formPazienti As Boolean, codicePaziente As Integer
                 "       (( SHAPE APPEND " & _
                 "           NEW adInteger AS LINK1, " & _
                 "           NEW adDate AS DATA, " & _
+                "           NEW adVarChar(10) AS DATA_1, " & _
+                "           NEW adVarChar(10) AS DATA_2, " & _
+                "           NEW adVarChar(10) AS DATA_3, " & _
                 "           NEW adVarChar(50) AS MEDICINALE, " & _
                 "           NEW adLongVarChar AS POSOLOGIAENOTE, " & _
                 "           NEW adInteger AS SOMMINISTRAZIONE, " & _
@@ -2550,6 +2567,10 @@ Public Sub StampaSettimaParte(formPazienti As Boolean, codicePaziente As Integer
                     .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
                     .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                     .Fields("DATA_SOSPESA") = ""
+                    .Fields("DATA_1") = rsTerapia("DATA_1") & ""
+                    .Fields("DATA_2") = rsTerapia("DATA_2") & ""
+                    .Fields("DATA_3") = rsTerapia("DATA_3") & ""
+                    
                     If CBool(rsTerapia("TUTTI_GIORNI")) Then
                         .Fields("GIORNI") = "Tutti"
                     Else
@@ -2604,6 +2625,9 @@ Public Sub StampaSettimaParte(formPazienti As Boolean, codicePaziente As Integer
                     .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
                     .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                     .Fields("DATA_SOSPESA") = rsTerapia("DATA_SOSPESA")
+                    .Fields("DATA_1") = rsTerapia("DATA_1") & ""
+                    .Fields("DATA_2") = rsTerapia("DATA_2") & ""
+                    .Fields("DATA_3") = rsTerapia("DATA_3") & ""
                     If CBool(rsTerapia("TUTTI_GIORNI")) Then
                         .Fields("GIORNI") = "Tutti"
                     Else

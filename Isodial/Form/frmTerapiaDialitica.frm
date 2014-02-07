@@ -630,10 +630,8 @@ Private Sub Confronta()
         Next i
         nome_campi = Left(nome_campi, Len(nome_campi) - 3)
         valori = Left(valori, Len(valori) - 3)
-        'vedere se funziona con l'aggiunta della data
-        v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "TIPO_TERAPIA", "NOME_CAMPI", "VECCHI_VALORI") ', "DATA_1", "DATA_2", "DATA_3")
-        'vedere se deve memorizzare il campo data dal db centro
-        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rsTerapia("KEY"), 1, nome_campi, valori) ', rsTerapia("DATA_1"), rsTerapia("DATA_2"), rsTerapia("DATA_3"))
+        v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "TIPO_TERAPIA", "NOME_CAMPI", "VECCHI_VALORI", "DATA_1", "DATA_2", "DATA_3")
+        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rsTerapia("KEY"), 1, nome_campi, valori, rsTerapia("DATA_1"), rsTerapia("DATA_2"), rsTerapia("DATA_3"))
         Set rsDataset = New Recordset
         rsDataset.Open "M_TERAPIE", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
         rsDataset.AddNew v_Nomi, v_Val
@@ -698,7 +696,7 @@ Private Sub SalvaModifiche()
         
         Case 14, 15, 16
             nome = "DATA_" & vCol - 13
-            valore = flxGriglia.TextMatrix(vRow, vCol)
+            valore = IIf(flxGriglia.TextMatrix(vRow, vCol) = "", Null, (flxGriglia.TextMatrix(vRow, vCol)))
     
     End Select
     
@@ -1213,14 +1211,20 @@ Private Sub flxGriglia_DblClick()
                 Call SalvaModifiche
             
             Case 14, 15, 16     ' data del medicinale
-                frmCalendario.Show 1
                 Call objAnnulla.Add(.TextMatrix(vRow, vCol), vCol, Int(.TextMatrix(vRow, 0)))
                 cmdAnnulla.Enabled = True
-                .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
+                
+                If .TextMatrix(.Row, .Col) = "" Then
+                    frmCalendario.Show 1
+                    .TextMatrix(.Row, .Col) = IIf(laData <> "", laData, .TextMatrix(.Row, .Col))
+                Else
+                    .TextMatrix(.Row, .Col) = ""
+                End If
+            
                 Call SalvaModifiche
                 ' cambia colonna per evitave di ricaricare il calendario
                 .Col = 0
-        
+    
         End Select
     End With
 End Sub

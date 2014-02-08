@@ -169,7 +169,7 @@ End Enum
 Private Type structInput
     Tipo As tipoInput                    ' tipo di input (form chiamante)
     mantieniDati As Boolean              ' indica se i dati devono essere mantenuti o cancellati dal frmInput
-    v_valori(1 To 7) As String           ' valori restituiti dal form input
+    v_valori(1 To 9) As String           ' valori restituiti dal form input
 End Type
 Public tInput As structInput
 '------------------------

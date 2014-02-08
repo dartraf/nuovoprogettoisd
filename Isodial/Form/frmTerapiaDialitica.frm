@@ -1024,9 +1024,11 @@ Private Sub cmdAnnulla_Click()
     Dim Col As Integer
     Dim RowKey As Integer
     Dim i As Integer
+    
     Dato = objAnnulla.Dato
     Col = objAnnulla.Col
     RowKey = objAnnulla.Row
+    
     ' cerca la riga con il key memorizzato in rowkey
     With flxGriglia
         For i = 1 To .Rows - 1
@@ -1045,6 +1047,7 @@ Private Sub cmdAnnulla_Click()
             End If
         Next i
     End With
+    
 End Sub
 
 Private Sub cmdStampa_Click()
@@ -1099,18 +1102,43 @@ Private Sub cmdInserisci_Click()
     Dim v_Val() As Variant
     Dim num As Integer
     Dim v_bool() As String
+    Dim DataFarmaco1 As Variant
+    Dim DataFarmaco2 As Variant
+    Dim DataFarmaco3 As Variant
     
     If intPazientiKey = 0 Then Exit Sub
-    Unload frmInput
-    tInput.Tipo = tpITERAPIADIALITICA
-    frmInput.Show 1
+        Unload frmInput
+        tInput.Tipo = tpITERAPIADIALITICA
+        frmInput.Show 1
     
     If Not (tInput.v_valori(1) = "") Then
+    
         v_bool = Split(tInput.v_valori(5), "-")
+        
+        If tInput.v_valori(7) = "" Then
+            DataFarmaco1 = Null
+        Else
+            DataFarmaco1 = tInput.v_valori(7)
+        End If
+        
+        If tInput.v_valori(8) = "" Then
+            DataFarmaco2 = Null
+        Else
+            DataFarmaco2 = tInput.v_valori(8)
+        End If
+                
+        If tInput.v_valori(9) = "" Then
+            DataFarmaco3 = Null
+        Else
+            DataFarmaco3 = tInput.v_valori(9)
+        End If
+        
         num = GetNumero("TERAPIE_DIALITICHE")
-        v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "CODICE_MEDICINALE", "POSOLOGIA", "SOMMINISTRAZIONE", "NOTE", "GIORNO1", "GIORNO2", "GIORNO3", "GIORNO4", "GIORNO5", "GIORNO6", "GIORNO7", "TUTTI_GIORNI")
+        
+        
+        v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "CODICE_MEDICINALE", "POSOLOGIA", "SOMMINISTRAZIONE", "NOTE", "GIORNO1", "GIORNO2", "GIORNO3", "GIORNO4", "GIORNO5", "GIORNO6", "GIORNO7", "TUTTI_GIORNI", "DATA_1", "DATA_2", "DATA_3")
         v_Val = Array(num, intPazientiKey, tInput.v_valori(1), GetNumeroDaNome("MEDICINALI", "NOME", cboMedicinali.List(tInput.v_valori(2))), tInput.v_valori(3), tInput.v_valori(4), tInput.v_valori(6), _
-                v_bool(0), v_bool(1), v_bool(2), v_bool(3), v_bool(4), v_bool(5), v_bool(6), v_bool(7))
+                v_bool(0), v_bool(1), v_bool(2), v_bool(3), v_bool(4), v_bool(5), v_bool(6), v_bool(7), DataFarmaco1, DataFarmaco2, DataFarmaco3)
         
         Set rsTerapia = New Recordset
         rsTerapia.Open "TERAPIE_DIALITICHE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1153,6 +1181,7 @@ End Sub
 
 Private Sub flxGriglia_DblClick()
     Dim i As Integer
+    
     If VerificaClickFlx(flxGriglia) = False Then Exit Sub
     With flxGriglia
         .SetFocus

@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.Form frmLogin 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Accesso"
-   ClientHeight    =   1572
-   ClientLeft      =   2832
+   ClientHeight    =   1575
+   ClientLeft      =   2835
    ClientTop       =   3360
-   ClientWidth     =   3096
+   ClientWidth     =   3090
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -17,7 +17,7 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtUserName 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   7.8
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -25,7 +25,7 @@ Begin VB.Form frmLogin
          Strikethrough   =   0   'False
       EndProperty
       Height          =   345
-      Left            =   840
+      Left            =   873
       TabIndex        =   0
       ToolTipText     =   "Inserisci il codice utente"
       Top             =   135
@@ -36,7 +36,7 @@ Begin VB.Form frmLogin
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmLogin
       Caption         =   "&Esci"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -62,7 +62,7 @@ Begin VB.Form frmLogin
          Strikethrough   =   0   'False
       EndProperty
       Height          =   390
-      Left            =   1800
+      Left            =   1811
       TabIndex        =   3
       Top             =   1080
       Width           =   1140
@@ -70,7 +70,7 @@ Begin VB.Form frmLogin
    Begin VB.TextBox txtPassword 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   7.8
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin VB.Form frmLogin
       EndProperty
       Height          =   345
       IMEMode         =   3  'DISABLE
-      Left            =   840
+      Left            =   873
       PasswordChar    =   "*"
       TabIndex        =   1
       ToolTipText     =   "Inserisci la password"
@@ -87,11 +87,11 @@ Begin VB.Form frmLogin
       Width           =   2085
    End
    Begin VB.Image Image2 
-      Height          =   576
+      Height          =   720
       Left            =   120
       Picture         =   "frmLogin.frx":0000
       Top             =   240
-      Width           =   576
+      Width           =   720
    End
 End
 Attribute VB_Name = "frmLogin"

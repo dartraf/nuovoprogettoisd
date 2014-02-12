@@ -1,26 +1,26 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmTerapiaDialitica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "TERAPIA DIALITICA"
-   ClientHeight    =   7788
-   ClientLeft      =   48
-   ClientTop       =   312
-   ClientWidth     =   14844
+   ClientHeight    =   7785
+   ClientLeft      =   45
+   ClientTop       =   315
+   ClientWidth     =   15195
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   7788
-   ScaleWidth      =   14844
+   ScaleHeight     =   7785
+   ScaleWidth      =   15195
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
-      Left            =   120
+      Left            =   50
       TabIndex        =   15
       Top             =   0
-      Width           =   14655
+      Width           =   15100
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
@@ -36,7 +36,7 @@ Begin VB.Form frmTerapiaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmTerapiaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmTerapiaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -109,7 +109,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -128,7 +128,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -145,15 +145,15 @@ Begin VB.Form frmTerapiaDialitica
    End
    Begin VB.Frame Frame2 
       Height          =   3135
-      Left            =   120
+      Left            =   50
       TabIndex        =   6
       Top             =   720
-      Width           =   14655
+      Width           =   15100
       Begin VB.CommandButton cmdSposta 
          Caption         =   "Sospendi terapia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -162,7 +162,7 @@ Begin VB.Form frmTerapiaDialitica
          EndProperty
          Height          =   255
          Index           =   1
-         Left            =   12720
+         Left            =   13220
          Picture         =   "frmTerapiaDialitica.frx":0459
          TabIndex        =   12
          Top             =   180
@@ -180,7 +180,7 @@ Begin VB.Form frmTerapiaDialitica
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -197,7 +197,7 @@ Begin VB.Form frmTerapiaDialitica
       Begin VB.ComboBox cboMedicinali 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -215,12 +215,12 @@ Begin VB.Form frmTerapiaDialitica
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   2535
-         Left            =   120
+         Left            =   60
          TabIndex        =   7
          Top             =   480
-         Width           =   14415
-         _ExtentX        =   25421
-         _ExtentY        =   4466
+         Width           =   15000
+         _ExtentX        =   26458
+         _ExtentY        =   4471
          _Version        =   393216
          Cols            =   17
          FixedCols       =   0
@@ -229,21 +229,21 @@ Begin VB.Form frmTerapiaDialitica
          FormatString    =   $"frmTerapiaDialitica.frx":05A3
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDialitica.frx":06D4
+         MouseIcon       =   "frmTerapiaDialitica.frx":06B1
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Terapia Corrente:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -261,15 +261,15 @@ Begin VB.Form frmTerapiaDialitica
    End
    Begin VB.Frame Frame3 
       Height          =   3135
-      Left            =   120
+      Left            =   50
       TabIndex        =   10
       Top             =   3720
-      Width           =   14655
+      Width           =   15100
       Begin VB.CommandButton cmdSposta 
          Caption         =   "Riprendi terapia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -278,43 +278,43 @@ Begin VB.Form frmTerapiaDialitica
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   12720
-         Picture         =   "frmTerapiaDialitica.frx":082E
+         Left            =   13220
+         Picture         =   "frmTerapiaDialitica.frx":080B
          TabIndex        =   13
          Top             =   180
          Width           =   1695
       End
       Begin MSFlexGridLib.MSFlexGrid flxGrigliaSospese 
          Height          =   2535
-         Left            =   120
+         Left            =   60
          TabIndex        =   11
          Top             =   480
-         Width           =   14415
-         _ExtentX        =   25421
-         _ExtentY        =   4466
+         Width           =   15000
+         _ExtentX        =   26458
+         _ExtentY        =   4471
          _Version        =   393216
          Cols            =   18
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          MousePointer    =   15
-         FormatString    =   $"frmTerapiaDialitica.frx":0978
+         FormatString    =   $"frmTerapiaDialitica.frx":0955
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDialitica.frx":0A9E
+         MouseIcon       =   "frmTerapiaDialitica.frx":0A5C
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Terapia Sospesa:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -332,15 +332,15 @@ Begin VB.Form frmTerapiaDialitica
    End
    Begin VB.Frame Frame4 
       Height          =   975
-      Left            =   120
+      Left            =   50
       TabIndex        =   5
       Top             =   6720
-      Width           =   14655
+      Width           =   15100
       Begin VB.CheckBox chkTerapiaSospesa 
          Caption         =   "Stampa TERAPIA SOSPESA"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -357,7 +357,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "Stampa TERAPIA CORRENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -374,7 +374,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -382,7 +382,7 @@ Begin VB.Form frmTerapiaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   6360
+         Left            =   6840
          TabIndex        =   0
          Top             =   240
          Width           =   1215
@@ -392,7 +392,7 @@ Begin VB.Form frmTerapiaDialitica
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -400,7 +400,7 @@ Begin VB.Form frmTerapiaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   585
-         Left            =   11040
+         Left            =   11520
          TabIndex        =   3
          Top             =   240
          Width           =   1815
@@ -409,7 +409,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -417,7 +417,7 @@ Begin VB.Form frmTerapiaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   9480
+         Left            =   9960
          TabIndex        =   2
          Top             =   240
          Width           =   1215
@@ -426,7 +426,7 @@ Begin VB.Form frmTerapiaDialitica
          Caption         =   "&Inserisci"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -434,7 +434,7 @@ Begin VB.Form frmTerapiaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   7920
+         Left            =   8400
          TabIndex        =   1
          Top             =   240
          Width           =   1215
@@ -444,7 +444,7 @@ Begin VB.Form frmTerapiaDialitica
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -452,7 +452,7 @@ Begin VB.Form frmTerapiaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   615
-         Left            =   13200
+         Left            =   13680
          TabIndex        =   4
          Top             =   240
          Width           =   1215
@@ -481,8 +481,8 @@ Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati n
 Dim rsDisco As Recordset
 Dim intPazientiKey As Integer
   
-Const icsGIORNI As String = " X"
-Const icsCAS As String = "  X"
+Const icsGIORNI As String = " x"
+Const icsCAS As String = "  x"
 
 Private cod_paz As Integer
 Private attivaPass As Boolean

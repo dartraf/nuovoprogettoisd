@@ -338,7 +338,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
       Name            =   "corpo"
       Object.Height          =   6387
       KeepTogether    =   -1  'True
-      NumControls     =   17
+      NumControls     =   16
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -640,16 +640,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType14      =   5
-      BeginProperty Item14 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Line4"
-         Object.Left            =   170
-         Object.Top             =   2438
-         Object.Width           =   1140
-      EndProperty
-      ItemType15      =   4
-      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   4
+      BeginProperty Item14 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCausaChiusuraAccesso"
          Object.Left            =   1587
@@ -675,8 +667,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_9
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   3
+      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label3"
          Object.Left            =   1587

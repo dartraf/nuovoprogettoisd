@@ -2294,7 +2294,7 @@ Public Sub StampaTerapiaDialiticaCorrente(codicePaziente As Integer)
     Dim i As Integer
     Dim k As Integer
     Dim j As Integer
-    Const numMaxRecord As Integer = 20
+    Const numMaxRecord As Integer = 16
     
     strShape = "SHAPE APPEND " & _
                 "       NEW adVarChar(35) AS TITOLO, " & _
@@ -2404,7 +2404,7 @@ Public Sub StampaTerapiaDialiticaSospesa(codicePaziente As Integer)
     Dim i As Integer
     Dim k As Integer
     Dim j As Integer
-    Const numMaxRecord As Integer = 20
+    Const numMaxRecord As Integer = 16
     
     strShape = "SHAPE APPEND " & _
                 "       NEW adVarChar(35) AS TITOLO, " & _
@@ -2513,7 +2513,7 @@ Public Sub StampaSettimaParte(formPazienti As Boolean, codicePaziente As Integer
     Dim i As Integer
     Dim k As Integer
     Dim j As Integer
-    Const numMaxRecord As Integer = 20
+    Const numMaxRecord As Integer = 16
     
     strShape = "SHAPE APPEND " & _
                 "       NEW adVarChar(35) AS TITOLO, " & _
@@ -2553,7 +2553,7 @@ Public Sub StampaSettimaParte(formPazienti As Boolean, codicePaziente As Integer
     If Not (rsTerapia.EOF And rsTerapia.BOF) Then
         With rsMain
             .AddNew
-            .Fields("TITOLO") = "Terapia Dialitica"
+            .Fields("TITOLO") = "Terapia Dialitica In Corso"
             .Fields("INTESTAZIONE_SOSPESA") = ""
             .Fields("LINK1") = k
             j = 0

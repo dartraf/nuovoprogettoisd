@@ -378,7 +378,7 @@ Begin VB.Form frmDiario
       Top             =   4800
       Width           =   12015
       Begin VB.OptionButton OptStDiario 
-         Caption         =   "Stampa &Tutto il Diario"
+         Caption         =   "Stampa &TUTTO"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -392,11 +392,11 @@ Begin VB.Form frmDiario
          Index           =   1
          Left            =   240
          TabIndex        =   29
-         Top             =   540
-         Width           =   2775
+         Top             =   530
+         Width           =   3160
       End
       Begin VB.OptionButton OptStDiario 
-         Caption         =   "Stampa &Vista Corrente"
+         Caption         =   "Stampa &VISTA CORRENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -410,9 +410,9 @@ Begin VB.Form frmDiario
          Index           =   0
          Left            =   240
          TabIndex        =   28
-         Top             =   180
+         Top             =   200
          Value           =   -1  'True
-         Width           =   2775
+         Width           =   3160
       End
       Begin VB.CommandButton cmdElimina 
          Caption         =   "&Elimina"

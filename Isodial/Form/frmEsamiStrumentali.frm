@@ -468,7 +468,7 @@ Begin VB.Form frmEsamiStrumentali
          Index           =   41
          Left            =   7560
          TabIndex        =   38
-         Top             =   480
+         Top             =   380
          Width           =   630
       End
       Begin VB.Label Label1 
@@ -487,7 +487,7 @@ Begin VB.Form frmEsamiStrumentali
          Index           =   40
          Left            =   2400
          TabIndex        =   37
-         Top             =   480
+         Top             =   380
          Width           =   1005
       End
       Begin VB.Label Label1 
@@ -525,7 +525,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   285
          Left            =   3600
          TabIndex        =   14
-         Top             =   430
+         Top             =   350
          Width           =   3375
       End
       Begin VB.Label lblNomeUtente 
@@ -543,7 +543,7 @@ Begin VB.Form frmEsamiStrumentali
          Height          =   285
          Left            =   8400
          TabIndex        =   15
-         Top             =   430
+         Top             =   350
          Width           =   3375
       End
    End
@@ -553,6 +553,43 @@ Begin VB.Form frmEsamiStrumentali
       TabIndex        =   20
       Top             =   5880
       Width           =   12015
+      Begin VB.OptionButton OptStEsame 
+         Caption         =   "Stampa &VISTA CORRENTE"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   0
+         Left            =   4220
+         TabIndex        =   41
+         Top             =   210
+         Value           =   -1  'True
+         Width           =   3160
+      End
+      Begin VB.OptionButton OptStEsame 
+         Caption         =   "Stampa &TUTTO"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   1
+         Left            =   4220
+         TabIndex        =   40
+         Top             =   530
+         Width           =   3160
+      End
       Begin VB.CommandButton cmdGestioneReferti 
          Caption         =   "&Gestione Referti"
          BeginProperty Font 
@@ -565,10 +602,10 @@ Begin VB.Form frmEsamiStrumentali
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   3360
+         Left            =   2640
          TabIndex        =   16
          Top             =   240
-         Width           =   1935
+         Width           =   1095
       End
       Begin VB.CommandButton cmdStampa 
          Caption         =   "S&tampa"
@@ -582,10 +619,10 @@ Begin VB.Form frmEsamiStrumentali
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   5640
+         Left            =   7440
          TabIndex        =   17
          Top             =   240
-         Width           =   1335
+         Width           =   960
       End
       Begin VB.CommandButton cmdElimina 
          Caption         =   "&Elimina"
@@ -599,10 +636,10 @@ Begin VB.Form frmEsamiStrumentali
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   7320
+         Left            =   8490
          TabIndex        =   18
          Top             =   240
-         Width           =   1215
+         Width           =   975
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
@@ -617,10 +654,10 @@ Begin VB.Form frmEsamiStrumentali
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   10560
+         Left            =   10920
          TabIndex        =   21
          Top             =   240
-         Width           =   1215
+         Width           =   975
       End
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -634,7 +671,7 @@ Begin VB.Form frmEsamiStrumentali
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   8880
+         Left            =   9520
          TabIndex        =   19
          Top             =   240
          Width           =   1335
@@ -650,12 +687,13 @@ Begin VB.Form frmEsamiStrumentali
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00FF0000&
-         Height          =   240
+         Height          =   480
          Index           =   0
          Left            =   120
          TabIndex        =   39
-         Top             =   360
-         Width           =   3315
+         Top             =   240
+         Width           =   2355
+         WordWrap        =   -1  'True
       End
    End
    Begin MSComDlg.CommonDialog cdlApri 
@@ -1064,13 +1102,66 @@ Private Sub cmdStampa_Click()
         Exit Sub
     End If
     
+    If OptStEsame(1).Value Then  ' stampa tutto
+        Set rsEsami = New Recordset
+        rsEsami.Open "SELECT COGNOME, NOME, DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        structIntestazione.sPaziente = rsEsami("COGNOME") & " " & rsEsami("NOME")
+        structIntestazione.sDataPaziente = rsEsami("DATA_NASCITA")
+        Set rsEsami = Nothing
+        Call StampaQuintaParte(False, intPazientiKey)
+        Exit Sub
+    End If
+    
     Set rsEsami = New Recordset
     rsEsami.Open "SELECT COGNOME, NOME, DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     structIntestazione.sPaziente = rsEsami("COGNOME") & " " & rsEsami("NOME")
     structIntestazione.sDataPaziente = rsEsami("DATA_NASCITA")
     Set rsEsami = Nothing
+
+    Dim strShape As String
+    Dim strSql As String
+    Dim codicePaziente As Integer
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
     
-    Call StampaQuintaParte(False, intPazientiKey)
+    codicePaziente = intPazientiKey
+    
+    strShape = "SHAPE APPEND " & _
+                "   NEW adVarChar(50) AS NOME_ORGANO, " & _
+                "   NEW adVarChar(50) AS NOME_ESAME, " & _
+                "   NEW adDate AS DATA, " & _
+                "   NEW adLongVarChar AS REFERTO "
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open strShape, cnConn, adOpenStatic, adLockOptimistic
+        
+    ' carica il recordset padre
+    strSql = "SELECT    ORGANI.NOME AS ORGANINOME, ESAMI.NOME AS ESAMINOME, DATA, REFERTO, UTENTE_MODIFICATORE " & _
+             "FROM      ((ESAMI_STRUMENTALI INNER JOIN ORGANI ON ORGANI.KEY=ESAMI_STRUMENTALI.CODICE_ORGANO) " & _
+             "          INNER JOIN ESAMI ON ESAMI.KEY=ESAMI_STRUMENTALI.CODICE_ESAME) " & _
+             "WHERE     CODICE_PAZIENTE=" & codicePaziente & " AND " & _
+             "          STAMPA=TRUE AND DATA=#" & oData.DataAmericana & "# "
+   
+    Set rsEsami = New Recordset
+    rsEsami.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    With rsMain
+        .AddNew
+        .Fields("NOME_ORGANO") = rsEsami("ORGANINOME")
+        .Fields("NOME_ESAME") = rsEsami("ESAMINOME")
+        .Fields("DATA") = rsEsami("DATA")
+        .Fields("REFERTO") = rsEsami("REFERTO") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsEsami("UTENTE_MODIFICATORE"))
+    End With
+    rsEsami.Close
+
+    Set rptCartellaClinica_5 = Nothing
+    Set rptCartellaClinica_5.DataSource = rsMain
+    rptCartellaClinica_5.Sections("Intestazione").Controls.Item("lblIDLabel").Caption = ""
+    rptCartellaClinica_5.Sections("Intestazione").Controls.Item("lblCartellaClinica").Caption = ""
+    rptCartellaClinica_5.PrintReport
+
 End Sub
 
 Private Sub cmdElimina_Click()

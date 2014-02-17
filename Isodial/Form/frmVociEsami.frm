@@ -363,7 +363,7 @@ Private Sub CaricaFlx()
                 Else
                     .TextMatrix(.Rows - 1, 8) = ""
                 End If
-                
+                keyGruppo = 0
                 rsVoci.MoveNext
             End With
         Loop

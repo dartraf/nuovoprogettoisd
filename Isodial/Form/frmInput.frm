@@ -3242,6 +3242,7 @@ Private Sub Form_Load()
             chkInserisci.Visible = False
         
         Case tpITERAPIADOMICILIARE, tpITERAPIADIALITICA
+            fraTerapia.Height = 2550
             If tInput.Tipo = tpITERAPIADIALITICA Then
                 fraTerapia.Height = 3972
                 lblNoteTerapie = "Note"

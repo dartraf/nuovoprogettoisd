@@ -5,10 +5,10 @@ Object = "{EB7F7146-0A68-4457-8036-5793F0EB1EB8}#31.0#0"; "SuperTextBox.ocx"
 Begin VB.Form frmAnamnesiDialitica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "ANAMNESI SCHEDA DIALITICA"
-   ClientHeight    =   5910
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   12210
+   ClientHeight    =   5916
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   12204
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
@@ -38,7 +38,7 @@ Begin VB.Form frmAnamnesiDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -56,7 +56,7 @@ Begin VB.Form frmAnamnesiDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -74,7 +74,7 @@ Begin VB.Form frmAnamnesiDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -92,7 +92,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -111,7 +111,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -130,7 +130,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -152,13 +152,13 @@ Begin VB.Form frmAnamnesiDialitica
       Top             =   850
       Width           =   12000
       _ExtentX        =   21167
-      _ExtentY        =   7646
+      _ExtentY        =   7641
       _Version        =   393216
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   -1  'True
@@ -313,14 +313,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboUnit‡ValoreInfusionale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmAnamnesiDialitica.frx":04AD
          Left            =   -65160
          List            =   "frmAnamnesiDialitica.frx":04B7
@@ -332,14 +332,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboCodicePrestaione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmAnamnesiDialitica.frx":04C3
          Left            =   9840
          List            =   "frmAnamnesiDialitica.frx":04C5
@@ -367,8 +367,8 @@ Begin VB.Form frmAnamnesiDialitica
          TabIndex        =   88
          Top             =   3840
          Width           =   615
-         _ExtentX        =   2143
-         _ExtentY        =   503
+         _ExtentX        =   2138
+         _ExtentY        =   508
          IsMultiLine     =   0   'False
          OnlyNumber      =   -1  'True
          IsPossibleSpacing=   0   'False
@@ -379,7 +379,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -396,14 +396,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboDosiUnitaMisura 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmAnamnesiDialitica.frx":04C7
          Left            =   -71760
          List            =   "frmAnamnesiDialitica.frx":04D1
@@ -415,14 +415,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboTipoAgo 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Index           =   1
          Left            =   9960
          Sorted          =   -1  'True
@@ -434,14 +434,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboTipoAgo 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Index           =   0
          ItemData        =   "frmAnamnesiDialitica.frx":04DD
          Left            =   7080
@@ -456,7 +456,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "&Elimina EPO"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -473,7 +473,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -491,7 +491,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -509,7 +509,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -527,7 +527,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -545,7 +545,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -563,7 +563,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -580,14 +580,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboCartuccia 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   -72480
          Sorted          =   -1  'True
          TabIndex        =   30
@@ -597,14 +597,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboSolInfusionale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   -72480
          Sorted          =   -1  'True
          TabIndex        =   28
@@ -614,14 +614,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboSolDialitica 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   -72480
          Sorted          =   -1  'True
          TabIndex        =   27
@@ -632,7 +632,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -649,7 +649,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.TextBox txtNote 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -668,7 +668,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -685,7 +685,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboEPO 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -705,14 +705,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboAnticoagulante 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Index           =   0
          Left            =   -72480
          Sorted          =   -1  'True
@@ -724,14 +724,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboAnticoagulante 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Index           =   1
          Left            =   -72480
          Sorted          =   -1  'True
@@ -744,7 +744,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -763,7 +763,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -782,7 +782,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -801,7 +801,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -820,7 +820,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -838,7 +838,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -856,7 +856,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -873,7 +873,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.TextBox txtSedeAccesso 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -890,14 +890,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboAccesso 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   2400
          Sorted          =   -1  'True
          TabIndex        =   7
@@ -907,14 +907,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboTipoDialisi 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   2400
          Sorted          =   -1  'True
          TabIndex        =   11
@@ -925,7 +925,7 @@ Begin VB.Form frmAnamnesiDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -943,7 +943,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Diuresi Residua"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -959,14 +959,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboTipoFiltro 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmAnamnesiDialitica.frx":051A
          Left            =   2400
          List            =   "frmAnamnesiDialitica.frx":051C
@@ -1005,14 +1005,14 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.ComboBox cboTipoLinee 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   2400
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -1041,7 +1041,7 @@ Begin VB.Form frmAnamnesiDialitica
          Top             =   960
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -1054,7 +1054,7 @@ Begin VB.Form frmAnamnesiDialitica
          Top             =   1440
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -1067,7 +1067,7 @@ Begin VB.Form frmAnamnesiDialitica
          Top             =   1920
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -1077,7 +1077,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Ritmo Dialisi Settimanale:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1094,7 +1094,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin VB.Label lblRitmoDialisiSettimanale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1113,7 +1113,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Codice Prestazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1132,7 +1132,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Gluc"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1151,7 +1151,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Ago A."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1170,7 +1170,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Ago V."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1189,7 +1189,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Flusso Sangue Qb (ml/min)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1208,7 +1208,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Ca"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1227,7 +1227,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "HCO3-"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1246,7 +1246,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Minuti"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1265,7 +1265,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Ore"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1284,7 +1284,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Cartuccia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1303,7 +1303,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "valore"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1322,7 +1322,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Soluzione Infusionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1341,7 +1341,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Soluzione Dialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1360,7 +1360,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Flusso Dialisi Qd (ml/min)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1379,7 +1379,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Note"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   -1  'True
@@ -1397,7 +1397,7 @@ Begin VB.Form frmAnamnesiDialitica
          AutoSize        =   -1  'True
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1415,7 +1415,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Eritropoietina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1434,7 +1434,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Anticoagulante"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1453,7 +1453,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Dose Iniziale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1472,7 +1472,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Dose Intermedia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1491,7 +1491,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Dose Finale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1510,7 +1510,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Altro Anticoagulante"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1529,7 +1529,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Dose"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1548,7 +1548,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Quantit‡ (ml/die)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1567,7 +1567,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Ultimo Peso Secco"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1586,7 +1586,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Aumento Pond. Interdialitico (ml)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1605,7 +1605,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Tipo di Filtro"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1624,7 +1624,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Accesso Vascolare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1643,7 +1643,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Sede di Accesso"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1662,7 +1662,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Tipo di Dialisi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1681,7 +1681,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Bagno Dialisi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1700,7 +1700,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Na+"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1719,7 +1719,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "K+"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1738,7 +1738,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "in data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1757,7 +1757,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "in data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1776,7 +1776,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "Tipo di linee"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1795,7 +1795,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "in data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1820,7 +1820,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "&Stampa Sintetica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1837,7 +1837,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1854,7 +1854,7 @@ Begin VB.Form frmAnamnesiDialitica
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1872,7 +1872,7 @@ Begin VB.Form frmAnamnesiDialitica
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2209,6 +2209,7 @@ Private Sub PulisciTutto()
     oData(1).Pulisci
     oData(2).Pulisci
     cboDosiUnitaMisura.ListIndex = 0
+    cboUnit‡ValoreInfusionale.ListIndex = 0
     chkDiuresiResidua.Value = Unchecked
     cmdTrova.SetFocus
     keyId = 0
@@ -2910,6 +2911,7 @@ Private Sub CaricaPaziente()
         cboSolDialitica.ListIndex = GetCboListIndex(rsAnamnesiDialitica("SOL_DIALITICA"), cboSolDialitica)
         cboSolInfusionale.ListIndex = GetCboListIndex(rsAnamnesiDialitica("SOL_INFUSIONALE"), cboSolInfusionale)
         cboUnit‡ValoreInfusionale.ListIndex = rsAnamnesiDialitica("UNITA_VAL_SOL_INF")
+        If cboUnit‡ValoreInfusionale.ListIndex = -1 Then cboUnit‡ValoreInfusionale.ListIndex = 0
         For i = 0 To 1
             cboAnticoagulante(i).ListIndex = GetCboListIndex(rsAnamnesiDialitica("ANTICOAGULANTE" & i + 1), cboAnticoagulante(i))
         Next i

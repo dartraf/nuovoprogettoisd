@@ -62,10 +62,12 @@ Sub Main()
         ' chiude la connessione
         Set cnPrinc = Nothing
         Set cnTrac = Nothing
-        ' chiude la condivisione
-        Call Shell("NET SHARE RISORSA /DELETE", vbHide)
-        ' smonta il volume
-        ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe /d X /q /s /f", vbHide)
+        If structApri.server Then
+            ' chiude la condivisione
+            Call Shell("NET SHARE RISORSA /DELETE", vbHide)
+            ' smonta il volume
+            ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe /d X /q /s /f", vbHide)
+        End If
         End
     End If
 

@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "31/01/2014"
+            TextSave        =   "27/02/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1148,6 +1148,7 @@ Private Sub mnuSottoApparati_Click(Index As Integer)
 End Sub
 
 Private Sub StampaRegistroApparati()
+    Dim TotaleApparati As Integer
     Dim SQLString As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
@@ -1176,7 +1177,7 @@ Private Sub StampaRegistroApparati()
     
     Set rsDataset = New Recordset
     
-    rsDataset.Open "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM APPARATI WHERE ELIMINATO=FALSE ORDER BY NUMERO_INVENTARIO", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         With rsMain
             Do While Not rsDataset.EOF
@@ -1197,7 +1198,7 @@ Private Sub StampaRegistroApparati()
             Loop
         End With
     End If
-        
+    TotaleApparati = rsDataset.RecordCount
     Set rsDataset = Nothing
     
     Set rptRegistroApparati.DataSource = rsMain
@@ -1207,6 +1208,7 @@ Private Sub StampaRegistroApparati()
     rptRegistroApparati.RightMargin = 0
     rptRegistroApparati.LeftMargin = 0
     'rptRegistroApparati.Sections("Intestazione").Controls("lblElenco").Caption = TipoElenco
+    rptRegistroApparati.Sections("Section5").Controls.Item("lblTotaleApparati").Caption = TotaleApparati
     rptRegistroApparati.PrintReport True, rptRangeAllPages
 
 End Sub

@@ -966,7 +966,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "lblTotaleReni"
+         Name            =   "lblTotaleApparati"
          Object.Left            =   13720
          Object.Top             =   235
          Object.Width           =   915

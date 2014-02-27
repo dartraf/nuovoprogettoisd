@@ -2813,11 +2813,11 @@ Begin VB.Form frmInput
          Width           =   3735
       End
       Begin DataTimeBox.uDataTimeBox oData 
-         Height          =   372
+         Height          =   375
          Index           =   0
-         Left            =   1200
+         Left            =   1320
          TabIndex        =   171
-         Top             =   670
+         Top             =   675
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -3023,7 +3023,7 @@ Begin VB.Form frmInput
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Data"
+         Caption         =   "Data Inizio"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -3038,7 +3038,7 @@ Begin VB.Form frmInput
          Left            =   120
          TabIndex        =   64
          Top             =   750
-         Width           =   510
+         Width           =   1110
       End
    End
 End

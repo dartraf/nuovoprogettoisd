@@ -315,17 +315,17 @@ Dim flxgrigliarow As Integer
 Private Sub cmdOrdDtRott_Click()
     If swap = 1 Then
         cmdOrdDtRott.Caption = "&Ordina x N°Invent."
-        strSql = "SELECT * FROM APPARATI ORDER BY DATA_ROTTAMAZIONE DESC"
+        strSql = "SELECT * FROM APPARATI WHERE ELIMINATO=FALSE ORDER BY DATA_ROTTAMAZIONE DESC"
         swap = 2
         txtOrdine.Caption = "--> Apparati Ordinati per Data Rottamazione"
     ElseIf swap = 2 Then
         cmdOrdDtRott.Caption = "&Ordina x Postaz."
-        strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
+        strSql = "SELECT * FROM APPARATI WHERE ELIMINATO=FALSE ORDER BY NUMERO_INVENTARIO"
         swap = 0
         txtOrdine.Caption = "--> Apparati Ordinati per N° Inventario"
     Else
         cmdOrdDtRott.Caption = "&Ordina x Data Rott."
-        strSql = "SELECT * FROM APPARATI ORDER BY POSTAZIONE"
+        strSql = "SELECT * FROM APPARATI WHERE ELIMINATO=FALSE ORDER BY POSTAZIONE"
         swap = 1
         txtOrdine.Caption = "--> Apparati Ordinati per Postazione"
     End If
@@ -337,23 +337,25 @@ Private Sub cmdOrdDtRott_Click()
 End Sub
 
 Private Sub cmdEliminaApparato_Click()
-   
+    Dim rsDataset As Recordset
+       
     If flxGriglia.Row = 0 Then
     
     ElseIf flxManutenzione.Rows > 1 Then
         MsgBox "ELIMINAZIONE NON PERMESSA!!! - Presenza di schede di manutenzione", vbInformation, "ATTENZIONE!!!"
     
     ElseIf Not IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) Or Not IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) Then
-        MsgBox "ELIMINAZIONE NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
-'    If MsgBox("ELIMINAZIONE NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo" & crlf & "Vuoi renderlo NON VISIBILE?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
-      
-      
-      'STO QUA----->>>>>
-        
-        
- '       Call CaricaFlx
- '       Exit Sub
- '   End If
+   '     MsgBox "ELIMINAZIONE NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
+    If MsgBox("Sicuro di voler eliminare l'apparato selezionato?", vbInformation + vbYesNo + vbDefaultButton2, "ATTENZIONE!!!") = vbYes Then
+      Set rsDataset = New Recordset
+      rsDataset.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+      rsDataset("ELIMINATO") = True
+      rsDataset.Update
+ '     blnEliminato = True
+      Set rsDataset = Nothing
+      Call CaricaFlx
+      Exit Sub
+    End If
     
  '   ElseIf IsPossibleDelete("APPARATI", "DATA_ROTTAMAZIONE", KeyApparato) Then
  '       MsgBox "ELIMINAZIONE NON PERMESSA!!! - Apparato con DATA di ROTTAMAZIONE attribuita", vbInformation, "ATTENZIONE!!!"
@@ -644,7 +646,7 @@ End Sub
 
 Private Sub Form_Load()
     Dim i As Integer
-    strSql = "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO"
+    strSql = "SELECT * FROM APPARATI WHERE ELIMINATO=FALSE ORDER BY NUMERO_INVENTARIO"
     swap = 0
     
     ' Griglia Apparato

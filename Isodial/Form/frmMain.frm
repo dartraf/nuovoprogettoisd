@@ -1,12 +1,12 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
    Caption         =   "Centro Dialisi"
-   ClientHeight    =   8190
-   ClientLeft      =   165
-   ClientTop       =   -5310
+   ClientHeight    =   8196
+   ClientLeft      =   168
+   ClientTop       =   -5316
    ClientWidth     =   15240
    Icon            =   "frmMain.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -16,8 +16,8 @@ Begin VB.MDIForm frmMain
       Align           =   1  'Align Top
       Height          =   1920
       Left            =   0
-      ScaleHeight     =   1860
-      ScaleWidth      =   15180
+      ScaleHeight     =   1872
+      ScaleWidth      =   15192
       TabIndex        =   20
       Top             =   855
       Visible         =   0   'False
@@ -28,7 +28,7 @@ Begin VB.MDIForm frmMain
          TabIndex        =   21
          Top             =   0
          Width           =   9855
-         _ExtentX        =   17383
+         _ExtentX        =   17378
          _ExtentY        =   3069
          BackColor       =   -2147483636
          ForeColor       =   -2147483630
@@ -37,8 +37,8 @@ Begin VB.MDIForm frmMain
    Begin MSComctlLib.ImageList imgListRibbonTab 
       Left            =   4440
       Top             =   3840
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   995
+      _ExtentY        =   995
       BackColor       =   -2147483643
       ImageWidth      =   48
       ImageHeight     =   48
@@ -67,8 +67,8 @@ Begin VB.MDIForm frmMain
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   2640
       Top             =   2760
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   995
+      _ExtentY        =   995
       BackColor       =   -2147483643
       MaskColor       =   12632256
       _Version        =   393216
@@ -78,8 +78,8 @@ Begin VB.MDIForm frmMain
       BackColor       =   &H00808080&
       Height          =   855
       Left            =   0
-      ScaleHeight     =   795
-      ScaleWidth      =   15180
+      ScaleHeight     =   804
+      ScaleWidth      =   15192
       TabIndex        =   1
       Top             =   0
       Width           =   15240
@@ -302,20 +302,20 @@ Begin VB.MDIForm frmMain
    End
    Begin MSComctlLib.StatusBar staBar 
       Align           =   2  'Align Bottom
-      Height          =   375
+      Height          =   372
       Left            =   0
       TabIndex        =   0
-      Top             =   7815
+      Top             =   7824
       Width           =   15240
       _ExtentX        =   26882
-      _ExtentY        =   661
+      _ExtentY        =   656
       _Version        =   393216
       BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Alignment       =   1
             AutoSize        =   2
-            Object.Width           =   4419
+            Object.Width           =   4424
             MinWidth        =   4419
             Text            =   "ISODIAL 2.9"
             TextSave        =   "ISODIAL 2.9"
@@ -345,12 +345,12 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "27/02/2014"
+            TextSave        =   "28/02/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1625,6 +1625,9 @@ Private Sub StampaRiepiloghiTerapie()
                 "           NEW adInteger AS LINK1, " & _
                 "           NEW adDate AS DATA, " & _
                 "           NEW adVarChar(50) AS MEDICINALE, " & _
+                "           NEW adDate AS DATA_FARMACO_1, " & _
+                "           NEW adDate AS DATA_FARMACO_2, " & _
+                "           NEW adDate AS DATA_FARMACO_3, " & _
                 "           NEW adLongVarChar AS POSOLOGIAENOTE, " & _
                 "           NEW adInteger AS SOMMINISTRAZIONE, " & _
                 "           NEW adLongVarChar as GIORNI " & _
@@ -1692,6 +1695,9 @@ Private Sub StampaRiepiloghiTerapie()
                             .Fields("LINK1") = rsDataset("KEY")
                             .Fields("DATA") = rsTerapia("DATA")
                             .Fields("MEDICINALE") = rsTerapia("NOME")
+                            .Fields("DATA_FARMACO_1") = rsTerapia("DATA_1")
+                            .Fields("DATA_FARMACO_2") = rsTerapia("DATA_2")
+                            .Fields("DATA_FARMACO_3") = rsTerapia("DATA_3")
                             .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
                             .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                             If CBool(rsTerapia("TUTTI_GIORNI")) Then
@@ -1727,6 +1733,9 @@ Private Sub StampaRiepiloghiTerapie()
                         .Fields("LINK1") = rsDataset("KEY")
                         .Fields("DATA") = Null
                         .Fields("MEDICINALE") = ""
+                        .Fields("DATA_FARMACO_1") = Null
+                        .Fields("DATA_FARMACO_2") = Null
+                        .Fields("DATA_FARMACO_3") = Null
                         .Fields("POSOLOGIAENOTE") = "NESSUNA TERAPIA"
                         .Fields("SOMMINISTRAZIONE") = 0
                         .Fields("GIORNI") = ""

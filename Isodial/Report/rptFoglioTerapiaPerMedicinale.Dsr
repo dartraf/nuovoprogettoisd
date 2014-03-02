@@ -2,21 +2,21 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Foglio terapia"
-   ClientHeight    =   8685
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   15270
+   ClientHeight    =   8688
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   15264
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   26935
-   _ExtentY        =   15319
+   _ExtentX        =   26945
+   _ExtentY        =   15325
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   14988
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -52,7 +52,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.25
+            Size            =   26.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Visible         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -122,7 +122,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -145,8 +145,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   610
-      NumControls     =   13
+      Object.Height          =   1609
+      NumControls     =   19
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -156,7 +156,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -182,7 +182,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -208,7 +208,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -234,7 +234,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -260,7 +260,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -286,7 +286,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -312,7 +312,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -335,11 +335,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Name            =   "txtPosologiaNote1"
          Object.Left            =   1020
          Object.Top             =   250
-         Object.Width           =   2200
-         Object.Height          =   285
+         Object.Width           =   2268
+         Object.Height          =   288
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -366,7 +366,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -393,7 +393,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -420,7 +420,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -447,7 +447,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -474,11 +474,173 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType13      =   4
+      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco1"
+         Object.Left            =   680
+         Object.Top             =   567
+         Object.Width           =   2604
+         Object.Height          =   276
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType14      =   4
+      BeginProperty Item14 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco2"
+         Object.Left            =   3288
+         Object.Top             =   567
+         Object.Width           =   2155
+         Object.Height          =   276
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType15      =   4
+      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco3"
+         Object.Left            =   5556
+         Object.Top             =   567
+         Object.Width           =   2211
+         Object.Height          =   276
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType16      =   4
+      BeginProperty Item16 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco4"
+         Object.Left            =   7823
+         Object.Top             =   567
+         Object.Width           =   2155
+         Object.Height          =   276
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType17      =   4
+      BeginProperty Item17 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco5"
+         Object.Left            =   10092
+         Object.Top             =   567
+         Object.Width           =   2210
+         Object.Height          =   276
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType18      =   4
+      BeginProperty Item18 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco6"
+         Object.Left            =   12359
+         Object.Top             =   567
+         Object.Width           =   2154
+         Object.Height          =   276
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   8.4
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
@@ -520,7 +682,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -579,7 +741,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -616,6 +778,7 @@ Private Sub DataReport_Initialize()
             .Item("txtPaziente").DataMember = "RES2"
             .Item("txtPaziente").DataField = "PAZIENTE"
         End With
+        
         With .Sections("corpo").Controls
             .Item("txtGiorno").DataMember = "RES1"
             .Item("txtGiorno").DataField = "GIORNO"
@@ -624,10 +787,14 @@ Private Sub DataReport_Initialize()
                 .Item("txtValore" & i).DataField = "MEDICINALE" & i
                 .Item("txtPosologiaNote" & i).DataMember = "RES1"
                 .Item("txtPosologiaNote" & i).DataField = "POSOLOGIANOTE" & i
+                .Item("txtDataFarmaco" & i).DataMember = "RES1"
+                .Item("txtDataFarmaco" & i).DataField = "DATA_FARMACO" & i
             Next i
         End With
+        
         With .Sections("Pie").Controls
             .Item("lblDa").Caption = "da: " & tAccesso.cognome & " " & tAccesso.nome
         End With
+        
     End With
 End Sub

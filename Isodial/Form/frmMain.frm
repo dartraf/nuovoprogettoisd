@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "28/02/2014"
+            TextSave        =   "02/03/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1355,6 +1355,9 @@ Private Sub StampaRiepiloghiTerapieHelios()
     Dim intDifferenzaTurno As Integer
     Dim rigaCodiceMedicinale() As Integer
     Dim indicePosizioneMedicinale As Integer
+    Dim Data1 As String
+    Dim Data2 As String
+    Dim Data3 As String
            
     frmPannelloSceltaTurno.Show 1
     intSessione = frmPannelloSceltaTurno.GetSessione
@@ -1416,7 +1419,17 @@ Private Sub StampaRiepiloghiTerapieHelios()
             "               NEW adLongVarChar AS POSOLOGIANOTE7, " & _
             "               NEW adLongVarChar AS POSOLOGIANOTE8, " & _
             "               NEW adLongVarChar AS POSOLOGIANOTE9, " & _
-            "               NEW adLongVarChar AS POSOLOGIANOTE10 " & _
+            "               NEW adLongVarChar AS POSOLOGIANOTE10, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO1, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO2, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO3, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO4, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO5, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO6, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO7, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO8, " & _
+            "               NEW adLongVarChar AS DATA_FARMACO9, " & _
+            "               NEW adDate AS DATA_FARMACO10 " & _
             "       ) RELATE LINK1 TO LINK1 ) AS RES1" & _
             "       ) RELATE LINKSUPERIORE TO LINKSUPERIORE ) AS RES2"
 
@@ -1527,6 +1540,24 @@ Private Sub StampaRiepiloghiTerapieHelios()
                             Next
                             
                             .Fields("MEDICINALE" & indicePosizioneMedicinale) = UCase(rsAppo("MEDICINALI.NOME"))
+                            
+                            If IsNull(rsAppo("DATA_1")) Then
+                                Data1 = "Assente - "
+                            Else
+                                Data1 = rsAppo("DATA_1") & " - "
+                            End If
+                            If IsNull(rsAppo("DATA_2")) Then
+                                Data2 = "Assente - "
+                            Else
+                                Data2 = rsAppo("DATA_2") & " - "
+                            End If
+                            If IsNull(rsAppo("DATA_3")) Then
+                                Data3 = "Assente"
+                            Else
+                                Data3 = rsAppo("DATA_3")
+                            End If
+                            
+                            .Fields("DATA_FARMACO" & indicePosizioneMedicinale) = Data1 & Data2 & Data3
                             .Fields("POSOLOGIANOTE" & indicePosizioneMedicinale) = "( " & rsAppo("POSOLOGIA") & IIf(rsAppo("NOTE") <> "", " - " & rsAppo("NOTE"), "") & " )"
                             strMedicinaliEsclusi = " NOT MEDICINALI.KEY=" & rsAppo("MEDICINALI.KEY") & " AND " & strMedicinaliEsclusi
                             rsAppo.MoveNext

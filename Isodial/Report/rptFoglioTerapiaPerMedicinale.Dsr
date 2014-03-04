@@ -145,8 +145,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   1609
-      NumControls     =   19
+      Object.Height          =   541
+      NumControls     =   13
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -491,168 +491,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType13      =   4
-      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco1"
-         Object.Left            =   680
-         Object.Top             =   567
-         Object.Width           =   2604
-         Object.Height          =   276
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   8.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType14      =   4
-      BeginProperty Item14 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco2"
-         Object.Left            =   3288
-         Object.Top             =   567
-         Object.Width           =   2155
-         Object.Height          =   276
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   8.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType15      =   4
-      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco3"
-         Object.Left            =   5556
-         Object.Top             =   567
-         Object.Width           =   2211
-         Object.Height          =   276
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   8.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType16      =   4
-      BeginProperty Item16 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco4"
-         Object.Left            =   7823
-         Object.Top             =   567
-         Object.Width           =   2155
-         Object.Height          =   276
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   8.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType17      =   4
-      BeginProperty Item17 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco5"
-         Object.Left            =   10092
-         Object.Top             =   567
-         Object.Width           =   2210
-         Object.Height          =   276
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   8.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType18      =   4
-      BeginProperty Item18 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco6"
-         Object.Left            =   12359
-         Object.Top             =   567
-         Object.Width           =   2154
-         Object.Height          =   276
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   8.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
    EndProperty
    SectionCode5    =   5
    BeginProperty Section5 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -787,8 +625,6 @@ Private Sub DataReport_Initialize()
                 .Item("txtValore" & i).DataField = "MEDICINALE" & i
                 .Item("txtPosologiaNote" & i).DataMember = "RES1"
                 .Item("txtPosologiaNote" & i).DataField = "POSOLOGIANOTE" & i
-                .Item("txtDataFarmaco" & i).DataMember = "RES1"
-                .Item("txtDataFarmaco" & i).DataField = "DATA_FARMACO" & i
             Next i
         End With
         

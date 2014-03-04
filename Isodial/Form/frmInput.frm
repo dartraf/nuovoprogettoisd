@@ -3049,6 +3049,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Dim sec As String
 Dim lettera As String
 Dim rsDataset As Recordset
 Private Type prestazioni
@@ -3604,8 +3605,16 @@ Private Sub cmdInserisci_Click()
                 Exit For
             End If
         Next i
+        If tInput.Tipo = tpITERAPIADIALITICA Then
+            sec = "o definire una data"
+        Else
+            sec = ""
+        End If
         If trovato = False And oDataFarmaco1(1).data = "" And oDataFarmaco2(2).data = "" And oDataFarmaco3(3).data = "" Then
-            MsgBox "Selezionare almeno un giorno della settimana o definire una data", vbCritical, "ATTENZIONE!!!!!!"
+            MsgBox "Indicare almeno un giorno della settimana " & sec, vbCritical, "ATTENZIONE!!!!!!"
+            Exit Sub
+        ElseIf trovato And (oDataFarmaco1(1).data <> "" Or oDataFarmaco2(2).data <> "" Or oDataFarmaco3(3).data <> "") Then
+            MsgBox "INDICAZIONE DOPPIA - Indicare un giorno della settimana o una data", vbCritical, "ATTENZIONE!!!!!!"
             Exit Sub
         End If
         If tInput.Tipo = tpITERAPIADIALITICA Then
@@ -4013,11 +4022,11 @@ Private Sub txtQuantita_Change()
 End Sub
 
 Private Sub txtPostazione_GotFocus()
-    txtpostazione.BackColor = colArancione
+    txtPostazione.BackColor = colArancione
 End Sub
 
 Private Sub txtPostazione_LostFocus()
-    txtpostazione.BackColor = vbWhite
+    txtPostazione.BackColor = vbWhite
 End Sub
 
 Private Sub txtNumeroRene_GotFocus()

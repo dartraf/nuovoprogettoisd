@@ -480,6 +480,7 @@ Dim vRow As Integer
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
 Dim rsDisco As Recordset
 Dim intPazientiKey As Integer
+Dim i As Integer
   
 Const icsGIORNI As String = " x"
 Const icsCAS As String = "  x"
@@ -1237,6 +1238,13 @@ Private Sub flxGriglia_DblClick()
                 Else
                     .TextMatrix(.Row, vCol) = ""
                 End If
+                'controlla se ci sono date nei campi DATE_1,DATE_2,DATE_3
+                If .TextMatrix(.Row, 14) <> "" Or .TextMatrix(.Row, 15) <> "" Or .TextMatrix(.Row, 16) <> "" Then
+                    MsgBox "INDICAZIONE DOPPIA - Eliminare dapprima le date", vbCritical, "ATTENZIONE!!!!!!"
+                    .TextMatrix(.Row, vCol) = ""
+                  Exit Sub
+                End If
+                
                 Call SalvaModifiche
             
             Case 14, 15, 16     ' data del medicinale
@@ -1249,7 +1257,15 @@ Private Sub flxGriglia_DblClick()
                 Else
                     .TextMatrix(.Row, .Col) = ""
                 End If
-            
+                'controlla se sono spuntati giorni
+                For i = 6 To 13
+                    If .TextMatrix(.Row, i) <> "" Then
+                        MsgBox "INDICAZIONE DOPPIA - Deselezionare dapprima i giorni", vbCritical, "ATTENZIONE!!!!!!"
+                        .TextMatrix(.Row, .Col) = ""
+                        Exit Sub
+                    End If
+                Next
+                
                 Call SalvaModifiche
                 ' cambia colonna per evitave di ricaricare il calendario
                 .Col = 0

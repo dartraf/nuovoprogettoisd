@@ -2649,8 +2649,8 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.s
         rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDataset.EOF And rsDataset.BOF) Then
             .Fields("ULTIMA_DIALISI_DEL") = rsDataset("DATA")
-            .Fields("PESO_PRE_DIALISI") = rsDataset("PESO_INIZIO")
-            .Fields("PESO_POST_DIALISI") = rsDataset("PESO_FINE")
+            .Fields("PESO_PRE_DIALISI") = Left(rsDataset("PESO_INIZIO"), 6)
+            .Fields("PESO_POST_DIALISI") = Left(rsDataset("PESO_FINE"), 6)
             .Fields("PRESS_ARTER_PRE_DIAL") = rsDataset("PA_MIN1") & "/" & rsDataset("PA_MAX1")
             .Fields("PRESS_ARTER_POST_DIAL") = rsDataset("PA_MIN5") & "/" & rsDataset("PA_MAX5")
             .Fields("MONITOR_EMODIALISI") = rsDataset("MODELLO")

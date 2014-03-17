@@ -25,6 +25,7 @@ Begin VB.Form frmKtv
       _ExtentX        =   22886
       _ExtentY        =   8255
       _Version        =   393216
+      Tab             =   2
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -38,11 +39,9 @@ Begin VB.Form frmKtv
       EndProperty
       TabCaption(0)   =   "Tabella"
       TabPicture(0)   =   "frmKtv.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Frame4"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Frame2"
-      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "Frame2"
+      Tab(0).Control(1)=   "Frame4"
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Grafico 2D"
       TabPicture(1)   =   "frmKtv.frx":001C
@@ -51,8 +50,9 @@ Begin VB.Form frmKtv
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmKtv.frx":0038
-      Tab(2).ControlEnabled=   0   'False
+      Tab(2).ControlEnabled=   -1  'True
       Tab(2).Control(0)=   "grafico(1)"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -66,7 +66,7 @@ Begin VB.Form frmKtv
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   3375
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   2
          Top             =   480
          Width           =   12735
@@ -164,7 +164,7 @@ Begin VB.Form frmKtv
       Begin MSChart20Lib.MSChart grafico 
          Height          =   4575
          Index           =   1
-         Left            =   -74880
+         Left            =   120
          OleObjectBlob   =   "frmKtv.frx":2F8E
          TabIndex        =   9
          Top             =   480
@@ -172,10 +172,27 @@ Begin VB.Form frmKtv
       End
       Begin VB.Frame Frame4 
          Height          =   855
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   4
          Top             =   3720
          Width           =   12735
+         Begin VB.CheckBox Check2 
+            Caption         =   "Check2"
+            Height          =   255
+            Left            =   240
+            TabIndex        =   23
+            Top             =   550
+            Width           =   255
+         End
+         Begin VB.CheckBox Check1 
+            Caption         =   "Check1"
+            Height          =   255
+            Left            =   240
+            TabIndex        =   22
+            Top             =   180
+            Value           =   1  'Checked
+            Width           =   255
+         End
          Begin VB.CommandButton cmdEsportaEsame 
             Caption         =   "&Esporta Kt/V"
             BeginProperty Font 
@@ -263,6 +280,40 @@ Begin VB.Form frmKtv
             Top             =   240
             Width           =   2295
          End
+         Begin VB.Label Label3 
+            Caption         =   "Stampa Grafico 3D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   530
+            TabIndex        =   25
+            Top             =   555
+            Width           =   2055
+         End
+         Begin VB.Label Label2 
+            Caption         =   "Stampa Grafico 2D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   530
+            TabIndex        =   24
+            Top             =   190
+            Width           =   2055
+         End
       End
    End
    Begin VB.Frame Frame1 
@@ -275,7 +326,7 @@ Begin VB.Form frmKtv
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Left            =   360
-         Picture         =   "frmKtv.frx":5C21
+         Picture         =   "frmKtv.frx":5C3D
          Style           =   1  'Graphical
          TabIndex        =   16
          Top             =   240
@@ -963,7 +1014,6 @@ Private Sub cmdStampa_Click()
         Exit Sub
     End If
 
-      
     Set rsDialisi = New Recordset
     rsDialisi.Open "SELECT COGNOME, NOME, DATA_NASCITA, CODICE_ID FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     structIntestazione.sPaziente = rsDialisi("COGNOME") & " " & rsDialisi("NOME")
@@ -1132,8 +1182,55 @@ Private Sub cmdStampa_Click()
     rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
     rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
     rptCalcoloKtV.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
-    rptCalcoloKtV.PrintReport True, rptRangeAllPages
+    
+    'stampa i grafici
+    
+    If Check1 Then
+        
+        'Porta il Grafico nella pagina di stampa
+        With rptCalcoloKtV.Sections("corpo")
+        
+        'Imposta se necessarie le dimensioni dell'immagine:
+        With .Controls("Image2d")
+   '     .Height = 15000
+   '     .Left = 0
+   '     .Top = 10
+   '     .Width = 11200
+   '     .PictureAlignment = rptPACenter
+   '     .SizeMode = 0
+        grafico(0).EditCopy
+        Set .Picture = Clipboard.getData
+        End With
+        End With
+    Else
+   '    cancella l'immagine nella clipboard e nel campo image del report
+        Clipboard.Clear
+        With rptCalcoloKtV.Sections("corpo")
+        With .Controls("Image2d")
+        Set .Picture = LoadPicture()
+        End With
+        End With
+    End If
 
+    If Check2 Then
+        With rptCalcoloKtV.Sections("corpo")
+        With .Controls("Image3d")
+  '      .Top = 10
+        grafico(1).EditCopy
+        Set .Picture = Clipboard.getData
+        End With
+        End With
+    Else
+        Clipboard.Clear
+        With rptCalcoloKtV.Sections("corpo")
+        With .Controls("Image3d")
+        Set .Picture = LoadPicture()
+        End With
+        End With
+    End If
+    
+    rptCalcoloKtV.PrintReport True, rptRangeAllPages
+    Clipboard.Clear
 End Sub
 
 Private Sub cmdAnnulla_Click()

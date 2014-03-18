@@ -153,7 +153,7 @@ Begin VB.Form frmKtv
          End
       End
       Begin MSChart20Lib.MSChart grafico 
-         Height          =   4575
+         Height          =   4800
          Index           =   0
          Left            =   -74880
          OleObjectBlob   =   "frmKtv.frx":02FB
@@ -162,12 +162,12 @@ Begin VB.Form frmKtv
          Width           =   12735
       End
       Begin MSChart20Lib.MSChart grafico 
-         Height          =   4575
+         Height          =   5200
          Index           =   1
          Left            =   120
          OleObjectBlob   =   "frmKtv.frx":2F8E
          TabIndex        =   9
-         Top             =   480
+         Top             =   360
          Width           =   12735
       End
       Begin VB.Frame Frame4 
@@ -177,21 +177,39 @@ Begin VB.Form frmKtv
          Top             =   3720
          Width           =   12735
          Begin VB.CheckBox Check2 
-            Caption         =   "Check2"
+            Caption         =   "Stampa Grafico 3D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
             Height          =   255
             Left            =   240
             TabIndex        =   23
-            Top             =   550
-            Width           =   255
+            Top             =   520
+            Width           =   2295
          End
          Begin VB.CheckBox Check1 
-            Caption         =   "Check1"
+            Caption         =   "Stampa Grafico 2D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
             Height          =   255
             Left            =   240
             TabIndex        =   22
             Top             =   180
             Value           =   1  'Checked
-            Width           =   255
+            Width           =   2295
          End
          Begin VB.CommandButton cmdEsportaEsame 
             Caption         =   "&Esporta Kt/V"
@@ -279,40 +297,6 @@ Begin VB.Form frmKtv
             TabIndex        =   5
             Top             =   240
             Width           =   2295
-         End
-         Begin VB.Label Label3 
-            Caption         =   "Stampa Grafico 3D"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   530
-            TabIndex        =   25
-            Top             =   555
-            Width           =   2055
-         End
-         Begin VB.Label Label2 
-            Caption         =   "Stampa Grafico 2D"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   530
-            TabIndex        =   24
-            Top             =   190
-            Width           =   2055
          End
       End
    End

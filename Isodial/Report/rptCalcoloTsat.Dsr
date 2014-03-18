@@ -308,8 +308,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   2434
-      NumControls     =   65
+      Object.Height          =   9675
+      NumControls     =   67
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -1918,6 +1918,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
             SubFormatType   =   0
          EndProperty
       EndProperty
+      ItemType65      =   7
+      BeginProperty Item65 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Image2d"
+         Object.Top             =   2438
+         Object.Width           =   9585
+         Object.Height          =   2955
+         SizeMode        =   1
+      EndProperty
+      ItemType66      =   7
+      BeginProperty Item66 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Image3d"
+         Object.Top             =   5443
+         Object.Width           =   9585
+         Object.Height          =   4140
+         SizeMode        =   1
+      EndProperty
    EndProperty
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -1930,7 +1948,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
          _Version        =   393216
          Name            =   "Label18"
          Object.Left            =   6802
-         Object.Top             =   171
+         Object.Top             =   58
          Object.Width           =   2835
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1950,8 +1968,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
          _Version        =   393216
          Name            =   "Label1"
          Object.Left            =   113
-         Object.Top             =   171
-         Object.Width           =   2041
+         Object.Top             =   57
+         Object.Width           =   2040
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1962,14 +1980,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloTsat
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
       ItemType2       =   3
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDa"
          Object.Left            =   6803
-         Object.Top             =   397
+         Object.Top             =   284
          Object.Width           =   2835
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 

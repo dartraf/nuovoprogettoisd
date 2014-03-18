@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mschrt20.ocx"
 Begin VB.Form frmTsat 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Calcolo TSAT %"
@@ -25,6 +25,7 @@ Begin VB.Form frmTsat
       _ExtentX        =   21405
       _ExtentY        =   6773
       _Version        =   393216
+      Tab             =   2
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -38,11 +39,9 @@ Begin VB.Form frmTsat
       EndProperty
       TabCaption(0)   =   "Tabella"
       TabPicture(0)   =   "frmTsat.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Frame4"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Frame2"
-      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "Frame2"
+      Tab(0).Control(1)=   "Frame4"
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Grafico 2D"
       TabPicture(1)   =   "frmTsat.frx":001C
@@ -51,8 +50,9 @@ Begin VB.Form frmTsat
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmTsat.frx":0038
-      Tab(2).ControlEnabled=   0   'False
+      Tab(2).ControlEnabled=   -1  'True
       Tab(2).Control(0)=   "grafico(1)"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -66,7 +66,7 @@ Begin VB.Form frmTsat
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   2535
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   1
          Top             =   480
          Width           =   11895
@@ -155,10 +155,45 @@ Begin VB.Form frmTsat
       End
       Begin VB.Frame Frame4 
          Height          =   855
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   6
          Top             =   2880
          Width           =   11895
+         Begin VB.CheckBox Check2 
+            Caption         =   "Stampa Grafico 3D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   120
+            TabIndex        =   23
+            Top             =   520
+            Width           =   2295
+         End
+         Begin VB.CheckBox Check1 
+            Caption         =   "Stampa Grafico 2D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   120
+            TabIndex        =   22
+            Top             =   180
+            Value           =   1  'Checked
+            Width           =   2295
+         End
          Begin VB.CommandButton cmdEsportaEsame 
             Caption         =   "&Esporta TSAT%"
             BeginProperty Font 
@@ -171,7 +206,7 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   3840
+            Left            =   4200
             TabIndex        =   21
             Top             =   240
             Width           =   1935
@@ -188,7 +223,7 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   495
-            Left            =   2280
+            Left            =   2760
             TabIndex        =   20
             Top             =   240
             Width           =   1335
@@ -205,7 +240,7 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   6000
+            Left            =   6240
             TabIndex        =   10
             Top             =   240
             Width           =   1815
@@ -223,7 +258,7 @@ Begin VB.Form frmTsat
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   8040
+            Left            =   8160
             TabIndex        =   8
             Top             =   240
             Width           =   2295
@@ -248,7 +283,7 @@ Begin VB.Form frmTsat
          End
       End
       Begin MSChart20Lib.MSChart grafico 
-         Height          =   3495
+         Height          =   4200
          Index           =   0
          Left            =   -74880
          OleObjectBlob   =   "frmTsat.frx":028E
@@ -257,9 +292,9 @@ Begin VB.Form frmTsat
          Width           =   11895
       End
       Begin MSChart20Lib.MSChart grafico 
-         Height          =   3495
+         Height          =   4800
          Index           =   1
-         Left            =   -74880
+         Left            =   120
          OleObjectBlob   =   "frmTsat.frx":2F3A
          TabIndex        =   9
          Top             =   360
@@ -992,7 +1027,54 @@ Private Sub cmdStampa_Click()
     rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
     rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
     rptCalcoloTsat.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
+    
+    'stampa i grafici
+    
+    If Check1 Then
+        
+        'Porta il Grafico nella pagina di stampa
+        With rptCalcoloTsat.Sections("corpo")
+        
+        'Imposta se necessarie le dimensioni dell'immagine:
+        With .Controls("Image2d")
+   '     .Height = 15000
+   '     .Left = 0
+   '     .Top = 10
+   '     .Width = 11200
+   '     .PictureAlignment = rptPACenter
+   '     .SizeMode = 0
+        grafico(0).EditCopy
+        Set .Picture = Clipboard.getData
+        End With
+        End With
+    Else
+   '    cancella l'immagine nella clipboard e nel campo image del report
+        Clipboard.Clear
+        With rptCalcoloTsat.Sections("corpo")
+        With .Controls("Image2d")
+        Set .Picture = LoadPicture()
+        End With
+        End With
+    End If
+
+    If Check2 Then
+        With rptCalcoloTsat.Sections("corpo")
+        With .Controls("Image3d")
+  '      .Top = 10
+        grafico(1).EditCopy
+        Set .Picture = Clipboard.getData
+        End With
+        End With
+    Else
+        Clipboard.Clear
+        With rptCalcoloTsat.Sections("corpo")
+        With .Controls("Image3d")
+        Set .Picture = LoadPicture()
+        End With
+        End With
+    End If
     rptCalcoloTsat.PrintReport True, rptRangeAllPages
+    Clipboard.Clear
 End Sub
 
 Private Sub cmdChiudi_Click()

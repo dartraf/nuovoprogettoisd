@@ -159,6 +159,41 @@ Begin VB.Form frmProdottoCalcioFosforo
          TabIndex        =   6
          Top             =   2880
          Width           =   11895
+         Begin VB.CheckBox Check1 
+            Caption         =   "Stampa Grafico 2D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   120
+            TabIndex        =   23
+            Top             =   180
+            Value           =   1  'Checked
+            Width           =   2295
+         End
+         Begin VB.CheckBox Check2 
+            Caption         =   "Stampa Grafico 3D"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   120
+            TabIndex        =   22
+            Top             =   520
+            Width           =   2295
+         End
          Begin VB.CommandButton cmdEsportaEsame 
             Caption         =   "&Esporta Prodotto Ca / P"
             BeginProperty Font 
@@ -171,10 +206,10 @@ Begin VB.Form frmProdottoCalcioFosforo
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   3000
+            Left            =   4080
             TabIndex        =   21
             Top             =   240
-            Width           =   2775
+            Width           =   2055
          End
          Begin VB.CommandButton cmdStampa 
             Caption         =   "&Stampa"
@@ -188,7 +223,7 @@ Begin VB.Form frmProdottoCalcioFosforo
                Strikethrough   =   0   'False
             EndProperty
             Height          =   495
-            Left            =   1440
+            Left            =   2640
             TabIndex        =   20
             Top             =   240
             Width           =   1335
@@ -205,7 +240,7 @@ Begin VB.Form frmProdottoCalcioFosforo
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   6000
+            Left            =   6240
             TabIndex        =   10
             Top             =   240
             Width           =   1815
@@ -223,7 +258,7 @@ Begin VB.Form frmProdottoCalcioFosforo
                Strikethrough   =   0   'False
             EndProperty
             Height          =   480
-            Left            =   8040
+            Left            =   8160
             TabIndex        =   8
             Top             =   240
             Width           =   2295
@@ -248,7 +283,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          End
       End
       Begin MSChart20Lib.MSChart grafico 
-         Height          =   3495
+         Height          =   4200
          Index           =   0
          Left            =   -74880
          OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":0292
@@ -257,7 +292,7 @@ Begin VB.Form frmProdottoCalcioFosforo
          Width           =   11895
       End
       Begin MSChart20Lib.MSChart grafico 
-         Height          =   3495
+         Height          =   4800
          Index           =   1
          Left            =   -74880
          OleObjectBlob   =   "frmProdottoCalcioFosforo.frx":2F3C
@@ -1012,7 +1047,55 @@ Private Sub cmdStampa_Click()
     rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblDataNascita").Caption = structIntestazione.sDataPaziente
     rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblEta").Caption = lblEta.Caption
     rptProdottoCalcioFosforo.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
+    
+   'stampa i grafici
+    
+    If Check1 Then
+        
+        'Porta il Grafico nella pagina di stampa
+        With rptProdottoCalcioFosforo.Sections("corpo")
+        
+        'Imposta se necessarie le dimensioni dell'immagine:
+        With .Controls("Image2d")
+   '     .Height = 15000
+   '     .Left = 0
+   '     .Top = 10
+   '     .Width = 11200
+   '     .PictureAlignment = rptPACenter
+   '     .SizeMode = 0
+        grafico(0).EditCopy
+        Set .Picture = Clipboard.getData
+        End With
+        End With
+    Else
+   '    cancella l'immagine nella clipboard e nel campo image del report
+        Clipboard.Clear
+        With rptProdottoCalcioFosforo.Sections("corpo")
+        With .Controls("Image2d")
+        Set .Picture = LoadPicture()
+        End With
+        End With
+    End If
+
+    If Check2 Then
+        With rptProdottoCalcioFosforo.Sections("corpo")
+        With .Controls("Image3d")
+  '      .Top = 10
+        grafico(1).EditCopy
+        Set .Picture = Clipboard.getData
+        End With
+        End With
+    Else
+        Clipboard.Clear
+        With rptProdottoCalcioFosforo.Sections("corpo")
+        With .Controls("Image3d")
+        Set .Picture = LoadPicture()
+        End With
+        End With
+    End If
+    
     rptProdottoCalcioFosforo.PrintReport True, rptRangeAllPages
+    Clipboard.Clear
 End Sub
 
 Private Sub cmdChiudi_Click()

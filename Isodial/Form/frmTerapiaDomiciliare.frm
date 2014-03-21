@@ -876,6 +876,7 @@ Private Sub cmdSposta_Click(Index As Integer)
         rsTerapia.Close
         
         Call CaricaScheda
+        flxGrigliaSospese.Row = 0
     Else
         'sospende
         If flxGriglia.Row = 0 Then Exit Sub

@@ -473,6 +473,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Dim TotRecord As Integer
 Dim rsTerapia As Recordset
 Dim stoPulendo As Boolean
 Dim vCol As Integer
@@ -748,6 +749,9 @@ Private Sub CaricaScheda()
             "ORDER BY   DATA DESC"
     Set rsTerapia = New Recordset
     rsTerapia.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    TotRecord = rsTerapia.RecordCount 'serve x il controllo max num farmaci Helios in stampa
+    
     If rsTerapia.EOF And rsTerapia.BOF Then
     Else
         ' pulisce il rsDisco
@@ -930,10 +934,16 @@ Private Sub cmdSposta_Click(Index As Integer)
     Dim v_bool(8) As Boolean
     Dim v_Val() As Variant
     Dim v_Nomi() As Variant
-    
+   
     Set rsTerapia = New Recordset
     If Index = 0 Then
-        ' elimina la sospensione
+    
+    'controllo massimo numero farmaci x stampa terapia Helios
+    If NumMaxFarmaci Then
+        Exit Sub
+    End If
+        
+        ' riprende il farmaco
         If flxGrigliaSospese.Row = 0 Then Exit Sub
         
         num = GetNumero("TERAPIE_DIALITICHE")
@@ -952,10 +962,9 @@ Private Sub cmdSposta_Click(Index As Integer)
         rsTerapia.Close
         
         Call CaricaScheda
-        
+        flxGrigliaSospese.Row = 0
     Else
-    
-        'sospende
+        'sospende il farmaco
         If flxGriglia.Row = 0 Then Exit Sub
             
         rsTerapia.Open "SELECT * FROM TERAPIE_DIALITICHE WHERE KEY=" & flxGriglia.TextMatrix(flxGriglia.Row, 0), cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
@@ -1000,6 +1009,7 @@ Private Sub cmdElimina_Click()
         Else
             eliminato = True
             rsTerapia.Delete
+            TotRecord = TotRecord - 1 'serve x il controllo max num farmaci Helios in stampa
         End If
         Set rsTerapia = Nothing
         
@@ -1106,6 +1116,11 @@ Private Sub cmdInserisci_Click()
     Dim DataFarmaco1 As Variant
     Dim DataFarmaco2 As Variant
     Dim DataFarmaco3 As Variant
+    
+    'controllo massimo numero farmaci x stampa terapia Helios
+    If NumMaxFarmaci Then
+        Exit Sub
+    End If
     
     If intPazientiKey = 0 Then Exit Sub
         Unload frmInput
@@ -1445,4 +1460,16 @@ Private Sub cboMedicinali_LostFocus()
     End If
     cboMedicinali.Visible = False
 End Sub
+
+Private Function NumMaxFarmaci() As Boolean
+    'controllo massimo numero farmaci
+    If structIntestazione.sCodiceSTS = CODICESTS_HELIOS And TotRecord >= 6 Then
+       MsgBox "IMPOSSIBILE INSERIRE ALTRI FARMACI!!! - Limite massimo raggiunto ", vbCritical, "Attenzione"
+       NumMaxFarmaci = True
+    Else
+       NumMaxFarmaci = False
+    End If
+End Function
+
+
 

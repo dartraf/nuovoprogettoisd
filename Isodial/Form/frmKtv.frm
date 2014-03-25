@@ -25,7 +25,6 @@ Begin VB.Form frmKtv
       _ExtentX        =   22886
       _ExtentY        =   8255
       _Version        =   393216
-      Tab             =   2
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -39,9 +38,11 @@ Begin VB.Form frmKtv
       EndProperty
       TabCaption(0)   =   "Tabella"
       TabPicture(0)   =   "frmKtv.frx":0000
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame2"
-      Tab(0).Control(1)=   "Frame4"
+      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).Control(0)=   "Frame4"
+      Tab(0).Control(0).Enabled=   0   'False
+      Tab(0).Control(1)=   "Frame2"
+      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Grafico 2D"
       TabPicture(1)   =   "frmKtv.frx":001C
@@ -50,9 +51,8 @@ Begin VB.Form frmKtv
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Grafico 3D"
       TabPicture(2)   =   "frmKtv.frx":0038
-      Tab(2).ControlEnabled=   -1  'True
+      Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "grafico(1)"
-      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).ControlCount=   1
       Begin VB.Frame Frame2 
          BeginProperty Font 
@@ -66,7 +66,7 @@ Begin VB.Form frmKtv
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   3375
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   2
          Top             =   480
          Width           =   12735
@@ -164,7 +164,7 @@ Begin VB.Form frmKtv
       Begin MSChart20Lib.MSChart grafico 
          Height          =   5200
          Index           =   1
-         Left            =   120
+         Left            =   -74880
          OleObjectBlob   =   "frmKtv.frx":2F8E
          TabIndex        =   9
          Top             =   360
@@ -172,7 +172,7 @@ Begin VB.Form frmKtv
       End
       Begin VB.Frame Frame4 
          Height          =   855
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   4
          Top             =   3720
          Width           =   12735

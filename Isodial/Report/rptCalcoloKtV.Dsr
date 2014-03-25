@@ -387,8 +387,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCalcoloKtV
          _Version        =   393216
          Name            =   "txtUreaPostGen"
          Object.Left            =   2778
-         Object.Top             =   681
-         Object.Width           =   567
+         Object.Top             =   680
+         Object.Width           =   570
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

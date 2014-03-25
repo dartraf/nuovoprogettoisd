@@ -311,6 +311,8 @@ Private Function GeneraFileXML() As Boolean
     Dim coefficienteQuotaAggiuntiva As Single
     Dim quotaNazionale As Single
     Dim blnPazienteEstero As Boolean
+    Dim totcanc As Single
+    Dim totcanc_scontato As Single
 
     
     Set doc = Nothing
@@ -399,14 +401,22 @@ Private Function GeneraFileXML() As Boolean
     totaleAssistito = Format(rsAppo("TOTALER") * (ticket + quotaNazionale) + coefficienteQuotaAggiuntiva * quotaAggiuntiva, "#######0.00")
     rsAppo.Close
     
-    ' calcola i totali generali
+    ' calcola il totale di tutte le ricette
     rsAppo.Open "SELECT SUM(QUANTITA*IMPORTO) AS TOTALE, SUM(QUANTITA*IMPORTO_SCONTATO) AS TOTALE_SCONTATO FROM PRESCRIZIONI WHERE CODICE_RICETTA IN (" & _
-                "SELECT KEY FROM RICETTE  WHERE (VALIDATA=FALSE AND NOT FLAG=3 AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & "))", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+                "SELECT KEY FROM RICETTE  WHERE (VALIDATA=FALSE AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & "))", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
     nodo1.appendChild CreaNodo("TotValRicInviate", VirgolaOrPunto(Format(rsAppo("TOTALE"), "#####.00"), ","))
     nodo1.appendChild CreaNodo("TotImpCaricoSSN", VirgolaOrPunto(Format(rsAppo("TOTALE_SCONTATO") - totaleAssistito, "#####.00"), ","))
     rsAppo.Close
     
-    ' calcola i dati sul numero ricette I, V, C
+    ' calcola il totale di tutte le ricette tranne quelle cancellate
+'    rsAppo.Open "SELECT SUM(QUANTITA*IMPORTO) AS TOTALE, SUM(QUANTITA*IMPORTO_SCONTATO) AS TOTALE_SCONTATO FROM PRESCRIZIONI WHERE CODICE_RICETTA IN (" & _
+                "SELECT KEY FROM RICETTE  WHERE (VALIDATA=FALSE AND NOT FLAG=3 AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & "))", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+    
+    ' calcola il totale delle ricette cancellate
+'    rsAppo.Open "SELECT SUM(QUANTITA*IMPORTO) AS TOTCANC, SUM(QUANTITA*IMPORTO_SCONTATO) AS TOTCANC_SCONTATO FROM PRESCRIZIONI WHERE CODICE_RICETTA IN (" & _
+                "SELECT KEY FROM RICETTE  WHERE (VALIDATA=FALSE AND FLAG=3 AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & "))", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+
+    ' calcola i dati sul numero ricette I flag=1, V flag=2, C flag=3
     rsAppo.Open "SELECT COUNT(KEY) AS TOTALE_INS FROM RICETTE WHERE (VALIDATA=FALSE AND FLAG=1 AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")"
     nodo1.appendChild CreaNodo("TotRicNuove", rsAppo("TOTALE_INS"))
     rsAppo.Close

@@ -2581,7 +2581,7 @@ Begin VB.Form frmSchedaStraordinaria
          Width           =   615
       End
       Begin VB.Label lblNumeroRene 
-         BackColor       =   &H80000009&
+         BackColor       =   &H00FFFFFF&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -2674,7 +2674,7 @@ Begin VB.Form frmSchedaStraordinaria
          Width           =   780
       End
       Begin VB.Label lblPostazione 
-         BackColor       =   &H80000009&
+         BackColor       =   &H00FFFFFF&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -2692,7 +2692,7 @@ Begin VB.Form frmSchedaStraordinaria
          Width           =   615
       End
       Begin VB.Label lblTipoRene 
-         BackColor       =   &H80000009&
+         BackColor       =   &H00FFFFFF&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"

@@ -4,16 +4,16 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmSchedaDialitica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Seduta Dialitica Giornaliera - Compilazione"
-   ClientHeight    =   7308
-   ClientLeft      =   48
-   ClientTop       =   312
-   ClientWidth     =   12108
+   ClientHeight    =   7305
+   ClientLeft      =   45
+   ClientTop       =   315
+   ClientWidth     =   12105
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   7308
-   ScaleWidth      =   12108
+   ScaleHeight     =   7305
+   ScaleWidth      =   12105
    ShowInTaskbar   =   0   'False
    Begin TabDlg.SSTab tabSchede 
       Height          =   4305
@@ -22,8 +22,8 @@ Begin VB.Form frmSchedaDialitica
       Top             =   2040
       Visible         =   0   'False
       Width           =   11895
-      _ExtentX        =   20976
-      _ExtentY        =   7599
+      _ExtentX        =   20981
+      _ExtentY        =   7594
       _Version        =   393216
       Tab             =   2
       TabHeight       =   520
@@ -31,7 +31,7 @@ Begin VB.Form frmSchedaDialitica
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   -1  'True
@@ -121,8 +121,8 @@ Begin VB.Form frmSchedaDialitica
          TabIndex        =   54
          Top             =   840
          Width           =   5775
-         _ExtentX        =   10181
-         _ExtentY        =   5736
+         _ExtentX        =   10186
+         _ExtentY        =   5741
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
@@ -135,8 +135,8 @@ Begin VB.Form frmSchedaDialitica
          TabIndex        =   55
          Top             =   840
          Width           =   5775
-         _ExtentX        =   10181
-         _ExtentY        =   5736
+         _ExtentX        =   10186
+         _ExtentY        =   5741
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
@@ -147,7 +147,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -165,7 +165,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Dose Finale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -184,7 +184,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -202,7 +202,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Dose interm."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -221,7 +221,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -239,7 +239,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Gluc"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -258,7 +258,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -276,7 +276,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -294,7 +294,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -312,7 +312,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -330,7 +330,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -348,7 +348,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -366,7 +366,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -384,7 +384,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -402,7 +402,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -420,7 +420,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -438,7 +438,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -456,7 +456,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -474,7 +474,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -492,7 +492,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -510,7 +510,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -528,7 +528,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -546,7 +546,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -564,7 +564,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -583,7 +583,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -602,7 +602,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -620,7 +620,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -638,7 +638,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -656,7 +656,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -674,7 +674,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -692,7 +692,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -710,7 +710,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Tipo di Linee"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -729,7 +729,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Accesso Vascolare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -748,7 +748,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ago A."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -767,7 +767,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ago V."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -786,7 +786,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Bagno dialisi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -805,7 +805,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ca"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -824,7 +824,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "HCO3-"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -843,7 +843,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "del"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -862,7 +862,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Cartuccia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -881,7 +881,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "valore (cc)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -900,7 +900,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Soluzione Infusionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -919,7 +919,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Soluzione Dialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -938,7 +938,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Flusso Sangue Qb (ml/min)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -957,7 +957,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Flusso Dialisi Qd (ml/min)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -976,7 +976,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Terapia Postdialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -995,7 +995,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Terapia Intradialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1014,7 +1014,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Anticoagulante"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1033,7 +1033,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Altro Anticoagulante"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1052,7 +1052,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Dose Iniziale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1071,7 +1071,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Dosi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1090,7 +1090,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Tipo di Filtro"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1109,7 +1109,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ore di Dialisi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1128,7 +1128,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ultimo Peso"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1147,7 +1147,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Na+"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1166,7 +1166,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "K+"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1185,7 +1185,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Tipo di Dialisi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1204,7 +1204,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Peso Secco"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1241,7 +1241,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1259,7 +1259,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1277,7 +1277,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1295,7 +1295,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1314,7 +1314,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1333,7 +1333,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1387,7 +1387,7 @@ Begin VB.Form frmSchedaDialitica
          AutoSize        =   -1  'True
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1406,7 +1406,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Tipo: "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1420,11 +1420,11 @@ Begin VB.Form frmSchedaDialitica
          Width           =   615
       End
       Begin VB.Label lblNumeroRene 
-         BackColor       =   &H80000009&
+         BackColor       =   &H00FFFFFF&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1442,7 +1442,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "N° rene"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1461,7 +1461,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Postazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1480,7 +1480,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Monitor"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1495,11 +1495,11 @@ Begin VB.Form frmSchedaDialitica
          Width           =   780
       End
       Begin VB.Label lblPostazione 
-         BackColor       =   &H80000009&
+         BackColor       =   &H00FFFFFF&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1513,11 +1513,11 @@ Begin VB.Form frmSchedaDialitica
          Width           =   615
       End
       Begin VB.Label lblTipoRene 
-         BackColor       =   &H80000009&
+         BackColor       =   &H00FFFFFF&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1535,7 +1535,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Turno"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1554,7 +1554,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ora Fine"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1573,7 +1573,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Ora Inizio"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1593,7 +1593,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1613,7 +1613,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1631,7 +1631,7 @@ Begin VB.Form frmSchedaDialitica
          AutoSize        =   -1  'True
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1650,7 +1650,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1670,7 +1670,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1703,7 +1703,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1730,7 +1730,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1757,7 +1757,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1784,7 +1784,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1802,7 +1802,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1821,7 +1821,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1840,7 +1840,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1859,7 +1859,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1878,7 +1878,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1897,7 +1897,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1916,7 +1916,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1935,7 +1935,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1954,7 +1954,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1973,7 +1973,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1992,7 +1992,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2011,7 +2011,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2030,7 +2030,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2049,7 +2049,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2068,7 +2068,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2087,7 +2087,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2105,7 +2105,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2123,7 +2123,7 @@ Begin VB.Form frmSchedaDialitica
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2141,7 +2141,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Scheda Annullata"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2157,7 +2157,7 @@ Begin VB.Form frmSchedaDialitica
       Begin VB.TextBox txtConplicanze 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2176,7 +2176,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Conferma Avvenuta Somministrazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2223,7 +2223,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "P.A."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2240,7 +2240,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "P.V."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2257,7 +2257,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "C.E.C."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2274,7 +2274,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Tot. Sangue Trattato (lt.)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2291,7 +2291,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Kt/v"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2308,7 +2308,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Valori Rilevati dal monitor:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2327,7 +2327,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2345,7 +2345,7 @@ Begin VB.Form frmSchedaDialitica
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2363,7 +2363,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "P.A. Max"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2382,7 +2382,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Finale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2401,7 +2401,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "3ª ora"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2420,7 +2420,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "1ª ora"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2439,7 +2439,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "P.A. Min"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2458,7 +2458,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "F.C."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2477,7 +2477,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Iniziale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2496,7 +2496,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "2ª ora"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2515,7 +2515,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Peso Finale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2534,7 +2534,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Peso Iniziale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2553,7 +2553,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Incremento Pond. (Kg)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2573,7 +2573,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Diario infermieristico"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2593,7 +2593,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Scheda compilata da:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2615,7 +2615,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "UI"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2633,7 +2633,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Eritropoietina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2658,7 +2658,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "&Terapia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2675,7 +2675,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "Calcola &Kt/V"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2693,7 +2693,7 @@ Begin VB.Form frmSchedaDialitica
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2710,7 +2710,7 @@ Begin VB.Form frmSchedaDialitica
          Caption         =   "&Scheda Dialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2728,7 +2728,7 @@ Begin VB.Form frmSchedaDialitica
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

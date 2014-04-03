@@ -479,7 +479,6 @@ Private Sub Form_Activate()
         Case tpCaricaPaziente
             Call CaricaPaziente
     End Select
-    
 End Sub
 
 Private Sub Form_Load()
@@ -1248,9 +1247,27 @@ Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
     ' Premendo invio, simula la doppia pressione del mouse
     If KeyAscii = 13 Then
         vRow = flxGriglia.Row
-        Call flxGriglia_Click
-        Call flxGriglia_DblClick
-     End If
+        Call ColoraFlx(flxGriglia, 6)
+        
+        With flxGriglia
+            .SetFocus
+            If .Col <> 7 Then Exit Sub
+            ' verifica se la voce accetta valori pos e neg
+            If AccettaPN(.TextMatrix(.Row, 2)) Then
+                Call objAnnulla.Add(flxGriglia.TextMatrix(vRow, .Col), .Col, vRow)
+                cmdAnnulla.Enabled = True
+                Call GestisciPN(flxGriglia, .Col, True)
+                Call SalvaModifiche
+            Else
+                txtAppo.Left = .colPos(.Col) + .Left + 45
+                txtAppo.Top = .rowPos(.Row) + .Top + 45
+                txtAppo.Width = .ColWidth(.Col)
+                txtAppo.Text = .TextMatrix(.Row, .Col)
+                txtAppo.Visible = True
+                txtAppo.SetFocus
+            End If
+        End With
+    End If
     
     ' Funzione per la ricerca
     If flxGriglia.Rows = 1 Then Exit Sub

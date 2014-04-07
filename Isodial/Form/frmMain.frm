@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "24/03/2014"
+            TextSave        =   "07/04/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -638,7 +638,7 @@ Begin VB.MDIForm frmMain
          Tag             =   "Raggruppamento esami di &lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "E.D.&T.A."
+         Caption         =   "Er&a - EDTA"
          Index           =   15
          Tag             =   "E.&D.T.A.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -1687,6 +1687,8 @@ Private Sub StampaRiepiloghiTerapie()
                     .Fields("ANNI") = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
                     .Fields("LINK1") = rsDataset("KEY")
                     Do While Not rsTerapia.EOF
+                    'Se il mese del farmaco corrisponde a quello di sistema lo stampa
+                    If Month(rsTerapia("DATA_1").Value) = Month(date) Or IsNull(rsTerapia("DATA_1")) Then
                         Set rsFiglio = .Fields("Res1").Value
                         With rsFiglio
                             .AddNew
@@ -1709,6 +1711,7 @@ Private Sub StampaRiepiloghiTerapie()
                             End If
                             .Update
                         End With
+                         End If ' questo
                         rsTerapia.MoveNext
                     Loop
                     .Update
@@ -2210,7 +2213,7 @@ Public Sub SubClassMenuXP()
           mnuSottoTab(12).Caption = "Titoli Diario &Clinico"
           mnuSottoTab(13).Caption = "&Esami di Laboratorio"
           mnuSottoTab(14).Caption = "Raggr&uppamento Esami di Laboratorio"
-          mnuSottoTab(15).Caption = "E.D.&T.A."
+          mnuSottoTab(15).Caption = "Er&a - EDTA"
           
     mnuStrumenti.Caption = "&Strumenti"
           mnuGesPass.Caption = "&Gestione Utenti"

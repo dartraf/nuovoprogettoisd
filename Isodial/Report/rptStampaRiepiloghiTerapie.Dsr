@@ -2,21 +2,21 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampe Riepiloghi Terapie"
-   ClientHeight    =   9624
-   ClientLeft      =   48
-   ClientTop       =   312
-   ClientWidth     =   11664
+   ClientHeight    =   9615
+   ClientLeft      =   45
+   ClientTop       =   315
+   ClientWidth     =   11670
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   20595
-   _ExtentY        =   16955
+   _ExtentX        =   20585
+   _ExtentY        =   16960
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   10545
+   ReportWidth     =   11112
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.4
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -48,12 +48,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          _Version        =   393216
          Name            =   "lblTurno"
          Object.Left            =   1814
-         Object.Top             =   2041
+         Object.Top             =   1814
          Object.Width           =   6675
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.4
+            Size            =   26.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -66,7 +66,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item1 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
-         Object.Left            =   6181
+         Object.Left            =   6805
          Object.Top             =   30
          Object.Width           =   3390
          Object.Height          =   1410
@@ -76,7 +76,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item2 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
-         Object.Left            =   9583
+         Object.Left            =   10207
          Object.Top             =   30
          Object.Width           =   855
          Object.Height          =   810
@@ -92,7 +92,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.4
+            Size            =   14.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -110,7 +110,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -128,7 +128,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   1020
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -146,7 +146,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -161,7 +161,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       Name            =   "livel1"
       Object.Height          =   857
       KeepTogether    =   -1  'True
-      NumControls     =   12
+      NumControls     =   13
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -172,7 +172,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -191,7 +191,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -204,13 +204,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label2"
-         Object.Left            =   6803
+         Object.Left            =   6746
          Object.Top             =   512
          Object.Width           =   675
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -223,13 +223,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   8673
+         Object.Left            =   9750
          Object.Top             =   512
          Object.Width           =   1140
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -248,7 +248,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -263,7 +263,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Name            =   "Line1"
          Object.Left            =   57
          Object.Top             =   57
-         Object.Width           =   10431
+         Object.Width           =   11055
       EndProperty
       ItemType6       =   3
       BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -332,7 +332,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -359,7 +359,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -386,7 +386,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -403,13 +403,32 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             SubFormatType   =   0
          EndProperty
       EndProperty
+      ItemType12      =   3
+      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label9"
+         Object.Left            =   8617
+         Object.Top             =   510
+         Object.Width           =   1021
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Dt. Farmaco"
+      EndProperty
    EndProperty
    SectionCode3    =   4
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   345
-      NumControls     =   5
+      Object.Height          =   346
+      NumControls     =   6
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -419,7 +438,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -441,11 +460,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          _Version        =   393216
          Name            =   "txtPosologiaENote"
          Object.Left            =   3742
-         Object.Width           =   3004
+         Object.Width           =   2948
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -467,11 +486,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          _Version        =   393216
          Name            =   "txtInizio"
          Object.Left            =   113
-         Object.Width           =   855
+         Object.Width           =   851
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -492,12 +511,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtSomministrazione"
-         Object.Left            =   8673
+         Object.Left            =   9750
          Object.Width           =   1140
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -518,12 +537,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGiorni"
-         Object.Left            =   6803
-         Object.Width           =   1814
+         Object.Left            =   6746
+         Object.Width           =   1800
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -538,6 +557,32 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             FirstWeekOfYear =   0
             LCID            =   1040
             SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType5       =   4
+      BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDataFarmaco1"
+         Object.Left            =   8617
+         Object.Width           =   964
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   3
          EndProperty
       EndProperty
    EndProperty
@@ -557,7 +602,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label18"
-         Object.Left            =   7143
+         Object.Left            =   7484
          Object.Top             =   170
          Object.Width           =   3285
          Object.Height          =   240
@@ -577,7 +622,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDa"
-         Object.Left            =   7143
+         Object.Left            =   7484
          Object.Top             =   397
          Object.Width           =   3285
          Object.Height          =   240
@@ -602,7 +647,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -621,7 +666,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -640,7 +685,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -659,7 +704,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -678,7 +723,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -747,6 +792,8 @@ Private Sub DataReport_Initialize()
             .Item("txtSomministrazione").DataMember = "Res1"
             .Item("txtGiorni").DataField = "GIORNI"
             .Item("txtGiorni").DataMember = "Res1"
+            .Item("txtDataFarmaco1").DataField = "DATA_FARMACO_1"
+            .Item("txtDataFarmaco1").DataMember = "Res1"
             Set .Item("txtSomministrazione").DataFormat = sdfSomministrazione
         End With
         With .Sections("Pie").Controls

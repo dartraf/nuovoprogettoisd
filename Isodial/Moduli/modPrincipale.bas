@@ -174,7 +174,7 @@ Public Sub MontaVolume()
     ElseIf structApri.server Then
         ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe" & " /v " & structApri.pathVolume & "\" & nomeVolume & " /l X  /p " & strKeyVolume & " /a /q /s", vbHide)
         ' condivide la risorsa se sysop <> XP
-        Shell ("NET SHARE RISORSA=X: /GRANT /UNLIMITED")
+        Shell ("NET SHARE RISORSA=X: /GRANT:everyone,full /UNLIMITED")
         structApri.pathDB = "X:"
     Else
         tRete = tpCONNETTI

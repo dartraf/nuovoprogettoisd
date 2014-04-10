@@ -166,10 +166,15 @@ End Sub
 Public Sub MontaVolume()
     Dim ret As Double
     On Error GoTo gestione
-    If structApri.server Then
+    If structApri.server And getVersion = "Windows XP" Then
         ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe" & " /v " & structApri.pathVolume & "\" & nomeVolume & " /l X  /p " & strKeyVolume & " /a /q /s", vbHide)
-        ' deve condividere la risorsa
+        ' condivide la risorsa se sysop = XP
         Shell ("NET SHARE RISORSA=X: /UNLIMITED")
+        structApri.pathDB = "X:"
+    ElseIf structApri.server Then
+        ret = Shell(structApri.pathTrueCrypt & "\TrueCrypt.exe" & " /v " & structApri.pathVolume & "\" & nomeVolume & " /l X  /p " & strKeyVolume & " /a /q /s", vbHide)
+        ' condivide la risorsa se sysop <> XP
+        Shell ("NET SHARE RISORSA=X: /GRANT /UNLIMITED")
         structApri.pathDB = "X:"
     Else
         tRete = tpCONNETTI

@@ -252,7 +252,7 @@ Private Sub cmdOK_Click()
     ElseIf tAccesso.Tipo <> tpAINFERMIERE Then
         Call ControllaAlertAppa
     End If
-    Unload Me
+   Unload Me
 End Sub
 
 ' Controlla che non ci siano reni da rottamare

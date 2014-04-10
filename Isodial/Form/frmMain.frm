@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -623,7 +623,7 @@ Begin VB.MDIForm frmMain
          Tag             =   "&Anticoagulanti|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Titoli Diario &Clinico"
+         Caption         =   "&Titoli Diario Clinico"
          Index           =   12
          Tag             =   "Titoli per &diario clinico|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -638,7 +638,7 @@ Begin VB.MDIForm frmMain
          Tag             =   "Raggruppamento esami di &lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Codici Er&a - EDTA"
+         Caption         =   "Co&dici Era - EDTA"
          Index           =   15
          Tag             =   "E.&D.T.A.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -2216,10 +2216,10 @@ Public Sub SubClassMenuXP()
           mnuSottoTab(9).Caption = "&Aghi"
           mnuSottoTab(10).Caption = "Far&maci in uso"
           mnuSottoTab(11).Caption = "A&nticoagulanti"
-          mnuSottoTab(12).Caption = "Titoli Diario &Clinico"
+          mnuSottoTab(12).Caption = "&Titoli Diario Clinico"
           mnuSottoTab(13).Caption = "&Esami di Laboratorio"
           mnuSottoTab(14).Caption = "Raggr&uppamento Esami di Laboratorio"
-          mnuSottoTab(15).Caption = "Codici Er&a - EDTA"
+          mnuSottoTab(15).Caption = "Co&dici Era - EDTA"
           
     mnuStrumenti.Caption = "&Strumenti"
           mnuGesPass.Caption = "&Gestione Utenti"

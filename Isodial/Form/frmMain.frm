@@ -638,7 +638,7 @@ Begin VB.MDIForm frmMain
          Tag             =   "Raggruppamento esami di &lab.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
       Begin VB.Menu mnuSottoTab 
-         Caption         =   "Er&a - EDTA"
+         Caption         =   "Codici Er&a - EDTA"
          Index           =   15
          Tag             =   "E.&D.T.A.|(Checked=0)(Enabled=-1)(Visible=-1)(WindowList=0)"
       End
@@ -2219,7 +2219,7 @@ Public Sub SubClassMenuXP()
           mnuSottoTab(12).Caption = "Titoli Diario &Clinico"
           mnuSottoTab(13).Caption = "&Esami di Laboratorio"
           mnuSottoTab(14).Caption = "Raggr&uppamento Esami di Laboratorio"
-          mnuSottoTab(15).Caption = "Er&a - EDTA"
+          mnuSottoTab(15).Caption = "Codici Er&a - EDTA"
           
     mnuStrumenti.Caption = "&Strumenti"
           mnuGesPass.Caption = "&Gestione Utenti"

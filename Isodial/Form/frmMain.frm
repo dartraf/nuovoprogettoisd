@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -1673,7 +1673,7 @@ Private Sub StampaRiepiloghiTerapie()
                 If Not (rsTerapia.EOF And rsTerapia.BOF) Then
                     .AddNew
                     .Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
-                    .Fields("DATA_NASCITA") = rsDataset("DATA_NASCITA")
+                    .Fields("DATA_NASCITA") = Day(rsDataset("DATA_NASCITA")) & "/" & Month(rsDataset("DATA_NASCITA")) & "/" & Year(rsDataset("DATA_NASCITA"))
                     If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
                         somma = -1
                     ElseIf Month(rsDataset("DATA_NASCITA")) = Month(date) And Day(rsDataset("DATA_NASCITA")) > Day(date) Then
@@ -1727,7 +1727,7 @@ Private Sub StampaRiepiloghiTerapie()
                 Else
                     .AddNew
                     .Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
-                    .Fields("DATA_NASCITA") = rsDataset("DATA_NASCITA")
+                    .Fields("DATA_NASCITA") = Day(rsDataset("DATA_NASCITA")) & "/" & Month(rsDataset("DATA_NASCITA")) & "/" & Year(rsDataset("DATA_NASCITA"))
                     If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
                         somma = -1
                     ElseIf Month(rsDataset("DATA_NASCITA")) = Month(date) And Day(rsDataset("DATA_NASCITA")) > Day(date) Then

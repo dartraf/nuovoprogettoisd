@@ -367,13 +367,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             Strikethrough   =   0   'False
          EndProperty
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   0
+            SubFormatType   =   3
          EndProperty
       EndProperty
       ItemType11      =   4

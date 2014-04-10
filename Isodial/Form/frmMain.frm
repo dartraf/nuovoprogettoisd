@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "08/04/2014"
+            TextSave        =   "10/04/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1623,9 +1623,6 @@ Private Sub StampaRiepiloghiTerapie()
                 "           NEW adInteger AS LINK1, " & _
                 "           NEW adDate AS DATA, " & _
                 "           NEW adVarChar(50) AS MEDICINALE, " & _
-                "           NEW adDate AS DATA_FARMACO_1, " & _
-                "           NEW adDate AS DATA_FARMACO_2, " & _
-                "           NEW adDate AS DATA_FARMACO_3, " & _
                 "           NEW adLongVarChar AS POSOLOGIAENOTE, " & _
                 "           NEW adInteger AS SOMMINISTRAZIONE, " & _
                 "           NEW adLongVarChar as GIORNI " & _
@@ -1687,17 +1684,28 @@ Private Sub StampaRiepiloghiTerapie()
                     .Fields("ANNI") = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
                     .Fields("LINK1") = rsDataset("KEY")
                     Do While Not rsTerapia.EOF
+                    'Se al farmaco non è associato nessun giorno e nessuna data non deve uscire
+                    If rsTerapia("GIORNO1").Value = 0 And rsTerapia("GIORNO2").Value = 0 And rsTerapia("GIORNO3").Value = 0 And rsTerapia("GIORNO4").Value = 0 And rsTerapia("GIORNO5").Value = 0 And rsTerapia("GIORNO6").Value = 0 And rsTerapia("GIORNO7").Value = 0 And rsTerapia("TUTTI_GIORNI").Value = 0 And IsNull(rsTerapia("DATA_1")) And IsNull(rsTerapia("DATA_2")) And IsNull(rsTerapia("DATA_3")) Then
+                    
+                    Else
                     'Se il mese del farmaco corrisponde a quello di sistema lo stampa
-                    If Month(rsTerapia("DATA_1").Value) = Month(date) Or IsNull(rsTerapia("DATA_1")) Then
-                        Set rsFiglio = .Fields("Res1").Value
+                    If Month(rsTerapia("DATA_1").Value) = Month(date) Or IsNull(rsTerapia("DATA_1")) Or (Month(rsTerapia("DATA_2").Value) = Month(date) Or IsNull(rsTerapia("DATA_2"))) Or (Month(rsTerapia("DATA_3").Value) = Month(date) Or IsNull(rsTerapia("DATA_3"))) Then
+                         Set rsFiglio = .Fields("Res1").Value
                         With rsFiglio
                             .AddNew
                             .Fields("LINK1") = rsDataset("KEY")
                             .Fields("DATA") = rsTerapia("DATA")
                             .Fields("MEDICINALE") = rsTerapia("NOME")
-                            .Fields("DATA_FARMACO_1") = rsTerapia("DATA_1")
-                            .Fields("DATA_FARMACO_2") = rsTerapia("DATA_2")
-                            .Fields("DATA_FARMACO_3") = rsTerapia("DATA_3")
+                            'viene fatto un' ulteriore controllo, nel caso in cui un farmaco dovesse avere + di una data, e una della quale non corrisponde al mese corrente
+                            If Month(rsTerapia("DATA_1").Value) = Month(date) Then
+                                .Fields("GIORNI") = Day(rsTerapia("DATA_1").Value) & "/" & Month(rsTerapia("DATA_1").Value) & "/" & Year(rsTerapia("DATA_1").Value)
+                            End If
+                            If Month(rsTerapia("DATA_2").Value) = Month(date) Then
+                                .Fields("GIORNI") = .Fields("GIORNI") & "  " & Day(rsTerapia("DATA_2").Value) & "/" & Month(rsTerapia("DATA_2").Value) & "/" & Year(rsTerapia("DATA_2").Value)
+                            End If
+                            If Month(rsTerapia("DATA_3").Value) = Month(date) Then
+                                .Fields("GIORNI") = .Fields("GIORNI") & "  " & Day(rsTerapia("DATA_3").Value) & "/" & Month(rsTerapia("DATA_3").Value) & "/" & Year(rsTerapia("DATA_3").Value)
+                            End If
                             .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
                             .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                             If CBool(rsTerapia("TUTTI_GIORNI")) Then
@@ -1711,6 +1719,7 @@ Private Sub StampaRiepiloghiTerapie()
                             End If
                             .Update
                         End With
+                    End If
                          End If ' questo
                         rsTerapia.MoveNext
                     Loop
@@ -1734,9 +1743,6 @@ Private Sub StampaRiepiloghiTerapie()
                         .Fields("LINK1") = rsDataset("KEY")
                         .Fields("DATA") = Null
                         .Fields("MEDICINALE") = ""
-                        .Fields("DATA_FARMACO_1") = Null
-                        .Fields("DATA_FARMACO_2") = Null
-                        .Fields("DATA_FARMACO_3") = Null
                         .Fields("POSOLOGIAENOTE") = "NESSUNA TERAPIA"
                         .Fields("SOMMINISTRAZIONE") = 0
                         .Fields("GIORNI") = ""

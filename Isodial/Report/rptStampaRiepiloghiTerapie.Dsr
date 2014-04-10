@@ -161,7 +161,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       Name            =   "livel1"
       Object.Height          =   857
       KeepTogether    =   -1  'True
-      NumControls     =   13
+      NumControls     =   12
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -206,7 +206,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          Name            =   "Label2"
          Object.Left            =   6746
          Object.Top             =   512
-         Object.Width           =   675
+         Object.Width           =   2778
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -217,7 +217,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Giorni"
+         Object.Caption         =   "Giorni / Data Farmaco"
       EndProperty
       ItemType3       =   3
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -403,32 +403,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType12      =   3
-      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label9"
-         Object.Left            =   8617
-         Object.Top             =   510
-         Object.Width           =   1021
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Dt. Farmaco"
-      EndProperty
    EndProperty
    SectionCode3    =   4
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   346
-      NumControls     =   6
+      NumControls     =   5
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -538,7 +519,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
          _Version        =   393216
          Name            =   "txtGiorni"
          Object.Left            =   6746
-         Object.Width           =   1800
+         Object.Width           =   2892
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -557,32 +538,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             FirstWeekOfYear =   0
             LCID            =   1040
             SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType5       =   4
-      BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataFarmaco1"
-         Object.Left            =   8617
-         Object.Width           =   964
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   3
          EndProperty
       EndProperty
    EndProperty
@@ -792,8 +747,6 @@ Private Sub DataReport_Initialize()
             .Item("txtSomministrazione").DataMember = "Res1"
             .Item("txtGiorni").DataField = "GIORNI"
             .Item("txtGiorni").DataMember = "Res1"
-            .Item("txtDataFarmaco1").DataField = "DATA_FARMACO_1"
-            .Item("txtDataFarmaco1").DataMember = "Res1"
             Set .Item("txtSomministrazione").DataFormat = sdfSomministrazione
         End With
         With .Sections("Pie").Controls

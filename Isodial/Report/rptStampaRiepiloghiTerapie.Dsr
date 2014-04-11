@@ -5,15 +5,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
    ClientHeight    =   9615
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   11670
+   ClientWidth     =   11400
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   20585
+   _ExtentX        =   20108
    _ExtentY        =   16960
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   11112
+   ReportWidth     =   11062
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -41,7 +41,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Intestazione"
-      Object.Height          =   2820
+      Object.Height          =   2655
       NumControls     =   7
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -159,290 +159,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "livel1"
-      Object.Height          =   857
+      Object.Height          =   600
       KeepTogether    =   -1  'True
-      NumControls     =   12
-      ItemType0       =   3
-      BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label5"
-         Object.Left            =   113
-         Object.Top             =   512
-         Object.Width           =   1140
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Dt.Inizio"
-      EndProperty
-      ItemType1       =   3
-      BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label4"
-         Object.Left            =   1247
-         Object.Top             =   512
-         Object.Width           =   1140
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Farmaco"
-      EndProperty
-      ItemType2       =   3
-      BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label2"
-         Object.Left            =   6746
-         Object.Top             =   512
-         Object.Width           =   2778
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Giorni / Data Farmaco"
-      EndProperty
-      ItemType3       =   3
-      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label6"
-         Object.Left            =   9750
-         Object.Top             =   512
-         Object.Width           =   1140
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Somministr."
-      EndProperty
-      ItemType4       =   3
-      BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label3"
-         Object.Left            =   3742
-         Object.Top             =   512
-         Object.Width           =   1530
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Posologia e Note"
-      EndProperty
-      ItemType5       =   5
-      BeginProperty Item5 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      NumControls     =   5
+      ItemType0       =   5
+      BeginProperty Item0 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line1"
-         Object.Left            =   57
          Object.Top             =   57
-         Object.Width           =   11055
-      EndProperty
-      ItemType6       =   3
-      BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "lbllavbel23"
-         Object.Left            =   113
-         Object.Top             =   113
-         Object.Width           =   915
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Paziente:"
-      EndProperty
-      ItemType7       =   3
-      BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label22"
-         Object.Left            =   3742
-         Object.Top             =   114
-         Object.Width           =   1530
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Data di nascita:"
-      EndProperty
-      ItemType8       =   3
-      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label70"
-         Object.Left            =   8640
-         Object.Top             =   114
-         Object.Width           =   570
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Anni:"
-      EndProperty
-      ItemType9       =   4
-      BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtPaziente"
-         Object.Left            =   1077
-         Object.Top             =   170
-         Object.Width           =   2610
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType10      =   4
-      BeginProperty Item10 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtDataNascita"
-         Object.Left            =   5329
-         Object.Top             =   170
-         Object.Width           =   1425
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   3
-         EndProperty
-      EndProperty
-      ItemType11      =   4
-      BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtAnni"
-         Object.Left            =   9241
-         Object.Top             =   170
-         Object.Width           =   630
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-   EndProperty
-   SectionCode3    =   4
-   BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
-      _Version        =   393216
-      Name            =   "corpo"
-      Object.Height          =   346
-      NumControls     =   5
-      ItemType0       =   4
-      BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "txtMedicinale"
-         Object.Left            =   1247
-         Object.Width           =   2550
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
+         Object.Width           =   10828
       EndProperty
       ItemType1       =   4
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtPosologiaENote"
-         Object.Left            =   3742
-         Object.Width           =   2948
-         Object.Height          =   345
+         Name            =   "txtPaziente"
+         Object.Left            =   60
+         Object.Top             =   110
+         Object.Width           =   2610
+         Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -465,10 +199,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
       ItemType2       =   4
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtInizio"
-         Object.Left            =   113
-         Object.Width           =   851
-         Object.Height          =   345
+         Name            =   "txtDataNascita"
+         Object.Left            =   2665
+         Object.Top             =   110
+         Object.Width           =   1425
+         Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -488,18 +223,63 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType3       =   4
-      BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType3       =   3
+      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "txtSomministrazione"
-         Object.Left            =   9750
-         Object.Width           =   1140
-         Object.Height          =   345
+         Name            =   "Label2"
+         Object.Left            =   5640
+         Object.Top             =   110
+         Object.Width           =   2895
+         Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "GIORNI / DATE"
+      EndProperty
+      ItemType4       =   3
+      BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label3"
+         Object.Left            =   8600
+         Object.Top             =   110
+         Object.Width           =   2002
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "SOMMINISTRAZIONE"
+      EndProperty
+   EndProperty
+   SectionCode3    =   4
+   BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
+      _Version        =   393216
+      Name            =   "corpo"
+      Object.Height          =   263
+      NumControls     =   4
+      ItemType0       =   4
+      BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtMedicinale"
+         Object.Left            =   170
+         Object.Width           =   2550
+         Object.Height          =   260
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -514,13 +294,65 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType4       =   4
-      BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType1       =   4
+      BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtPosologiaENote"
+         Object.Left            =   2665
+         Object.Width           =   2955
+         Object.Height          =   260
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType2       =   4
+      BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtSomministrazione"
+         Object.Left            =   8957
+         Object.Width           =   1140
+         Object.Height          =   255
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType3       =   4
+      BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGiorni"
-         Object.Left            =   6746
-         Object.Width           =   2892
-         Object.Height          =   345
+         Object.Left            =   5669
+         Object.Width           =   2895
+         Object.Height          =   260
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   9.75
@@ -609,7 +441,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptStampaRiepiloghiTerapie
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
       ItemType3       =   3
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -734,15 +566,15 @@ Private Sub DataReport_Initialize()
         With .Sections("livel1").Controls
             .Item("txtPaziente").DataField = "PAZIENTE"
             .Item("txtDataNascita").DataField = "DATA_NASCITA"
-            .Item("txtAnni").DataField = "ANNI"
+   '         .Item("txtAnni").DataField = "ANNI"
         End With
         With .Sections("corpo").Controls
             .Item("txtMedicinale").DataField = "MEDICINALE"
             .Item("txtMedicinale").DataMember = "Res1"
             .Item("txtPosologiaENote").DataField = "POSOLOGIAENOTE"
             .Item("txtPosologiaENote").DataMember = "Res1"
-            .Item("txtInizio").DataField = "DATA"
-            .Item("txtInizio").DataMember = "Res1"
+   '         .Item("txtInizio").DataField = "DATA"
+   '         .Item("txtInizio").DataMember = "Res1"
             .Item("txtSomministrazione").DataField = "SOMMINISTRAZIONE"
             .Item("txtSomministrazione").DataMember = "Res1"
             .Item("txtGiorni").DataField = "GIORNI"

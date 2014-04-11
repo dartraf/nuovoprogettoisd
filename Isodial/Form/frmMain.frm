@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "10/04/2014"
+            TextSave        =   "11/04/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1698,15 +1698,15 @@ Private Sub StampaRiepiloghiTerapie()
                             .Fields("MEDICINALE") = rsTerapia("NOME")
                             'viene fatto un' ulteriore controllo, nel caso in cui un farmaco dovesse avere + di una data, e una della quale non corrisponde al mese corrente
                             If Month(rsTerapia("DATA_1").Value) = Month(date) Then
-                                .Fields("GIORNI") = Day(rsTerapia("DATA_1").Value) & "/" & Month(rsTerapia("DATA_1").Value) & "/" & Year(rsTerapia("DATA_1").Value)
+                                .Fields("GIORNI") = CStr(rsTerapia("DATA_1"))
                             End If
                             If Month(rsTerapia("DATA_2").Value) = Month(date) Then
-                                .Fields("GIORNI") = .Fields("GIORNI") & "  " & Day(rsTerapia("DATA_2").Value) & "/" & Month(rsTerapia("DATA_2").Value) & "/" & Year(rsTerapia("DATA_2").Value)
+                                .Fields("GIORNI") = .Fields("GIORNI") & "  " & CStr(rsTerapia("DATA_2"))
                             End If
                             If Month(rsTerapia("DATA_3").Value) = Month(date) Then
-                                .Fields("GIORNI") = .Fields("GIORNI") & "  " & Day(rsTerapia("DATA_3").Value) & "/" & Month(rsTerapia("DATA_3").Value) & "/" & Year(rsTerapia("DATA_3").Value)
+                                .Fields("GIORNI") = .Fields("GIORNI") & "  " & CStr(rsTerapia("DATA_3"))
                             End If
-                            .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & " " & rsTerapia("NOTE")
+                            .Fields("POSOLOGIAENOTE") = rsTerapia("POSOLOGIA") & "-" & rsTerapia("NOTE")
                             .Fields("SOMMINISTRAZIONE") = rsTerapia("SOMMINISTRAZIONE")
                             If CBool(rsTerapia("TUTTI_GIORNI")) Then
                                 .Fields("GIORNI") = "Tutti"
@@ -1763,7 +1763,7 @@ Private Sub StampaRiepiloghiTerapie()
         Set rptStampaRiepiloghiTerapie.DataSource = rsMain
         rptStampaRiepiloghiTerapie.LeftMargin = 0
         rptStampaRiepiloghiTerapie.RightMargin = 0
-        rptStampaRiepiloghiTerapie.Sections("intestazione").Controls("lblTurno").Caption = strNomeSessione
+        rptStampaRiepiloghiTerapie.Sections("intestazione").Controls("lblTurno").Caption = "Terapia Turno " & strNomeSessione
         rptStampaRiepiloghiTerapie.PrintReport True, rptRangeAllPages
     Else
         MsgBox "Nessuna terapia trovata", vbInformation, "Stampa Riepiloghi"

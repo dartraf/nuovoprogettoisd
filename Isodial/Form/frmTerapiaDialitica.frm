@@ -236,7 +236,7 @@ Begin VB.Form frmTerapiaDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDialitica.frx":06B1
+         MouseIcon       =   "frmTerapiaDialitica.frx":06B0
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -279,7 +279,7 @@ Begin VB.Form frmTerapiaDialitica
          Height          =   255
          Index           =   0
          Left            =   13220
-         Picture         =   "frmTerapiaDialitica.frx":080B
+         Picture         =   "frmTerapiaDialitica.frx":080A
          TabIndex        =   13
          Top             =   180
          Width           =   1695
@@ -297,7 +297,7 @@ Begin VB.Form frmTerapiaDialitica
          FixedCols       =   0
          ScrollTrack     =   -1  'True
          MousePointer    =   15
-         FormatString    =   $"frmTerapiaDialitica.frx":0955
+         FormatString    =   $"frmTerapiaDialitica.frx":0954
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -307,7 +307,7 @@ Begin VB.Form frmTerapiaDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmTerapiaDialitica.frx":0A5C
+         MouseIcon       =   "frmTerapiaDialitica.frx":0A5A
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True

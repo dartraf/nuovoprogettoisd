@@ -168,10 +168,10 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   285
          Left            =   6240
-         MaxLength       =   10
+         MaxLength       =   2
          TabIndex        =   6
          Top             =   1680
-         Width           =   1095
+         Width           =   375
       End
       Begin VB.TextBox txtCitta 
          BeginProperty Font 
@@ -447,7 +447,7 @@ Begin VB.Form frmIntestazioneCentro
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Città"
+         Caption         =   "Comune"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -462,7 +462,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   120
          TabIndex        =   21
          Top             =   1680
-         Width           =   480
+         Width           =   855
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -869,6 +869,12 @@ Private Function Completo() As Boolean
         nome = "RAGIONE SOCIALE"
     ElseIf txtTipo = "" Then
         nome = "TIPO"
+    ElseIf txtIndirizzo = "" Then
+        nome = "INDIRIZZO"
+    ElseIf txtCap = "" Then
+        nome = "CAP"
+    ElseIf txtCitta = "" Then
+        nome = "COMUNE"
     ElseIf txtCodiceFiscale = "" Then
         nome = "CODICE FISCALE"
     ElseIf txtIva = "" Then

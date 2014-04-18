@@ -350,6 +350,8 @@ Private Sub Form_Load()
     cboAnno.AddItem Year(Now) - 1
     cboAnno.ListIndex = 0
         
+    cboMese.ListIndex = Month(Now) - 1
+       
     rsDataset.Open "SELECT CODICE_ASL FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDataset("CODICE_ASL") = 6 And tStampeRiepilogo = tpFATTURA Then
         napoli3 = True

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "11/04/2014"
+            TextSave        =   "28/04/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1380,9 +1380,10 @@ Private Sub StampaRiepiloghiTerapieHelios()
     Else
         intDifferenzaTurno = 1
     End If
-    
+    'seleziona i campi(farmaci) i cui valori non sono vuoti
     strExtraWhereTurno = " AND (" & strPeriodo & 1 + intDifferenzaTurno & "<>'' OR " & strPeriodo & 3 + intDifferenzaTurno & "<>'' OR " & strPeriodo & 5 + intDifferenzaTurno & "<>'') " & _
-                         " AND (GIORNO" & 1 + intDifferenzaTurno & "=TRUE OR GIORNO" & 3 + intDifferenzaTurno & "=TRUE OR GIORNO" & 5 + intDifferenzaTurno & "=TRUE OR TUTTI_GIORNI=TRUE) "
+                         " AND (GIORNO" & 1 + intDifferenzaTurno & "=TRUE OR GIORNO" & 3 + intDifferenzaTurno & "=TRUE OR GIORNO" & 5 + intDifferenzaTurno & "=TRUE OR TUTTI_GIORNI=TRUE" & _
+                         " OR NOT ISNULL(DATA_1) OR NOT ISNULL(DATA_2) OR NOT ISNULL(DATA_3))"
     
 
     strSqlStampa = "SHAPE APPEND " & _
@@ -1436,18 +1437,17 @@ Private Sub StampaRiepiloghiTerapieHelios()
     
     Const intPuntiPrimoLivello As Integer = 4
     Const intPuntiSecondoLivello As Integer = 7
-    Const intPuntiTotali As Integer = 100
-
-
+    Const intPuntiTotali As Integer = 120 'determina il salto pagina - valore max 130
+    
     strSql = "" & _
             " FROM      (((TERAPIE_DIALITICHE " & _
             "           INNER JOIN PAZIENTI ON PAZIENTI.KEY=TERAPIE_DIALITICHE.CODICE_PAZIENTE) " & _
             "           INNER JOIN TURNI ON PAZIENTI.KEY=TURNI.CODICE_PAZIENTE) " & _
             "           INNER JOIN MEDICINALI ON TERAPIE_DIALITICHE.CODICE_MEDICINALE=MEDICINALI.KEY) " & _
-            " WHERE     SOSPESA=FALSE AND POSOLOGIA<>'' " & strExtraWhereTurno
+            " WHERE     SOSPESA=FALSE AND POSOLOGIA<>'' " '& strExtraWhereTurno
 
     intPuntiCorrente = intPuntiTotali
-    rsDataset.Open "SELECT   DISTINCT PAZIENTI.KEY, PAZIENTI.COGNOME, PAZIENTI.NOME " & strSql & " ORDER BY PAZIENTI.COGNOME, PAZIENTI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT DISTINCT PAZIENTI.KEY, PAZIENTI.COGNOME, PAZIENTI.NOME " & strSql & strExtraWhereTurno & " ORDER BY PAZIENTI.COGNOME, PAZIENTI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
     Do While Not rsDataset.EOF
         ReDim rigaCodiceMedicinale(0)
         intPuntiCorrente = intPuntiCorrente + intPuntiPrimoLivello
@@ -1463,8 +1463,12 @@ Private Sub StampaRiepiloghiTerapieHelios()
         rsFiglio.Fields("LINK1") = rsDataset("KEY") & "-" & intNumPagCorrente & "-0"
         rsFiglio.Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
         
-        ' Determina l'ordine in colonna dei medicinali (ordinati alfabeticamente)
-        rsAppo.Open "SELECT MEDICINALI.KEY " & strSql & " AND PAZIENTI.KEY=" & rsDataset("KEY") & " ORDER BY MEDICINALI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+        'Per incolonnare i farmaci correttamente elimina i farmaci con le date attribuite
+        'Determina l'ordine in colonna dei medicinali (ordinati alfabeticamente)
+        strExtraWhereTurno = " AND (" & strPeriodo & 1 + intDifferenzaTurno & "<>'' OR " & strPeriodo & 3 + intDifferenzaTurno & "<>'' OR " & strPeriodo & 5 + intDifferenzaTurno & "<>'') " & _
+                         " AND (GIORNO" & 1 + intDifferenzaTurno & "=TRUE OR GIORNO" & 3 + intDifferenzaTurno & "=TRUE OR GIORNO" & 5 + intDifferenzaTurno & "=TRUE OR TUTTI_GIORNI=TRUE)"
+                     
+        rsAppo.Open "SELECT MEDICINALI.KEY " & strSql & strExtraWhereTurno & " AND PAZIENTI.KEY=" & rsDataset("KEY") & " ORDER BY MEDICINALI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
         Do While Not rsAppo.EOF
             ReDim Preserve rigaCodiceMedicinale(UBound(rigaCodiceMedicinale) + 1)
             rigaCodiceMedicinale(UBound(rigaCodiceMedicinale)) = rsAppo("KEY")
@@ -1473,7 +1477,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
         rsAppo.Close
         
         For j = 1 To 3
-            rsAppo.Open "SELECT MEDICINALI.*, TERAPIE_DIALITICHE.*, PAZIENTI.NOME, PAZIENTI.COGNOME " & strSql & " AND PAZIENTI.KEY=" & rsDataset("KEY") & " AND (GIORNO" & Choose(j, 1, 3, 5) + intDifferenzaTurno & "=TRUE OR TUTTI_GIORNI=TRUE) ORDER BY MEDICINALI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+            rsAppo.Open "SELECT MEDICINALI.*, TERAPIE_DIALITICHE.*, PAZIENTI.NOME, PAZIENTI.COGNOME " & strSql & strExtraWhereTurno & " AND PAZIENTI.KEY=" & rsDataset("KEY") & " AND (GIORNO" & Choose(j, 1, 3, 5) + intDifferenzaTurno & "=TRUE OR TUTTI_GIORNI=TRUE) ORDER BY MEDICINALI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
             strMedicinaliEsclusi = ""
             If rsAppo.RecordCount <> 0 Then
                 
@@ -1514,7 +1518,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
                         Else
                             intNumeroMedicinali = rsAppo.RecordCount
                         End If
-                        
+                        'stampa i farmaci sulla stessa riga
                         For k = 1 To intNumeroMedicinali
                             indicePosizioneMedicinale = 0
                             For intIndiceRiga = 1 To UBound(rigaCodiceMedicinale)
@@ -1536,11 +1540,84 @@ Private Sub StampaRiepiloghiTerapieHelios()
             End If
             rsAppo.Close
         Next j
+        
+' Stampa Farmaci x Data
+'------------------------
+   Dim MGiorno As String
+
+    Dim anno As Integer
+    Dim mm As Integer
+    Dim gg As Integer
+    'Determina l'ultimo giorno del mese
+    anno = Year(date)
+    mm = Month(date)
+    gg = Day(DateSerial(anno, mm + 1, 0))
+    
+     rsAppo.Open "SELECT MEDICINALI.*, TERAPIE_DIALITICHE.*, PAZIENTI.NOME, PAZIENTI.COGNOME " & strSql & " AND " & _
+      "PAZIENTI.KEY=" & rsDataset("KEY") & " AND (DATA_1 BETWEEN #" & mm & "/01/" & anno & "# AND #" & mm & "/" & gg & "/" & anno & "#" & _
+      " OR DATA_2 BETWEEN #" & mm & "/01/" & anno & "# AND #" & mm & "/" & gg & "/" & anno & "#" & _
+      " OR DATA_3 BETWEEN #" & mm & "/01/" & anno & "# AND #" & mm & "/" & gg & "/" & anno & "#" & _
+      ") ORDER BY MEDICINALI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
+         '  strMedicinaliEsclusi = ""
+            If rsAppo.RecordCount <> 0 Then
+               Do While Not rsAppo.EOF
+                'For i = 1 To Int(rsAppo.RecordCount / intNumeroMaxMedicinali) + 1
+                    intPuntiCorrente = intPuntiCorrente + intPuntiSecondoLivello
+                    If intPuntiCorrente > intPuntiTotali Then
+                        intPuntiCorrente = intPuntiPrimoLivello + intPuntiSecondoLivello
+                        intNumPagCorrente = intNumPagCorrente + 1
+                        rsFiglio.Update
+                        rsMain.Update
+                        
+                        rsMain.AddNew
+                        intPuntiCorrente = intPuntiPrimoLivello + intPuntiSecondoLivello
+                        intNumPagCorrente = intNumPagCorrente + 1
+                        rsMain.Fields("LINKSUPERIORE") = intNumPagCorrente
+                        Set rsFiglio = rsMain.Fields("Res2").Value
+                        rsFiglio.AddNew
+                        rsFiglio.Fields("LINKSUPERIORE") = intNumPagCorrente
+                        rsFiglio.Fields("LINK1") = rsDataset("KEY") & "-" & intNumPagCorrente & "-0"
+                        rsFiglio.Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
+                    End If
+                        
+                 '   If i > 1 Then
+                 '       rsFiglio.Update
+                 '       intPuntiCorrente = intPuntiCorrente + intPuntiPrimoLivello
+                 '       rsFiglio.AddNew
+                 '       rsFiglio.Fields("LINK1") = rsDataset("KEY") & "-" & intNumPagCorrente & "-" & i
+                 '       rsFiglio.Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
+                 '   End If
+                 '   rsAppo.Filter = strMedicinaliEsclusi
+                 '   Set rsFiglio2 = rsFiglio.Fields("Res1").Value
+                    indicePosizioneMedicinale = 1
+                    With rsFiglio2
+                        .AddNew
+                        .Fields("LINK1") = rsFiglio.Fields("LINK1")
+                        
+                        If rsAppo("DATA_1") <> "" And Month(rsAppo("DATA_1").Value) = Month(date) Then
+                            MGiorno = CStr(rsAppo("DATA_1"))
+                        ElseIf rsAppo("DATA_2") <> "" And Month(rsAppo("DATA_2").Value) = Month(date) Then
+                            MGiorno = CStr(rsAppo("DATA_2"))
+                        ElseIf rsAppo("DATA_3") <> "" And Month(rsAppo("DATA_3").Value) = Month(date) Then
+                            MGiorno = CStr(rsAppo("DATA_3"))
+                        End If
+                        
+                        .Fields("GIORNO") = MGiorno
+                        .Fields("MEDICINALE" & indicePosizioneMedicinale) = UCase(rsAppo("MEDICINALI.NOME"))
+                        .Fields("POSOLOGIANOTE" & indicePosizioneMedicinale) = "( " & rsAppo("POSOLOGIA") & IIf(rsAppo("NOTE") <> "", " - " & rsAppo("NOTE"), "") & " )"
+                        .Update
+                    End With
+                rsAppo.MoveNext
+                Loop
+                ' Next i
+            End If
+            
+        rsAppo.Close
         rsFiglio.Update
-        rsDataset.MoveNext
+       
+    rsDataset.MoveNext
     Loop
     rsDataset.Close
-
     
     If rsMain.RecordCount <> 0 Then
         Set rptFoglioTerapiaPerMedicinale = Nothing
@@ -1837,9 +1914,6 @@ SQLString = "SELECT COGNOME, NOME, TURNI." & strGiornoIni(0) & " AS GGINI1, TURN
              "INNER JOIN APPARATI  ON TURNI.CODICE_RENE= APPARATI.KEY ) " & _
              "WHERE (" & condizione & ") AND (PAZIENTI.STATO = 0) " & _
              "ORDER BY  PAZIENTI.COGNOME, PAZIENTI.NOME"
-        
-
-'   Debug.Print SQLString
       
     rsDataset.Open SQLString, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
    

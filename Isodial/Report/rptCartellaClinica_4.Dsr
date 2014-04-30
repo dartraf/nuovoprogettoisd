@@ -1911,13 +1911,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          CanGrow         =   -1  'True
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
+            Type            =   0
             Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   3
+            SubFormatType   =   0
          EndProperty
       EndProperty
       ItemType68      =   3
@@ -1958,13 +1958,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_4
          EndProperty
          CanGrow         =   -1  'True
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
+            Type            =   0
             Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1040
-            SubFormatType   =   3
+            SubFormatType   =   0
          EndProperty
       EndProperty
       ItemType70      =   3

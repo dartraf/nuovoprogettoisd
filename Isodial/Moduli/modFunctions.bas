@@ -611,12 +611,20 @@ Public Sub GestisciPN(flx As MSFlexGrid, Col As Integer, nomeEsteso As Boolean)
     testo = flx.TextMatrix(flx.Row, Col)
     flx.CellForeColor = vbRed
     If testo = "" Then
-        flx.TextMatrix(flx.Row, Col) = IIf(nomeEsteso, "POSITIVO", "POS")
-    ElseIf testo = IIf(nomeEsteso, "POSITIVO", "POS") Then
          flx.TextMatrix(flx.Row, Col) = IIf(nomeEsteso, "NEGATIVO", "NEG")
+    ElseIf testo = IIf(nomeEsteso, "NEGATIVO", "POS") Then
+             flx.TextMatrix(flx.Row, Col) = IIf(nomeEsteso, "POSITIVO", "POS")
     Else
          flx.TextMatrix(flx.Row, Col) = ""
     End If
+
+'    If testo = "" Then
+'         flx.TextMatrix(flx.Row, Col) = IIf(nomeEsteso, "POSITIVO", "POS")
+'    ElseIf testo = IIf(nomeEsteso, "POSITIVO", "POS") Then
+'         flx.TextMatrix(flx.Row, Col) = IIf(nomeEsteso, "NEGATIVO", "NEG")
+'    Else
+'         flx.TextMatrix(flx.Row, Col) = ""
+ '   End If
 End Sub
 
 ''
@@ -2814,10 +2822,10 @@ End Sub
 ' @param
 ' @return
 ' @remarks
-Public Sub TakeCloseOff(Handle As Long)
+Public Sub TakeCloseOff(handle As Long)
     Dim SysMenHandle As Long, RetVal As Long
     'Prende l'handle del menu di sistema di Form1
-    SysMenHandle = GetSystemMenu(Handle, 0)
+    SysMenHandle = GetSystemMenu(handle, 0)
     'Elimina la voce Close
     RetVal = RemoveMenu(SysMenHandle, 6, MF_BYPOSITION)
     'Elimina il separatore che ora si trova in basso

@@ -4,7 +4,7 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmEsitoEsami 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "CONSULTAZIONE ESAMI DI LABORATORIO"
-   ClientHeight    =   8505
+   ClientHeight    =   8610
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   13065
@@ -12,7 +12,7 @@ Begin VB.Form frmEsitoEsami
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8505
+   ScaleHeight     =   8610
    ScaleWidth      =   13065
    ShowInTaskbar   =   0   'False
    Begin VB.HScrollBar hscrBarra 
@@ -21,14 +21,14 @@ Begin VB.Form frmEsitoEsami
       Left            =   280
       Max             =   6
       TabIndex        =   3
-      Top             =   7400
+      Top             =   7410
       Visible         =   0   'False
       Width           =   12300
    End
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   0
       Width           =   12855
       Begin VB.CommandButton cmdTrova 
@@ -37,7 +37,7 @@ Begin VB.Form frmEsitoEsami
          Left            =   360
          Picture         =   "frmEsitoEsami.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   240
          Width           =   450
       End
@@ -55,7 +55,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   285
          Left            =   2280
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   360
          Width           =   3255
       End
@@ -73,7 +73,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   285
          Left            =   7320
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   360
          Width           =   3135
       End
@@ -91,7 +91,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   285
          Left            =   11880
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   360
          Width           =   615
       End
@@ -110,7 +110,7 @@ Begin VB.Form frmEsitoEsami
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   360
          Width           =   1005
       End
@@ -129,7 +129,7 @@ Begin VB.Form frmEsitoEsami
          Height          =   240
          Index           =   1
          Left            =   6480
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   360
          Width           =   630
       End
@@ -148,25 +148,25 @@ Begin VB.Form frmEsitoEsami
          Height          =   240
          Index           =   3
          Left            =   11280
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   360
          Width           =   465
       End
    End
    Begin VB.Frame Frame5 
-      Height          =   1095
+      Height          =   735
       Left            =   120
       TabIndex        =   5
       Top             =   720
       Width           =   12855
       Begin VB.CheckBox chkFiltra 
          Height          =   270
-         Left            =   12000
+         Left            =   12120
          Picture         =   "frmEsitoEsami.frx":0459
          Style           =   1  'Graphical
-         TabIndex        =   10
-         ToolTipText     =   "Filtra esami effettuati"
-         Top             =   580
+         TabIndex        =   9
+         ToolTipText     =   "Filtra i gruppi con esami registrati"
+         Top             =   270
          Width           =   375
       End
       Begin VB.ComboBox cboEsami 
@@ -180,19 +180,19 @@ Begin VB.Form frmEsitoEsami
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2280
+         Left            =   7800
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   6
-         Top             =   600
-         Width           =   9615
+         Top             =   260
+         Width           =   4095
       End
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   0
          Left            =   2280
-         TabIndex        =   28
-         Top             =   150
+         TabIndex        =   27
+         Top             =   230
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -203,15 +203,34 @@ Begin VB.Form frmEsitoEsami
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   1
-         Left            =   10200
-         TabIndex        =   29
-         Top             =   150
+         Left            =   4800
+         TabIndex        =   28
+         Top             =   230
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ricerca Esami Dal"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   6
+         Left            =   120
+         TabIndex        =   29
+         Top             =   300
+         Width           =   1950
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -227,14 +246,14 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   240
          Index           =   5
-         Left            =   9600
-         TabIndex        =   9
-         Top             =   195
+         Left            =   4440
+         TabIndex        =   8
+         Top             =   300
          Width           =   225
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Gruppo di Esami"
+         Caption         =   "Gruppo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -246,36 +265,17 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   360
-         TabIndex        =   8
-         Top             =   600
-         Width           =   1740
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Dal"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   2
-         Left            =   360
+         Left            =   6900
          TabIndex        =   7
-         Top             =   195
-         Width           =   375
+         Top             =   300
+         Width           =   780
       End
    End
    Begin VB.Frame Frame3 
-      Height          =   6135
+      Height          =   6495
       Left            =   120
       TabIndex        =   0
-      Top             =   1680
+      Top             =   1320
       Width           =   12855
       Begin VB.TextBox txtAppo 
          Alignment       =   1  'Right Justify
@@ -297,13 +297,13 @@ Begin VB.Form frmEsitoEsami
          Width           =   1815
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   5775
+         Height          =   6135
          Left            =   120
          TabIndex        =   1
          Top             =   240
-         Width           =   12615
-         _ExtentX        =   22251
-         _ExtentY        =   10186
+         Width           =   12650
+         _ExtentX        =   22304
+         _ExtentY        =   10821
          _Version        =   393216
          Cols            =   7
          FixedCols       =   0
@@ -326,7 +326,7 @@ Begin VB.Form frmEsitoEsami
    Begin VB.Frame Frame2 
       Height          =   855
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   7680
       Width           =   5055
       Begin VB.Label Label2 
@@ -342,7 +342,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   480
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   260
          Width           =   1095
       End
@@ -392,7 +392,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   1920
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   260
          Width           =   1335
       End
@@ -409,7 +409,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   3600
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   260
          Width           =   1335
       End
@@ -434,7 +434,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   240
          Width           =   1365
       End
@@ -452,7 +452,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   6600
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   240
          Width           =   975
       End
@@ -470,7 +470,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   2760
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   240
          Width           =   1215
       End
@@ -487,7 +487,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   4200
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   240
          Width           =   975
       End
@@ -505,7 +505,7 @@ Begin VB.Form frmEsitoEsami
          EndProperty
          Height          =   495
          Left            =   5400
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   240
          Width           =   1005
       End
@@ -541,8 +541,11 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Then
     Dim data_max As Date
     
     quantimesi = 1
-    data_min = oData(0).DataAmericana
-    data_max = oData(1).DataAmericana
+    data_min = DateValue(Month(oData(0).data) & "/" & Day(oData(0).data) & "/" & Year(oData(0).data))
+    data_max = DateValue(Month(oData(1).data) & "/" & Day(oData(1).data) & "/" & Year(oData(1).data))
+
+'    data_min = oData(0).DataAmericana
+'    data_max = oData(1).DataAmericana
     condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & " # AND #" & data_max & "# "
     
     If Not Completo Then Exit Sub
@@ -720,7 +723,7 @@ Private Sub PulisciTutto()
     cboEsami.ListIndex = -1
     stoPulendo = False
     hscrBarra.Visible = False
-    flxGriglia.Height = 5775
+    flxGriglia.Height = 6135
     cmdTrova.SetFocus
 End Sub
 
@@ -761,8 +764,10 @@ Private Sub Filtra()
     
     If chkFiltra.Value = Checked Then
         If oData(0).data <> "" And oData(1).data <> "" Then
-            data_min = oData(0).DataAmericana
-            data_max = oData(1).DataAmericana
+            data_min = DateValue(Month(oData(0).data) & "/" & Day(oData(0).data) & "/" & Year(oData(0).data))
+            data_max = DateValue(Month(oData(1).data) & "/" & Day(oData(1).data) & "/" & Year(oData(1).data))
+           ' data_min = oData(0).DataAmericana
+           ' data_max = oData(1).DataAmericana
             filtroData = " AND DATA BETWEEN #" & data_min & "# AND #" & data_max & "#"
         End If
         
@@ -813,9 +818,12 @@ Private Sub CaricaScheda()
     End With
     
     ' carica le date
-    data_max = oData(1).DataAmericana
-    data_min = oData(0).DataAmericana
-        
+    data_min = DateValue(Month(oData(0).data) & "/" & Day(oData(0).data) & "/" & Year(oData(0).data))
+    data_max = DateValue(Month(oData(1).data) & "/" & Day(oData(1).data) & "/" & Year(oData(1).data))
+
+'    data_max = oData(1).DataAmericana
+'    data_min = oData(0).DataAmericana
+
     strSql = "SELECT    ANAMNESI_ESAMI.*, ESAMI_LAB.KEY AS ESAMI_LABKEY, VALORE, CODICE_ESAME " & _
              "FROM      (ANAMNESI_ESAMI " & _
              "          INNER JOIN ESAMI_LAB ON ESAMI_LAB.CODICE_ANAMNESI_ESAMI=ANAMNESI_ESAMI.KEY) " & _
@@ -887,13 +895,13 @@ Private Sub CaricaScheda()
             ' verifica se attivare la barra orizzontale
             If .Cols > 11 Then
                 hscrBarra.Visible = True
-                flxGriglia.Height = 5535
+                flxGriglia.Height = 6111
                 hscrBarra.max = .Cols - 8 - 1
                 hscrBarra.min = 0
                 hscrBarra.Value = 0
             Else
                 hscrBarra.Visible = False
-                flxGriglia.Height = 5775
+                flxGriglia.Height = 6135
             End If
             ' azzera
             .Col = 0
@@ -903,7 +911,7 @@ Private Sub CaricaScheda()
     Else
         flxGriglia.Rows = 1
         hscrBarra.Visible = False
-        flxGriglia.Height = 5775
+        flxGriglia.Height = 6135
     End If
     rsEsami.Close
     Set rsEsami = Nothing
@@ -972,8 +980,11 @@ Private Sub SalvaModifiche(ByRef outRefresh As Boolean)
         Set rsEsami = New Recordset
         data = DateValue(Month(.TextMatrix(0, vCol)) & "/" & Day(.TextMatrix(0, vCol)) & "/" & Year(.TextMatrix(0, vCol)))
         If .TextMatrix(vRow, vCol) <> "" Then
-            data_max = oData(1).DataAmericana
-            data_min = oData(0).DataAmericana
+            data_min = DateValue(Month(oData(0).data) & "/" & Day(oData(0).data) & "/" & Year(oData(0).data))
+            data_max = DateValue(Month(oData(1).data) & "/" & Day(oData(1).data) & "/" & Year(oData(1).data))
+
+'            data_max = oData(1).DataAmericana
+'            data_min = oData(0).DataAmericana
                
             strSql = "SELECT    ANAMNESI_ESAMI.* " & _
                      "FROM      ANAMNESI_ESAMI " & _
@@ -1175,8 +1186,11 @@ Private Sub cmdElimina_Click()
     If MsgBox("Sei sicuro di voler eliminare gli esami di laboratorio del paziente: " & UCase(lblCognome) & " " & UCase(lblNome) & " ?" & vbCrLf & "Dal " & oData(0).data & " al " & oData(1).data, vbQuestion + vbYesNo, "Eliminazione") = vbYes Then
         Set rsEsami = New Recordset
         ' carica le date
-        data_max = oData(1).DataAmericana
-        data_min = oData(0).DataAmericana
+        data_min = DateValue(Month(oData(0).data) & "/" & Day(oData(0).data) & "/" & Year(oData(0).data))
+        data_max = DateValue(Month(oData(1).data) & "/" & Day(oData(1).data) & "/" & Year(oData(1).data))
+
+'        data_max = oData(1).DataAmericana
+'        data_min = oData(0).DataAmericana
         cmCommand.ActiveConnection = cnPrinc
         cmCommand.CommandType = adCmdText
     
@@ -1209,8 +1223,11 @@ Private Sub cmdStampa_Click()
     Dim data_max As Date
     
     quantimesi = 12
-    data_min = oData(0).DataAmericana
-    data_max = oData(1).DataAmericana
+    data_min = DateValue(Month(oData(0).data) & "/" & Day(oData(0).data) & "/" & Year(oData(0).data))
+    data_max = DateValue(Month(oData(1).data) & "/" & Day(oData(1).data) & "/" & Year(oData(1).data))
+
+'    data_min = oData(0).DataAmericana
+'    data_max = oData(1).DataAmericana
     condizione = " AND ANAMNESI_ESAMI.DATA BETWEEN #" & data_min & "# AND #" & data_max & "# "
     
     If Not Completo Then Exit Sub

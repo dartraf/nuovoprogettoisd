@@ -17,7 +17,7 @@ Begin VB.Form frmDiario
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   13
+      TabIndex        =   19
       Top             =   0
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -26,7 +26,7 @@ Begin VB.Form frmDiario
          Left            =   360
          Picture         =   "frmDiario.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   14
+         TabIndex        =   0
          Top             =   240
          Width           =   450
       End
@@ -44,7 +44,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   285
          Left            =   2160
-         TabIndex        =   26
+         TabIndex        =   1
          Top             =   360
          Width           =   3255
       End
@@ -62,7 +62,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   285
          Left            =   6720
-         TabIndex        =   25
+         TabIndex        =   2
          Top             =   360
          Width           =   3135
       End
@@ -80,7 +80,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   285
          Left            =   11040
-         TabIndex        =   24
+         TabIndex        =   29
          Top             =   360
          Width           =   615
       End
@@ -99,7 +99,7 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   3
          Left            =   10440
-         TabIndex        =   17
+         TabIndex        =   22
          Top             =   360
          Width           =   465
       End
@@ -118,7 +118,7 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   1
          Left            =   6000
-         TabIndex        =   16
+         TabIndex        =   21
          Top             =   360
          Width           =   630
       End
@@ -137,29 +137,29 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   15
+         TabIndex        =   20
          Top             =   360
          Width           =   1005
       End
    End
    Begin VB.Frame Frame2 
-      Height          =   1215
+      Height          =   855
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   16
       Top             =   720
       Width           =   12015
       Begin VB.CheckBox chkFiltra 
          Height          =   270
-         Left            =   2040
+         Left            =   1785
          Picture         =   "frmDiario.frx":0459
          Style           =   1  'Graphical
-         TabIndex        =   0
-         ToolTipText     =   "Filtra titoli diario effettuati"
+         TabIndex        =   3
+         ToolTipText     =   "Filtra i diari registrati"
          Top             =   290
          Width           =   375
       End
       Begin VB.CheckBox chkStampa 
-         Caption         =   "Stampa Cartella Clinica"
+         Caption         =   "Stampa In Cartella Clinica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -170,10 +170,10 @@ Begin VB.Form frmDiario
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   7920
-         TabIndex        =   2
-         Top             =   840
-         Width           =   3015
+         Left            =   8900
+         TabIndex        =   6
+         Top             =   330
+         Width           =   3075
       End
       Begin VB.ComboBox cboTitolo 
          BeginProperty Font 
@@ -186,18 +186,18 @@ Begin VB.Form frmDiario
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2520
+         Left            =   2280
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   1
+         TabIndex        =   4
          Top             =   285
-         Width           =   8175
+         Width           =   3495
       End
       Begin DataTimeBox.uDataTimeBox oDataTimeBox 
          Height          =   375
-         Left            =   2040
-         TabIndex        =   27
-         Top             =   760
+         Left            =   6720
+         TabIndex        =   5
+         Top             =   255
          Width           =   2100
          _ExtentX        =   3704
          _ExtentY        =   661
@@ -219,9 +219,9 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   360
-         TabIndex        =   12
-         Top             =   810
+         Left            =   6000
+         TabIndex        =   18
+         Top             =   300
          Width           =   510
       End
       Begin VB.Label Label1 
@@ -238,17 +238,17 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   360
-         TabIndex        =   11
+         Left            =   240
+         TabIndex        =   17
          Top             =   300
          Width           =   1305
       End
    End
    Begin VB.Frame Frame3 
-      Height          =   2415
+      Height          =   2775
       Left            =   120
-      TabIndex        =   9
-      Top             =   1800
+      TabIndex        =   15
+      Top             =   1440
       Width           =   12015
       Begin VB.TextBox txtDati 
          Enabled         =   0   'False
@@ -261,19 +261,19 @@ Begin VB.Form frmDiario
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2085
+         Height          =   2445
          Left            =   120
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   3
-         Top             =   240
+         TabIndex        =   7
+         Top             =   210
          Width           =   11655
       End
    End
    Begin VB.Frame Frame5 
       Height          =   855
       Left            =   120
-      TabIndex        =   18
+      TabIndex        =   23
       Top             =   4080
       Width           =   12015
       Begin VB.Label lblNomeUtente 
@@ -290,7 +290,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   285
          Left            =   8400
-         TabIndex        =   23
+         TabIndex        =   28
          Top             =   430
          Width           =   3375
       End
@@ -308,7 +308,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   285
          Left            =   3600
-         TabIndex        =   22
+         TabIndex        =   27
          Top             =   430
          Width           =   3375
       End
@@ -327,7 +327,7 @@ Begin VB.Form frmDiario
          Height          =   480
          Index           =   39
          Left            =   240
-         TabIndex        =   21
+         TabIndex        =   26
          Top             =   240
          Width           =   1680
          WordWrap        =   -1  'True
@@ -347,7 +347,7 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   40
          Left            =   2400
-         TabIndex        =   20
+         TabIndex        =   25
          Top             =   480
          Width           =   1005
       End
@@ -366,7 +366,7 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   41
          Left            =   7560
-         TabIndex        =   19
+         TabIndex        =   24
          Top             =   480
          Width           =   630
       End
@@ -374,7 +374,7 @@ Begin VB.Form frmDiario
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   8
+      TabIndex        =   14
       Top             =   4800
       Width           =   12015
       Begin VB.OptionButton OptStDiario 
@@ -391,7 +391,7 @@ Begin VB.Form frmDiario
          Height          =   255
          Index           =   1
          Left            =   240
-         TabIndex        =   29
+         TabIndex        =   9
          Top             =   530
          Width           =   3160
       End
@@ -409,7 +409,7 @@ Begin VB.Form frmDiario
          Height          =   255
          Index           =   0
          Left            =   240
-         TabIndex        =   28
+         TabIndex        =   8
          Top             =   200
          Value           =   -1  'True
          Width           =   3160
@@ -427,7 +427,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   7920
-         TabIndex        =   5
+         TabIndex        =   11
          Top             =   240
          Width           =   1215
       End
@@ -444,7 +444,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   6600
-         TabIndex        =   4
+         TabIndex        =   10
          Top             =   240
          Width           =   1215
       End
@@ -461,7 +461,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   9220
-         TabIndex        =   6
+         TabIndex        =   12
          Top             =   240
          Width           =   1270
       End
@@ -479,7 +479,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   10570
-         TabIndex        =   7
+         TabIndex        =   13
          Top             =   240
          Width           =   1215
       End

@@ -285,7 +285,6 @@ Private Sub ControllaAlertAppa()
     Set rsDataset = Nothing
 End Sub
 
-
 Private Sub impostaMenu()
     Dim i  As Integer
     With frmMain
@@ -299,7 +298,6 @@ Private Sub impostaMenu()
             .mnuMostraFattElaborazione.Enabled = True
             .mnuImpegnativeDialisi.Enabled = True
             .mnuStrumenti.Visible = True
-            .mnuFatturazione.Visible = True
             .mnuStampe.Enabled = True
             .mnuSottoDialisi(5).Enabled = True
             .mnuKtvAnnuale.Enabled = True
@@ -308,7 +306,7 @@ Private Sub impostaMenu()
             .mnuCaPAnnuale.Enabled = True
             .mnuPthAnnuale.Enabled = True
             For i = 1 To 10
-            .mnuGestioneIndicatoriSotto(i).Enabled = True
+                .mnuGestioneIndicatoriSotto(i).Enabled = True
             Next i
             For i = 1 To 4
                 .mnuSottoDialisi(i).Visible = True
@@ -316,6 +314,19 @@ Private Sub impostaMenu()
             For i = 1 To 6
                 .mnuSottoPaz(i).Visible = True
             Next i
+            .mnuFatturazione.Visible = True
+            .mnuIntestazioneFattura.Enabled = True
+            .mnuTabFatt(0).Enabled = True
+            For i = 2 To 6
+                .mnuTabFatt(i).Enabled = True
+            Next i
+            .mnuCaricaPrescrizione.Enabled = True
+            .mnuGestioneFileC.Enabled = True
+            .mnuGestioneFileXml.Enabled = True
+            .mnuFattStampaFogli.Enabled = True
+            .mnuRimborsi.Enabled = True
+            .mnuStampaRiepiloghi.Enabled = True
+            
           
           Case tpACONTABILE
             .mnuStampe.Enabled = True
@@ -328,7 +339,6 @@ Private Sub impostaMenu()
             .mnuCaPAnnuale.Enabled = False
             .mnuPthAnnuale.Enabled = False
             .mnuSchedaDialiticaSettimanale.Enabled = False
-            .mnuFatturazione.Visible = True
             ' rende inattivi gli altri
             For i = 2 To 6
                 .mnuSottoPaz(i).Visible = False
@@ -343,6 +353,19 @@ Private Sub impostaMenu()
             For i = 1 To 13
                 .cmdToolbar(i).Enabled = False
             Next i
+            .mnuFatturazione.Visible = True
+            .mnuIntestazioneFattura.Enabled = True
+            .mnuTabFatt(0).Enabled = True
+            For i = 2 To 6
+                .mnuTabFatt(i).Enabled = True
+            Next i
+            .mnuCaricaPrescrizione.Enabled = True
+            .mnuGestioneFileC.Enabled = True
+            .mnuGestioneFileXml.Enabled = True
+            .mnuFattStampaFogli.Enabled = True
+            .mnuRimborsi.Enabled = True
+            .mnuStampaRiepiloghi.Enabled = True
+          
           
           Case tpAMEDICO
             .mnuSottoDialisi(5).Enabled = True
@@ -357,6 +380,18 @@ Private Sub impostaMenu()
             .mnuCaPAnnuale.Enabled = True
             .mnuPthAnnuale.Enabled = True
             .mnuSchedaDialiticaSettimanale.Enabled = True
+            .mnuFatturazione.Visible = True
+            .mnuIntestazioneFattura.Enabled = False
+            .mnuTabFatt(0).Enabled = False
+            For i = 2 To 6
+                .mnuTabFatt(i).Enabled = False
+            Next i
+            .mnuCaricaPrescrizione.Enabled = False
+            .mnuGestioneFileC.Enabled = False
+            .mnuGestioneFileXml.Enabled = False
+            .mnuFattStampaFogli.Enabled = False
+            .mnuRimborsi.Enabled = False
+            .mnuStampaRiepiloghi.Enabled = False
             .mnuApparati = True
             For i = 14 To 16
                 .cmdToolbar(i).Enabled = False
@@ -365,13 +400,14 @@ Private Sub impostaMenu()
                 .mnuSottoDialisi(i).Visible = True
             Next i
           
+          
           Case tpAINFERMIERE
             .mnuStampe.Enabled = True
             .mnuStampaPaz.Enabled = False
             .mnuStampaMediciBase.Enabled = False
             .mnuGestioneIndicatori.Visible = True
             For i = 1 To 10
-            .mnuGestioneIndicatoriSotto(i).Enabled = False
+                .mnuGestioneIndicatoriSotto(i).Enabled = False
             Next i
             .mnuMostraFattElaborazione.Enabled = True
             .mnuImpegnativeDialisi.Enabled = False

@@ -314,6 +314,15 @@ Begin VB.Form frmAnamnesiDialitica
       Tab(2).ControlCount=   7
       Begin VB.TextBox txtRitmoDialitico 
          Alignment       =   2  'Center
+         BeginProperty DataFormat 
+            Type            =   0
+            Format          =   "0"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -326,6 +335,7 @@ Begin VB.Form frmAnamnesiDialitica
          ForeColor       =   &H00C00000&
          Height          =   285
          Left            =   3000
+         MaxLength       =   1
          TabIndex        =   96
          Top             =   480
          Width           =   300
@@ -1094,7 +1104,7 @@ Begin VB.Form frmAnamnesiDialitica
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         BorderStyle     =   1  'Fixed Single
+         Caption         =   "sedute"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -1104,14 +1114,12 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   300
+         Height          =   240
          Index           =   40
-         Left            =   3720
+         Left            =   3360
          TabIndex        =   97
          Top             =   480
-         Visible         =   0   'False
-         Width           =   135
+         Width           =   720
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2088,6 +2096,7 @@ End Sub
 Private Sub Completa()
     Dim i As Integer
     lettera = "0"
+    If txtRitmoDialitico = "" Then txtRitmoDialitico = "0"
     If txtAumentoPond = "" Then txtAumentoPond = "0"
     If txtQuantita = "" Then txtQuantita = "0"
     If txtFlusso = "" Then txtFlusso = "0"
@@ -2284,7 +2293,7 @@ End Function
 
 Private Sub cmdStampaSintetica_Click()
     
-'If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
+If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
     
     Dim strSqlStampa As String
     Dim strSql As String
@@ -2716,11 +2725,11 @@ Private Sub cmdStampaSintetica_Click()
     rptCartellaDialiticaMaddaloni.Sections("Intestazione").Controls.Item("lblCodiceID").Caption = intCodiceID
     rptCartellaDialiticaMaddaloni.PrintReport True, rptRangeAllPages
 
-'Else
+Else
 
     MsgBox "MODULO OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
 
-'End If
+End If
 
 End Sub
 
@@ -3370,6 +3379,22 @@ Private Sub txtQuantita_Validate(Cancel As Boolean)
     Else
         Cancel = ControlloNumerico(txtQuantita.Text)
     End If
+End Sub
+
+Private Sub txtRitmoDialitico_Change()
+    Call OnlyNumber(txtRitmoDialitico, lettera)
+End Sub
+
+Private Sub txtRitmoDialitico_GotFocus()
+    txtRitmoDialitico.BackColor = colArancione
+End Sub
+
+Private Sub txtRitmoDialitico_KeyPress(KeyAscii As Integer)
+    lettera = Chr(KeyAscii)
+End Sub
+
+Private Sub txtRitmoDialitico_LostFocus()
+    txtRitmoDialitico.BackColor = vbWhite
 End Sub
 
 Private Sub txtSedeAccesso_GotFocus()

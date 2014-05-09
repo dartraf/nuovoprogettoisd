@@ -1663,6 +1663,7 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
     If Not (rsTabelle.EOF And rsTabelle.BOF) Then
         With rsMain
             .AddNew
+            .Fields("SEDUTE") = rsTabelle("RITMO_DIALITICO")
             .Fields("DIURESI") = CBool(rsTabelle("DIURESI"))
             .Fields("QUANTITA") = rsTabelle("QUANTITA")
             .Fields("AUMENTO") = rsTabelle("AUMENTO_POND")
@@ -1745,23 +1746,25 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
                     .Fields("ESAME" & i) = ""
                 Next i
             End If
-            .Fields("SEDUTE") = 0
             
-            rsTabelle.Open "SELECT * FROM TURNI WHERE CODICE_PAZIENTE=" & codicePaziente, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-            If rsTabelle.EOF And rsTabelle.BOF Then
-                .Fields("SEDUTE") = 0
-            Else
-                For i = 1 To 7
-                    If rsTabelle("AM_INIZIO" & i) <> "" Then
-                        .Fields("SEDUTE") = .Fields("SEDUTE") + 1
-                    ElseIf rsTabelle("PM_INIZIO" & i) <> "" Then
-                        .Fields("SEDUTE") = .Fields("SEDUTE") + 1
-                    ElseIf rsTabelle("SR_INIZIO" & i) <> "" Then
-                        .Fields("SEDUTE") = .Fields("SEDUTE") + 1
-                    End If
-                Next i
-            End If
-            rsTabelle.Close
+            '.Fields("SEDUTE") = 0
+            
+            'rsTabelle.Open "SELECT * FROM TURNI WHERE CODICE_PAZIENTE=" & codicePaziente, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+            'If rsTabelle.EOF And rsTabelle.BOF Then
+            '    .Fields("SEDUTE") = 0
+            'Else
+            '    For i = 1 To 7
+            '        If rsTabelle("AM_INIZIO" & i) <> "" Then
+            '            .Fields("SEDUTE") = .Fields("SEDUTE") + 1
+            '        ElseIf rsTabelle("PM_INIZIO" & i) <> "" Then
+            '            .Fields("SEDUTE") = .Fields("SEDUTE") + 1
+            '        ElseIf rsTabelle("SR_INIZIO" & i) <> "" Then
+            '            .Fields("SEDUTE") = .Fields("SEDUTE") + 1
+            '        End If
+            '    Next i
+            'End If
+            'rsTabelle.Close
+            
         End With
     End If
     Set rsTabelle = Nothing

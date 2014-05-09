@@ -200,7 +200,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   18930
-      NumControls     =   121
+      NumControls     =   120
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -718,9 +718,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item22 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtRitmoSettimanale"
-         Object.Left            =   1928
-         Object.Top             =   5103
-         Object.Width           =   405
+         Object.Left            =   1871
+         Object.Top             =   5102
+         Object.Width           =   1134
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -2216,25 +2216,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       ItemType87      =   3
       BeginProperty Item87 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label21"
-         Object.Left            =   2211
-         Object.Top             =   5103
-         Object.Width           =   675
-         Object.Height          =   330
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "sedute"
-      EndProperty
-      ItemType88      =   3
-      BeginProperty Item88 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "lblMedico"
          Object.Left            =   6463
          Object.Top             =   18142
@@ -2251,8 +2232,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Alignment       =   2
       EndProperty
-      ItemType89      =   4
-      BeginProperty Item89 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType88      =   4
+      BeginProperty Item88 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCellulare"
          Object.Left            =   3970
@@ -2279,8 +2260,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType90      =   3
-      BeginProperty Item90 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType89      =   3
+      BeginProperty Item89 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label35"
          Object.Left            =   2949
@@ -2298,8 +2279,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Object.Caption         =   "Cellulari"
       EndProperty
-      ItemType91      =   3
-      BeginProperty Item91 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType90      =   3
+      BeginProperty Item90 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label36"
          Object.Left            =   8163
@@ -2318,8 +2299,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          Object.Caption         =   "HBcAb ->"
          Alignment       =   2
       EndProperty
-      ItemType92      =   4
-      BeginProperty Item92 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType91      =   4
+      BeginProperty Item91 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtHBcAb"
          Object.Left            =   9240
@@ -2346,8 +2327,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType93      =   3
-      BeginProperty Item93 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType92      =   3
+      BeginProperty Item92 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label37"
          Object.Left            =   5896
@@ -2365,8 +2346,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Object.Caption         =   "Sede di accesso"
       EndProperty
-      ItemType94      =   4
-      BeginProperty Item94 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType93      =   4
+      BeginProperty Item93 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtSedeAccesso"
          Object.Left            =   7540
@@ -2393,8 +2374,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType95      =   3
-      BeginProperty Item95 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType94      =   3
+      BeginProperty Item94 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label39"
          Object.Left            =   2948
@@ -2412,8 +2393,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Object.Caption         =   "Dose Iniz."
       EndProperty
-      ItemType96      =   3
-      BeginProperty Item96 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType95      =   3
+      BeginProperty Item95 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label40"
          Object.Left            =   4876
@@ -2431,8 +2412,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Object.Caption         =   "Dose Int."
       EndProperty
-      ItemType97      =   4
-      BeginProperty Item97 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType96      =   4
+      BeginProperty Item96 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDoseIniziale"
          Object.Left            =   3969
@@ -2459,8 +2440,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType98      =   4
-      BeginProperty Item98 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType97      =   4
+      BeginProperty Item97 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDoseIntermedia"
          Object.Left            =   5784
@@ -2487,8 +2468,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType99      =   4
-      BeginProperty Item99 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType98      =   4
+      BeginProperty Item98 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFarmacoTerapiaPost"
          Object.Left            =   965
@@ -2515,8 +2496,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType100     =   4
-      BeginProperty Item100 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType99      =   4
+      BeginProperty Item99 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteTerapiaPost"
          Object.Left            =   6634
@@ -2543,8 +2524,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType101     =   4
-      BeginProperty Item101 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType100     =   4
+      BeginProperty Item100 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtPosTerapiaPost"
          Object.Left            =   3796
@@ -2571,8 +2552,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType102     =   4
-      BeginProperty Item102 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType101     =   4
+      BeginProperty Item101 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGiorniTerapiaPost"
          Object.Left            =   4363
@@ -2599,8 +2580,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType103     =   4
-      BeginProperty Item103 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType102     =   4
+      BeginProperty Item102 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtFarmacoTerapiaDomiciliare"
          Object.Left            =   965
@@ -2627,8 +2608,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType104     =   4
-      BeginProperty Item104 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType103     =   4
+      BeginProperty Item103 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNoteTerapiaDomiciliare"
          Object.Left            =   6577
@@ -2655,8 +2636,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType105     =   4
-      BeginProperty Item105 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType104     =   4
+      BeginProperty Item104 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtPosTerapiaDomiciliare"
          Object.Left            =   3739
@@ -2683,8 +2664,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType106     =   4
-      BeginProperty Item106 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType105     =   4
+      BeginProperty Item105 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGiorniTerapiaDomiciliare"
          Object.Left            =   4306
@@ -2711,8 +2692,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType107     =   3
-      BeginProperty Item107 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType106     =   3
+      BeginProperty Item106 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label38"
          Object.Top             =   8674
@@ -2729,8 +2710,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Object.Caption         =   "Peso secco (kg)"
       EndProperty
-      ItemType108     =   4
-      BeginProperty Item108 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType107     =   4
+      BeginProperty Item107 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtPesoSecco"
          Object.Left            =   1587
@@ -2757,8 +2738,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType109     =   3
-      BeginProperty Item109 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType108     =   3
+      BeginProperty Item108 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label41"
          Object.Left            =   3345
@@ -2776,8 +2757,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          EndProperty
          Object.Caption         =   "Ultima dialisi del"
       EndProperty
-      ItemType110     =   4
-      BeginProperty Item110 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType109     =   4
+      BeginProperty Item109 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtUltimaDialisiDel"
          Object.Left            =   5130
@@ -2804,8 +2785,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType111     =   3
-      BeginProperty Item111 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType110     =   3
+      BeginProperty Item110 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label60"
          Object.Left            =   2211
@@ -2824,8 +2805,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          Object.Caption         =   "TERAPIA POSTDIALITICA"
          Alignment       =   2
       EndProperty
-      ItemType112     =   3
-      BeginProperty Item112 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType111     =   3
+      BeginProperty Item111 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label47"
          Object.Left            =   2268
@@ -2844,8 +2825,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          Object.Caption         =   "TERAPIA DOMICILIARE"
          Alignment       =   2
       EndProperty
-      ItemType113     =   4
-      BeginProperty Item113 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType112     =   4
+      BeginProperty Item112 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataHBSAB"
          Object.Left            =   3231
@@ -2873,8 +2854,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType114     =   4
-      BeginProperty Item114 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType113     =   4
+      BeginProperty Item113 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataHBEAG"
          Object.Left            =   4876
@@ -2902,8 +2883,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType115     =   4
-      BeginProperty Item115 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType114     =   4
+      BeginProperty Item114 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataHBEAB"
          Object.Left            =   6519
@@ -2931,8 +2912,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType116     =   4
-      BeginProperty Item116 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType115     =   4
+      BeginProperty Item115 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataHBCAB"
          Object.Left            =   8163
@@ -2960,8 +2941,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType117     =   4
-      BeginProperty Item117 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType116     =   4
+      BeginProperty Item116 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataHCVRNA"
          Object.Left            =   3230
@@ -2989,22 +2970,22 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             SubFormatType   =   3
          EndProperty
       EndProperty
-      ItemType118     =   5
-      BeginProperty Item118 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType117     =   5
+      BeginProperty Item117 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line2"
          Object.Top             =   2835
          Object.Width           =   1500
       EndProperty
-      ItemType119     =   5
-      BeginProperty Item119 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType118     =   5
+      BeginProperty Item118 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line4"
          Object.Top             =   3515
          Object.Width           =   1500
       EndProperty
-      ItemType120     =   5
-      BeginProperty Item120 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType119     =   5
+      BeginProperty Item119 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line5"
          Object.Top             =   4139

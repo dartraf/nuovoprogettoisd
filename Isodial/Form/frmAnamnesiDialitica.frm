@@ -212,9 +212,9 @@ Begin VB.Form frmAnamnesiDialitica
       Tab(0).Control(20).Enabled=   0   'False
       Tab(0).Control(21)=   "Label1(38)"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "lblRitmoDialisiSettimanale"
+      Tab(0).Control(22)=   "Label1(39)"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "Label1(39)"
+      Tab(0).Control(23)=   "Label1(40)"
       Tab(0).Control(23).Enabled=   0   'False
       Tab(0).Control(24)=   "oData(2)"
       Tab(0).Control(24).Enabled=   0   'False
@@ -268,48 +268,68 @@ Begin VB.Form frmAnamnesiDialitica
       Tab(0).Control(48).Enabled=   0   'False
       Tab(0).Control(49)=   "cboCodicePrestaione"
       Tab(0).Control(49).Enabled=   0   'False
-      Tab(0).ControlCount=   50
+      Tab(0).Control(50)=   "txtRitmoDialitico"
+      Tab(0).Control(50).Enabled=   0   'False
+      Tab(0).ControlCount=   51
       TabCaption(1)   =   "Scheda 2"
       TabPicture(1)   =   "frmAnamnesiDialitica.frx":0475
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboUnit‡ValoreInfusionale"
-      Tab(1).Control(1)=   "cboDosiUnitaMisura"
-      Tab(1).Control(2)=   "txtFlussoSangue"
-      Tab(1).Control(3)=   "txtSolInfCc"
-      Tab(1).Control(4)=   "cboCartuccia"
-      Tab(1).Control(5)=   "cboSolInfusionale"
-      Tab(1).Control(6)=   "cboSolDialitica"
-      Tab(1).Control(7)=   "txtFlusso"
-      Tab(1).Control(8)=   "cboAnticoagulante(0)"
-      Tab(1).Control(9)=   "cboAnticoagulante(1)"
-      Tab(1).Control(10)=   "txtDose(0)"
-      Tab(1).Control(11)=   "txtDose(1)"
-      Tab(1).Control(12)=   "txtDose(2)"
-      Tab(1).Control(13)=   "txtDose(3)"
-      Tab(1).Control(14)=   "Label1(35)"
-      Tab(1).Control(15)=   "Label1(31)"
-      Tab(1).Control(16)=   "Label1(30)"
-      Tab(1).Control(17)=   "Label1(29)"
-      Tab(1).Control(18)=   "Label1(28)"
-      Tab(1).Control(19)=   "Label1(26)"
-      Tab(1).Control(20)=   "Label1(11)"
-      Tab(1).Control(21)=   "Label1(12)"
-      Tab(1).Control(22)=   "Label1(13)"
-      Tab(1).Control(23)=   "Label1(14)"
-      Tab(1).Control(24)=   "Label1(15)"
-      Tab(1).Control(25)=   "Label1(16)"
+      Tab(1).Control(0)=   "Label1(16)"
+      Tab(1).Control(1)=   "Label1(15)"
+      Tab(1).Control(2)=   "Label1(14)"
+      Tab(1).Control(3)=   "Label1(13)"
+      Tab(1).Control(4)=   "Label1(12)"
+      Tab(1).Control(5)=   "Label1(11)"
+      Tab(1).Control(6)=   "Label1(26)"
+      Tab(1).Control(7)=   "Label1(28)"
+      Tab(1).Control(8)=   "Label1(29)"
+      Tab(1).Control(9)=   "Label1(30)"
+      Tab(1).Control(10)=   "Label1(31)"
+      Tab(1).Control(11)=   "Label1(35)"
+      Tab(1).Control(12)=   "txtDose(3)"
+      Tab(1).Control(13)=   "txtDose(2)"
+      Tab(1).Control(14)=   "txtDose(1)"
+      Tab(1).Control(15)=   "txtDose(0)"
+      Tab(1).Control(16)=   "cboAnticoagulante(1)"
+      Tab(1).Control(17)=   "cboAnticoagulante(0)"
+      Tab(1).Control(18)=   "txtFlusso"
+      Tab(1).Control(19)=   "cboSolDialitica"
+      Tab(1).Control(20)=   "cboSolInfusionale"
+      Tab(1).Control(21)=   "cboCartuccia"
+      Tab(1).Control(22)=   "txtSolInfCc"
+      Tab(1).Control(23)=   "txtFlussoSangue"
+      Tab(1).Control(24)=   "cboDosiUnitaMisura"
+      Tab(1).Control(25)=   "cboUnit‡ValoreInfusionale"
       Tab(1).ControlCount=   26
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(32)"
-      Tab(2).Control(1)=   "lblUnitaMisura"
-      Tab(2).Control(2)=   "Label1(34)"
+      Tab(2).Control(0)=   "cmdEliminaEpo"
+      Tab(2).Control(1)=   "txtNote"
+      Tab(2).Control(2)=   "txtUI"
       Tab(2).Control(3)=   "cboEPO"
-      Tab(2).Control(4)=   "txtUI"
-      Tab(2).Control(5)=   "txtNote"
-      Tab(2).Control(6)=   "cmdEliminaEpo"
+      Tab(2).Control(4)=   "Label1(34)"
+      Tab(2).Control(5)=   "lblUnitaMisura"
+      Tab(2).Control(6)=   "Label1(32)"
       Tab(2).ControlCount=   7
+      Begin VB.TextBox txtRitmoDialitico 
+         Alignment       =   2  'Center
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   285
+         Left            =   3000
+         TabIndex        =   96
+         Top             =   480
+         Width           =   300
+      End
       Begin VB.ComboBox cboUnit‡ValoreInfusionale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -325,7 +345,7 @@ Begin VB.Form frmAnamnesiDialitica
          Left            =   -65160
          List            =   "frmAnamnesiDialitica.frx":04B7
          Style           =   2  'Dropdown List
-         TabIndex        =   96
+         TabIndex        =   95
          Top             =   3390
          Width           =   615
       End
@@ -1074,6 +1094,27 @@ Begin VB.Form frmAnamnesiDialitica
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   300
+         Index           =   40
+         Left            =   3720
+         TabIndex        =   97
+         Top             =   480
+         Visible         =   0   'False
+         Width           =   135
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
          Caption         =   "Ritmo Dialisi Settimanale:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -1087,26 +1128,9 @@ Begin VB.Form frmAnamnesiDialitica
          Height          =   240
          Index           =   39
          Left            =   240
-         TabIndex        =   95
-         Top             =   480
-         Width           =   2685
-      End
-      Begin VB.Label lblRitmoDialisiSettimanale 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   240
-         Left            =   3000
          TabIndex        =   94
          Top             =   480
-         Width           =   1215
+         Width           =   2685
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2213,7 +2237,7 @@ Private Sub PulisciTutto()
     chkDiuresiResidua.Value = Unchecked
     cmdTrova.SetFocus
     keyId = 0
-    lblRitmoDialisiSettimanale.Caption = ""
+    'lblRitmoDialisiSettimanale.Caption = ""
     blnModificato = False
 End Sub
 
@@ -2260,12 +2284,12 @@ End Function
 
 Private Sub cmdStampaSintetica_Click()
     
-If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
+'If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Then
     
     Dim strSqlStampa As String
     Dim strSql As String
     Dim i As Integer
-    Dim intNumeroGiorni As Integer
+    'Dim intNumeroGiorni As Integer
     Dim strGiorni As String
     Dim intCodiceID As Integer
     
@@ -2403,6 +2427,13 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.s
             Else
                 .Fields("EMOGRUPPO") = "- -"
             End If
+            
+            If IsNull(rsDataset("RITMO_DIALITICO")) Then
+                .Fields("RITMO_SETTIMANALE") = "- -"
+            Else
+                .Fields("RITMO_SETTIMANALE") = rsDataset("RITMO_DIALITICO") & " Sedute"
+            End If
+            
             .Fields("METODICA_DIALITICA") = rsDataset("TIPI_DIALISI.NOME")
             .Fields("DIALIZZATORE") = rsDataset("F.NOME")
             .Fields("SODIO") = rsDataset("SODIO")
@@ -2655,15 +2686,15 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.s
             .Fields("PRESS_ARTER_POST_DIAL") = rsDataset("PA_MIN5") & "/" & rsDataset("PA_MAX5")
             .Fields("MONITOR_EMODIALISI") = rsDataset("MODELLO")
                        
-            intNumeroGiorni = 0
+            'intNumeroGiorni = 0
             strGiorni = ""
             For i = 1 To 7
                 If rsDataset("AM_INIZIO" & i) <> "" Or rsDataset("PM_INIZIO" & i) <> "" Or rsDataset("SR_INIZIO" & i) <> "" Then
-                    intNumeroGiorni = intNumeroGiorni + 1
+            '        intNumeroGiorni = intNumeroGiorni + 1
                     strGiorni = strGiorni & UCase(Mid(WeekdayName(i), 1, 1)) & Mid(WeekdayName(i), 2, Len(WeekdayName(i))) & " "
                 End If
             Next
-            .Fields("RITMO_SETTIMANALE") = intNumeroGiorni
+            '.Fields("RITMO_SETTIMANALE") = intNumeroGiorni
             .Fields("GIORNI_DIALISI") = strGiorni
         Else
             .Fields("PESO_PRE_DIALISI") = "- -"
@@ -2671,7 +2702,7 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.s
             .Fields("PRESS_ARTER_PRE_DIAL") = "- -"
             .Fields("PRESS_ARTER_POST_DIAL") = "- -"
             .Fields("DIALIZZATORE") = "- -"
-            .Fields("RITMO_SETTIMANALE") = "- -"
+            '.Fields("RITMO_SETTIMANALE") = "- -"
             .Fields("GIORNI_DIALISI") = "- -"
         End If
         rsDataset.Close
@@ -2685,11 +2716,11 @@ If structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.s
     rptCartellaDialiticaMaddaloni.Sections("Intestazione").Controls.Item("lblCodiceID").Caption = intCodiceID
     rptCartellaDialiticaMaddaloni.PrintReport True, rptRangeAllPages
 
-Else
+'Else
 
     MsgBox "MODULO OPZIONALE A RICHIESTA", vbInformation, "INFORMAZIONE"
 
-End If
+'End If
 
 End Sub
 
@@ -2752,7 +2783,7 @@ Private Sub cmdMemorizza_Click()
                      "DATA_FILTRO", "DATA_LINEE", "FLUSSO", "FLUSSO_SANGUE", "SOL_INF_CC", "EPO", _
                      "UI", "NOTE", "CARTUCCIA", "TIPO_FILTRO", "ACCESSO_VASCOLARE", "AGO1", _
                      "AGO2", "TIPO_DIALISI", "ANTICOAGULANTE1", "ANTICOAGULANTE2", "TIPO_LINEE", "SOL_DIALITICA", _
-                     "SOL_INFUSIONALE", "DOSI_UNITA_MISURA", "UNITA_VAL_SOL_INF", "GLUCOSIO", "CODICE_PRESTAZIONE")
+                     "SOL_INFUSIONALE", "DOSI_UNITA_MISURA", "UNITA_VAL_SOL_INF", "GLUCOSIO", "CODICE_PRESTAZIONE", "RITMO_DIALITICO")
             
             If Not modifica Then
                 keyId = GetNumero("ANAMNESI_DIALITICHE")
@@ -2763,7 +2794,7 @@ Private Sub cmdMemorizza_Click()
                     txtBicarbonato, txtCalcio, txtDose(0), txtDose(1), txtDose(2), txtDose(3), txtOre, _
                     txtMinuti, oData(0).data, oData(1).data, oData(2).data, txtFlusso, txtFlussoSangue, _
                     txtSolInfCc, cboEPO.ListIndex, txtUI, IIf(txtNote = "", " ", txtNote), _
-                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, cboDosiUnitaMisura.ListIndex, cboUnit‡ValoreInfusionale.ListIndex, txtGlucosio, cboCodicePrestaione.ItemData(cboCodicePrestaione.ListIndex))
+                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, cboDosiUnitaMisura.ListIndex, cboUnit‡ValoreInfusionale.ListIndex, txtGlucosio, cboCodicePrestaione.ItemData(cboCodicePrestaione.ListIndex), txtRitmoDialitico)
                     
             If cboCartuccia.ListIndex <> -1 Then v_Val(26) = cboCartuccia.ItemData(cboCartuccia.ListIndex)
             If cboTipoFiltro.ListIndex <> -1 Then v_Val(27) = cboTipoFiltro.ItemData(cboTipoFiltro.ListIndex)
@@ -2888,6 +2919,7 @@ Private Sub CaricaPaziente()
         keyId = rsAnamnesiDialitica("KEY")
         modifica = True
         ' carica i dati della scheda dialitica
+        txtRitmoDialitico = rsAnamnesiDialitica("RITMO_DIALITICO") & ""
         chkDiuresiResidua.Value = IIf(CBool(rsAnamnesiDialitica("DIURESI")) = True, Checked, Unchecked)
         txtAumentoPond = VirgolaOrPunto(rsAnamnesiDialitica("AUMENTO_POND"), ",")
         txtQuantita = VirgolaOrPunto(rsAnamnesiDialitica("QUANTITA"), ",")
@@ -3021,44 +3053,44 @@ Private Sub cmdTrova_Click()
         Else
             intPazientiKey = tTrova.keyReturn
             Call CaricaPaziente
-            Call RitmoDialisiSettimanale
+            'Call RitmoDialisiSettimanale
         End If
     End If
 End Sub
 
-Private Sub RitmoDialisiSettimanale()
-    Dim rsDataset As Recordset
-    Dim strSql As String
-    Dim i As Integer
-    Dim NumeroDialisiSettimanale As Integer
+'Private Sub RitmoDialisiSettimanale()
+'    Dim rsDataset As Recordset
+'    Dim strSql As String
+'    Dim i As Integer
+'    Dim NumeroDialisiSettimanale As Integer
     
-    Set rsDataset = New Recordset
+'    Set rsDataset = New Recordset
     
-    strSql = "  SELECT      TOP 1 * " & _
-             "   FROM        ((SCHEDE_DIALISI " & _
-             "               INNER JOIN TURNI ON SCHEDE_DIALISI.CODICE_PAZIENTE=TURNI.CODICE_PAZIENTE) " & _
-             "               INNER JOIN APPARATI ON TURNI.CODICE_RENE=APPARATI.KEY) " & _
-             "   WHERE       SCHEDE_DIALISI.CODICE_PAZIENTE=" & intPazientiKey & " AND ERRATA=FALSE " & _
-             "   ORDER BY    DATA DESC"
-    rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    strSql = "  SELECT      TOP 1 * " & _
+'             "   FROM        ((SCHEDE_DIALISI " & _
+'             "               INNER JOIN TURNI ON SCHEDE_DIALISI.CODICE_PAZIENTE=TURNI.CODICE_PAZIENTE) " & _
+'             "               INNER JOIN APPARATI ON TURNI.CODICE_RENE=APPARATI.KEY) " & _
+'             "   WHERE       SCHEDE_DIALISI.CODICE_PAZIENTE=" & intPazientiKey & " AND ERRATA=FALSE " & _
+'             "   ORDER BY    DATA DESC"
+'    rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         
-        If Not (rsDataset.EOF And rsDataset.BOF) Then
-            For i = 1 To 7
-                If rsDataset("AM_INIZIO" & i) <> "" Or rsDataset("PM_INIZIO" & i) <> "" Or rsDataset("SR_INIZIO" & i) <> "" Then
-                    NumeroDialisiSettimanale = NumeroDialisiSettimanale + 1
-                End If
-            Next
-            lblRitmoDialisiSettimanale.Caption = NumeroDialisiSettimanale & " sedute"
-        Else
-            lblRitmoDialisiSettimanale.Caption = "- -"
-        End If
+'        If Not (rsDataset.EOF And rsDataset.BOF) Then
+'            For i = 1 To 7
+'                If rsDataset("AM_INIZIO" & i) <> "" Or rsDataset("PM_INIZIO" & i) <> "" Or rsDataset("SR_INIZIO" & i) <> "" Then
+'                    NumeroDialisiSettimanale = NumeroDialisiSettimanale + 1
+'                End If
+'            Next
+'            lblRitmoDialisiSettimanale.Caption = NumeroDialisiSettimanale & " sedute"
+'        Else
+'            lblRitmoDialisiSettimanale.Caption = "- -"
+'        End If
         
-    rsDataset.Close
-    Set rsDataset = Nothing
+'    rsDataset.Close
+'    Set rsDataset = Nothing
     
     ' Azzero la variabile per evitare di caricare lo stesso valore
-    NumeroDialisiSettimanale = 0
-End Sub
+'    NumeroDialisiSettimanale = 0
+'End Sub
 
 Private Sub tabSchede_Click(PreviousTab As Integer)
     cboTipoDialisi.SelLength = 0

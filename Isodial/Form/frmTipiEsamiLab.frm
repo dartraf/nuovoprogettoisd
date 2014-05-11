@@ -468,7 +468,7 @@ Private Sub AggiornaEsamiLab(codiceGruppoVecchio As Integer, codiceGruppoNuovo A
     Dim cmCommand As New Command
     Dim codiceAnamnesi As Integer
     Dim codiceAnamnesiSostituta As Integer
-    Dim keyEsame As Integer
+    Dim keyEsame As Long
     Dim strSql As String
     Dim strSqlInsert As String
     Dim tempo As Single

@@ -1616,7 +1616,7 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
                 "       NEW adVarChar (50) as SOL_INFUSIONALE, " & _
                 "       NEW adSingle as VALORE_CC, " & _
                 "       NEW adVarChar (50) as CARTUCCIA, " & _
-                "       NEW adInteger as SEDUTE, " & _
+                "       NEW adVarChar (3) as SEDUTE, " & _
                 "       NEW adVarChar (10) as EPO, " & _
                 "       NEW adVarChar (10) as UI, " & _
                 "       NEW adLongVarChar as NOTE, " & _
@@ -1663,7 +1663,11 @@ Public Sub StampaQuartaParte(formPazienti As Boolean, codicePaziente As Integer,
     If Not (rsTabelle.EOF And rsTabelle.BOF) Then
         With rsMain
             .AddNew
-            .Fields("SEDUTE") = rsTabelle("RITMO_DIALITICO")
+            If rsTabelle("RITMO_DIALITICO") = 0 Then
+                .Fields("SEDUTE") = "- -"
+            Else
+                .Fields("SEDUTE") = rsTabelle("RITMO_DIALITICO")
+            End If
             .Fields("DIURESI") = CBool(rsTabelle("DIURESI"))
             .Fields("QUANTITA") = rsTabelle("QUANTITA")
             .Fields("AUMENTO") = rsTabelle("AUMENTO_POND")

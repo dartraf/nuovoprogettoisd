@@ -718,9 +718,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item22 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtRitmoSettimanale"
-         Object.Left            =   1871
-         Object.Top             =   5102
-         Object.Width           =   1134
+         Object.Left            =   2460
+         Object.Top             =   5120
+         Object.Width           =   1125
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -747,7 +747,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "Label53"
          Object.Top             =   5104
-         Object.Width           =   1875
+         Object.Width           =   2420
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -758,7 +758,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Ritmo settimanale"
+         Object.Caption         =   "Ritmo dialisi settimanale"
       EndProperty
       ItemType24      =   3
       BeginProperty Item24 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -783,7 +783,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtDurataSeduta"
          Object.Left            =   1984
-         Object.Top             =   5613
+         Object.Top             =   5630
          Object.Width           =   1635
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -811,7 +811,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtAccessoVascolare"
          Object.Left            =   1928
-         Object.Top             =   6123
+         Object.Top             =   6140
          Object.Width           =   3855
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -857,7 +857,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtMonitorEmodialisi"
          Object.Left            =   2438
-         Object.Top             =   7144
+         Object.Top             =   7160
          Object.Width           =   3060
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -903,7 +903,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtDializzatore"
          Object.Left            =   6803
-         Object.Top             =   7144
+         Object.Top             =   7160
          Object.Width           =   3000
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -968,7 +968,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtEparinizzazione"
          Object.Left            =   1644
-         Object.Top             =   8164
+         Object.Top             =   8180
          Object.Width           =   1365
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1107,7 +1107,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtQb"
          Object.Left            =   7597
-         Object.Top             =   8164
+         Object.Top             =   8180
          Object.Width           =   555
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1134,9 +1134,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item40 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   3347
-         Object.Top             =   5103
-         Object.Width           =   1590
+         Object.Left            =   3670
+         Object.Top             =   5102
+         Object.Width           =   1580
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1153,9 +1153,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
       BeginProperty Item41 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtGiorniDialisi"
-         Object.Left            =   5046
-         Object.Top             =   5103
-         Object.Width           =   4590
+         Object.Left            =   5320
+         Object.Top             =   5120
+         Object.Width           =   4500
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1631,7 +1631,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtMetodicaDialitica"
          Object.Left            =   5613
-         Object.Top             =   5613
+         Object.Top             =   5630
          Object.Width           =   3960
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1659,7 +1659,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtNumeroAghi"
          Object.Left            =   2551
-         Object.Top             =   6633
+         Object.Top             =   6650
          Object.Width           =   6360
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1723,7 +1723,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtSodio"
          Object.Left            =   2948
-         Object.Top             =   7654
+         Object.Top             =   7670
          Object.Width           =   1125
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1751,7 +1751,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtPotassio"
          Object.Left            =   4590
-         Object.Top             =   7654
+         Object.Top             =   7670
          Object.Width           =   915
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1798,7 +1798,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtGlucosio"
          Object.Left            =   8334
-         Object.Top             =   7654
+         Object.Top             =   7670
          Object.Width           =   960
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1845,7 +1845,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtCalcio"
          Object.Left            =   6180
-         Object.Top             =   7654
+         Object.Top             =   7670
          Object.Width           =   1125
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1911,7 +1911,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtQd"
          Object.Left            =   9298
-         Object.Top             =   8164
+         Object.Top             =   8180
          Object.Width           =   570
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2351,7 +2351,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtSedeAccesso"
          Object.Left            =   7540
-         Object.Top             =   6124
+         Object.Top             =   6140
          Object.Width           =   2265
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2417,7 +2417,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtDoseIniziale"
          Object.Left            =   3969
-         Object.Top             =   8164
+         Object.Top             =   8180
          Object.Width           =   960
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -2445,7 +2445,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaDialiticaMaddaloni
          _Version        =   393216
          Name            =   "txtDoseIntermedia"
          Object.Left            =   5784
-         Object.Top             =   8164
+         Object.Top             =   8180
          Object.Width           =   795
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 

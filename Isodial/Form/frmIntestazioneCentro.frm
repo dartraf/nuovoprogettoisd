@@ -541,8 +541,9 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   255
          Index           =   2
-         Left            =   5760
+         Left            =   5800
          TabIndex        =   44
+         ToolTipText     =   "Cerca Logo Aziendale"
          Top             =   1200
          Visible         =   0   'False
          Width           =   255
@@ -560,8 +561,9 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   255
          Index           =   1
-         Left            =   5760
+         Left            =   5800
          TabIndex        =   43
+         ToolTipText     =   "Cerca Logo Grande"
          Top             =   720
          Width           =   255
       End
@@ -578,8 +580,9 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   5760
+         Left            =   5800
          TabIndex        =   42
+         ToolTipText     =   "Cerca Logo Piccolo"
          Top             =   240
          Width           =   255
       End
@@ -650,7 +653,7 @@ Begin VB.Form frmIntestazioneCentro
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   6120
+         Left            =   6240
          TabIndex        =   35
          Top             =   240
          Width           =   1215
@@ -667,7 +670,7 @@ Begin VB.Form frmIntestazioneCentro
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   6120
+         Left            =   6240
          TabIndex        =   34
          Top             =   1200
          Visible         =   0   'False
@@ -685,14 +688,14 @@ Begin VB.Form frmIntestazioneCentro
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   6120
+         Left            =   6240
          TabIndex        =   33
          Top             =   720
          Width           =   1215
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Logo qualità"
+         Caption         =   "Logo Grande"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -707,11 +710,11 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   120
          TabIndex        =   38
          Top             =   720
-         Width           =   1305
+         Width           =   1365
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Logo aziendale"
+         Caption         =   "Logo Aziendale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -727,11 +730,11 @@ Begin VB.Form frmIntestazioneCentro
          TabIndex        =   37
          Top             =   1200
          Visible         =   0   'False
-         Width           =   1620
+         Width           =   1635
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Logo ISO9000"
+         Caption         =   "Logo Piccolo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -746,7 +749,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   120
          TabIndex        =   36
          Top             =   240
-         Width           =   1455
+         Width           =   1380
       End
    End
    Begin VB.Frame Frame4 
@@ -975,6 +978,8 @@ Private Sub cmdScegli_Click(Index As Integer)
 gestione:
     If Err.Number = cdlCancel Then
         Exit Sub
+    ElseIf Err.Number = 70 Then
+        MsgBox "SELEZIONE NON PERMESSA dalla cartella di installazione del software", vbCritical, "ATTENZIONE!!!"
     Else
         MsgBox "Descrizione: " & Err.Description, vbCritical, "Errore n# " & Err.Number
     End If

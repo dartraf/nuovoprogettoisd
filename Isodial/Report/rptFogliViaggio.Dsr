@@ -30,7 +30,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
    RightMargin     =   1440
    TopMargin       =   1440
    BottomMargin    =   1440
-   _Settings       =   31
+   _Settings       =   30
    NumSections     =   5
    SectionCode0    =   1
    BeginProperty Section0 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -534,9 +534,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
-         Object.Left            =   1020
+         Object.Left            =   510
          Object.Top             =   7200
-         Object.Width           =   1470
+         Object.Width           =   2445
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -547,7 +547,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "IL SANITARIO"
       EndProperty
       ItemType18      =   3
       BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -566,7 +565,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "L'ASSISTITO A CONFERMA"
+         Object.Caption         =   "IL SANITARIO"
+         Alignment       =   2
       EndProperty
       ItemType19      =   5
       BeginProperty Item19 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -673,7 +673,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it"
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it"
       EndProperty
    EndProperty
    SectionCode4    =   8

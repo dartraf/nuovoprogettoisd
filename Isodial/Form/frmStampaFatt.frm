@@ -460,6 +460,9 @@ Private Sub Form_Load()
         
         Case tpFOGLIOVIAGGIO
             Me.Caption = Me.Caption & "fogli di viaggio"
+            lblDatadiStampa(5).Enabled = False
+            lblData.Enabled = False
+            picData.Visible = False
             cboAnno.AddItem Year(Now)
             cboAnno.AddItem Year(Now) - 1
             
@@ -603,84 +606,19 @@ Private Sub StampaFogliViaggio()
             rptFogliViaggio.RightMargin = rptFogliViaggio.RightMargin / 3
             
             rptFogliViaggio.Sections("pie").Controls.Item("lblLuogo").Caption = structIntestazione.sCitta & " lì, " & GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
+            
+            If structIntestazione.sCodiceSTS = CODICESTS_S_LUCA Then
+                rptFogliViaggio.Sections("corpo").Controls.Item("Label15").Caption = ""
+                rptFogliViaggio.Sections("corpo").Controls.Item("Line2").Visible = False
+            Else
+                rptFogliViaggio.Sections("corpo").Controls.Item("Label15").Caption = "L'ASSISTITO A CONFERMA"
+            End If
+
             rptFogliViaggio.PrintReport True, rptRangeAllPages
         Else
             MsgBox "Nessuna dialisi per il mese di " & cboMese, vbCritical, Me.Caption
         End If
     End If
-End Sub
-
-'' Calcola quanti giorni (lun, mar, merc...) ci sono in un mese
-Private Sub CalcolaGiorni()
-    Dim i As Integer
-    Dim j As Integer
-    Dim tipoGiorno As Integer
-    
-    For i = 1 To 7
-        tipoGiorno = Weekday(DateValue(i & "/" & cboMese.ListIndex + 1 & "/" & cboAnno.Text), vbMonday)
-        j = i
-        v_giorni(tipoGiorno) = 0
-        Do While Not j > Day(GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text))
-            v_giorni(tipoGiorno) = v_giorni(tipoGiorno) + 1
-            j = j + 7
-        Loop
-        'Debug.Print tipoGiorno & " - " & v_giorni(tipoGiorno)
-    Next i
-End Sub
-
-'' Calcola il num di dialisi da effettuare nel mese selezionato
-' andando a controllare i turni
-' @param key indice del paziente
-Private Function GetNumeroDialisiFuture(key As Integer) As Integer
-    Dim rsDataset As New Recordset
-    Dim totale As Integer
-    Dim i As Integer
-    
-    rsDataset.Open "SELECT * FROM TURNI WHERE CODICE_PAZIENTE=" & key, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If Not (rsDataset.EOF And rsDataset.BOF) Then
-        For i = 1 To 7
-            If rsDataset("AM_INIZIO" & i) <> "" Or rsDataset("PM_INIZIO" & i) <> "" Or rsDataset("SR_INIZIO" & i) <> "" Then
-                totale = totale + v_giorni(i)
-            End If
-        Next i
-    End If
-    rsDataset.Close
-    Set rsDataset = Nothing
-    
-    GetNumeroDialisiFuture = totale
-End Function
-
-Private Sub CaricaFlx()
-    Dim rsPazienti As New Recordset
-    Dim strSingoloPaziente As String
-    
-    If cboMese.ListIndex = -1 Then Exit Sub
-    
-    Call CalcolaGiorni
-    flxGriglia.Rows = 1
-    If chkTutti.Value = Unchecked Then
-        strSingoloPaziente = " AND KEY=" & intPazientiKey
-    End If
-    
-    rsPazienti.Open "SELECT NOME, COGNOME, KEY FROM PAZIENTI WHERE (STATO=0) " & strSingoloPaziente & " ORDER BY COGNOME, NOME", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
-    Do While Not rsPazienti.EOF
-    
- '    elimina paziente con zero dialisi
-        If GetNumeroDialisiFuture(rsPazienti("KEY")) = 0 Then
-            rsPazienti.MoveNext
-        End If
-    
-        With flxGriglia
-            .Rows = .Rows + 1
-            .TextMatrix(.Rows - 1, 0) = rsPazienti("KEY")
-            .TextMatrix(.Rows - 1, 1) = rsPazienti("COGNOME") & " " & rsPazienti("NOME")
-            .TextMatrix(.Rows - 1, 2) = GetNumeroDialisiFuture(rsPazienti("KEY"))
-            .TextMatrix(.Rows - 1, 3) = cboCodici.Text
-        End With
-        rsPazienti.MoveNext
-    Loop
-    rsPazienti.Close
-    Set rsPazienti = Nothing
 End Sub
 
 Private Sub StampaModuloFirmePaziente()
@@ -748,25 +686,12 @@ End Sub
 
 Private Sub cmdTrova_Click()
     tTrova.Tipo = tpPAZIENTE
-    If tStampa = tpKTVANNUALE Or tStampa = tpTSATANNUALE Then
-        tTrova.condStato = "(-1)"
-        If cboStato.ListIndex = cboStato.ListCount - 1 Then
-            tTrova.condizione = " NOT STATO=-1 "
-        Else
-            tTrova.condizione = "STATO= " & cboStato.ItemData(cboStato.ListIndex)
-        End If
-    Else
-        tTrova.condStato = ""
-        tTrova.condizione = ""
-    End If
+    tTrova.condStato = ""
+    tTrova.condizione = ""
     frmTrova.Show 1
     If tTrova.keyReturn <> -1 Then
-        If intPazientiKey = tTrova.keyReturn Then
-            Call CaricaFlx
-        Else
-            intPazientiKey = tTrova.keyReturn
-            Call CaricaPaziente
-        End If
+        intPazientiKey = tTrova.keyReturn
+        Call CaricaPaziente
     End If
 End Sub
 
@@ -788,90 +713,7 @@ Private Sub chkTutti_Click()
         intPazientiKey = 0
         lblCognome = ""
         lblNome = ""
-        Call CaricaFlx
     End If
-End Sub
-
-Private Sub cboMese_Click()
-    If tStampa = tpIMPEGNATIVE Then
-        Call CaricaFlx
-    End If
-End Sub
-
-Private Sub cboPrestazioni_Click()
-    flxGriglia.TextMatrix(vRow, 3) = cboPrestazioni.Text
-    cboPrestazioni.Visible = False
-End Sub
-
-Private Sub flxGriglia_Click()
-    flxGriglia.SetFocus
-    If VerificaClickFlx(flxGriglia) = False Then
-        ' discolora
-        Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1, True)
-        ' annulla le row e col
-        flxGriglia.Row = 0
-        flxGriglia.Col = 0
-    Else
-        vRow = flxGriglia.Row
-        Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
-    End If
-End Sub
-
-Private Sub flxGriglia_KeyPress(KeyAscii As Integer)
-    Dim i As Integer
-    
-    If flxGriglia.Rows = 1 Then Exit Sub
-    If flxGriglia.Row = flxGriglia.Rows - 1 Then
-        i = 1
-    Else
-        i = flxGriglia.Row + 1
-    End If
-    Do
-        If UCase(Mid(flxGriglia.TextMatrix(i, 1), 1, 1)) = UCase(Chr(KeyAscii)) Then
-            flxGriglia.Row = i
-            If i >= 10 Or flxGriglia.TopRow > 10 Then
-                flxGriglia.TopRow = i
-            End If
-            Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
-            Exit Do
-        End If
-        If i = flxGriglia.Rows - 1 Then
-            i = 1
-        Else
-            i = i + 1
-        End If
-    Loop Until i = flxGriglia.Row
-End Sub
-
-Private Sub flxGriglia_Scroll()
-    If txtAppo.Visible Then
-        txtAppo.Top = flxGriglia.rowPos(flxGriglia.Row) + flxGriglia.Top + 45
-    End If
-    If cboPrestazioni.Visible Then
-        cboPrestazioni.Top = flxGriglia.rowPos(flxGriglia.Row) + flxGriglia.Top + 45
-    End If
-End Sub
-
-Private Sub flxGriglia_DblClick()
-    ' fase di modifica
-    If VerificaClickFlx(flxGriglia) = False Then Exit Sub
-    With flxGriglia
-        .SetFocus
-        If .Col = 2 Then
-            txtAppo.Left = .colPos(.Col) + .Left + 45
-            txtAppo.Top = .rowPos(.Row) + .Top + 45
-            txtAppo.Width = .ColWidth(.Col)
-            txtAppo.Text = .TextMatrix(.Row, .Col)
-            txtAppo.Visible = True
-            txtAppo.SetFocus
-        ElseIf .Col = 3 Then
-            cboPrestazioni.Left = .colPos(.Col) + .Left + 45
-            cboPrestazioni.Top = .rowPos(.Row) + .Top + 45
-            cboPrestazioni.ListIndex = GetIndex(cboPrestazioni, .TextMatrix(.Row, .Col))
-            cboPrestazioni.Visible = True
-            cboPrestazioni.SetFocus
-        End If
-    End With
 End Sub
 
 Private Sub CaricaPaziente()
@@ -884,7 +726,6 @@ Private Sub CaricaPaziente()
     lblNome = rsDataset("NOME")
     Set rsDataset = Nothing
     chkTutti.Value = Unchecked
-    Call CaricaFlx
 End Sub
 
 Private Sub lblData_Click()
@@ -903,29 +744,5 @@ End Sub
 
 Private Sub picData_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     picData.Picture = LoadResPicture("cal1", 0)
-End Sub
-
-Private Sub txtAppo_KeyPress(KeyAscii As Integer)
-    Select Case KeyAscii
-        Case Asc("0") To Asc("9"), vbKeyBack
-        Case vbKeyReturn
-            flxGriglia.SetFocus
-        Case Else
-            Beep
-            KeyAscii = 0
-    End Select
-End Sub
-
-Private Sub txtAppo_LostFocus()
-    txtAppo.Visible = False
-    If (flxGriglia.TextMatrix(vRow, 2)) <> (txtAppo) Then
-        If txtAppo = "" Then
-            MsgBox "Impossibile memorizzare dati vuoti", vbCritical, "Attenzione"
-            flxGriglia.Row = vRow
-            Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
-            Exit Sub
-        End If
-        flxGriglia.TextMatrix(vRow, 2) = (txtAppo.Text)
-    End If
 End Sub
 

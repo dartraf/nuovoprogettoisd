@@ -139,7 +139,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
       Name            =   "corpo"
       Object.Height          =   6930
       ForcePageBreak  =   2
-      NumControls     =   18
+      NumControls     =   17
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -298,7 +298,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
          Name            =   "Label2"
          Object.Left            =   30
          Object.Top             =   3615
-         Object.Width           =   2835
+         Object.Width           =   2715
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -371,44 +371,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
       ItemType10      =   3
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label1"
-         Object.Left            =   2895
-         Object.Top             =   3615
-         Object.Width           =   1815
-         Object.Height          =   360
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "una sola ricetta"
-      EndProperty
-      ItemType11      =   3
-      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label9"
-         Object.Left            =   4695
-         Object.Top             =   3615
-         Object.Width           =   3015
-         Object.Height          =   345
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "completa di codice fiscale,"
-      EndProperty
-      ItemType12      =   3
-      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label3"
          Object.Left            =   2895
          Object.Top             =   2940
@@ -425,8 +387,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
          EndProperty
          Object.Caption         =   "per il mese di"
       EndProperty
-      ItemType13      =   4
-      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType11      =   4
+      BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtCodiceEsenzione"
          Object.Left            =   2310
@@ -454,8 +416,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType12      =   3
+      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
          Object.Left            =   2865
@@ -473,8 +435,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
          EndProperty
          Object.Caption         =   "se assegnato e del timbro riportante il codice regionale del medico."
       EndProperty
-      ItemType15      =   3
-      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
          Object.Left            =   7020
@@ -493,8 +455,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
          Object.Caption         =   "Cordiali Saluti"
          Alignment       =   2
       EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblLì"
          Object.Left            =   30
@@ -511,8 +473,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType17      =   3
-      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   3
+      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
          Object.Left            =   6330
@@ -529,6 +491,24 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
             Strikethrough   =   0   'False
          EndProperty
          Object.Caption         =   ", affetto/a da insufficienza renale"
+      EndProperty
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblQtRicetta"
+         Object.Left            =   2835
+         Object.Top             =   3615
+         Object.Width           =   4230
+         Object.Height          =   345
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -554,7 +534,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptImpegnativeDialisi
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
    EndProperty
    SectionCode4    =   8
@@ -596,15 +576,10 @@ With Me
        
         With .Sections("corpo").Controls
             .Item("txtPaziente").DataField = "PAZIENTE"
-            
             .Item("txtTotaleDialisi").DataField = "TOTALE_DIALISI"
             .Item("txtTipoDialisi").DataField = "TIPO_DIALISI"
-            
             .Item("txtCodiceNom").DataField = "CODICE_NOM"
-            
             .Item("txtCodiceEsenzione").DataField = "CODICE_ESENZIONE"
-            
-            
         End With
     End With
 End Sub

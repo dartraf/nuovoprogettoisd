@@ -722,6 +722,13 @@ Private Sub cmdStampa_Click()
         
         Set rptImpegnativeDialisi.DataSource = rsMain
         rptImpegnativeDialisi.Sections("corpo").Controls.Item("lblMeseAnno").Caption = cboMese & " " & cboAnno
+        
+        If structIntestazione.sCodiceSTS = CODICESTS_S_LUCA Then
+            rptImpegnativeDialisi.Sections("corpo").Controls.Item("lblQtRicetta").Caption = "due ricette complete di codice fiscale,"
+        Else
+            rptImpegnativeDialisi.Sections("corpo").Controls.Item("lblQtRicetta").Caption = "una sola ricetta completa di codice fiscale,"
+        End If
+
         rptImpegnativeDialisi.Sections("corpo").Controls.Item("lblLì").Caption = structIntestazione.sCitta & " lì, " & lblData
         rptImpegnativeDialisi.PrintReport True, rptRangeAllPages
     End If

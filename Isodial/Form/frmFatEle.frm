@@ -1265,6 +1265,55 @@ Option Explicit
 Dim rsDataset As Recordset
 Dim modifica As Boolean
 
+Private Sub cmdMemorizza_Click()
+    'If Completo Then
+        Call MemorizzaIntestazione
+        Call MemorizzaFattura
+        MsgBox "I dati sono stati memorizzati nell'archivio", vbInformation, "Informazioni"
+    'End If
+End Sub
+
+Private Sub MemorizzaIntestazione()
+    Dim v_Val() As Variant
+    Dim v_nome() As Variant
+    
+    v_nome = Array("KEY", "RAGIONE_SOCIALE", "INDIRIZZO", "CAP", "CITTA", "PROV", "CODICE_FISCALE", "IVA")
+    v_Val = Array(1, txtRagione, txtIndirizzo, txtCap, txtCitta, txtProv, txtCodiceFiscale, txtIva)
+    Set rsDataset = New Recordset
+    rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+        If modifica Then
+            rsDataset.Update v_nome, v_Val
+        Else
+            rsDataset.AddNew v_nome, v_Val
+            rsDataset.Update
+        End If
+    Set rsDataset = Nothing
+    Call CaricaVarPublic
+    
+End Sub
+
+Private Sub MemorizzaFattura()
+    Dim v_Val() As Variant
+    Dim v_nome() As Variant
+    Dim strIban As String
+    
+    strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
+    v_nome = Array("KEY", "CODICE_ASL", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN")
+    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban)
+        
+    Set rsDataset = New Recordset
+    rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+        If modifica Then
+            rsDataset.Update v_nome, v_Val
+        Else
+            rsDataset.AddNew v_nome, v_Val
+            rsDataset.Update
+        End If
+    Set rsDataset = Nothing
+    'Call CaricaVarPublic
+    
+End Sub
+
 Private Sub Form_Activate()
     Call CaricaIntestazione
     Call CaricaParametriFattura
@@ -1310,13 +1359,7 @@ Dim strSql As String
         txtProvFattura = rsDataset("PROV")
         txtPartitaIvaFattura = rsDataset("P_IVA")
         txtCodFiscaleFattura = rsDataset("CODICE_FISCALE")
-        'txtDicitura = rsDataset("DICITURA")
-        'txtImportoTicket.Text = rsDataset("TICKET")
-        'txtQuotaAggiuntiva.Text = rsDataset("QUOTA_AGGIUNTIVA")
-        'txtQuotaNazionale.Text = rsDataset("QUOTA_NAZIONALE")
         txtIntestatario = rsDataset("INTESTATARIO_CC")
-        'txtRimborsoSpeseViaggio.Text = rsDataset("RIMBORSO_SPESE_VIAGGIO")
-        'txtImportoBollo.Text = rsDataset("IMPORTO_BOLLO")
         strIban = rsDataset("IBAN")
         txtIbanAlfa(0) = Mid(strIban, 1, 2)
         txtIbanNum(0) = Mid(strIban, 3, 2)

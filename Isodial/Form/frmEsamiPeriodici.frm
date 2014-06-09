@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmEsamiPeriodici 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Esami periodici in ED"
@@ -968,7 +968,7 @@ Private Sub cmdStampa_Click()
     Else
         Dim lfrmEsamiPeriodiciStampa As New frmEsamiPeriodiciStampa
         lfrmEsamiPeriodiciStampa.Show 1
-    
+
         If Not lfrmEsamiPeriodiciStampa.blnStampa Then Exit Sub
 
         Dim strPeriodo As String
@@ -978,7 +978,8 @@ Private Sub cmdStampa_Click()
         cdlStampa.CancelError = True
         cdlStampa.ShowPrinter
         Me.Refresh
-        If Not lfrmEsamiPeriodiciStampa.intTipoStampa = 1 Then
+
+          If Not lfrmEsamiPeriodiciStampa.intTipoStampa = 1 Then
             strPeriodo = ""
             If lfrmEsamiPeriodiciStampa.intPeriodo = tpMENSILE Then strPeriodo = strPeriodo & " PERIODO=" & tipoPeriodo.tpMENSILE & " OR "
             If lfrmEsamiPeriodiciStampa.intPeriodo = tpBIMESTRALE Then strPeriodo = strPeriodo & " PERIODO=" & tipoPeriodo.tpBIMESTRALE & " OR "
@@ -994,7 +995,7 @@ Private Sub cmdStampa_Click()
                 Call StartProgressBar(rsPazienti.RecordCount, 0, Me)
                 Do While Not rsPazienti.EOF
                     frmBarra.prgBar.Value = frmBarra.prgBar.Value + 1
-                    Call StampaPrescrizioni(intPazientiKey, strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata, lfrmEsamiPeriodiciStampa.MeseRichiestaStampa, lfrmEsamiPeriodiciStampa.AnnoRichiestaStampa, lfrmEsamiPeriodiciStampa.DataRichiestaStampa)
+                    Call StampaPrescrizioni(rsPazienti!key, strPeriodo, lfrmEsamiPeriodiciStampa.blnStampaDicituraImpostata, lfrmEsamiPeriodiciStampa.MeseRichiestaStampa, lfrmEsamiPeriodiciStampa.AnnoRichiestaStampa, lfrmEsamiPeriodiciStampa.DataRichiestaStampa)
                     rsPazienti.MoveNext
                 Loop
                 rsPazienti.Close

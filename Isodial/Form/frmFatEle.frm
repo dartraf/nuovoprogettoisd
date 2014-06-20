@@ -17,7 +17,7 @@ Begin VB.Form frmFatEle
    Begin VB.Frame Frame4 
       Height          =   1095
       Left            =   120
-      TabIndex        =   63
+      TabIndex        =   59
       Top             =   7560
       Width           =   7695
       Begin VB.CommandButton cmdMemorizza 
@@ -34,14 +34,14 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   4080
-         TabIndex        =   71
+         TabIndex        =   67
          Top             =   480
          Width           =   1380
       End
       Begin VB.TextBox txtProgrInvio 
          Height          =   285
          Left            =   2400
-         TabIndex        =   70
+         TabIndex        =   66
          Top             =   720
          Width           =   735
       End
@@ -58,14 +58,14 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   2040
          MaxLength       =   15
-         TabIndex        =   64
+         TabIndex        =   60
          Top             =   240
          Width           =   1815
       End
       Begin SuperTextBox.uSuperTextBox txtImportoBollo 
          Height          =   285
          Left            =   5880
-         TabIndex        =   65
+         TabIndex        =   61
          Top             =   240
          Width           =   615
          _ExtentX        =   2138
@@ -89,7 +89,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   68
+         TabIndex        =   64
          Top             =   720
          Width           =   2295
       End
@@ -106,7 +106,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   120
-         TabIndex        =   67
+         TabIndex        =   63
          Top             =   120
          Width           =   1935
       End
@@ -124,7 +124,7 @@ Begin VB.Form frmFatEle
          Height          =   315
          Index           =   22
          Left            =   3960
-         TabIndex        =   66
+         TabIndex        =   62
          Top             =   240
          Width           =   1815
       End
@@ -405,7 +405,16 @@ Begin VB.Form frmFatEle
       TabIndex        =   15
       Top             =   3720
       Width           =   7695
-      Begin VB.TextBox Text9 
+      Begin VB.TextBox txtCodiceDestinatario 
+         BeginProperty DataFormat 
+            Type            =   0
+            Format          =   "0"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -418,7 +427,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   6720
          MaxLength       =   6
-         TabIndex        =   59
+         TabIndex        =   55
          Top             =   480
          Width           =   855
       End
@@ -501,7 +510,9 @@ Begin VB.Form frmFatEle
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
+         ItemData        =   "frmFatEle.frx":0000
          Left            =   1320
+         List            =   "frmFatEle.frx":0002
          Style           =   2  'Dropdown List
          TabIndex        =   18
          Top             =   480
@@ -554,7 +565,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   4800
-         TabIndex        =   58
+         TabIndex        =   54
          Top             =   480
          Width           =   1935
       End
@@ -725,10 +736,96 @@ Begin VB.Form frmFatEle
       TabIndex        =   0
       Top             =   0
       Width           =   7695
+      Begin VB.Frame Frame6 
+         BorderStyle     =   0  'None
+         Height          =   372
+         Left            =   1920
+         TabIndex        =   69
+         Top             =   2880
+         Width           =   1572
+         Begin VB.OptionButton Liquidaz_si 
+            Caption         =   "si"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.6
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   0
+            TabIndex        =   73
+            Top             =   120
+            Width           =   615
+         End
+         Begin VB.OptionButton Liquidaz_no 
+            Caption         =   "no"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.6
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   720
+            TabIndex        =   72
+            Top             =   120
+            Value           =   -1  'True
+            Width           =   615
+         End
+      End
+      Begin VB.Frame Frame5 
+         BorderStyle     =   0  'None
+         Height          =   372
+         Left            =   1680
+         TabIndex        =   68
+         Top             =   2520
+         Width           =   1932
+         Begin VB.OptionButton srlsi 
+            Caption         =   "si"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.6
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   240
+            TabIndex        =   71
+            Top             =   120
+            Width           =   615
+         End
+         Begin VB.OptionButton srlno 
+            Caption         =   "no"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.6
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   960
+            TabIndex        =   70
+            Top             =   120
+            Value           =   -1  'True
+            Width           =   615
+         End
+      End
       Begin SuperTextBox.uSuperTextBox txtCapSociale 
          Height          =   255
          Left            =   1920
-         TabIndex        =   69
+         TabIndex        =   65
          Top             =   3360
          Width           =   2055
          _ExtentX        =   2138
@@ -739,7 +836,7 @@ Begin VB.Form frmFatEle
          IsDecimal       =   -1  'True
          MaxLenght       =   15
       End
-      Begin VB.ComboBox Combo1 
+      Begin VB.ComboBox cboProvUffReg 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -749,13 +846,13 @@ Begin VB.Form frmFatEle
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   360
-         Left            =   4080
-         TabIndex        =   62
-         Top             =   2250
-         Width           =   975
+         Height          =   336
+         Left            =   3840
+         TabIndex        =   58
+         Top             =   2240
+         Width           =   852
       End
-      Begin VB.ComboBox Combo2 
+      Begin VB.ComboBox cboRegimeFiscale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   7.8
@@ -766,50 +863,16 @@ Begin VB.Form frmFatEle
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmFatEle.frx":0000
+         ItemData        =   "frmFatEle.frx":0004
          Left            =   5520
-         List            =   "frmFatEle.frx":000D
-         TabIndex        =   61
+         List            =   "frmFatEle.frx":0011
+         TabIndex        =   57
          Top             =   2955
          Width           =   2055
       End
-      Begin VB.OptionButton Liquidaz_no 
-         Caption         =   "no"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   2640
-         TabIndex        =   56
-         Top             =   3000
-         Value           =   -1  'True
-         Width           =   615
-      End
-      Begin VB.OptionButton Liquidaz_si 
-         Caption         =   "si"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1920
-         TabIndex        =   55
-         Top             =   3000
-         Width           =   615
-      End
-      Begin VB.CheckBox Check2 
+      Begin VB.CheckBox chkSocioPiu 
          Caption         =   "Più Soci"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -820,14 +883,14 @@ Begin VB.Form frmFatEle
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   5400
-         TabIndex        =   54
+         Left            =   5520
+         TabIndex        =   52
          Top             =   2640
-         Value           =   1  'Checked
          Width           =   1335
       End
-      Begin VB.CheckBox Check1 
+      Begin VB.CheckBox chkSocioUnico 
          Caption         =   "Socio Unico"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -838,46 +901,12 @@ Begin VB.Form frmFatEle
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   3720
-         TabIndex        =   53
+         Left            =   3840
+         TabIndex        =   51
          Top             =   2640
          Width           =   1815
       End
-      Begin VB.OptionButton srlno 
-         Caption         =   "no"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   2640
-         TabIndex        =   52
-         Top             =   2640
-         Width           =   615
-      End
-      Begin VB.OptionButton srlsi 
-         Caption         =   "si"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   1920
-         TabIndex        =   51
-         Top             =   2640
-         Width           =   615
-      End
-      Begin VB.TextBox Text7 
+      Begin VB.TextBox txtNumRea 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   7.8
@@ -1026,7 +1055,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   3840
-         TabIndex        =   60
+         TabIndex        =   56
          Top             =   2980
          Width           =   1695
       End
@@ -1043,7 +1072,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   100
-         TabIndex        =   57
+         TabIndex        =   53
          Top             =   3000
          Width           =   1695
       End
@@ -1104,7 +1133,7 @@ Begin VB.Form frmFatEle
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Ufficio Registrazione Società->Prov."
+         Caption         =   "Ufficio Registrazione Società->Prov.->"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -1116,10 +1145,10 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   100
+         Left            =   96
          TabIndex        =   41
          Top             =   2280
-         Width           =   3765
+         Width           =   3672
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -1265,10 +1294,9 @@ Option Explicit
 Dim rsDataset As Recordset
 Dim modifica As Boolean
 
-Private Function completo() As Boolean
+Private Function Completo() As Boolean
 Dim nome As String
-'INSERIRE I NUOVI CAMPO
-    completo = False
+    Completo = False
     
     If txtRagione.Text = "" Then
         nome = "RAGIONE SOCIALE"
@@ -1321,14 +1349,22 @@ Dim nome As String
         nome = "BOLLO SU FATTURA"
         
     Else
-        completo = True
+        Completo = True
         Exit Function
     End If
     MsgBox "Inserire i dati obbligatori" & vbCrLf & "Campo: " & nome, vbInformation, "Informazione"
 End Function
 
+Private Sub chkSocioPiu_GotFocus()
+    chkSocioUnico.Value = Unchecked
+End Sub
+
+Private Sub chkSocioUnico_GotFocus()
+    chkSocioPiu.Value = Unchecked
+End Sub
+
 Private Sub cmdMemorizza_Click()
-    If completo Then
+    If Completo Then
         Call MemorizzaIntestazione
         Call MemorizzaFattura
         MsgBox "I dati sono stati memorizzati nell'archivio", vbInformation, "Informazioni"
@@ -1339,8 +1375,8 @@ Private Sub MemorizzaIntestazione()
     Dim v_Val() As Variant
     Dim v_nome() As Variant
     
-    v_nome = Array("KEY", "RAGIONE_SOCIALE", "INDIRIZZO", "CAP", "CITTA", "PROV", "CODICE_FISCALE", "IVA")
-    v_Val = Array(1, txtRagione, txtIndirizzo, txtCap, txtCitta, txtProv, txtCodiceFiscale, txtIva)
+    v_nome = Array("KEY", "RAGIONE_SOCIALE", "INDIRIZZO", "CAP", "CITTA", "PROV", "CODICE_FISCALE", "IVA", "SRL", "SOCIO", "LIQUIDAZIONE", "REG_FISCALE", "NUM_REA")
+    v_Val = Array(1, txtRagione, txtIndirizzo, txtCap, txtCitta, txtProv, txtCodiceFiscale, txtIva, GestisciSrl, GestisciSocio, LiquidazioneSiNo, GestisciRegimeFiscale, txtNumRea)
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
         If modifica Then
@@ -1354,14 +1390,48 @@ Private Sub MemorizzaIntestazione()
     
 End Sub
 
+Private Function GestisciSrl() As String
+    If srlsi.Value = True Then
+        GestisciSrl = -1
+    ElseIf srlno.Value = True Then
+         GestisciSrl = 0
+    End If
+End Function
+
+Private Function GestisciRegimeFiscale() As String
+    If cboRegimeFiscale.Text = "Altro" Then
+        GestisciRegimeFiscale = "RF18"
+    ElseIf cboRegimeFiscale.Text = "Contribuenti Minimi" Then
+        GestisciRegimeFiscale = "RF02"
+    ElseIf cboRegimeFiscale.Text = "Ordinario" Then
+        GestisciRegimeFiscale = "RF01"
+    End If
+End Function
+
+Private Function GestisciSocio() As String
+    If chkSocioUnico.Value = Checked Then
+        GestisciSocio = "SU"
+    ElseIf chkSocioPiu.Value = Checked Then
+        GestisciSocio = "SM"
+    End If
+End Function
+
+Private Function LiquidazioneSiNo() As String
+    If Liquidaz_si.Value = True Then
+        LiquidazioneSiNo = "LS"
+    ElseIf Liquidaz_no.Value = True Then
+        LiquidazioneSiNo = "LN"
+    End If
+End Function
+
 Private Sub MemorizzaFattura()
     Dim v_Val() As Variant
     Dim v_nome() As Variant
     Dim strIban As String
     
     strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
-    v_nome = Array("KEY", "CODICE_ASL", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN")
-    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban)
+    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN")
+    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban)
         
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1372,7 +1442,6 @@ Private Sub MemorizzaFattura()
             rsDataset.Update
         End If
     Set rsDataset = Nothing
-    'Call CaricaVarPublic
     
 End Sub
 
@@ -1382,6 +1451,9 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub CaricaIntestazione()
+
+    Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProvUffReg)
+
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
     If Not (rsDataset.EOF And rsDataset.BOF) Then
@@ -1392,12 +1464,53 @@ Private Sub CaricaIntestazione()
         txtProv = rsDataset("PROV")
         txtCodiceFiscale = rsDataset("CODICE_FISCALE")
         txtIva = rsDataset("IVA")
+        txtNumRea = rsDataset("NUM_REA") & ""
+        Call CaricaSrl
+        Call CaricaSocio
+        Call CaricaLiquidazione
+        Call CaricaRegimeFiscale
         modifica = True
     Else
         modifica = False
     End If
     rsDataset.Clone
     Set rsDataset = Nothing
+End Sub
+
+Private Sub CaricaSrl()
+    If rsDataset("SRL") = -1 Then
+        srlsi.Value = True
+        chkSocioUnico.Enabled = True
+        chkSocioPiu.Enabled = True
+    ElseIf rsDataset("SRL") = 0 Then
+        srlno.Value = True
+    End If
+End Sub
+
+Private Sub CaricaRegimeFiscale()
+    If rsDataset("REG_FISCALE") = "RF18" Then
+        cboRegimeFiscale.ListIndex = 0
+    ElseIf rsDataset("REG_FISCALE") = "RF02" Then
+        cboRegimeFiscale.ListIndex = 1
+    ElseIf rsDataset("REG_FISCALE") = "RF01" Then
+        cboRegimeFiscale.ListIndex = 2
+    End If
+End Sub
+
+Private Sub CaricaSocio()
+    If rsDataset("SOCIO") = "SU" Then
+        chkSocioUnico.Value = Checked
+    ElseIf rsDataset("SOCIO") = "SM" Then
+        chkSocioPiu.Value = Checked
+    End If
+End Sub
+
+Private Sub CaricaLiquidazione()
+    If rsDataset("LIQUIDAZIONE") = "LS" Then
+        Liquidaz_si.Value = True
+    Else
+        Liquidaz_no.Value = True
+    End If
 End Sub
 
 Private Sub CaricaParametriFattura()
@@ -1415,6 +1528,7 @@ Dim strSql As String
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         cboAsl.ListIndex = GetCboListIndex(rsDataset("ASLKEY"), cboAsl)
+        txtCodiceDestinatario = rsDataset("COD_DESTINATARIO") & ""
         txtIndirizzoFattura = rsDataset("INDIRIZZO")
         txtCapFattura = rsDataset("CAP")
         cboComune.ListIndex = GetCboListIndex(rsDataset("COMUNIKEY"), cboComune)
@@ -1440,6 +1554,18 @@ End Sub
 
 Private Sub cmdEsci_Click()
     Unload frmFatEle
+End Sub
+
+Private Sub srlno_Click()
+    chkSocioUnico.Enabled = False
+    chkSocioPiu.Enabled = False
+    chkSocioUnico.Value = Unchecked
+    chkSocioPiu.Value = Unchecked
+End Sub
+
+Private Sub srlsi_Click()
+    chkSocioUnico.Enabled = True
+    chkSocioPiu.Enabled = True
 End Sub
 
 Private Sub txtAutorizzazioneBollo_GotFocus()
@@ -1482,6 +1608,14 @@ Private Sub txtCodFiscaleFattura_LostFocus()
     txtCodFiscaleFattura.BackColor = vbWhite
 End Sub
 
+Private Sub txtCodiceDestinatario_GotFocus()
+    txtCodiceDestinatario.BackColor = colArancione
+End Sub
+
+Private Sub txtCodiceDestinatario_LostFocus()
+    txtCodiceDestinatario.BackColor = vbWhite
+End Sub
+
 Private Sub txtCodiceFiscale_GotFocus()
     txtCodiceFiscale.BackColor = colArancione
 End Sub
@@ -1520,6 +1654,14 @@ End Sub
 
 Private Sub txtIva_LostFocus()
     txtIva.BackColor = vbWhite
+End Sub
+
+Private Sub txtNumRea_GotFocus()
+    txtNumRea.BackColor = colArancione
+End Sub
+
+Private Sub txtNumRea_LostFocus()
+    txtNumRea.BackColor = vbWhite
 End Sub
 
 Private Sub txtPartitaIvaFattura_GotFocus()

@@ -34,14 +34,14 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   4080
-         TabIndex        =   67
+         TabIndex        =   66
          Top             =   480
          Width           =   1380
       End
       Begin VB.TextBox txtProgrInvio 
          Height          =   285
          Left            =   2400
-         TabIndex        =   66
+         TabIndex        =   65
          Top             =   720
          Width           =   735
       End
@@ -736,11 +736,28 @@ Begin VB.Form frmFatEle
       TabIndex        =   0
       Top             =   0
       Width           =   7695
+      Begin VB.TextBox txtCapSociale 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   1920
+         MaxLength       =   15
+         TabIndex        =   73
+         Top             =   3360
+         Width           =   2052
+      End
       Begin VB.Frame Frame6 
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1920
-         TabIndex        =   69
+         TabIndex        =   68
          Top             =   2880
          Width           =   1572
          Begin VB.OptionButton Liquidaz_si 
@@ -756,7 +773,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   0
-            TabIndex        =   73
+            TabIndex        =   72
             Top             =   120
             Width           =   615
          End
@@ -773,9 +790,8 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   720
-            TabIndex        =   72
+            TabIndex        =   71
             Top             =   120
-            Value           =   -1  'True
             Width           =   615
          End
       End
@@ -783,7 +799,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1680
-         TabIndex        =   68
+         TabIndex        =   67
          Top             =   2520
          Width           =   1932
          Begin VB.OptionButton srlsi 
@@ -799,7 +815,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   240
-            TabIndex        =   71
+            TabIndex        =   70
             Top             =   120
             Width           =   615
          End
@@ -816,27 +832,13 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   960
-            TabIndex        =   70
+            TabIndex        =   69
             Top             =   120
-            Value           =   -1  'True
             Width           =   615
          End
       End
-      Begin SuperTextBox.uSuperTextBox txtCapSociale 
-         Height          =   255
-         Left            =   1920
-         TabIndex        =   65
-         Top             =   3360
-         Width           =   2055
-         _ExtentX        =   2138
-         _ExtentY        =   508
-         IsMultiLine     =   0   'False
-         OnlyNumber      =   -1  'True
-         IsPossibleSpacing=   0   'False
-         IsDecimal       =   -1  'True
-         MaxLenght       =   15
-      End
       Begin VB.ComboBox cboProvUffReg 
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -1291,6 +1293,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Dim lettera As String
 Dim rsDataset As Recordset
 Dim modifica As Boolean
 
@@ -1301,32 +1304,50 @@ Dim nome As String
     If txtRagione.Text = "" Then
         nome = "RAGIONE SOCIALE"
     ElseIf txtIndirizzo.Text = "" Then
-        nome = "INDIRIZZO CENTRO"
+        nome = "INDIRIZZO del CENTRO"
     ElseIf txtCap.Text = "" Then
-        nome = "CAP CENTRO"
+        nome = "CAP del CENTRO"
     ElseIf txtCitta.Text = "" Then
-        nome = "COMUNE CENTRO"
+        nome = "COMUNE del CENTRO"
     ElseIf txtProv.Text = "" Then
-        nome = "PROV CENTRO"
+        nome = "PROV del CENTRO"
     ElseIf txtCodiceFiscale.Text = "" Then
-        nome = "CODICE FISCALE CENTRO"
+        nome = "CODICE FISCALE del CENTRO"
     ElseIf txtIva = "" Then
         nome = "PARTITA IVA CENTRO"
+    ElseIf cboProvUffReg.Text = "" Then
+        nome = "PROV UFFICIO REGISTRAZIONE SOCIETA'"
+    ElseIf srlno.Value = False And srlsi.Value = False Then
+        nome = "S.R.L."
+    ElseIf srlsi.Value = True Then
+        If chkSocioUnico.Value = Unchecked And chkSocioPiu.Value = Unchecked Then
+            nome = "SOCIO"
+        End If
+    ElseIf Liquidaz_no.Value = False And Liquidaz_si.Value = False Then
+        nome = "LIQUIDAZIONE"
+    ElseIf cboRegimeFiscale.ListIndex = -1 Then
+        nome = "REGIME FISCALE"
+    ElseIf txtCapSociale.Text = "" Then
+        nome = "CAPITALE SOCIALE"
+    ElseIf txtNumRea.Text = "" Then
+        nome = "N° REA"
     
     ElseIf cboAsl.ListIndex = -1 Then
-        nome = "ASL FATTURAZIONE"
+        nome = "ASL a cui FATTURARE"
+    ElseIf txtCodiceDestinatario.Text = "" Then
+        nome = "CODICE del DESTINATARIO"
     ElseIf txtIndirizzoFattura.Text = "" Then
-        nome = "INDIRIZZO COMMITTENTE"
+        nome = "INDIRIZZO del COMMITTENTE"
     ElseIf txtCapFattura.Text = "" Then
-        nome = "CAP COMMITTENTE"
+        nome = "CAP del COMMITTENTE"
     ElseIf cboComune.ListIndex = -1 Then
-        nome = "COMUNE COMMITTENTE"
+        nome = "COMUNE del COMMITTENTE"
     ElseIf txtProvFattura.Text = "" Then
-        nome = "PROV COMMITTENTE"
+        nome = "PROV del COMMITTENTE"
     ElseIf txtPartitaIvaFattura = "" Then
         nome = "PARTITA IVA COMMITTENTE"
     ElseIf txtCodFiscaleFattura.Text = "" Then
-        nome = "CODICE FISCALE COMMITTENTE"
+        nome = "CODICE FISCALE del COMMITTENTE"
 
     ElseIf txtIntestatario.Text = "" Then
         nome = "INTESTATARIO C/C"
@@ -1375,8 +1396,8 @@ Private Sub MemorizzaIntestazione()
     Dim v_Val() As Variant
     Dim v_nome() As Variant
     
-    v_nome = Array("KEY", "RAGIONE_SOCIALE", "INDIRIZZO", "CAP", "CITTA", "PROV", "CODICE_FISCALE", "IVA", "SRL", "SOCIO", "LIQUIDAZIONE", "REG_FISCALE", "NUM_REA")
-    v_Val = Array(1, txtRagione, txtIndirizzo, txtCap, txtCitta, txtProv, txtCodiceFiscale, txtIva, GestisciSrl, GestisciSocio, LiquidazioneSiNo, GestisciRegimeFiscale, txtNumRea)
+    v_nome = Array("KEY", "RAGIONE_SOCIALE", "INDIRIZZO", "CAP", "CITTA", "PROV", "CODICE_FISCALE", "IVA", "PR_UFF_REG", "SRL", "SOCIO", "LIQUIDAZIONE", "REG_FISCALE", "CAP_SOCIALE", "NUM_REA")
+    v_Val = Array(1, txtRagione, txtIndirizzo, txtCap, txtCitta, txtProv, txtCodiceFiscale, txtIva, cboProvUffReg.Text, GestisciSrl, GestisciSocio, LiquidazioneSiNo, GestisciRegimeFiscale, txtCapSociale, txtNumRea)
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
         If modifica Then
@@ -1430,8 +1451,8 @@ Private Sub MemorizzaFattura()
     Dim strIban As String
     
     strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
-    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN")
-    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban)
+    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE")
+    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo)
         
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1464,6 +1485,8 @@ Private Sub CaricaIntestazione()
         txtProv = rsDataset("PROV")
         txtCodiceFiscale = rsDataset("CODICE_FISCALE")
         txtIva = rsDataset("IVA")
+        cboProvUffReg.Text = rsDataset("PR_UFF_REG")
+        txtCapSociale = VirgolaOrPunto(rsDataset("CAP_SOCIALE"), ",") & ""
         txtNumRea = rsDataset("NUM_REA") & ""
         Call CaricaSrl
         Call CaricaSocio
@@ -1471,6 +1494,10 @@ Private Sub CaricaIntestazione()
         Call CaricaRegimeFiscale
         modifica = True
     Else
+        srlsi.Value = False
+        srlno.Value = False
+        Liquidaz_si.Value = False
+        Liquidaz_no.Value = False
         modifica = False
     End If
     rsDataset.Clone
@@ -1590,6 +1617,40 @@ End Sub
 
 Private Sub txtCapFattura_LostFocus()
     txtCapFattura.BackColor = vbWhite
+End Sub
+
+Private Sub txtCapSociale_OnLostFocus()
+    If Len(txtCapSociale.Text) < 4 Then
+        MsgBox "Il Capitale Sociale NON può essere inferiore a 4 caratteri", vbInformation, "Informazione"
+        txtCapSociale.SetFocus
+    End If
+End Sub
+
+Private Sub txtCapSocial_OnChange()
+
+End Sub
+
+Private Sub txtCapSociale_Change()
+    If lettera = "." Or lettera = "" Then Exit Sub
+    Call OnlyNumber(txtCapSociale, lettera)
+End Sub
+
+Private Sub txtCapSociale_GotFocus()
+    txtCapSociale.BackColor = colArancione
+End Sub
+
+Private Sub txtCapSociale_KeyPress(KeyAscii As Integer)
+    ' quando inserisce la virgola(44) cambia con il punto(46)
+    If KeyAscii = 44 Then KeyAscii = 46
+    lettera = Chr(KeyAscii)
+End Sub
+
+Private Sub txtCapSociale_LostFocus()
+    txtCapSociale.BackColor = vbWhite
+    If Len(txtCapSociale.Text) <= 4 Then
+        MsgBox "Il Capitale Sociale NON può essere inferiore a 4 caratteri", vbInformation, "Informazione"
+        txtCapSociale.SetFocus
+    End If
 End Sub
 
 Private Sub txtCitta_GotFocus()

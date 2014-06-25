@@ -1,5 +1,4 @@
 VERSION 5.00
-Object = "{EB7F7146-0A68-4457-8036-5793F0EB1EB8}#31.0#0"; "SuperTextBox.ocx"
 Begin VB.Form frmFatEle 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Fattura Elettronica"
@@ -20,6 +19,23 @@ Begin VB.Form frmFatEle
       TabIndex        =   59
       Top             =   7560
       Width           =   7695
+      Begin VB.TextBox txtBolloFattura 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   5880
+         MaxLength       =   4
+         TabIndex        =   73
+         Top             =   240
+         Width           =   612
+      End
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
          CausesValidation=   0   'False
@@ -34,14 +50,14 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   4080
-         TabIndex        =   66
+         TabIndex        =   65
          Top             =   480
          Width           =   1380
       End
       Begin VB.TextBox txtProgrInvio 
          Height          =   285
          Left            =   2400
-         TabIndex        =   65
+         TabIndex        =   64
          Top             =   720
          Width           =   735
       End
@@ -62,20 +78,6 @@ Begin VB.Form frmFatEle
          Top             =   240
          Width           =   1815
       End
-      Begin SuperTextBox.uSuperTextBox txtImportoBollo 
-         Height          =   285
-         Left            =   5880
-         TabIndex        =   61
-         Top             =   240
-         Width           =   615
-         _ExtentX        =   2138
-         _ExtentY        =   508
-         IsMultiLine     =   0   'False
-         OnlyNumber      =   -1  'True
-         IsPossibleSpacing=   0   'False
-         IsDecimal       =   -1  'True
-         MaxLenght       =   4
-      End
       Begin VB.Label Label7 
          Caption         =   "N° Progressivo Invio"
          BeginProperty Font 
@@ -89,7 +91,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   64
+         TabIndex        =   63
          Top             =   720
          Width           =   2295
       End
@@ -106,7 +108,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   120
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   120
          Width           =   1935
       End
@@ -121,12 +123,12 @@ Begin VB.Form frmFatEle
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   312
          Index           =   22
-         Left            =   3960
-         TabIndex        =   62
+         Left            =   4200
+         TabIndex        =   61
          Top             =   240
-         Width           =   1815
+         Width           =   1692
       End
    End
    Begin VB.Frame fraPulsanti 
@@ -749,7 +751,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   15
-         TabIndex        =   73
+         TabIndex        =   72
          Top             =   3360
          Width           =   2052
       End
@@ -757,7 +759,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1920
-         TabIndex        =   68
+         TabIndex        =   67
          Top             =   2880
          Width           =   1572
          Begin VB.OptionButton Liquidaz_si 
@@ -773,7 +775,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   0
-            TabIndex        =   72
+            TabIndex        =   71
             Top             =   120
             Width           =   615
          End
@@ -790,7 +792,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   720
-            TabIndex        =   71
+            TabIndex        =   70
             Top             =   120
             Width           =   615
          End
@@ -799,7 +801,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1680
-         TabIndex        =   67
+         TabIndex        =   66
          Top             =   2520
          Width           =   1932
          Begin VB.OptionButton srlsi 
@@ -815,7 +817,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   240
-            TabIndex        =   70
+            TabIndex        =   69
             Top             =   120
             Width           =   615
          End
@@ -832,13 +834,12 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   960
-            TabIndex        =   69
+            TabIndex        =   68
             Top             =   120
             Width           =   615
          End
       End
       Begin VB.ComboBox cboProvUffReg 
-         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -1319,10 +1320,6 @@ Dim nome As String
         nome = "PROV UFFICIO REGISTRAZIONE SOCIETA'"
     ElseIf srlno.Value = False And srlsi.Value = False Then
         nome = "S.R.L."
-    ElseIf srlsi.Value = True Then
-        If chkSocioUnico.Value = Unchecked And chkSocioPiu.Value = Unchecked Then
-            nome = "SOCIO"
-        End If
     ElseIf Liquidaz_no.Value = False And Liquidaz_si.Value = False Then
         nome = "LIQUIDAZIONE"
     ElseIf cboRegimeFiscale.ListIndex = -1 Then
@@ -1366,7 +1363,7 @@ Dim nome As String
         
     ElseIf txtAutorizzazioneBollo.Text = "" Then
         nome = "AUTORIZZAZIONE BOLLO"
-    ElseIf txtImportoBollo.Text = "" Then
+    ElseIf txtBolloFattura.Text = "" Then
         nome = "BOLLO SU FATTURA"
         
     Else
@@ -1386,11 +1383,23 @@ End Sub
 
 Private Sub cmdMemorizza_Click()
     If Completo Then
+    If ControlloSoci Then
         Call MemorizzaIntestazione
         Call MemorizzaFattura
         MsgBox "I dati sono stati memorizzati nell'archivio", vbInformation, "Informazioni"
     End If
+    End If
 End Sub
+
+Private Function ControlloSoci() As Boolean
+    ControlloSoci = True
+    If srlsi.Value = True Then
+        If chkSocioUnico.Value = Unchecked And chkSocioPiu.Value = Unchecked Then
+            MsgBox "Inserire i dati obbligatori" & vbCrLf & "Campo: SOCIO", vbInformation, "Informazione"
+            ControlloSoci = False
+        End If
+    End If
+End Function
 
 Private Sub MemorizzaIntestazione()
     Dim v_Val() As Variant
@@ -1451,8 +1460,8 @@ Private Sub MemorizzaFattura()
     Dim strIban As String
     
     strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
-    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE")
-    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo)
+    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE", "IMPORTO_BOLLO")
+    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), txtProvFattura, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo, txtBolloFattura)
         
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1571,6 +1580,7 @@ Dim strSql As String
         txtIbanNum(2) = Mid(strIban, 11, 5)
         txtIbanNum(3) = Mid(strIban, 16, 12)
         txtAutorizzazioneBollo = rsDataset("NUMERO_AUTORIZZAZIONE")
+        txtBolloFattura = VirgolaOrPunto(rsDataset("IMPORTO_BOLLO"), ",") & ""
         modifica = True
     Else
         modifica = False
@@ -1603,6 +1613,25 @@ Private Sub txtAutorizzazioneBollo_LostFocus()
     txtAutorizzazioneBollo.BackColor = vbWhite
 End Sub
 
+Private Sub txtBolloFattura_Change()
+    If lettera = "." Or lettera = "" Then Exit Sub
+    Call OnlyNumber(txtBolloFattura, lettera)
+End Sub
+
+Private Sub txtBolloFattura_GotFocus()
+    txtBolloFattura.BackColor = colArancione
+End Sub
+
+Private Sub txtBolloFattura_KeyPress(KeyAscii As Integer)
+    ' quando inserisce la virgola(44) cambia con il punto(46)
+    If KeyAscii = 44 Then KeyAscii = 46
+    lettera = Chr(KeyAscii)
+End Sub
+
+Private Sub txtBolloFattura_LostFocus()
+    txtBolloFattura.BackColor = vbWhite
+End Sub
+
 Private Sub txtCap_GotFocus()
     txtCap.BackColor = colArancione
 End Sub
@@ -1617,17 +1646,6 @@ End Sub
 
 Private Sub txtCapFattura_LostFocus()
     txtCapFattura.BackColor = vbWhite
-End Sub
-
-Private Sub txtCapSociale_OnLostFocus()
-    If Len(txtCapSociale.Text) < 4 Then
-        MsgBox "Il Capitale Sociale NON può essere inferiore a 4 caratteri", vbInformation, "Informazione"
-        txtCapSociale.SetFocus
-    End If
-End Sub
-
-Private Sub txtCapSocial_OnChange()
-
 End Sub
 
 Private Sub txtCapSociale_Change()
@@ -1647,7 +1665,7 @@ End Sub
 
 Private Sub txtCapSociale_LostFocus()
     txtCapSociale.BackColor = vbWhite
-    If Len(txtCapSociale.Text) <= 4 Then
+    If Len(txtCapSociale.Text) < 4 Then
         MsgBox "Il Capitale Sociale NON può essere inferiore a 4 caratteri", vbInformation, "Informazione"
         txtCapSociale.SetFocus
     End If

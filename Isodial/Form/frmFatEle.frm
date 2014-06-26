@@ -16,7 +16,7 @@ Begin VB.Form frmFatEle
    Begin VB.Frame Frame4 
       Height          =   1095
       Left            =   120
-      TabIndex        =   59
+      TabIndex        =   68
       Top             =   7560
       Width           =   7695
       Begin VB.TextBox txtBolloFattura 
@@ -32,7 +32,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   5880
          MaxLength       =   4
-         TabIndex        =   73
+         TabIndex        =   34
          Top             =   240
          Width           =   612
       End
@@ -50,14 +50,14 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   4080
-         TabIndex        =   65
+         TabIndex        =   37
          Top             =   480
          Width           =   1380
       End
       Begin VB.TextBox txtProgrInvio 
          Height          =   285
          Left            =   2400
-         TabIndex        =   64
+         TabIndex        =   35
          Top             =   720
          Width           =   735
       End
@@ -74,7 +74,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   2040
          MaxLength       =   15
-         TabIndex        =   60
+         TabIndex        =   33
          Top             =   240
          Width           =   1815
       End
@@ -91,7 +91,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   63
+         TabIndex        =   71
          Top             =   720
          Width           =   2295
       End
@@ -108,7 +108,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   120
-         TabIndex        =   62
+         TabIndex        =   70
          Top             =   120
          Width           =   1935
       End
@@ -126,7 +126,7 @@ Begin VB.Form frmFatEle
          Height          =   312
          Index           =   22
          Left            =   4200
-         TabIndex        =   61
+         TabIndex        =   69
          Top             =   240
          Width           =   1692
       End
@@ -134,7 +134,7 @@ Begin VB.Form frmFatEle
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
-      TabIndex        =   45
+      TabIndex        =   62
       Top             =   8640
       Width           =   7695
       Begin VB.CommandButton cmdEsci 
@@ -151,7 +151,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   6480
-         TabIndex        =   48
+         TabIndex        =   39
          Top             =   240
          Width           =   1140
       End
@@ -169,7 +169,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   5160
-         TabIndex        =   47
+         TabIndex        =   38
          Top             =   240
          Width           =   1260
       End
@@ -186,7 +186,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   3360
-         TabIndex        =   46
+         TabIndex        =   36
          Top             =   240
          Width           =   1695
       End
@@ -204,7 +204,7 @@ Begin VB.Form frmFatEle
          ForeColor       =   &H000000FF&
          Height          =   375
          Left            =   120
-         TabIndex        =   49
+         TabIndex        =   63
          Top             =   360
          Width           =   3135
       End
@@ -223,7 +223,7 @@ Begin VB.Form frmFatEle
       ForeColor       =   &H00FF0000&
       Height          =   1455
       Left            =   120
-      TabIndex        =   31
+      TabIndex        =   56
       Top             =   6120
       Width           =   7695
       Begin VB.TextBox txtIbanNum 
@@ -240,7 +240,7 @@ Begin VB.Form frmFatEle
          Index           =   0
          Left            =   2280
          MaxLength       =   2
-         TabIndex        =   38
+         TabIndex        =   28
          Top             =   960
          Width           =   375
       End
@@ -258,7 +258,7 @@ Begin VB.Form frmFatEle
          Index           =   1
          Left            =   2640
          MaxLength       =   1
-         TabIndex        =   37
+         TabIndex        =   29
          Top             =   960
          Width           =   255
       End
@@ -276,7 +276,7 @@ Begin VB.Form frmFatEle
          Index           =   0
          Left            =   1920
          MaxLength       =   2
-         TabIndex        =   36
+         TabIndex        =   27
          Top             =   960
          Width           =   375
       End
@@ -294,7 +294,7 @@ Begin VB.Form frmFatEle
          Index           =   3
          Left            =   4200
          MaxLength       =   12
-         TabIndex        =   35
+         TabIndex        =   32
          Top             =   960
          Width           =   1455
       End
@@ -312,7 +312,7 @@ Begin VB.Form frmFatEle
          Index           =   2
          Left            =   3600
          MaxLength       =   5
-         TabIndex        =   34
+         TabIndex        =   31
          Top             =   960
          Width           =   615
       End
@@ -330,7 +330,7 @@ Begin VB.Form frmFatEle
          Index           =   1
          Left            =   2880
          MaxLength       =   5
-         TabIndex        =   33
+         TabIndex        =   30
          Top             =   960
          Width           =   735
       End
@@ -347,7 +347,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   50
-         TabIndex        =   32
+         TabIndex        =   26
          Top             =   480
          Width           =   5655
       End
@@ -366,7 +366,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   28
          Left            =   120
-         TabIndex        =   40
+         TabIndex        =   58
          Top             =   960
          Width           =   540
       End
@@ -385,7 +385,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   27
          Left            =   120
-         TabIndex        =   39
+         TabIndex        =   57
          Top             =   480
          Width           =   1545
       End
@@ -404,7 +404,7 @@ Begin VB.Form frmFatEle
       ForeColor       =   &H00FF0000&
       Height          =   2415
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   47
       Top             =   3720
       Width           =   7695
       Begin VB.TextBox txtCodiceDestinatario 
@@ -429,7 +429,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   6720
          MaxLength       =   6
-         TabIndex        =   55
+         TabIndex        =   19
          Top             =   480
          Width           =   855
       End
@@ -446,7 +446,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1320
          MaxLength       =   30
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   960
          Width           =   3375
       End
@@ -480,7 +480,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   5880
          MaxLength       =   2
-         TabIndex        =   20
+         TabIndex        =   23
          Top             =   1440
          Width           =   735
       End
@@ -497,7 +497,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1320
          MaxLength       =   20
-         TabIndex        =   19
+         TabIndex        =   24
          Top             =   1920
          Width           =   2295
       End
@@ -533,7 +533,7 @@ Begin VB.Form frmFatEle
          Height          =   315
          Left            =   1320
          Style           =   2  'Dropdown List
-         TabIndex        =   17
+         TabIndex        =   22
          Top             =   1440
          Width           =   3375
       End
@@ -550,7 +550,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   5880
          MaxLength       =   15
-         TabIndex        =   16
+         TabIndex        =   25
          Top             =   1920
          Width           =   1695
       End
@@ -567,7 +567,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   4800
-         TabIndex        =   54
+         TabIndex        =   66
          Top             =   480
          Width           =   1935
       End
@@ -586,7 +586,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   21
          Left            =   120
-         TabIndex        =   30
+         TabIndex        =   55
          Top             =   990
          Width           =   870
       End
@@ -605,7 +605,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   20
          Left            =   5160
-         TabIndex        =   29
+         TabIndex        =   54
          Top             =   990
          Width           =   465
       End
@@ -624,7 +624,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   19
          Left            =   120
-         TabIndex        =   28
+         TabIndex        =   53
          Top             =   1440
          Width           =   480
       End
@@ -643,7 +643,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   18
          Left            =   5160
-         TabIndex        =   27
+         TabIndex        =   52
          Top             =   1440
          Width           =   555
       End
@@ -662,7 +662,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   17
          Left            =   120
-         TabIndex        =   26
+         TabIndex        =   51
          Top             =   1920
          Width           =   600
       End
@@ -679,7 +679,7 @@ Begin VB.Form frmFatEle
          Height          =   435
          Index           =   16
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   50
          Top             =   4470
          Width           =   1200
       End
@@ -697,7 +697,7 @@ Begin VB.Form frmFatEle
          Height          =   435
          Index           =   15
          Left            =   120
-         TabIndex        =   24
+         TabIndex        =   49
          Top             =   360
          Width           =   1080
       End
@@ -716,7 +716,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   9
          Left            =   5280
-         TabIndex        =   23
+         TabIndex        =   48
          Top             =   1920
          Width           =   420
       End
@@ -751,7 +751,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   15
-         TabIndex        =   72
+         TabIndex        =   16
          Top             =   3360
          Width           =   2052
       End
@@ -759,7 +759,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1920
-         TabIndex        =   67
+         TabIndex        =   73
          Top             =   2880
          Width           =   1572
          Begin VB.OptionButton Liquidaz_si 
@@ -775,7 +775,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   0
-            TabIndex        =   71
+            TabIndex        =   13
             Top             =   120
             Width           =   615
          End
@@ -792,7 +792,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   720
-            TabIndex        =   70
+            TabIndex        =   14
             Top             =   120
             Width           =   615
          End
@@ -801,7 +801,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1680
-         TabIndex        =   66
+         TabIndex        =   72
          Top             =   2520
          Width           =   1932
          Begin VB.OptionButton srlsi 
@@ -817,7 +817,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   240
-            TabIndex        =   69
+            TabIndex        =   9
             Top             =   120
             Width           =   615
          End
@@ -834,7 +834,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   960
-            TabIndex        =   68
+            TabIndex        =   10
             Top             =   120
             Width           =   615
          End
@@ -851,7 +851,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   336
          Left            =   3840
-         TabIndex        =   58
+         TabIndex        =   8
          Top             =   2240
          Width           =   852
       End
@@ -869,7 +869,7 @@ Begin VB.Form frmFatEle
          ItemData        =   "frmFatEle.frx":0004
          Left            =   5520
          List            =   "frmFatEle.frx":0011
-         TabIndex        =   57
+         TabIndex        =   15
          Top             =   2955
          Width           =   2055
       End
@@ -887,7 +887,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   5520
-         TabIndex        =   52
+         TabIndex        =   12
          Top             =   2640
          Width           =   1335
       End
@@ -905,7 +905,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   3840
-         TabIndex        =   51
+         TabIndex        =   11
          Top             =   2640
          Width           =   1815
       End
@@ -922,7 +922,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   5040
          MaxLength       =   20
-         TabIndex        =   42
+         TabIndex        =   17
          Top             =   3360
          Width           =   2535
       End
@@ -939,7 +939,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   50
-         TabIndex        =   7
+         TabIndex        =   1
          Top             =   260
          Width           =   5415
       End
@@ -956,7 +956,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   40
-         TabIndex        =   6
+         TabIndex        =   2
          Top             =   840
          Width           =   3615
       End
@@ -973,7 +973,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   6240
          MaxLength       =   5
-         TabIndex        =   5
+         TabIndex        =   3
          Top             =   840
          Width           =   735
       End
@@ -1007,7 +1007,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   6240
          MaxLength       =   2
-         TabIndex        =   3
+         TabIndex        =   5
          Top             =   1320
          Width           =   375
       End
@@ -1024,7 +1024,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   20
-         TabIndex        =   2
+         TabIndex        =   6
          Top             =   1800
          Width           =   2055
       End
@@ -1041,7 +1041,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   5160
          MaxLength       =   20
-         TabIndex        =   1
+         TabIndex        =   7
          Top             =   1800
          Width           =   2175
       End
@@ -1058,7 +1058,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   3840
-         TabIndex        =   56
+         TabIndex        =   67
          Top             =   2980
          Width           =   1695
       End
@@ -1075,7 +1075,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   100
-         TabIndex        =   53
+         TabIndex        =   65
          Top             =   3000
          Width           =   1695
       End
@@ -1092,7 +1092,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   100
-         TabIndex        =   50
+         TabIndex        =   64
          Top             =   2640
          Width           =   735
       End
@@ -1111,7 +1111,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   6
          Left            =   100
-         TabIndex        =   44
+         TabIndex        =   61
          Top             =   3360
          Width           =   1740
       End
@@ -1130,7 +1130,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   5
          Left            =   4200
-         TabIndex        =   43
+         TabIndex        =   60
          Top             =   3360
          Width           =   780
       End
@@ -1149,7 +1149,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   0
          Left            =   96
-         TabIndex        =   41
+         TabIndex        =   59
          Top             =   2280
          Width           =   3672
       End
@@ -1168,7 +1168,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   1
          Left            =   100
-         TabIndex        =   14
+         TabIndex        =   46
          Top             =   840
          Width           =   870
       End
@@ -1187,7 +1187,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   2
          Left            =   5700
-         TabIndex        =   13
+         TabIndex        =   45
          Top             =   840
          Width           =   465
       End
@@ -1206,7 +1206,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   3
          Left            =   100
-         TabIndex        =   12
+         TabIndex        =   44
          Top             =   1320
          Width           =   855
       End
@@ -1225,7 +1225,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   4
          Left            =   5640
-         TabIndex        =   11
+         TabIndex        =   43
          Top             =   1320
          Width           =   555
       End
@@ -1244,7 +1244,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   7
          Left            =   100
-         TabIndex        =   10
+         TabIndex        =   42
          Top             =   1800
          Width           =   1500
       End
@@ -1263,7 +1263,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   8
          Left            =   4350
-         TabIndex        =   9
+         TabIndex        =   41
          Top             =   1800
          Width           =   600
       End
@@ -1281,7 +1281,7 @@ Begin VB.Form frmFatEle
          Height          =   435
          Index           =   14
          Left            =   100
-         TabIndex        =   8
+         TabIndex        =   40
          Top             =   250
          Width           =   1785
       End

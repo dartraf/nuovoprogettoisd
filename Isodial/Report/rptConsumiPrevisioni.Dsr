@@ -117,7 +117,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptConsumiPrevisioni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "CONSUMI"
          Alignment       =   2
       EndProperty
       ItemType5       =   3

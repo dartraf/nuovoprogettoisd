@@ -201,6 +201,41 @@ Begin VB.Form frmConsumiPrevisioni
       TabIndex        =   10
       Top             =   7080
       Width           =   12855
+      Begin VB.CheckBox ChkPrev 
+         Caption         =   "Stampa &PREVISIONI"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   240
+         TabIndex        =   14
+         Top             =   520
+         Width           =   2535
+      End
+      Begin VB.CheckBox ChkCons 
+         Caption         =   "Stampa C&ONSUMI"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Left            =   240
+         TabIndex        =   13
+         Top             =   180
+         Value           =   1  'Checked
+         Width           =   2415
+      End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
@@ -667,7 +702,7 @@ Private Sub cmdStampa_Click()
         MsgBox "Selezionare il prodotto", vbInformation, "Attenzione"
         Exit Sub
     End If
-
+ 
     strSql = "SHAPE APPEND  " & _
                     "       NEW adVarChar (50) as NOME_CONSUMI, " & _
                     "       NEW adVarChar (10) as CONSUMI_GEN, " & _
@@ -689,8 +724,12 @@ Private Sub cmdStampa_Click()
     cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
     Set rsMain = New ADODB.Recordset
     rsMain.Open strSql, cnConn, adOpenStatic, adLockOptimistic
+    
+    Set rptConsumiPrevisioni.DataSource = rsMain
+    rptConsumiPrevisioni.Orientation = rptOrientLandscape
                
-    With rsMain              '       CONSUMI
+  If ChkCons.Value Then  ' stampa consumi
+    With rsMain
         For i = 1 To flxGriglia(0).Rows - 1
         .AddNew
         .Fields("NOME_CONSUMI") = " " & flxGriglia(0).TextMatrix(i, 1)
@@ -708,13 +747,51 @@ Private Sub cmdStampa_Click()
         .Fields("CONSUMI_DIC") = " " & flxGriglia(0).TextMatrix(i, 13)
         .Fields("TOTALE_CONSUMI") = " " & flxGriglia(0).TextMatrix(i, 14)
         Next i
-    End With
+      End With
+      
+      rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lbl").Caption = "CONSUMI"
+      rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lblProdotto").Caption = cboProdotto.Text
+      rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
+      rptConsumiPrevisioni.PrintReport True, rptRangeAllPages
 
-    Set rptConsumiPrevisioni.DataSource = rsMain
-    rptConsumiPrevisioni.Orientation = rptOrientLandscape
-    rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lblProdotto").Caption = cboProdotto.Text
-    rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
-    rptConsumiPrevisioni.PrintReport True, rptRangeAllPages
+    End If
+    
+    rsMain.Close
+    rsMain.Open strSql, cnConn, adOpenStatic, adLockOptimistic
+    
+    If ChkPrev.Value Then  ' stampa previsioni
+      With rsMain
+        For i = 1 To flxGriglia(0).Rows - 1
+        .AddNew
+        .Fields("NOME_CONSUMI") = " " & flxGriglia(1).TextMatrix(i, 1)
+        .Fields("CONSUMI_GEN") = " " & flxGriglia(1).TextMatrix(i, 2)
+        .Fields("CONSUMI_FEB") = " " & flxGriglia(1).TextMatrix(i, 3)
+        .Fields("CONSUMI_MAR") = " " & flxGriglia(1).TextMatrix(i, 4)
+        .Fields("CONSUMI_APR") = " " & flxGriglia(1).TextMatrix(i, 5)
+        .Fields("CONSUMI_MAG") = " " & flxGriglia(1).TextMatrix(i, 6)
+        .Fields("CONSUMI_GIU") = " " & flxGriglia(1).TextMatrix(i, 7)
+        .Fields("CONSUMI_LUG") = " " & flxGriglia(1).TextMatrix(i, 8)
+        .Fields("CONSUMI_AGO") = " " & flxGriglia(1).TextMatrix(i, 9)
+        .Fields("CONSUMI_SET") = " " & flxGriglia(1).TextMatrix(i, 10)
+        .Fields("CONSUMI_OTT") = " " & flxGriglia(1).TextMatrix(i, 11)
+        .Fields("CONSUMI_NOV") = " " & flxGriglia(1).TextMatrix(i, 12)
+        .Fields("CONSUMI_DIC") = " " & flxGriglia(1).TextMatrix(i, 13)
+        .Fields("TOTALE_CONSUMI") = " " & flxGriglia(1).TextMatrix(i, 14)
+        Next i
+      End With
+      
+      rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lbl").Caption = "PREVISIONI"
+      rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lblProdotto").Caption = cboProdotto.Text
+      rptConsumiPrevisioni.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
+      
+      If ChkCons.Value Then  ' se stampa anche i consumi non visualizza il pannello di scelta stampante
+          rptConsumiPrevisioni.PrintReport
+      Else
+          rptConsumiPrevisioni.PrintReport True, rptRangeAllPages
+      End If
+    End If
+
+
 End Sub
 
 Private Sub flxGriglia_Click(Index As Integer)

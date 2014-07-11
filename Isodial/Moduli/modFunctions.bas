@@ -2910,6 +2910,26 @@ gestione:
     VirgolaOrPunto = num
 End Function
 
+Public Function FileCopyEx(Source As String, Destination As String)
+Dim sFile As String, sSPath As String
+Dim sDPath As String
+
+On Error GoTo ErrHandle
+sSPath = Mid$(Source, 1, InStrRev(Source, "\"))
+sDPath = Mid$(Destination, 1, InStrRev(Destination, "\"))
+sFile = Dir$(Source)
+Do While Len(sFile) > 0
+  FileCopy sSPath & sFile, sDPath & sFile
+  sFile = Dir$
+  DoEvents
+Loop
+ErrHandle:
+  If Err.Number > 0 Then
+    MsgBox Err.Description, vbExclamation, Err.Number
+    Exit Function
+  End If
+End Function
+
 'Public Sub Select_Data()
 'Dim periodo As Integer
 '        Unload frmTrova

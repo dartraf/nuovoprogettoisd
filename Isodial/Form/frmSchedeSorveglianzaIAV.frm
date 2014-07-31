@@ -3,22 +3,22 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmSchedeSorveglianzaFAV 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Sorveglianza FAV"
-   ClientHeight    =   7890
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   11130
+   ClientHeight    =   7896
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   11124
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7890
-   ScaleWidth      =   11130
+   ScaleHeight     =   7896
+   ScaleWidth      =   11124
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraRilevazione 
       Caption         =   "Rilevazione Pressione"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   -1  'True
@@ -28,13 +28,13 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       ForeColor       =   &H00FF0000&
       Height          =   1845
       Left            =   120
-      TabIndex        =   80
+      TabIndex        =   77
       Top             =   3400
       Width           =   10935
       Begin VB.TextBox txtAspirazioneIndicatore 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -44,14 +44,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   34
+         TabIndex        =   31
          Top             =   600
          Width           =   3375
       End
       Begin VB.TextBox txtRientroIndicatore 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -61,14 +61,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   37
+         TabIndex        =   34
          Top             =   600
          Width           =   3375
       End
       Begin VB.TextBox txtAspirazioneParametri 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -78,14 +78,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   35
+         TabIndex        =   32
          Top             =   960
          Width           =   3375
       End
       Begin VB.TextBox txtRientroParametri 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -95,14 +95,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   38
+         TabIndex        =   35
          Top             =   960
          Width           =   3375
       End
       Begin VB.TextBox txtAspirazioneTollAccettate 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -112,14 +112,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   36
+         TabIndex        =   33
          Top             =   1320
          Width           =   3375
       End
       Begin VB.TextBox txtRientroTollAccettate 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -129,7 +129,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   39
+         TabIndex        =   36
          Top             =   1320
          Width           =   3375
       End
@@ -138,7 +138,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "In Aspirazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -149,7 +149,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   7
          Left            =   2760
-         TabIndex        =   88
+         TabIndex        =   85
          Top             =   240
          Width           =   1590
       End
@@ -158,7 +158,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "In Rientro"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -169,7 +169,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   8
          Left            =   8400
-         TabIndex        =   87
+         TabIndex        =   84
          Top             =   240
          Width           =   1110
       End
@@ -178,7 +178,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Indicatori"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -188,7 +188,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   9
          Left            =   600
-         TabIndex        =   86
+         TabIndex        =   83
          Top             =   600
          Width           =   975
       End
@@ -197,7 +197,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Indicatori"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -207,7 +207,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   10
          Left            =   6120
-         TabIndex        =   85
+         TabIndex        =   82
          Top             =   600
          Width           =   975
       End
@@ -216,7 +216,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Parametri"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -226,7 +226,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   12
          Left            =   600
-         TabIndex        =   84
+         TabIndex        =   81
          Top             =   960
          Width           =   1020
       End
@@ -235,7 +235,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Parametri"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -245,7 +245,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   13
          Left            =   6120
-         TabIndex        =   83
+         TabIndex        =   80
          Top             =   960
          Width           =   1020
       End
@@ -254,7 +254,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Toll. Accettate"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -264,7 +264,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   14
          Left            =   120
-         TabIndex        =   82
+         TabIndex        =   79
          Top             =   1320
          Width           =   1515
       End
@@ -273,7 +273,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Toll. Accettate"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -283,7 +283,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   15
          Left            =   5640
-         TabIndex        =   81
+         TabIndex        =   78
          Top             =   1320
          Width           =   1515
       End
@@ -292,7 +292,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Caption         =   "Valutazione Portata e Ricircolo"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   -1  'True
@@ -302,13 +302,13 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       ForeColor       =   &H00FF0000&
       Height          =   1845
       Left            =   120
-      TabIndex        =   54
+      TabIndex        =   51
       Top             =   5280
       Width           =   10935
       Begin VB.TextBox txtPortataIndicatori 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -318,14 +318,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   40
+         TabIndex        =   37
          Top             =   600
          Width           =   3375
       End
       Begin VB.TextBox txtRicircoloIndicatori 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -335,14 +335,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   43
+         TabIndex        =   40
          Top             =   600
          Width           =   3375
       End
       Begin VB.TextBox txtPortataParametri 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -352,14 +352,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   41
+         TabIndex        =   38
          Top             =   960
          Width           =   3375
       End
       Begin VB.TextBox txtRicircoloParametri 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -369,14 +369,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   44
+         TabIndex        =   41
          Top             =   960
          Width           =   3375
       End
       Begin VB.TextBox txtPortataTollAccettate 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -386,14 +386,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   1800
          MaxLength       =   30
-         TabIndex        =   42
+         TabIndex        =   39
          Top             =   1320
          Width           =   3375
       End
       Begin VB.TextBox txtRicircoloTollAccettate 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -403,7 +403,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   285
          Left            =   7320
          MaxLength       =   30
-         TabIndex        =   45
+         TabIndex        =   42
          Top             =   1320
          Width           =   3375
       End
@@ -412,7 +412,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Toll. Accettate"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -422,7 +422,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   17
          Left            =   120
-         TabIndex        =   56
+         TabIndex        =   53
          Top             =   1320
          Width           =   1515
       End
@@ -431,7 +431,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Portata"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -442,7 +442,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   23
          Left            =   3000
-         TabIndex        =   62
+         TabIndex        =   59
          Top             =   240
          Width           =   870
       End
@@ -451,7 +451,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Ricircolo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -462,7 +462,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   22
          Left            =   8520
-         TabIndex        =   61
+         TabIndex        =   58
          Top             =   240
          Width           =   1050
       End
@@ -471,7 +471,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Indicatori"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -481,7 +481,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   21
          Left            =   600
-         TabIndex        =   60
+         TabIndex        =   57
          Top             =   600
          Width           =   975
       End
@@ -490,7 +490,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Indicatori"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -500,7 +500,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   20
          Left            =   6120
-         TabIndex        =   59
+         TabIndex        =   56
          Top             =   600
          Width           =   975
       End
@@ -509,7 +509,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Parametri"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -519,7 +519,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   19
          Left            =   600
-         TabIndex        =   58
+         TabIndex        =   55
          Top             =   960
          Width           =   1020
       End
@@ -528,7 +528,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Parametri"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -538,7 +538,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   18
          Left            =   6120
-         TabIndex        =   57
+         TabIndex        =   54
          Top             =   960
          Width           =   1020
       End
@@ -547,7 +547,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Toll. Accettate"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -557,7 +557,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   16
          Left            =   5640
-         TabIndex        =   55
+         TabIndex        =   52
          Top             =   1320
          Width           =   1515
       End
@@ -565,14 +565,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    Begin VB.Frame Frame8 
       Height          =   2415
       Left            =   120
-      TabIndex        =   68
+      TabIndex        =   65
       Top             =   955
       Width           =   3735
       Begin VB.OptionButton optNoAccessoVascolare 
          Caption         =   "No"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -589,7 +589,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Si"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -611,7 +611,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -624,7 +624,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Top             =   240
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   -1  'True
@@ -633,7 +633,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Index           =   1
          Left            =   1560
-         TabIndex        =   90
+         TabIndex        =   87
          Top             =   1110
          Width           =   2085
       End
@@ -641,7 +641,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Scheda compilata il"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -650,7 +650,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   89
+         TabIndex        =   86
          Top             =   210
          Width           =   1005
       End
@@ -659,7 +659,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "COMPILATORE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -669,7 +669,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   195
          Index           =   24
          Left            =   120
-         TabIndex        =   79
+         TabIndex        =   76
          Top             =   960
          Width           =   1425
          WordWrap        =   -1  'True
@@ -678,7 +678,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Data Nuovo Accesso Vasc."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -687,7 +687,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   78
+         TabIndex        =   75
          Top             =   1920
          Visible         =   0   'False
          Width           =   1335
@@ -696,7 +696,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Index           =   0
          Left            =   1560
-         TabIndex        =   72
+         TabIndex        =   69
          Top             =   870
          Width           =   2085
       End
@@ -705,7 +705,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "E' stato necessario eseguire un nuovo accesso vascolare?"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -715,7 +715,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   555
          Index           =   28
          Left            =   120
-         TabIndex        =   71
+         TabIndex        =   68
          Top             =   1320
          Width           =   3465
          WordWrap        =   -1  'True
@@ -724,7 +724,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   255
          Index           =   27
          Left            =   1560
-         TabIndex        =   70
+         TabIndex        =   67
          Top             =   600
          Width           =   2085
       End
@@ -733,7 +733,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "UTENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -743,7 +743,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   195
          Index           =   26
          Left            =   120
-         TabIndex        =   69
+         TabIndex        =   66
          Top             =   720
          Width           =   1425
          WordWrap        =   -1  'True
@@ -753,7 +753,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       Caption         =   "Segni e Sintomi locali"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   -1  'True
@@ -763,14 +763,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
       ForeColor       =   &H00FF0000&
       Height          =   2415
       Left            =   3840
-      TabIndex        =   53
+      TabIndex        =   50
       Top             =   955
       Width           =   7215
       Begin VB.Frame Frame7 
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   67
+         TabIndex        =   64
          Top             =   350
          Width           =   6975
          Begin VB.CheckBox chkEritemaLieve 
@@ -778,7 +778,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -796,7 +796,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -814,7 +814,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -831,7 +831,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Si"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -848,7 +848,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "No"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -866,7 +866,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Eritema"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -876,7 +876,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   11
             Left            =   120
-            TabIndex        =   73
+            TabIndex        =   70
             Top             =   120
             Width           =   810
          End
@@ -885,7 +885,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   66
+         TabIndex        =   63
          Top             =   725
          Width           =   6975
          Begin VB.CheckBox chkDoloreLieve 
@@ -893,7 +893,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -911,7 +911,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -929,7 +929,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -946,7 +946,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Si"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -963,7 +963,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "No"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -981,7 +981,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Dolore"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -991,7 +991,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   2
             Left            =   120
-            TabIndex        =   74
+            TabIndex        =   71
             Top             =   120
             Width           =   720
          End
@@ -1000,7 +1000,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   500
          Left            =   120
-         TabIndex        =   63
+         TabIndex        =   60
          Top             =   1115
          Width           =   6975
          Begin VB.CheckBox chkGonfioreLieve 
@@ -1008,7 +1008,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1026,7 +1026,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1044,7 +1044,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1061,7 +1061,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Si"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1078,7 +1078,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "No"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1096,7 +1096,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Gonfiore"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1106,7 +1106,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   4
             Left            =   120
-            TabIndex        =   75
+            TabIndex        =   72
             Top             =   120
             Width           =   900
          End
@@ -1115,7 +1115,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   64
+         TabIndex        =   61
          Top             =   1505
          Width           =   6975
          Begin VB.CheckBox chkInfiltrazioneLieve 
@@ -1123,7 +1123,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1141,7 +1141,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1159,7 +1159,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1176,7 +1176,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Si"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1193,7 +1193,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "No"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1211,7 +1211,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Infiltrazione"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1221,7 +1221,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   5
             Left            =   120
-            TabIndex        =   76
+            TabIndex        =   73
             Top             =   120
             Width           =   1200
          End
@@ -1230,68 +1230,14 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   0  'None
          Height          =   495
          Left            =   120
-         TabIndex        =   65
+         TabIndex        =   62
          Top             =   1895
          Width           =   6975
-         Begin VB.CheckBox chkPresenzaFremitiLieve 
-            Caption         =   "Lieve"
-            Enabled         =   0   'False
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   3720
-            TabIndex        =   31
-            Top             =   120
-            Width           =   975
-         End
-         Begin VB.CheckBox chkPresenzaFremitiMedio 
-            Caption         =   "Medio"
-            Enabled         =   0   'False
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   4770
-            TabIndex        =   32
-            Top             =   120
-            Width           =   975
-         End
-         Begin VB.CheckBox chkPresenzaFremitiGrave 
-            Caption         =   "Grave"
-            Enabled         =   0   'False
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Left            =   5880
-            TabIndex        =   33
-            Top             =   120
-            Width           =   975
-         End
          Begin VB.OptionButton optSiPresenzaFremiti 
             Caption         =   "Si"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1308,7 +1254,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "No"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1326,7 +1272,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Caption         =   "Presenza Fremiti"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1336,7 +1282,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
             Height          =   240
             Index           =   6
             Left            =   120
-            TabIndex        =   77
+            TabIndex        =   74
             Top             =   120
             Width           =   1875
          End
@@ -1347,7 +1293,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Gravità"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1358,7 +1304,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   27
          Left            =   4800
-         TabIndex        =   92
+         TabIndex        =   89
          Top             =   140
          Width           =   885
       End
@@ -1368,7 +1314,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Presenza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1379,7 +1325,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   25
          Left            =   2310
-         TabIndex        =   91
+         TabIndex        =   88
          Top             =   140
          Width           =   1125
       End
@@ -1405,7 +1351,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1415,7 +1361,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   3
          Left            =   9480
-         TabIndex        =   51
+         TabIndex        =   48
          Top             =   360
          Width           =   465
       End
@@ -1424,7 +1370,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1434,7 +1380,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   1
          Left            =   5400
-         TabIndex        =   50
+         TabIndex        =   47
          Top             =   360
          Width           =   630
       End
@@ -1443,7 +1389,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1453,7 +1399,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          Height          =   240
          Index           =   0
          Left            =   720
-         TabIndex        =   49
+         TabIndex        =   46
          Top             =   360
          Width           =   1005
       End
@@ -1462,7 +1408,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1480,7 +1426,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1498,7 +1444,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1515,16 +1461,50 @@ Begin VB.Form frmSchedeSorveglianzaFAV
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   52
+      TabIndex        =   49
       Top             =   6960
       Width           =   10935
+      Begin VB.OptionButton optNoInterventiAccessoVascolare 
+         Caption         =   "No"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   720
+         TabIndex        =   92
+         Top             =   480
+         Width           =   615
+      End
+      Begin VB.OptionButton optSiInterventiAccessoVascolare 
+         Caption         =   "Si"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   120
+         TabIndex        =   91
+         Top             =   480
+         Width           =   495
+      End
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
          CausesValidation=   0   'False
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1533,7 +1513,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   495
          Left            =   6480
-         TabIndex        =   46
+         TabIndex        =   43
          Top             =   240
          Width           =   1335
       End
@@ -1542,7 +1522,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1551,7 +1531,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   495
          Left            =   7920
-         TabIndex        =   47
+         TabIndex        =   44
          Top             =   240
          Width           =   1335
       End
@@ -1560,7 +1540,7 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1569,9 +1549,61 @@ Begin VB.Form frmSchedeSorveglianzaFAV
          EndProperty
          Height          =   495
          Left            =   9360
-         TabIndex        =   48
+         TabIndex        =   45
          Top             =   240
          Width           =   1335
+      End
+      Begin DataTimeBox.uDataTimeBox oDataInterventoAccessoVascolare 
+         Height          =   372
+         Index           =   0
+         Left            =   4560
+         TabIndex        =   94
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   656
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label4 
+         Caption         =   "Data Intervento Accesso Vasc."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   372
+         Left            =   3120
+         TabIndex        =   93
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   1332
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Interventi sull' accesso vascolare?"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   29
+         Left            =   120
+         TabIndex        =   90
+         Top             =   240
+         Width           =   2988
+         WordWrap        =   -1  'True
       End
    End
 End
@@ -1583,10 +1615,6 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim rsDataset As Recordset
 Dim PazienteKey As Integer
-'Dim ColRosso As Long
-'Dim ColNero As Long
-'ColRosso = &HFF&
-'ColNero = &H80000012
 Dim keyId As Integer
 Dim modifica As Boolean
 
@@ -1650,21 +1678,6 @@ Private Sub chkInfiltrazioneMedio_GotFocus()
     chkInfiltrazioneGrave.Value = Unchecked
 End Sub
 
-Private Sub chkPresenzaFremitiGrave_GotFocus()
-    chkPresenzaFremitiLieve.Value = Unchecked
-    chkPresenzaFremitiMedio.Value = Unchecked
-End Sub
-
-Private Sub chkPresenzaFremitiLieve_GotFocus()
-    chkPresenzaFremitiMedio.Value = Unchecked
-    chkPresenzaFremitiGrave.Value = Unchecked
-End Sub
-
-Private Sub chkPresenzaFremitiMedio_GotFocus()
-    chkPresenzaFremitiLieve.Value = Unchecked
-    chkPresenzaFremitiGrave.Value = Unchecked
-End Sub
-
 Private Sub cmdChiudi_Click()
     'Lo pongo = 0 per evitare che quando chiudo e riapro
     'non mi apre automaticamente il form trova
@@ -1705,14 +1718,6 @@ Private Function ControlloSiNonCompleto() As Boolean
         End If
     End If
     
-    If optSiPresenzaFremiti.Value = True Then
-        If chkPresenzaFremitiLieve.Value = Unchecked And chkPresenzaFremitiMedio.Value = Unchecked And chkPresenzaFremitiGrave.Value = Unchecked Then
-            MsgBox "Specificare la gravità dei FREMITI", vbInformation, "Informazione"
-            ControlloSiNonCompleto = True
-            Exit Function
-        End If
-    End If
-    
 End Function
 
 Private Sub cmdMemorizza_Click()
@@ -1736,6 +1741,13 @@ Private Sub cmdMemorizza_Click()
         End If
     End If
     
+    If optSiInterventiAccessoVascolare.Value = True Then
+        If oDataInterventoAccessoVascolare(0).data = "" Then
+            MsgBox "Inserire la Data Intervento del Nuovo Accesso Vascolare", vbInformation, "Informazione"
+            Exit Sub
+        End If
+    End If
+    
     'Controllo per evitare di Memorizzare il campo "SI"
     'senza selezionare nessun sintomo LIEVE MEDIO GRAVE
     If ControlloSiNonCompleto = True Then
@@ -1751,12 +1763,13 @@ Private Sub cmdMemorizza_Click()
             "DOL_SI_NO", "DOL_VALORE", _
             "GON_SI_NO", "GON_VALORE", _
             "INF_SI_NO", "INF_VALORE", _
-            "PRE_FRE_SI_NO", "PRE_FRE_VALORE", _
+            "PRE_FRE_SI_NO", _
             "ASP_INDICATORI", "ASP_PARAMETRI", "ASP_TOLL_ACCET", _
             "RIE_INDICATORI", "RIE_PARAMETRI", "RIE_TOLL_ACCET", _
             "POR_INDICATORI", "POR_PARAMETRI", "P0R_TOLL_ACCET", _
             "RIC_INDICATORI", "RIC_PARAMETRI", "RIC_TOLL_ACCET", _
             "ACC_VAS_SI_NO", "ACC_VAS_DATA", _
+            "INTERV_ACC_VAS_SI_NO", "INTERV_ACC_VAS_DATA", _
             "UTENTE_COMP_TIPO", "UTENTE_COMP_COGNOME", "UTENTE_COMP_NOME")
 
     v_Val = Array(keyId, PazienteKey, oDataScheda(0).data, _
@@ -1764,12 +1777,13 @@ Private Sub cmdMemorizza_Click()
             GestisciSiNoDolore, GestisciOptDolore, _
             GestisciSiNoGonfiore, GestisciOptGonfiore, _
             GestisciSiNoInfiltrazione, GestisciOptInfiltrazione, _
-            GestisciSiNoPresenzaFremiti, GestisciOptPresenzaFremiti, _
+            GestisciSiNoPresenzaFremiti, _
             txtAspirazioneIndicatore, txtAspirazioneParametri, txtAspirazioneTollAccettate, _
             txtRientroIndicatore, txtRientroParametri, txtRientroTollAccettate, _
             txtPortataIndicatori, txtPortataParametri, txtPortataTollAccettate, _
             txtRicircoloIndicatori, txtRicircoloParametri, txtRicircoloTollAccettate, _
             GestisciSiNoAccessoVascolare, IIf(oDataNuovoAccessoVascolare(2).data = "", Null, oDataNuovoAccessoVascolare(2).data), _
+            GestisciSiNoInterventoAccessoVascolare, IIf(oDataInterventoAccessoVascolare(0).data = "", Null, oDataInterventoAccessoVascolare(0).data), _
             GestisciTipoUtenteCompilatore, GestisciCognomeUtenteCompilatore, GestisciNomeUtenteCompilatore)
         
     Set rsDataset = New Recordset
@@ -1820,21 +1834,19 @@ Private Function GestisciSiNoAccessoVascolare() As String
     End If
 End Function
 
+Private Function GestisciSiNoInterventoAccessoVascolare() As String
+    If optNoInterventiAccessoVascolare.Value = True Then
+        GestisciSiNoInterventoAccessoVascolare = "NO"
+    ElseIf optSiInterventiAccessoVascolare.Value = True Then
+        GestisciSiNoInterventoAccessoVascolare = "SI"
+    End If
+End Function
+
 Private Function GestisciSiNoPresenzaFremiti() As String
     If optNoPresenzaFremiti.Value = True Then
         GestisciSiNoPresenzaFremiti = "NO"
     ElseIf optSiPresenzaFremiti.Value = True Then
         GestisciSiNoPresenzaFremiti = "SI"
-    End If
-End Function
-
-Private Function GestisciOptPresenzaFremiti() As String
-    If chkPresenzaFremitiLieve.Value = Checked Then
-        GestisciOptPresenzaFremiti = "LIEVE"
-    ElseIf chkPresenzaFremitiMedio.Value = Checked Then
-        GestisciOptPresenzaFremiti = "MEDIO"
-    ElseIf chkPresenzaFremitiGrave.Value = Checked Then
-        GestisciOptPresenzaFremiti = "GRAVE"
     End If
 End Function
 
@@ -1933,7 +1945,6 @@ Private Sub cmdStampa_Click()
                 "       NEW adVarChar(2) AS INF_SI_NO, " & _
                 "       NEW adVarChar(6) AS INF_VALORE, " & _
                 "       NEW adVarChar(2) AS PRE_FRE_SI_NO, " & _
-                "       NEW adVarChar(6) AS PRE_FRE_VALORE, " & _
                 "       NEW adVarChar(30) AS ASP_INDICATORI, " & _
                 "       NEW adVarChar(30) AS ASP_PARAMETRI, " & _
                 "       NEW adVarChar(30) AS ASP_TOLL_ACCET, " & _
@@ -1947,7 +1958,8 @@ Private Sub cmdStampa_Click()
                 "       NEW adVarChar(30) AS RIC_INDICATORI, " & _
                 "       NEW adVarChar(30) AS RIC_PARAMETRI, " & _
                 "       NEW adVarChar(30) AS RIC_TOLL_ACCET, " & _
-                "       NEW adVarChar(30) AS ACC_VAS_SI_NO_DATA "
+                "       NEW adVarChar(30) AS ACC_VAS_SI_NO_DATA, " & _
+                "       NEW adVarChar(30) AS INTERV_ACC_VAS_SI_NO_DATA "
                 
         
     ' apre la connessione per lo shape
@@ -1974,7 +1986,6 @@ Private Sub cmdStampa_Click()
                 .Fields("INF_SI_NO") = rsDataset("INF_SI_NO")
                 .Fields("INF_VALORE") = rsDataset("INF_VALORE")
                 .Fields("PRE_FRE_SI_NO") = rsDataset("PRE_FRE_SI_NO")
-                .Fields("PRE_FRE_VALORE") = rsDataset("PRE_FRE_VALORE")
                 .Fields("ASP_INDICATORI") = rsDataset("ASP_INDICATORI")
                 .Fields("ASP_PARAMETRI") = rsDataset("ASP_PARAMETRI")
                 .Fields("ASP_TOLL_ACCET") = rsDataset("ASP_TOLL_ACCET")
@@ -1992,6 +2003,12 @@ Private Sub cmdStampa_Click()
                 Else
                     .Fields("ACC_VAS_SI_NO_DATA") = rsDataset("ACC_VAS_SI_NO")
                 End If
+                If rsDataset("INTERV_ACC_VAS_SI_NO") = "SI" Then
+                    .Fields("INTERV_ACC_VAS_SI_NO_DATA") = rsDataset("INTERV_ACC_VAS_SI_NO") & "    in data  " & rsDataset("INTERV_ACC_VAS_DATA")
+                Else
+                    .Fields("INTERV_ACC_VAS_SI_NO_DATA") = rsDataset("INTERV_ACC_VAS_SI_NO")
+                End If
+
                 rsDataset.MoveNext
             Loop
         End With
@@ -2069,12 +2086,6 @@ Private Sub Pulisci()
     'Presenza fremiti
     optNoPresenzaFremiti.Value = True
     optSiPresenzaFremiti.Value = False
-    chkPresenzaFremitiLieve.Value = Unchecked
-    chkPresenzaFremitiMedio.Value = Unchecked
-    chkPresenzaFremitiGrave.Value = Unchecked
-    chkPresenzaFremitiLieve.Enabled = False
-    chkPresenzaFremitiMedio.Enabled = False
-    chkPresenzaFremitiGrave.Enabled = False
     
     'Rilevazioni
     txtAspirazioneIndicatore.Text = ""
@@ -2092,12 +2103,19 @@ Private Sub Pulisci()
     txtRicircoloParametri.Text = ""
     txtRicircoloTollAccettate.Text = ""
     
-    'Accesso Vascolare
+    'Nuovo Accesso Vascolare
     optNoAccessoVascolare.Value = True
     optSiAccessoVascolare.Value = False
     oDataNuovoAccessoVascolare(2).Pulisci
     Label2.Visible = False
     oDataNuovoAccessoVascolare(2).Visible = False
+    
+    'Intervento Accesso Vascolare
+    optNoInterventiAccessoVascolare.Value = True
+    optSiInterventiAccessoVascolare.Value = False
+    oDataInterventoAccessoVascolare(0).Pulisci
+    Label4.Visible = False
+    oDataInterventoAccessoVascolare(0).Visible = False
     
     'Quando pulisco carico l' utente che ha effettuato il login
     'per evitare di caricare l'utente di una shceda precedente
@@ -2157,33 +2175,6 @@ Private Sub CaricaPaziente()
     End If
 End Sub
 
-'Private Sub CaricaPaziente()
-    
-'    If PazienteKey = 0 Then
-    
-'    Else
-        ' carica i dati del paziente
-'        Set rsDataset = New Recordset
-'        rsDataset.Open "SELECT COGNOME,NOME,DATA_NASCITA FROM PAZIENTI WHERE KEY=" & PazienteKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-'        lblCognome = rsDataset("COGNOME")
-'        lblNome = rsDataset("NOME")
-'        Dim somma As Integer
-'        If Month(rsDataset("DATA_NASCITA")) > Month(date) Then
-'            somma = -1
-'        ElseIf Month(rsDataset("DATA_NASCITA")) = Month(date) And Day(rsDataset("DATA_NASCITA")) > Day(date) Then
-'            somma = -1
-'        Else
-'            somma = 0
-'        End If
-'        lblEta = Year(date) - Year(rsDataset("DATA_NASCITA")) + somma
-'        Set rsDataset = Nothing
-       
-        ' Di default vado a caricare la data di sistema
-'        oDataScheda(0).data = date
-       
-'    End If
-'End Sub
-
 Private Sub CaricaValori()
     Dim data As Date
     
@@ -2207,12 +2198,12 @@ Private Sub CaricaValori()
         Call CaricaValoreDolore
         Call CaricaValoreGonfiore
         Call CaricaValoreInfiltrazione
-        Call CaricaValorePresenzaFremiti
         
         Call CaricaRilevazionePressione
         Call CaricaPortataRicircolo
         
         Call CaricaAccessoVascolare
+        Call CaricaInterventiAccessoVascolare
         
         Call CaricaUtenteCompilatore
         
@@ -2242,6 +2233,17 @@ Private Sub CaricaAccessoVascolare()
         Label2.Visible = True
         oDataNuovoAccessoVascolare(2).Visible = True
         oDataNuovoAccessoVascolare(2).data = rsDataset("ACC_VAS_DATA") & ""
+    End If
+End Sub
+
+Private Sub CaricaInterventiAccessoVascolare()
+    If rsDataset("INTERV_ACC_VAS_SI_NO") = "NO" Then
+        optNoInterventiAccessoVascolare.Value = True
+    ElseIf rsDataset("INTERV_ACC_VAS_SI_NO") = "SI" Then
+        optSiInterventiAccessoVascolare.Value = True
+        Label4.Visible = True
+        oDataInterventoAccessoVascolare(0).Visible = True
+        oDataInterventoAccessoVascolare(0).data = rsDataset("INTERV_ACC_VAS_DATA") & ""
     End If
 End Sub
 
@@ -2303,16 +2305,6 @@ Private Sub CaricaValoreInfiltrazione()
     End If
 End Sub
 
-Private Sub CaricaValorePresenzaFremiti()
-    If rsDataset("PRE_FRE_VALORE") = "LIEVE" Then
-        chkPresenzaFremitiLieve.Value = Checked
-    ElseIf rsDataset("PRE_FRE_VALORE") = "MEDIO" Then
-        chkPresenzaFremitiMedio.Value = Checked
-    ElseIf rsDataset("PRE_FRE_VALORE") = "GRAVE" Then
-        chkPresenzaFremitiGrave.Value = Checked
-    End If
-End Sub
-
 Private Sub CaricaSiNoEritema()
     If rsDataset("ERI_SI_NO") = "NO" Then
         optNoEritema.Value = True
@@ -2362,9 +2354,6 @@ Private Sub CaricaSiNoPresenzaFremito()
         optNoPresenzaFremiti.Value = True
     ElseIf rsDataset("PRE_FRE_SI_NO") = "SI" Then
         optSiPresenzaFremiti.Value = True
-        chkPresenzaFremitiLieve.Enabled = True
-        chkPresenzaFremitiMedio.Enabled = True
-        chkPresenzaFremitiGrave.Enabled = True
     End If
 End Sub
 
@@ -2391,6 +2380,8 @@ Private Sub oDataScheda_OnElencaClick(Index As Integer)
     frmElencaDate.Show 1
     If laData <> "" Then oDataScheda(0).data = laData
 End Sub
+
+
 
 Private Sub optNoAccessoVascolare_GotFocus()
     Label2.Visible = False
@@ -2434,13 +2425,10 @@ Private Sub optNoInfiltrazione_GotFocus()
     chkInfiltrazioneGrave.Value = Unchecked
 End Sub
 
-Private Sub optNoPresenzaFremiti_GotFocus()
-    chkPresenzaFremitiLieve.Enabled = False
-    chkPresenzaFremitiMedio.Enabled = False
-    chkPresenzaFremitiGrave.Enabled = False
-    chkPresenzaFremitiLieve.Value = Unchecked
-    chkPresenzaFremitiMedio.Value = Unchecked
-    chkPresenzaFremitiGrave.Value = Unchecked
+Private Sub optNoInterventiAccessoVascolare_Click()
+    Label4.Visible = False
+    oDataInterventoAccessoVascolare(0).Visible = False
+    oDataInterventoAccessoVascolare(0).txtBox = ""
 End Sub
 
 Private Sub optSiAccessoVascolare_GotFocus()
@@ -2472,10 +2460,9 @@ Private Sub optSiInfiltrazione_GotFocus()
     chkInfiltrazioneGrave.Enabled = True
 End Sub
 
-Private Sub optSiPresenzaFremiti_GotFocus()
-    chkPresenzaFremitiLieve.Enabled = True
-    chkPresenzaFremitiMedio.Enabled = True
-    chkPresenzaFremitiGrave.Enabled = True
+Private Sub optSiInterventiAccessoVascolare_Click()
+    Label4.Visible = True
+    oDataInterventoAccessoVascolare(0).Visible = True
 End Sub
 
 Private Sub txtAspirazioneIndicatore_GotFocus()

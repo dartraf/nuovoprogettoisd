@@ -147,13 +147,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   4535
+         Object.Left            =   4365
          Object.Top             =   1134
-         Object.Width           =   1020
+         Object.Width           =   1190
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -166,13 +166,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   4536
+         Object.Left            =   4365
          Object.Top             =   681
-         Object.Width           =   1245
+         Object.Width           =   1416
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -186,12 +186,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   113
-         Object.Top             =   2212
-         Object.Width           =   2268
+         Object.Top             =   2211
+         Object.Width           =   2438
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -206,11 +206,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Name            =   "txtDistretto"
          Object.Left            =   5613
          Object.Top             =   1134
-         Object.Width           =   2955
+         Object.Width           =   3061
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -233,11 +233,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Name            =   "txtAsl"
          Object.Left            =   5726
          Object.Top             =   681
-         Object.Width           =   2820
+         Object.Width           =   2948
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -264,7 +264,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -277,13 +277,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item6 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDomicilio"
-         Object.Left            =   1304
+         Object.Left            =   1361
          Object.Top             =   2665
-         Object.Width           =   2948
+         Object.Width           =   3060
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -304,13 +304,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtPaziente"
-         Object.Left            =   2381
+         Object.Left            =   2551
          Object.Top             =   2211
-         Object.Width           =   5385
+         Object.Width           =   5550
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -331,13 +331,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   6406
+         Object.Left            =   5953
          Object.Top             =   3118
-         Object.Width           =   1650
+         Object.Width           =   1920
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -350,13 +350,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   4535
+         Object.Left            =   4025
          Object.Top             =   3118
-         Object.Width           =   1305
+         Object.Width           =   1425
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -369,13 +369,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   3345
+         Object.Left            =   2721
          Object.Top             =   3118
          Object.Width           =   510
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -390,11 +390,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Name            =   "Label11"
          Object.Left            =   113
          Object.Top             =   3118
-         Object.Width           =   1815
+         Object.Width           =   1191
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -409,11 +409,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Name            =   "txtGiorni"
          Object.Left            =   113
          Object.Top             =   4025
-         Object.Width           =   8325
+         Object.Width           =   9071
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -434,13 +434,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNumDialisi"
-         Object.Left            =   5839
+         Object.Left            =   5499
          Object.Top             =   3118
-         Object.Width           =   555
+         Object.Width           =   454
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -461,13 +461,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item14 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtAnno"
-         Object.Left            =   3855
+         Object.Left            =   3288
          Object.Top             =   3118
          Object.Width           =   675
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -488,13 +488,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtMese"
-         Object.Left            =   1928
+         Object.Left            =   1304
          Object.Top             =   3118
          Object.Width           =   1410
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -521,7 +521,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -534,13 +534,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
-         Object.Left            =   510
+         Object.Left            =   340
          Object.Top             =   7200
-         Object.Width           =   2445
+         Object.Width           =   2795
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -558,7 +558,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -588,13 +588,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label1"
-         Object.Left            =   4252
+         Object.Left            =   4450
          Object.Top             =   2665
-         Object.Width           =   225
+         Object.Width           =   285
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -607,13 +607,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFogliViaggio
       BeginProperty Item22 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtIndirizzo"
-         Object.Left            =   4479
+         Object.Left            =   4760
          Object.Top             =   2665
-         Object.Width           =   3968
+         Object.Width           =   4080
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   11.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

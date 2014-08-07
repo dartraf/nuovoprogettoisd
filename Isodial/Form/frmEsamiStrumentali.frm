@@ -1139,29 +1139,36 @@ Private Sub cmdStampa_Click()
     rsMain.Open strShape, cnConn, adOpenStatic, adLockOptimistic
         
     ' carica il recordset padre
-    strSql = "SELECT    ORGANI.NOME AS ORGANINOME, ESAMI.NOME AS ESAMINOME, DATA, REFERTO, UTENTE_MODIFICATORE " & _
+     strSql = "SELECT    ORGANI.NOME AS ORGANINOME, ESAMI.NOME AS ESAMINOME, DATA, REFERTO, UTENTE_MODIFICATORE " & _
+             "FROM      ((ESAMI_STRUMENTALI INNER JOIN ORGANI ON ORGANI.KEY=ESAMI_STRUMENTALI.CODICE_ORGANO) " & _
+             "          INNER JOIN ESAMI ON ESAMI.KEY=ESAMI_STRUMENTALI.CODICE_ESAME) " & _
+             "WHERE     ESAMI_STRUMENTALI.KEY=" & keyId & " AND STAMPA=TRUE "
+ 
+ '   strSql = "SELECT    ORGANI.NOME AS ORGANINOME, ESAMI.NOME AS ESAMINOME, DATA, REFERTO, UTENTE_MODIFICATORE " & _
              "FROM      ((ESAMI_STRUMENTALI INNER JOIN ORGANI ON ORGANI.KEY=ESAMI_STRUMENTALI.CODICE_ORGANO) " & _
              "          INNER JOIN ESAMI ON ESAMI.KEY=ESAMI_STRUMENTALI.CODICE_ESAME) " & _
              "WHERE     CODICE_PAZIENTE=" & codicePaziente & " AND " & _
              "          STAMPA=TRUE AND DATA=#" & oData.DataAmericana & "# "
-   
+    
     Set rsEsami = New Recordset
     rsEsami.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    With rsMain
-        .AddNew
-        .Fields("NOME_ORGANO") = rsEsami("ORGANINOME")
-        .Fields("NOME_ESAME") = rsEsami("ESAMINOME")
-        .Fields("DATA") = rsEsami("DATA")
-        .Fields("REFERTO") = rsEsami("REFERTO") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsEsami("UTENTE_MODIFICATORE"))
-    End With
+    If Not (rsEsami.BOF Or rsEsami.EOF) Then
+        With rsMain
+            .AddNew
+            .Fields("NOME_ORGANO") = rsEsami("ORGANINOME")
+            .Fields("NOME_ESAME") = rsEsami("ESAMINOME")
+            .Fields("DATA") = rsEsami("DATA")
+            .Fields("REFERTO") = rsEsami("REFERTO") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsEsami("UTENTE_MODIFICATORE"))
+        End With
+
+        Set rptCartellaClinica_5 = Nothing
+        Set rptCartellaClinica_5.DataSource = rsMain
+        rptCartellaClinica_5.Sections("Intestazione").Controls.Item("lblIDLabel").Caption = ""
+        rptCartellaClinica_5.Sections("Intestazione").Controls.Item("lblCartellaClinica").Caption = ""
+        rptCartellaClinica_5.PrintReport
+    End If
     rsEsami.Close
-
-    Set rptCartellaClinica_5 = Nothing
-    Set rptCartellaClinica_5.DataSource = rsMain
-    rptCartellaClinica_5.Sections("Intestazione").Controls.Item("lblIDLabel").Caption = ""
-    rptCartellaClinica_5.Sections("Intestazione").Controls.Item("lblCartellaClinica").Caption = ""
-    rptCartellaClinica_5.PrintReport
-
+    rsMain.Close
 End Sub
 
 Private Sub cmdElimina_Click()

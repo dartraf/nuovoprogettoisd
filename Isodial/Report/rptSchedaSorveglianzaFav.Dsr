@@ -234,7 +234,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptSchedaSorveglianzaFav
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Data:01/07/2008"
+         Object.Caption         =   "Data: 01/07/2008"
       EndProperty
       ItemType13      =   5
       BeginProperty Item13 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 

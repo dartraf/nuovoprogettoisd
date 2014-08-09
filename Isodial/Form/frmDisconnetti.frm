@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frmDisconnetti 
    BackColor       =   &H8000000A&
    BorderStyle     =   0  'None
@@ -7,12 +7,12 @@ Begin VB.Form frmDisconnetti
    ClientHeight    =   2760
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   4575
+   ClientWidth     =   4572
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   2760
-   ScaleWidth      =   4575
+   ScaleWidth      =   4572
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.CheckBox chkSpegni 
@@ -20,7 +20,7 @@ Begin VB.Form frmDisconnetti
       Caption         =   "Spegni il pc al termine del backup"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -36,8 +36,8 @@ Begin VB.Form frmDisconnetti
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   3960
       Top             =   360
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   995
+      _ExtentY        =   995
       BackColor       =   -2147483643
       ImageWidth      =   24
       ImageHeight     =   22
@@ -75,25 +75,25 @@ Begin VB.Form frmDisconnetti
       AutoSize        =   -1  'True
       BackColor       =   &H8000000B&
       BorderStyle     =   0  'None
-      Height          =   330
-      Left            =   3600
+      Height          =   264
+      Left            =   3720
       MouseIcon       =   "frmDisconnetti.frx":270C
       MousePointer    =   99  'Custom
       Picture         =   "frmDisconnetti.frx":2A16
-      ScaleHeight     =   330
-      ScaleWidth      =   360
+      ScaleHeight     =   264
+      ScaleWidth      =   288
       TabIndex        =   7
       ToolTipText     =   "Annulla l' operazione"
       Top             =   960
-      Width           =   360
+      Width           =   288
    End
    Begin VB.PictureBox Picture4 
       BackColor       =   &H00808080&
       BorderStyle     =   0  'None
       Height          =   735
       Left            =   0
-      ScaleHeight     =   735
-      ScaleWidth      =   5655
+      ScaleHeight     =   732
+      ScaleWidth      =   5652
       TabIndex        =   5
       Top             =   2040
       Width           =   5655
@@ -128,8 +128,8 @@ Begin VB.Form frmDisconnetti
       BorderStyle     =   0  'None
       Height          =   735
       Left            =   0
-      ScaleHeight     =   735
-      ScaleWidth      =   5655
+      ScaleHeight     =   732
+      ScaleWidth      =   5652
       TabIndex        =   4
       Top             =   0
       Width           =   5655
@@ -139,14 +139,14 @@ Begin VB.Form frmDisconnetti
          BackColor       =   &H8000000C&
          BorderStyle     =   0  'None
          ForeColor       =   &H80000008&
-         Height          =   480
+         Height          =   384
          Left            =   960
          Picture         =   "frmDisconnetti.frx":2BA0
-         ScaleHeight     =   480
-         ScaleWidth      =   480
+         ScaleHeight     =   384
+         ScaleWidth      =   384
          TabIndex        =   6
          Top             =   120
-         Width           =   480
+         Width           =   384
       End
       Begin VB.Line Line3 
          BorderColor     =   &H80000009&
@@ -178,33 +178,33 @@ Begin VB.Form frmDisconnetti
       AutoSize        =   -1  'True
       BackColor       =   &H8000000B&
       BorderStyle     =   0  'None
-      Height          =   330
+      Height          =   264
       Left            =   600
       MouseIcon       =   "frmDisconnetti.frx":2EAA
       MousePointer    =   99  'Custom
       Picture         =   "frmDisconnetti.frx":31B4
-      ScaleHeight     =   330
-      ScaleWidth      =   360
+      ScaleHeight     =   264
+      ScaleWidth      =   288
       TabIndex        =   1
       ToolTipText     =   "Consente l'accesso ad un altro utente"
       Top             =   960
-      Width           =   360
+      Width           =   288
    End
    Begin VB.PictureBox picChiudi 
       AutoSize        =   -1  'True
       BackColor       =   &H8000000B&
       BorderStyle     =   0  'None
-      Height          =   330
+      Height          =   264
       Left            =   2160
       MouseIcon       =   "frmDisconnetti.frx":333E
       MousePointer    =   99  'Custom
       Picture         =   "frmDisconnetti.frx":3648
-      ScaleHeight     =   330
-      ScaleWidth      =   360
+      ScaleHeight     =   264
+      ScaleWidth      =   288
       TabIndex        =   0
       ToolTipText     =   "Termina l'esecuzione del programma"
       Top             =   960
-      Width           =   360
+      Width           =   288
    End
    Begin VB.Line Line7 
       BorderColor     =   &H80000009&
@@ -229,7 +229,7 @@ Begin VB.Form frmDisconnetti
       Caption         =   "Annulla"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -240,16 +240,17 @@ Begin VB.Form frmDisconnetti
       Index           =   3
       Left            =   3480
       TabIndex        =   8
-      Top             =   1440
+      Top             =   1320
       Width           =   780
    End
    Begin VB.Label lblChiudi 
+      Alignment       =   2  'Center
       BackColor       =   &H8000000B&
       BackStyle       =   0  'Transparent
-      Caption         =   "      Chiudi    Effettua Backup"
+      Caption         =   "    Chiudi        Effettua Backup"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -259,8 +260,8 @@ Begin VB.Form frmDisconnetti
       Height          =   480
       Left            =   1560
       TabIndex        =   3
-      Top             =   1440
-      Width           =   1725
+      Top             =   1320
+      Width           =   1728
       WordWrap        =   -1  'True
    End
    Begin VB.Label Label1 
@@ -269,7 +270,7 @@ Begin VB.Form frmDisconnetti
       Caption         =   "Cambia  Utente"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -280,8 +281,8 @@ Begin VB.Form frmDisconnetti
       Index           =   2
       Left            =   360
       TabIndex        =   2
-      Top             =   1440
-      Width           =   855
+      Top             =   1320
+      Width           =   852
       WordWrap        =   -1  'True
    End
 End

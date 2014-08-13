@@ -176,7 +176,7 @@ Begin VB.Form frmFatEle
          Top             =   240
          Width           =   1140
       End
-      Begin VB.CommandButton fattelettr 
+      Begin VB.CommandButton GeneraFE 
          Caption         =   "Genera Fattura Elettronica (XML)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -1586,7 +1586,10 @@ Dim strSql As String
         txtIbanNum(3) = Mid(strIban, 16, 12)
         txtAutorizzazioneBollo = rsDataset("NUMERO_AUTORIZZAZIONE")
         txtBolloFattura = VirgolaOrPunto(rsDataset("IMPORTO_BOLLO"), ",") & ""
-        txtProgrInvio = rsDataset("PROGR_INVIO")
+'        If VarType(rsDataset("PROGR_INVIO")) = 1 Then 'se il campo è null VarType assume valore 1
+'            txtProgrInvio = 1
+'        End if
+         txtProgrInvio = rsDataset("PROGR_INVIO")
         modifica = True
     Else
         modifica = False
@@ -1597,6 +1600,13 @@ End Sub
 
 Private Sub cmdEsci_Click()
     Unload frmFatEle
+End Sub
+
+Private Sub GeneraFE_Click()
+    If Completo Then
+        OKGeneraFE = True
+        Unload frmFatEle
+    End If
 End Sub
 
 Private Sub srlno_Click()
@@ -1618,7 +1628,7 @@ End Sub
 Private Sub txtAutorizzazioneBollo_LostFocus()
     txtAutorizzazioneBollo.BackColor = vbWhite
     If Len(txtAutorizzazioneBollo.Text) < 14 Then
-        MsgBox "Il N° di AUTORIZZAZIONE BOLLO VIRTUALE NON può essere inferiore a 14 cifre", vbInformation, "ATTENZIONE!!!"
+        MsgBox "Il N° di AUTORIZZAZIONE BOLLO VIRTUALE NON può essere inferiore a 14 cifre/caratteri", vbInformation, "ATTENZIONE!!!"
         txtAutorizzazioneBollo.SetFocus
     End If
 End Sub

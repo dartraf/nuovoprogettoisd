@@ -55,7 +55,6 @@ Public Const CODICESTS_HELIOS As String = "AD0089"
 Public Const CODICESTS_SODAV As String = "AD0078"
 
 Public Const CODICESTS_SM2 As String = "000SM2"             'POTENZA
-Public Const CODICESTS_S_LUCA As String = "420000"          'SIRACUSA
 
 Public Const colArancione As Long = &HC0FFFF
 
@@ -91,4 +90,5 @@ Public Selezionato As Boolean           ' variabile per il frmApparati
 Public SelezionatoManutenzione As Boolean ' variabile per il frmApparati per caricare/inserire la manutenzione
 Public numKey As Integer
 Public mRagioneSociale As String         ' variabile per trasferire la stringa dal formProduttore al formTrova
+Public OKGeneraFE As Boolean             ' variabile per confermare la generazione della FE
 

@@ -267,6 +267,23 @@ Begin VB.Form frmStampaFattureRiepilogo
       TabIndex        =   8
       Top             =   600
       Width           =   5295
+      Begin VB.CommandButton fattelettr 
+         Caption         =   "&Fattura Elettronica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   120
+         TabIndex        =   18
+         Top             =   240
+         Width           =   1335
+      End
       Begin VB.CommandButton cmdStampa 
          Cancel          =   -1  'True
          Caption         =   "&Stampa"
@@ -312,12 +329,20 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+'' oggetto documentoXML
+Dim doc As New DOMDocument60
+
 Dim napoli3 As Boolean
 Dim numfat As Integer
+Dim txtPercorso As String
 
+Dim FE_Descrizione As String
+Dim FE_Quantita As Integer
+Dim FE_PrezzoUnit As Single
+Dim FE_PrezzoTot As Single
+Dim FE_NumLinea As Integer
 
 Private Sub Form_Load()
-
     Dim rsDataset As New Recordset
     Me.Top = 0
     Me.Left = 10
@@ -349,9 +374,9 @@ Private Sub Form_Load()
     cboAnno.AddItem Year(Now)
     cboAnno.AddItem Year(Now) - 1
     cboAnno.ListIndex = 0
-        
+    
     cboMese.ListIndex = Month(Now) - 1
-       
+        
     rsDataset.Open "SELECT CODICE_ASL FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDataset("CODICE_ASL") = 6 And tStampeRiepilogo = tpFATTURA Then
         napoli3 = True
@@ -376,10 +401,10 @@ Private Sub Form_Load()
         chkNumeroAutorizzazione.Top = 380
     End If
     rsDataset.Close
-    
- 
-    
     Set rsDataset = Nothing
+    
+    txtPercorso = Environ$("USERPROFILE") & "\Desktop"
+    
 End Sub
 
 Private Sub StampaPerMazzetteMensili()
@@ -789,7 +814,6 @@ Private Sub StampaFattura()
     Dim importoTotaleQuotaNazionale As Currency
     Dim importoTotaleNetto As Currency
     
-    
     cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
     cdlStampa.CancelError = True
     cdlStampa.ShowPrinter
@@ -924,8 +948,7 @@ Private Sub StampaFattura()
         .Fields("TOTALE_QUOTA_NAZIONALE") = Round(importoTotaleQuotaNazionale, 2)
         .Fields("IMPORTO_NETTO") = Round(importoTotaleNetto, 2)
     End With
-    
-    
+  
     If rsMain.RecordCount = 2 Then
         MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, Me.Caption
     Else
@@ -1938,14 +1961,10 @@ Private Sub StampaFattura2()
     Loop
     rsDataset.Close
     
+    
    'stampa fattura pazienti asl (la prima)
     If napoli3 And Option1 Or Option2 Then
         If totaleRicette <> 0 Then
-        
-            cdlStampa.Flags = &H40  ' Finestra dialogo Imposta stampante.
-            cdlStampa.CancelError = True
-            cdlStampa.ShowPrinter
-        
             ' totali dei totali
             With rsMain
                 .AddNew
@@ -2683,6 +2702,515 @@ End Sub
 Private Sub txtNumFattura_LostFocus()
     txtNumFattura.BackColor = vbWhite
 End Sub
+
+'' Scrive la data secondo lo standard del file XML
+'
+' @param data data da modificare
+Private Function sistemaData(data As Date) As String
+    sistemaData = Year(data) & "-" & Format(Month(data), "00") & "-" & Format(Day(data), "00")
+End Function
+
+'' Crea un singolo nodo del file XML
+'
+' @param nome nome del nodo
+' @param valore valore da inserire nel nodo
+' @return nodo da aggiungere al documento XML
+Private Function CreaNodo(nome As String, valore As String) As IXMLDOMNode
+    Dim nodo As IXMLDOMNode
+    Set nodo = doc.createElement(nome)
+    nodo.Text = valore
+    Set CreaNodo = nodo
+End Function
+
+Private Sub fattelettr_Click()
+'    McboAnno = cboAnno.Text
+'    McboMese = cboMese.ListIndex + 1
+ If Completo Then               ' controlla che ci sia il n° della fattura
+    frmFatEle.Show 1
+ Else
+    Exit Sub
+ End If
+ 
+ If OKGeneraFE = False Then     ' controlla che sia stato premuto il tasto GENERA FATTURA FE nel formFatEle
+    Exit Sub
+ End If
+ 
+ OKGeneraFE = False
+ 
+ If MsgBox("La generazione della fattura elettronica comporta l'attribuzione definitiva" & vbCrLf & "e non modificabile del n° progressivo d'invio - SI E' SICURI DI PROCEDERE?", vbQuestion + vbYesNo + vbDefaultButton2, "PRESTARE ATTENZIONE!!!") = vbNo Then
+    Exit Sub
+ End If
+
+    Dim proc As IXMLDOMProcessingInstruction
+    Dim nodo0 As IXMLDOMNode
+    Dim nodo1 As IXMLDOMNode
+    Dim nodo2 As IXMLDOMNode
+    Dim nodo3 As IXMLDOMNode
+    Dim attr As IXMLDOMAttribute
+    Dim root As IXMLDOMElement
+    Dim frag As IXMLDOMDocumentFragment
+    
+    Dim strShape As String
+    Dim strSql As String
+    Dim cnConn As Connection        ' connessione per lo shape
+    Dim rsMain As Recordset         ' recordset padre per lo shape
+    Dim rsDataset As New Recordset
+    Dim rsAppo As New Recordset
+    Dim ticket As Currency
+    Dim quotaAggiuntiva As Currency
+    Dim quotaNazionale As Currency
+    Dim totaleRicette As Integer
+    Dim coeffTicket As Integer
+    Dim coeffQuota As Single
+    Dim coeffQuotaNazionale As Single
+    
+  ' totale dei totali
+    Dim totaleAsl As Integer
+    Dim totaleRegione As Integer
+    Dim totaleFuoriRegione As Integer
+    Dim importoTotale As Currency
+    Dim importoTotaleScontato As Currency
+    Dim importoTotaleTicket As Currency
+    Dim importoTotaleQuotaAggiuntiva As Currency
+    Dim importoTotaleQuotaNazionale As Currency
+    Dim importoTotaleNetto As Currency
+
+    Dim MCodFisc As String
+    Dim MCodiceAsl As Integer
+    Dim MCodiceComune As Integer
+    Dim MCod_Destinatario As String
+    Dim MProgr_Invio As String
+    Dim WebXml As String
+    Dim ret As Integer
+           
+  '  Dim rsDataset As New Recordset
+  '  Dim rsAppo As New Recordset
+  '  Dim codiceSTS As String
+  '  Dim codiceAsl As String
+  '  Dim totaleAssistito As Single
+  '  Dim totaleScontato As Single
+  '  Dim coefficienteQuotaAggiuntiva As Single
+    
+    ' verifica se ci sono ricette
+    rsDataset.Open "SELECT * FROM RICETTE  WHERE (ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If rsDataset.EOF And rsDataset.BOF Then
+        MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, "Genera file XML"
+        rsDataset.Close
+        Exit Sub
+    Else
+        Set rsDataset = Nothing
+    End If
+    
+    Set doc = Nothing
+    ' versione
+    ' ?xml version="1.0" encoding="UTF-8"?
+    ' ?xml-stylesheet type="text/xsl" href="fatturapa_v1.0.xsl"?
+    Set proc = doc.createProcessingInstruction("xml", "version='1.0' encoding='UTF-8'")
+    doc.appendChild proc
+    Set proc = doc.createProcessingInstruction("xml-stylesheet", "type='text/xsl' href='fatturapa_v1.0.xsl'")
+    doc.appendChild proc
+           
+    '<p:FatturaElettronica versione="1.0"
+    'xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    'xmlns:p="http://www.fatturapa.gov.it/sdi/fatturapa/v1.0"
+    'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    ' root
+    Set root = doc.createElement("p:FatturaElettronica")
+    doc.appendChild root
+    
+    Set attr = doc.createAttribute("versione")
+    attr.Value = "1.0"
+    root.setAttributeNode attr
+ 
+    Set attr = doc.createAttribute("xmlns:ds")
+    attr.Value = "http://www.w3.org/2000/09/xmldsig#"
+    root.setAttributeNode attr
+    
+    Set attr = doc.createAttribute("xmlns:p")
+    attr.Value = "http://www.fatturapa.gov.it/sdi/fatturapa/v1.0"
+    root.setAttributeNode attr
+    
+    Set attr = doc.createAttribute("xmlns:xsi")
+    attr.Value = "http://www.w3.org/2001/XMLSchema-instance"
+    root.setAttributeNode attr
+    'doc.appendChild root
+
+'-------------------------------------------------------------
+    'crea 1° macroblocco
+    Set nodo0 = doc.createElement("FatturaElettronicaHeader")
+
+  ' DATI TRASMISSIONE punto 1.1
+    rsDataset.Open "SELECT COD_DESTINATARIO,PROGR_INVIO FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
+    MCod_Destinatario = rsDataset("COD_DESTINATARIO")
+    MProgr_Invio = rsDataset("PROGR_INVIO")
+    rsDataset("PROGR_INVIO") = MProgr_Invio + 1 'incrementa il numero progresso
+    rsDataset.Update
+    rsDataset.Close
+    
+    rsDataset.Open "SELECT RAGIONE_SOCIALE,IVA,CODICE_FISCALE,INDIRIZZO,CAP,CITTA,REG_FISCALE,PR_UFF_REG,NUM_REA,CAP_SOCIALE,SRL,SOCIO,LIQUIDAZIONE FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    MCodFisc = rsDataset("CODICE_FISCALE")
+
+    'crea 1° elemento
+    Set nodo1 = doc.createElement("DatiTrasmissione")
+        'aggiunge al 1° macroblocco il 1° elemento
+        nodo0.appendChild nodo1
+    
+    'crea 2° elemento e nodi
+    Set nodo2 = doc.createElement("IdTrasmittente")
+        nodo2.appendChild CreaNodo("IdPaese", "IT")
+        nodo2.appendChild CreaNodo("IdCodice", MCodFisc)
+        'aggiunge al 1° elemento l'elemento i nodi del 2° elemento
+        nodo1.appendChild nodo2
+    
+    'aggiunge al 1° elemento i nodi
+    nodo1.appendChild CreaNodo("ProgressivoInvio", MProgr_Invio)
+    nodo1.appendChild CreaNodo("FormatoTrasmissione", "SDI10")
+    nodo1.appendChild CreaNodo("CodiceDestinatario", MCod_Destinatario)
+    
+'..................................................
+    'CEDENTE PRESTATORE punto 1.2
+    
+    'crea 1° elemento
+    Set nodo1 = doc.createElement("CedentePrestatore")
+        'aggiunge al 1° macroblocco il 1° elemento
+        nodo0.appendChild nodo1
+    
+    'crea 2° elemento punto 1.2.1
+    Set nodo2 = doc.createElement("DatiAnagrafici")
+        'aggiunge al 1° elemento il 2° elemento
+        nodo1.appendChild nodo2
+        
+    'crea 3° elemento e nodi punto 1.2.1.1
+    Set nodo3 = doc.createElement("IdFiscaleIVA")
+        nodo3.appendChild CreaNodo("IdPaese", "IT")
+        nodo3.appendChild CreaNodo("IdCodice", rsDataset("IVA"))
+        'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
+        nodo2.appendChild nodo3
+    
+    ' punto 1.2.1.3
+    Set nodo3 = doc.createElement("Anagrafica")
+        nodo3.appendChild CreaNodo("Denominazione", rsDataset("RAGIONE_SOCIALE"))
+        'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
+        nodo2.appendChild nodo3
+    
+    ' punto 1.2.1.8
+    nodo2.appendChild CreaNodo("RegimeFiscale", rsDataset("REG_FISCALE"))
+    'aggiunge al 1° elemento i nodi
+    nodo1.appendChild nodo2
+  
+    ' punto 1.2.2
+    Set nodo2 = doc.createElement("Sede")
+        nodo2.appendChild CreaNodo("Indirizzo", rsDataset("INDIRIZZO"))
+        nodo2.appendChild CreaNodo("CAP", rsDataset("CAP"))
+        nodo2.appendChild CreaNodo("Comune", rsDataset("CITTA"))
+        nodo2.appendChild CreaNodo("Nazione", "IT")
+        'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
+        nodo1.appendChild nodo2
+    
+    ' punto 1.2.4
+    Set nodo2 = doc.createElement("IscrizioneREA")
+        nodo2.appendChild CreaNodo("Ufficio", rsDataset("PR_UFF_REG"))
+        nodo2.appendChild CreaNodo("NumeroREA", rsDataset("NUM_REA"))
+        nodo2.appendChild CreaNodo("CapitaleSociale", VirgolaOrPunto(Format(rsDataset("CAP_SOCIALE"), "#####.00"), ","))
+        If rsDataset("SRL") = True Then 'campo srl = si
+            nodo2.appendChild CreaNodo("SocioUnico", rsDataset("SOCIO"))
+        End If
+        nodo2.appendChild CreaNodo("StatoLiquidazione", rsDataset("LIQUIDAZIONE"))
+        'aggiunge al 1° elemento l'elementi e i nodi del 2° elemento
+        nodo1.appendChild nodo2
+   
+    rsDataset.Close
+'..................................................
+    'CESSIONARIO COMMITTENTE punto 1.4
+    
+    rsDataset.Open "SELECT CODICE_ASL,P_IVA,CODICE_FISCALE,INDIRIZZO,CAP,CODICE_COMUNE FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    'crea 1° elemento
+    Set nodo1 = doc.createElement("CessionarioCommittente")
+        'aggiunge al 1° macroblocco il 1° elemento
+        nodo0.appendChild nodo1
+        
+    'crea 2° elemento punto 1.4.1
+    Set nodo2 = doc.createElement("DatiAnagrafici")
+        'aggiunge al 1° elemento il 2° elemento
+        nodo1.appendChild nodo2
+        
+    'crea 3° elemento e nodi punto 1.4.1.1
+    Set nodo3 = doc.createElement("IdFiscaleIVA")
+        nodo3.appendChild CreaNodo("IdPaese", "IT")
+        nodo3.appendChild CreaNodo("IdCodice", rsDataset("P_IVA"))
+        'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
+        nodo2.appendChild nodo3
+    
+    ' punto 1.4.1.3
+    MCodiceAsl = rsDataset("CODICE_ASL")
+    rsAppo.Open "SELECT NOME FROM ASL WHERE KEY=" & MCodiceAsl, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    Set nodo3 = doc.createElement("Anagrafica")
+        nodo3.appendChild CreaNodo("Denominazione", "ASL " & rsAppo("NOME"))
+        'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
+        nodo2.appendChild nodo3
+    rsAppo.Close
+  
+    ' punto 1.4.2
+    MCodiceComune = rsDataset("CODICE_COMUNE")
+    rsAppo.Open "SELECT NOME FROM COMUNI WHERE KEY=" & MCodiceComune, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    Set nodo2 = doc.createElement("Sede")
+        nodo2.appendChild CreaNodo("Indirizzo", rsDataset("INDIRIZZO"))
+        nodo2.appendChild CreaNodo("CAP", rsDataset("CAP"))
+        nodo2.appendChild CreaNodo("Comune", rsAppo("NOME"))
+        nodo2.appendChild CreaNodo("Nazione", "IT")
+        'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
+        nodo1.appendChild nodo2
+            
+    root.appendChild nodo0
+    
+    rsAppo.Close
+    rsDataset.Close
+'------------------------------------------------------------
+    'crea 2° macroblocco
+    Set nodo0 = doc.createElement("FatturaElettronicaBody")
+
+   'DATI GENERALI punto 2.1
+
+    'crea 1° elemento punto 2.1
+    Set nodo1 = doc.createElement("DatiGenerali")
+        'aggiunge al 2° elemento radice il 1° elemento
+        nodo0.appendChild nodo1
+        
+    'crea 2° elemento e nodi punto 2.1.1
+    Set nodo2 = doc.createElement("DatiGeneraliDocumento")
+        nodo2.appendChild CreaNodo("TipoDocumento", "TD01")
+        nodo2.appendChild CreaNodo("Divisa", "EUR")
+        nodo2.appendChild CreaNodo("Data", sistemaData(GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)))
+        nodo2.appendChild CreaNodo("Numero", txtNumFattura)
+        'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
+        nodo1.appendChild nodo2
+    
+    rsDataset.Open "SELECT NUMERO_AUTORIZZAZIONE,IMPORTO_BOLLO FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    'crea 3° elemento e nodi punto 2.2.1.6
+    Set nodo3 = doc.createElement("DatiBollo")
+'       nodo3.appendChild CreaNodo("NumeroBollo", rsDataset("NUMERO_AUTORIZZAZIONE")) '14 chr
+        nodo3.appendChild CreaNodo("NumeroBollo", "DM-17-GIU-2014") 'dicitura temporanea
+        nodo3.appendChild CreaNodo("ImportoBollo", VirgolaOrPunto(Format(rsDataset("IMPORTO_BOLLO"), "#####.00"), ","))
+        'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
+        nodo2.appendChild nodo3
+
+    rsDataset.Close
+'..................................................
+    'DATI BENI SERVIZI punto 2.2
+    
+   ' rsDataset.Open "SELECT CODICE_ASL,P_IVA,CODICE_FISCALE,INDIRIZZO,CAP,CODICE_COMUNE FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    'crea 1° elemento
+    Set nodo1 = doc.createElement("DatiBeniServizi")
+        'aggiunge al 2° macroblocco il 1° elemento
+        nodo0.appendChild nodo1
+
+    importoTotale = 0
+    importoTotaleNetto = 0
+    importoTotaleScontato = 0
+    importoTotaleTicket = 0
+    importoTotaleQuotaAggiuntiva = 0
+    importoTotaleQuotaNazionale = 0
+        
+    strShape = "SHAPE APPEND " & _
+                "       NEW adVarChar(10) AS CODICE_PRESTAZIONE, " & _
+                "       NEW adInteger AS TOTALE_ASL, " & _
+                "       NEW adInteger AS TOTALE_REGIONE, " & _
+                "       NEW adInteger AS TOTALE_FUORI_REGIONE, " & _
+                "       NEW adCurrency AS IMPORTO_UNITARIO, " & _
+                "       NEW adCurrency AS IMPORTO_TOTALE, " & _
+                "       NEW adCurrency AS IMPORTO_SCONTATO, " & _
+                "       NEW adCurrency AS IMPORTO_TOTALE_SCONTATO, " & _
+                "       NEW adCurrency AS TOTALE_TICKET, " & _
+                "       NEW adCurrency AS TOTALE_QUOTA_AGGIUNTIVA, " & _
+                "       NEW adCurrency AS TOTALE_QUOTA_NAZIONALE, " & _
+                "       NEW adCurrency AS IMPORTO_NETTO"
+      
+        
+    ' apre la connessione per lo shape
+    Set cnConn = New ADODB.Connection
+    cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
+    Set rsMain = New ADODB.Recordset
+    rsMain.Open strShape, cnConn, adOpenStatic, adLockOptimistic
+    
+    Set rsDataset = New Recordset
+    Set rsAppo = New Recordset
+    
+    rsDataset.Open "SELECT TICKET, QUOTA_AGGIUNTIVA, QUOTA_NAZIONALE FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    ticket = VirgolaOrPunto(rsDataset("TICKET"), ".")
+    quotaAggiuntiva = VirgolaOrPunto(rsDataset("QUOTA_AGGIUNTIVA"), ".")
+    quotaNazionale = VirgolaOrPunto(rsDataset("QUOTA_NAZIONALE"), ".")
+    rsDataset.Close
+    
+    rsDataset.Open "SELECT DISTINCT PR.CODICE_PRESTAZIONE, CODICE FROM ((RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) INNER JOIN NOMENCLATORE_TARIFFARIO N ON N.KEY=PR.CODICE_PRESTAZIONE) WHERE MESE=" & cboMese.ListIndex + 1 & " AND ANNO=" & cboAnno.Text & " AND NOT FLAG=3", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+   'INIZIO BLOCCO DETTAGLIO - QUESTO BLOCCO VA RIPETUTO PER TUTTE LE LINEE DI DETTAGLIO
+
+    FE_NumLinea = 1
+    
+    Do While Not rsDataset.EOF
+    
+        'crea 2° elemento e nodi punto 2.2.1
+        Set nodo2 = doc.createElement("DettaglioLinee")
+        nodo2.appendChild CreaNodo("NumeroLinea", Str(FE_NumLinea))
+       'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
+        nodo1.appendChild nodo2
+
+        With rsMain
+            .AddNew
+            .Fields("CODICE_PRESTAZIONE") = rsDataset("CODICE")
+            FE_Descrizione = rsDataset("CODICE")
+            rsAppo.Open "SELECT  SUM(QUANTITA) AS TOTALEQ FROM ((RICETTE R INNER JOIN PAZIENTI P ON P.KEY=R.CODICE_PAZIENTE) INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND P.CODICE_ASL=" & structIntestazione.sCodiceAsl & " AND NOT FLAG=3", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            If IsNull(rsAppo("TOTALEQ")) Then
+                .Fields("TOTALE_ASL") = 0
+            Else
+                .Fields("TOTALE_ASL") = rsAppo("TOTALEQ")
+
+            End If
+            rsAppo.Close
+            totaleAsl = totaleAsl + .Fields("TOTALE_ASL")
+        
+            rsAppo.Open "SELECT SUM(QUANTITA) AS TOTALEQ FROM ((RICETTE R INNER JOIN PAZIENTI P ON P.KEY=R.CODICE_PAZIENTE) INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND P.CODICE_ASL IN (SELECT KEY FROM ASL WHERE CODICE_REGIONE=16) AND NOT P.CODICE_ASL=" & structIntestazione.sCodiceAsl & " AND NOT FLAG=3", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            If IsNull(rsAppo("TOTALEQ")) Then
+                .Fields("TOTALE_REGIONE") = 0
+            Else
+                .Fields("TOTALE_REGIONE") = rsAppo("TOTALEQ")
+            End If
+            rsAppo.Close
+            totaleRegione = totaleRegione + .Fields("TOTALE_REGIONE")
+            
+            rsAppo.Open "SELECT SUM(QUANTITA) AS TOTALEQ FROM ((RICETTE R INNER JOIN PAZIENTI P ON P.KEY=R.CODICE_PAZIENTE) INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND NOT P.CODICE_ASL IN (SELECT KEY FROM ASL WHERE CODICE_REGIONE=16) AND NOT P.CODICE_ASL=" & structIntestazione.sCodiceAsl & " AND NOT FLAG=3", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            If IsNull(rsAppo("TOTALEQ")) Then
+                .Fields("TOTALE_FUORI_REGIONE") = 0
+            Else
+                .Fields("TOTALE_FUORI_REGIONE") = rsAppo("TOTALEQ")
+            End If
+            rsAppo.Close
+            totaleFuoriRegione = totaleFuoriRegione + .Fields("TOTALE_FUORI_REGIONE")
+            
+            'Somma le dialisi x il codice prestazione
+            FE_Quantita = totaleAsl + totaleRegione + totaleFuoriRegione
+        
+            rsAppo.Open "SELECT COUNT(R.KEY) AS TOTALE_R FROM ((RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) INNER JOIN TIPOLOGIE_ESENZIONE T ON T.KEY=R.CODICE_ESENZIONE) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND (NOT FLAG=3) AND T.ESENZIONE_QUOTA=FALSE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            totaleRicette = rsAppo("TOTALE_R")
+            rsAppo.Close
+            
+            rsAppo.Open "SELECT COUNT(R.KEY) AS TOTALE_R FROM ((RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) INNER JOIN TIPOLOGIE_ESENZIONE E ON E.KEY=R.CODICE_ESENZIONE) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND (NOT FLAG=3) AND (CODICE_ESENZIONE=-1 OR CODICE='E05')", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            coeffTicket = rsAppo("TOTALE_R")
+            coeffQuotaNazionale = rsAppo("TOTALE_R")
+            rsAppo.Close
+            
+            rsAppo.Open "SELECT COUNT(R.KEY) AS TOTALE_R FROM (RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND (NOT FLAG=3) AND CODICE_ESENZIONE=-1", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            coeffQuota = rsAppo("TOTALE_R")
+            rsAppo.Close
+            rsAppo.Open "SELECT COUNT(R.KEY) AS TOTALE_R FROM ((RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) INNER JOIN TIPOLOGIE_ESENZIONE T ON T.KEY=R.CODICE_ESENZIONE) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND (NOT FLAG=3) AND (NOT CODICE_ESENZIONE=-1) AND T.ESENZIONE_QUOTA=FALSE  AND ESENZIONE_DOPPIA=FALSE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            coeffQuota = coeffQuota + rsAppo("TOTALE_R") / 2
+            rsAppo.Close
+            
+            rsAppo.Open "SELECT DISTINCT IMPORTO, IMPORTO_SCONTATO FROM (RICETTE R INNER JOIN PRESCRIZIONI PR ON PR.CODICE_RICETTA=R.KEY) WHERE CODICE_PRESTAZIONE=" & rsDataset("CODICE_PRESTAZIONE") & " AND ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & " AND NOT FLAG=3", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
+            .Fields("IMPORTO_UNITARIO") = rsAppo("IMPORTO")
+            .Fields("IMPORTO_TOTALE") = .Fields("IMPORTO_UNITARIO") * (.Fields("TOTALE_ASL") + .Fields("TOTALE_REGIONE") + .Fields("TOTALE_FUORI_REGIONE"))
+            
+            'Riporta il costo ed il totale della specifica prestazione
+            FE_PrezzoUnit = rsAppo("IMPORTO")
+            FE_PrezzoTot = .Fields("IMPORTO_UNITARIO") * (.Fields("TOTALE_ASL") + .Fields("TOTALE_REGIONE") + .Fields("TOTALE_FUORI_REGIONE"))
+            
+        'aggiunge al 2° elemento i nodi
+    nodo2.appendChild CreaNodo("Descrizione", FE_Descrizione)
+    nodo2.appendChild CreaNodo("Quantita", VirgolaOrPunto(Format(FE_Quantita, "#####.00"), ","))
+    nodo2.appendChild CreaNodo("DataInizioPeriodo", sistemaData("01-" & cboMese.ListIndex + 1 & "-" & cboAnno.Text))
+    nodo2.appendChild CreaNodo("DataFinePeriodo", sistemaData(GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)))
+    nodo2.appendChild CreaNodo("PrezzoUnitario", VirgolaOrPunto(Format(FE_PrezzoUnit, "#####.00"), ","))
+    nodo2.appendChild CreaNodo("PrezzoTotale", VirgolaOrPunto(Format(FE_PrezzoTot, "#####.00"), ","))
+    nodo2.appendChild CreaNodo("AliquotaIVA", "0.00")
+    nodo2.appendChild CreaNodo("Natura", "N4")
+        
+            
+            importoTotale = importoTotale + .Fields("IMPORTO_TOTALE")
+            .Fields("IMPORTO_SCONTATO") = rsAppo("IMPORTO_SCONTATO")
+            .Fields("IMPORTO_TOTALE_SCONTATO") = .Fields("IMPORTO_SCONTATO") * (.Fields("TOTALE_ASL") + .Fields("TOTALE_REGIONE") + .Fields("TOTALE_FUORI_REGIONE"))
+            
+            .Fields("TOTALE_QUOTA_AGGIUNTIVA") = quotaAggiuntiva * coeffQuota
+            .Fields("TOTALE_QUOTA_NAZIONALE") = quotaNazionale * coeffQuotaNazionale
+            .Fields("TOTALE_TICKET") = ticket * coeffTicket
+            .Fields("IMPORTO_NETTO") = .Fields("IMPORTO_TOTALE_SCONTATO") - .Fields("TOTALE_TICKET") - .Fields("TOTALE_QUOTA_AGGIUNTIVA") - .Fields("TOTALE_QUOTA_NAZIONALE")
+            
+            importoTotaleQuotaAggiuntiva = importoTotaleQuotaAggiuntiva + .Fields("TOTALE_QUOTA_AGGIUNTIVA")
+            importoTotaleQuotaNazionale = importoTotaleQuotaNazionale + .Fields("TOTALE_QUOTA_NAZIONALE")
+            importoTotaleTicket = importoTotaleTicket + .Fields("TOTALE_TICKET")
+            importoTotaleNetto = importoTotaleNetto + .Fields("IMPORTO_NETTO")
+            importoTotaleScontato = importoTotaleScontato + .Fields("IMPORTO_TOTALE_SCONTATO")
+            totaleRicette = 0
+            totaleAsl = 0
+            totaleRegione = 0
+            totaleFuoriRegione = 0
+            rsAppo.Close
+            .Update
+            FE_NumLinea = FE_NumLinea + 1
+            rsDataset.MoveNext
+        End With
+    Loop
+    rsDataset.Close
+
+    Set rsDataset = Nothing
+    Set rsAppo = Nothing
+    Set rsMain = Nothing
+    
+'FINE BLOCCO DETTAGLIO
+    
+    'crea 2° elemento e nodi punto 2.2.2
+    Set nodo2 = doc.createElement("DatiRiepilogo")
+        nodo2.appendChild CreaNodo("AliquotaIVA", "0.00")
+        nodo2.appendChild CreaNodo("Natura", "N4")
+        nodo2.appendChild CreaNodo("ImponibileImporto", VirgolaOrPunto(Format(importoTotale, "#####.00"), ","))
+        nodo2.appendChild CreaNodo("Imposta", "0.00")
+       'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
+        nodo1.appendChild nodo2
+'..................................................
+    'DATI PAGAMENTO punto 2.4
+    
+    rsDataset.Open "SELECT INTESTATARIO_CC,CODICE_ASL,IBAN FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+    'crea 1° elemento
+    Set nodo1 = doc.createElement("DatiPagamento")
+        'aggiunge al 2° macroblocco il 1° elemento
+        nodo0.appendChild nodo1
+
+    'crea nodo punto 2.4.1
+    nodo1.appendChild CreaNodo("CondizioniPagamento", "TP02")
+        
+    'crea 2° elemento e nodi punto 2.4.2
+    Set nodo2 = doc.createElement("DettaglioPagamento")
+        
+    'aggiunge al 2° elemento i nodi
+    nodo2.appendChild CreaNodo("Beneficiario", rsDataset("INTESTATARIO_CC"))
+    nodo2.appendChild CreaNodo("ModalitaPagamento", "MP05")
+    nodo2.appendChild CreaNodo("ImportoPagamento", VirgolaOrPunto(Format(importoTotale, "#####.00"), ","))
+    nodo2.appendChild CreaNodo("IBAN", rsDataset("IBAN"))
+    'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
+    nodo1.appendChild nodo2
+    
+    root.appendChild nodo0
+    rsDataset.Close
+    
+    ' Salva La fattura XML
+    WebXml = txtPercorso & "\IT" & MCodFisc & "_" & Format(MProgr_Invio, "00000") & ".xml"
+    doc.Save WebXml
+    
+    ' Copia il foglio di stile per la visualizzazione della fattura nel percorso selezionato
+    Call FileCopyEx(structApri.pathExe & "\*.xsl", txtPercorso & "\*.xsl")
+    
+    'Visualizza nel browser la fattura dal file XML
+    'SHOW_SHOWNORMAL = 1
+    'SHOW_SHOWMAXIMIZED = 3
+    ret = ShellExecute(Me.hWnd, "open", WebXml, vbNullString, vbNullString, 1)
+    If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
+
+End Sub
+
 
 
 

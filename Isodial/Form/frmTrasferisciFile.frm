@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmTrasferisciFile 
    BackColor       =   &H00808080&
    BorderStyle     =   0  'None
@@ -116,11 +116,15 @@ Private Sub Copia(lettera As String)
     
     Call CaricaMaxBackup
     Call BackupArchivio(lettera)
-    
+
+    Call CreaDir(lettera)
+    Call FileCopyEx(structApri.pathExe & "\FE\*.xml", lettera & ":\FE\*.xml")
+    Call FileCopyEx(structApri.pathExe & "\Moduli\*.doc", lettera & ":\Moduli\*.doc")
+
 '    anmAvi.Stop
 '    anmAvi.Visible = False
     
-    Call BloccoCentri
+'    Call BloccoCentri
     Me.SetFocus
     If SpegniPc Then
         tempo = Timer
@@ -299,7 +303,15 @@ Private Sub GestioneErrore()
     End Select
     Screen.MousePointer = 0
     If Err.Number <> 5 Then
-        MsgBox "Errore n° 1 - " & strMsg, vbCritical, "Attenzione"
+    Debug.Print Err.Number
+       ' MsgBox "Errore n° 1 - " & strMsg, vbCritical, "Attenzione"
     End If
     Unload Me
 End Sub
+
+Private Sub CreaDir(lettera As String)
+    On Error Resume Next
+    MkDir (lettera & ":\FE")
+    MkDir (lettera & ":\Moduli")
+End Sub
+

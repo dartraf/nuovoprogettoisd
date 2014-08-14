@@ -2723,8 +2723,6 @@ Private Function CreaNodo(nome As String, valore As String) As IXMLDOMNode
 End Function
 
 Private Sub fattelettr_Click()
-'    McboAnno = cboAnno.Text
-'    McboMese = cboMese.ListIndex + 1
  If Completo Then               ' controlla che ci sia il n° della fattura
     frmFatEle.Show 1
  Else
@@ -2780,7 +2778,7 @@ Private Sub fattelettr_Click()
     Dim MCodiceComune As Integer
     Dim MCod_Destinatario As String
     Dim MProgr_Invio As String
-    Dim WebXml As String
+    Dim NameXML As String
     Dim ret As Integer
            
   '  Dim rsDataset As New Recordset
@@ -3197,16 +3195,17 @@ Private Sub fattelettr_Click()
     rsDataset.Close
     
     ' Salva La fattura XML
-    WebXml = txtPercorso & "\IT" & MCodFisc & "_" & Format(MProgr_Invio, "00000") & ".xml"
-    doc.Save WebXml
+    NameXML = "\IT" & MCodFisc & "_" & Format(MProgr_Invio, "00000") & ".xml"
+    doc.Save structApri.pathExe & "\FE\" & NameXML
+        
+    ' Copia il file XML dalla cartella FE al percorso selezionato
+    ' Call FileCopyEx(structApri.pathExe & "\*.xsl", txtPercorso & "\*.xsl")
+    Call FileCopyEx(structApri.pathExe & "\FE\" & NameXML, txtPercorso & "\" & NameXML)
     
-    ' Copia il foglio di stile per la visualizzazione della fattura nel percorso selezionato
-    Call FileCopyEx(structApri.pathExe & "\*.xsl", txtPercorso & "\*.xsl")
-    
-    'Visualizza nel browser la fattura dal file XML
+    'Visualizza nel browser la fattura dal file XML della cartella FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hWnd, "open", WebXml, vbNullString, vbNullString, 1)
+    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameXML, vbNullString, vbNullString, 1)
     If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
 
 End Sub

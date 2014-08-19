@@ -2,21 +2,21 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Richiesta esami di laboratorio Modulo Sodav"
-   ClientHeight    =   9030
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   10290
+   ClientHeight    =   9036
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   10284
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   18150
-   _ExtentY        =   15928
+   _ExtentX        =   18140
+   _ExtentY        =   15939
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   9733
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -66,12 +66,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "lblPaziente"
          Object.Left            =   3061
-         Object.Top             =   2860
-         Object.Width           =   3690
-         Object.Height          =   345
+         Object.Top             =   2917
+         Object.Width           =   3696
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -85,12 +85,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "Label7"
          Object.Left            =   113
-         Object.Top             =   2465
-         Object.Width           =   3629
-         Object.Height          =   345
+         Object.Top             =   2522
+         Object.Width           =   3636
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   -1  'True
@@ -108,7 +108,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -126,7 +126,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -141,10 +141,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Left            =   113
          Object.Top             =   765
          Object.Width           =   4815
-         Object.Height          =   1020
+         Object.Height          =   1163
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -162,7 +162,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -175,12 +175,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "lblData"
          Object.Left            =   113
-         Object.Top             =   1870
-         Object.Width           =   1815
-         Object.Height          =   345
+         Object.Top             =   1927
+         Object.Width           =   1824
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -193,12 +193,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "Label8"
          Object.Left            =   2268
-         Object.Top             =   1870
-         Object.Width           =   3855
-         Object.Height          =   345
+         Object.Top             =   1927
+         Object.Width           =   3852
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -212,12 +212,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "lblMese"
          Object.Left            =   6180
-         Object.Top             =   1871
+         Object.Top             =   1928
          Object.Width           =   2880
-         Object.Height          =   345
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -230,12 +230,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "Label9"
          Object.Left            =   113
-         Object.Top             =   2835
-         Object.Width           =   2948
-         Object.Height          =   345
+         Object.Top             =   2892
+         Object.Width           =   2952
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -249,12 +249,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "Label10"
          Object.Left            =   6803
-         Object.Top             =   2835
+         Object.Top             =   2892
          Object.Width           =   840
-         Object.Height          =   345
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -268,12 +268,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "lblDataNascita"
          Object.Left            =   7653
-         Object.Top             =   2860
+         Object.Top             =   2917
          Object.Width           =   1140
-         Object.Height          =   345
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -286,12 +286,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "Label11"
          Object.Left            =   113
-         Object.Top             =   3402
-         Object.Width           =   9355
+         Object.Top             =   3459
+         Object.Width           =   9360
          Object.Height          =   396
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -305,12 +305,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "Label12"
          Object.Left            =   113
-         Object.Top             =   3798
+         Object.Top             =   3855
          Object.Width           =   9480
-         Object.Height          =   675
+         Object.Height          =   672
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -324,9 +324,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          _Version        =   393216
          Name            =   "lblMedicoDiBase"
          Object.Left            =   3550
-         Object.Top             =   2465
-         Object.Width           =   3690
-         Object.Height          =   345
+         Object.Top             =   2522
+         Object.Width           =   3684
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   12
@@ -354,7 +354,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -382,7 +382,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -417,14 +417,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
       ItemType1       =   3
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -436,7 +436,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -455,7 +455,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -474,7 +474,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -493,7 +493,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -512,7 +512,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -567,7 +567,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -586,7 +586,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   1417
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -621,7 +621,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -648,7 +648,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRichiestaEsamiModuloSodav
          Object.Height          =   630
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -683,7 +683,8 @@ Private Sub DataReport_Initialize()
             .Item("lblAltro").Caption = structIntestazione.sIndirizzo & " - " & structIntestazione.sCap & " " & structIntestazione.sCitta & " " & structIntestazione.sProv & vbCrLf & _
                                         "TEL: " & structIntestazione.sTelefono & "   FAX: " & structIntestazione.sFax & vbCrLf & _
                                         "P. Iva: " & structIntestazione.sIva & "   Cod. Fiscale: " & structIntestazione.sCodiceFiscale & vbCrLf & _
-                                        "E-mail: " & structIntestazione.sMail
+                                        "E-mail: " & structIntestazione.sMail & vbCrLf & _
+                                        "Sito web: " & structIntestazione.sSitoWeb
             If structIntestazione.sLogoISO Then
                 If Dir(structApri.pathExe & "\" & structIntestazione.sNomeLogoISO, vbArchive) <> "" Then
                     Set .Item("imgLogoIso").Picture = LoadPicture(structApri.pathExe & "\" & structIntestazione.sNomeLogoISO)

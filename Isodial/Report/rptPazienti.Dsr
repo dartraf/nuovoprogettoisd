@@ -3,8 +3,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Lista Pazienti"
    ClientHeight    =   7620
-   ClientLeft      =   45
-   ClientTop       =   315
+   ClientLeft      =   48
+   ClientTop       =   312
    ClientWidth     =   12420
    MaxButton       =   0   'False
    MinButton       =   0   'False
@@ -17,7 +17,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
    ReportWidth     =   15645
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -53,7 +53,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -91,7 +91,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -110,7 +110,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -129,7 +129,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -148,7 +148,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -167,7 +167,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -185,7 +185,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.25
+            Size            =   26.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -205,7 +205,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   450
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -225,7 +225,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -244,7 +244,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   450
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -264,7 +264,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   328
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -284,7 +284,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   343
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -304,7 +304,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -657,7 +657,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -676,7 +676,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -695,7 +695,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -714,7 +714,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -771,14 +771,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
    EndProperty
    SectionCode4    =   8
@@ -814,7 +814,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptPazienti
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

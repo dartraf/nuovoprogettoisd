@@ -238,6 +238,7 @@ Public Sub CaricaVarPublic()
         structIntestazione.sCodiceFiscale = IIf(rsDataset("CODICE_FISCALE") = "", " - - ", rsDataset("CODICE_FISCALE"))
         structIntestazione.sIva = IIf(rsDataset("IVA") = "", " - - ", rsDataset("IVA"))
         structIntestazione.sMail = IIf(rsDataset("MAIL") = "", " - - ", rsDataset("MAIL"))
+        structIntestazione.sSitoWeb = IIf(rsDataset("SITO_WEB") = "", " - - ", rsDataset("SITO_WEB"))
         structIntestazione.sCodiceSTS = rsDataset("CODICE_STS") & ""
         structIntestazione.sCodiceAsl = rsDataset("CODICE_ASL")
         structIntestazione.sCodiceDistretto = rsDataset("CODICE_DISTRETTO")

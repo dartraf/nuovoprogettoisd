@@ -3,20 +3,20 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Attuazione protocollo di trattamento delle acque"
    ClientHeight    =   9420
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   10515
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   10512
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   18547
+   _ExtentX        =   18542
    _ExtentY        =   16616
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   9900
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -53,7 +53,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -111,7 +111,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.25
+            Size            =   26.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -131,7 +131,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -150,7 +150,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -169,7 +169,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -188,7 +188,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -207,7 +207,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -225,7 +225,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -240,10 +240,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Left            =   57
          Object.Top             =   794
          Object.Width           =   4815
-         Object.Height          =   1020
+         Object.Height          =   1134
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -261,7 +261,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   225
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -292,7 +292,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -319,7 +319,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -346,7 +346,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -373,7 +373,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -400,7 +400,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -427,7 +427,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   330
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -481,14 +481,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptTrattamentoAcque
          Object.Height          =   555
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Elaborato da ISODIAL http://www.isodial.it "
+         Object.Caption         =   "Elaborato da ISODIAL www.isodial.it "
       EndProperty
       ItemType2       =   3
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -535,7 +535,9 @@ Private Sub DataReport_Initialize()
             .Item("lblAltro").Caption = structIntestazione.sIndirizzo & " - " & structIntestazione.sCap & " " & structIntestazione.sCitta & " " & structIntestazione.sProv & vbCrLf & _
                                         "TEL: " & structIntestazione.sTelefono & "   FAX: " & structIntestazione.sFax & vbCrLf & _
                                         "P. Iva: " & structIntestazione.sIva & "   Cod. Fiscale: " & structIntestazione.sCodiceFiscale & vbCrLf & _
-                                        "E-mail: " & structIntestazione.sMail
+                                        "E-mail: " & structIntestazione.sMail & vbCrLf & _
+                                        "Sito web: " & structIntestazione.sSitoWeb
+                                        
             If structIntestazione.sLogoISO Then
                 If Dir(structApri.pathExe & "\" & structIntestazione.sNomeLogoISO, vbArchive) <> "" Then
                     Set .Item("imgLogoIso").Picture = LoadPicture(structApri.pathExe & "\" & structIntestazione.sNomeLogoISO)

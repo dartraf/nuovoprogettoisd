@@ -49,6 +49,7 @@ Type intestazione
     sCodiceFiscale As String
     sIva As String
     sMail As String
+    sSitoWeb As String
     sDirettoreSanitarioNome As String
     sDirettoreSanitarioCognome As String
     sCodiceSTS As String

@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.Form frmInfo 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Informazioni su ISODIAL"
-   ClientHeight    =   4335
+   ClientHeight    =   4344
    ClientLeft      =   2340
-   ClientTop       =   1935
-   ClientWidth     =   5730
+   ClientTop       =   1932
+   ClientWidth     =   5736
    ClipControls    =   0   'False
    Icon            =   "frmInfo.frx":0000
    LinkTopic       =   "Form2"
@@ -23,7 +23,7 @@ Begin VB.Form frmInfo
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -42,7 +42,7 @@ Begin VB.Form frmInfo
       Caption         =   "SEGUICI SU:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -62,7 +62,7 @@ Begin VB.Form frmInfo
       Caption         =   "Facebook"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -77,28 +77,28 @@ Begin VB.Form frmInfo
       TabIndex        =   5
       ToolTipText     =   "Seguici su FACEBOOK"
       Top             =   1800
-      Width           =   1215
+      Width           =   1332
    End
    Begin VB.Image Image4 
-      Height          =   255
+      Height          =   204
       Left            =   4800
       Picture         =   "frmInfo.frx":06DC
       Top             =   1800
-      Width           =   240
+      Width           =   192
    End
    Begin VB.Image Image3 
-      Height          =   240
+      Height          =   192
       Left            =   4800
       Picture         =   "frmInfo.frx":09D5
       Top             =   2880
-      Width           =   240
+      Width           =   192
    End
    Begin VB.Image Image2 
-      Height          =   240
+      Height          =   192
       Left            =   4800
       Picture         =   "frmInfo.frx":0F5F
       Top             =   720
-      Width           =   240
+      Width           =   192
    End
    Begin VB.Label lblposta 
       Alignment       =   2  'Center
@@ -107,7 +107,7 @@ Begin VB.Form frmInfo
       Caption         =   "e-mail: info@isodial.it"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -130,7 +130,7 @@ Begin VB.Form frmInfo
       Caption         =   "POSTA ELETTRONICA:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -149,7 +149,7 @@ Begin VB.Form frmInfo
       Caption         =   "WEB:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -166,10 +166,10 @@ Begin VB.Form frmInfo
       Alignment       =   2  'Center
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "http://www.isodial.it "
+      Caption         =   "www.isodial.it "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -177,30 +177,30 @@ Begin VB.Form frmInfo
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00C00000&
-      Height          =   300
-      Left            =   1680
+      Height          =   288
+      Left            =   2160
       MouseIcon       =   "frmInfo.frx":163B
       MousePointer    =   99  'Custom
       TabIndex        =   1
       ToolTipText     =   "Visita il sito!"
       Top             =   720
-      Width           =   2415
+      Width           =   1620
    End
    Begin VB.Image Image1 
-      Height          =   480
+      Height          =   384
       Left            =   240
       Picture         =   "frmInfo.frx":178D
       Top             =   240
-      Width           =   480
+      Width           =   384
    End
    Begin VB.Line Line1 
       BorderColor     =   &H00808080&
       BorderStyle     =   6  'Inside Solid
       Index           =   1
-      X1              =   84.515
-      X2              =   5309.398
-      Y1              =   2484.784
-      Y2              =   2484.784
+      X1              =   84.426
+      X2              =   5309.473
+      Y1              =   2484.457
+      Y2              =   2484.457
    End
 End
 Attribute VB_Name = "frmInfo"

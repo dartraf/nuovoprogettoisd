@@ -2846,7 +2846,7 @@ Private Sub fattelettr_Click()
     rsDataset.Update
     rsDataset.Close
     
-    rsDataset.Open "SELECT RAGIONE_SOCIALE,IVA,CODICE_FISCALE,INDIRIZZO,CAP,CITTA,REG_FISCALE,PR_UFF_REG,NUM_REA,CAP_SOCIALE,SRL,SOCIO,LIQUIDAZIONE FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     MCodFisc = rsDataset("CODICE_FISCALE")
 
     'crea 1° elemento
@@ -2862,9 +2862,16 @@ Private Sub fattelettr_Click()
         nodo1.appendChild nodo2
     
     'aggiunge al 1° elemento i nodi
-    nodo1.appendChild CreaNodo("ProgressivoInvio", MProgr_Invio)
+    nodo1.appendChild CreaNodo("ProgressivoInvio", MProgr_Invio & "-" & cboAnno.Text)
     nodo1.appendChild CreaNodo("FormatoTrasmissione", "SDI10")
     nodo1.appendChild CreaNodo("CodiceDestinatario", MCod_Destinatario)
+    
+    'crea 2° elemento e nodi
+    Set nodo2 = doc.createElement("ContattiTrasmittente")
+       ' nodo2.appendChild CreaNodo("Telefono", "0000000")
+        nodo2.appendChild CreaNodo("Email", rsDataset("MAIL"))
+        'aggiunge al 1° elemento l'elemento i nodi del 2° elemento
+        nodo1.appendChild nodo2
     
 '..................................................
     'CEDENTE PRESTATORE punto 1.2
@@ -2885,7 +2892,12 @@ Private Sub fattelettr_Click()
         nodo3.appendChild CreaNodo("IdCodice", rsDataset("IVA"))
         'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
         nodo2.appendChild nodo3
-    
+        
+    ' punto 1.2.1.2
+        nodo2.appendChild CreaNodo("CodiceFiscale", rsDataset("CODICE_FISCALE"))
+        'aggiunge al 1° elemento i nodi
+        nodo1.appendChild nodo2
+            
     ' punto 1.2.1.3
     Set nodo3 = doc.createElement("Anagrafica")
         nodo3.appendChild CreaNodo("Denominazione", rsDataset("RAGIONE_SOCIALE"))
@@ -2902,6 +2914,7 @@ Private Sub fattelettr_Click()
         nodo2.appendChild CreaNodo("Indirizzo", rsDataset("INDIRIZZO"))
         nodo2.appendChild CreaNodo("CAP", rsDataset("CAP"))
         nodo2.appendChild CreaNodo("Comune", rsDataset("CITTA"))
+        nodo2.appendChild CreaNodo("Provincia", rsDataset("PROV"))
         nodo2.appendChild CreaNodo("Nazione", "IT")
         'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
         nodo1.appendChild nodo2
@@ -2922,7 +2935,7 @@ Private Sub fattelettr_Click()
 '..................................................
     'CESSIONARIO COMMITTENTE punto 1.4
     
-    rsDataset.Open "SELECT CODICE_ASL,P_IVA,CODICE_FISCALE,INDIRIZZO,CAP,CODICE_COMUNE FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDataset.Open "SELECT * FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     
     'crea 1° elemento
     Set nodo1 = doc.createElement("CessionarioCommittente")
@@ -2957,6 +2970,7 @@ Private Sub fattelettr_Click()
         nodo2.appendChild CreaNodo("Indirizzo", rsDataset("INDIRIZZO"))
         nodo2.appendChild CreaNodo("CAP", rsDataset("CAP"))
         nodo2.appendChild CreaNodo("Comune", rsAppo("NOME"))
+        nodo2.appendChild CreaNodo("Provincia", rsDataset("PROV"))
         nodo2.appendChild CreaNodo("Nazione", "IT")
         'aggiunge al 1° elemento l'elemento e i nodi del 2° elemento
         nodo1.appendChild nodo2
@@ -2989,7 +3003,7 @@ Private Sub fattelettr_Click()
     
     'crea 3° elemento e nodi punto 2.2.1.6
     Set nodo3 = doc.createElement("DatiBollo")
-'       nodo3.appendChild CreaNodo("NumeroBollo", rsDataset("NUMERO_AUTORIZZAZIONE")) '14 chr
+'       nodo3.appendChild CreaNodo("BolloVirtuale", "SI") 'versione 1.1
         nodo3.appendChild CreaNodo("NumeroBollo", "DM-17-GIU-2014") 'dicitura temporanea
         nodo3.appendChild CreaNodo("ImportoBollo", VirgolaOrPunto(Format(rsDataset("IMPORTO_BOLLO"), "#####.00"), ","))
         'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
@@ -3119,6 +3133,7 @@ Private Sub fattelettr_Click()
         'aggiunge al 2° elemento i nodi
     nodo2.appendChild CreaNodo("Descrizione", FE_Descrizione)
     nodo2.appendChild CreaNodo("Quantita", VirgolaOrPunto(Format(FE_Quantita, "#####.00"), ","))
+    nodo2.appendChild CreaNodo("UnitaMisura", "NR")
     nodo2.appendChild CreaNodo("DataInizioPeriodo", sistemaData("01-" & cboMese.ListIndex + 1 & "-" & cboAnno.Text))
     nodo2.appendChild CreaNodo("DataFinePeriodo", sistemaData(GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)))
     nodo2.appendChild CreaNodo("PrezzoUnitario", VirgolaOrPunto(Format(FE_PrezzoUnit, "#####.00"), ","))

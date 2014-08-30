@@ -1409,7 +1409,6 @@ Dim nome As String
         nome = "AUTORIZZAZIONE BOLLO"
     ElseIf txtBolloFattura.Text = "" Then
         nome = "BOLLO SU FATTURA"
-        
     Else
         Completo = True
         Exit Function
@@ -1496,8 +1495,8 @@ Private Sub MemorizzaFattura()
     Dim strIban As String
     
     strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
-    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE", "IMPORTO_BOLLO", "PROGR_INVIO")
-    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), cboProvCommittente.Text, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo, txtBolloFattura, txtProgrInvio)
+    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE", "IMPORTO_BOLLO") ', "PROGR_INVIO")
+    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), cboProvCommittente.Text, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo, txtBolloFattura) ', txtProgrInvio)
         
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1517,7 +1516,7 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub CaricaIntestazione()
-    
+
     Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProvPrestatore)
     Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProvUffReg)
 
@@ -1605,7 +1604,6 @@ Dim strSql As String
             "FROM       (INTESTAZIONE_FATTURA " & _
             "           LEFT OUTER JOIN ASL ON ASL.KEY=INTESTAZIONE_FATTURA.CODICE_ASL) " & _
             "           LEFT OUTER JOIN COMUNI ON COMUNI.KEY=INTESTAZIONE_FATTURA.CODICE_COMUNE"
-    
     Set rsDataset = New Recordset
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
@@ -1862,3 +1860,14 @@ End Sub
 Private Sub txtIbanNum_LostFocus(Index As Integer)
     txtIbanNum(Index).BackColor = vbWhite
 End Sub
+
+'Private Sub txtProgrInvio_GotFocus(Index As Integer)
+'    txtProgrInvio(Index).BackColor = colArancione
+'End Sub
+
+'Private Sub txtProgrInvio_LostFocus(Index As Integer)
+'    txtProgrInvio(Index).BackColor = vbWhite
+'End Sub
+
+
+

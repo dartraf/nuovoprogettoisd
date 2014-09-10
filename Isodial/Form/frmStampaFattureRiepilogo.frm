@@ -2735,10 +2735,6 @@ Private Sub fattelettr_Click()
  
  OKGeneraFE = False
  
- If MsgBox("La generazione della fattura elettronica comporta l'attribuzione definitiva" & vbCrLf & "e non modificabile del n° progressivo d'invio - SI E' SICURI DI PROCEDERE?", vbQuestion + vbYesNo + vbDefaultButton2, "PRESTARE ATTENZIONE!!!") = vbNo Then
-    Exit Sub
- End If
-
     Dim proc As IXMLDOMProcessingInstruction
     Dim nodo0 As IXMLDOMNode
     Dim nodo1 As IXMLDOMNode

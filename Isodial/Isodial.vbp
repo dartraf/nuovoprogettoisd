@@ -195,6 +195,7 @@ Designer=Report\rptSchedaSorveglianzaFav.Dsr
 Designer=Report\rptEtichette.Dsr
 Module=modGetSysOp; Moduli\modGetSysOp.bas
 Form=Form\frmFatEle.frm
+Form=Form\frmVisualizzaFattureElettroniche.frm
 ResFile32="Risorse.res"
 IconForm="frmCalendario"
 Startup="Sub Main"

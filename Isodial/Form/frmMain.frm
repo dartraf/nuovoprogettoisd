@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "19/08/2014"
+            TextSave        =   "16/09/2014"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -794,6 +794,9 @@ Begin VB.MDIForm frmMain
             Caption         =   "x &Impegnative"
             Index           =   8
          End
+      End
+      Begin VB.Menu mnuVisualizzaFattureElettroniche 
+         Caption         =   "&Visualizza Fatture Elettroniche"
       End
    End
    Begin VB.Menu mnuVassoio 
@@ -2339,6 +2342,7 @@ Public Sub SubClassMenuXP()
         mnuStampaRiepilogo(6).Caption = "x Ma&zzetta - Singola"
         mnuStampaRiepilogo(7).Caption = "x &Asl - Distretti"
         mnuStampaRiepilogo(8).Caption = "x &Impegnative"
+        mnuVisualizzaFattureElettroniche.Caption = "&Visualizza Fatture Elettroniche"
         
     mnuVassoio.Caption = "PopupVassoio"
         mnuApriVassoio.Caption = "Ripristina"
@@ -2362,4 +2366,8 @@ End Sub
 Public Sub MenuDesigner()
     '/ Open Menu Designer tool
     objMenuEx.MenuDesigner Me.hWnd
+End Sub
+
+Private Sub mnuVisualizzaFattureElettroniche_Click()
+    frmVisualizzaFattureElettroniche.Show 1
 End Sub

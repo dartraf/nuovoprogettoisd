@@ -3,15 +3,15 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmInput 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Inserimento Valori"
-   ClientHeight    =   8385
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   12585
+   ClientHeight    =   8388
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   12588
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   8385
-   ScaleWidth      =   12585
+   ScaleHeight     =   8388
+   ScaleWidth      =   12588
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraComuni 
@@ -23,7 +23,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboRegComuni 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -40,7 +40,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtComune 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -57,7 +57,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCodIstat 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -76,7 +76,7 @@ Begin VB.Form frmInput
          Caption         =   "Codice ISTAT"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -95,7 +95,7 @@ Begin VB.Form frmInput
          Caption         =   "Comune"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -113,7 +113,7 @@ Begin VB.Form frmInput
          Caption         =   "Regione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -138,7 +138,7 @@ Begin VB.Form frmInput
          Caption         =   "Stampa in box"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -155,7 +155,7 @@ Begin VB.Form frmInput
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -173,7 +173,7 @@ Begin VB.Form frmInput
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -190,7 +190,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtUnita 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -208,7 +208,7 @@ Begin VB.Form frmInput
          Caption         =   "Pos/Neg"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -224,7 +224,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtVoce 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -242,7 +242,7 @@ Begin VB.Form frmInput
          Caption         =   "Esami da Stampare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -260,7 +260,7 @@ Begin VB.Form frmInput
          Caption         =   "Valore min"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -279,7 +279,7 @@ Begin VB.Form frmInput
          Caption         =   "Valore max"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -298,7 +298,7 @@ Begin VB.Form frmInput
          Caption         =   "Unità di misura"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -317,7 +317,7 @@ Begin VB.Form frmInput
          Caption         =   "Esame"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -342,7 +342,7 @@ Begin VB.Form frmInput
          Caption         =   "Non Esente"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -360,7 +360,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCodiceEsenzione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -378,7 +378,7 @@ Begin VB.Form frmInput
          Caption         =   "Esente"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -399,7 +399,7 @@ Begin VB.Form frmInput
          Caption         =   "Quota aggiuntiva"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -418,7 +418,7 @@ Begin VB.Form frmInput
          Caption         =   "Codice esenzione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -442,7 +442,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtImportoScontato 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -459,7 +459,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtImporto 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -476,7 +476,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCodicePrestazione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -493,7 +493,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNomePrestazione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -512,7 +512,7 @@ Begin VB.Form frmInput
          Caption         =   "Importo scontato"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -531,7 +531,7 @@ Begin VB.Form frmInput
          Caption         =   "Importo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -549,7 +549,7 @@ Begin VB.Form frmInput
          Caption         =   "Descrizione Prestazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -567,7 +567,7 @@ Begin VB.Form frmInput
          Caption         =   "Codice"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -591,7 +591,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNoteStraordinarie 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -607,7 +607,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboMedicinaliStraordinaria 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -626,7 +626,7 @@ Begin VB.Form frmInput
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -644,7 +644,7 @@ Begin VB.Form frmInput
          Caption         =   "Conferma Somministazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -662,7 +662,7 @@ Begin VB.Form frmInput
          Caption         =   "Note"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -681,7 +681,7 @@ Begin VB.Form frmInput
          Caption         =   "Farmaco"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -699,7 +699,7 @@ Begin VB.Form frmInput
          Caption         =   "Posologia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -723,7 +723,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCodiceAsl 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -740,7 +740,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNomeAsl 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -757,7 +757,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboRegione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -776,7 +776,7 @@ Begin VB.Form frmInput
          Caption         =   "Regione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -795,7 +795,7 @@ Begin VB.Form frmInput
          Caption         =   "Nome ASL"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -813,7 +813,7 @@ Begin VB.Form frmInput
          Caption         =   "Codice ASL"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -863,7 +863,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtQuantita 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -881,7 +881,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboPrescrizioni 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -899,7 +899,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboCodicePrestazione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -919,7 +919,7 @@ Begin VB.Form frmInput
          Caption         =   "Fine prestazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -939,7 +939,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -958,7 +958,7 @@ Begin VB.Form frmInput
          Caption         =   "Inizio prestazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -978,7 +978,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -997,7 +997,7 @@ Begin VB.Form frmInput
          Caption         =   "Quantità"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1015,7 +1015,7 @@ Begin VB.Form frmInput
          Caption         =   "Prestazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1033,7 +1033,7 @@ Begin VB.Form frmInput
          Caption         =   "Codice"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1077,7 +1077,7 @@ Begin VB.Form frmInput
             Caption         =   "Pos"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1096,7 +1096,7 @@ Begin VB.Form frmInput
             Caption         =   "Neg"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1115,7 +1115,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtColtureBagno 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1132,7 +1132,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtColtureAcqua 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1150,7 +1150,7 @@ Begin VB.Form frmInput
          Caption         =   "Pos"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1169,7 +1169,7 @@ Begin VB.Form frmInput
          Caption         =   "Neg"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1190,7 +1190,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1209,7 +1209,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1228,7 +1228,7 @@ Begin VB.Form frmInput
          Caption         =   "Colture su Acqua"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1247,7 +1247,7 @@ Begin VB.Form frmInput
          Caption         =   "Esito"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1266,7 +1266,7 @@ Begin VB.Form frmInput
          Caption         =   "Colture su Bagno"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1285,7 +1285,7 @@ Begin VB.Form frmInput
          Caption         =   "Esito"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1309,7 +1309,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNumeroRene 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1340,7 +1340,7 @@ Begin VB.Form frmInput
          Caption         =   "NEG"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1360,7 +1360,7 @@ Begin VB.Form frmInput
          Caption         =   "HBV+"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1379,7 +1379,7 @@ Begin VB.Form frmInput
          Caption         =   "HCV+"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1397,7 +1397,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtPostazione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1414,7 +1414,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtMatricola 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1431,7 +1431,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtTipoRene 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1450,7 +1450,7 @@ Begin VB.Form frmInput
          Caption         =   "Numero rene"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1469,7 +1469,7 @@ Begin VB.Form frmInput
          Caption         =   "Monitor"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1488,7 +1488,7 @@ Begin VB.Form frmInput
          Caption         =   "Data rottamazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1508,7 +1508,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1527,7 +1527,7 @@ Begin VB.Form frmInput
          Caption         =   "Matricola"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1546,7 +1546,7 @@ Begin VB.Form frmInput
          Caption         =   "Tipo di rene"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1565,7 +1565,7 @@ Begin VB.Form frmInput
          Caption         =   "Postazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1589,7 +1589,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCognomePass 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1606,7 +1606,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNomePass 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1623,7 +1623,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtChiave 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1640,7 +1640,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtPass 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1658,7 +1658,7 @@ Begin VB.Form frmInput
          Caption         =   "Medico"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1678,7 +1678,7 @@ Begin VB.Form frmInput
          Caption         =   "Infermiere"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1697,7 +1697,7 @@ Begin VB.Form frmInput
          Caption         =   "Contabile"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1717,7 +1717,7 @@ Begin VB.Form frmInput
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1736,7 +1736,7 @@ Begin VB.Form frmInput
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1755,7 +1755,7 @@ Begin VB.Form frmInput
          Caption         =   "Nome utente"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1774,7 +1774,7 @@ Begin VB.Form frmInput
          Caption         =   "Password"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1798,7 +1798,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNoteEpisodi 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1830,7 +1830,7 @@ Begin VB.Form frmInput
          Caption         =   "Note"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1850,7 +1850,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1869,7 +1869,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1894,7 +1894,7 @@ Begin VB.Form frmInput
          Caption         =   "HCV"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1912,7 +1912,7 @@ Begin VB.Form frmInput
          Caption         =   "HBV"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1945,7 +1945,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1964,7 +1964,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1983,7 +1983,7 @@ Begin VB.Form frmInput
          Caption         =   "Sieroconversioni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2020,7 +2020,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboTrasfusioni 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2039,7 +2039,7 @@ Begin VB.Form frmInput
          Caption         =   "Trasfusione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2058,7 +2058,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2078,7 +2078,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2102,7 +2102,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboAslAppartenenza 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2119,7 +2119,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNomeDistretto 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2136,7 +2136,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCodiceDistretto 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2155,7 +2155,7 @@ Begin VB.Form frmInput
          Caption         =   "Codice Distretto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2174,7 +2174,7 @@ Begin VB.Form frmInput
          Caption         =   "Distretto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2192,7 +2192,7 @@ Begin VB.Form frmInput
          Caption         =   "Asl di riferimento"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2216,7 +2216,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNoteRicoveri 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2261,7 +2261,7 @@ Begin VB.Form frmInput
          Caption         =   "Note"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2281,7 +2281,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2300,7 +2300,7 @@ Begin VB.Form frmInput
          Caption         =   "Al"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2319,7 +2319,7 @@ Begin VB.Form frmInput
          Caption         =   "Dal"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2339,7 +2339,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2364,7 +2364,7 @@ Begin VB.Form frmInput
          Caption         =   "Coordinatore"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2383,7 +2383,7 @@ Begin VB.Form frmInput
          Caption         =   "Infermiere professionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2403,7 +2403,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboVoci 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2424,7 +2424,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtCognome 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2441,7 +2441,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtNome 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2460,7 +2460,7 @@ Begin VB.Form frmInput
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2478,7 +2478,7 @@ Begin VB.Form frmInput
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2503,7 +2503,7 @@ Begin VB.Form frmInput
          Caption         =   "Inserisci nell'organigramma"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2523,7 +2523,7 @@ Begin VB.Form frmInput
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2540,7 +2540,7 @@ Begin VB.Form frmInput
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2581,7 +2581,7 @@ Begin VB.Form frmInput
          Caption         =   "Postdialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2600,7 +2600,7 @@ Begin VB.Form frmInput
          Caption         =   "Intradialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2620,7 +2620,7 @@ Begin VB.Form frmInput
          Caption         =   "Tutti"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2638,7 +2638,7 @@ Begin VB.Form frmInput
          Caption         =   "Do"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2656,7 +2656,7 @@ Begin VB.Form frmInput
          Caption         =   "Sa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2674,7 +2674,7 @@ Begin VB.Form frmInput
          Caption         =   "Ve"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2692,7 +2692,7 @@ Begin VB.Form frmInput
          Caption         =   "Gi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2710,7 +2710,7 @@ Begin VB.Form frmInput
          Caption         =   "Me"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2728,7 +2728,7 @@ Begin VB.Form frmInput
          Caption         =   "Ma"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2746,7 +2746,7 @@ Begin VB.Form frmInput
          Caption         =   "Lu"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2764,7 +2764,7 @@ Begin VB.Form frmInput
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2781,7 +2781,7 @@ Begin VB.Form frmInput
       Begin VB.ComboBox cboMedicinali 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2799,7 +2799,7 @@ Begin VB.Form frmInput
       Begin VB.TextBox txtSomministrazione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2820,7 +2820,7 @@ Begin VB.Form frmInput
          Top             =   675
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -2834,7 +2834,7 @@ Begin VB.Form frmInput
          Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -2848,7 +2848,7 @@ Begin VB.Form frmInput
          Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -2862,7 +2862,7 @@ Begin VB.Form frmInput
          Visible         =   0   'False
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -2872,7 +2872,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2892,7 +2892,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2912,7 +2912,7 @@ Begin VB.Form frmInput
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2933,7 +2933,7 @@ Begin VB.Form frmInput
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2953,7 +2953,7 @@ Begin VB.Form frmInput
          Caption         =   "Frequenza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2971,7 +2971,7 @@ Begin VB.Form frmInput
          Caption         =   "Posologia"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2990,7 +2990,7 @@ Begin VB.Form frmInput
          Caption         =   "Farmaco"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3008,7 +3008,7 @@ Begin VB.Form frmInput
          Caption         =   "Somministrazione"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3026,7 +3026,7 @@ Begin VB.Form frmInput
          Caption         =   "Data Inizio"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3209,6 +3209,11 @@ Private Sub Form_Load()
                 Label1(1) = "Codice"
                 txtCognome.MaxLength = 3
                 lblNome = "E.D.T.A."
+                txtNome.MaxLength = 150
+            ElseIf tTabelle = tpEDTA_MORTE Then
+                Label1(1) = "Codice"
+                txtCognome.MaxLength = 3
+                lblNome = "Causa Morte"
                 txtNome.MaxLength = 150
             End If
         
@@ -3439,8 +3444,6 @@ End Function
 
 Private Sub cmdAnnulla_LostFocus()
     Select Case tInput.Tipo
-  '      Case tpIRENI
-  '          txtpostazione.SetFocus
         Case tpIVOCI
             txtVoce.SetFocus
         Case tpITERAPIADIALITICA, tpITERAPIADOMICILIARE
@@ -4022,11 +4025,11 @@ Private Sub txtQuantita_Change()
 End Sub
 
 Private Sub txtPostazione_GotFocus()
-    txtPostazione.BackColor = colArancione
+    txtpostazione.BackColor = colArancione
 End Sub
 
 Private Sub txtPostazione_LostFocus()
-    txtPostazione.BackColor = vbWhite
+    txtpostazione.BackColor = vbWhite
 End Sub
 
 Private Sub txtNumeroRene_GotFocus()

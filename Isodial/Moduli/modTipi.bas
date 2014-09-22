@@ -219,6 +219,7 @@ Enum tipoTabella
     tpRegioni
     tpTIPOLOGIEMEDICO
     tpESENZIONI
+    tpEDTA_MORTE
     tpEDTA
     ' elementi costituiti da tre informazioni
     tpCOMUNI

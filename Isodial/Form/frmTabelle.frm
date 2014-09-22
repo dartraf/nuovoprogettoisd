@@ -4,20 +4,20 @@ Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmTabelle 
    BorderStyle     =   4  'Fixed ToolWindow
    ClientHeight    =   4140
-   ClientLeft      =   630
-   ClientTop       =   1515
-   ClientWidth     =   9705
+   ClientLeft      =   636
+   ClientTop       =   1512
+   ClientWidth     =   9696
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   4140
-   ScaleWidth      =   9705
+   ScaleWidth      =   9696
    ShowInTaskbar   =   0   'False
    Begin VB.ComboBox cboAppo 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -36,7 +36,7 @@ Begin VB.Form frmTabelle
    Begin VB.Frame fraListaMain 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -60,7 +60,7 @@ Begin VB.Form frmTabelle
       Begin VB.TextBox txtAppo 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -80,8 +80,8 @@ Begin VB.Form frmTabelle
          TabIndex        =   7
          Top             =   240
          Width           =   9255
-         _ExtentX        =   16325
-         _ExtentY        =   5106
+         _ExtentX        =   16320
+         _ExtentY        =   5101
          _Version        =   393216
          FixedCols       =   0
          ScrollTrack     =   -1  'True
@@ -89,7 +89,7 @@ Begin VB.Form frmTabelle
          FormatString    =   "| Tabella                                                                     "
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -102,7 +102,7 @@ Begin VB.Form frmTabelle
    Begin VB.Frame fraAzioni 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -118,7 +118,7 @@ Begin VB.Form frmTabelle
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -136,7 +136,7 @@ Begin VB.Form frmTabelle
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -153,7 +153,7 @@ Begin VB.Form frmTabelle
          Caption         =   "&Inserisci"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -171,7 +171,7 @@ Begin VB.Form frmTabelle
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -189,7 +189,7 @@ Begin VB.Form frmTabelle
       Caption         =   "Organi/Apparati"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -205,14 +205,14 @@ Begin VB.Form frmTabelle
       Begin VB.ListBox lstOrgani 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   645
+         Height          =   624
          Left            =   120
          Sorted          =   -1  'True
          TabIndex        =   5
@@ -238,17 +238,6 @@ Dim lettera As String * 1
 
 Const ESENTE As String = "ESENTE"           ' true
 Const NONESENTE As String = "NON ESENTE"    ' false
-
-'Private Sub wheelMouse_MouseScroll(MouseKeys As Long, Rotation As Long, X As Long, Y As Long, ControlHWnd As Long)
-'    If ControlHWnd = flxGriglia.hWnd Then
-'        If flxGriglia.TopRow - Rotation > 0 Then
-'            If flxGriglia.TopRow - Rotation < flxGriglia.Rows Then
-'                flxGriglia.TopRow = flxGriglia.TopRow - Rotation
-'            End If
-'        End If
-'    End If
-'End Sub
-'---------------------------
 
 Private Sub Form_Activate()
     Dim nomeTabella As String
@@ -312,6 +301,16 @@ Private Sub Form_Load()
                     .ColWidth(2) = .ColWidth(1) * 2 / 2
                     .TextMatrix(0, 1) = "Codice Esenzione"
                     .TextMatrix(0, 2) = "Quota Regionale su Ricetta"
+                End With
+                cmdElimina.Visible = False
+            Case tpEDTA_MORTE
+                nomeTabella = "EDTA_MORTE"
+                Me.Caption = Me.Caption & "Codici E.D.T.A. - Causa Morte"
+                With flxGriglia
+                    .ColWidth(1) = .ColWidth(1) / 5
+                    .ColWidth(2) = .ColWidth(1) * 10
+                    .TextMatrix(0, 1) = "Cod."
+                    .TextMatrix(0, 2) = "E.D.T.A. - Causa Morte"
                 End With
                 cmdElimina.Visible = False
             Case tpEDTA
@@ -483,7 +482,7 @@ Private Sub CaricaFlx()
                 .Rows = .Rows + 1
                 .TextMatrix(.Rows - 1, 0) = rsTabelle("KEY")
                 
-                If (tTabelle >= tpRegioni And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Then
+                If (tTabelle >= tpRegioni And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Or (tTabelle = tpEDTA_MORTE) Then
                     .TextMatrix(.Rows - 1, 1) = rsTabelle("CODICE") & ""
                     .TextMatrix(.Rows - 1, 2) = rsTabelle("NOME") & ""
                 ElseIf tTabelle = tpCOMUNI Then
@@ -545,7 +544,7 @@ Private Sub SalvaModifiche()
     With flxGriglia
         keyId = .TextMatrix(vRow, 0)
         
-        If (tTabelle >= tpRegioni And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Then
+        If (tTabelle >= tpRegioni And tTabelle <= tpTIPOLOGIEMEDICO) Or (tTabelle = tpEDTA) Or (tTabelle = tpEDTA_MORTE) Then
             v_Nomi = Array("KEY", "NOME", "CODICE")
             v_Val = Array(keyId, .TextMatrix(vRow, 2), .TextMatrix(vRow, 1))
         ElseIf tTabelle = tpCOMUNI Then
@@ -727,7 +726,7 @@ Private Function EsisteValore() As Boolean
                 Next i
             End If
             EsisteValore = 0
-        Case tpEDTA
+        Case tpEDTA, tpEDTA_MORTE
             If tInput.v_valori(2) <> "" Then
                 For i = 1 To flxGriglia.Rows - 1
                     If flxGriglia.TextMatrix(i, 1) = tInput.v_valori(2) Then ' And flxGriglia.TextMatrix(i, 2) = tInput.v_valori(1) Then
@@ -754,7 +753,7 @@ Private Sub cmdInserisci_Click()
     End If
     
     Select Case tTabelle
-        Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA
+        Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA, tpEDTA_MORTE
             tInput.Tipo = tpICOMPOSTO
         Case tpesame
             tInput.Tipo = tpISINGOLO
@@ -798,7 +797,7 @@ Private Sub cmdInserisci_Click()
             Case tpesame
                 v_Nomi = Array("KEY", "NOME", "CODICE_ORGANO")
                 v_Val = Array(num, tInput.v_valori(1), keyOrgano)
-            Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA
+            Case tpRegioni, tpTIPOLOGIEMEDICO, tpEDTA, tpEDTA_MORTE
                 v_Nomi = Array("KEY", "CODICE", "NOME")
                 v_Val = Array(num, tInput.v_valori(2), tInput.v_valori(1))
             Case tpESENZIONI
@@ -1010,6 +1009,8 @@ Private Sub txtAppo_GotFocus()
         Case tpRENI
             txtAppo.MaxLength = Choose(vCol, 3, 3, 50, 50)
         Case tpEDTA
+            txtAppo.MaxLength = IIf(vCol = 2, 150, 3)
+        Case tpEDTA_MORTE
             txtAppo.MaxLength = IIf(vCol = 2, 150, 3)
     End Select
 End Sub

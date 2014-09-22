@@ -1468,6 +1468,8 @@ Private Sub MemorizzaFattura()
     Dim v_nome() As Variant
     Dim strIban As String
     
+    Call SuperUcase(Me)
+    
     strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
     v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE", "IMPORTO_BOLLO") ', "PROGR_INVIO")
     v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), cboProvCommittente.Text, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo, txtBolloFattura) ', txtProgrInvio)

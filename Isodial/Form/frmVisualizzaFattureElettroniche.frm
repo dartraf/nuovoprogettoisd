@@ -4,21 +4,21 @@ Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmVisualizzaFattureElettroniche 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Visualizza Fatture Elettroniche"
-   ClientHeight    =   4416
-   ClientLeft      =   48
-   ClientTop       =   312
-   ClientWidth     =   9588
+   ClientHeight    =   4410
+   ClientLeft      =   45
+   ClientTop       =   315
+   ClientWidth     =   7440
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4416
-   ScaleWidth      =   9588
+   ScaleHeight     =   4410
+   ScaleWidth      =   7440
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraListaMain 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -30,7 +30,7 @@ Begin VB.Form frmVisualizzaFattureElettroniche
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   9372
+      Width           =   7215
       Begin WheelCatch.WheelCatcher WheelCatcher1 
          Height          =   480
          Left            =   2400
@@ -41,13 +41,13 @@ Begin VB.Form frmVisualizzaFattureElettroniche
          _ExtentY        =   847
       End
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   3252
+         Height          =   3255
          Left            =   120
          TabIndex        =   1
          Top             =   240
-         Width           =   9132
-         _ExtentX        =   16108
-         _ExtentY        =   5736
+         Width           =   6975
+         _ExtentX        =   12303
+         _ExtentY        =   5741
          _Version        =   393216
          FixedCols       =   0
          ScrollTrack     =   -1  'True
@@ -55,7 +55,7 @@ Begin VB.Form frmVisualizzaFattureElettroniche
          FormatString    =   "| Tabella                                                                     "
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -70,23 +70,57 @@ Begin VB.Form frmVisualizzaFattureElettroniche
       Left            =   120
       TabIndex        =   2
       Top             =   3480
-      Width           =   9372
-      Begin VB.CommandButton cmdChiudi 
-         Caption         =   "&Chiudi"
+      Width           =   7215
+      Begin VB.CommandButton RigeneraFE 
+         Caption         =   "Rigenera XML"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   600
-         Left            =   7990
+         Height          =   495
+         Left            =   4920
+         TabIndex        =   6
+         Top             =   240
+         Width           =   975
+      End
+      Begin VB.CommandButton VediFE 
+         Caption         =   "Visualizza"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   3720
+         TabIndex        =   5
+         Top             =   240
+         Width           =   1095
+      End
+      Begin VB.CommandButton cmdChiudi 
+         Caption         =   "&Chiudi"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   510
+         Left            =   6000
          TabIndex        =   4
-         Top             =   170
-         Width           =   1215
+         Top             =   240
+         Width           =   1080
       End
    End
 End
@@ -105,22 +139,22 @@ Dim strSql As String
 Private Sub Form_Load()
     Dim i As Integer
     
-    strSql = "SELECT * FROM FE ORDER BY KEY"
+    strSql = "SELECT * FROM FE ORDER BY DATA_INVIO DESC"
 
     Set objAnnulla = New CAnnulla
     flxGriglia.Rows = 1
     
     With flxGriglia
         .Cols = 6
-        .ColWidth(1) = .ColWidth(1) * 0.4
-        .ColWidth(2) = .ColWidth(2) * 2
-        .ColWidth(3) = .ColWidth(3) * 1.8
-        .ColWidth(4) = .ColWidth(4) * 1.5
-        .ColWidth(5) = .ColWidth(5) * 2.9
+        .ColWidth(1) = .ColWidth(1) * 0.25
+        .ColWidth(2) = .ColWidth(2) * 1.6
+        .ColWidth(3) = .ColWidth(3) * 1.3
+        .ColWidth(4) = .ColWidth(4) * 1.1
+        .ColWidth(5) = .ColWidth(5) * 1.9
                                      
-        .TextMatrix(0, 1) = "N° Fattura"
+        .TextMatrix(0, 1) = "N°Fattura"
         .TextMatrix(0, 2) = "Tipo Documento"
-        .TextMatrix(0, 3) = "N° Progr.Invio"
+        .TextMatrix(0, 3) = "N°Progr.Invio"
         .TextMatrix(0, 4) = "Data Invio"
         .TextMatrix(0, 5) = "Nome File"
     End With
@@ -155,11 +189,11 @@ Private Sub CaricaFlx()
             With flxGriglia
                 .Rows = .Rows + 1
                 .TextMatrix(.Rows - 1, 0) = rsVisualizza("KEY")
-                .TextMatrix(.Rows - 1, 1) = rsVisualizza("N_FATTURA") & ""
-                .TextMatrix(.Rows - 1, 2) = rsVisualizza("TIPO_DOC") & ""
-                .TextMatrix(.Rows - 1, 3) = rsVisualizza("PROGR_INVIO") & ""
-                .TextMatrix(.Rows - 1, 4) = rsVisualizza("DATA_INVIO") & ""
-                .TextMatrix(.Rows - 1, 5) = rsVisualizza("NOME_FILE") & ""
+                .TextMatrix(.Rows - 1, 1) = rsVisualizza("N_FATTURA") '& ""
+                .TextMatrix(.Rows - 1, 2) = rsVisualizza("TIPO_DOC") '& ""
+                .TextMatrix(.Rows - 1, 3) = rsVisualizza("PROGR_INVIO") '& ""
+                .TextMatrix(.Rows - 1, 4) = rsVisualizza("DATA_INVIO") '& ""
+                .TextMatrix(.Rows - 1, 5) = rsVisualizza("NOME_FILE") '& ""
                 rsVisualizza.MoveNext
             End With
         Loop
@@ -181,6 +215,21 @@ Private Sub flxGriglia_Click()
         vCol = flxGriglia.Col
         Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
     End If
+End Sub
+
+Private Sub flxGriglia_dblClick()
+    If VerificaClickFlx(flxGriglia) = False Then Exit Sub
+    
+    ' Seleziono la key della FE e la passo con la variabile, altrimenti da errore
+    
+    tTrova.keyGestioneApparato = KeyFE
+    MantieniKeyReturn = tTrova.KeyFE
+    'Visualizza nel browser la fattura dal file XML della cartella FE
+    'SHOW_SHOWNORMAL = 1
+    'SHOW_SHOWMAXIMIZED = 3
+    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
+    If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
+    tTrova.KeyFE = 0    'per evitare di ricaricare la FE
 End Sub
 
 Private Sub cmdChiudi_Click()

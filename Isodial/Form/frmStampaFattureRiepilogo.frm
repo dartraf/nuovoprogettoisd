@@ -267,6 +267,23 @@ Begin VB.Form frmStampaFattureRiepilogo
       TabIndex        =   8
       Top             =   600
       Width           =   5295
+      Begin VB.CommandButton VisualizzaFE 
+         Caption         =   "Visualizza Fatture El."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   1280
+         TabIndex        =   19
+         Top             =   240
+         Width           =   1140
+      End
       Begin VB.CommandButton fattelettr 
          Caption         =   "&Fattura Elettronica"
          BeginProperty Font 
@@ -279,10 +296,10 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   120
+         Left            =   80
          TabIndex        =   18
          Top             =   240
-         Width           =   1335
+         Width           =   1140
       End
       Begin VB.CommandButton cmdStampa 
          Cancel          =   -1  'True
@@ -297,10 +314,10 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   2400
+         Left            =   2880
          TabIndex        =   4
          Top             =   240
-         Width           =   1260
+         Width           =   1140
       End
       Begin VB.CommandButton cmdEsci 
          Caption         =   "&Chiudi"
@@ -315,7 +332,7 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   3960
+         Left            =   4080
          TabIndex        =   5
          Top             =   240
          Width           =   1140
@@ -2750,6 +2767,7 @@ Private Sub fattelettr_Click()
     Dim rsMain As Recordset         ' recordset padre per lo shape
     Dim rsDataset As New Recordset
     Dim rsAppo As New Recordset
+    Dim rsFE As New Recordset
     Dim ticket As Currency
     Dim quotaAggiuntiva As Currency
     Dim quotaNazionale As Currency
@@ -2775,6 +2793,7 @@ Private Sub fattelettr_Click()
     Dim MCod_Destinatario As String
     Dim MProgr_Invio As String
     Dim NameXML As String
+    Dim NameExtXML As String
     Dim ret As Integer
            
   '  Dim rsDataset As New Recordset
@@ -3205,22 +3224,35 @@ Private Sub fattelettr_Click()
     root.appendChild nodo0
     rsDataset.Close
     
-    ' Salva La fattura XML
-    NameXML = "\IT" & MCodFisc & "_" & Format(MProgr_Invio, "00000") & ".xml"
-    doc.Save structApri.pathExe & "\FE\" & NameXML
-        
+    ' Salva la fattura XML
+    NameXML = "\IT" & MCodFisc & "_" & Format(MProgr_Invio, "00000")
+    NameExtXML = NameXML & ".xml"
+    doc.Save structApri.pathExe & "\FE\" & NameXML & ".xml"
+    
+    ' Salva le info della fattura nella tabella FE
+    Dim v_Nomi() As Variant
+    Dim v_Val() As Variant
+    v_Nomi = Array("KEY", "N_FATTURA", "TIPO_DOC", "PROGR_INVIO", "DATA_INVIO", "NOME_FILE")
+    v_Val = Array(GetNumero("FE"), txtNumFattura, "Fattura", MProgr_Invio, sistemaData(GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)), Mid(NameXML, 2, Len(NameXML) - 1))
+    Set rsFE = New Recordset
+    rsFE.Open "FE", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
+    rsFE.AddNew v_Nomi, v_Val
+    rsFE.Update
+    rsFE.Close
+    Set rsFE = Nothing
+            
     ' Copia il file XML dalla cartella FE al percorso selezionato
     ' Call FileCopyEx(structApri.pathExe & "\*.xsl", txtPercorso & "\*.xsl")
-    Call FileCopyEx(structApri.pathExe & "\FE\" & NameXML, txtPercorso & "\" & NameXML)
+    Call FileCopyEx(structApri.pathExe & "\FE\" & NameExtXML, txtPercorso & "\" & NameExtXML)
     
     'Visualizza nel browser la fattura dal file XML della cartella FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameXML, vbNullString, vbNullString, 1)
+    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
     If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
 
 End Sub
 
-
-
-
+Private Sub VisualizzaFE_Click()
+    frmVisualizzaFattureElettroniche.Show 1
+End Sub

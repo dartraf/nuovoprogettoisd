@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmTrasferisciFile 
    BackColor       =   &H00808080&
    BorderStyle     =   0  'None
@@ -68,9 +68,9 @@ Private Sub Form_Activate()
     ElseIf SpazioSufficiente(lettera, FileLen(structApri.pathVolume & "\" & nomeVolume) / Megabyte) = False Then
            MsgBox "Impossibile continuare" & vbCrLf & "Spazio insufficiente sull'unita' di backup", vbCritical, "Backup Database"
            tDisconnetti = tpDANNULLA
-    ElseIf nonCorrotto = False Then
-           MsgBox "Impossibile procedere al backup" & vbCrLf & "Ripristinare un precedente backup o contattare l'autore", vbCritical, "ATTENZIONE!!! DATABASE CORROTTO"
-           tDisconnetti = tpDANNULLA
+'    ElseIf nonCorrotto = False Then
+'           MsgBox "Impossibile procedere al backup" & vbCrLf & "Ripristinare un precedente backup o contattare l'autore", vbCritical, "ATTENZIONE!!! DATABASE CORROTTO"
+'           tDisconnetti = tpDANNULLA
     ElseIf nessunClient(numClient) = False Then
            If MsgBox("ATTENZIONE!!! Altri utenti sono connessi ad ISODIAL - Li disconnetto automaticamente?", vbQuestion + vbYesNo, "CONTROLLO UTENTI") = vbYes Then
       '       lblScritta = "Database integro. Backup in corso" & vbCrLf & "L'operazione potrebbe richiedere alcuni minuti"

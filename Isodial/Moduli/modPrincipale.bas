@@ -48,12 +48,12 @@ Sub Main()
     Call CaricaDati
     Call VerificaFunzionalita
     ' verifica che il db non sia corrotto
-    If Not nonCorrotto Then
-        MsgBox "Impossibile procedere" & vbCrLf & "Ripristinare un precedente backup o richiedere l'intervento tecnico" & vbCrLf & "Accesso consentito al solo amministratore di sistema", vbCritical, "Database corrotto"
-        isCorrotto = True
-    Else
-        isCorrotto = False
-    End If
+ '   If Not nonCorrotto Then
+ '       MsgBox "Impossibile procedere" & vbCrLf & "Ripristinare un precedente backup o richiedere l'intervento tecnico" & vbCrLf & "Accesso consentito al solo amministratore di sistema", vbCritical, "Database corrotto"
+ '       isCorrotto = True
+ '   Else
+         isCorrotto = False
+ '   End If
     ' controlla che la data di sistema sia quella corrente
     datadb = CDate(Left(FileDateTime(structApri.pathDB + "\centro.mdb"), 10))
 '    datadb = DateValue(Month(datadb) & "/" & Day(datadb) & "/" & Year(datadb))

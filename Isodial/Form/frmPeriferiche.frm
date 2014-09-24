@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmPeriferiche 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -279,12 +279,12 @@ Private Sub ApriVolume()
     Call MontaVolume
     Call CaricaDati
     ' verifica che il db non sia corrotto
-    If Not nonCorrotto Then
-        MsgBox "Impossibile procedere" & vbCrLf & "Ripristinare un precedente backup o contattare l'autore" & vbCrLf & "Accesso consentito al solo amministratore di sistema", vbCritical, "ATTENZIONE!!! DATABASE CORROTTO"
-        isCorrotto = True
-    Else
+ '   If Not nonCorrotto Then
+ '       MsgBox "Impossibile procedere" & vbCrLf & "Ripristinare un precedente backup o contattare l'autore" & vbCrLf & "Accesso consentito al solo amministratore di sistema", vbCritical, "ATTENZIONE!!! DATABASE CORROTTO"
+ '       isCorrotto = True
+ '   Else
         isCorrotto = False
-    End If
+ '   End If
 End Sub
 
 Private Sub cmdRipristina_Click()
@@ -324,7 +324,7 @@ Private Sub flxGriglia_Click()
     End If
 End Sub
 
-Private Sub flxGriglia_DblClick()
+Private Sub flxGriglia_dblClick()
     If VerificaClickFlx(flxGriglia) = False Then Exit Sub
     Call Ripristina
 End Sub

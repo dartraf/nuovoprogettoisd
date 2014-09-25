@@ -84,26 +84,9 @@ Begin VB.Form frmVisualizzaFattureElettroniche
          EndProperty
          Height          =   495
          Left            =   4920
-         TabIndex        =   6
-         Top             =   240
-         Width           =   975
-      End
-      Begin VB.CommandButton VediFE 
-         Caption         =   "Visualizza"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   3720
          TabIndex        =   5
          Top             =   240
-         Width           =   1095
+         Width           =   975
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
@@ -135,6 +118,7 @@ Dim vRow As Integer             ' riga selezionata
 Dim vCol As Integer             ' colonna selezionata
 Dim objAnnulla As CAnnulla      ' oggetto che gestisce l'annullamento dei dati nelle flx
 Dim strSql As String
+Dim KeyFE As Integer
 
 Private Sub Form_Load()
     Dim i As Integer
@@ -210,30 +194,40 @@ Private Sub flxGriglia_Click()
         ' annulla le row e col
         flxGriglia.Row = 0
         flxGriglia.Col = 0
+        KeyFE = 0
     Else
         vRow = flxGriglia.Row
         vCol = flxGriglia.Col
         Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
+        KeyFE = flxGriglia.TextMatrix(vRow, 0)
     End If
 End Sub
 
-Private Sub flxGriglia_dblClick()
+Private Sub flxGriglia_DblClick()
+    Dim ret As Integer
+
     If VerificaClickFlx(flxGriglia) = False Then Exit Sub
+
+    Set rsVisualizza = New Recordset
+    rsVisualizza.Open "SELECT NOME_FILE FROM FE WHERE KEY = " & KeyFE, cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
     
-    ' Seleziono la key della FE e la passo con la variabile, altrimenti da errore
-    
-    tTrova.keyGestioneApparato = KeyFE
-    MantieniKeyReturn = tTrova.KeyFE
     'Visualizza nel browser la fattura dal file XML della cartella FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
+    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & rsVisualizza("NOME_FILE") & ".xml", vbNullString, vbNullString, 1)
     If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
-    tTrova.KeyFE = 0    'per evitare di ricaricare la FE
+    Set rsVisualizza = Nothing
 End Sub
 
 Private Sub cmdChiudi_Click()
     Unload frmVisualizzaFattureElettroniche
+End Sub
+
+Private Sub RigeneraFE_Click()
+    If flxGriglia.Row = 0 Then
+        Exit Sub
+    End If
+    frmFatEle.Show 1
 End Sub
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)

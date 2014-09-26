@@ -346,6 +346,7 @@ Private Type varStato                       ' variabili dello stato del paziente
     dataArrivi(1 To 3) As String          ' vettori utilizzati in frmStatoPaziente
     dataPartenza(1 To 3) As String
     centriProv(1 To 3) As Integer
+    EdtaMorte As Integer
 End Type
 Public statoPaziente As varStato
 '-------------------------

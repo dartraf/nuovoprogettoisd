@@ -3,16 +3,16 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmAnamnesiNefro 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "ANAMNESI NEFROLOGICA"
-   ClientHeight    =   7095
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   12585
+   ClientHeight    =   7104
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   12588
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   7095
-   ScaleWidth      =   12585
+   ScaleHeight     =   7104
+   ScaleWidth      =   12588
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
@@ -35,7 +35,7 @@ Begin VB.Form frmAnamnesiNefro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -53,7 +53,7 @@ Begin VB.Form frmAnamnesiNefro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -71,7 +71,7 @@ Begin VB.Form frmAnamnesiNefro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -89,7 +89,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -108,7 +108,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -127,7 +127,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -152,7 +152,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Trattamento Conservativo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -169,7 +169,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Conferma Istologica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -185,14 +185,14 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.ComboBox cboEDTA 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   3240
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -208,7 +208,7 @@ Begin VB.Form frmAnamnesiNefro
          Top             =   660
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -218,7 +218,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Data Diagnosi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -237,7 +237,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Malattia Renale Primitiva"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -248,8 +248,8 @@ Begin VB.Form frmAnamnesiNefro
          Index           =   2
          Left            =   120
          TabIndex        =   20
-         Top             =   250
-         Width           =   2610
+         Top             =   240
+         Width           =   2616
       End
    End
    Begin VB.Frame Frame7 
@@ -261,7 +261,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.ComboBox cboCentro 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -283,7 +283,7 @@ Begin VB.Form frmAnamnesiNefro
          Top             =   560
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -295,7 +295,7 @@ Begin VB.Form frmAnamnesiNefro
          Top             =   960
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -308,7 +308,7 @@ Begin VB.Form frmAnamnesiNefro
          Top             =   170
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -318,7 +318,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Data Fine Emodialisi in Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -337,7 +337,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Data Inizio Emodialisi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -356,7 +356,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -375,7 +375,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Data Inizio Emodialisi in Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -400,7 +400,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Sosp.Temp."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -417,7 +417,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.TextBox txtNote 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -435,7 +435,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.TextBox txtNote 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -454,7 +454,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "In Attesa Trapianto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -470,7 +470,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.ComboBox cboCentro 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -488,7 +488,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.ComboBox cboCentro 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -507,7 +507,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Sosp.Temp."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -526,7 +526,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Note"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -545,7 +545,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Note"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -565,7 +565,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Prima Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -585,7 +585,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Seconda Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -610,7 +610,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Precedente Trapianto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -626,7 +626,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.ComboBox cboCentro 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -649,7 +649,7 @@ Begin VB.Form frmAnamnesiNefro
          Top             =   550
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -659,7 +659,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -678,7 +678,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -703,7 +703,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Precedente Espianto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -719,7 +719,7 @@ Begin VB.Form frmAnamnesiNefro
       Begin VB.ComboBox cboCentro 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -742,7 +742,7 @@ Begin VB.Form frmAnamnesiNefro
          Top             =   550
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   661
+         _ExtentY        =   656
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   0   'False
@@ -752,7 +752,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -771,7 +771,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "Sede"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -796,7 +796,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -814,7 +814,7 @@ Begin VB.Form frmAnamnesiNefro
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -831,7 +831,7 @@ Begin VB.Form frmAnamnesiNefro
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

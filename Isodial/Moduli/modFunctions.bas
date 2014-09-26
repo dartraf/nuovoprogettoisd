@@ -55,6 +55,7 @@ Public Sub AnnullaVarStato()
     Next i
     statoPaziente.dataStato = ""
     statoPaziente.donatore = 2        ' non immesso
+    statoPaziente.EdtaMorte = -1
 End Sub
 
 ''

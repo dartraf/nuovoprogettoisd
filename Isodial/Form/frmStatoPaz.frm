@@ -100,7 +100,7 @@ Begin VB.Form frmStatoPaz
       Begin VB.ComboBox cboCentroProv 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -118,7 +118,7 @@ Begin VB.Form frmStatoPaz
       Begin VB.ComboBox cboCentroProv 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -136,7 +136,7 @@ Begin VB.Form frmStatoPaz
       Begin VB.ComboBox cboCentroProv 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -157,7 +157,7 @@ Begin VB.Form frmStatoPaz
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -176,7 +176,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "Data Arrivo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -195,7 +195,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "Proveniente Da"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -214,7 +214,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "Data Partenza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -234,7 +234,7 @@ Begin VB.Form frmStatoPaz
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -254,7 +254,7 @@ Begin VB.Form frmStatoPaz
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -274,7 +274,7 @@ Begin VB.Form frmStatoPaz
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -294,7 +294,7 @@ Begin VB.Form frmStatoPaz
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -314,7 +314,7 @@ Begin VB.Form frmStatoPaz
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -330,17 +330,35 @@ Begin VB.Form frmStatoPaz
       End
    End
    Begin VB.Frame fraData 
-      Height          =   735
+      Height          =   732
       Left            =   120
       TabIndex        =   0
       Top             =   3120
       Width           =   5055
+      Begin VB.ComboBox cboEdtaCausaMorte 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   288
+         Left            =   1560
+         Sorted          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   30
+         Top             =   840
+         Width           =   3372
+      End
       Begin VB.PictureBox picData 
          AutoSize        =   -1  'True
          BorderStyle     =   0  'None
          Height          =   360
          Index           =   0
-         Left            =   4320
+         Left            =   4560
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   23
@@ -348,41 +366,60 @@ Begin VB.Form frmStatoPaz
          Top             =   240
          Width           =   360
       End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Causa Morte"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   0
+         Left            =   120
+         TabIndex        =   31
+         Top             =   840
+         Width           =   1236
+      End
       Begin VB.Label lblData 
          Alignment       =   2  'Center
          BackColor       =   &H80000009&
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   255
-         Left            =   3000
+         Height          =   252
+         Left            =   3240
          TabIndex        =   9
          Top             =   300
-         Width           =   1215
+         Width           =   1212
       End
       Begin VB.Label lblDataNome 
          Caption         =   "Data "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   312
          Left            =   120
          TabIndex        =   3
-         Top             =   360
-         Width           =   2145
+         Top             =   280
+         Width           =   2148
       End
    End
    Begin VB.Frame fraDonatore 
@@ -395,7 +432,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "Vivente"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -413,7 +450,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "Cadavere"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -431,7 +468,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "Donatore"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -457,15 +494,15 @@ Begin VB.Form frmStatoPaz
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
-         Left            =   1800
+         Height          =   492
+         Left            =   1440
          TabIndex        =   2
          Top             =   240
          Width           =   1215
@@ -474,7 +511,7 @@ Begin VB.Form frmStatoPaz
          Caption         =   "&Conferma"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -482,7 +519,7 @@ Begin VB.Form frmStatoPaz
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   240
+         Left            =   120
          TabIndex        =   1
          Top             =   240
          Width           =   1215
@@ -510,8 +547,10 @@ Private Sub Form_Load()
     
     Select Case statoPaziente.statoPaz
         Case TPDECEDUTO
+            Call RicaricaComboBox("EDTA_MORTE", "NOME", cboEdtaCausaMorte)
             fraData.Top = 0
-            fraOpzioni.Top = 600
+            fraData.Height = 1332
+            fraOpzioni.Top = 1200
             fraOpzioni.ZOrder 1
             Me.Height = fraOpzioni.Height + fraOpzioni.Top + 450
             Me.Width = fraData.Width + 300
@@ -546,9 +585,13 @@ Private Sub Form_Load()
             Me.Caption = Me.Caption & "trasferito"
             lblDataNome = lblDataNome & "trasferimento"
     End Select
+    
     If frmPaziente.intPazientiKey <> 0 Then
         ' sta visualizzando le info su un paziente
         Select Case statoPaziente.statoPaz
+            Case TPDECEDUTO
+                lblData = statoPaziente.dataStato
+                cboEdtaCausaMorte.ListIndex = GetCboListIndex(statoPaziente.EdtaMorte, cboEdtaCausaMorte)
             Case TPOSPITE
                 For i = 0 To 2
                     lblDataAr(i) = statoPaziente.dataArrivi(i + 1)
@@ -562,10 +605,11 @@ Private Sub Form_Load()
                 End If
         End Select
     End If
+    
 End Sub
 
 Private Sub cmdChiudi_Click()
-    Unload Me
+    Unload frmStatoPaz
 End Sub
 
 Private Sub cmdConferma_Click()
@@ -578,6 +622,15 @@ Private Sub cmdConferma_Click()
         Next i
         Call AnnullaVarStato
         Select Case statoPaziente.statoPaz
+            Case TPDECEDUTO
+                If lblData <> "" Then
+                    statoPaziente.dataStato = lblData
+                End If
+                If cboEdtaCausaMorte.ListIndex = -1 Then
+                    statoPaziente.EdtaMorte = -1
+                Else
+                    statoPaziente.EdtaMorte = cboEdtaCausaMorte.ItemData(cboEdtaCausaMorte.ListIndex)
+                End If
             Case TPOSPITE
                 For i = 0 To 2
                     If lblDataAr(i) <> "" Then

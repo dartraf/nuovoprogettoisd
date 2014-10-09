@@ -51,48 +51,89 @@ Begin VB.Form frmNote
       Tab(0).Control(9).Enabled=   0   'False
       Tab(0).Control(10)=   "Label9"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).ControlCount=   11
+      Tab(0).Control(11)=   "Label32"
+      Tab(0).Control(11).Enabled=   0   'False
+      Tab(0).Control(12)=   "Label10(9)"
+      Tab(0).Control(12).Enabled=   0   'False
+      Tab(0).ControlCount=   13
       TabCaption(1)   =   "Versione 3.6.4"
       TabPicture(1)   =   "frmNote.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label10(3)"
-      Tab(1).Control(1)=   "Label19"
-      Tab(1).Control(2)=   "Label10(1)"
-      Tab(1).Control(3)=   "Label18"
-      Tab(1).Control(4)=   "Label17"
-      Tab(1).Control(5)=   "Label16"
-      Tab(1).Control(6)=   "Label15"
-      Tab(1).Control(7)=   "Label4(3)"
-      Tab(1).Control(8)=   "Label14"
-      Tab(1).Control(9)=   "Label13"
-      Tab(1).Control(10)=   "Label8(0)"
-      Tab(1).Control(11)=   "Label12"
-      Tab(1).Control(12)=   "Label10(0)"
-      Tab(1).Control(13)=   "Label11"
+      Tab(1).Control(0)=   "Label11"
+      Tab(1).Control(1)=   "Label10(0)"
+      Tab(1).Control(2)=   "Label12"
+      Tab(1).Control(3)=   "Label8(0)"
+      Tab(1).Control(4)=   "Label13"
+      Tab(1).Control(5)=   "Label14"
+      Tab(1).Control(6)=   "Label4(3)"
+      Tab(1).Control(7)=   "Label15"
+      Tab(1).Control(8)=   "Label16"
+      Tab(1).Control(9)=   "Label17"
+      Tab(1).Control(10)=   "Label18"
+      Tab(1).Control(11)=   "Label10(1)"
+      Tab(1).Control(12)=   "Label19"
+      Tab(1).Control(13)=   "Label10(3)"
       Tab(1).ControlCount=   14
       TabCaption(2)   =   "Versione 3.6.3"
       TabPicture(2)   =   "frmNote.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label10(8)"
-      Tab(2).Control(1)=   "Label10(7)"
-      Tab(2).Control(2)=   "Label31"
-      Tab(2).Control(3)=   "Label30"
-      Tab(2).Control(4)=   "Label29"
-      Tab(2).Control(5)=   "Label10(6)"
-      Tab(2).Control(6)=   "Label28"
-      Tab(2).Control(7)=   "Label10(5)"
-      Tab(2).Control(8)=   "Label27"
+      Tab(2).Control(0)=   "Label20"
+      Tab(2).Control(1)=   "Label10(4)"
+      Tab(2).Control(2)=   "Label21"
+      Tab(2).Control(3)=   "Label8(1)"
+      Tab(2).Control(4)=   "Label22"
+      Tab(2).Control(5)=   "Label23"
+      Tab(2).Control(6)=   "Label4(2)"
+      Tab(2).Control(7)=   "Label24"
+      Tab(2).Control(8)=   "Label25"
       Tab(2).Control(9)=   "Label26"
-      Tab(2).Control(10)=   "Label25"
-      Tab(2).Control(11)=   "Label24"
-      Tab(2).Control(12)=   "Label4(2)"
-      Tab(2).Control(13)=   "Label23"
-      Tab(2).Control(14)=   "Label22"
-      Tab(2).Control(15)=   "Label8(1)"
-      Tab(2).Control(16)=   "Label21"
-      Tab(2).Control(17)=   "Label10(4)"
-      Tab(2).Control(18)=   "Label20"
+      Tab(2).Control(10)=   "Label27"
+      Tab(2).Control(11)=   "Label10(5)"
+      Tab(2).Control(12)=   "Label28"
+      Tab(2).Control(13)=   "Label10(6)"
+      Tab(2).Control(14)=   "Label29"
+      Tab(2).Control(15)=   "Label30"
+      Tab(2).Control(16)=   "Label31"
+      Tab(2).Control(17)=   "Label10(7)"
+      Tab(2).Control(18)=   "Label10(8)"
       Tab(2).ControlCount=   19
+      Begin VB.Label Label10 
+         Caption         =   "Implementate le tabelle per la gestione e generazione delle fatture elettroniche"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   255
+         Index           =   9
+         Left            =   120
+         TabIndex        =   46
+         Top             =   5040
+         Width           =   7095
+      End
+      Begin VB.Label Label32 
+         Caption         =   "-PREDISPOSIZIONE FATTURA ELETTRONICA-"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   45
+         Top             =   4800
+         Width           =   4335
+      End
       Begin VB.Label Label10 
          Caption         =   "Ampliate le voci del campo ACCESSO VASCOLARE"
          BeginProperty Font 
@@ -700,7 +741,7 @@ Begin VB.Form frmNote
          Width           =   4335
       End
       Begin VB.Label Label9 
-         Caption         =   "-PREDISPOSIZIONE FATTURA ELETTRONICA-"
+         Caption         =   "-ANAGRAFIC A PAZIENTI-"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -718,7 +759,7 @@ Begin VB.Form frmNote
          Width           =   4335
       End
       Begin VB.Label Label10 
-         Caption         =   "Implementate le tabelle per la gestione e generazione delle fatture elettroniche"
+         Caption         =   "Inserito nel pannello con status ""Deceduto"" la specifica della causa di morte del paziente secondo la tabella E.D.T.A."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -729,7 +770,7 @@ Begin VB.Form frmNote
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00C00000&
-         Height          =   255
+         Height          =   375
          Index           =   2
          Left            =   120
          TabIndex        =   10

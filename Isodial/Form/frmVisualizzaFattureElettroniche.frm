@@ -71,8 +71,8 @@ Begin VB.Form frmVisualizzaFattureElettroniche
       TabIndex        =   2
       Top             =   3480
       Width           =   7215
-      Begin VB.CommandButton RigeneraFE 
-         Caption         =   "Rigenera XML"
+      Begin VB.CommandButton CancellaFatt 
+         Caption         =   "Cancella Fatt. EL."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -223,11 +223,36 @@ Private Sub cmdChiudi_Click()
     Unload frmVisualizzaFattureElettroniche
 End Sub
 
-Private Sub RigeneraFE_Click()
+Private Sub CancellaFatt_Click()
+    Dim MProgr_Invio_Rigen As Integer
+    
     If flxGriglia.Row = 0 Then
         Exit Sub
+    ElseIf MsgBox("Verrà cancellata la Fattura Elettronica in modo IRREVERSIBILE - SI E' SICURI DI PROCEDERE?", vbQuestion + vbYesNo + vbDefaultButton2, "PRESTARE ATTENZIONE!!!") = vbNo Then
+        Exit Sub
     End If
-    frmFatEle.Show 1
+    
+    Set rsVisualizza = New Recordset  'controlla se è già stato sbloccato il progr. d'invio
+    rsVisualizza.Open "SELECT PROGR_INVIO_RIGEN FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
+    If rsVisualizza("PROGR_INVIO_RIGEN") <> 0 Then
+        MsgBox "IMPOSSIBILE CANCELLARE ULTERIORI FATTURE - MANCATO ALLINEAMENTO N° PROGRESSIVO D'INVIO", vbCritical, "ATTENZIONE!!!"
+        rsVisualizza.Close
+        Exit Sub
+    End If
+
+    Set rsVisualizza = New Recordset
+    rsVisualizza.Open "SELECT PROGR_INVIO,NOME_FILE FROM FE WHERE KEY = " & KeyFE, cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+    MProgr_Invio_Rigen = rsVisualizza("PROGR_INVIO")
+    Kill structApri.pathExe & "\FE\" & rsVisualizza("NOME_FILE") & ".xml"
+    rsVisualizza.Delete
+   
+    Set rsVisualizza = New Recordset
+    rsVisualizza.Open "SELECT * FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
+    rsVisualizza("PROGR_INVIO_RIGEN") = MProgr_Invio_Rigen
+    rsVisualizza.Update
+    rsVisualizza.Close
+
+    Call CaricaFlx
 End Sub
 
 Private Sub WheelCatcher1_WheelRotation(Rotation As Long, X As Long, Y As Long, CtrlHwnd As Long)

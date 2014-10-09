@@ -1604,7 +1604,11 @@ Dim strSql As String
 '        If VarType(rsDataset("PROGR_INVIO")) = 1 Then 'se il campo è null VarType assume valore 1
 '            txtProgrInvio = 1
 '        End if
-         lblProgrInvio = "N° Progressivo Invio -> " & rsDataset("PROGR_INVIO")
+        If rsDataset("PROGR_INVIO_RIGEN") = 0 Then
+            lblProgrInvio = "N° Progressivo Invio -> " & rsDataset("PROGR_INVIO")
+        Else
+            lblProgrInvio = "N° Progressivo Invio -> " & rsDataset("PROGR_INVIO_RIGEN")
+        End If
         modifica = True
     Else
         modifica = False

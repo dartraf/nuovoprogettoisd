@@ -268,7 +268,7 @@ Begin VB.Form frmStampaFattureRiepilogo
       Top             =   600
       Width           =   5295
       Begin VB.CommandButton VisualizzaFE 
-         Caption         =   "Visualizza Fatture El."
+         Caption         =   "Visualizza Fatture EL."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2740,17 +2740,27 @@ Private Function CreaNodo(nome As String, valore As String) As IXMLDOMNode
 End Function
 
 Private Sub fattelettr_Click()
- If Completo Then               ' controlla che ci sia il n° della fattura
+        Dim rsDataset As New Recordset
+        rsDataset.Open "SELECT * FROM RICETTE  WHERE (ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        If rsDataset.EOF And rsDataset.BOF Then
+            MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, "Genera file XML"
+            rsDataset.Close
+            Exit Sub
+        Else
+            Set rsDataset = Nothing
+        End If
+ 
+    If Completo = False Then          ' controlla che ci sia il n° della fattura
+        Exit Sub
+    End If
+    
     frmFatEle.Show 1
- Else
-    Exit Sub
- End If
  
- If OKGeneraFE = False Then     ' controlla che sia stato premuto il tasto GENERA FATTURA FE nel formFatEle
-    Exit Sub
- End If
+    If OKGeneraFE = False Then     ' Esce se si preme il tasto CHIUDI nel formFatEle
+        Exit Sub
+    End If
  
- OKGeneraFE = False
+    OKGeneraFE = False
  
     Dim proc As IXMLDOMProcessingInstruction
     Dim nodo0 As IXMLDOMNode
@@ -2765,7 +2775,6 @@ Private Sub fattelettr_Click()
     Dim strSql As String
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
-    Dim rsDataset As New Recordset
     Dim rsAppo As New Recordset
     Dim rsFE As New Recordset
     Dim ticket As Currency
@@ -2805,14 +2814,14 @@ Private Sub fattelettr_Click()
   '  Dim coefficienteQuotaAggiuntiva As Single
     
     ' verifica se ci sono ricette
-    rsDataset.Open "SELECT * FROM RICETTE  WHERE (ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-    If rsDataset.EOF And rsDataset.BOF Then
-        MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, "Genera file XML"
-        rsDataset.Close
-        Exit Sub
-    Else
-        Set rsDataset = Nothing
-    End If
+'    rsDataset.Open "SELECT * FROM RICETTE  WHERE (ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+'    If rsDataset.EOF And rsDataset.BOF Then
+'        MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, "Genera file XML"
+'        rsDataset.Close
+'        Exit Sub
+'    Else
+'        Set rsDataset = Nothing
+'    End If
     
     Set doc = Nothing
     ' versione
@@ -2854,10 +2863,16 @@ Private Sub fattelettr_Click()
     Set nodo0 = doc.createElement("FatturaElettronicaHeader")
 
   ' DATI TRASMISSIONE punto 1.1
-    rsDataset.Open "SELECT COD_DESTINATARIO,PROGR_INVIO FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
+    rsDataset.Open "SELECT COD_DESTINATARIO,PROGR_INVIO,PROGR_INVIO_RIGEN FROM INTESTAZIONE_FATTURA", cnPrinc, adOpenForwardOnly, adLockPessimistic, adCmdText
     MCod_Destinatario = rsDataset("COD_DESTINATARIO")
-    MProgr_Invio = rsDataset("PROGR_INVIO")
-    rsDataset("PROGR_INVIO") = MProgr_Invio + 1 'incrementa il numero progresso
+    
+    If rsDataset("PROGR_INVIO_RIGEN") = 0 Then   ' controlla se va rigenerata la FE attraverso il progressivo d'invio
+        MProgr_Invio = rsDataset("PROGR_INVIO")  ' se progr_invio_rigen = 0 incrementa il n° progressivo d'invio
+        rsDataset("PROGR_INVIO") = MProgr_Invio + 1 'incrementa il numero progresso
+    Else
+        MProgr_Invio = rsDataset("PROGR_INVIO_RIGEN") 'annulla la rigenerazione della FE ponendo il valore = 0
+        rsDataset("PROGR_INVIO_RIGEN") = 0
+    End If
     rsDataset.Update
     rsDataset.Close
     

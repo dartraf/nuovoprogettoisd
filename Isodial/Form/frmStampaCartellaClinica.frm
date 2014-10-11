@@ -1,17 +1,17 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmStampaCartellaClinica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa cartella clinica"
-   ClientHeight    =   4290
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   7215
+   ClientHeight    =   4296
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   7212
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4290
-   ScaleWidth      =   7215
+   ScaleHeight     =   4296
+   ScaleWidth      =   7212
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
@@ -24,7 +24,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Referti Esami Strumentali"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -41,7 +41,7 @@ Begin VB.Form frmStampaCartellaClinica
       Begin VB.ComboBox cboAnno 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -61,7 +61,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Diario clinico"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Accessi Vascolari"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -97,7 +97,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Terapia Domiciliare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -115,7 +115,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Terapia Dialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -133,7 +133,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Esami di Laboratorio dall'anno"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -151,7 +151,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Esami Strumentali"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -169,7 +169,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Anamnesi Dialitica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -187,7 +187,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Anamnesi Nefrologica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -205,7 +205,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "Anamnesi Patologica e Familiare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -224,7 +224,7 @@ Begin VB.Form frmStampaCartellaClinica
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -250,7 +250,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "&Deseleziona tutto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -267,7 +267,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "S&eleziona tutto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -285,7 +285,7 @@ Begin VB.Form frmStampaCartellaClinica
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -302,7 +302,7 @@ Begin VB.Form frmStampaCartellaClinica
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -326,8 +326,8 @@ Begin VB.Form frmStampaCartellaClinica
    Begin VB.PictureBox picStampa 
       Height          =   495
       Left            =   0
-      ScaleHeight     =   435
-      ScaleWidth      =   315
+      ScaleHeight     =   444
+      ScaleWidth      =   324
       TabIndex        =   18
       Top             =   480
       Visible         =   0   'False
@@ -368,6 +368,8 @@ Private Sub StampaPrimaParte()
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
     Dim rsPazientiStampa As Recordset          ' tabella pazienti
+    Dim rsStato As Recordset
+    Dim rsCodiceEdtaMorte As Recordset
         
     ' carica la stringa
     '--------- paziente
@@ -386,7 +388,9 @@ Private Sub StampaPrimaParte()
             "       NEW adVarChar (15) as ESENZIONE, " & _
             "       NEW adInteger as STATO, " & _
             "       NEW adVarChar (5) as NOMEDATA, " & _
-            "       NEW adVarChar (12) as DATASTATO, "
+            "       NEW adVarChar (12) as DATASTATO, " & _
+            "       NEW adVarChar (11) as EDTA_MORTE, " & _
+            "       NEW adLongVarChar as NOME_EDTA_MORTE, "
     '--------- medici di base
     strSqlStampa = strSqlStampa & _
             "       NEW adVarChar (50) as COGNOME_MEDICO, " & _
@@ -437,6 +441,26 @@ Private Sub StampaPrimaParte()
             .Fields("STATO") = rsPazientiStampa("STATO")
             .Fields("NOMEDATA") = IIf(rsPazientiStampa("STATO") = 0, "", "Data")
             .Fields("DATASTATO") = rsPazientiStampa("STATODATA") & ""
+            
+            ' se è deceduto carica il codice edta
+            If rsPazientiStampa("STATO") = 1 Then
+                Set rsStato = New Recordset
+                rsStato.Open "SELECT * FROM PAZIENTI WHERE KEY=" & codicePaziente, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                    If IsNull(rsStato("CODICE_EDTA_MORTE")) Then
+                        .Fields("EDTA_MORTE") = "Causa morte"
+                        .Fields("NOME_EDTA_MORTE") = "- -"
+                    Else
+                        Dim CodiceEdtaMorte As Integer
+                        CodiceEdtaMorte = rsStato("CODICE_EDTA_MORTE")
+                        Set rsCodiceEdtaMorte = New Recordset
+                        rsCodiceEdtaMorte.Open "SELECT * FROM EDTA_MORTE WHERE KEY=" & CodiceEdtaMorte, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                        .Fields("EDTA_MORTE") = "Causa morte"
+                        .Fields("NOME_EDTA_MORTE") = rsCodiceEdtaMorte("NOME")
+                        Set rsCodiceEdtaMorte = Nothing
+                    End If
+                Set rsStato = Nothing
+            End If
+            
             .Fields("COGNOME_MEDICO") = rsPazientiStampa("MEDICI_BASECOGNOME") & ""
             .Fields("NOME_MEDICO") = rsPazientiStampa("MEDICI_BASENOME") & ""
             .Fields("TELEFONO_MEDICO") = rsPazientiStampa("MEDICI_BASETELEFONO") & ""

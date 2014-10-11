@@ -317,7 +317,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_1
       _Version        =   393216
       Name            =   "corpo"
       Object.Height          =   9840
-      NumControls     =   46
+      NumControls     =   48
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -1018,7 +1018,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_1
          Name            =   "txtStato"
          Object.Left            =   1701
          Object.Top             =   3515
-         Object.Width           =   3060
+         Object.Width           =   1587
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -1045,16 +1045,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_1
          Name            =   "Line1"
          Object.Left            =   1644
          Object.Top             =   3798
-         Object.Width           =   3000
+         Object.Width           =   1644
       EndProperty
       ItemType39      =   4
       BeginProperty Item39 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNomeData"
-         Object.Left            =   4932
+         Object.Left            =   3628
          Object.Top             =   3515
-         Object.Width           =   795
-         Object.Height          =   345
+         Object.Width           =   564
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   12
@@ -1078,10 +1078,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_1
       BeginProperty Item40 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataStato"
-         Object.Left            =   5783
+         Object.Left            =   4195
          Object.Top             =   3515
-         Object.Width           =   1530
-         Object.Height          =   345
+         Object.Width           =   1368
+         Object.Height          =   348
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   12
@@ -1181,6 +1181,60 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptCartellaClinica_1
          Object.Left            =   2665
          Object.Top             =   3005
          Object.Width           =   1695
+      EndProperty
+      ItemType46      =   4
+      BeginProperty Item46 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtEdtaMorte"
+         Object.Left            =   5896
+         Object.Top             =   3515
+         Object.Width           =   1296
+         Object.Height          =   348
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType47      =   4
+      BeginProperty Item47 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtNomeEdtaMorte"
+         Object.Left            =   7200
+         Object.Top             =   3545
+         Object.Width           =   2324
+         Object.Height          =   1511
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   10.2
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
       EndProperty
    EndProperty
    SectionCode3    =   7
@@ -1352,6 +1406,8 @@ Private Sub DataReport_Initialize()
             .Item("txtStato").DataField = "STATO"
             .Item("txtNomeData").DataField = "NOMEDATA"
             .Item("txtDataStato").DataField = "DATASTATO"
+            .Item("txtEdtaMorte").DataField = "EDTA_MORTE"
+            .Item("txtNomeEdtaMorte").DataField = "NOME_EDTA_MORTE"
             .Item("txtTipoDocumento").DataField = "TIPO_DOCUMENTO"
             Set .Item("txtTipoDocumento").DataFormat = sdfTipo
             Set .Item("txtGruppoSanguigno").DataFormat = sdfGruppoSanguigno

@@ -368,7 +368,6 @@ Private Sub StampaPrimaParte()
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
     Dim rsPazientiStampa As Recordset          ' tabella pazienti
-    Dim rsStato As Recordset
     Dim rsCodiceEdtaMorte As Recordset
         
     ' carica la stringa
@@ -444,21 +443,18 @@ Private Sub StampaPrimaParte()
             
             ' se è deceduto carica il codice edta
             If rsPazientiStampa("STATO") = 1 Then
-                Set rsStato = New Recordset
-                rsStato.Open "SELECT * FROM PAZIENTI WHERE KEY=" & codicePaziente, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-                    If IsNull(rsStato("CODICE_EDTA_MORTE")) Then
-                        .Fields("EDTA_MORTE") = "Causa morte"
-                        .Fields("NOME_EDTA_MORTE") = "- -"
-                    Else
-                        Dim CodiceEdtaMorte As Integer
-                        CodiceEdtaMorte = rsStato("CODICE_EDTA_MORTE")
-                        Set rsCodiceEdtaMorte = New Recordset
-                        rsCodiceEdtaMorte.Open "SELECT * FROM EDTA_MORTE WHERE KEY=" & CodiceEdtaMorte, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-                        .Fields("EDTA_MORTE") = "Causa morte"
-                        .Fields("NOME_EDTA_MORTE") = rsCodiceEdtaMorte("NOME")
-                        Set rsCodiceEdtaMorte = Nothing
-                    End If
-                Set rsStato = Nothing
+                If IsNull(rsPazientiStampa("CODICE_EDTA_MORTE")) Then
+                    .Fields("EDTA_MORTE") = "Causa morte"
+                    .Fields("NOME_EDTA_MORTE") = "- -"
+                Else
+                    Dim CodiceEdtaMorte As Integer
+                    CodiceEdtaMorte = rsPazientiStampa("CODICE_EDTA_MORTE")
+                    Set rsCodiceEdtaMorte = New Recordset
+                    rsCodiceEdtaMorte.Open "SELECT * FROM EDTA_MORTE WHERE KEY=" & CodiceEdtaMorte, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                    .Fields("EDTA_MORTE") = "Causa morte"
+                    .Fields("NOME_EDTA_MORTE") = rsCodiceEdtaMorte("NOME")
+                    Set rsCodiceEdtaMorte = Nothing
+                End If
             End If
             
             .Fields("COGNOME_MEDICO") = rsPazientiStampa("MEDICI_BASECOGNOME") & ""

@@ -136,111 +136,192 @@ Begin VB.Form frmPaziente
       Tab(0).Control(46).Enabled=   0   'False
       Tab(0).Control(47)=   "txtCAP(0)"
       Tab(0).Control(47).Enabled=   0   'False
-      Tab(0).Control(48)=   "txtProv(0)"
+      Tab(0).Control(48)=   "txtCAP(1)"
       Tab(0).Control(48).Enabled=   0   'False
-      Tab(0).Control(49)=   "txtCAP(1)"
+      Tab(0).Control(49)=   "txtIndirizzo"
       Tab(0).Control(49).Enabled=   0   'False
-      Tab(0).Control(50)=   "txtProv(1)"
+      Tab(0).Control(50)=   "txtTelefono"
       Tab(0).Control(50).Enabled=   0   'False
-      Tab(0).Control(51)=   "txtIndirizzo"
+      Tab(0).Control(51)=   "txtEmail"
       Tab(0).Control(51).Enabled=   0   'False
-      Tab(0).Control(52)=   "txtTelefono"
+      Tab(0).Control(52)=   "txtCellulare"
       Tab(0).Control(52).Enabled=   0   'False
-      Tab(0).Control(53)=   "txtEmail"
+      Tab(0).Control(53)=   "txtFax"
       Tab(0).Control(53).Enabled=   0   'False
-      Tab(0).Control(54)=   "txtCellulare"
+      Tab(0).Control(54)=   "txtNumeroProcura"
       Tab(0).Control(54).Enabled=   0   'False
-      Tab(0).Control(55)=   "txtFax"
+      Tab(0).Control(55)=   "txtRilascioCarta"
       Tab(0).Control(55).Enabled=   0   'False
-      Tab(0).Control(56)=   "txtNumeroProcura"
+      Tab(0).Control(56)=   "txtCodiceFiscale"
       Tab(0).Control(56).Enabled=   0   'False
-      Tab(0).Control(57)=   "txtRilascioCarta"
+      Tab(0).Control(57)=   "cboCentroProv"
       Tab(0).Control(57).Enabled=   0   'False
-      Tab(0).Control(58)=   "txtCodiceFiscale"
+      Tab(0).Control(58)=   "txtProfessione"
       Tab(0).Control(58).Enabled=   0   'False
-      Tab(0).Control(59)=   "cboCentroProv"
+      Tab(0).Control(59)=   "txtNote"
       Tab(0).Control(59).Enabled=   0   'False
-      Tab(0).Control(60)=   "txtProfessione"
+      Tab(0).Control(60)=   "cboDocumento"
       Tab(0).Control(60).Enabled=   0   'False
-      Tab(0).Control(61)=   "txtNote"
+      Tab(0).Control(61)=   "cboStato"
       Tab(0).Control(61).Enabled=   0   'False
-      Tab(0).Control(62)=   "cboDocumento"
+      Tab(0).Control(62)=   "cboGSanguigno"
       Tab(0).Control(62).Enabled=   0   'False
-      Tab(0).Control(63)=   "cboStato"
+      Tab(0).Control(63)=   "txtNumCarta"
       Tab(0).Control(63).Enabled=   0   'False
-      Tab(0).Control(64)=   "cboGSanguigno"
+      Tab(0).Control(64)=   "txtAllergia"
       Tab(0).Control(64).Enabled=   0   'False
-      Tab(0).Control(65)=   "txtNumCarta"
+      Tab(0).Control(65)=   "panRH"
       Tab(0).Control(65).Enabled=   0   'False
-      Tab(0).Control(66)=   "txtAllergia"
+      Tab(0).Control(66)=   "cboAsl"
       Tab(0).Control(66).Enabled=   0   'False
-      Tab(0).Control(67)=   "panRH"
+      Tab(0).Control(67)=   "picMostraStato"
       Tab(0).Control(67).Enabled=   0   'False
-      Tab(0).Control(68)=   "cboAsl"
+      Tab(0).Control(68)=   "txtCodiceId"
       Tab(0).Control(68).Enabled=   0   'False
-      Tab(0).Control(69)=   "picMostraStato"
+      Tab(0).Control(69)=   "cboDistretto"
       Tab(0).Control(69).Enabled=   0   'False
-      Tab(0).Control(70)=   "txtCodiceId"
+      Tab(0).Control(70)=   "cboEsenzione"
       Tab(0).Control(70).Enabled=   0   'False
-      Tab(0).Control(71)=   "cboDistretto"
+      Tab(0).Control(71)=   "cboComuneResidenza"
       Tab(0).Control(71).Enabled=   0   'False
-      Tab(0).Control(72)=   "cboEsenzione"
+      Tab(0).Control(72)=   "cboRegione"
       Tab(0).Control(72).Enabled=   0   'False
-      Tab(0).Control(73)=   "cboComuneResidenza"
+      Tab(0).Control(73)=   "txtKm"
       Tab(0).Control(73).Enabled=   0   'False
-      Tab(0).Control(74)=   "cboRegione"
+      Tab(0).Control(74)=   "txtTesseraSanitaria"
       Tab(0).Control(74).Enabled=   0   'False
-      Tab(0).Control(75)=   "txtKm"
+      Tab(0).Control(75)=   "cboAccompagnatore"
       Tab(0).Control(75).Enabled=   0   'False
-      Tab(0).Control(76)=   "txtTesseraSanitaria"
+      Tab(0).Control(76)=   "chkTrasportoInAmbulanza"
       Tab(0).Control(76).Enabled=   0   'False
-      Tab(0).Control(77)=   "cboAccompagnatore"
+      Tab(0).Control(77)=   "cmdTrova(0)"
       Tab(0).Control(77).Enabled=   0   'False
-      Tab(0).Control(78)=   "chkTrasportoInAmbulanza"
+      Tab(0).Control(78)=   "panSesso"
       Tab(0).Control(78).Enabled=   0   'False
-      Tab(0).Control(79)=   "cmdTrova(0)"
+      Tab(0).Control(79)=   "cboNazione"
       Tab(0).Control(79).Enabled=   0   'False
-      Tab(0).Control(80)=   "panSesso"
+      Tab(0).Control(80)=   "txtAltezza"
       Tab(0).Control(80).Enabled=   0   'False
-      Tab(0).Control(81)=   "cboNazione"
+      Tab(0).Control(81)=   "cboProv1Paziente"
       Tab(0).Control(81).Enabled=   0   'False
-      Tab(0).Control(82)=   "txtAltezza"
+      Tab(0).Control(82)=   "cboProv2Paziente"
       Tab(0).Control(82).Enabled=   0   'False
       Tab(0).ControlCount=   83
       TabCaption(1)   =   "Medico di Base Associato"
       TabPicture(1)   =   "frmPaziente.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Label1(32)"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Label1(33)"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "Label1(34)"
+      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "Label1(35)"
+      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "Label1(36)"
+      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "Label1(37)"
+      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "Label1(39)"
+      Tab(1).Control(6).Enabled=   0   'False
       Tab(1).Control(7)=   "Label1(40)"
+      Tab(1).Control(7).Enabled=   0   'False
       Tab(1).Control(8)=   "Label1(41)"
+      Tab(1).Control(8).Enabled=   0   'False
       Tab(1).Control(9)=   "Label1(38)"
+      Tab(1).Control(9).Enabled=   0   'False
       Tab(1).Control(10)=   "Label1(42)"
+      Tab(1).Control(10).Enabled=   0   'False
       Tab(1).Control(11)=   "lblTipologiaMedico(47)"
+      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).Control(12)=   "Label1(50)"
+      Tab(1).Control(12).Enabled=   0   'False
       Tab(1).Control(13)=   "Label1(47)"
+      Tab(1).Control(13).Enabled=   0   'False
       Tab(1).Control(14)=   "cmdTrova(1)"
+      Tab(1).Control(14).Enabled=   0   'False
       Tab(1).Control(15)=   "txtCognomeMedico"
+      Tab(1).Control(15).Enabled=   0   'False
       Tab(1).Control(16)=   "txtNomeMedico"
+      Tab(1).Control(16).Enabled=   0   'False
       Tab(1).Control(17)=   "txtCittaMedico"
+      Tab(1).Control(17).Enabled=   0   'False
       Tab(1).Control(18)=   "txtCapMedico"
-      Tab(1).Control(19)=   "txtProvMedico"
-      Tab(1).Control(20)=   "txtIndirizzoMedico"
-      Tab(1).Control(21)=   "txtStudioMedico"
-      Tab(1).Control(22)=   "txtTelefonoMedico"
-      Tab(1).Control(23)=   "txtCellulareMedico"
-      Tab(1).Control(24)=   "txtEmailMedico"
-      Tab(1).Control(25)=   "txtFaxMedico"
-      Tab(1).Control(26)=   "txtCodiceRegionaleMedico"
-      Tab(1).Control(27)=   "chkPresenzaBarCode"
-      Tab(1).Control(28)=   "cboTipologia"
-      Tab(1).Control(29)=   "txtRiceve"
+      Tab(1).Control(18).Enabled=   0   'False
+      Tab(1).Control(19)=   "txtIndirizzoMedico"
+      Tab(1).Control(19).Enabled=   0   'False
+      Tab(1).Control(20)=   "txtStudioMedico"
+      Tab(1).Control(20).Enabled=   0   'False
+      Tab(1).Control(21)=   "txtTelefonoMedico"
+      Tab(1).Control(21).Enabled=   0   'False
+      Tab(1).Control(22)=   "txtCellulareMedico"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "txtEmailMedico"
+      Tab(1).Control(23).Enabled=   0   'False
+      Tab(1).Control(24)=   "txtFaxMedico"
+      Tab(1).Control(24).Enabled=   0   'False
+      Tab(1).Control(25)=   "txtCodiceRegionaleMedico"
+      Tab(1).Control(25).Enabled=   0   'False
+      Tab(1).Control(26)=   "chkPresenzaBarCode"
+      Tab(1).Control(26).Enabled=   0   'False
+      Tab(1).Control(27)=   "cboTipologia"
+      Tab(1).Control(27).Enabled=   0   'False
+      Tab(1).Control(28)=   "txtRiceve"
+      Tab(1).Control(28).Enabled=   0   'False
+      Tab(1).Control(29)=   "cboProvMedico"
+      Tab(1).Control(29).Enabled=   0   'False
       Tab(1).ControlCount=   30
+      Begin VB.ComboBox cboProvMedico 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   336
+         Left            =   -64760
+         Style           =   2  'Dropdown List
+         TabIndex        =   57
+         Top             =   900
+         Width           =   804
+      End
+      Begin VB.ComboBox cboProv2Paziente 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   336
+         Left            =   9360
+         Style           =   2  'Dropdown List
+         TabIndex        =   16
+         Top             =   2220
+         Width           =   804
+      End
+      Begin VB.ComboBox cboProv1Paziente 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   336
+         Left            =   9360
+         Style           =   2  'Dropdown List
+         TabIndex        =   13
+         Top             =   1800
+         Width           =   804
+      End
       Begin VB.TextBox txtAltezza 
          BeginProperty DataFormat 
             Type            =   0
@@ -296,7 +377,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   -67200
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -450,24 +531,6 @@ Begin VB.Form frmPaziente
          Top             =   1320
          Width           =   3495
       End
-      Begin VB.TextBox txtProvMedico 
-         Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   7.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -64920
-         MaxLength       =   2
-         TabIndex        =   57
-         Top             =   900
-         Width           =   975
-      End
       Begin VB.TextBox txtCapMedico 
          Enabled         =   0   'False
          BeginProperty Font 
@@ -551,7 +614,7 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00C00000&
-         Height          =   315
+         Height          =   288
          Left            =   2520
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -644,7 +707,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   2520
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -696,7 +759,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":0491
          Left            =   2520
          List            =   "frmPaziente.frx":0493
@@ -716,7 +779,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   2520
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -734,7 +797,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":0495
          Left            =   7920
          List            =   "frmPaziente.frx":0497
@@ -754,7 +817,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":0499
          Left            =   5400
          List            =   "frmPaziente.frx":049B
@@ -801,7 +864,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":049D
          Left            =   2520
          List            =   "frmPaziente.frx":05D6
@@ -919,7 +982,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":0777
          Left            =   7920
          List            =   "frmPaziente.frx":0787
@@ -938,7 +1001,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":0798
          Left            =   2520
          List            =   "frmPaziente.frx":079A
@@ -957,7 +1020,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          ItemData        =   "frmPaziente.frx":079C
          Left            =   2520
          List            =   "frmPaziente.frx":07A9
@@ -1010,7 +1073,7 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
+         Height          =   288
          Left            =   2520
          Sorted          =   -1  'True
          TabIndex        =   36
@@ -1153,24 +1216,6 @@ Begin VB.Form frmPaziente
          Top             =   2655
          Width           =   3735
       End
-      Begin VB.TextBox txtProv 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   7.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   1
-         Left            =   9360
-         MaxLength       =   5
-         TabIndex        =   16
-         Top             =   2220
-         Width           =   735
-      End
       Begin VB.TextBox txtCAP 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -1187,24 +1232,6 @@ Begin VB.Form frmPaziente
          MaxLength       =   5
          TabIndex        =   15
          Top             =   2220
-         Width           =   735
-      End
-      Begin VB.TextBox txtProv 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   7.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   0
-         Left            =   9360
-         MaxLength       =   5
-         TabIndex        =   13
-         Top             =   1800
          Width           =   735
       End
       Begin VB.TextBox txtCAP 
@@ -1512,12 +1539,12 @@ Begin VB.Form frmPaziente
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
+         Height          =   492
          Index           =   46
-         Left            =   10200
+         Left            =   10300
          TabIndex        =   116
          Top             =   2160
-         Width           =   855
+         Width           =   732
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2301,10 +2328,10 @@ Begin VB.Form frmPaziente
          EndProperty
          Height          =   240
          Index           =   36
-         Left            =   -65640
+         Left            =   -65400
          TabIndex        =   72
          Top             =   900
-         Width           =   555
+         Width           =   552
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -2521,6 +2548,16 @@ Dim variazioneDataInizioDialisiSede As Boolean
 '' indica se pulire le date di inizio e fine in sede quando cambia lo stato e passa in dialisi
 Dim eliminaDateInizioFineDialisiSede As Boolean
 
+
+
+Private Sub cboProv1Paziente_Change()
+    blnModificato = True
+End Sub
+
+Private Sub cboProv2Paziente_Change()
+    blnModificato = True
+End Sub
+
 Private Sub cboTipologia_Change()
     Call SetComboWidth(cboTipologia, 280)
 End Sub
@@ -2563,7 +2600,7 @@ Private Sub Memorizza()
                     "CODICE_DISTRETTO", "CODICE_ESENZIONE", "CODICE_CENTRO_PROV", "CODICE_ACCOMPAGNATORE", "ALTEZZA")
         
         v_Val = Array(txtCognome, txtNome, txtCodiceId, oData(0).data, IIf(optSesso(0).Value, "M", "F"), txtCitta, _
-                    -1, -1, -1, txtCap(0), txtCap(1), txtProv(0), txtProv(1), _
+                    -1, -1, -1, txtCap(0), txtCap(1), cboProv1Paziente.Text, cboProv2Paziente.Text, _
                     txtKm, txtIndirizzo, txtTelefono, txtCellulare, txtFax, txtEmail, _
                     txtNumeroProcura, IIf(oData(1).data = "", Null, oData(1).data), IIf(oData(2).data = "", Null, oData(2).data), cboDocumento.ListIndex, txtNumCarta, txtRilascioCarta, _
                     -1, txtCodiceFiscale, txtTesseraSanitaria, IIf(chkEsenteReddito.Value = Checked, True, False), txtAllergia, txtProfessione, _
@@ -2696,7 +2733,7 @@ Private Sub cmdMemorizza_Click()
                     
         v_NomiMedico = Array("KEY", "COGNOME", "NOME", "COMUNE", "INDIRIZZO", "CAP", "PROV", "TELEFONO", "STUDIO" _
                     , "CELLULARE", "FAX", "EMAIL", "CODICE", "PRESENZA_BARCODE", "CODICE_TIPO_MEDICO", "RICEVE")
-        v_ValMedico = Array(numKey, txtCognomeMedico, txtNomeMedico, txtCittaMedico, txtIndirizzoMedico, txtCapMedico, txtProvMedico, txtTelefonoMedico, txtStudioMedico _
+        v_ValMedico = Array(numKey, txtCognomeMedico, txtNomeMedico, txtCittaMedico, txtIndirizzoMedico, txtCapMedico, cboProvMedico.Text, txtTelefonoMedico, txtStudioMedico _
                     , txtCellulareMedico, txtFaxMedico, txtEmailMedico, txtCodiceRegionaleMedico, IIf(chkPresenzaBarCode.Value = Checked, True, False), -1, txtRiceve)
                     
         If cboTipologia.ListIndex <> -1 Then
@@ -2759,6 +2796,8 @@ Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
     
     blnModificatoAppo = blnModificato
+    Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProv1Paziente)
+    Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProv2Paziente)
     Call RicaricaComboBox("CENTRI_PROVENIENZA", "NOME", cboCentroProv)
     Call RicaricaComboBox("ASL", "NOME", cboAsl)
     Call RicaricaComboBox("TIPOLOGIE_ESENZIONE", "CODICE", cboEsenzione)
@@ -2771,6 +2810,7 @@ Private Sub Form_Activate()
     Call RicaricaComboBox("REGIONI", "NOME", cboRegione)
     If cboRegione.ListIndex = -1 Then cboRegione.ListIndex = GetIndex(cboRegione, "Campania")
     blnModificato = blnModificatoAppo
+    Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProvMedico)
     Call RicaricaComboBox("TIPOLOGIE_MEDICO", "NOME", cboTipologia)
     Select Case CaricaPazienteInAperturaForm(Me.Caption, blnModificato, intPazientiKey)
         Case tpTrovaPaziente
@@ -3085,6 +3125,8 @@ Private Sub PulisciTutto()
     cboNazione.ListIndex = GetIndex(cboNazione, "Italia")
     cboRegione.ListIndex = GetIndex(cboRegione, "Campania")
     cboEsenzione.ListIndex = GetIndex(cboEsenzione, "NESSUNA")
+    cboProv1Paziente.ListIndex = -1
+    cboProv2Paziente.ListIndex = -1
     cboStato.ListIndex = 0
     chkEsenteReddito.Value = Unchecked
     chkTrasportoInAmbulanza.Value = Unchecked
@@ -3479,7 +3521,7 @@ Private Sub CaricaMedico()
         txtNomeMedico = ""
         txtCittaMedico = ""
         txtCapMedico = ""
-        txtProvMedico = ""
+        cboProvMedico.ListIndex = -1
         txtTelefonoMedico = ""
         txtCellulareMedico = ""
         txtFaxMedico = ""
@@ -3502,7 +3544,12 @@ Private Sub CaricaMedico()
     txtNomeMedico = rsDataset("NOME") & ""
     txtCittaMedico = rsDataset("COMUNE") & ""
     txtCapMedico = rsDataset("CAP") & ""
-    txtProvMedico = rsDataset("PROV") & ""
+    ' In caso i campi siano vuoti non carica il record per evitare errori
+    If rsDataset("PROV") = "" Then
+        cboProvMedico.ListIndex = -1
+    Else
+        cboProvMedico.Text = rsDataset("PROV")
+    End If
     txtTelefonoMedico = rsDataset("TELEFONO") & ""
     txtCellulareMedico = rsDataset("CELLULARE") & ""
     txtFaxMedico = rsDataset("FAX") & ""
@@ -3561,8 +3608,17 @@ Private Sub CaricaPaziente()
     txtNumCarta = rsDataset("CODICE_DOCUMENTO")
     txtNumeroProcura = rsDataset("NUMERO_PROCURA")
     txtProfessione = rsDataset("PROFESSIONE")
-    txtProv(0) = rsDataset("PROV_NASCITA")
-    txtProv(1) = rsDataset("PROV_RESIDENZA")
+    ' In caso i campi siano vuoti non carica il record per evitare errori
+    If rsDataset("PROV_NASCITA") = "" Then
+        cboProv1Paziente.ListIndex = -1
+    Else
+        cboProv1Paziente.Text = rsDataset("PROV_NASCITA")
+    End If
+    If rsDataset("PROV_RESIDENZA") = "" Then
+        cboProv2Paziente.ListIndex = -1
+    Else
+        cboProv2Paziente.Text = rsDataset("PROV_RESIDENZA")
+    End If
     txtKm = rsDataset("KM")
     cboAsl.ListIndex = GetCboListIndex(rsDataset("CODICE_ASL"), cboAsl)
     cboDistretto.ListIndex = GetCboListIndex(IIf(IsNull(rsDataset("CODICE_DISTRETTO")), 0, rsDataset("CODICE_DISTRETTO")), cboDistretto)
@@ -3701,7 +3757,7 @@ Private Sub AbilitaMedico()
     txtNomeMedico.Enabled = True
     txtCittaMedico.Enabled = True
     txtCapMedico.Enabled = True
-    txtProvMedico.Enabled = True
+    cboProvMedico.Enabled = True
     txtIndirizzoMedico.Enabled = True
     txtStudioMedico.Enabled = True
     txtTelefonoMedico.Enabled = True
@@ -3734,7 +3790,7 @@ Private Sub DisabilitaMedico()
     txtNomeMedico.Enabled = False
     txtCittaMedico.Enabled = False
     txtCapMedico.Enabled = False
-    txtProvMedico.Enabled = False
+    cboProvMedico.Enabled = False
     txtIndirizzoMedico.Enabled = False
     txtStudioMedico.Enabled = False
     txtTelefonoMedico.Enabled = False
@@ -4043,22 +4099,6 @@ Private Sub txtProfessione_LostFocus()
     txtProfessione.BackColor = vbWhite
 End Sub
 
-Private Sub txtProv_GotFocus(Index As Integer)
-    txtProv(Index).BackColor = colArancione
-End Sub
-
-Private Sub txtProv_LostFocus(Index As Integer)
-    txtProv(Index).BackColor = vbWhite
-End Sub
-
-Private Sub txtProvMedico_GotFocus()
-    txtProvMedico.BackColor = colArancione
-End Sub
-
-Private Sub txtProvMedico_LostFocus()
-    txtProvMedico.BackColor = vbWhite
-End Sub
-
 Private Sub txtRiceve_GotFocus()
     txtRiceve.BackColor = colArancione
 End Sub
@@ -4178,10 +4218,6 @@ Private Sub txtCitta_Change()
 End Sub
 
 Private Sub txtCAP_Change(Index As Integer)
-    blnModificato = True
-End Sub
-
-Private Sub txtProv_Change(Index As Integer)
     blnModificato = True
 End Sub
 

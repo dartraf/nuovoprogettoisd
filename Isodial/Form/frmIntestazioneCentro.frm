@@ -17,9 +17,29 @@ Begin VB.Form frmIntestazioneCentro
    Begin VB.Frame Frame1 
       Height          =   5052
       Left            =   120
-      TabIndex        =   21
+      TabIndex        =   20
       Top             =   0
       Width           =   7575
+      Begin VB.ComboBox cboProv 
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   336
+         ItemData        =   "frmIntestazioneCentro.frx":0000
+         Left            =   6240
+         List            =   "frmIntestazioneCentro.frx":0002
+         Style           =   2  'Dropdown List
+         TabIndex        =   46
+         Top             =   1680
+         Width           =   804
+      End
       Begin VB.TextBox txtSitoWeb 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -33,7 +53,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   1920
          MaxLength       =   50
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   3600
          Width           =   5415
       End
@@ -50,7 +70,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   288
          Left            =   6720
          Style           =   2  'Dropdown List
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   4560
          Width           =   735
       End
@@ -67,7 +87,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   288
          Left            =   1920
          Style           =   2  'Dropdown List
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   4560
          Width           =   3015
       End
@@ -84,7 +104,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   1920
          MaxLength       =   6
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   4080
          Width           =   1215
       End
@@ -101,7 +121,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   1920
          MaxLength       =   40
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   3120
          Width           =   3015
       End
@@ -118,7 +138,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   5160
          MaxLength       =   20
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   2640
          Width           =   2175
       End
@@ -135,7 +155,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   1920
          MaxLength       =   20
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   2640
          Width           =   2055
       End
@@ -152,7 +172,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   5160
          MaxLength       =   20
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   2160
          Width           =   2175
       End
@@ -169,26 +189,9 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   285
          Left            =   1920
          MaxLength       =   15
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   2160
          Width           =   2055
-      End
-      Begin VB.TextBox txtProv 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   7.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6240
-         MaxLength       =   2
-         TabIndex        =   6
-         Top             =   1680
-         Width           =   375
       End
       Begin VB.TextBox txtCitta 
          BeginProperty Font 
@@ -290,7 +293,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   17
          Left            =   120
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   3600
          Width           =   888
       End
@@ -308,7 +311,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   432
          Index           =   14
          Left            =   120
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   140
          Width           =   1788
       End
@@ -326,7 +329,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   492
          Index           =   13
          Left            =   5160
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   4488
          Width           =   1560
       End
@@ -344,7 +347,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   552
          Index           =   12
          Left            =   120
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   4440
          Width           =   1428
       End
@@ -363,7 +366,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   11
          Left            =   120
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   4080
          Width           =   1668
       End
@@ -382,7 +385,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   10
          Left            =   120
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   3120
          Width           =   600
       End
@@ -401,7 +404,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   8
          Left            =   4350
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   2640
          Width           =   600
       End
@@ -420,7 +423,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   7
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   2640
          Width           =   1500
       End
@@ -439,7 +442,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   6
          Left            =   4560
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   2160
          Width           =   390
       End
@@ -458,7 +461,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   2160
          Width           =   945
       End
@@ -477,7 +480,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   4
          Left            =   5640
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   1680
          Width           =   555
       End
@@ -496,7 +499,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   3
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   1680
          Width           =   855
       End
@@ -515,7 +518,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   2
          Left            =   5700
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   1215
          Width           =   465
       End
@@ -534,7 +537,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   1
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   1200
          Width           =   870
       End
@@ -553,7 +556,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   720
          Width           =   492
       End
@@ -561,7 +564,7 @@ Begin VB.Form frmIntestazioneCentro
    Begin VB.Frame Frame2 
       Height          =   1575
       Left            =   120
-      TabIndex        =   36
+      TabIndex        =   35
       Top             =   4920
       Width           =   7575
       Begin VB.CommandButton cmdScegli 
@@ -578,7 +581,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   255
          Index           =   2
          Left            =   5800
-         TabIndex        =   45
+         TabIndex        =   44
          ToolTipText     =   "Cerca Logo Aziendale"
          Top             =   1200
          Visible         =   0   'False
@@ -598,7 +601,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   255
          Index           =   1
          Left            =   5800
-         TabIndex        =   44
+         TabIndex        =   43
          ToolTipText     =   "Cerca Logo Grande"
          Top             =   720
          Width           =   255
@@ -617,7 +620,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   255
          Index           =   0
          Left            =   5800
-         TabIndex        =   43
+         TabIndex        =   42
          ToolTipText     =   "Cerca Logo Piccolo"
          Top             =   240
          Width           =   255
@@ -636,7 +639,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   1920
          Locked          =   -1  'True
          MaxLength       =   25
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   1200
          Visible         =   0   'False
          Width           =   3735
@@ -655,7 +658,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   1920
          Locked          =   -1  'True
          MaxLength       =   25
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   720
          Width           =   3735
       End
@@ -673,7 +676,7 @@ Begin VB.Form frmIntestazioneCentro
          Left            =   1920
          Locked          =   -1  'True
          MaxLength       =   25
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   240
          Width           =   3735
       End
@@ -690,7 +693,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   255
          Left            =   6240
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   240
          Width           =   1215
       End
@@ -707,7 +710,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   255
          Left            =   6240
-         TabIndex        =   38
+         TabIndex        =   37
          Top             =   1200
          Visible         =   0   'False
          Width           =   1215
@@ -725,7 +728,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   255
          Left            =   6240
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   720
          Width           =   1215
       End
@@ -744,7 +747,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   16
          Left            =   120
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   720
          Width           =   1365
       End
@@ -763,7 +766,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   15
          Left            =   120
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   1200
          Visible         =   0   'False
          Width           =   1635
@@ -783,7 +786,7 @@ Begin VB.Form frmIntestazioneCentro
          Height          =   240
          Index           =   9
          Left            =   120
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   240
          Width           =   1380
       End
@@ -807,7 +810,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   495
          Left            =   4080
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   240
          Width           =   1575
       End
@@ -825,7 +828,7 @@ Begin VB.Form frmIntestazioneCentro
          EndProperty
          Height          =   495
          Left            =   6000
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   240
          Width           =   1335
       End
@@ -868,6 +871,7 @@ Private Sub Form_Activate()
     Me.ZOrder
     
     Call RicaricaComboBox("ASL", "NOME", cboAslAppartenenza)
+    Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProv)
 
     ' carica i dati
     Set rsDataset = New Recordset
@@ -878,7 +882,7 @@ Private Sub Form_Activate()
         txtIndirizzo = rsDataset("INDIRIZZO")
         txtCap = rsDataset("CAP")
         txtCitta = rsDataset("CITTA")
-        txtProv = rsDataset("PROV")
+        cboProv.Text = rsDataset("PROV") & ""
         txtTelefono = rsDataset("TELEFONO")
         txtFax = rsDataset("FAX")
         txtCodiceFiscale = rsDataset("CODICE_FISCALE")
@@ -915,6 +919,8 @@ Private Function Completo() As Boolean
         nome = "CAP"
     ElseIf txtCitta = "" Then
         nome = "COMUNE"
+    ElseIf cboProv.Text = "" Then
+        nome = "PROVINCIA"
     ElseIf txtCodiceFiscale = "" Then
         nome = "CODICE FISCALE"
     ElseIf txtIva = "" Then
@@ -966,7 +972,7 @@ Private Sub cmdMemorizza_Click()
     If Completo Then
         Call ControllaImg
         v_nome = Array("KEY", "RAGIONE_SOCIALE", "TIPO", "INDIRIZZO", "CAP", "CITTA", "PROV", "TELEFONO", "FAX", "IVA", "CODICE_FISCALE", "SITO_WEB", "MAIL", "LOGO", "LOGO_AZIENDALE", "LOGO_QUALITA", "NOME_LOGOISO", "NOME_LOGOQUALITA", "NOME_LOGOAZIENDALE", "CODICE_STS", "CODICE_ASL", "CODICE_DISTRETTO")
-        v_Val = Array(1, txtRagione, txtTipo, txtIndirizzo, txtCap, txtCitta, txtProv, txtTelefono, txtFax, txtIva, txtCodiceFiscale, txtSitoWeb, txtMail, IIf(chkLogo.Value = Checked, True, False), IIf(chkLogoAziendale.Value = Checked, True, False), IIf(chkLogoQualita.Value = Checked, True, False), txtLogoISO, txtLogoQualita, txtLogoAziendale, txtCodiceSts, cboAslAppartenenza.ItemData(cboAslAppartenenza.ListIndex), cboDistrettoAppartenenza.ItemData(cboDistrettoAppartenenza.ListIndex))
+        v_Val = Array(1, txtRagione, txtTipo, txtIndirizzo, txtCap, txtCitta, cboProv.Text, txtTelefono, txtFax, txtIva, txtCodiceFiscale, txtSitoWeb, txtMail, IIf(chkLogo.Value = Checked, True, False), IIf(chkLogoAziendale.Value = Checked, True, False), IIf(chkLogoQualita.Value = Checked, True, False), txtLogoISO, txtLogoQualita, txtLogoAziendale, txtCodiceSts, cboAslAppartenenza.ItemData(cboAslAppartenenza.ListIndex), cboDistrettoAppartenenza.ItemData(cboDistrettoAppartenenza.ListIndex))
         Set rsDataset = New Recordset
         rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
         If modifica Then
@@ -1138,14 +1144,6 @@ Private Sub txtMail_LostFocus()
     txtMail.BackColor = vbWhite
 End Sub
 
-Private Sub txtProv_GotFocus()
-    txtProv.BackColor = colArancione
-End Sub
-
-Private Sub txtProv_LostFocus()
-    txtProv.BackColor = vbWhite
-End Sub
-
 Private Sub txtTelefono_GotFocus()
     txtTelefono.BackColor = colArancione
 End Sub
@@ -1153,4 +1151,3 @@ End Sub
 Private Sub txtTelefono_LostFocus()
     txtTelefono.BackColor = vbWhite
 End Sub
-

@@ -269,6 +269,7 @@ Begin VB.Form frmStampaFattureRiepilogo
       Width           =   5295
       Begin VB.CommandButton VisualizzaFE 
          Caption         =   "Visualizza Fatture EL."
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -286,6 +287,7 @@ Begin VB.Form frmStampaFattureRiepilogo
       End
       Begin VB.CommandButton fattelettr 
          Caption         =   "&Fattura Elettronica"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25

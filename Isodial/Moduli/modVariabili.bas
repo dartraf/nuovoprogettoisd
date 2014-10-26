@@ -55,6 +55,7 @@ Public Const CODICESTS_HELIOS As String = "AD0089"
 Public Const CODICESTS_SODAV As String = "AD0078"
 
 Public Const CODICESTS_SM2 As String = "000SM2"             'POTENZA
+Public Const CODICESTS_S_LUCA As String = "420000"          'SIRACUSA
 
 Public Const colArancione As Long = &HC0FFFF
 

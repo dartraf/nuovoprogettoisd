@@ -1,23 +1,23 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmPaziente 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   " ANAGRAFICA GENERALE"
-   ClientHeight    =   8655
+   ClientHeight    =   8760
    ClientLeft      =   855
    ClientTop       =   1605
-   ClientWidth     =   12120
+   ClientWidth     =   12000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8655
-   ScaleWidth      =   12120
+   ScaleHeight     =   8760
+   ScaleWidth      =   12000
    ShowInTaskbar   =   0   'False
    Begin TabDlg.SSTab tabScheda 
       Height          =   7815
-      Left            =   120
+      Left            =   0
       TabIndex        =   0
       Top             =   120
       Width           =   11895
@@ -206,7 +206,9 @@ Begin VB.Form frmPaziente
       Tab(0).Control(81).Enabled=   0   'False
       Tab(0).Control(82)=   "cboProv2Paziente"
       Tab(0).Control(82).Enabled=   0   'False
-      Tab(0).ControlCount=   83
+      Tab(0).Control(83)=   "cmdEliminaAccompagnatore"
+      Tab(0).Control(83).Enabled=   0   'False
+      Tab(0).ControlCount=   84
       TabCaption(1)   =   "Medico di Base Associato"
       TabPicture(1)   =   "frmPaziente.frx":001C
       Tab(1).ControlEnabled=   0   'False
@@ -241,6 +243,24 @@ Begin VB.Form frmPaziente
       Tab(1).Control(28)=   "txtRiceve"
       Tab(1).Control(29)=   "cboProvMedico"
       Tab(1).ControlCount=   30
+      Begin VB.CommandButton cmdEliminaAccompagnatore 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   2040
+         Picture         =   "frmPaziente.frx":0038
+         Style           =   1  'Graphical
+         TabIndex        =   125
+         Top             =   7290
+         Width           =   375
+      End
       Begin VB.ComboBox cboProvMedico 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -643,7 +663,7 @@ Begin VB.Form frmPaziente
          Height          =   450
          Index           =   0
          Left            =   1800
-         Picture         =   "frmPaziente.frx":0038
+         Picture         =   "frmPaziente.frx":073A
          Style           =   1  'Graphical
          TabIndex        =   3
          Top             =   860
@@ -730,9 +750,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":0491
+         ItemData        =   "frmPaziente.frx":0B93
          Left            =   2520
-         List            =   "frmPaziente.frx":0493
+         List            =   "frmPaziente.frx":0B95
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   14
@@ -768,9 +788,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":0495
+         ItemData        =   "frmPaziente.frx":0B97
          Left            =   7920
-         List            =   "frmPaziente.frx":0497
+         List            =   "frmPaziente.frx":0B99
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   32
@@ -788,9 +808,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":0499
+         ItemData        =   "frmPaziente.frx":0B9B
          Left            =   5400
-         List            =   "frmPaziente.frx":049B
+         List            =   "frmPaziente.frx":0B9D
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   31
@@ -835,9 +855,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":049D
+         ItemData        =   "frmPaziente.frx":0B9F
          Left            =   2520
-         List            =   "frmPaziente.frx":05D6
+         List            =   "frmPaziente.frx":0CD8
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   30
@@ -953,9 +973,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":0777
+         ItemData        =   "frmPaziente.frx":0E79
          Left            =   7920
-         List            =   "frmPaziente.frx":0787
+         List            =   "frmPaziente.frx":0E89
          Style           =   2  'Dropdown List
          TabIndex        =   39
          Top             =   6450
@@ -972,9 +992,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":0798
+         ItemData        =   "frmPaziente.frx":0E9A
          Left            =   2520
-         List            =   "frmPaziente.frx":079A
+         List            =   "frmPaziente.frx":0E9C
          Style           =   2  'Dropdown List
          TabIndex        =   38
          Top             =   6480
@@ -991,9 +1011,9 @@ Begin VB.Form frmPaziente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   288
-         ItemData        =   "frmPaziente.frx":079C
+         ItemData        =   "frmPaziente.frx":0E9E
          Left            =   2520
-         List            =   "frmPaziente.frx":07A9
+         List            =   "frmPaziente.frx":0EAB
          Style           =   2  'Dropdown List
          TabIndex        =   26
          Top             =   4320
@@ -1296,7 +1316,7 @@ Begin VB.Form frmPaziente
          Height          =   450
          Index           =   1
          Left            =   -73200
-         Picture         =   "frmPaziente.frx":07D4
+         Picture         =   "frmPaziente.frx":0ED6
          Style           =   1  'Graphical
          TabIndex        =   52
          Top             =   360
@@ -2386,7 +2406,7 @@ Begin VB.Form frmPaziente
    End
    Begin VB.Frame Frame3 
       Height          =   855
-      Left            =   120
+      Left            =   0
       TabIndex        =   51
       Top             =   7800
       Width           =   11895
@@ -2668,6 +2688,10 @@ Private Sub Memorizza()
     End If
 End Sub
 
+Private Sub cmdEliminaAccompagnatore_Click()
+    cboAccompagnatore.ListIndex = -1
+End Sub
+
 Private Sub cmdMemorizza_Click()
     Dim rsMedico As Recordset
     Dim s As Integer
@@ -2757,6 +2781,10 @@ Private Sub cmdMemorizza_Click()
         rsMedico.Clone
         Set rsMedico = Nothing
         blnModificato = False
+
+End Sub
+
+Private Sub cmdToolbar_Click(Index As Integer)
 
 End Sub
 

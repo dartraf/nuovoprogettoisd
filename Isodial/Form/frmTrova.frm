@@ -49,6 +49,7 @@ Begin VB.Form frmTrova
          Picture         =   "frmTrova.frx":0010
          Style           =   1  'Graphical
          TabIndex        =   6
+         ToolTipText     =   "Cerca"
          Top             =   240
          Width           =   400
       End

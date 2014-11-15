@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmEsamiStrumentali 
    BorderStyle     =   4  'Fixed ToolWindow
@@ -29,6 +29,7 @@ Begin VB.Form frmEsamiStrumentali
          Picture         =   "frmEsamiStrumentali.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   0
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -293,6 +294,7 @@ Begin VB.Form frmEsamiStrumentali
          Picture         =   "frmEsamiStrumentali.frx":06ED
          Style           =   1  'Graphical
          TabIndex        =   9
+         ToolTipText     =   "Seleziona il medico"
          Top             =   240
          Width           =   450
       End

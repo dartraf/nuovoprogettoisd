@@ -30,6 +30,7 @@ Begin VB.Form frmAnamnesiDialitica
          Picture         =   "frmAnamnesiDialitica.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   0
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -302,13 +303,13 @@ Begin VB.Form frmAnamnesiDialitica
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(32)"
-      Tab(2).Control(1)=   "lblUnitaMisura"
-      Tab(2).Control(2)=   "Label1(34)"
+      Tab(2).Control(0)=   "cmdEliminaEpo"
+      Tab(2).Control(1)=   "txtNote"
+      Tab(2).Control(2)=   "txtUI"
       Tab(2).Control(3)=   "cboEPO"
-      Tab(2).Control(4)=   "txtUI"
-      Tab(2).Control(5)=   "txtNote"
-      Tab(2).Control(6)=   "cmdEliminaEpo"
+      Tab(2).Control(4)=   "Label1(34)"
+      Tab(2).Control(5)=   "lblUnitaMisura"
+      Tab(2).Control(6)=   "Label1(32)"
       Tab(2).ControlCount=   7
       Begin VB.TextBox txtRitmoDialitico 
          Alignment       =   2  'Center
@@ -348,7 +349,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":04AD
          Left            =   -65160
          List            =   "frmAnamnesiDialitica.frx":04B7
@@ -367,7 +368,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":04C3
          Left            =   9840
          List            =   "frmAnamnesiDialitica.frx":04C5
@@ -431,7 +432,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":04C7
          Left            =   -71760
          List            =   "frmAnamnesiDialitica.frx":04D1
@@ -450,7 +451,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Index           =   1
          Left            =   9960
          Sorted          =   -1  'True
@@ -469,7 +470,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Index           =   0
          ItemData        =   "frmAnamnesiDialitica.frx":04DD
          Left            =   7080
@@ -615,7 +616,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Left            =   -72480
          Sorted          =   -1  'True
          TabIndex        =   30
@@ -632,7 +633,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Left            =   -72480
          Sorted          =   -1  'True
          TabIndex        =   28
@@ -649,7 +650,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Left            =   -72480
          Sorted          =   -1  'True
          TabIndex        =   27
@@ -740,7 +741,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Index           =   0
          Left            =   -72480
          Sorted          =   -1  'True
@@ -759,7 +760,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Index           =   1
          Left            =   -72480
          Sorted          =   -1  'True
@@ -925,7 +926,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Left            =   2400
          Sorted          =   -1  'True
          TabIndex        =   7
@@ -942,7 +943,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Left            =   2400
          Sorted          =   -1  'True
          TabIndex        =   11
@@ -994,7 +995,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":051A
          Left            =   2400
          List            =   "frmAnamnesiDialitica.frx":051C
@@ -1040,7 +1041,7 @@ Begin VB.Form frmAnamnesiDialitica
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          Left            =   2400
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List

@@ -125,6 +125,7 @@ Begin VB.Form frmStampaFiltri
          Picture         =   "frmStampaFiltri.frx":009A
          Style           =   1  'Graphical
          TabIndex        =   3
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   600
          Width           =   450
       End

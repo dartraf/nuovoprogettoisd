@@ -28,6 +28,7 @@ Begin VB.Form frmEsamiPeriodici
          Picture         =   "frmEsamiPeriodici.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   18
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End

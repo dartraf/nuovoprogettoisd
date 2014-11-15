@@ -38,6 +38,7 @@ Begin VB.Form frmEsitoEsami
          Picture         =   "frmEsitoEsami.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   23
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End

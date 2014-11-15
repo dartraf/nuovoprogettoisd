@@ -27,6 +27,7 @@ Begin VB.Form frmTurni
          Picture         =   "frmTurni.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   113
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -156,6 +157,7 @@ Begin VB.Form frmTurni
          Picture         =   "frmTurni.frx":0459
          Style           =   1  'Graphical
          TabIndex        =   114
+         ToolTipText     =   "Seleziona la postazione"
          Top             =   240
          Width           =   450
       End

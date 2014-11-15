@@ -44,6 +44,7 @@ Begin VB.Form frmVociEsami
          Picture         =   "frmVociEsami.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   12
+         ToolTipText     =   "Cerca esami"
          Top             =   210
          Width           =   400
       End

@@ -28,6 +28,7 @@ Begin VB.Form frmEventi
          Picture         =   "frmEventi.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   29
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -177,23 +178,32 @@ Begin VB.Form frmEventi
       TabCaption(1)   =   "Episodi Edema Polmonare "
       TabPicture(1)   =   "frmEventi.frx":0475
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cmdStampa(1)"
+      Tab(1).Control(0)=   "fraAzioni(1)"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame4"
-      Tab(1).Control(2)=   "fraAzioni(1)"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "cmdStampa(1)"
+      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Trasfusioni"
       TabPicture(2)   =   "frmEventi.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "cmdStampa(2)"
+      Tab(2).Control(0)=   "fraAzioni(2)"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "Frame3"
-      Tab(2).Control(2)=   "fraAzioni(2)"
+      Tab(2).Control(1).Enabled=   0   'False
+      Tab(2).Control(2)=   "cmdStampa(2)"
+      Tab(2).Control(2).Enabled=   0   'False
       Tab(2).ControlCount=   3
       TabCaption(3)   =   "Sieroconversioni"
       TabPicture(3)   =   "frmEventi.frx":04AD
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "cmdStampa(3)"
+      Tab(3).Control(0)=   "fraAzioni(3)"
+      Tab(3).Control(0).Enabled=   0   'False
       Tab(3).Control(1)=   "Frame5"
-      Tab(3).Control(2)=   "fraAzioni(3)"
+      Tab(3).Control(1).Enabled=   0   'False
+      Tab(3).Control(2)=   "cmdStampa(3)"
+      Tab(3).Control(2).Enabled=   0   'False
       Tab(3).ControlCount=   3
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"

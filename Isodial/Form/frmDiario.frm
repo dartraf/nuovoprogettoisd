@@ -27,6 +27,7 @@ Begin VB.Form frmDiario
          Picture         =   "frmDiario.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   0
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End

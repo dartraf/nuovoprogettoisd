@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmTerapiaDialitica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "TERAPIA DIALITICA"
@@ -28,6 +28,7 @@ Begin VB.Form frmTerapiaDialitica
          Picture         =   "frmTerapiaDialitica.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   19
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End

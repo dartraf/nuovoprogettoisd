@@ -28,6 +28,7 @@ Begin VB.Form frmAccessi
          Picture         =   "frmAccessi.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   15
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -229,6 +230,7 @@ Begin VB.Form frmAccessi
          Picture         =   "frmAccessi.frx":0459
          Style           =   1  'Graphical
          TabIndex        =   3
+         ToolTipText     =   "Seleziona l' operatore"
          Top             =   1560
          Width           =   450
       End
@@ -240,6 +242,7 @@ Begin VB.Form frmAccessi
          Picture         =   "frmAccessi.frx":08B2
          Style           =   1  'Graphical
          TabIndex        =   4
+         ToolTipText     =   "Seleziona l' operatore"
          Top             =   2040
          Width           =   450
       End

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frmMediciBase 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Medici di Base"
@@ -54,6 +54,7 @@ Begin VB.Form frmMediciBase
          Picture         =   "frmMediciBase.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   34
+         ToolTipText     =   "Seleziona il medico"
          Top             =   360
          Width           =   450
       End

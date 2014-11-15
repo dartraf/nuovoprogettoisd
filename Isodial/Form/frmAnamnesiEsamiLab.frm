@@ -39,6 +39,7 @@ Begin VB.Form frmAnamnesiEsamiLab
          Picture         =   "frmAnamnesiEsamiLab.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   19
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End

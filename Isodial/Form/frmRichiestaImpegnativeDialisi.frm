@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmRichiestaImpegnativeDialisi 
@@ -198,6 +198,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Picture         =   "frmRichiestaImpegnativeDialisi.frx":009E
          Style           =   1  'Graphical
          TabIndex        =   5
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   600
          Width           =   450
       End

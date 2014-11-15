@@ -35,6 +35,7 @@ Begin VB.Form frmStampaApparati
          Picture         =   "frmStampaApparati.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   11
+         ToolTipText     =   "Seleziona la categoria"
          Top             =   960
          Width           =   450
       End
@@ -62,6 +63,7 @@ Begin VB.Form frmStampaApparati
          Picture         =   "frmStampaApparati.frx":0459
          Style           =   1  'Graphical
          TabIndex        =   7
+         ToolTipText     =   "Seleziona il produttore"
          Top             =   240
          Width           =   450
       End

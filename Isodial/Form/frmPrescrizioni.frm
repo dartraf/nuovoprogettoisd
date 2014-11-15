@@ -29,6 +29,7 @@ Begin VB.Form frmPrescrizioni
          Picture         =   "frmPrescrizioni.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   0
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -561,6 +562,7 @@ Begin VB.Form frmPrescrizioni
          Picture         =   "frmPrescrizioni.frx":0497
          Style           =   1  'Graphical
          TabIndex        =   13
+         ToolTipText     =   "Seleziona il medico"
          Top             =   240
          Width           =   450
       End

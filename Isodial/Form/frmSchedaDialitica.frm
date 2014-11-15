@@ -25,7 +25,6 @@ Begin VB.Form frmSchedaDialitica
       _ExtentX        =   20981
       _ExtentY        =   7594
       _Version        =   393216
-      Tab             =   2
       TabHeight       =   520
       ShowFocusRect   =   0   'False
       ForeColor       =   255
@@ -40,71 +39,127 @@ Begin VB.Form frmSchedaDialitica
       EndProperty
       TabCaption(0)   =   "Scheda dialitica 1"
       TabPicture(0)   =   "frmSchedaDialitica.frx":0000
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "lblDoseUnitaMisura"
-      Tab(0).Control(1)=   "Label1(55)"
-      Tab(0).Control(2)=   "lblDoseFinale"
-      Tab(0).Control(3)=   "Label1(54)"
-      Tab(0).Control(4)=   "lblDoseIntermedia"
-      Tab(0).Control(5)=   "Label1(48)"
-      Tab(0).Control(6)=   "lblGlucosio"
-      Tab(0).Control(7)=   "lblCalcio"
-      Tab(0).Control(8)=   "lblBicarbonato"
-      Tab(0).Control(9)=   "lblPotassio"
-      Tab(0).Control(10)=   "lblSodio"
-      Tab(0).Control(11)=   "lblDoseAltroAnticoagulante"
-      Tab(0).Control(12)=   "lblDoseIniziale"
-      Tab(0).Control(13)=   "lblOreDialisi"
-      Tab(0).Control(14)=   "lblDataUltimoPeso"
-      Tab(0).Control(15)=   "lblUltimoPeso"
-      Tab(0).Control(16)=   "lblPesoSecco"
-      Tab(0).Control(17)=   "lblAnticoagulante(1)"
-      Tab(0).Control(18)=   "lblAnticoagulante(0)"
-      Tab(0).Control(19)=   "lblAccessoVascolare"
-      Tab(0).Control(20)=   "lblTipoDialisi"
-      Tab(0).Control(21)=   "lblFiltro"
-      Tab(0).Control(22)=   "lblAgo2"
-      Tab(0).Control(23)=   "lblAgo1"
-      Tab(0).Control(24)=   "lblTipoLinee"
-      Tab(0).Control(25)=   "Label1(49)"
-      Tab(0).Control(26)=   "Label1(50)"
-      Tab(0).Control(27)=   "Label1(51)"
-      Tab(0).Control(28)=   "Label1(52)"
-      Tab(0).Control(29)=   "Label1(32)"
-      Tab(0).Control(30)=   "Label1(23)"
-      Tab(0).Control(31)=   "Label1(43)"
-      Tab(0).Control(32)=   "Label1(42)"
-      Tab(0).Control(33)=   "Label1(29)"
-      Tab(0).Control(34)=   "Label1(28)"
-      Tab(0).Control(35)=   "Label1(35)"
-      Tab(0).Control(36)=   "Label1(38)"
-      Tab(0).Control(37)=   "Label1(26)"
-      Tab(0).Control(38)=   "Label1(34)"
-      Tab(0).Control(39)=   "Label1(33)"
-      Tab(0).Control(40)=   "Label1(31)"
-      Tab(0).Control(41)=   "Label1(30)"
-      Tab(0).Control(42)=   "Label1(25)"
-      Tab(0).Control(43)=   "Label1(27)"
+      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).Control(0)=   "Label1(27)"
+      Tab(0).Control(0).Enabled=   0   'False
+      Tab(0).Control(1)=   "Label1(25)"
+      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).Control(2)=   "Label1(30)"
+      Tab(0).Control(2).Enabled=   0   'False
+      Tab(0).Control(3)=   "Label1(31)"
+      Tab(0).Control(3).Enabled=   0   'False
+      Tab(0).Control(4)=   "Label1(33)"
+      Tab(0).Control(4).Enabled=   0   'False
+      Tab(0).Control(5)=   "Label1(34)"
+      Tab(0).Control(5).Enabled=   0   'False
+      Tab(0).Control(6)=   "Label1(26)"
+      Tab(0).Control(6).Enabled=   0   'False
+      Tab(0).Control(7)=   "Label1(38)"
+      Tab(0).Control(7).Enabled=   0   'False
+      Tab(0).Control(8)=   "Label1(35)"
+      Tab(0).Control(8).Enabled=   0   'False
+      Tab(0).Control(9)=   "Label1(28)"
+      Tab(0).Control(9).Enabled=   0   'False
+      Tab(0).Control(10)=   "Label1(29)"
+      Tab(0).Control(10).Enabled=   0   'False
+      Tab(0).Control(11)=   "Label1(42)"
+      Tab(0).Control(11).Enabled=   0   'False
+      Tab(0).Control(12)=   "Label1(43)"
+      Tab(0).Control(12).Enabled=   0   'False
+      Tab(0).Control(13)=   "Label1(23)"
+      Tab(0).Control(13).Enabled=   0   'False
+      Tab(0).Control(14)=   "Label1(32)"
+      Tab(0).Control(14).Enabled=   0   'False
+      Tab(0).Control(15)=   "Label1(52)"
+      Tab(0).Control(15).Enabled=   0   'False
+      Tab(0).Control(16)=   "Label1(51)"
+      Tab(0).Control(16).Enabled=   0   'False
+      Tab(0).Control(17)=   "Label1(50)"
+      Tab(0).Control(17).Enabled=   0   'False
+      Tab(0).Control(18)=   "Label1(49)"
+      Tab(0).Control(18).Enabled=   0   'False
+      Tab(0).Control(19)=   "lblTipoLinee"
+      Tab(0).Control(19).Enabled=   0   'False
+      Tab(0).Control(20)=   "lblAgo1"
+      Tab(0).Control(20).Enabled=   0   'False
+      Tab(0).Control(21)=   "lblAgo2"
+      Tab(0).Control(21).Enabled=   0   'False
+      Tab(0).Control(22)=   "lblFiltro"
+      Tab(0).Control(22).Enabled=   0   'False
+      Tab(0).Control(23)=   "lblTipoDialisi"
+      Tab(0).Control(23).Enabled=   0   'False
+      Tab(0).Control(24)=   "lblAccessoVascolare"
+      Tab(0).Control(24).Enabled=   0   'False
+      Tab(0).Control(25)=   "lblAnticoagulante(0)"
+      Tab(0).Control(25).Enabled=   0   'False
+      Tab(0).Control(26)=   "lblAnticoagulante(1)"
+      Tab(0).Control(26).Enabled=   0   'False
+      Tab(0).Control(27)=   "lblPesoSecco"
+      Tab(0).Control(27).Enabled=   0   'False
+      Tab(0).Control(28)=   "lblUltimoPeso"
+      Tab(0).Control(28).Enabled=   0   'False
+      Tab(0).Control(29)=   "lblDataUltimoPeso"
+      Tab(0).Control(29).Enabled=   0   'False
+      Tab(0).Control(30)=   "lblOreDialisi"
+      Tab(0).Control(30).Enabled=   0   'False
+      Tab(0).Control(31)=   "lblDoseIniziale"
+      Tab(0).Control(31).Enabled=   0   'False
+      Tab(0).Control(32)=   "lblDoseAltroAnticoagulante"
+      Tab(0).Control(32).Enabled=   0   'False
+      Tab(0).Control(33)=   "lblSodio"
+      Tab(0).Control(33).Enabled=   0   'False
+      Tab(0).Control(34)=   "lblPotassio"
+      Tab(0).Control(34).Enabled=   0   'False
+      Tab(0).Control(35)=   "lblBicarbonato"
+      Tab(0).Control(35).Enabled=   0   'False
+      Tab(0).Control(36)=   "lblCalcio"
+      Tab(0).Control(36).Enabled=   0   'False
+      Tab(0).Control(37)=   "lblGlucosio"
+      Tab(0).Control(37).Enabled=   0   'False
+      Tab(0).Control(38)=   "Label1(48)"
+      Tab(0).Control(38).Enabled=   0   'False
+      Tab(0).Control(39)=   "lblDoseIntermedia"
+      Tab(0).Control(39).Enabled=   0   'False
+      Tab(0).Control(40)=   "Label1(54)"
+      Tab(0).Control(40).Enabled=   0   'False
+      Tab(0).Control(41)=   "lblDoseFinale"
+      Tab(0).Control(41).Enabled=   0   'False
+      Tab(0).Control(42)=   "Label1(55)"
+      Tab(0).Control(42).Enabled=   0   'False
+      Tab(0).Control(43)=   "lblDoseUnitaMisura"
+      Tab(0).Control(43).Enabled=   0   'False
       Tab(0).ControlCount=   44
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblSolInfCc"
-      Tab(1).Control(1)=   "lblCartuccia"
-      Tab(1).Control(2)=   "lblSolInfusionale"
-      Tab(1).Control(3)=   "lblSolDialitica"
-      Tab(1).Control(4)=   "lblFlussoSangue"
-      Tab(1).Control(5)=   "lblFlusso"
-      Tab(1).Control(6)=   "Label1(21)"
-      Tab(1).Control(7)=   "Label1(20)"
-      Tab(1).Control(8)=   "Label1(19)"
-      Tab(1).Control(9)=   "Label1(18)"
-      Tab(1).Control(10)=   "Label1(7)"
-      Tab(1).Control(11)=   "Label1(6)"
+      Tab(1).Control(0)=   "Label1(6)"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Label1(7)"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "Label1(18)"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "Label1(19)"
+      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(4)=   "Label1(20)"
+      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(5)=   "Label1(21)"
+      Tab(1).Control(5).Enabled=   0   'False
+      Tab(1).Control(6)=   "lblFlusso"
+      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(7)=   "lblFlussoSangue"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "lblSolDialitica"
+      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(9)=   "lblSolInfusionale"
+      Tab(1).Control(9).Enabled=   0   'False
+      Tab(1).Control(10)=   "lblCartuccia"
+      Tab(1).Control(10).Enabled=   0   'False
+      Tab(1).Control(11)=   "lblSolInfCc"
+      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":0038
-      Tab(2).ControlEnabled=   -1  'True
+      Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "Label1(36)"
       Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "Label1(37)"
@@ -117,7 +172,7 @@ Begin VB.Form frmSchedaDialitica
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
          Index           =   0
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   54
          Top             =   840
          Width           =   5775
@@ -131,7 +186,7 @@ Begin VB.Form frmSchedaDialitica
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   3255
          Index           =   1
-         Left            =   6000
+         Left            =   -69000
          TabIndex        =   55
          Top             =   840
          Width           =   5775
@@ -155,7 +210,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -68640
+         Left            =   6360
          TabIndex        =   137
          Top             =   2880
          Width           =   375
@@ -174,7 +229,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   55
-         Left            =   -66120
+         Left            =   8880
          TabIndex        =   136
          Top             =   2880
          Width           =   1275
@@ -192,7 +247,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -64680
+         Left            =   10320
          TabIndex        =   135
          Top             =   2880
          Width           =   615
@@ -211,7 +266,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   54
-         Left            =   -68160
+         Left            =   6840
          TabIndex        =   134
          Top             =   2880
          Width           =   1320
@@ -229,7 +284,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -66840
+         Left            =   8160
          TabIndex        =   133
          Top             =   2880
          Width           =   615
@@ -248,7 +303,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   48
-         Left            =   -66240
+         Left            =   8760
          TabIndex        =   132
          Top             =   3855
          Width           =   480
@@ -266,7 +321,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -65520
+         Left            =   9480
          TabIndex        =   131
          Top             =   3840
          Width           =   615
@@ -392,7 +447,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67200
+         Left            =   7800
          TabIndex        =   113
          Top             =   3840
          Width           =   615
@@ -410,7 +465,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -68640
+         Left            =   6360
          TabIndex        =   112
          Top             =   3840
          Width           =   615
@@ -428,7 +483,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -70560
+         Left            =   4440
          TabIndex        =   111
          Top             =   3840
          Width           =   615
@@ -446,7 +501,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72000
+         Left            =   3000
          TabIndex        =   110
          Top             =   3840
          Width           =   615
@@ -464,7 +519,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -64680
+         Left            =   10320
          TabIndex        =   109
          Top             =   3360
          Width           =   1095
@@ -482,7 +537,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -69240
+         Left            =   5760
          TabIndex        =   108
          Top             =   2880
          Width           =   615
@@ -500,7 +555,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -64680
+         Left            =   10320
          TabIndex        =   107
          Top             =   2400
          Width           =   1095
@@ -518,7 +573,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -68280
+         Left            =   6720
          TabIndex        =   106
          Top             =   2400
          Width           =   1335
@@ -536,7 +591,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -69840
+         Left            =   5160
          TabIndex        =   105
          Top             =   2400
          Width           =   855
@@ -554,7 +609,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   104
          Top             =   2400
          Width           =   855
@@ -573,7 +628,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   103
          Top             =   3360
          Width           =   5535
@@ -592,7 +647,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   102
          Top             =   2880
          Width           =   1695
@@ -610,7 +665,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   101
          Top             =   1920
          Width           =   4455
@@ -628,7 +683,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   100
          Top             =   1440
          Width           =   4455
@@ -646,7 +701,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   99
          Top             =   960
          Width           =   4455
@@ -664,7 +719,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -66840
+         Left            =   8160
          TabIndex        =   98
          Top             =   960
          Width           =   3495
@@ -682,7 +737,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -66840
+         Left            =   8160
          TabIndex        =   97
          Top             =   480
          Width           =   3495
@@ -700,7 +755,7 @@ Begin VB.Form frmSchedaDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   96
          Top             =   480
          Width           =   4455
@@ -719,7 +774,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   49
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   84
          Top             =   480
          Width           =   1380
@@ -738,7 +793,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   50
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   83
          Top             =   1920
          Width           =   2040
@@ -757,7 +812,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   51
-         Left            =   -67725
+         Left            =   7275
          TabIndex        =   82
          Top             =   480
          Width           =   705
@@ -776,7 +831,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   52
-         Left            =   -67725
+         Left            =   7275
          TabIndex        =   81
          Top             =   960
          Width           =   705
@@ -795,7 +850,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   32
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   72
          Top             =   3840
          Width           =   1380
@@ -814,7 +869,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   23
-         Left            =   -67680
+         Left            =   7320
          TabIndex        =   71
          Top             =   3840
          Width           =   420
@@ -833,7 +888,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   43
-         Left            =   -69480
+         Left            =   5520
          TabIndex        =   70
          Top             =   3840
          Width           =   690
@@ -852,7 +907,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   42
-         Left            =   -68760
+         Left            =   6240
          TabIndex        =   64
          Top             =   2400
          Width           =   345
@@ -985,7 +1040,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   37
-         Left            =   8040
+         Left            =   -66960
          TabIndex        =   57
          Top             =   480
          Width           =   2190
@@ -1004,7 +1059,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   36
-         Left            =   1920
+         Left            =   -73080
          TabIndex        =   56
          Top             =   480
          Width           =   2175
@@ -1023,7 +1078,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   29
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   45
          Top             =   2880
          Width           =   1560
@@ -1042,7 +1097,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   28
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   44
          Top             =   3360
          Width           =   2100
@@ -1061,7 +1116,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   35
-         Left            =   -70680
+         Left            =   4320
          TabIndex        =   43
          Top             =   2880
          Width           =   1365
@@ -1080,7 +1135,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   38
-         Left            =   -65400
+         Left            =   9600
          TabIndex        =   42
          Top             =   3360
          Width           =   495
@@ -1099,7 +1154,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   26
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   41
          Top             =   960
          Width           =   1335
@@ -1118,7 +1173,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   34
-         Left            =   -66240
+         Left            =   8760
          TabIndex        =   40
          Top             =   2400
          Width           =   1365
@@ -1137,7 +1192,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   33
-         Left            =   -71280
+         Left            =   3720
          TabIndex        =   39
          Top             =   2400
          Width           =   1275
@@ -1156,7 +1211,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   31
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   38
          Top             =   3840
          Width           =   435
@@ -1175,7 +1230,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   30
-         Left            =   -70920
+         Left            =   4080
          TabIndex        =   37
          Top             =   3840
          Width           =   270
@@ -1194,7 +1249,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   25
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   36
          Top             =   1440
          Width           =   1470
@@ -1213,7 +1268,7 @@ Begin VB.Form frmSchedaDialitica
          EndProperty
          Height          =   240
          Index           =   27
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   35
          Top             =   2400
          Width           =   1275
@@ -1233,6 +1288,7 @@ Begin VB.Form frmSchedaDialitica
          Picture         =   "frmSchedaDialitica.frx":0184
          Style           =   1  'Graphical
          TabIndex        =   77
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End
@@ -1362,6 +1418,7 @@ Begin VB.Form frmSchedaDialitica
          Picture         =   "frmSchedaDialitica.frx":05DD
          Style           =   1  'Graphical
          TabIndex        =   122
+         ToolTipText     =   "Seleziona la postazione"
          Top             =   720
          Width           =   405
       End

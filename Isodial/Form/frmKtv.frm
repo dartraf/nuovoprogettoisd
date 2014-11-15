@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "Mschrt20.ocx"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
 Begin VB.Form frmKtv 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Calcolo Kt/V"
@@ -313,6 +313,7 @@ Begin VB.Form frmKtv
          Picture         =   "frmKtv.frx":5C3D
          Style           =   1  'Graphical
          TabIndex        =   16
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   240
          Width           =   450
       End

@@ -282,6 +282,7 @@ Begin VB.Form frmAccompagnatori
          Picture         =   "frmAccompagnatori.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   19
+         ToolTipText     =   "Seleziona il paziente"
          Top             =   360
          Width           =   450
       End

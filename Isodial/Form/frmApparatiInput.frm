@@ -28,6 +28,7 @@ Begin VB.Form frmApparatiInput
          Picture         =   "frmApparatiInput.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   45
+         ToolTipText     =   "Seleziona il manutentore"
          Top             =   1720
          Width           =   375
       End
@@ -39,6 +40,7 @@ Begin VB.Form frmApparatiInput
          Picture         =   "frmApparatiInput.frx":0459
          Style           =   1  'Graphical
          TabIndex        =   9
+         ToolTipText     =   "Seleziona il produttore"
          Top             =   1730
          Width           =   375
       End
@@ -893,16 +895,16 @@ Private Sub cboTipoApparato_LostFocus(Index As Integer)
     ElseIf cboTipoApparato(0).Text = "RENE ARTIFICIALE" Then
         Label1(16).Enabled = True
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         cboTipoRene.ListIndex = 0
     ElseIf cboTipoApparato(0).Text <> "RENE ARTIFICIALE" Then
         Label1(16).Enabled = False
         Label1(17).Enabled = False
-        txtPostazione.Enabled = False
+        txtpostazione.Enabled = False
         cboTipoRene.Enabled = False
         cboTipoRene.ListIndex = -1
-        txtPostazione = ""
+        txtpostazione = ""
     ElseIf cboTipoApparato(0).Text <> "" Then
         Call GestisciNuovo("APPARATI_TIPO", cboTipoApparato(0))
     End If
@@ -979,17 +981,17 @@ Dim valore As Integer
     ElseIf (IsPossibleDelete("TURNI", "CODICE_RENE", KeyApparato) = False Or IsPossibleDelete("STORICO_DIALISI_GIORNALIERA", "CODICE_RENE", KeyApparato) = False) And cboTipoApparato(0) <> "RENE ARTIFICIALE" And tTrova.keyGestioneApparato <> 0 Then
         MsgBox "MODIFICA CATEGORIA APPARATO NON PERMESSA!!! - Dati in relazione con altre gestioni dell'applicativo", vbInformation, "ATTENZIONE!!!"
         cboTipoApparato(0) = cboTipoApparatoPrec
-        txtPostazione = PostazionePrec
+        txtpostazione = PostazionePrec
         cboTipoRene.Text = cboTipoRenePrec
         Label1(16).Enabled = True
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         Exit Sub
     ElseIf cboModello(2).Text = "" Then
         MsgBox "Inserire il Modello", vbCritical, "ATTENZIONE!!!"
         Exit Sub
-    ElseIf txtPostazione = "" And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
+    ElseIf txtpostazione = "" And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
         MsgBox "Inserire la Postazione del Rene", vbCritical, "ATTENZIONE!!!"
         Exit Sub
     ElseIf txtMatricola.Text = "" Then
@@ -1024,7 +1026,7 @@ Dim valore As Integer
     ElseIf txtPeriodoAmmortamento = "" Then
         txtPeriodoAmmortamento = 0
     ElseIf NumPost Then
-        txtPostazione = PostazionePrec
+        txtpostazione = PostazionePrec
         Exit Sub
     End If
     
@@ -1082,7 +1084,7 @@ Dim valore As Integer
                 , "SICUREZZA", "PROXREVFUN", "PROXREVSIC", "ALERT", "KEY_PRODUTTORE")
         
     v_Val = Array(numKey, txtNumeroInventario, txtNumeroApparato, cboTipoApparato(0).Text, cboModello(2).Text _
-                , UCase(txtPostazione), valore, txtMatricola, lblProduttore.Caption, lblManutentore.Caption, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
+                , UCase(txtpostazione), valore, txtMatricola, lblProduttore.Caption, lblManutentore.Caption, IIf(oDataFabbricazione(0).data = "", Null, oDataFabbricazione(0).data) _
                 , IIf(oDataAcquisizione(2).data = "", Null, oDataAcquisizione(2).data), IIf(oDataRottamazione(0).data = "", Null, oDataRottamazione(0).data), IIf(txtPeriodoAmmortamento = "", 0, txtPeriodoAmmortamento), cboFunzionalita.ListIndex _
                 , IIf(oDataCollaudo(3).data = "", Null, oDataCollaudo(3).data), txtNoteCollaudo, IIf(oDataDismissione(1).data = "", Null, oDataDismissione(1).data), cboModalitaAcquisizione(1).Text _
                 , cboSicurezza.ListIndex, IIf(ProxRevFun = "", Null, ProxRevFun), IIf(ProxRevSic = "", Null, ProxRevSic), IIf(chkAttivaAlert.Value = Checked, True, False), KeyProduttore)
@@ -1242,7 +1244,7 @@ End Function
 Private Function NumPost() As Boolean
    Dim rsDataset As New Recordset
    
-   rsDataset.Open "SELECT KEY,POSTAZIONE FROM APPARATI WHERE POSTAZIONE ='" & txtPostazione & "'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+   rsDataset.Open "SELECT KEY,POSTAZIONE FROM APPARATI WHERE POSTAZIONE ='" & txtpostazione & "'", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
 
    If Not (rsDataset.EOF And rsDataset.BOF) Then
     If rsDataset("KEY") <> tTrova.keyGestioneApparato And cboTipoApparato(0) = "RENE ARTIFICIALE" Then
@@ -1286,7 +1288,7 @@ End Function
 Private Sub Pulisci()
     txtNumeroApparato.Text = ""
     cboTipoApparato(0).Text = ""
-    txtPostazione = ""
+    txtpostazione = ""
     cboTipoRene.ListIndex = 0
     cboModello(2).Text = ""
     txtMatricola.Text = ""
@@ -1323,11 +1325,11 @@ Private Sub Form_Load()
     If tTrova.keyGestioneApparato = 0 And tInput.mantieniDati = True Then  'predispone il form all'inserimento del rene
         Label1(16).Enabled = True                                'in rottamazione da sostituire
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         txtNumeroInventario = GetNumero("APPARATI")
         cboTipoApparato(0) = "RENE ARTIFICIALE"
-        txtPostazione = tInput.v_valori(1)
+        txtpostazione = tInput.v_valori(1)
         cboTipoRene.ListIndex = 0
 
     ElseIf tTrova.keyGestioneApparato = 0 Then
@@ -1350,13 +1352,13 @@ Private Sub CaricaApparato()
     cboTipoApparato(0).Text = rsCercaApparato("TIPO_APPARATO")
     cboTipoApparatoPrec = rsCercaApparato("TIPO_APPARATO")
     cboModello(2).Text = rsCercaApparato("MODELLO")
-    txtPostazione.Text = rsCercaApparato("POSTAZIONE")
+    txtpostazione.Text = rsCercaApparato("POSTAZIONE")
     PostazionePrec = rsCercaApparato("POSTAZIONE")
     
     If rsCercaApparato("TIPO_APPARATO") = "RENE ARTIFICIALE" Then
         Label1(16).Enabled = True
         Label1(17).Enabled = True
-        txtPostazione.Enabled = True
+        txtpostazione.Enabled = True
         cboTipoRene.Enabled = True
         If rsCercaApparato("TIPO") = 0 Then
             cboTipoRene.Text = "NEG"

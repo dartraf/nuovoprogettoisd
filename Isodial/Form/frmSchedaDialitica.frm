@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Begin VB.Form frmSchedaDialitica 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Seduta Dialitica Giornaliera - Compilazione"
@@ -15,1265 +15,6 @@ Begin VB.Form frmSchedaDialitica
    ScaleHeight     =   7305
    ScaleWidth      =   12105
    ShowInTaskbar   =   0   'False
-   Begin TabDlg.SSTab tabSchede 
-      Height          =   4305
-      Left            =   120
-      TabIndex        =   34
-      Top             =   2040
-      Visible         =   0   'False
-      Width           =   11895
-      _ExtentX        =   20981
-      _ExtentY        =   7594
-      _Version        =   393216
-      TabHeight       =   520
-      ShowFocusRect   =   0   'False
-      ForeColor       =   255
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   -1  'True
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      TabCaption(0)   =   "Scheda dialitica 1"
-      TabPicture(0)   =   "frmSchedaDialitica.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Label1(27)"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Label1(25)"
-      Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "Label1(30)"
-      Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "Label1(31)"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "Label1(33)"
-      Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "Label1(34)"
-      Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "Label1(26)"
-      Tab(0).Control(6).Enabled=   0   'False
-      Tab(0).Control(7)=   "Label1(38)"
-      Tab(0).Control(7).Enabled=   0   'False
-      Tab(0).Control(8)=   "Label1(35)"
-      Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "Label1(28)"
-      Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "Label1(29)"
-      Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "Label1(42)"
-      Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "Label1(43)"
-      Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "Label1(23)"
-      Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "Label1(32)"
-      Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "Label1(52)"
-      Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "Label1(51)"
-      Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "Label1(50)"
-      Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "Label1(49)"
-      Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "lblTipoLinee"
-      Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "lblAgo1"
-      Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "lblAgo2"
-      Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "lblFiltro"
-      Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "lblTipoDialisi"
-      Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "lblAccessoVascolare"
-      Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "lblAnticoagulante(0)"
-      Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "lblAnticoagulante(1)"
-      Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "lblPesoSecco"
-      Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "lblUltimoPeso"
-      Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "lblDataUltimoPeso"
-      Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "lblOreDialisi"
-      Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "lblDoseIniziale"
-      Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "lblDoseAltroAnticoagulante"
-      Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "lblSodio"
-      Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "lblPotassio"
-      Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "lblBicarbonato"
-      Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "lblCalcio"
-      Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "lblGlucosio"
-      Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "Label1(48)"
-      Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "lblDoseIntermedia"
-      Tab(0).Control(39).Enabled=   0   'False
-      Tab(0).Control(40)=   "Label1(54)"
-      Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "lblDoseFinale"
-      Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).Control(42)=   "Label1(55)"
-      Tab(0).Control(42).Enabled=   0   'False
-      Tab(0).Control(43)=   "lblDoseUnitaMisura"
-      Tab(0).Control(43).Enabled=   0   'False
-      Tab(0).ControlCount=   44
-      TabCaption(1)   =   "Scheda dialitica 2"
-      TabPicture(1)   =   "frmSchedaDialitica.frx":001C
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(6)"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Label1(7)"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "Label1(18)"
-      Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).Control(3)=   "Label1(19)"
-      Tab(1).Control(3).Enabled=   0   'False
-      Tab(1).Control(4)=   "Label1(20)"
-      Tab(1).Control(4).Enabled=   0   'False
-      Tab(1).Control(5)=   "Label1(21)"
-      Tab(1).Control(5).Enabled=   0   'False
-      Tab(1).Control(6)=   "lblFlusso"
-      Tab(1).Control(6).Enabled=   0   'False
-      Tab(1).Control(7)=   "lblFlussoSangue"
-      Tab(1).Control(7).Enabled=   0   'False
-      Tab(1).Control(8)=   "lblSolDialitica"
-      Tab(1).Control(8).Enabled=   0   'False
-      Tab(1).Control(9)=   "lblSolInfusionale"
-      Tab(1).Control(9).Enabled=   0   'False
-      Tab(1).Control(10)=   "lblCartuccia"
-      Tab(1).Control(10).Enabled=   0   'False
-      Tab(1).Control(11)=   "lblSolInfCc"
-      Tab(1).Control(11).Enabled=   0   'False
-      Tab(1).ControlCount=   12
-      TabCaption(2)   =   "Terapia"
-      TabPicture(2)   =   "frmSchedaDialitica.frx":0038
-      Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(36)"
-      Tab(2).Control(0).Enabled=   0   'False
-      Tab(2).Control(1)=   "Label1(37)"
-      Tab(2).Control(1).Enabled=   0   'False
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(2).Enabled=   0   'False
-      Tab(2).Control(3)=   "flxGriglia(0)"
-      Tab(2).Control(3).Enabled=   0   'False
-      Tab(2).ControlCount=   4
-      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   3255
-         Index           =   0
-         Left            =   -74880
-         TabIndex        =   54
-         Top             =   840
-         Width           =   5775
-         _ExtentX        =   10186
-         _ExtentY        =   5741
-         _Version        =   393216
-         Cols            =   4
-         FixedCols       =   0
-         FormatString    =   $"frmSchedaDialitica.frx":0054
-      End
-      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   3255
-         Index           =   1
-         Left            =   -69000
-         TabIndex        =   55
-         Top             =   840
-         Width           =   5775
-         _ExtentX        =   10186
-         _ExtentY        =   5741
-         _Version        =   393216
-         Cols            =   4
-         FixedCols       =   0
-         FormatString    =   $"frmSchedaDialitica.frx":00EC
-      End
-      Begin VB.Label lblDoseUnitaMisura 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6360
-         TabIndex        =   137
-         Top             =   2880
-         Width           =   375
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Dose Finale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   55
-         Left            =   8880
-         TabIndex        =   136
-         Top             =   2880
-         Width           =   1275
-      End
-      Begin VB.Label lblDoseFinale 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   10320
-         TabIndex        =   135
-         Top             =   2880
-         Width           =   615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Dose interm."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   54
-         Left            =   6840
-         TabIndex        =   134
-         Top             =   2880
-         Width           =   1320
-      End
-      Begin VB.Label lblDoseIntermedia 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   8160
-         TabIndex        =   133
-         Top             =   2880
-         Width           =   615
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Gluc"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   48
-         Left            =   8760
-         TabIndex        =   132
-         Top             =   3855
-         Width           =   480
-      End
-      Begin VB.Label lblGlucosio 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   9480
-         TabIndex        =   131
-         Top             =   3840
-         Width           =   615
-      End
-      Begin VB.Label lblSolInfCc 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -64560
-         TabIndex        =   119
-         Top             =   1440
-         Width           =   615
-      End
-      Begin VB.Label lblCartuccia 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -72000
-         TabIndex        =   118
-         Top             =   1920
-         Width           =   5655
-      End
-      Begin VB.Label lblSolInfusionale 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -72000
-         TabIndex        =   117
-         Top             =   1440
-         Width           =   5655
-      End
-      Begin VB.Label lblSolDialitica 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -72000
-         TabIndex        =   116
-         Top             =   960
-         Width           =   5655
-      End
-      Begin VB.Label lblFlussoSangue 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -67680
-         TabIndex        =   115
-         Top             =   480
-         Width           =   615
-      End
-      Begin VB.Label lblFlusso 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   -72000
-         TabIndex        =   114
-         Top             =   480
-         Width           =   615
-      End
-      Begin VB.Label lblCalcio 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   7800
-         TabIndex        =   113
-         Top             =   3840
-         Width           =   615
-      End
-      Begin VB.Label lblBicarbonato 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6360
-         TabIndex        =   112
-         Top             =   3840
-         Width           =   615
-      End
-      Begin VB.Label lblPotassio 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   4440
-         TabIndex        =   111
-         Top             =   3840
-         Width           =   615
-      End
-      Begin VB.Label lblSodio 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3000
-         TabIndex        =   110
-         Top             =   3840
-         Width           =   615
-      End
-      Begin VB.Label lblDoseAltroAnticoagulante 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   10320
-         TabIndex        =   109
-         Top             =   3360
-         Width           =   1095
-      End
-      Begin VB.Label lblDoseIniziale 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   5760
-         TabIndex        =   108
-         Top             =   2880
-         Width           =   615
-      End
-      Begin VB.Label lblOreDialisi 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   10320
-         TabIndex        =   107
-         Top             =   2400
-         Width           =   1095
-      End
-      Begin VB.Label lblDataUltimoPeso 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6720
-         TabIndex        =   106
-         Top             =   2400
-         Width           =   1335
-      End
-      Begin VB.Label lblUltimoPeso 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   5160
-         TabIndex        =   105
-         Top             =   2400
-         Width           =   855
-      End
-      Begin VB.Label lblPesoSecco 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2520
-         TabIndex        =   104
-         Top             =   2400
-         Width           =   855
-      End
-      Begin VB.Label lblAnticoagulante 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   1
-         Left            =   2520
-         TabIndex        =   103
-         Top             =   3360
-         Width           =   5535
-      End
-      Begin VB.Label lblAnticoagulante 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Index           =   0
-         Left            =   2520
-         TabIndex        =   102
-         Top             =   2880
-         Width           =   1695
-      End
-      Begin VB.Label lblAccessoVascolare 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2520
-         TabIndex        =   101
-         Top             =   1920
-         Width           =   4455
-      End
-      Begin VB.Label lblTipoDialisi 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2520
-         TabIndex        =   100
-         Top             =   1440
-         Width           =   4455
-      End
-      Begin VB.Label lblFiltro 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2520
-         TabIndex        =   99
-         Top             =   960
-         Width           =   4455
-      End
-      Begin VB.Label lblAgo2 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   8160
-         TabIndex        =   98
-         Top             =   960
-         Width           =   3495
-      End
-      Begin VB.Label lblAgo1 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   8160
-         TabIndex        =   97
-         Top             =   480
-         Width           =   3495
-      End
-      Begin VB.Label lblTipoLinee 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2520
-         TabIndex        =   96
-         Top             =   480
-         Width           =   4455
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Tipo di Linee"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   49
-         Left            =   240
-         TabIndex        =   84
-         Top             =   480
-         Width           =   1380
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Accesso Vascolare"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   50
-         Left            =   240
-         TabIndex        =   83
-         Top             =   1920
-         Width           =   2040
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ago A."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   51
-         Left            =   7275
-         TabIndex        =   82
-         Top             =   480
-         Width           =   705
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ago V."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   52
-         Left            =   7275
-         TabIndex        =   81
-         Top             =   960
-         Width           =   705
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Bagno dialisi"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   32
-         Left            =   240
-         TabIndex        =   72
-         Top             =   3840
-         Width           =   1380
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ca"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   23
-         Left            =   7320
-         TabIndex        =   71
-         Top             =   3840
-         Width           =   420
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "HCO3-"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   43
-         Left            =   5520
-         TabIndex        =   70
-         Top             =   3840
-         Width           =   690
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "del"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   42
-         Left            =   6240
-         TabIndex        =   64
-         Top             =   2400
-         Width           =   345
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Cartuccia"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   21
-         Left            =   -74760
-         TabIndex        =   63
-         Top             =   1920
-         Width           =   990
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "valore (cc)"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   20
-         Left            =   -65880
-         TabIndex        =   62
-         Top             =   1485
-         Width           =   1125
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Soluzione Infusionale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   19
-         Left            =   -74760
-         TabIndex        =   61
-         Top             =   1440
-         Width           =   2220
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Soluzione Dialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   18
-         Left            =   -74760
-         TabIndex        =   60
-         Top             =   960
-         Width           =   1950
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Flusso Sangue Qb (ml/min)"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   7
-         Left            =   -70560
-         TabIndex        =   59
-         Top             =   480
-         Width           =   2805
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Flusso Dialisi Qd (ml/min)"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   6
-         Left            =   -74760
-         TabIndex        =   58
-         Top             =   480
-         Width           =   2670
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Terapia Postdialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   37
-         Left            =   -66960
-         TabIndex        =   57
-         Top             =   480
-         Width           =   2190
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Terapia Intradialitica"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   36
-         Left            =   -73080
-         TabIndex        =   56
-         Top             =   480
-         Width           =   2175
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Anticoagulante"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   29
-         Left            =   240
-         TabIndex        =   45
-         Top             =   2880
-         Width           =   1560
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Altro Anticoagulante"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   28
-         Left            =   240
-         TabIndex        =   44
-         Top             =   3360
-         Width           =   2100
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Dose Iniziale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   35
-         Left            =   4320
-         TabIndex        =   43
-         Top             =   2880
-         Width           =   1365
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Dosi"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   38
-         Left            =   9600
-         TabIndex        =   42
-         Top             =   3360
-         Width           =   495
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Tipo di Filtro"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   26
-         Left            =   240
-         TabIndex        =   41
-         Top             =   960
-         Width           =   1335
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ore di Dialisi"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   34
-         Left            =   8760
-         TabIndex        =   40
-         Top             =   2400
-         Width           =   1365
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ultimo Peso"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   33
-         Left            =   3720
-         TabIndex        =   39
-         Top             =   2400
-         Width           =   1275
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Na+"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   31
-         Left            =   2520
-         TabIndex        =   38
-         Top             =   3840
-         Width           =   435
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "K+"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   30
-         Left            =   4080
-         TabIndex        =   37
-         Top             =   3840
-         Width           =   270
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Tipo di Dialisi"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   25
-         Left            =   240
-         TabIndex        =   36
-         Top             =   1440
-         Width           =   1470
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Peso Secco"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   27
-         Left            =   240
-         TabIndex        =   35
-         Top             =   2400
-         Width           =   1275
-      End
-   End
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
@@ -1285,7 +26,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   450
          Index           =   0
          Left            =   360
-         Picture         =   "frmSchedaDialitica.frx":0184
+         Picture         =   "frmSchedaDialitica.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   77
          ToolTipText     =   "Seleziona il paziente"
@@ -1415,7 +156,7 @@ Begin VB.Form frmSchedaDialitica
          Height          =   405
          Index           =   1
          Left            =   380
-         Picture         =   "frmSchedaDialitica.frx":05DD
+         Picture         =   "frmSchedaDialitica.frx":0459
          Style           =   1  'Graphical
          TabIndex        =   122
          ToolTipText     =   "Seleziona la postazione"
@@ -1798,7 +539,7 @@ Begin VB.Form frmSchedaDialitica
          Left            =   10320
          MaxLength       =   4
          TabIndex        =   24
-         Top             =   1650
+         Top             =   1680
          Width           =   615
       End
       Begin VB.TextBox txtTotSangueRilevato 
@@ -2156,7 +897,7 @@ Begin VB.Form frmSchedaDialitica
          MaxLength       =   5
          TabIndex        =   3
          Top             =   360
-         Width           =   615
+         Width           =   635
       End
       Begin VB.TextBox txtIncremento 
          Alignment       =   1  'Right Justify
@@ -2174,7 +915,7 @@ Begin VB.Form frmSchedaDialitica
          MaxLength       =   5
          TabIndex        =   5
          Top             =   1320
-         Width           =   615
+         Width           =   635
       End
       Begin VB.TextBox txtPesoFinale 
          Alignment       =   1  'Right Justify
@@ -2192,7 +933,7 @@ Begin VB.Form frmSchedaDialitica
          MaxLength       =   5
          TabIndex        =   4
          Top             =   840
-         Width           =   605
+         Width           =   635
       End
       Begin VB.CheckBox chkErrata 
          Caption         =   "Scheda Annullata"
@@ -2799,6 +1540,1210 @@ Begin VB.Form frmSchedaDialitica
          Width           =   1455
       End
    End
+   Begin TabDlg.SSTab tabSchede 
+      Height          =   4305
+      Left            =   120
+      TabIndex        =   34
+      Top             =   2040
+      Visible         =   0   'False
+      Width           =   11895
+      _ExtentX        =   20981
+      _ExtentY        =   7594
+      _Version        =   393216
+      Tab             =   2
+      TabHeight       =   520
+      ShowFocusRect   =   0   'False
+      ForeColor       =   255
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      TabCaption(0)   =   "Scheda dialitica 1"
+      TabPicture(0)   =   "frmSchedaDialitica.frx":08B2
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "Label1(27)"
+      Tab(0).Control(1)=   "Label1(25)"
+      Tab(0).Control(2)=   "Label1(30)"
+      Tab(0).Control(3)=   "Label1(31)"
+      Tab(0).Control(4)=   "Label1(33)"
+      Tab(0).Control(5)=   "Label1(34)"
+      Tab(0).Control(6)=   "Label1(26)"
+      Tab(0).Control(7)=   "Label1(38)"
+      Tab(0).Control(8)=   "Label1(35)"
+      Tab(0).Control(9)=   "Label1(28)"
+      Tab(0).Control(10)=   "Label1(29)"
+      Tab(0).Control(11)=   "Label1(42)"
+      Tab(0).Control(12)=   "Label1(43)"
+      Tab(0).Control(13)=   "Label1(23)"
+      Tab(0).Control(14)=   "Label1(32)"
+      Tab(0).Control(15)=   "Label1(52)"
+      Tab(0).Control(16)=   "Label1(51)"
+      Tab(0).Control(17)=   "Label1(50)"
+      Tab(0).Control(18)=   "Label1(49)"
+      Tab(0).Control(19)=   "lblTipoLinee"
+      Tab(0).Control(20)=   "lblAgo1"
+      Tab(0).Control(21)=   "lblAgo2"
+      Tab(0).Control(22)=   "lblFiltro"
+      Tab(0).Control(23)=   "lblTipoDialisi"
+      Tab(0).Control(24)=   "lblAccessoVascolare"
+      Tab(0).Control(25)=   "lblAnticoagulante(0)"
+      Tab(0).Control(26)=   "lblAnticoagulante(1)"
+      Tab(0).Control(27)=   "lblPesoSecco"
+      Tab(0).Control(28)=   "lblUltimoPeso"
+      Tab(0).Control(29)=   "lblDataUltimoPeso"
+      Tab(0).Control(30)=   "lblOreDialisi"
+      Tab(0).Control(31)=   "lblDoseIniziale"
+      Tab(0).Control(32)=   "lblDoseAltroAnticoagulante"
+      Tab(0).Control(33)=   "lblSodio"
+      Tab(0).Control(34)=   "lblPotassio"
+      Tab(0).Control(35)=   "lblBicarbonato"
+      Tab(0).Control(36)=   "lblCalcio"
+      Tab(0).Control(37)=   "lblGlucosio"
+      Tab(0).Control(38)=   "Label1(48)"
+      Tab(0).Control(39)=   "lblDoseIntermedia"
+      Tab(0).Control(40)=   "Label1(54)"
+      Tab(0).Control(41)=   "lblDoseFinale"
+      Tab(0).Control(42)=   "Label1(55)"
+      Tab(0).Control(43)=   "lblDoseUnitaMisura"
+      Tab(0).ControlCount=   44
+      TabCaption(1)   =   "Scheda dialitica 2"
+      TabPicture(1)   =   "frmSchedaDialitica.frx":08CE
+      Tab(1).ControlEnabled=   0   'False
+      Tab(1).Control(0)=   "Label1(6)"
+      Tab(1).Control(1)=   "Label1(7)"
+      Tab(1).Control(2)=   "Label1(18)"
+      Tab(1).Control(3)=   "Label1(19)"
+      Tab(1).Control(4)=   "Label1(20)"
+      Tab(1).Control(5)=   "Label1(21)"
+      Tab(1).Control(6)=   "lblFlusso"
+      Tab(1).Control(7)=   "lblFlussoSangue"
+      Tab(1).Control(8)=   "lblSolDialitica"
+      Tab(1).Control(9)=   "lblSolInfusionale"
+      Tab(1).Control(10)=   "lblCartuccia"
+      Tab(1).Control(11)=   "lblSolInfCc"
+      Tab(1).ControlCount=   12
+      TabCaption(2)   =   "Terapia"
+      TabPicture(2)   =   "frmSchedaDialitica.frx":08EA
+      Tab(2).ControlEnabled=   -1  'True
+      Tab(2).Control(0)=   "Label1(36)"
+      Tab(2).Control(0).Enabled=   0   'False
+      Tab(2).Control(1)=   "Label1(37)"
+      Tab(2).Control(1).Enabled=   0   'False
+      Tab(2).Control(2)=   "flxGriglia(1)"
+      Tab(2).Control(2).Enabled=   0   'False
+      Tab(2).Control(3)=   "flxGriglia(0)"
+      Tab(2).Control(3).Enabled=   0   'False
+      Tab(2).ControlCount=   4
+      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
+         Height          =   3255
+         Index           =   0
+         Left            =   120
+         TabIndex        =   54
+         Top             =   840
+         Width           =   5775
+         _ExtentX        =   10186
+         _ExtentY        =   5741
+         _Version        =   393216
+         Cols            =   4
+         FixedCols       =   0
+         FormatString    =   $"frmSchedaDialitica.frx":0906
+      End
+      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
+         Height          =   3255
+         Index           =   1
+         Left            =   6000
+         TabIndex        =   55
+         Top             =   840
+         Width           =   5775
+         _ExtentX        =   10186
+         _ExtentY        =   5741
+         _Version        =   393216
+         Cols            =   4
+         FixedCols       =   0
+         FormatString    =   $"frmSchedaDialitica.frx":099E
+      End
+      Begin VB.Label lblDoseUnitaMisura 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -68640
+         TabIndex        =   137
+         Top             =   2880
+         Width           =   375
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Dose Finale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   55
+         Left            =   -66120
+         TabIndex        =   136
+         Top             =   2880
+         Width           =   1275
+      End
+      Begin VB.Label lblDoseFinale 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -64680
+         TabIndex        =   135
+         Top             =   2880
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Dose interm."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   54
+         Left            =   -68160
+         TabIndex        =   134
+         Top             =   2880
+         Width           =   1320
+      End
+      Begin VB.Label lblDoseIntermedia 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -66840
+         TabIndex        =   133
+         Top             =   2880
+         Width           =   615
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Gluc"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   48
+         Left            =   -66240
+         TabIndex        =   132
+         Top             =   3855
+         Width           =   480
+      End
+      Begin VB.Label lblGlucosio 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -65520
+         TabIndex        =   131
+         Top             =   3840
+         Width           =   615
+      End
+      Begin VB.Label lblSolInfCc 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -64560
+         TabIndex        =   119
+         Top             =   1440
+         Width           =   615
+      End
+      Begin VB.Label lblCartuccia 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72000
+         TabIndex        =   118
+         Top             =   1920
+         Width           =   5655
+      End
+      Begin VB.Label lblSolInfusionale 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72000
+         TabIndex        =   117
+         Top             =   1440
+         Width           =   5655
+      End
+      Begin VB.Label lblSolDialitica 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72000
+         TabIndex        =   116
+         Top             =   960
+         Width           =   5655
+      End
+      Begin VB.Label lblFlussoSangue 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -67680
+         TabIndex        =   115
+         Top             =   480
+         Width           =   615
+      End
+      Begin VB.Label lblFlusso 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72000
+         TabIndex        =   114
+         Top             =   480
+         Width           =   615
+      End
+      Begin VB.Label lblCalcio 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -67200
+         TabIndex        =   113
+         Top             =   3840
+         Width           =   615
+      End
+      Begin VB.Label lblBicarbonato 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -68640
+         TabIndex        =   112
+         Top             =   3840
+         Width           =   615
+      End
+      Begin VB.Label lblPotassio 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -70560
+         TabIndex        =   111
+         Top             =   3840
+         Width           =   615
+      End
+      Begin VB.Label lblSodio 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72000
+         TabIndex        =   110
+         Top             =   3840
+         Width           =   615
+      End
+      Begin VB.Label lblDoseAltroAnticoagulante 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -64680
+         TabIndex        =   109
+         Top             =   3360
+         Width           =   1095
+      End
+      Begin VB.Label lblDoseIniziale 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -69240
+         TabIndex        =   108
+         Top             =   2880
+         Width           =   615
+      End
+      Begin VB.Label lblOreDialisi 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -64680
+         TabIndex        =   107
+         Top             =   2400
+         Width           =   1095
+      End
+      Begin VB.Label lblDataUltimoPeso 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -68280
+         TabIndex        =   106
+         Top             =   2400
+         Width           =   1335
+      End
+      Begin VB.Label lblUltimoPeso 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -69840
+         TabIndex        =   105
+         Top             =   2400
+         Width           =   855
+      End
+      Begin VB.Label lblPesoSecco 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72480
+         TabIndex        =   104
+         Top             =   2400
+         Width           =   855
+      End
+      Begin VB.Label lblAnticoagulante 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   1
+         Left            =   -72480
+         TabIndex        =   103
+         Top             =   3360
+         Width           =   5535
+      End
+      Begin VB.Label lblAnticoagulante 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   0
+         Left            =   -72480
+         TabIndex        =   102
+         Top             =   2880
+         Width           =   1695
+      End
+      Begin VB.Label lblAccessoVascolare 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72480
+         TabIndex        =   101
+         Top             =   1920
+         Width           =   4455
+      End
+      Begin VB.Label lblTipoDialisi 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72480
+         TabIndex        =   100
+         Top             =   1440
+         Width           =   4455
+      End
+      Begin VB.Label lblFiltro 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72480
+         TabIndex        =   99
+         Top             =   960
+         Width           =   4455
+      End
+      Begin VB.Label lblAgo2 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -66840
+         TabIndex        =   98
+         Top             =   960
+         Width           =   3495
+      End
+      Begin VB.Label lblAgo1 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -66840
+         TabIndex        =   97
+         Top             =   480
+         Width           =   3495
+      End
+      Begin VB.Label lblTipoLinee 
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fixed Single
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   -72480
+         TabIndex        =   96
+         Top             =   480
+         Width           =   4455
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo di Linee"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   49
+         Left            =   -74760
+         TabIndex        =   84
+         Top             =   480
+         Width           =   1380
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Accesso Vascolare"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   50
+         Left            =   -74760
+         TabIndex        =   83
+         Top             =   1920
+         Width           =   2040
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ago A."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   51
+         Left            =   -67725
+         TabIndex        =   82
+         Top             =   480
+         Width           =   705
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ago V."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   52
+         Left            =   -67725
+         TabIndex        =   81
+         Top             =   960
+         Width           =   705
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Bagno dialisi"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   32
+         Left            =   -74760
+         TabIndex        =   72
+         Top             =   3840
+         Width           =   1380
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ca"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   23
+         Left            =   -67680
+         TabIndex        =   71
+         Top             =   3840
+         Width           =   420
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "HCO3-"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   43
+         Left            =   -69480
+         TabIndex        =   70
+         Top             =   3840
+         Width           =   690
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "del"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   42
+         Left            =   -68760
+         TabIndex        =   64
+         Top             =   2400
+         Width           =   345
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Cartuccia"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   21
+         Left            =   -74760
+         TabIndex        =   63
+         Top             =   1920
+         Width           =   990
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "valore (cc)"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   20
+         Left            =   -65880
+         TabIndex        =   62
+         Top             =   1485
+         Width           =   1125
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Soluzione Infusionale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   19
+         Left            =   -74760
+         TabIndex        =   61
+         Top             =   1440
+         Width           =   2220
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Soluzione Dialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   18
+         Left            =   -74760
+         TabIndex        =   60
+         Top             =   960
+         Width           =   1950
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Flusso Sangue Qb (ml/min)"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   7
+         Left            =   -70560
+         TabIndex        =   59
+         Top             =   480
+         Width           =   2805
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Flusso Dialisi Qd (ml/min)"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   6
+         Left            =   -74760
+         TabIndex        =   58
+         Top             =   480
+         Width           =   2670
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Terapia Postdialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   37
+         Left            =   8040
+         TabIndex        =   57
+         Top             =   480
+         Width           =   2190
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Terapia Intradialitica"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   36
+         Left            =   1920
+         TabIndex        =   56
+         Top             =   480
+         Width           =   2175
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Anticoagulante"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   29
+         Left            =   -74760
+         TabIndex        =   45
+         Top             =   2880
+         Width           =   1560
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Altro Anticoagulante"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   28
+         Left            =   -74760
+         TabIndex        =   44
+         Top             =   3360
+         Width           =   2100
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Dose Iniziale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   35
+         Left            =   -70680
+         TabIndex        =   43
+         Top             =   2880
+         Width           =   1365
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Dosi"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   38
+         Left            =   -65400
+         TabIndex        =   42
+         Top             =   3360
+         Width           =   495
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo di Filtro"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   26
+         Left            =   -74760
+         TabIndex        =   41
+         Top             =   960
+         Width           =   1335
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ore di Dialisi"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   34
+         Left            =   -66240
+         TabIndex        =   40
+         Top             =   2400
+         Width           =   1365
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ultimo Peso"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   33
+         Left            =   -71280
+         TabIndex        =   39
+         Top             =   2400
+         Width           =   1275
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Na+"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   31
+         Left            =   -72480
+         TabIndex        =   38
+         Top             =   3840
+         Width           =   435
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "K+"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   30
+         Left            =   -70920
+         TabIndex        =   37
+         Top             =   3840
+         Width           =   270
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo di Dialisi"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   25
+         Left            =   -74760
+         TabIndex        =   36
+         Top             =   1440
+         Width           =   1470
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Peso Secco"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   27
+         Left            =   -74760
+         TabIndex        =   35
+         Top             =   2400
+         Width           =   1275
+      End
+   End
 End
 Attribute VB_Name = "frmSchedaDialitica"
 Attribute VB_GlobalNameSpace = False
@@ -3284,6 +3229,7 @@ Private Sub cmdTrova_Click(Index As Integer)
             lblTipo = tReni.Tipo
         End If
     End If
+    txtPesoIniziale.SetFocus
 End Sub
 
 Private Sub cmdTerapia_Click()
@@ -3817,6 +3763,10 @@ Private Sub txtConplicanze_LostFocus()
     txtConplicanze.BackColor = vbWhite
 End Sub
 
+Private Sub txtConplicanze_KeyPress(KeyAscii As Integer)
+    Call InvioTab(KeyAscii)
+End Sub
+
 Private Sub txtIncremento_GotFocus()
     txtIncremento.BackColor = colArancione
 End Sub
@@ -3838,6 +3788,10 @@ Private Sub txtKtvRilevato_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtKtvRilevato.Text) = 3 Then txtTotSangueRilevato.SetFocus 'SendKeys ("{Tab}")
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtKtvRilevato_LostFocus()
@@ -3855,6 +3809,10 @@ End Sub
 
 Private Sub txtPaExtracorporeo_KeyPress(KeyAscii As Integer)
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtPaExtracorporeo.Text) = 3 Then txtPvExtracorporeo.SetFocus 'SendKeys ("{Tab}")
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPaExtracorporeo_LostFocus()
@@ -3895,6 +3853,10 @@ Private Sub txtIncremento_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtIncremento.Text) = 4 Then txtPressioneMax(0).SetFocus 'SendKeys ("{Tab}")
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtIncremento_Validate(Cancel As Boolean)
@@ -3915,6 +3877,10 @@ Private Sub txtPesoFinale_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtPesoFinale.Text) = 4 Then txtIncremento.SetFocus 'SendKeys ("{Tab}")
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPesoFinale_Validate(Cancel As Boolean)
@@ -3941,6 +3907,10 @@ Private Sub txtPesoIniziale_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtPesoIniziale.Text) = 4 Then txtPesoFinale.SetFocus 'SendKeys ("{Tab}")
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPesoIniziale_Validate(Cancel As Boolean)
@@ -3967,6 +3937,14 @@ End Sub
 
 Private Sub txtFC_KeyPress(Index As Integer, KeyAscii As Integer)
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtFC(0).Text) = 2 Then txtPressioneMax(1).SetFocus 'SendKeys ("{Tab}")
+        If Len(txtFC(1).Text) = 2 Then txtPressioneMax(2).SetFocus
+        If Len(txtFC(2).Text) = 2 Then txtPressioneMax(4).SetFocus
+        If Len(txtFC(3).Text) = 2 Then txtPressioneMax(3).SetFocus
+        If Len(txtFC(4).Text) = 2 Then txtKtvRilevato.SetFocus
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPressioneMax_Change(Index As Integer)
@@ -3980,6 +3958,14 @@ End Sub
 
 Private Sub txtPressioneMax_KeyPress(Index As Integer, KeyAscii As Integer)
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtPressioneMax(0).Text) = 2 Then txtPressioneMin(0).SetFocus 'SendKeys ("{Tab}")
+        If Len(txtPressioneMax(1).Text) = 2 Then txtPressioneMin(1).SetFocus
+        If Len(txtPressioneMax(2).Text) = 2 Then txtPressioneMin(2).SetFocus
+        If Len(txtPressioneMax(3).Text) = 2 Then txtPressioneMin(3).SetFocus
+        If Len(txtPressioneMax(4).Text) = 2 Then txtPressioneMin(4).SetFocus
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPressioneMax_LostFocus(Index As Integer)
@@ -3997,6 +3983,14 @@ End Sub
 
 Private Sub txtPressioneMin_KeyPress(Index As Integer, KeyAscii As Integer)
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtPressioneMin(0).Text) = 2 Then txtFC(0).SetFocus 'SendKeys ("{Tab}")
+        If Len(txtPressioneMin(1).Text) = 2 Then txtFC(1).SetFocus
+        If Len(txtPressioneMin(2).Text) = 2 Then txtFC(3).SetFocus
+        If Len(txtPressioneMin(3).Text) = 2 Then txtFC(2).SetFocus
+        If Len(txtPressioneMin(4).Text) = 2 Then txtFC(4).SetFocus
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPressioneMin_LostFocus(Index As Integer)
@@ -4014,6 +4008,11 @@ End Sub
 
 Private Sub txtPvExtracorporeo_KeyPress(KeyAscii As Integer)
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtPvExtracorporeo.Text) = 3 Then txtConplicanze.SetFocus 'SendKeys ("{Tab}")
+    End If
+    'riproduce il TAB premendo INVIO
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtPvExtracorporeo_LostFocus()
@@ -4033,8 +4032,13 @@ Private Sub txtTotSangueRilevato_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
+    If modifica = False Then
+        If Len(txtTotSangueRilevato.Text) = 3 Then txtPaExtracorporeo.SetFocus 'SendKeys ("{Tab}")
+    End If
+    Call InvioTab(KeyAscii)
 End Sub
 
 Private Sub txtTotSangueRilevato_LostFocus()
     txtTotSangueRilevato.BackColor = vbWhite
 End Sub
+

@@ -161,6 +161,17 @@ Begin VB.Form frmAnamnesiEsamiLab
       TabIndex        =   2
       Top             =   720
       Width           =   12855
+      Begin VB.CommandButton cmdSostituisciData 
+         Enabled         =   0   'False
+         Height          =   375
+         Left            =   12120
+         Picture         =   "frmAnamnesiEsamiLab.frx":0459
+         Style           =   1  'Graphical
+         TabIndex        =   25
+         ToolTipText     =   "Sostituisci data"
+         Top             =   240
+         Width           =   375
+      End
       Begin VB.ComboBox cboEsami 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -172,9 +183,9 @@ Begin VB.Form frmAnamnesiEsamiLab
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmAnamnesiEsamiLab.frx":0459
+         ItemData        =   "frmAnamnesiEsamiLab.frx":0695
          Left            =   2280
-         List            =   "frmAnamnesiEsamiLab.frx":045B
+         List            =   "frmAnamnesiEsamiLab.frx":0697
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   3
@@ -183,7 +194,7 @@ Begin VB.Form frmAnamnesiEsamiLab
       End
       Begin DataTimeBox.uDataTimeBox oDataTimeBox 
          Height          =   375
-         Left            =   10440
+         Left            =   9960
          TabIndex        =   24
          Top             =   240
          Width           =   2100
@@ -207,7 +218,7 @@ Begin VB.Form frmAnamnesiEsamiLab
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   9720
+         Left            =   9240
          TabIndex        =   5
          Top             =   285
          Width           =   510
@@ -467,6 +478,38 @@ Dim rsDisco As Recordset
 
 Const icsPN As String = "  X"
 Dim intPazientiKey As Integer
+Dim NonCaricare As Boolean
+
+Private Sub cmdSostituisciData_Click()
+Dim rsDataset As Recordset
+Dim nomeTabella As String
+
+' mettere una variabile boolena per il controllo data time
+    
+    If MsgBox("Sei sicuro di voler sostituire la data?", vbQuestion + vbYesNo, "Informazione") = vbYes Then
+        frmCalendario.Show 1
+        'Ricerca per vedere se la data inserita è già esistente
+        tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_GRUPPO=" & flxGriglia.TextMatrix(0, 1)
+        Set rsDataset = New Recordset
+        rsDataset.Open "SELECT DISTINCT DATA FROM " & "ANAMNESI_ESAMI" & " " & tElenca.condizione & " ORDER BY DATA DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        Do While Not rsDataset.EOF
+            If laData = rsDataset("DATA") Then
+                MsgBox "Data già presente!!!", vbCritical, "Attenzione"
+                NonCaricare = True
+                Exit Sub
+            Else
+            End If
+        rsDataset.MoveNext
+        Loop
+        NonCaricare = False
+        oDataTimeBox.data = laData
+        Call SalvaModifiche
+        Call CaricaScheda
+        Set rsDataset = Nothing
+    Else
+    End If
+    
+End Sub
 
 '' Ricarica le cbo
 Private Sub Form_Activate()
@@ -689,6 +732,8 @@ Private Sub PulisciTutto()
     stoPulendo = False
     hscrBarra.Visible = False
     flxGriglia.Height = 6135
+    cmdSostituisciData.Enabled = False
+    NonCaricare = True
     cmdTrova.SetFocus
 End Sub
 
@@ -738,6 +783,7 @@ Private Sub SalvaModifiche()
             Else
                 rsEsami.Open "SELECT * FROM ANAMNESI_ESAMI WHERE KEY=" & numKey, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
                 rsEsami("UTENTE_MODIFICATORE") = tAccesso.key
+                rsEsami("DATA") = oDataTimeBox.data
                 rsEsami.Update
                 rsEsami.Close
             End If
@@ -1323,7 +1369,9 @@ Private Sub CaricaPaziente()
 End Sub
 
 Private Sub oDataTimeBox_OnDataChange()
-    Call CaricaScheda
+    If NonCaricare = True Then
+        Call CaricaScheda
+    End If
 End Sub
 
 Private Sub oDataTimeBox_OnDataClick()
@@ -1331,6 +1379,8 @@ Private Sub oDataTimeBox_OnDataClick()
     oDataTimeBox.Pulisci
     flxGriglia.Rows = 1
     flxGriglia.TextMatrix(0, 0) = ""
+    cmdSostituisciData.Enabled = False
+    NonCaricare = True
 End Sub
 
 Private Sub oDataTimeBox_OnElencaClick()
@@ -1339,5 +1389,11 @@ Private Sub oDataTimeBox_OnElencaClick()
     tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_GRUPPO=" & flxGriglia.TextMatrix(0, 1)
     frmElencaDate.Show 1
     If laData <> "" Then oDataTimeBox.data = laData
+    If laData <> "" Then
+        cmdSostituisciData.Enabled = True
+    Else
+        cmdSostituisciData.Enabled = False
+    End If
+    NonCaricare = True
 End Sub
 

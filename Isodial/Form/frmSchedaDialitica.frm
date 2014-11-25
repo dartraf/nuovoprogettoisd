@@ -3788,9 +3788,6 @@ Private Sub txtKtvRilevato_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtKtvRilevato.Text) = 3 Then txtTotSangueRilevato.SetFocus 'SendKeys ("{Tab}")
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3809,9 +3806,6 @@ End Sub
 
 Private Sub txtPaExtracorporeo_KeyPress(KeyAscii As Integer)
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtPaExtracorporeo.Text) = 3 Then txtPvExtracorporeo.SetFocus 'SendKeys ("{Tab}")
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3853,9 +3847,6 @@ Private Sub txtIncremento_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtIncremento.Text) = 4 Then txtPressioneMax(0).SetFocus 'SendKeys ("{Tab}")
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3877,9 +3868,6 @@ Private Sub txtPesoFinale_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtPesoFinale.Text) = 4 Then txtIncremento.SetFocus 'SendKeys ("{Tab}")
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3907,9 +3895,6 @@ Private Sub txtPesoIniziale_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtPesoIniziale.Text) = 4 Then txtPesoFinale.SetFocus 'SendKeys ("{Tab}")
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3937,13 +3922,6 @@ End Sub
 
 Private Sub txtFC_KeyPress(Index As Integer, KeyAscii As Integer)
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtFC(0).Text) = 2 Then txtPressioneMax(1).SetFocus 'SendKeys ("{Tab}")
-        If Len(txtFC(1).Text) = 2 Then txtPressioneMax(2).SetFocus
-        If Len(txtFC(2).Text) = 2 Then txtPressioneMax(4).SetFocus
-        If Len(txtFC(3).Text) = 2 Then txtPressioneMax(3).SetFocus
-        If Len(txtFC(4).Text) = 2 Then txtKtvRilevato.SetFocus
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3958,13 +3936,6 @@ End Sub
 
 Private Sub txtPressioneMax_KeyPress(Index As Integer, KeyAscii As Integer)
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtPressioneMax(0).Text) = 2 Then txtPressioneMin(0).SetFocus 'SendKeys ("{Tab}")
-        If Len(txtPressioneMax(1).Text) = 2 Then txtPressioneMin(1).SetFocus
-        If Len(txtPressioneMax(2).Text) = 2 Then txtPressioneMin(2).SetFocus
-        If Len(txtPressioneMax(3).Text) = 2 Then txtPressioneMin(3).SetFocus
-        If Len(txtPressioneMax(4).Text) = 2 Then txtPressioneMin(4).SetFocus
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -3983,13 +3954,6 @@ End Sub
 
 Private Sub txtPressioneMin_KeyPress(Index As Integer, KeyAscii As Integer)
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtPressioneMin(0).Text) = 2 Then txtFC(0).SetFocus 'SendKeys ("{Tab}")
-        If Len(txtPressioneMin(1).Text) = 2 Then txtFC(1).SetFocus
-        If Len(txtPressioneMin(2).Text) = 2 Then txtFC(3).SetFocus
-        If Len(txtPressioneMin(3).Text) = 2 Then txtFC(2).SetFocus
-        If Len(txtPressioneMin(4).Text) = 2 Then txtFC(4).SetFocus
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 
@@ -4008,9 +3972,6 @@ End Sub
 
 Private Sub txtPvExtracorporeo_KeyPress(KeyAscii As Integer)
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtPvExtracorporeo.Text) = 3 Then txtConplicanze.SetFocus 'SendKeys ("{Tab}")
-    End If
     'riproduce il TAB premendo INVIO
     Call InvioTab(KeyAscii)
 End Sub
@@ -4032,9 +3993,6 @@ Private Sub txtTotSangueRilevato_KeyPress(KeyAscii As Integer)
     ' quando inserisce la virgola(44) cambia con il punto(46)
     If KeyAscii = 44 Then KeyAscii = 46
     lettera = Chr(KeyAscii)
-    If modifica = False Then
-        If Len(txtTotSangueRilevato.Text) = 3 Then txtPaExtracorporeo.SetFocus 'SendKeys ("{Tab}")
-    End If
     Call InvioTab(KeyAscii)
 End Sub
 

@@ -308,6 +308,8 @@ Public Function CreaFiles(percorso As String) As Boolean
     nomeFile2 = "M" & sistemaData(GetUltimoGiorno(mese, anno)) & structIntestazione.sCodiceSTS & "_27"
     If Dir(nomeFile & ".c1") <> "" Then Kill nomeFile & ".c1"
     If Dir(nomeFile & ".c2") <> "" Then Kill nomeFile & ".c2"
+    If Dir(nomeFile & "c1.txt") <> "" Then Kill nomeFile & "c1.txt"
+    If Dir(nomeFile & "c2.txt") <> "" Then Kill nomeFile & "c2.txt"
     If Dir(nomeFile & "_ANA" & ".zip") <> "" Then Kill nomeFile & "_ANA" & ".zip"
     If Dir(nomeFile & "_SAN" & ".zip") <> "" Then Kill nomeFile & "_SAN" & ".zip"
     If Dir(nomeFile & ".zip") <> "" Then Kill nomeFile & ".zip"
@@ -343,6 +345,9 @@ Public Function CreaFiles(percorso As String) As Boolean
     
     Close #1
     Close #2
+    
+    FileCopy nomeFile & ".c1", nomeFile & "c1.txt"
+    FileCopy nomeFile & ".c2", nomeFile & "c2.txt"
     
     ' zippa i file
     
@@ -382,6 +387,8 @@ Public Function CreaFiles(percorso As String) As Boolean
         If percorso <> App.Path Then
             If Dir(percorso & "\" & nomeFile & ".c1") <> "" Then Kill percorso & "\" & nomeFile & ".c1"
             If Dir(percorso & "\" & nomeFile & ".c2") <> "" Then Kill percorso & "\" & nomeFile & ".c2"
+            If Dir(percorso & "\" & nomeFile & "c1.txt") <> "" Then Kill percorso & "\" & nomeFile & "c1.txt"
+            If Dir(percorso & "\" & nomeFile & "c2.txt") <> "" Then Kill percorso & "\" & nomeFile & "c2.txt"
             If Dir(percorso & "\" & nomeFile & "_ANA" & ".zip") <> "" Then Kill percorso & "\" & nomeFile & "_ANA" & ".zip"
             If Dir(percorso & "\" & nomeFile & "_SAN" & ".zip") <> "" Then Kill percorso & "\" & nomeFile & "_SAN" & ".zip"
             If Dir(percorso & "\" & nomeFile & ".zip") <> "" Then Kill percorso & "\" & nomeFile & ".zip"
@@ -389,6 +396,8 @@ Public Function CreaFiles(percorso As String) As Boolean
 
             Name App.Path & "\" & nomeFile & ".c1" As percorso & "\" & nomeFile & ".c1"
             Name App.Path & "\" & nomeFile & ".c2" As percorso & "\" & nomeFile & ".c2"
+            Name App.Path & "\" & nomeFile & "c1.txt" As percorso & "\" & nomeFile & "c1.txt"
+            Name App.Path & "\" & nomeFile & "c2.txt" As percorso & "\" & nomeFile & "c2.txt"
             Name App.Path & "\" & nomeFile & "_ANA" & ".zip" As percorso & "\" & nomeFile & "_ANA" & ".zip"
             Name App.Path & "\" & nomeFile & "_SAN" & ".zip" As percorso & "\" & nomeFile & "_SAN" & ".zip"
             Name App.Path & "\" & nomeFile & ".zip" As percorso & "\" & nomeFile & ".zip"

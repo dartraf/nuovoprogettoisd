@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmMediciBase 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Scheda Medici di Base"
    ClientHeight    =   8760
-   ClientLeft      =   48
-   ClientTop       =   312
+   ClientLeft      =   45
+   ClientTop       =   315
    ClientWidth     =   6960
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -18,7 +18,7 @@ Begin VB.Form frmMediciBase
       Caption         =   "Scheda Medico di Base"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   10.8
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   -1  'True
@@ -35,26 +35,26 @@ Begin VB.Form frmMediciBase
          Appearance      =   0  'Flat
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   288
+         Height          =   315
          ItemData        =   "frmMediciBase.frx":0000
-         Left            =   5760
+         Left            =   5840
          List            =   "frmMediciBase.frx":0002
          Style           =   2  'Dropdown List
          TabIndex        =   6
          Top             =   2400
-         Width           =   876
+         Width           =   800
       End
       Begin VB.TextBox txtRiceve 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -82,7 +82,7 @@ Begin VB.Form frmMediciBase
       Begin VB.ComboBox cboTipologia 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -100,7 +100,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtNome 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -117,7 +117,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtCognome 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -134,7 +134,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtCitta 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -151,7 +151,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtIndirizzo 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -168,7 +168,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtTelefono 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -185,7 +185,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtEmail 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -202,7 +202,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtStudio 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -219,7 +219,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtCellulare 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -236,7 +236,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtFax 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -253,7 +253,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtCap 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -270,7 +270,7 @@ Begin VB.Form frmMediciBase
       Begin VB.TextBox txtCodiceMedico 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -289,7 +289,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Barcode Cod.Fisc. su ricetta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -314,7 +314,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Riceve"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -333,7 +333,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Tipologia medico"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -352,7 +352,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Studio"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -371,7 +371,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "E-mail"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -390,7 +390,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Telefono"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -409,7 +409,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Cellulare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -428,7 +428,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Fax"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -447,7 +447,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "C.A.P"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -466,7 +466,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Prov."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -475,9 +475,9 @@ Begin VB.Form frmMediciBase
          EndProperty
          Height          =   240
          Index           =   36
-         Left            =   5040
+         Left            =   5200
          TabIndex        =   26
-         Top             =   2400
+         Top             =   2430
          Width           =   552
       End
       Begin VB.Label Label1 
@@ -485,7 +485,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Indirizzo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -504,7 +504,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Città"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -523,7 +523,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -542,7 +542,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -561,7 +561,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "Codice Regionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -579,7 +579,7 @@ Begin VB.Form frmMediciBase
    Begin VB.Frame fraAzioni 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -595,7 +595,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -612,7 +612,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -630,7 +630,7 @@ Begin VB.Form frmMediciBase
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -647,7 +647,7 @@ Begin VB.Form frmMediciBase
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

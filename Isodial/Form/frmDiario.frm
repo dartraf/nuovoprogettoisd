@@ -3,21 +3,21 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmDiario 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "DIARIO CLINICO"
-   ClientHeight    =   5685
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   12210
+   ClientHeight    =   4908
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   12204
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   5685
-   ScaleWidth      =   12210
+   ScaleHeight     =   4908
+   ScaleWidth      =   12204
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
-      TabIndex        =   19
+      TabIndex        =   16
       Top             =   0
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
@@ -36,7 +36,7 @@ Begin VB.Form frmDiario
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmDiario
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmDiario
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -81,7 +81,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   285
          Left            =   11040
-         TabIndex        =   29
+         TabIndex        =   20
          Top             =   360
          Width           =   615
       End
@@ -90,7 +90,7 @@ Begin VB.Form frmDiario
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -100,7 +100,7 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   3
          Left            =   10440
-         TabIndex        =   22
+         TabIndex        =   19
          Top             =   360
          Width           =   465
       End
@@ -109,7 +109,7 @@ Begin VB.Form frmDiario
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -119,7 +119,7 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   1
          Left            =   6000
-         TabIndex        =   21
+         TabIndex        =   18
          Top             =   360
          Width           =   630
       End
@@ -128,7 +128,7 @@ Begin VB.Form frmDiario
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -138,32 +138,22 @@ Begin VB.Form frmDiario
          Height          =   240
          Index           =   0
          Left            =   1080
-         TabIndex        =   20
+         TabIndex        =   17
          Top             =   360
          Width           =   1005
       End
    End
    Begin VB.Frame Frame2 
-      Height          =   855
+      Height          =   732
       Left            =   120
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   720
       Width           =   12015
-      Begin VB.CheckBox chkFiltra 
-         Height          =   270
-         Left            =   1785
-         Picture         =   "frmDiario.frx":0459
-         Style           =   1  'Graphical
-         TabIndex        =   3
-         ToolTipText     =   "Filtra i diari registrati"
-         Top             =   290
-         Width           =   375
-      End
       Begin VB.CheckBox chkStampa 
          Caption         =   "Stampa In Cartella Clinica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -171,47 +161,129 @@ Begin VB.Form frmDiario
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   8900
-         TabIndex        =   6
-         Top             =   330
+         Left            =   3360
+         TabIndex        =   4
+         Top             =   300
          Width           =   3075
       End
-      Begin VB.ComboBox cboTitolo 
+      Begin DataTimeBox.uDataTimeBox oDataTimeBox 
+         Height          =   372
+         Left            =   1080
+         TabIndex        =   3
+         Top             =   230
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   656
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   -1  'True
+      End
+      Begin VB.Label Label1 
+         Alignment       =   1  'Right Justify
+         AutoSize        =   -1  'True
+         BackColor       =   &H8000000C&
+         BackStyle       =   0  'Transparent
+         Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   315
-         Left            =   2280
-         Sorted          =   -1  'True
-         Style           =   2  'Dropdown List
-         TabIndex        =   4
-         Top             =   285
-         Width           =   3495
+         Height          =   240
+         Index           =   41
+         Left            =   8688
+         TabIndex        =   25
+         Top             =   444
+         Width           =   876
       End
-      Begin DataTimeBox.uDataTimeBox oDataTimeBox 
-         Height          =   375
-         Left            =   6720
-         TabIndex        =   5
-         Top             =   255
-         Width           =   2100
-         _ExtentX        =   3704
-         _ExtentY        =   661
-         DataBox         =   -1  'True
-         TimeBox         =   0   'False
-         VisibleElenca   =   0   'False
+      Begin VB.Label lblNomeUtente 
+         BackColor       =   &H8000000E&
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   252
+         Left            =   9720
+         TabIndex        =   24
+         Top             =   480
+         Width           =   2172
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         BackColor       =   &H8000000E&
+         BackStyle       =   0  'Transparent
+         Caption         =   "Cognome"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   40
+         Left            =   8640
+         TabIndex        =   23
+         Top             =   168
+         Width           =   924
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ultima modifica effettuata da:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.6
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   480
+         Index           =   39
+         Left            =   6960
+         TabIndex        =   22
+         Top             =   168
+         Width           =   1560
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label lblCognomeUtente 
+         BackColor       =   &H8000000E&
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   252
+         Left            =   9720
+         TabIndex        =   21
+         Top             =   204
+         Width           =   2172
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -220,42 +292,23 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   6000
-         TabIndex        =   18
-         Top             =   300
-         Width           =   510
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Titolo Diario"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   4
-         Left            =   240
-         TabIndex        =   17
-         Top             =   300
-         Width           =   1305
+         Left            =   360
+         TabIndex        =   15
+         Top             =   260
+         Width           =   516
       End
    End
    Begin VB.Frame Frame3 
       Height          =   2775
       Left            =   120
-      TabIndex        =   15
-      Top             =   1440
+      TabIndex        =   13
+      Top             =   1320
       Width           =   12015
       Begin VB.TextBox txtDati 
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -266,123 +319,22 @@ Begin VB.Form frmDiario
          Left            =   120
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   7
+         TabIndex        =   5
          Top             =   210
          Width           =   11655
-      End
-   End
-   Begin VB.Frame Frame5 
-      Height          =   855
-      Left            =   120
-      TabIndex        =   23
-      Top             =   4080
-      Width           =   12015
-      Begin VB.Label lblNomeUtente 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   8400
-         TabIndex        =   28
-         Top             =   430
-         Width           =   3375
-      End
-      Begin VB.Label lblCognomeUtente 
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3600
-         TabIndex        =   27
-         Top             =   430
-         Width           =   3375
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ultima modifica effettuata da"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   480
-         Index           =   39
-         Left            =   240
-         TabIndex        =   26
-         Top             =   240
-         Width           =   1680
-         WordWrap        =   -1  'True
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Cognome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   40
-         Left            =   2400
-         TabIndex        =   25
-         Top             =   480
-         Width           =   1005
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Nome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   41
-         Left            =   7560
-         TabIndex        =   24
-         Top             =   480
-         Width           =   630
       End
    End
    Begin VB.Frame Frame4 
       Height          =   855
       Left            =   120
-      TabIndex        =   14
-      Top             =   4800
+      TabIndex        =   12
+      Top             =   3960
       Width           =   12015
       Begin VB.OptionButton OptStDiario 
          Caption         =   "Stampa &TUTTO"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -392,7 +344,7 @@ Begin VB.Form frmDiario
          Height          =   255
          Index           =   1
          Left            =   240
-         TabIndex        =   9
+         TabIndex        =   7
          Top             =   530
          Width           =   3160
       End
@@ -400,7 +352,7 @@ Begin VB.Form frmDiario
          Caption         =   "Stampa &VISTA CORRENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -410,7 +362,7 @@ Begin VB.Form frmDiario
          Height          =   255
          Index           =   0
          Left            =   240
-         TabIndex        =   8
+         TabIndex        =   6
          Top             =   200
          Value           =   -1  'True
          Width           =   3160
@@ -419,7 +371,7 @@ Begin VB.Form frmDiario
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -428,7 +380,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   7920
-         TabIndex        =   11
+         TabIndex        =   9
          Top             =   240
          Width           =   1215
       End
@@ -436,7 +388,7 @@ Begin VB.Form frmDiario
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -445,7 +397,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   6600
-         TabIndex        =   10
+         TabIndex        =   8
          Top             =   240
          Width           =   1215
       End
@@ -453,7 +405,7 @@ Begin VB.Form frmDiario
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -462,7 +414,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   9220
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   240
          Width           =   1270
       End
@@ -471,7 +423,7 @@ Begin VB.Form frmDiario
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -480,7 +432,7 @@ Begin VB.Form frmDiario
          EndProperty
          Height          =   495
          Left            =   10570
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   240
          Width           =   1215
       End
@@ -522,7 +474,8 @@ Private Sub cmdStampa_Click()
         Exit Sub
     End If
     
-    If OptStDiario(1).Value Then  ' stampa vista corrente
+    ' STAMPA TUTTO
+    If OptStDiario(1).Value = True Then
         Set rsDiario = New Recordset
         rsDiario.Open "SELECT COGNOME, NOME, DATA_NASCITA FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         structIntestazione.sPaziente = rsDiario("COGNOME") & " " & rsDiario("NOME")
@@ -532,12 +485,8 @@ Private Sub cmdStampa_Click()
         Call StampaDecimaParte(False, intPazientiKey)
         Exit Sub
     End If
-    
-'    If intPazientiKey = 0 Then
-'        MsgBox "Selezionare il paziente", vbInformation, "ATTENZIONE"
-'        Exit Sub
-'    End If
-     
+         
+     ' STAMPA QUELLA CORRENTE
      Dim codiceId As Integer
      Set rsDiario = New Recordset
      rsDiario.Open "SELECT COGNOME, NOME, DATA_NASCITA, CODICE_ID FROM PAZIENTI WHERE KEY=" & intPazientiKey, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
@@ -551,7 +500,6 @@ Private Sub cmdStampa_Click()
      Dim rsMain As Recordset         ' recordset padre per lo shape
         
      SQLString = "SHAPE APPEND " & _
-                 "   NEW adVarChar(50) AS TITOLO, " & _
                  "   NEW adDate AS DATA, " & _
                  "   NEW adLongVarChar AS DATI "
             
@@ -563,12 +511,11 @@ Private Sub cmdStampa_Click()
             
      ' carica il recordset padre
      Set rsDiario = New Recordset
-     rsDiario.Open "SELECT * FROM (DIARI_CLINICI D INNER JOIN TITOLI_DIARIO T ON T.KEY=D.CODICE_TITOLO) WHERE (CODICE_PAZIENTE=" & intPazientiKey & " AND STAMPA=TRUE AND D.KEY=" & keyId & ") ORDER BY CODICE_TITOLO, DATA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+     rsDiario.Open "SELECT * FROM DIARI_CLINICI WHERE KEY=" & keyId & "  AND STAMPA=TRUE ORDER BY DATA DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
      If Not (rsDiario.EOF And rsDiario.BOF) Then
         With rsMain
         Do While Not rsDiario.EOF
             .AddNew
-            .Fields("TITOLO") = rsDiario("NOME")
             .Fields("DATA") = rsDiario("DATA")
             .Fields("DATI") = rsDiario("DATI") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsDiario("UTENTE_MODIFICATORE"))
             rsDiario.MoveNext
@@ -585,12 +532,9 @@ Private Sub cmdStampa_Click()
 
 End Sub
 
-'' Ricarica le cbo
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
-    
-    Call RicaricaComboBox("TITOLI_DIARIO", "NOME", cboTitolo)
-        
+            
     Select Case CaricaPazienteInAperturaForm(Me.Caption, blnModificato, intPazientiKey)
         Case tpTrovaPaziente
             Call TrovaPaziente
@@ -609,8 +553,6 @@ Private Sub Form_Load()
     Me.Left = intLeft
     modifica = False
 
-    oDataTimeBox.EnableElenca (False)
-    oDataTimeBox.VisibleElenca = True
     Call ApriRsDisconnesso
     oDataTimeBox.ConnectionString = strConnectionStringCentro
 End Sub
@@ -687,8 +629,8 @@ Private Sub Confronta(rs As Recordset)
         Next i
         nome_campi = Left(nome_campi, Len(nome_campi) - 3)
         valori = Left(valori, Len(valori) - 3)
-        v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "DATA_RECORD", "CODICE_TITOLO", "NOME_CAMPI", "VECCHI_VALORI")
-        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rs("KEY"), oDataTimeBox.data, cboTitolo.ItemData(cboTitolo.ListIndex), nome_campi, valori)
+        v_Nomi = Array("CODICE_UTENTE", "DATA", "ORA", "CODICE_PAZIENTE", "CODICE_RECORD", "DATA_RECORD", "NOME_CAMPI", "VECCHI_VALORI")
+        v_Val = Array(tAccesso.key, date, Time, intPazientiKey, rs("KEY"), oDataTimeBox.data, nome_campi, valori)
         Set rsDataset = New Recordset
         rsDataset.Open "M_DIARI_CLINICI", cnTrac, adOpenKeyset, adLockPessimistic, adCmdTable
         rsDataset.AddNew v_Nomi, v_Val
@@ -716,32 +658,24 @@ End Sub
 Private Sub CaricaScheda()
     Dim data As Date
     Dim i As Integer
-    Dim strSql As String
     
-    If intPazientiKey <> 0 And oDataTimeBox.data <> "" And cboTitolo.ListIndex <> -1 Then
+    If intPazientiKey <> 0 And oDataTimeBox.data <> "" Then
         Call Pulisci
-            ' la data americana
-            data = Month(oDataTimeBox.data) & "/" & Day(oDataTimeBox.data) & "/" & Year(oDataTimeBox.data)
-    
-        strSql = "SELECT    DIARI_CLINICI.* " & _
-                "FROM       (DIARI_CLINICI " & _
-                "           INNER JOIN TITOLI_DIARIO ON TITOLI_DIARIO.KEY=DIARI_CLINICI.CODICE_TITOLO) " & _
-                "WHERE      (CODICE_PAZIENTE=" & intPazientiKey & ") AND " & _
-                "           (DATA=#" & data & "#) AND " & _
-                "           (TITOLI_DIARIO.KEY=" & cboTitolo.ItemData(cboTitolo.ListIndex) & ")"
+        ' la data americana
+        data = Month(oDataTimeBox.data) & "/" & Day(oDataTimeBox.data) & "/" & Year(oDataTimeBox.data)
         Set rsDiario = New Recordset
-        rsDiario.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+        rsDiario.Open "SELECT * FROM DIARI_CLINICI WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND (DATA=#" & data & "#)", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
         If Not (rsDiario.EOF And rsDiario.BOF) Then
             txtDati = rsDiario("DATI")
             chkStampa.Value = IIf(CBool(rsDiario("STAMPA")), Checked, Unchecked)
             keyId = rsDiario("KEY")
             Call CaricaUtenteModificatore(rsDiario("UTENTE_MODIFICATORE"))
             Call Upd_rsDisco
-            
             modifica = True
         Else
             modifica = False
         End If
+        
         Set rsDiario = Nothing
     End If
     blnModificato = False
@@ -758,10 +692,6 @@ Private Function Completo() As Boolean
         MsgBox "La data inserita non è corretta", vbCritical, "Attenzione"
         Exit Function
     End If
-    If cboTitolo.ListIndex = -1 Then
-        MsgBox "Selezionare il titolo", vbCritical, "Attenzione"
-        Exit Function
-    End If
     Completo = True
 End Function
 
@@ -776,25 +706,10 @@ End Sub
 
 Private Sub Pulisci()
     chkStampa.Value = Checked
-    chkFiltra.Value = Unchecked
     txtDati.Text = ""
     lblCognomeUtente.Caption = ""
     lblNomeUtente.Caption = ""
     blnModificato = False
-End Sub
-
-'' Filtra solo i titoli diario che il paziente ha effettuato
-Private Sub Filtra()
-    Dim strSql As String
-    If chkFiltra.Value = Checked Then
-        strSql = "SELECT    DISTINCT TITOLI_DIARIO.KEY, TITOLI_DIARIO.NOME " & _
-                 "FROM      (DIARI_CLINICI " & _
-                 "          INNER JOIN TITOLI_DIARIO ON DIARI_CLINICI.CODICE_TITOLO=TITOLI_DIARIO.KEY) " & _
-                 "WHERE      CODICE_PAZIENTE=" & intPazientiKey
-        Call RicaricaComboBox(strSql, "NOME", cboTitolo)
-    Else
-        Call RicaricaComboBox("TITOLI_DIARIO", "NOME", cboTitolo)
-    End If
 End Sub
 
 '' Carica i dati del paziente
@@ -822,7 +737,7 @@ Private Sub CaricaPaziente()
 End Sub
 
 Private Sub cmdChiudi_Click()
-    Unload Me
+    Unload frmDiario
 End Sub
 
 Private Sub cmdMemorizza_Click()
@@ -833,8 +748,8 @@ Private Sub cmdMemorizza_Click()
         If Not modifica Then
             keyId = GetNumero("DIARI_CLINICI")
         End If
-        v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "DATI", "STAMPA", "UTENTE_MODIFICATORE", "CODICE_TITOLO")
-        v_Val = Array(keyId, intPazientiKey, oDataTimeBox.data, txtDati, IIf(chkStampa.Value = Checked, True, False), tAccesso.key, cboTitolo.ItemData(cboTitolo.ListIndex))
+        v_Nomi = Array("KEY", "CODICE_PAZIENTE", "DATA", "DATI", "STAMPA", "UTENTE_MODIFICATORE")
+        v_Val = Array(keyId, intPazientiKey, oDataTimeBox.data, txtDati, IIf(chkStampa.Value = Checked, True, False), tAccesso.key)
         
         Set rsDiario = New Recordset
         If modifica Then
@@ -879,7 +794,7 @@ Private Sub cmdElimina_Click()
         If modifica Then
             If MsgBox("Sei sicuro di voler eliminare la scheda di: " & UCase(lblCognome) & " " & UCase(lblNome) & "?", vbQuestion & vbYesNo, "Eliminazione") = vbYes Then
                 Set rsDiario = New Recordset
-                rsDiario.Open "SELECT * FROM DIARI_CLINICI WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & oDataTimeBox.DataAmericana & "# AND CODICE_TITOLO=" & cboTitolo.ItemData(cboTitolo.ListIndex), cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
+                rsDiario.Open "SELECT * FROM DIARI_CLINICI WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND DATA=#" & oDataTimeBox.DataAmericana & "#", cnPrinc, adOpenKeyset, adLockOptimistic, adCmdText
                 If Not (rsDiario.BOF And rsDiario.EOF) Then
                     rsDiario.Delete
                 End If
@@ -893,37 +808,10 @@ Private Sub cmdElimina_Click()
     End If
 End Sub
 
-Private Sub chkFiltra_Click()
-    If intPazientiKey <> 0 Then
-        txtDati = ""
-        Call Filtra
-    End If
-End Sub
-
 '******** Gestione Modificato
 
 Private Sub chkStampa_Click()
     blnModificato = True
-End Sub
-
-Private Sub cboTitolo_Click()
-    ' puo elencare solo se il titolo è stato selezionato
-    If cboTitolo.ListIndex = -1 Then
-        oDataTimeBox.EnableElenca (False)
-    Else
-        oDataTimeBox.EnableElenca (True)
-        Call Pulisci
-        Call CaricaScheda
-    End If
-End Sub
-
-Private Sub oDataTimeBox_OnCalendarClick(blnProsegui As Boolean)
-    If cboTitolo.ListIndex = -1 Then
-        MsgBox "Selezionare il Titolo del Diario", vbInformation, "Informazione"
-        blnProsegui = False
-        Exit Sub
-    End If
-    blnProsegui = ControlloChiusuraForm(blnModificato, Me.Caption)
 End Sub
 
 Private Sub oDataTimeBox_OnDataChange()
@@ -936,21 +824,14 @@ Private Sub oDataTimeBox_OnDataChange()
 End Sub
 
 Private Sub oDataTimeBox_OnDataClick()
-    If cboTitolo.ListIndex = -1 Then
-        MsgBox "Selezionare il Titolo del Diario", vbInformation, "Informazione"
-        Exit Sub
-    ElseIf ControlloChiusuraForm(blnModificato, Me.Caption) Then
-        oDataTimeBox.Pulisci
-    End If
+    Call Pulisci
+    oDataTimeBox.Pulisci
 End Sub
 
 Private Sub oDataTimeBox_OnElencaClick()
-    If cboTitolo.ListIndex = -1 Then
-        MsgBox "Selezionare il Titolo del Diario", vbInformation, "Informazione"
-        Exit Sub
-    ElseIf ControlloChiusuraForm(blnModificato, Me.Caption) Then
+    If ControlloChiusuraForm(blnModificato, Me.Caption) Then
         tElenca.Tipo = tpDIARIO
-        tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey & " AND CODICE_TITOLO=" & cboTitolo.ItemData(cboTitolo.ListIndex)
+        tElenca.condizione = "WHERE CODICE_PAZIENTE=" & intPazientiKey
         frmElencaDate.Show 1
         If laData <> "" Then oDataTimeBox.data = laData
     Else
@@ -989,5 +870,3 @@ Private Sub Upd_rsDisco()
         Next i
         rsDisco.Update
 End Sub
-
-

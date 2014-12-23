@@ -1108,13 +1108,11 @@ End Sub
 '' Stampa diario clinico
 Public Sub StampaDecimaParte(formPazienti As Boolean, codicePaziente As Integer, Optional codiceId As Integer)
     Dim strShape As String
-    Dim strSql As String
     Dim rsDiario As Recordset
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
     
     strShape = "SHAPE APPEND " & _
-                "   NEW adVarChar(50) AS TITOLO, " & _
                 "   NEW adDate AS DATA, " & _
                 "   NEW adLongVarChar AS DATI "
         
@@ -1123,22 +1121,14 @@ Public Sub StampaDecimaParte(formPazienti As Boolean, codicePaziente As Integer,
     cnConn.Open "Data Provider=NONE; Provider=MSDataShape"
     Set rsMain = New ADODB.Recordset
     rsMain.Open strShape, cnConn, adOpenStatic, adLockOptimistic
-        
-    strSql = "SELECT    DATA, TITOLI_DIARIO.NOME as TITOLI_DIARIONOME, DATI, UTENTE_MODIFICATORE " & _
-             "FROM      (DIARI_CLINICI " & _
-             "          INNER JOIN TITOLI_DIARIO ON TITOLI_DIARIO.KEY=DIARI_CLINICI.CODICE_TITOLO) " & _
-             "WHERE     CODICE_PAZIENTE=" & codicePaziente & " AND " & _
-             "          STAMPA=TRUE " & _
-             "ORDER BY  CODICE_TITOLO, DATA"
     
     ' carica il recordset padre
     Set rsDiario = New Recordset
-    rsDiario.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    rsDiario.Open "SELECT * FROM DIARI_CLINICI WHERE (CODICE_PAZIENTE=" & codicePaziente & " AND STAMPA = TRUE) ORDER BY DATA DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDiario.EOF And rsDiario.BOF) Then
         With rsMain
             Do While Not rsDiario.EOF
                 .AddNew
-                .Fields("TITOLO") = rsDiario("TITOLI_DIARIONOME")
                 .Fields("DATA") = rsDiario("DATA")
                 .Fields("DATI") = rsDiario("DATI") & vbCrLf & vbCrLf & "Ultimo aggiornamento del dr./dr.ssa: " & GetUtente(rsDiario("UTENTE_MODIFICATORE"))
                 rsDiario.MoveNext

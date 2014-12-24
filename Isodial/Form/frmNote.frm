@@ -59,60 +59,60 @@ Begin VB.Form frmNote
       TabCaption(1)   =   "Versione 3.6.5"
       TabPicture(1)   =   "frmNote.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label10(0)"
-      Tab(1).Control(1)=   "Label11"
-      Tab(1).Control(2)=   "Label12"
-      Tab(1).Control(3)=   "Label10(1)"
-      Tab(1).Control(4)=   "Label13"
-      Tab(1).Control(5)=   "Label8(0)"
+      Tab(1).Control(0)=   "Label18"
+      Tab(1).Control(1)=   "Label17"
+      Tab(1).Control(2)=   "Label16"
+      Tab(1).Control(3)=   "Label4(5)"
+      Tab(1).Control(4)=   "Label15"
+      Tab(1).Control(5)=   "Label14"
       Tab(1).Control(6)=   "Label4(3)"
-      Tab(1).Control(7)=   "Label14"
-      Tab(1).Control(8)=   "Label15"
-      Tab(1).Control(9)=   "Label4(5)"
-      Tab(1).Control(10)=   "Label16"
-      Tab(1).Control(11)=   "Label17"
-      Tab(1).Control(12)=   "Label18"
+      Tab(1).Control(7)=   "Label8(0)"
+      Tab(1).Control(8)=   "Label13"
+      Tab(1).Control(9)=   "Label10(1)"
+      Tab(1).Control(10)=   "Label12"
+      Tab(1).Control(11)=   "Label11"
+      Tab(1).Control(12)=   "Label10(0)"
       Tab(1).ControlCount=   13
       TabCaption(2)   =   "Versione 3.6.4"
       TabPicture(2)   =   "frmNote.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label28"
-      Tab(2).Control(1)=   "Label10(6)"
-      Tab(2).Control(2)=   "Label27"
-      Tab(2).Control(3)=   "Label8(1)"
-      Tab(2).Control(4)=   "Label26"
-      Tab(2).Control(5)=   "Label25"
-      Tab(2).Control(6)=   "Label4(2)"
-      Tab(2).Control(7)=   "Label24"
-      Tab(2).Control(8)=   "Label23"
-      Tab(2).Control(9)=   "Label22"
-      Tab(2).Control(10)=   "Label21"
-      Tab(2).Control(11)=   "Label10(5)"
-      Tab(2).Control(12)=   "Label20"
-      Tab(2).Control(13)=   "Label10(4)"
+      Tab(2).Control(0)=   "Label10(4)"
+      Tab(2).Control(1)=   "Label20"
+      Tab(2).Control(2)=   "Label10(5)"
+      Tab(2).Control(3)=   "Label21"
+      Tab(2).Control(4)=   "Label22"
+      Tab(2).Control(5)=   "Label23"
+      Tab(2).Control(6)=   "Label24"
+      Tab(2).Control(7)=   "Label4(2)"
+      Tab(2).Control(8)=   "Label25"
+      Tab(2).Control(9)=   "Label26"
+      Tab(2).Control(10)=   "Label8(1)"
+      Tab(2).Control(11)=   "Label27"
+      Tab(2).Control(12)=   "Label10(6)"
+      Tab(2).Control(13)=   "Label28"
       Tab(2).ControlCount=   14
       TabCaption(3)   =   "Versione 3.6.3"
       TabPicture(3)   =   "frmNote.frx":035E
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Label44"
-      Tab(3).Control(1)=   "Label10(14)"
-      Tab(3).Control(2)=   "Label43"
-      Tab(3).Control(3)=   "Label8(3)"
-      Tab(3).Control(4)=   "Label42"
-      Tab(3).Control(5)=   "Label41"
-      Tab(3).Control(6)=   "Label4(4)"
-      Tab(3).Control(7)=   "Label40"
-      Tab(3).Control(8)=   "Label39"
+      Tab(3).Control(0)=   "Label10(10)"
+      Tab(3).Control(1)=   "Label10(11)"
+      Tab(3).Control(2)=   "Label33"
+      Tab(3).Control(3)=   "Label34"
+      Tab(3).Control(4)=   "Label35"
+      Tab(3).Control(5)=   "Label10(12)"
+      Tab(3).Control(6)=   "Label36"
+      Tab(3).Control(7)=   "Label10(13)"
+      Tab(3).Control(8)=   "Label37"
       Tab(3).Control(9)=   "Label38"
-      Tab(3).Control(10)=   "Label37"
-      Tab(3).Control(11)=   "Label10(13)"
-      Tab(3).Control(12)=   "Label36"
-      Tab(3).Control(13)=   "Label10(12)"
-      Tab(3).Control(14)=   "Label35"
-      Tab(3).Control(15)=   "Label34"
-      Tab(3).Control(16)=   "Label33"
-      Tab(3).Control(17)=   "Label10(11)"
-      Tab(3).Control(18)=   "Label10(10)"
+      Tab(3).Control(10)=   "Label39"
+      Tab(3).Control(11)=   "Label40"
+      Tab(3).Control(12)=   "Label4(4)"
+      Tab(3).Control(13)=   "Label41"
+      Tab(3).Control(14)=   "Label42"
+      Tab(3).Control(15)=   "Label8(3)"
+      Tab(3).Control(16)=   "Label43"
+      Tab(3).Control(17)=   "Label10(14)"
+      Tab(3).Control(18)=   "Label44"
       Tab(3).ControlCount=   19
       Begin VB.Label Label19 
          Caption         =   "Implementato il salto dei campi con il tasto INVIO"
@@ -1015,7 +1015,7 @@ Begin VB.Form frmNote
          Width           =   4335
       End
       Begin VB.Label Label9 
-         Caption         =   "-ANAGRAFIC A PAZIENTI-"
+         Caption         =   "-DIARIO CLINICO E TABELLA TITOLI DIARIO CLINICO -"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1029,11 +1029,11 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   9
-         Top             =   3960
-         Width           =   4335
+         Top             =   3150
+         Width           =   4935
       End
       Begin VB.Label Label10 
-         Caption         =   "Inserito nel pannello con status ""Deceduto"" la specifica della causa di morte del paziente secondo la tabella E.D.T.A."
+         Caption         =   "Eliminata la voce ""TITOLO"" e la relativa tabella"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1044,11 +1044,11 @@ Begin VB.Form frmNote
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00C00000&
-         Height          =   375
+         Height          =   255
          Index           =   2
          Left            =   120
          TabIndex        =   8
-         Top             =   4200
+         Top             =   3405
          Width           =   7095
       End
       Begin VB.Label Label7 

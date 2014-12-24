@@ -3,16 +3,16 @@ Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmDiario 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "DIARIO CLINICO"
-   ClientHeight    =   4908
-   ClientLeft      =   48
-   ClientTop       =   312
-   ClientWidth     =   12204
+   ClientHeight    =   4905
+   ClientLeft      =   45
+   ClientTop       =   315
+   ClientWidth     =   12210
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4908
-   ScaleWidth      =   12204
+   ScaleHeight     =   4905
+   ScaleWidth      =   12210
    ShowInTaskbar   =   0   'False
    Begin VB.Frame Frame1 
       Height          =   855
@@ -36,7 +36,7 @@ Begin VB.Form frmDiario
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmDiario
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmDiario
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmDiario
          Caption         =   "Anni"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -109,7 +109,7 @@ Begin VB.Form frmDiario
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -128,7 +128,7 @@ Begin VB.Form frmDiario
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -144,6 +144,7 @@ Begin VB.Form frmDiario
       End
    End
    Begin VB.Frame Frame2 
+      ForeColor       =   &H00FF0000&
       Height          =   732
       Left            =   120
       TabIndex        =   14
@@ -153,7 +154,7 @@ Begin VB.Form frmDiario
          Caption         =   "Stampa In Cartella Clinica"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -173,78 +174,17 @@ Begin VB.Form frmDiario
          Top             =   230
          Width           =   2100
          _ExtentX        =   3704
-         _ExtentY        =   656
+         _ExtentY        =   661
          DataBox         =   -1  'True
          TimeBox         =   0   'False
          VisibleElenca   =   -1  'True
-      End
-      Begin VB.Label Label1 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         BackColor       =   &H8000000C&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Nome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   41
-         Left            =   8688
-         TabIndex        =   25
-         Top             =   444
-         Width           =   876
       End
       Begin VB.Label lblNomeUtente 
          BackColor       =   &H8000000E&
          BackStyle       =   0  'Transparent
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   252
-         Left            =   9720
-         TabIndex        =   24
-         Top             =   480
-         Width           =   2172
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         BackColor       =   &H8000000E&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Cognome"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   40
-         Left            =   8640
-         TabIndex        =   23
-         Top             =   168
-         Width           =   924
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Ultima modifica effettuata da:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -252,12 +192,31 @@ Begin VB.Form frmDiario
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00FF0000&
+         Height          =   252
+         Left            =   9720
+         TabIndex        =   23
+         Top             =   445
+         Width           =   2172
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Ultimo aggiornamento del dr./dr.ssa"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
          Height          =   480
          Index           =   39
-         Left            =   6960
+         Left            =   7120
          TabIndex        =   22
-         Top             =   168
-         Width           =   1560
+         Top             =   165
+         Width           =   2490
          WordWrap        =   -1  'True
       End
       Begin VB.Label lblCognomeUtente 
@@ -265,17 +224,18 @@ Begin VB.Form frmDiario
          BackStyle       =   0  'Transparent
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00FF0000&
          Height          =   252
          Left            =   9720
          TabIndex        =   21
-         Top             =   204
+         Top             =   205
          Width           =   2172
       End
       Begin VB.Label Label1 
@@ -283,7 +243,7 @@ Begin VB.Form frmDiario
          Caption         =   "Data"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -308,7 +268,7 @@ Begin VB.Form frmDiario
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -334,7 +294,7 @@ Begin VB.Form frmDiario
          Caption         =   "Stampa &TUTTO"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -352,7 +312,7 @@ Begin VB.Form frmDiario
          Caption         =   "Stampa &VISTA CORRENTE"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -371,7 +331,7 @@ Begin VB.Form frmDiario
          Caption         =   "&Elimina"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -388,7 +348,7 @@ Begin VB.Form frmDiario
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -405,7 +365,7 @@ Begin VB.Form frmDiario
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -423,7 +383,7 @@ Begin VB.Form frmDiario
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

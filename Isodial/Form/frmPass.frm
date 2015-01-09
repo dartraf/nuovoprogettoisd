@@ -2,28 +2,28 @@ VERSION 5.00
 Begin VB.Form frmPass 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Verifìca password"
-   ClientHeight    =   2025
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   3345
+   ClientHeight    =   1788
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   3348
    Icon            =   "frmPass.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2025
-   ScaleWidth      =   3345
+   ScaleHeight     =   1788
+   ScaleWidth      =   3348
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraPassword 
-      Height          =   1095
+      Height          =   1092
       Left            =   120
       TabIndex        =   0
-      Top             =   120
+      Top             =   0
       Width           =   3135
       Begin VB.TextBox txtConferma 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -43,7 +43,7 @@ Begin VB.Form frmPass
       Begin VB.TextBox txtNuova 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -63,7 +63,7 @@ Begin VB.Form frmPass
       Begin VB.TextBox txtPassword 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -81,33 +81,34 @@ Begin VB.Form frmPass
          Width           =   2205
       End
       Begin VB.Image Image2 
-         Height          =   330
+         Height          =   264
          Index           =   2
          Left            =   120
          Picture         =   "frmPass.frx":030A
          Top             =   2280
-         Width           =   360
+         Width           =   288
       End
       Begin VB.Image Image2 
-         Height          =   330
+         Height          =   264
          Index           =   1
          Left            =   120
          Picture         =   "frmPass.frx":0494
          Top             =   1440
-         Width           =   360
+         Width           =   288
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Conferma password"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H000000FF&
          Height          =   240
          Index           =   1
          Left            =   120
@@ -120,13 +121,14 @@ Begin VB.Form frmPass
          Caption         =   "Nuova password"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H000000FF&
          Height          =   240
          Index           =   0
          Left            =   120
@@ -139,7 +141,7 @@ Begin VB.Form frmPass
          Caption         =   "Inserisci password corrente"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -154,32 +156,32 @@ Begin VB.Form frmPass
          Width           =   2865
       End
       Begin VB.Image Image2 
-         Height          =   330
+         Height          =   264
          Index           =   0
          Left            =   120
          Picture         =   "frmPass.frx":061E
          Top             =   600
-         Width           =   360
+         Width           =   288
       End
    End
    Begin VB.Frame fraPulsanti 
-      Height          =   855
+      Height          =   732
       Left            =   120
       TabIndex        =   6
-      Top             =   1080
+      Top             =   960
       Width           =   3135
       Begin VB.CommandButton cmdOK 
          Caption         =   "&OK"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
+         Height          =   372
          Left            =   120
          TabIndex        =   4
          Top             =   240
@@ -191,14 +193,14 @@ Begin VB.Form frmPass
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   495
+         Height          =   372
          Left            =   1680
          TabIndex        =   5
          Top             =   240
@@ -304,9 +306,33 @@ Private Sub Form_Load()
     password = tipoPass.password
 End Sub
 
+Private Sub txtConferma_GotFocus()
+    txtConferma.BackColor = colArancione
+End Sub
+
+Private Sub txtConferma_LostFocus()
+    txtConferma.BackColor = vbWhite
+End Sub
+
+Private Sub txtNuova_GotFocus()
+    txtNuova.BackColor = colArancione
+End Sub
+
+Private Sub txtNuova_LostFocus()
+    txtNuova.BackColor = vbWhite
+End Sub
+
+Private Sub txtPassword_GotFocus()
+    txtPassword.BackColor = colArancione
+End Sub
+
 '' Evita di chiudere il form con alt f4
 Private Sub txtPassword_KeyDown(KeyCode As Integer, Shift As Integer)
     If (Shift And vbAltMask) And KeyCode = vbKeyF4 Then
         KeyCode = 0
     End If
+End Sub
+
+Private Sub txtPassword_LostFocus()
+    txtPassword.BackColor = vbWhite
 End Sub

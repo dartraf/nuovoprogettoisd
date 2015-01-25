@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "09/01/2015"
+            TextSave        =   "25/01/2015"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1362,7 +1362,10 @@ Private Sub mnuSottoTabOrgan_Click(Index As Integer)
 End Sub
 
 Private Sub StampaRiepiloghiTerapieHelios()
+    
     On Error GoTo gestione
+    Dim MCognome As String
+    Dim MNome As String
     Dim intSessione As enumSessioni
     Dim strNomeSessione As String
     Dim strPeriodo As String
@@ -1419,6 +1422,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
             "       NEW adVarChar(10) AS LINKSUPERIORE, " & _
             "       ((SHAPE APPEND " & _
             "           NEW adVarChar(10) AS LINKSUPERIORE, " & _
+            "           NEW adVarChar(50) AS DICITURA_TERAPIA, " & _
             "           NEW adLongVarChar AS PAZIENTE, " & _
             "           NEW adVarChar(10) AS LINK1, " & _
             "           (( SHAPE APPEND " & _
@@ -1466,7 +1470,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
     
     Const intPuntiPrimoLivello As Integer = 4
     Const intPuntiSecondoLivello As Integer = 7
-    Const intPuntiTotali As Integer = 120 'determina il salto pagina - valore max 130
+    Const intPuntiTotali As Integer = 122 'determina il salto pagina - valore max 130
     
     strSql = "" & _
             " FROM      (((TERAPIE_DIALITICHE " & _
@@ -1480,6 +1484,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
     Do While Not rsDataset.EOF
         ReDim rigaCodiceMedicinale(0)
         intPuntiCorrente = intPuntiCorrente + intPuntiPrimoLivello
+        'aggiunge pagina solo se è stata stampata tutta la terapia del paziente
         If intPuntiCorrente + intPuntiSecondoLivello > intPuntiTotali Then
             rsMain.AddNew
             intPuntiCorrente = intPuntiPrimoLivello
@@ -1509,10 +1514,14 @@ Private Sub StampaRiepiloghiTerapieHelios()
             rsAppo.Open "SELECT MEDICINALI.*, TERAPIE_DIALITICHE.*, PAZIENTI.NOME, PAZIENTI.COGNOME " & strSql & strExtraWhereTurno & " AND PAZIENTI.KEY=" & rsDataset("KEY") & " AND (GIORNO" & Choose(j, 1, 3, 5) + intDifferenzaTurno & "=TRUE OR TUTTI_GIORNI=TRUE) ORDER BY MEDICINALI.NOME", cnPrinc, adOpenKeyset, adLockReadOnly, adCmdText
             strMedicinaliEsclusi = ""
             If rsAppo.RecordCount <> 0 Then
-                
                 For i = 1 To Int(rsAppo.RecordCount / intNumeroMaxMedicinali) + 1
                     intPuntiCorrente = intPuntiCorrente + intPuntiSecondoLivello
                     If intPuntiCorrente > intPuntiTotali Then
+                       'aggiunge pagina e lo stesso paziente se NON è stata stampata tutta la terapia
+                        If MCognome <> rsDataset("COGNOME") And MNome <> rsDataset("NOME") Then
+                        rsFiglio.Fields("DICITURA_TERAPIA") = "La Terapia continua sul foglio successivo"
+                        End If
+
                         intPuntiCorrente = intPuntiPrimoLivello + intPuntiSecondoLivello
                         intNumPagCorrente = intNumPagCorrente + 1
                         rsFiglio.Update
@@ -1527,6 +1536,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
                         rsFiglio.Fields("LINKSUPERIORE") = intNumPagCorrente
                         rsFiglio.Fields("LINK1") = rsDataset("KEY") & "-" & intNumPagCorrente & "-0"
                         rsFiglio.Fields("PAZIENTE") = rsDataset("COGNOME") & " " & rsDataset("NOME")
+                    Debug.Print
                     End If
                         
                     If i > 1 Then
@@ -1572,7 +1582,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
         
 ' Stampa Farmaci x Data
 '------------------------
-   Dim MGiorno As String
+    Dim MGiorno As String
 
     Dim anno As Integer
     Dim mm As Integer
@@ -1643,7 +1653,9 @@ Private Sub StampaRiepiloghiTerapieHelios()
             
         rsAppo.Close
         rsFiglio.Update
-       
+    MCognome = rsDataset("COGNOME")
+    MNome = rsDataset("NOME")
+    
     rsDataset.MoveNext
     Loop
     rsDataset.Close

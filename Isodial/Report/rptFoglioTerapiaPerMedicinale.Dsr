@@ -2,21 +2,21 @@ VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Foglio terapia"
-   ClientHeight    =   8685
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   15270
+   ClientHeight    =   8688
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   15264
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ShowInTaskbar   =   0   'False
-   _ExtentX        =   26935
-   _ExtentY        =   15319
+   _ExtentX        =   26945
+   _ExtentY        =   15325
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   14988
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -52,7 +52,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   26.25
+            Size            =   26.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Visible         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -101,15 +101,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "level2"
-      Object.Height          =   275
+      Object.Height          =   246
       KeepTogether    =   -1  'True
-      NumControls     =   2
+      NumControls     =   3
       ItemType0       =   6
       BeginProperty Item0 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Shape1"
-         Object.Width           =   14854
-         Object.Height          =   245
+         Object.Width           =   14856
+         Object.Height          =   240
          BackColor       =   12632256
          BackStyle       =   1
       EndProperty
@@ -122,7 +122,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -133,6 +133,32 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType2       =   4
+      BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txtDicituraTerapia"
+         Object.Left            =   113
+         Object.Width           =   4026
+         Object.Height          =   216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   10.2
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   "dd/MM/yyyy"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
@@ -156,7 +182,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -182,7 +208,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -208,7 +234,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -234,7 +260,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -260,7 +286,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -286,7 +312,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -312,7 +338,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -339,7 +365,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   288
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -366,7 +392,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -393,7 +419,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -420,7 +446,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -447,7 +473,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -474,7 +500,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -520,7 +546,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -579,7 +605,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -615,6 +641,8 @@ Private Sub DataReport_Initialize()
         With .Sections("level2").Controls
             .Item("txtPaziente").DataMember = "RES2"
             .Item("txtPaziente").DataField = "PAZIENTE"
+            .Item("txtDicituraTerapia").DataMember = "RES2"
+            .Item("txtDicituraTerapia").DataField = "DICITURA_TERAPIA"
         End With
         
         With .Sections("corpo").Controls

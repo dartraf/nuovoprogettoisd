@@ -13,7 +13,6 @@ Begin VB.Form frmLogin
    ScaleMode       =   0  'User
    ScaleWidth      =   2901.343
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtUserName 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -106,7 +105,18 @@ Dim ENTRA As Boolean        ' accesso rapido
 
 Private Sub Form_Load()
     Dim i As Integer
+    Dim X As Single
+    Dim Y As Single
     Call TakeCloseOff(Me.hWnd)
+    'sui tablet (Tablet = true) posiziona il form in alto
+    If Tablet Then
+        Me.Top = 2600
+        Me.Left = 6200
+    Else
+        X = (Screen.Width - Me.Width) / 2
+        Y = (Screen.Height - Me.Height) / 2
+        Me.Move X, Y
+    End If
     ' setta i menu di default
     With frmMain
         .mnuFatturazione.Visible = False

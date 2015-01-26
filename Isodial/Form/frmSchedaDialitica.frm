@@ -1566,66 +1566,66 @@ Begin VB.Form frmSchedaDialitica
       TabCaption(0)   =   "Scheda dialitica 1"
       TabPicture(0)   =   "frmSchedaDialitica.frx":08B2
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Label1(27)"
-      Tab(0).Control(1)=   "Label1(25)"
-      Tab(0).Control(2)=   "Label1(30)"
-      Tab(0).Control(3)=   "Label1(31)"
-      Tab(0).Control(4)=   "Label1(33)"
-      Tab(0).Control(5)=   "Label1(34)"
-      Tab(0).Control(6)=   "Label1(26)"
-      Tab(0).Control(7)=   "Label1(38)"
-      Tab(0).Control(8)=   "Label1(35)"
-      Tab(0).Control(9)=   "Label1(28)"
-      Tab(0).Control(10)=   "Label1(29)"
-      Tab(0).Control(11)=   "Label1(42)"
-      Tab(0).Control(12)=   "Label1(43)"
-      Tab(0).Control(13)=   "Label1(23)"
-      Tab(0).Control(14)=   "Label1(32)"
-      Tab(0).Control(15)=   "Label1(52)"
-      Tab(0).Control(16)=   "Label1(51)"
-      Tab(0).Control(17)=   "Label1(50)"
-      Tab(0).Control(18)=   "Label1(49)"
-      Tab(0).Control(19)=   "lblTipoLinee"
-      Tab(0).Control(20)=   "lblAgo1"
-      Tab(0).Control(21)=   "lblAgo2"
-      Tab(0).Control(22)=   "lblFiltro"
-      Tab(0).Control(23)=   "lblTipoDialisi"
-      Tab(0).Control(24)=   "lblAccessoVascolare"
-      Tab(0).Control(25)=   "lblAnticoagulante(0)"
-      Tab(0).Control(26)=   "lblAnticoagulante(1)"
-      Tab(0).Control(27)=   "lblPesoSecco"
-      Tab(0).Control(28)=   "lblUltimoPeso"
-      Tab(0).Control(29)=   "lblDataUltimoPeso"
-      Tab(0).Control(30)=   "lblOreDialisi"
-      Tab(0).Control(31)=   "lblDoseIniziale"
-      Tab(0).Control(32)=   "lblDoseAltroAnticoagulante"
-      Tab(0).Control(33)=   "lblSodio"
-      Tab(0).Control(34)=   "lblPotassio"
-      Tab(0).Control(35)=   "lblBicarbonato"
-      Tab(0).Control(36)=   "lblCalcio"
-      Tab(0).Control(37)=   "lblGlucosio"
-      Tab(0).Control(38)=   "Label1(48)"
-      Tab(0).Control(39)=   "lblDoseIntermedia"
-      Tab(0).Control(40)=   "Label1(54)"
-      Tab(0).Control(41)=   "lblDoseFinale"
-      Tab(0).Control(42)=   "Label1(55)"
-      Tab(0).Control(43)=   "lblDoseUnitaMisura"
+      Tab(0).Control(0)=   "lblDoseUnitaMisura"
+      Tab(0).Control(1)=   "Label1(55)"
+      Tab(0).Control(2)=   "lblDoseFinale"
+      Tab(0).Control(3)=   "Label1(54)"
+      Tab(0).Control(4)=   "lblDoseIntermedia"
+      Tab(0).Control(5)=   "Label1(48)"
+      Tab(0).Control(6)=   "lblGlucosio"
+      Tab(0).Control(7)=   "lblCalcio"
+      Tab(0).Control(8)=   "lblBicarbonato"
+      Tab(0).Control(9)=   "lblPotassio"
+      Tab(0).Control(10)=   "lblSodio"
+      Tab(0).Control(11)=   "lblDoseAltroAnticoagulante"
+      Tab(0).Control(12)=   "lblDoseIniziale"
+      Tab(0).Control(13)=   "lblOreDialisi"
+      Tab(0).Control(14)=   "lblDataUltimoPeso"
+      Tab(0).Control(15)=   "lblUltimoPeso"
+      Tab(0).Control(16)=   "lblPesoSecco"
+      Tab(0).Control(17)=   "lblAnticoagulante(1)"
+      Tab(0).Control(18)=   "lblAnticoagulante(0)"
+      Tab(0).Control(19)=   "lblAccessoVascolare"
+      Tab(0).Control(20)=   "lblTipoDialisi"
+      Tab(0).Control(21)=   "lblFiltro"
+      Tab(0).Control(22)=   "lblAgo2"
+      Tab(0).Control(23)=   "lblAgo1"
+      Tab(0).Control(24)=   "lblTipoLinee"
+      Tab(0).Control(25)=   "Label1(49)"
+      Tab(0).Control(26)=   "Label1(50)"
+      Tab(0).Control(27)=   "Label1(51)"
+      Tab(0).Control(28)=   "Label1(52)"
+      Tab(0).Control(29)=   "Label1(32)"
+      Tab(0).Control(30)=   "Label1(23)"
+      Tab(0).Control(31)=   "Label1(43)"
+      Tab(0).Control(32)=   "Label1(42)"
+      Tab(0).Control(33)=   "Label1(29)"
+      Tab(0).Control(34)=   "Label1(28)"
+      Tab(0).Control(35)=   "Label1(35)"
+      Tab(0).Control(36)=   "Label1(38)"
+      Tab(0).Control(37)=   "Label1(26)"
+      Tab(0).Control(38)=   "Label1(34)"
+      Tab(0).Control(39)=   "Label1(33)"
+      Tab(0).Control(40)=   "Label1(31)"
+      Tab(0).Control(41)=   "Label1(30)"
+      Tab(0).Control(42)=   "Label1(25)"
+      Tab(0).Control(43)=   "Label1(27)"
       Tab(0).ControlCount=   44
       TabCaption(1)   =   "Scheda dialitica 2"
       TabPicture(1)   =   "frmSchedaDialitica.frx":08CE
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(6)"
-      Tab(1).Control(1)=   "Label1(7)"
-      Tab(1).Control(2)=   "Label1(18)"
-      Tab(1).Control(3)=   "Label1(19)"
-      Tab(1).Control(4)=   "Label1(20)"
-      Tab(1).Control(5)=   "Label1(21)"
-      Tab(1).Control(6)=   "lblFlusso"
-      Tab(1).Control(7)=   "lblFlussoSangue"
-      Tab(1).Control(8)=   "lblSolDialitica"
-      Tab(1).Control(9)=   "lblSolInfusionale"
-      Tab(1).Control(10)=   "lblCartuccia"
-      Tab(1).Control(11)=   "lblSolInfCc"
+      Tab(1).Control(0)=   "lblSolInfCc"
+      Tab(1).Control(1)=   "lblCartuccia"
+      Tab(1).Control(2)=   "lblSolInfusionale"
+      Tab(1).Control(3)=   "lblSolDialitica"
+      Tab(1).Control(4)=   "lblFlussoSangue"
+      Tab(1).Control(5)=   "lblFlusso"
+      Tab(1).Control(6)=   "Label1(21)"
+      Tab(1).Control(7)=   "Label1(20)"
+      Tab(1).Control(8)=   "Label1(19)"
+      Tab(1).Control(9)=   "Label1(18)"
+      Tab(1).Control(10)=   "Label1(7)"
+      Tab(1).Control(11)=   "Label1(6)"
       Tab(1).ControlCount=   12
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaDialitica.frx":08EA
@@ -2934,15 +2934,15 @@ Private Function Completo() As Boolean
         MsgBox "La data inserita non è corretta", vbCritical, "Attenzione"
         Exit Function
     End If
-    If txtPesoFinale = "" Then
-        MsgBox "Inserire il peso finale", vbCritical, "Attenzione"
-        Exit Function
-    End If
     If txtPesoIniziale = "" Then
         MsgBox "Inserire il peso iniziale", vbCritical, "Attenzione"
         Exit Function
     End If
-    If txtIncremento = "" Then
+    If txtPesoFinale = "" And Tablet = False Then
+        MsgBox "Inserire il peso finale", vbCritical, "Attenzione"
+        Exit Function
+    End If
+    If txtIncremento = "" And Tablet = False Then
         MsgBox "Inserire l'incremento ponderale", vbCritical, "Attenzione"
         Exit Function
     End If
@@ -2954,11 +2954,11 @@ Private Function Completo() As Boolean
         MsgBox "Inserire la frequenza cardiaca iniziale", vbCritical, "Attenzione"
         Exit Function
     End If
-    If txtFC(4) = "" Then
+    If txtFC(4) = "" And Tablet = False Then
         MsgBox "Inserire la frequenza cardiaca finale", vbCritical, "Attenzione"
         Exit Function
     End If
-    If txtPressioneMin(4) = "" Or txtPressioneMax(4) = "" Then
+    If (txtPressioneMin(4) = "" Or txtPressioneMax(4) = "") And Tablet = False Then
         MsgBox "Inserire la pressione finale", vbCritical, "Attenzione"
         Exit Function
     End If
@@ -2990,9 +2990,11 @@ Private Function Completo() As Boolean
             Exit Function
         End If
     End If
-    If CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 7 Then
-        MsgBox "Differenza peso iniziale-finale maggiore di 7 Kg", vbCritical, "Attenzione"
-        Exit Function
+    If Not txtPesoFinale = "" Then
+        If txtPesoFinale <> 0 And CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 7 Then
+            MsgBox "Differenza peso iniziale-finale maggiore di 7 Kg", vbCritical, "Attenzione"
+            Exit Function
+        End If
     End If
     If Abs(CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - PesoSeccoDialitico) > 5 Then
         If Not MsgBox("Il peso iniziale è troppo diverso dal peso secco prescritto." & vbCrLf & "Sei sicuro di memorizzarlo?", vbCritical + vbYesNo + vbDefaultButton2, "Attenzione") = vbYes Then

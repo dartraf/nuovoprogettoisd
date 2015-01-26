@@ -2922,6 +2922,15 @@ ErrHandle:
   End If
 End Function
 
+' controlla attraverso il nome del computer se trattasi di tablet
+Public Function Tablet() As Boolean
+    If Environ$("COMPUTERNAME") = "TABLET1" Then
+        Tablet = True
+    Else
+        Tablet = False
+    End If
+End Function
+
 'Public Sub Select_Data()
 'Dim periodo As Integer
 '        Unload frmTrova

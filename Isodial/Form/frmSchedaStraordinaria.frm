@@ -146,76 +146,76 @@ Begin VB.Form frmSchedaStraordinaria
       TabCaption(1)   =   "Scheda dialitica"
       TabPicture(1)   =   "frmSchedaStraordinaria.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(27)"
-      Tab(1).Control(1)=   "Label1(33)"
-      Tab(1).Control(2)=   "Label1(34)"
-      Tab(1).Control(3)=   "Label1(42)"
-      Tab(1).Control(4)=   "Label1(25)"
-      Tab(1).Control(5)=   "Label1(26)"
-      Tab(1).Control(6)=   "Label1(38)"
-      Tab(1).Control(7)=   "Label1(35)"
-      Tab(1).Control(8)=   "Label1(29)"
-      Tab(1).Control(9)=   "Label1(21)"
-      Tab(1).Control(10)=   "Label1(20)"
-      Tab(1).Control(11)=   "Label1(19)"
-      Tab(1).Control(12)=   "Label1(18)"
-      Tab(1).Control(13)=   "Label1(28)"
-      Tab(1).Control(14)=   "Label1(5)"
-      Tab(1).Control(15)=   "Label1(7)"
-      Tab(1).Control(16)=   "Label1(6)"
-      Tab(1).Control(17)=   "Label1(23)"
-      Tab(1).Control(18)=   "Label1(43)"
-      Tab(1).Control(19)=   "Label1(31)"
-      Tab(1).Control(20)=   "Label1(30)"
-      Tab(1).Control(21)=   "Label1(32)"
-      Tab(1).Control(22)=   "Label1(46)"
-      Tab(1).Control(23)=   "Label1(47)"
-      Tab(1).Control(24)=   "Label1(48)"
-      Tab(1).Control(25)=   "Label1(49)"
-      Tab(1).Control(26)=   "Label1(52)"
-      Tab(1).Control(27)=   "Label1(54)"
-      Tab(1).Control(28)=   "Label1(55)"
-      Tab(1).Control(29)=   "oData(1)"
-      Tab(1).Control(30)=   "txtPesoSecco"
-      Tab(1).Control(31)=   "txtUltimoPeso"
-      Tab(1).Control(32)=   "txtOre"
-      Tab(1).Control(33)=   "txtDoseAltroAnticoagulante"
-      Tab(1).Control(34)=   "txtDoseIniziale"
-      Tab(1).Control(35)=   "txtSolInfCc"
-      Tab(1).Control(36)=   "cboTipoDialisi"
-      Tab(1).Control(37)=   "txtMinuti"
-      Tab(1).Control(38)=   "cboAnticoagulante(0)"
-      Tab(1).Control(39)=   "cboAnticoagulante(1)"
-      Tab(1).Control(40)=   "cboSolDialitica"
-      Tab(1).Control(41)=   "cboSolInf"
-      Tab(1).Control(42)=   "cboCartuccia"
-      Tab(1).Control(43)=   "txtFlussoSangue"
-      Tab(1).Control(44)=   "txtFlusso"
-      Tab(1).Control(45)=   "txtCalcio"
-      Tab(1).Control(46)=   "txtBicarbonato"
-      Tab(1).Control(47)=   "txtSodio"
-      Tab(1).Control(48)=   "txtPotassio"
-      Tab(1).Control(49)=   "cboTipoAgo(1)"
-      Tab(1).Control(50)=   "cboTipoAgo(0)"
-      Tab(1).Control(51)=   "cboAccesso"
-      Tab(1).Control(52)=   "cboTipoLinee"
-      Tab(1).Control(53)=   "txtGlucosio"
-      Tab(1).Control(54)=   "txtDoseIntermedia"
-      Tab(1).Control(55)=   "txtDoseFinale"
-      Tab(1).Control(56)=   "cboDosiUnitaMisura"
-      Tab(1).Control(57)=   "cboTipoFiltro"
+      Tab(1).Control(0)=   "cboTipoFiltro"
+      Tab(1).Control(1)=   "cboDosiUnitaMisura"
+      Tab(1).Control(2)=   "txtDoseFinale"
+      Tab(1).Control(3)=   "txtDoseIntermedia"
+      Tab(1).Control(4)=   "txtGlucosio"
+      Tab(1).Control(5)=   "cboTipoLinee"
+      Tab(1).Control(6)=   "cboAccesso"
+      Tab(1).Control(7)=   "cboTipoAgo(0)"
+      Tab(1).Control(8)=   "cboTipoAgo(1)"
+      Tab(1).Control(9)=   "txtPotassio"
+      Tab(1).Control(10)=   "txtSodio"
+      Tab(1).Control(11)=   "txtBicarbonato"
+      Tab(1).Control(12)=   "txtCalcio"
+      Tab(1).Control(13)=   "txtFlusso"
+      Tab(1).Control(14)=   "txtFlussoSangue"
+      Tab(1).Control(15)=   "cboCartuccia"
+      Tab(1).Control(16)=   "cboSolInf"
+      Tab(1).Control(17)=   "cboSolDialitica"
+      Tab(1).Control(18)=   "cboAnticoagulante(1)"
+      Tab(1).Control(19)=   "cboAnticoagulante(0)"
+      Tab(1).Control(20)=   "txtMinuti"
+      Tab(1).Control(21)=   "cboTipoDialisi"
+      Tab(1).Control(22)=   "txtSolInfCc"
+      Tab(1).Control(23)=   "txtDoseIniziale"
+      Tab(1).Control(24)=   "txtDoseAltroAnticoagulante"
+      Tab(1).Control(25)=   "txtOre"
+      Tab(1).Control(26)=   "txtUltimoPeso"
+      Tab(1).Control(27)=   "txtPesoSecco"
+      Tab(1).Control(28)=   "oData(1)"
+      Tab(1).Control(29)=   "Label1(55)"
+      Tab(1).Control(30)=   "Label1(54)"
+      Tab(1).Control(31)=   "Label1(52)"
+      Tab(1).Control(32)=   "Label1(49)"
+      Tab(1).Control(33)=   "Label1(48)"
+      Tab(1).Control(34)=   "Label1(47)"
+      Tab(1).Control(35)=   "Label1(46)"
+      Tab(1).Control(36)=   "Label1(32)"
+      Tab(1).Control(37)=   "Label1(30)"
+      Tab(1).Control(38)=   "Label1(31)"
+      Tab(1).Control(39)=   "Label1(43)"
+      Tab(1).Control(40)=   "Label1(23)"
+      Tab(1).Control(41)=   "Label1(6)"
+      Tab(1).Control(42)=   "Label1(7)"
+      Tab(1).Control(43)=   "Label1(5)"
+      Tab(1).Control(44)=   "Label1(28)"
+      Tab(1).Control(45)=   "Label1(18)"
+      Tab(1).Control(46)=   "Label1(19)"
+      Tab(1).Control(47)=   "Label1(20)"
+      Tab(1).Control(48)=   "Label1(21)"
+      Tab(1).Control(49)=   "Label1(29)"
+      Tab(1).Control(50)=   "Label1(35)"
+      Tab(1).Control(51)=   "Label1(38)"
+      Tab(1).Control(52)=   "Label1(26)"
+      Tab(1).Control(53)=   "Label1(25)"
+      Tab(1).Control(54)=   "Label1(42)"
+      Tab(1).Control(55)=   "Label1(34)"
+      Tab(1).Control(56)=   "Label1(33)"
+      Tab(1).Control(57)=   "Label1(27)"
       Tab(1).ControlCount=   58
       TabCaption(2)   =   "Terapia"
       TabPicture(2)   =   "frmSchedaStraordinaria.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label1(37)"
-      Tab(2).Control(1)=   "Label1(36)"
-      Tab(2).Control(2)=   "flxGriglia(1)"
-      Tab(2).Control(3)=   "flxGriglia(0)"
-      Tab(2).Control(4)=   "cmdInserisci(0)"
-      Tab(2).Control(5)=   "cmdInserisci(1)"
-      Tab(2).Control(6)=   "txtAppo"
-      Tab(2).Control(7)=   "cboMedicinali"
+      Tab(2).Control(0)=   "cboMedicinali"
+      Tab(2).Control(1)=   "txtAppo"
+      Tab(2).Control(2)=   "cmdInserisci(1)"
+      Tab(2).Control(3)=   "cmdInserisci(0)"
+      Tab(2).Control(4)=   "flxGriglia(0)"
+      Tab(2).Control(5)=   "flxGriglia(1)"
+      Tab(2).Control(6)=   "Label1(36)"
+      Tab(2).Control(7)=   "Label1(37)"
       Tab(2).ControlCount=   8
       Begin VB.TextBox txtKtvRilevato 
          Alignment       =   1  'Right Justify
@@ -3300,12 +3300,12 @@ Private Function Completo() As Boolean
         MsgBox "La data non è stata specificata", vbCritical, "Attenzione"
         Exit Function
     End If
-    If txtPesoFinale = "" Then
-        MsgBox "Inserire il peso finale", vbCritical, "Attenzione"
-        Exit Function
-    End If
     If txtPesoIniziale = "" Then
         MsgBox "Inserire il peso iniziale", vbCritical, "Attenzione"
+        Exit Function
+    End If
+    If txtPesoFinale = "" And Tablet = False Then
+        MsgBox "Inserire il peso finale", vbCritical, "Attenzione"
         Exit Function
     End If
     If txtIncremento = "" Then
@@ -3316,7 +3316,7 @@ Private Function Completo() As Boolean
         MsgBox "Inserire la pressione iniziale", vbCritical, "Attenzione"
         Exit Function
     End If
-    If txtPressioneMin(4) = "" Or txtPressioneMax(4) = "" Then
+    If (txtPressioneMin(4) = "" Or txtPressioneMax(4) = "") And Tablet = False Then
         MsgBox "Inserire la pressione finale", vbCritical, "Attenzione"
         Exit Function
     End If
@@ -3400,9 +3400,11 @@ Private Function Completo() As Boolean
             Exit Function
         End If
     End If
-    If CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 7 Then
-        MsgBox "Differenza peso iniziale-finale maggiore di 7 Kg", vbCritical, "Attenzione"
-        Exit Function
+    If Not txtPesoFinale = "" Then
+        If txtPesoFinale <> 0 And CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - CSng(VirgolaOrPunto(txtPesoFinale, ".")) > 7 Then
+            MsgBox "Differenza peso iniziale-finale maggiore di 7 Kg", vbCritical, "Attenzione"
+            Exit Function
+        End If
     End If
     If Abs(CSng(VirgolaOrPunto(txtPesoIniziale, ".")) - PesoSeccoDialitico) > 5 Then
         If Not MsgBox("Il peso iniziale è troppo diverso dal peso secco prescritto." & vbCrLf & "Sei sicuro di memorizzarlo?", vbCritical + vbYesNo + vbDefaultButton2, "Attenzione") = vbYes Then

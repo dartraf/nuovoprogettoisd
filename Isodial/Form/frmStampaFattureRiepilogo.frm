@@ -267,8 +267,8 @@ Begin VB.Form frmStampaFattureRiepilogo
       TabIndex        =   8
       Top             =   600
       Width           =   5295
-      Begin VB.CommandButton VisualizzaFE 
-         Caption         =   "Visualizza Fatture EL."
+      Begin VB.CommandButton ControllaFE 
+         Caption         =   "C&ontrolla Fatt.EL."
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -280,13 +280,31 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   1280
+         Left            =   1960
+         TabIndex        =   20
+         Top             =   240
+         Width           =   910
+      End
+      Begin VB.CommandButton VisualizzaFE 
+         Caption         =   "&Visualizza Fatt.EL."
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   495
+         Left            =   980
          TabIndex        =   19
          Top             =   240
-         Width           =   1140
+         Width           =   970
       End
       Begin VB.CommandButton fattelettr 
-         Caption         =   "&Fattura Elettronica"
+         Caption         =   "&Fattura Elettr."
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -298,10 +316,10 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   80
+         Left            =   60
          TabIndex        =   18
          Top             =   240
-         Width           =   1140
+         Width           =   900
       End
       Begin VB.CommandButton cmdStampa 
          Cancel          =   -1  'True
@@ -316,7 +334,7 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   2880
+         Left            =   2920
          TabIndex        =   4
          Top             =   240
          Width           =   1140
@@ -354,12 +372,21 @@ Dim doc As New DOMDocument60
 Dim napoli3 As Boolean
 Dim numfat As Integer
 Dim txtPercorso As String
-
+Dim ret As Integer
+    
 Dim FE_Descrizione As String
 Dim FE_Quantita As Integer
 Dim FE_PrezzoUnit As Single
 Dim FE_PrezzoTot As Single
 Dim FE_NumLinea As Integer
+
+Private Sub ControllaFE_Click()
+    'Apre nel browser il link per il controllo della FE
+    'SHOW_SHOWNORMAL = 1
+    'SHOW_SHOWMAXIMIZED = 3
+    ret = ShellExecute(Me.hWnd, "open", "http://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=controlla_fattura", vbNullString, vbNullString, 1)
+    If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
+End Sub
 
 Private Sub Form_Load()
     Dim rsDataset As New Recordset
@@ -2805,7 +2832,7 @@ Private Sub fattelettr_Click()
     Dim MProgr_Invio As String
     Dim NameXML As String
     Dim NameExtXML As String
-    Dim ret As Integer
+  '  Dim ret As Integer
            
   '  Dim rsDataset As New Recordset
   '  Dim rsAppo As New Recordset

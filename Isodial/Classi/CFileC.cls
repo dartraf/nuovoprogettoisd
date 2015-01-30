@@ -133,6 +133,7 @@ Public Function CreaFiles(percorso As String) As Boolean
     Dim i As Integer
     Dim k As Integer
     
+    Dim NuovaCartella As String
     Dim cronologiaPrescrizione As Integer
     Dim importoTotale As Single
     Dim ticket As Single
@@ -384,27 +385,32 @@ Public Function CreaFiles(percorso As String) As Boolean
     If retcode = 0 Then
         Kill nomeFile2 & ".c1"
         Kill nomeFile2 & ".c2"
-        If percorso <> App.Path Then
-            If Dir(percorso & "\" & nomeFile & ".c1") <> "" Then Kill percorso & "\" & nomeFile & ".c1"
-            If Dir(percorso & "\" & nomeFile & ".c2") <> "" Then Kill percorso & "\" & nomeFile & ".c2"
-            If Dir(percorso & "\" & nomeFile & "c1.txt") <> "" Then Kill percorso & "\" & nomeFile & "c1.txt"
-            If Dir(percorso & "\" & nomeFile & "c2.txt") <> "" Then Kill percorso & "\" & nomeFile & "c2.txt"
-            If Dir(percorso & "\" & nomeFile & "_ANA" & ".zip") <> "" Then Kill percorso & "\" & nomeFile & "_ANA" & ".zip"
-            If Dir(percorso & "\" & nomeFile & "_SAN" & ".zip") <> "" Then Kill percorso & "\" & nomeFile & "_SAN" & ".zip"
-            If Dir(percorso & "\" & nomeFile & ".zip") <> "" Then Kill percorso & "\" & nomeFile & ".zip"
-            If Dir(percorso & "\" & nomeFile2 & ".zip") <> "" Then Kill percorso & "\" & nomeFile2 & ".zip"
+        If percorso <> App.path Then
+            'imposta cartella con il nome del mese e dell'anno
+            NuovaCartella = percorso & "\FILE C " & UCase(MonthName(mese)) & " " & anno
+            If Dir(NuovaCartella & "\" & nomeFile & ".c1") <> "" Then Kill NuovaCartella & "\" & nomeFile & ".c1"
+            If Dir(NuovaCartella & "\" & nomeFile & ".c2") <> "" Then Kill NuovaCartella & "\" & nomeFile & ".c2"
+            If Dir(NuovaCartella & "\" & nomeFile & "c1.txt") <> "" Then Kill NuovaCartella & "\" & nomeFile & "c1.txt"
+            If Dir(NuovaCartella & "\" & nomeFile & "c2.txt") <> "" Then Kill NuovaCartella & "\" & nomeFile & "c2.txt"
+            If Dir(NuovaCartella & "\" & nomeFile & "_ANA" & ".zip") <> "" Then Kill NuovaCartella & "\" & nomeFile & "_ANA" & ".zip"
+            If Dir(NuovaCartella & "\" & nomeFile & "_SAN" & ".zip") <> "" Then Kill NuovaCartella & "\" & nomeFile & "_SAN" & ".zip"
+            If Dir(NuovaCartella & "\" & nomeFile & ".zip") <> "" Then Kill NuovaCartella & "\" & nomeFile & ".zip"
+            If Dir(NuovaCartella & "\" & nomeFile2 & ".zip") <> "" Then Kill NuovaCartella & "\" & nomeFile2 & ".zip"
 
-            Name App.Path & "\" & nomeFile & ".c1" As percorso & "\" & nomeFile & ".c1"
-            Name App.Path & "\" & nomeFile & ".c2" As percorso & "\" & nomeFile & ".c2"
-            Name App.Path & "\" & nomeFile & "c1.txt" As percorso & "\" & nomeFile & "c1.txt"
-            Name App.Path & "\" & nomeFile & "c2.txt" As percorso & "\" & nomeFile & "c2.txt"
-            Name App.Path & "\" & nomeFile & "_ANA" & ".zip" As percorso & "\" & nomeFile & "_ANA" & ".zip"
-            Name App.Path & "\" & nomeFile & "_SAN" & ".zip" As percorso & "\" & nomeFile & "_SAN" & ".zip"
-            Name App.Path & "\" & nomeFile & ".zip" As percorso & "\" & nomeFile & ".zip"
-            Name App.Path & "\" & nomeFile2 & ".zip" As percorso & "\" & nomeFile2 & ".zip"
+            If DirExists(NuovaCartella) = False Then MkDir NuovaCartella
+                        
+            Name App.path & "\" & nomeFile & ".c1" As NuovaCartella & "\" & nomeFile & ".c1"
+            Name App.path & "\" & nomeFile & ".c2" As NuovaCartella & "\" & nomeFile & ".c2"
+            Name App.path & "\" & nomeFile & "c1.txt" As NuovaCartella & "\" & nomeFile & "c1.txt"
+            Name App.path & "\" & nomeFile & "c2.txt" As NuovaCartella & "\" & nomeFile & "c2.txt"
+            Name App.path & "\" & nomeFile & "_ANA" & ".zip" As NuovaCartella & "\" & nomeFile & "_ANA" & ".zip"
+            Name App.path & "\" & nomeFile & "_SAN" & ".zip" As NuovaCartella & "\" & nomeFile & "_SAN" & ".zip"
+            Name App.path & "\" & nomeFile & ".zip" As NuovaCartella & "\" & nomeFile & ".zip"
+            Name App.path & "\" & nomeFile2 & ".zip" As NuovaCartella & "\" & nomeFile2 & ".zip"
         End If
         MsgBox "File C1 e C2 creati correttamente", vbInformation, "Gestione file C"
     End If
     
     CreaFiles = True
 End Function
+

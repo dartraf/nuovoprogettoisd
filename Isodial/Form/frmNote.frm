@@ -24,13 +24,14 @@ Begin VB.Form frmNote
       _ExtentY        =   10610
       _Version        =   393216
       Tabs            =   4
+      Tab             =   1
       TabsPerRow      =   4
       TabHeight       =   520
       BackColor       =   -2147483626
       ForeColor       =   8388608
       TabCaption(0)   =   "Versione 3.6.6"
       TabPicture(0)   =   "frmNote.frx":030A
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Label1"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Label3"
@@ -49,71 +50,101 @@ Begin VB.Form frmNote
       Tab(0).Control(7).Enabled=   0   'False
       Tab(0).Control(8)=   "Label9"
       Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "Label32"
+      Tab(0).Control(9)=   "Label19"
       Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "Label10(9)"
+      Tab(0).Control(10)=   "Label10(3)"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "Label19"
-      Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).ControlCount=   12
+      Tab(0).ControlCount=   11
       TabCaption(1)   =   "Versione 3.6.5"
       TabPicture(1)   =   "frmNote.frx":0326
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label18"
-      Tab(1).Control(1)=   "Label17"
-      Tab(1).Control(2)=   "Label16"
-      Tab(1).Control(3)=   "Label4(5)"
-      Tab(1).Control(4)=   "Label15"
-      Tab(1).Control(5)=   "Label14"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "Label10(0)"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Label11"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "Label12"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "Label10(1)"
+      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(4)=   "Label13"
+      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(5)=   "Label8(0)"
+      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "Label4(3)"
-      Tab(1).Control(7)=   "Label8(0)"
-      Tab(1).Control(8)=   "Label13"
-      Tab(1).Control(9)=   "Label10(1)"
-      Tab(1).Control(10)=   "Label12"
-      Tab(1).Control(11)=   "Label11"
-      Tab(1).Control(12)=   "Label10(0)"
+      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(7)=   "Label14"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "Label15"
+      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(9)=   "Label4(5)"
+      Tab(1).Control(9).Enabled=   0   'False
+      Tab(1).Control(10)=   "Label16"
+      Tab(1).Control(10).Enabled=   0   'False
+      Tab(1).Control(11)=   "Label17"
+      Tab(1).Control(11).Enabled=   0   'False
+      Tab(1).Control(12)=   "Label18"
+      Tab(1).Control(12).Enabled=   0   'False
       Tab(1).ControlCount=   13
       TabCaption(2)   =   "Versione 3.6.4"
       TabPicture(2)   =   "frmNote.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label10(4)"
-      Tab(2).Control(1)=   "Label20"
-      Tab(2).Control(2)=   "Label10(5)"
-      Tab(2).Control(3)=   "Label21"
-      Tab(2).Control(4)=   "Label22"
-      Tab(2).Control(5)=   "Label23"
-      Tab(2).Control(6)=   "Label24"
-      Tab(2).Control(7)=   "Label4(2)"
-      Tab(2).Control(8)=   "Label25"
-      Tab(2).Control(9)=   "Label26"
-      Tab(2).Control(10)=   "Label8(1)"
-      Tab(2).Control(11)=   "Label27"
-      Tab(2).Control(12)=   "Label10(6)"
-      Tab(2).Control(13)=   "Label28"
+      Tab(2).Control(0)=   "Label28"
+      Tab(2).Control(1)=   "Label10(6)"
+      Tab(2).Control(2)=   "Label27"
+      Tab(2).Control(3)=   "Label8(1)"
+      Tab(2).Control(4)=   "Label26"
+      Tab(2).Control(5)=   "Label25"
+      Tab(2).Control(6)=   "Label4(2)"
+      Tab(2).Control(7)=   "Label24"
+      Tab(2).Control(8)=   "Label23"
+      Tab(2).Control(9)=   "Label22"
+      Tab(2).Control(10)=   "Label21"
+      Tab(2).Control(11)=   "Label10(5)"
+      Tab(2).Control(12)=   "Label20"
+      Tab(2).Control(13)=   "Label10(4)"
       Tab(2).ControlCount=   14
       TabCaption(3)   =   "Versione 3.6.3"
       TabPicture(3)   =   "frmNote.frx":035E
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Label10(10)"
-      Tab(3).Control(1)=   "Label10(11)"
-      Tab(3).Control(2)=   "Label33"
-      Tab(3).Control(3)=   "Label34"
-      Tab(3).Control(4)=   "Label35"
-      Tab(3).Control(5)=   "Label10(12)"
-      Tab(3).Control(6)=   "Label36"
-      Tab(3).Control(7)=   "Label10(13)"
-      Tab(3).Control(8)=   "Label37"
+      Tab(3).Control(0)=   "Label44"
+      Tab(3).Control(1)=   "Label10(14)"
+      Tab(3).Control(2)=   "Label43"
+      Tab(3).Control(3)=   "Label8(3)"
+      Tab(3).Control(4)=   "Label42"
+      Tab(3).Control(5)=   "Label41"
+      Tab(3).Control(6)=   "Label4(4)"
+      Tab(3).Control(7)=   "Label40"
+      Tab(3).Control(8)=   "Label39"
       Tab(3).Control(9)=   "Label38"
-      Tab(3).Control(10)=   "Label39"
-      Tab(3).Control(11)=   "Label40"
-      Tab(3).Control(12)=   "Label4(4)"
-      Tab(3).Control(13)=   "Label41"
-      Tab(3).Control(14)=   "Label42"
-      Tab(3).Control(15)=   "Label8(3)"
-      Tab(3).Control(16)=   "Label43"
-      Tab(3).Control(17)=   "Label10(14)"
-      Tab(3).Control(18)=   "Label44"
+      Tab(3).Control(10)=   "Label37"
+      Tab(3).Control(11)=   "Label10(13)"
+      Tab(3).Control(12)=   "Label36"
+      Tab(3).Control(13)=   "Label10(12)"
+      Tab(3).Control(14)=   "Label35"
+      Tab(3).Control(15)=   "Label34"
+      Tab(3).Control(16)=   "Label33"
+      Tab(3).Control(17)=   "Label10(11)"
+      Tab(3).Control(18)=   "Label10(10)"
       Tab(3).ControlCount=   19
+      Begin VB.Label Label10 
+         Caption         =   "-Implementata la creazione automatica sul desktop della specifica cartella mensile/annuale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   375
+         Index           =   3
+         Left            =   -74880
+         TabIndex        =   57
+         Top             =   3020
+         Width           =   6495
+      End
       Begin VB.Label Label19 
          Caption         =   "Implementato il salto dei campi con il tasto INVIO"
          BeginProperty Font 
@@ -127,8 +158,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   255
-         Left            =   120
-         TabIndex        =   58
+         Left            =   -74880
+         TabIndex        =   56
          Top             =   720
          Width           =   6735
       End
@@ -145,8 +176,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   57
+         Left            =   120
+         TabIndex        =   55
          Top             =   480
          Width           =   2775
       End
@@ -163,8 +194,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   56
+         Left            =   120
+         TabIndex        =   54
          Top             =   720
          Width           =   3375
       End
@@ -181,8 +212,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   55
+         Left            =   120
+         TabIndex        =   53
          Top             =   1200
          Width           =   2775
       End
@@ -200,8 +231,8 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Index           =   5
-         Left            =   -74880
-         TabIndex        =   54
+         Left            =   120
+         TabIndex        =   52
          Top             =   1440
          Width           =   7095
       End
@@ -218,8 +249,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   375
-         Left            =   -74880
-         TabIndex        =   53
+         Left            =   120
+         TabIndex        =   51
          Top             =   2400
          Width           =   7095
       End
@@ -236,8 +267,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   52
+         Left            =   120
+         TabIndex        =   50
          Top             =   2160
          Width           =   2775
       End
@@ -255,8 +286,8 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Index           =   3
-         Left            =   -74880
-         TabIndex        =   51
+         Left            =   120
+         TabIndex        =   49
          Top             =   1680
          Width           =   7095
       End
@@ -274,8 +305,8 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   375
          Index           =   0
-         Left            =   -74880
-         TabIndex        =   50
+         Left            =   120
+         TabIndex        =   48
          Top             =   3315
          Width           =   7095
       End
@@ -292,8 +323,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   49
+         Left            =   120
+         TabIndex        =   47
          Top             =   3075
          Width           =   2775
       End
@@ -311,8 +342,8 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   375
          Index           =   1
-         Left            =   -74880
-         TabIndex        =   48
+         Left            =   120
+         TabIndex        =   46
          Top             =   4155
          Width           =   7095
       End
@@ -329,8 +360,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   47
+         Left            =   120
+         TabIndex        =   45
          Top             =   3915
          Width           =   4335
       End
@@ -347,8 +378,8 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   -74880
-         TabIndex        =   46
+         Left            =   120
+         TabIndex        =   44
          Top             =   4755
          Width           =   4335
       End
@@ -366,8 +397,8 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Index           =   0
-         Left            =   -74880
-         TabIndex        =   45
+         Left            =   120
+         TabIndex        =   43
          Top             =   4995
          Width           =   7095
       End
@@ -385,7 +416,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   44
+         TabIndex        =   42
          Top             =   3120
          Width           =   4335
       End
@@ -404,7 +435,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   6
          Left            =   -74880
-         TabIndex        =   43
+         TabIndex        =   41
          Top             =   3360
          Width           =   7095
       End
@@ -422,7 +453,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   42
+         TabIndex        =   40
          Top             =   2520
          Width           =   2775
       End
@@ -441,7 +472,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   1
          Left            =   -74880
-         TabIndex        =   41
+         TabIndex        =   39
          Top             =   2760
          Width           =   7455
       End
@@ -459,7 +490,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   40
+         TabIndex        =   38
          Top             =   1920
          Width           =   2775
       End
@@ -477,7 +508,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   39
+         TabIndex        =   37
          Top             =   2160
          Width           =   7095
       End
@@ -496,7 +527,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   2
          Left            =   -74880
-         TabIndex        =   38
+         TabIndex        =   36
          Top             =   1560
          Width           =   7095
       End
@@ -514,7 +545,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   37
+         TabIndex        =   35
          Top             =   1320
          Width           =   2775
       End
@@ -532,7 +563,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   375
          Left            =   -74880
-         TabIndex        =   36
+         TabIndex        =   34
          Top             =   765
          Width           =   7455
       End
@@ -550,7 +581,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   35
+         TabIndex        =   33
          Top             =   480
          Width           =   2775
       End
@@ -568,7 +599,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   34
+         TabIndex        =   32
          Top             =   3720
          Width           =   4335
       End
@@ -587,7 +618,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   5
          Left            =   -74880
-         TabIndex        =   33
+         TabIndex        =   31
          Top             =   3960
          Width           =   7095
       End
@@ -605,7 +636,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   32
+         TabIndex        =   30
          Top             =   4320
          Width           =   4335
       End
@@ -624,7 +655,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   4
          Left            =   -74880
-         TabIndex        =   31
+         TabIndex        =   29
          Top             =   4560
          Width           =   7095
       End
@@ -642,7 +673,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   30
+         TabIndex        =   28
          Top             =   3570
          Width           =   4335
       End
@@ -661,7 +692,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   14
          Left            =   -74880
-         TabIndex        =   29
+         TabIndex        =   27
          Top             =   3780
          Width           =   7095
       End
@@ -679,7 +710,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   2565
          Width           =   2775
       End
@@ -698,7 +729,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   3
          Left            =   -74880
-         TabIndex        =   27
+         TabIndex        =   25
          Top             =   2805
          Width           =   7455
       End
@@ -716,7 +747,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   1755
          Width           =   3495
       End
@@ -734,7 +765,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   25
+         TabIndex        =   23
          Top             =   1995
          Width           =   7095
       End
@@ -753,7 +784,7 @@ Begin VB.Form frmNote
          Height          =   375
          Index           =   4
          Left            =   -74880
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   1275
          Width           =   7455
       End
@@ -771,7 +802,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   1035
          Width           =   3135
       End
@@ -789,7 +820,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   750
          Width           =   7455
       End
@@ -807,7 +838,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   480
          Width           =   2775
       End
@@ -825,7 +856,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   4080
          Width           =   4335
       End
@@ -844,7 +875,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   13
          Left            =   -74880
-         TabIndex        =   19
+         TabIndex        =   17
          Top             =   4320
          Width           =   7095
       End
@@ -862,7 +893,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   4635
          Width           =   4335
       End
@@ -881,7 +912,7 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   12
          Left            =   -74880
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   4860
          Width           =   7095
       End
@@ -899,7 +930,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   2235
          Width           =   7095
       End
@@ -917,7 +948,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   3255
          Width           =   7095
       End
@@ -935,7 +966,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   5175
          Width           =   4335
       End
@@ -954,7 +985,7 @@ Begin VB.Form frmNote
          Height          =   375
          Index           =   11
          Left            =   -74880
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   5400
          Width           =   7455
       End
@@ -973,46 +1004,9 @@ Begin VB.Form frmNote
          Height          =   255
          Index           =   10
          Left            =   -74880
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   3045
          Width           =   7095
-      End
-      Begin VB.Label Label10 
-         Caption         =   "Implementate le tabelle per la gestione e generazione delle fatture elettroniche"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   255
-         Index           =   9
-         Left            =   120
-         TabIndex        =   11
-         Top             =   5040
-         Width           =   7095
-      End
-      Begin VB.Label Label32 
-         Caption         =   "-PREDISPOSIZIONE FATTURA ELETTRONICA-"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   255
-         Left            =   120
-         TabIndex        =   10
-         Top             =   4800
-         Width           =   4335
       End
       Begin VB.Label Label9 
          Caption         =   "-DIARIO CLINICO E TABELLA TITOLI DIARIO CLINICO -"
@@ -1027,9 +1021,9 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   9
-         Top             =   3150
+         Top             =   3580
          Width           =   4935
       End
       Begin VB.Label Label10 
@@ -1046,13 +1040,13 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Index           =   2
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   8
-         Top             =   3405
+         Top             =   3860
          Width           =   7095
       End
       Begin VB.Label Label7 
-         Caption         =   "-FATTURAZIONE - FILE C-"
+         Caption         =   "-FATTURAZIONE - FILE C - FILE XML"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1064,13 +1058,13 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   7
-         Top             =   2540
-         Width           =   2655
+         Top             =   2560
+         Width           =   3375
       End
       Begin VB.Label Label8 
-         Caption         =   "Aggiunti i file C in formato TXT"
+         Caption         =   "-Aggiunti i file C in formato TXT"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1083,10 +1077,10 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Index           =   2
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   6
-         Top             =   2780
-         Width           =   2655
+         Top             =   2805
+         Width           =   3015
       End
       Begin VB.Label Label5 
          Caption         =   "-ESAMI DI LABORATORIO-REGISTRAZIONE"
@@ -1101,7 +1095,7 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   5
          Top             =   1725
          Width           =   3975
@@ -1119,7 +1113,7 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   375
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   4
          Top             =   1980
          Width           =   7095
@@ -1138,7 +1132,7 @@ Begin VB.Form frmNote
          ForeColor       =   &H00C00000&
          Height          =   255
          Index           =   0
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   3
          Top             =   1320
          Width           =   7455
@@ -1156,7 +1150,7 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   2
          Top             =   1080
          Width           =   2775
@@ -1174,7 +1168,7 @@ Begin VB.Form frmNote
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   255
-         Left            =   110
+         Left            =   -74890
          TabIndex        =   1
          Top             =   480
          Width           =   7540

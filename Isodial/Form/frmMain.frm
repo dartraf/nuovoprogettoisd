@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "26/01/2015"
+            TextSave        =   "30/01/2015"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1522,7 +1522,7 @@ Private Sub StampaRiepiloghiTerapieHelios()
                     If intPuntiCorrente > intPuntiTotali Then
                        'aggiunge pagina e lo stesso paziente se NON è stata stampata tutta la terapia
                         If MCognome = rsDataset("COGNOME") And MNome = rsDataset("NOME") Then
-                            rsFiglio.Fields("DICITURA_TERAPIA") = "LA TERAPIA CONTINUA SUL FOGLIO SUCCESSIVO"
+                            rsFiglio.Fields("DICITURA_TERAPIA") = " LA TERAPIA CONTINUA SUL FOGLIO SUCCESSIVO"
                         End If
 
                         intPuntiCorrente = intPuntiPrimoLivello + intPuntiSecondoLivello
@@ -2400,7 +2400,7 @@ Public Sub SubClassMenuXP()
 
     Set MenuEvents = New CEvents
     Set objMenuEx = New cMenuEx
-    Call objMenuEx.Install(Me.hWnd, App.Path & "\" & Me.Name, ImageList1, 2, MenuEvents)
+    Call objMenuEx.Install(Me.hWnd, App.path & "\" & Me.Name, ImageList1, 2, MenuEvents)
 
 End Sub
 

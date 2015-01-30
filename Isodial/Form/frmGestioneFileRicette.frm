@@ -213,6 +213,7 @@ Option Explicit
 '' oggetto documentoXML
 Dim doc As New DOMDocument60
 Dim ret As Boolean
+Dim Nuovacartella As String
 
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
@@ -565,8 +566,11 @@ Private Function GeneraFileXML() As Boolean
     Loop
     rsDataset.Close
     
+    Nuovacartella = txtPercorso & "\FILE XML " & UCase(MonthName(cboMese.ListIndex + 1)) & " " & cboAnno.Text
+    If DirExists(Nuovacartella) = False Then MkDir Nuovacartella
+    
     rsDataset.Open "INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdTable
-    doc.Save txtPercorso & "\" & structIntestazione.sCodiceSTS & "_" & Format(cboMese.ListIndex + 1, "00") & cboAnno.Text & Format(date, "ddmmyyyy") & ".xml"
+    doc.Save Nuovacartella & "\" & structIntestazione.sCodiceSTS & "_" & Format(cboMese.ListIndex + 1, "00") & cboAnno.Text & Format(date, "ddmmyyyy") & ".xml"
     rsDataset.Close
     
     GeneraFileXML = True

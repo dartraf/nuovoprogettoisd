@@ -144,10 +144,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDicituraTerapia"
-         Object.Left            =   113
-         Object.Top             =   10
-         Object.Width           =   5800
-         Object.Height          =   216
+         Object.Left            =   10
+         Object.Width           =   5700
+         Object.Height          =   195
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   11.25
@@ -157,6 +156,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFoglioTerapiaPerMedicinale
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   16777215
+         BackColor       =   0
+         BackStyle       =   1
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   "dd/MM/yyyy"

@@ -197,6 +197,7 @@ Module=modGetSysOp; Moduli\modGetSysOp.bas
 Form=Form\frmFatEle.frm
 Form=Form\frmVisualizzaFattureElettroniche.frm
 Form=Form\frmNote.frm
+Form=Form\frmVisualizzaDialisiMensiliPazienti.frm
 ResFile32="Risorse.res"
 IconForm="frmCalendario"
 Startup="Sub Main"

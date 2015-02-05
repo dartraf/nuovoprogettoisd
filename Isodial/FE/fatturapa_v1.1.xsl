@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <xsl:stylesheet 
-	version="1.0" 
+	version="1.1" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	xmlns:a="http://www.fatturapa.gov.it/sdi/fatturapa/v1.0">
+	xmlns:a="http://www.fatturapa.gov.it/sdi/fatturapa/v1.1">
 	<xsl:output method="html" />
 
 	<xsl:template name="FormatDate">
@@ -38,7 +38,7 @@
 				Luglio
 			</xsl:when>
 			<xsl:when test="$month = '8' or $month = '08'">
-				Agusto
+				Agosto
 			</xsl:when>
 			<xsl:when test="$month = '9' or $month = '09'">
 				Settembre
@@ -358,8 +358,10 @@
 																		(IVA per cassa P.A.)
 																	</xsl:when>
 																	<xsl:when test="$RF='RF17'">
-																		(IVA per cassa soggetti con vol. d’affari inferiore ad
-																		euro 200.000)
+																		(IVA per cassa - art. 32-bis, D.L. 83/2012)
+																	</xsl:when>
+																	<xsl:when test="$RF='RF19'">
+																		(Regime forfettario)
 																	</xsl:when>
 																	<xsl:when test="$RF='RF18'">
 																		(altro)
@@ -1050,14 +1052,16 @@
 																</span>
 															</li>
 														</xsl:if>
-														<xsl:if test="DatiGenerali/DatiGeneraliDocumento/Causale">
+														<xsl:for-each select="DatiGenerali/DatiGeneraliDocumento/Causale">
+															
 															<li>
 																Causale:
 																<span>
-																	<xsl:value-of select="DatiGenerali/DatiGeneraliDocumento/Causale" />
+																	<xsl:value-of select="current()" />
 																</span>
 															</li>
-														</xsl:if>
+															
+														</xsl:for-each>
 														<xsl:if test="DatiGenerali/DatiGeneraliDocumento/Art73">
 															<li>
 																Art. 73 DPR 633/72:
@@ -1140,11 +1144,11 @@
 															<xsl:for-each select="DatiGenerali/DatiGeneraliDocumento/DatiBollo">
 																<h4>Bollo</h4>
 																<ul>
-																	<xsl:if test="NumeroBollo">
+																	<xsl:if test="BolloVirtuale">
 																		<li>
-																			Numero bollo:
+																			Bollo virtuale:
 																			<span>
-																				<xsl:value-of select="NumeroBollo" />
+																				<xsl:value-of select="BolloVirtuale" />
 																			</span>
 																		</li>
 																	</xsl:if>
@@ -1334,6 +1338,9 @@
 																				</xsl:when>
 																				<xsl:when test="$NT='N5'">
 																					(regime del margine)
+																				</xsl:when>
+																				<xsl:when test="$NT='N6'">
+																					(inversione contabile)
 																				</xsl:when>
 																				<xsl:when test="$NT=''">
 																				</xsl:when>
@@ -2094,22 +2101,6 @@
 											</xsl:if>
 											<!--FINE DATI TRASPORTO-->
 
-											<!--INIZIO NORMA RIFERIMENTO-->
-											<xsl:if test="DatiGenerali/NormaDiRiferimento">
-												<div id="norma-riferimento">
-													<h3>Reverse charge</h3>
-													<ul>
-														<li>
-															Riferimento normativo:
-															<span>
-																<xsl:value-of select="DatiGenerali/NormaDiRiferimento" />
-															</span>
-														</li>
-													</ul>
-												</div>
-											</xsl:if>
-											<!--FINE NORMA RIFERIMENTO-->
-
 											<!--INIZIO FATTURA PRINCIPALE-->
 											<xsl:if test="DatiGenerali/FatturaPrincipale/NumeroFatturaPrincipale">
 												<div id="fattura-principale">
@@ -2339,7 +2330,7 @@
 																<li>
 																	Soggetta a ritenuta:
 																	<span>
-																		<xsl:value-of select="k" />
+																		<xsl:value-of select="Ritenuta" />
 																	</span>
 																</li>
 															</xsl:if>
@@ -2367,6 +2358,9 @@
 																		</xsl:when>
 																		<xsl:when test="$NAT='N5'">
 																			(regime del margine)
+																		</xsl:when>
+																		<xsl:when test="$NAT='N6'">
+																			(inversione contabile)
 																		</xsl:when>
 																		<xsl:otherwise>
 																			<span>(!!! codice non previsto !!!)</span>
@@ -2470,6 +2464,9 @@
 																		</xsl:when>
 																		<xsl:when test="$NAT1='N5'">
 																			(regime del margine)
+																		</xsl:when>
+																		<xsl:when test="$NAT1='N6'">
+																			(inversione contabile)
 																		</xsl:when>
 																		<xsl:otherwise>
 																			<span>(!!! codice non previsto !!!)</span>
@@ -2659,7 +2656,7 @@
 																				(bollettino bancario)
 																			</xsl:when>
 																			<xsl:when test="$MP='MP08'">
-																				(carta di credito)
+																				(carta di pagamento)
 																			</xsl:when>
 																			<xsl:when test="$MP='MP09'">
 																				(RID)
@@ -2687,6 +2684,18 @@
 																			</xsl:when>
 																			<xsl:when test="$MP='MP17'">
 																				(domiciliazione postale)
+																			</xsl:when>
+																			<xsl:when test="$MP='MP18'">
+																				(bollettino di c/c postale)
+																			</xsl:when>
+																			<xsl:when test="$MP='MP19'">
+																				(SEPA Direct Debit)
+																			</xsl:when>
+																			<xsl:when test="$MP='MP20'">
+																				(SEPA Direct Debit CORE)
+																			</xsl:when>
+																			<xsl:when test="$MP='MP21'">
+																				(SEPA Direct Debit B2B)
 																			</xsl:when>
 																			<xsl:when test="$MP=''">
 																			</xsl:when>

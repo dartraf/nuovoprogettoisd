@@ -305,7 +305,6 @@ Begin VB.Form frmStampaFattureRiepilogo
       End
       Begin VB.CommandButton fattelettr 
          Caption         =   "&Fattura Elettr."
-         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -2855,15 +2854,15 @@ Private Sub fattelettr_Click()
     Set doc = Nothing
     ' versione
     ' ?xml version="1.0" encoding="UTF-8"?
-    ' ?xml-stylesheet type="text/xsl" href="fatturapa_v1.0.xsl"?
+    ' ?xml-stylesheet type="text/xsl" href="fatturapa_v1.1xsl"?
     Set proc = doc.createProcessingInstruction("xml", "version='1.0' encoding='UTF-8'")
     doc.appendChild proc
-    Set proc = doc.createProcessingInstruction("xml-stylesheet", "type='text/xsl' href='fatturapa_v1.0.xsl'")
+    Set proc = doc.createProcessingInstruction("xml-stylesheet", "type='text/xsl' href='fatturapa_v1.1.xsl'")
     doc.appendChild proc
            
-    '<p:FatturaElettronica versione="1.0"
+    '<p:FatturaElettronica versione="1.1"
     'xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-    'xmlns:p="http://www.fatturapa.gov.it/sdi/fatturapa/v1.0"
+    'xmlns:p="http://www.fatturapa.gov.it/sdi/fatturapa/v1.1"
     'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     
     ' root
@@ -2871,7 +2870,7 @@ Private Sub fattelettr_Click()
     doc.appendChild root
     
     Set attr = doc.createAttribute("versione")
-    attr.Value = "1.0"
+    attr.Value = "1.1"
     root.setAttributeNode attr
  
     Set attr = doc.createAttribute("xmlns:ds")
@@ -2879,7 +2878,7 @@ Private Sub fattelettr_Click()
     root.setAttributeNode attr
     
     Set attr = doc.createAttribute("xmlns:p")
-    attr.Value = "http://www.fatturapa.gov.it/sdi/fatturapa/v1.0"
+    attr.Value = "http://www.fatturapa.gov.it/sdi/fatturapa/v1.1"
     root.setAttributeNode attr
     
     Set attr = doc.createAttribute("xmlns:xsi")
@@ -2922,7 +2921,7 @@ Private Sub fattelettr_Click()
     
     'aggiunge al 1° elemento i nodi
     nodo1.appendChild CreaNodo("ProgressivoInvio", MProgr_Invio & "-" & cboAnno.Text)
-    nodo1.appendChild CreaNodo("FormatoTrasmissione", "SDI10")
+    nodo1.appendChild CreaNodo("FormatoTrasmissione", "SDI11")
     nodo1.appendChild CreaNodo("CodiceDestinatario", MCod_Destinatario)
     
     'crea 2° elemento e nodi
@@ -3062,8 +3061,8 @@ Private Sub fattelettr_Click()
     
     'crea 3° elemento e nodi punto 2.2.1.6
     Set nodo3 = doc.createElement("DatiBollo")
-'       nodo3.appendChild CreaNodo("BolloVirtuale", "SI") 'versione 1.1
-        nodo3.appendChild CreaNodo("NumeroBollo", "DM-17-GIU-2014") 'dicitura temporanea
+       nodo3.appendChild CreaNodo("BolloVirtuale", "SI") 'versione 1.1
+'       nodo3.appendChild CreaNodo("NumeroBollo", "DM-17-GIU-2014") 'dicitura temporanea
         nodo3.appendChild CreaNodo("ImportoBollo", VirgolaOrPunto(Format(rsDataset("IMPORTO_BOLLO"), "#####.00"), ","))
         'aggiunge al 2° elemento l'elemento e i nodi del 3° elemento
         nodo2.appendChild nodo3

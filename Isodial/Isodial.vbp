@@ -198,6 +198,7 @@ Form=Form\frmFatEle.frm
 Form=Form\frmVisualizzaFattureElettroniche.frm
 Form=Form\frmNote.frm
 Form=Form\frmVisualizzaDialisiMensiliPazienti.frm
+Designer=Report\rptDialisiMensiliPazienti.Dsr
 ResFile32="Risorse.res"
 IconForm="frmCalendario"
 Startup="Sub Main"

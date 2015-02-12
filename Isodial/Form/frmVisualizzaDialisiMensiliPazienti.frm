@@ -241,7 +241,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Top             =   240
          Width           =   1215
       End
-      Begin VB.Label lblVoci 
+      Begin VB.Label lblTotalePazienti 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.6
@@ -433,20 +433,36 @@ Dim h As Integer
     Next i
             
     lblTotaleDialisi.Caption = totaleDialisi
-    lblVoci = flxGriglia.Rows - 1
+    lblTotalePazienti = flxGriglia.Rows - 1
     End If
 End Sub
 
 Private Sub cmdStampa_Click()
-    Dim SQLString As String
-    Dim cnConn As Connection        ' connessione per lo shape
-    Dim rsMain As Recordset         ' recordset padre per lo shape
-    Dim i As Integer
+Dim SQLString As String
+Dim cnConn As Connection        ' connessione per lo shape
+Dim rsMain As Recordset         ' recordset padre per lo shape
+Dim i As Integer
+    
+    If flxGriglia.Row = 0 Then
+        MsgBox "Nessuna Dialisi Mensile per Paziente da stampare", vbInformation, "Informazione"
+        Exit Sub
+    Else
     
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(50) AS PAZIENTE, " & _
-                "       NEW adInteger AS TOTALE, " & _
-                "       NEW adLongVarChar AS DIALISI "
+                "       NEW adInteger AS DIALISI_GEN, " & _
+                "       NEW adInteger AS DIALISI_FEB, " & _
+                "       NEW adInteger AS DIALISI_MAR, " & _
+                "       NEW adInteger AS DIALISI_APR, " & _
+                "       NEW adInteger AS DIALISI_MAG, " & _
+                "       NEW adInteger AS DIALISI_GIU, " & _
+                "       NEW adInteger AS DIALISI_LUG, " & _
+                "       NEW adInteger AS DIALISI_AGO, " & _
+                "       NEW adInteger AS DIALISI_SET, " & _
+                "       NEW adInteger AS DIALISI_OTT, " & _
+                "       NEW adInteger AS DIALISI_NOV, " & _
+                "       NEW adInteger AS DIALISI_DIC, " & _
+                "       NEW adInteger AS TOTALE "
         
     ' apre la connessione per lo shape
     Set cnConn = New ADODB.Connection
@@ -458,18 +474,33 @@ Private Sub cmdStampa_Click()
         For i = 1 To flxGriglia.Rows - 1
             .AddNew
             .Fields("PAZIENTE") = " " & flxGriglia.TextMatrix(i, 0)
-            .Fields("TOTALE") = flxGriglia.TextMatrix(i, 1)
-            .Fields("DIALISI") = " " & flxGriglia.TextMatrix(i, 2)
+            .Fields("DIALISI_GEN") = flxGriglia.TextMatrix(i, 1)
+            .Fields("DIALISI_FEB") = flxGriglia.TextMatrix(i, 2)
+            .Fields("DIALISI_MAR") = flxGriglia.TextMatrix(i, 3)
+            .Fields("DIALISI_APR") = flxGriglia.TextMatrix(i, 4)
+            .Fields("DIALISI_MAG") = flxGriglia.TextMatrix(i, 5)
+            .Fields("DIALISI_GIU") = flxGriglia.TextMatrix(i, 6)
+            .Fields("DIALISI_LUG") = flxGriglia.TextMatrix(i, 7)
+            .Fields("DIALISI_AGO") = flxGriglia.TextMatrix(i, 8)
+            .Fields("DIALISI_SET") = flxGriglia.TextMatrix(i, 9)
+            .Fields("DIALISI_OTT") = flxGriglia.TextMatrix(i, 10)
+            .Fields("DIALISI_NOV") = flxGriglia.TextMatrix(i, 11)
+            .Fields("DIALISI_DIC") = flxGriglia.TextMatrix(i, 12)
+            .Fields("TOTALE") = flxGriglia.TextMatrix(i, 13)
         Next i
     End With
     
+    Set rptDialisiMensiliPazienti.DataSource = rsMain
+    rptDialisiMensiliPazienti.LeftMargin = rptMostraFatture.LeftMargin / 3
+    rptDialisiMensiliPazienti.RightMargin = rptMostraFatture.RightMargin / 3
+    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblDalMese").Caption = cboMeseInziale.Text
+    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblAlMese").Caption = cboMeseFianle.Text
+    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
+    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblPazienti").Caption = lblTotalePazienti.Caption 'flxGriglia.Rows - 1
+    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblDialisiTotali").Caption = lblTotaleDialisi.Caption 'flxGriglia.Rows - 1
+    rptDialisiMensiliPazienti.PrintReport True, rptRangeAllPages
     
-    Set rptMostraFatture.DataSource = rsMain
-    rptMostraFatture.LeftMargin = rptMostraFatture.LeftMargin / 3
-    rptMostraFatture.RightMargin = rptMostraFatture.RightMargin / 3
-    rptMostraFatture.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
-    rptMostraFatture.Sections("Intestazione").Controls.Item("lblPazienti").Caption = flxGriglia.Rows - 1
-    rptMostraFatture.PrintReport True, rptRangeAllPages
+    End If
 End Sub
 
 Private Sub cmdChiudi_Click()

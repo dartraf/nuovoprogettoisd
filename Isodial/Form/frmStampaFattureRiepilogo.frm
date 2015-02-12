@@ -283,6 +283,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          Left            =   1960
          TabIndex        =   20
          Top             =   240
+         Visible         =   0   'False
          Width           =   910
       End
       Begin VB.CommandButton VisualizzaFE 
@@ -301,6 +302,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          Left            =   980
          TabIndex        =   19
          Top             =   240
+         Visible         =   0   'False
          Width           =   970
       End
       Begin VB.CommandButton fattelettr 
@@ -318,6 +320,7 @@ Begin VB.Form frmStampaFattureRiepilogo
          Left            =   60
          TabIndex        =   18
          Top             =   240
+         Visible         =   0   'False
          Width           =   900
       End
       Begin VB.CommandButton cmdStampa 
@@ -399,6 +402,9 @@ Private Sub Form_Load()
             fraNumFattura.ZOrder
             fraAutorizzazioneBollo.Top = fraNumFattura.Top + fraNumFattura.Height - 135
             fraPulsanti.Top = fraAutorizzazioneBollo.Top + fraAutorizzazioneBollo.Height - 135
+            fattelettr.Visible = True
+            VisualizzaFE.Visible = True
+            ControllaFE.Visible = True
         Case tpXMAZZETTEDISTRETTI
             Me.Caption = "Stampa Mazzette per Distretti"
         Case tpXPAZIENTE

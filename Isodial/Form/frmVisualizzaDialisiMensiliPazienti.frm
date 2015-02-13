@@ -3,15 +3,15 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmVisualizzaDialisiMensiliPazienti 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Visualizza dialisi mensili pazienti"
-   ClientHeight    =   5988
-   ClientLeft      =   48
-   ClientTop       =   312
-   ClientWidth     =   9828
+   ClientHeight    =   5985
+   ClientLeft      =   45
+   ClientTop       =   315
+   ClientWidth     =   9825
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5988
-   ScaleWidth      =   9828
+   ScaleHeight     =   5985
+   ScaleWidth      =   9825
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
@@ -23,7 +23,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Begin VB.ComboBox cboMeseFianle 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -42,7 +42,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Begin VB.ComboBox cboAnno 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -61,7 +61,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Begin VB.ComboBox cboMeseInziale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -82,7 +82,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Al mese:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -101,7 +101,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Dal mese:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -120,7 +120,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Anno:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -131,14 +131,14 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Index           =   0
          Left            =   6240
          TabIndex        =   6
-         Top             =   260
+         Top             =   264
          Width           =   600
       End
    End
    Begin VB.Frame fraListaMain 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -156,8 +156,8 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          TabIndex        =   9
          Top             =   240
          Width           =   9372
-         _ExtentX        =   16531
-         _ExtentY        =   7430
+         _ExtentX        =   16536
+         _ExtentY        =   7435
          _Version        =   393216
          Cols            =   14
          ScrollTrack     =   -1  'True
@@ -165,7 +165,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          FormatString    =   $"frmVisualizzaDialisiMensiliPazienti.frx":0130
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -177,7 +177,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
    Begin VB.Frame fraAzioni 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -193,7 +193,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "&Elabora"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -210,7 +210,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -228,7 +228,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -244,7 +244,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Begin VB.Label lblTotalePazienti 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -253,17 +253,17 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   285
-         Left            =   4220
+         Left            =   4320
          TabIndex        =   16
          Top             =   360
          Width           =   375
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
-         Caption         =   "Totale Pazienti:"
+         Caption         =   "Pazienti in Elenco:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -271,10 +271,10 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   2540
+         Left            =   2380
          TabIndex        =   15
          Top             =   350
-         Width           =   1635
+         Width           =   1920
          WordWrap        =   -1  'True
       End
       Begin VB.Label Label2 
@@ -282,7 +282,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Totale Dialisi:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -300,7 +300,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          AutoSize        =   -1  'True
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -327,7 +327,7 @@ Dim GiorniMese() As Integer
 
 Private Sub cmdElabora_Click()
     If cboMeseInziale.ListIndex > cboMeseFianle.ListIndex Then
-        MsgBox "Il mese FINALE deve essere SUPERIORE rispetto al mese INIZIALE", vbInformation, "Informazione"
+        MsgBox "INTERVALLO INCONGRUENTE mese INIZIALE - mese FINALE", vbCritical, "ATTENZIONE!!!"
         cboMeseFianle.SetFocus
         Exit Sub
     Else
@@ -444,7 +444,6 @@ Dim rsMain As Recordset         ' recordset padre per lo shape
 Dim i As Integer
     
     If flxGriglia.Row = 0 Then
-        MsgBox "Nessuna Dialisi Mensile per Paziente da stampare", vbInformation, "Informazione"
         Exit Sub
     Else
     
@@ -474,18 +473,18 @@ Dim i As Integer
         For i = 1 To flxGriglia.Rows - 1
             .AddNew
             .Fields("PAZIENTE") = " " & flxGriglia.TextMatrix(i, 0)
-            .Fields("DIALISI_GEN") = flxGriglia.TextMatrix(i, 1)
-            .Fields("DIALISI_FEB") = flxGriglia.TextMatrix(i, 2)
-            .Fields("DIALISI_MAR") = flxGriglia.TextMatrix(i, 3)
-            .Fields("DIALISI_APR") = flxGriglia.TextMatrix(i, 4)
-            .Fields("DIALISI_MAG") = flxGriglia.TextMatrix(i, 5)
-            .Fields("DIALISI_GIU") = flxGriglia.TextMatrix(i, 6)
-            .Fields("DIALISI_LUG") = flxGriglia.TextMatrix(i, 7)
-            .Fields("DIALISI_AGO") = flxGriglia.TextMatrix(i, 8)
-            .Fields("DIALISI_SET") = flxGriglia.TextMatrix(i, 9)
-            .Fields("DIALISI_OTT") = flxGriglia.TextMatrix(i, 10)
-            .Fields("DIALISI_NOV") = flxGriglia.TextMatrix(i, 11)
-            .Fields("DIALISI_DIC") = flxGriglia.TextMatrix(i, 12)
+            .Fields("DIALISI_GEN") = IIf(flxGriglia.TextMatrix(i, 1) = "", "0", flxGriglia.TextMatrix(i, 1))
+            .Fields("DIALISI_FEB") = IIf(flxGriglia.TextMatrix(i, 2) = "", "0", flxGriglia.TextMatrix(i, 2))
+            .Fields("DIALISI_MAR") = IIf(flxGriglia.TextMatrix(i, 3) = "", "0", flxGriglia.TextMatrix(i, 3))
+            .Fields("DIALISI_APR") = IIf(flxGriglia.TextMatrix(i, 4) = "", "0", flxGriglia.TextMatrix(i, 4))
+            .Fields("DIALISI_MAG") = IIf(flxGriglia.TextMatrix(i, 5) = "", "0", flxGriglia.TextMatrix(i, 5))
+            .Fields("DIALISI_GIU") = IIf(flxGriglia.TextMatrix(i, 6) = "", "0", flxGriglia.TextMatrix(i, 6))
+            .Fields("DIALISI_LUG") = IIf(flxGriglia.TextMatrix(i, 7) = "", "0", flxGriglia.TextMatrix(i, 7))
+            .Fields("DIALISI_AGO") = IIf(flxGriglia.TextMatrix(i, 8) = "", "0", flxGriglia.TextMatrix(i, 8))
+            .Fields("DIALISI_SET") = IIf(flxGriglia.TextMatrix(i, 9) = "", "0", flxGriglia.TextMatrix(i, 9))
+            .Fields("DIALISI_OTT") = IIf(flxGriglia.TextMatrix(i, 10) = "", "0", flxGriglia.TextMatrix(i, 10))
+            .Fields("DIALISI_NOV") = IIf(flxGriglia.TextMatrix(i, 11) = "", "0", flxGriglia.TextMatrix(i, 11))
+            .Fields("DIALISI_DIC") = IIf(flxGriglia.TextMatrix(i, 12) = "", "0", flxGriglia.TextMatrix(i, 12))
             .Fields("TOTALE") = flxGriglia.TextMatrix(i, 13)
         Next i
     End With
@@ -496,8 +495,8 @@ Dim i As Integer
     rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblDalMese").Caption = cboMeseInziale.Text
     rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblAlMese").Caption = cboMeseFianle.Text
     rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblAnno").Caption = cboAnno.Text
-    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblPazienti").Caption = lblTotalePazienti.Caption 'flxGriglia.Rows - 1
-    rptDialisiMensiliPazienti.Sections("Intestazione").Controls.Item("lblDialisiTotali").Caption = lblTotaleDialisi.Caption 'flxGriglia.Rows - 1
+    rptDialisiMensiliPazienti.Sections("Section5").Controls.Item("lblPazienti").Caption = lblTotalePazienti.Caption 'flxGriglia.Rows - 1
+    rptDialisiMensiliPazienti.Sections("Section5").Controls.Item("lblDialisiTotali").Caption = lblTotaleDialisi.Caption 'flxGriglia.Rows - 1
     rptDialisiMensiliPazienti.PrintReport True, rptRangeAllPages
     
     End If

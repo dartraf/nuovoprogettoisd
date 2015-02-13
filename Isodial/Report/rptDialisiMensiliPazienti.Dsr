@@ -1,19 +1,19 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti 
    Caption         =   "Mostra Dialisi Mensili per Paziente"
-   ClientHeight    =   8676
-   ClientLeft      =   192
-   ClientTop       =   516
-   ClientWidth     =   11184
+   ClientHeight    =   11010
+   ClientLeft      =   195
+   ClientTop       =   510
+   ClientWidth     =   15240
    StartUpPosition =   3  'Windows Default
-   _ExtentX        =   19727
-   _ExtentY        =   15304
+   _ExtentX        =   26882
+   _ExtentY        =   19420
    _Version        =   393216
    _DesignerVersion=   100688210
-   ReportWidth     =   10380
+   ReportWidth     =   10767
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.4
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -38,19 +38,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Intestazione"
-      Object.Height          =   4932
-      NumControls     =   31
+      Object.Height          =   3510
+      NumControls     =   26
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblTitolo"
-         Object.Left            =   1680
-         Object.Top             =   2100
-         Object.Width           =   6852
-         Object.Height          =   576
+         Object.Top             =   2140
+         Object.Width           =   6300
+         Object.Height          =   495
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   21.6
+            Size            =   21.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -64,69 +63,32 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label7"
-         Object.Left            =   60
-         Object.Top             =   3144
-         Object.Width           =   1044
-         Object.Height          =   240
+         Object.Left            =   6495
+         Object.Top             =   2250
+         Object.Width           =   480
+         Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   14.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Dal Mese:"
+         Object.Caption         =   "DA"
       EndProperty
       ItemType2       =   3
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Label8"
-         Object.Left            =   60
-         Object.Top             =   3888
-         Object.Width           =   660
-         Object.Height          =   240
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Anno:"
-      EndProperty
-      ItemType3       =   3
-      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "lblPazienti"
-         Object.Left            =   5940
-         Object.Top             =   3144
-         Object.Width           =   600
-         Object.Height          =   252
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   10.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-      EndProperty
-      ItemType4       =   3
-      BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label3"
-         Object.Left            =   60
-         Object.Top             =   4656
-         Object.Width           =   2568
-         Object.Height          =   276
+         Object.Left            =   30
+         Object.Top             =   3120
+         Object.Width           =   2565
+         Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -135,14 +97,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Paziente"
       EndProperty
-      ItemType5       =   3
-      BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType3       =   3
+      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   9648
-         Object.Top             =   4644
-         Object.Width           =   516
-         Object.Height          =   276
+         Object.Left            =   9615
+         Object.Top             =   3120
+         Object.Width           =   525
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
             Size            =   12
@@ -154,44 +116,44 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Tot."
       EndProperty
-      ItemType6       =   3
-      BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType4       =   3
+      BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDalMese"
-         Object.Left            =   1128
-         Object.Top             =   3144
-         Object.Width           =   1404
-         Object.Height          =   252
+         Object.Left            =   7000
+         Object.Top             =   2250
+         Object.Width           =   1230
+         Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   14.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType7       =   3
-      BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType5       =   3
+      BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblAnno"
-         Object.Left            =   732
-         Object.Top             =   3888
-         Object.Width           =   648
-         Object.Height          =   252
+         Object.Left            =   9770
+         Object.Top             =   2250
+         Object.Width           =   645
+         Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   14.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
       EndProperty
-      ItemType8       =   7
-      BeginProperty Item8 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType6       =   7
+      BeginProperty Item6 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoQualita"
          Object.Left            =   6090
@@ -199,8 +161,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   1410
          SizeMode        =   2
       EndProperty
-      ItemType9       =   7
-      BeginProperty Item9 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType7       =   7
+      BeginProperty Item7 {1C13A8E5-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "imgLogoIso"
          Object.Left            =   9495
@@ -208,27 +170,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   810
          SizeMode        =   2
       EndProperty
-      ItemType10      =   3
-      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label2"
-         Object.Left            =   4224
-         Object.Top             =   3144
-         Object.Width           =   1668
-         Object.Height          =   240
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   11.4
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Pazienti in elenco:"
-      EndProperty
-      ItemType11      =   3
-      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType8       =   3
+      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblRagione"
          Object.Left            =   60
@@ -236,7 +179,61 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   336
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.4
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType9       =   3
+      BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblTipo"
+         Object.Left            =   60
+         Object.Top             =   300
+         Object.Width           =   5100
+         Object.Height          =   228
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType10      =   3
+      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblAltro"
+         Object.Left            =   60
+         Object.Top             =   768
+         Object.Width           =   4812
+         Object.Height          =   1212
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType11      =   3
+      BeginProperty Item11 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblDirettoreSanitario"
+         Object.Left            =   60
+         Object.Top             =   540
+         Object.Width           =   5100
+         Object.Height          =   228
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -247,68 +244,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
       ItemType12      =   3
       BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "lblTipo"
-         Object.Left            =   60
-         Object.Top             =   300
-         Object.Width           =   5100
-         Object.Height          =   228
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-      EndProperty
-      ItemType13      =   3
-      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "lblAltro"
-         Object.Left            =   60
-         Object.Top             =   768
-         Object.Width           =   4812
-         Object.Height          =   1212
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-      EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "lblDirettoreSanitario"
-         Object.Left            =   60
-         Object.Top             =   540
-         Object.Width           =   5100
-         Object.Height          =   228
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   9.6
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-      EndProperty
-      ItemType15      =   3
-      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   5652
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   5625
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -317,17 +260,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Giu"
       EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   2820
-         Object.Top             =   4644
-         Object.Width           =   504
-         Object.Height          =   276
+         Object.Left            =   2790
+         Object.Top             =   3120
+         Object.Width           =   510
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -336,17 +279,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Gen"
       EndProperty
-      ItemType17      =   3
-      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
-         Object.Left            =   9048
-         Object.Top             =   4644
-         Object.Width           =   504
-         Object.Height          =   276
+         Object.Left            =   9015
+         Object.Top             =   3120
+         Object.Width           =   510
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -355,17 +298,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Dic"
       EndProperty
-      ItemType18      =   3
-      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   3
+      BeginProperty Item15 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label12"
-         Object.Left            =   7356
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   7320
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -374,17 +317,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Set"
       EndProperty
-      ItemType19      =   3
-      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label13"
-         Object.Left            =   6216
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   6180
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -393,17 +336,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Lug"
       EndProperty
-      ItemType20      =   3
-      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType17      =   3
+      BeginProperty Item17 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label14"
-         Object.Left            =   3948
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   3915
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -412,17 +355,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Mar"
       EndProperty
-      ItemType21      =   3
-      BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType18      =   3
+      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
-         Object.Left            =   4512
-         Object.Top             =   4644
-         Object.Width           =   504
-         Object.Height          =   276
+         Object.Left            =   4485
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -431,17 +374,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Apr"
       EndProperty
-      ItemType22      =   3
-      BeginProperty Item22 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType19      =   3
+      BeginProperty Item19 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label16"
-         Object.Left            =   5088
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   5055
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -450,17 +393,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Mag"
       EndProperty
-      ItemType23      =   3
-      BeginProperty Item23 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType20      =   3
+      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label17"
-         Object.Left            =   6780
-         Object.Top             =   4644
-         Object.Width           =   504
-         Object.Height          =   276
+         Object.Left            =   6750
+         Object.Top             =   3120
+         Object.Width           =   510
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -469,17 +412,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Ago"
       EndProperty
-      ItemType24      =   3
-      BeginProperty Item24 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType21      =   3
+      BeginProperty Item21 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label18"
-         Object.Left            =   8484
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   8460
+         Object.Top             =   3120
+         Object.Width           =   480
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -488,17 +431,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Nov"
       EndProperty
-      ItemType25      =   3
-      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType22      =   3
+      BeginProperty Item22 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label23"
-         Object.Left            =   7920
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   7890
+         Object.Top             =   3120
+         Object.Width           =   495
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -507,17 +450,17 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Ott"
       EndProperty
-      ItemType26      =   3
-      BeginProperty Item26 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType23      =   3
+      BeginProperty Item23 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label24"
-         Object.Left            =   3384
-         Object.Top             =   4644
-         Object.Width           =   492
-         Object.Height          =   276
+         Object.Left            =   3360
+         Object.Top             =   3120
+         Object.Width           =   480
+         Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   11.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -526,80 +469,42 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          EndProperty
          Object.Caption         =   "Feb"
       EndProperty
-      ItemType27      =   3
-      BeginProperty Item27 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType24      =   3
+      BeginProperty Item24 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   60
-         Object.Top             =   3516
-         Object.Width           =   1044
-         Object.Height          =   240
+         Object.Left            =   8300
+         Object.Top             =   2250
+         Object.Width           =   240
+         Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   14.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Al Mese:"
+         Object.Caption         =   "A"
       EndProperty
-      ItemType28      =   3
-      BeginProperty Item28 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType25      =   3
+      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblAlMese"
-         Object.Left            =   1128
-         Object.Top             =   3516
-         Object.Width           =   1404
-         Object.Height          =   252
+         Object.Left            =   8570
+         Object.Top             =   2250
+         Object.Width           =   1230
+         Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.4
+            Size            =   14.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
-            Italic          =   0   'False
+            Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-      EndProperty
-      ItemType29      =   3
-      BeginProperty Item29 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "lblDialisiTotali"
-         Object.Left            =   9590
-         Object.Top             =   3144
-         Object.Width           =   588
-         Object.Height          =   252
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   10.8
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-      EndProperty
-      ItemType30      =   3
-      BeginProperty Item30 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label1"
-         Object.Left            =   8052
-         Object.Top             =   3144
-         Object.Width           =   1632
-         Object.Height          =   240
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Times New Roman"
-            Size            =   10.8
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Totale Dialisi:"
-         Alignment       =   2
       EndProperty
    EndProperty
    SectionCode2    =   4
@@ -617,7 +522,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -644,7 +549,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -680,7 +585,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -708,7 +613,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -736,7 +641,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -764,7 +669,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -792,7 +697,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -820,7 +725,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -848,7 +753,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -876,7 +781,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -904,7 +809,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -932,7 +837,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -960,7 +865,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -988,7 +893,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1023,7 +928,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1042,7 +947,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1061,7 +966,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1080,7 +985,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1099,7 +1004,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1113,8 +1018,83 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Section5"
-      Object.Height          =   3
-      NumControls     =   0
+      Object.Height          =   405
+      NumControls     =   4
+      ItemType0       =   3
+      BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblDialisiTotali"
+         Object.Left            =   9620
+         Object.Top             =   60
+         Object.Width           =   600
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType1       =   3
+      BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label1"
+         Object.Left            =   8300
+         Object.Top             =   80
+         Object.Width           =   1300
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Totale Dialisi:"
+         Alignment       =   2
+      EndProperty
+      ItemType2       =   3
+      BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "lblPazienti"
+         Object.Left            =   1785
+         Object.Top             =   60
+         Object.Width           =   600
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      EndProperty
+      ItemType3       =   3
+      BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label2"
+         Object.Left            =   75
+         Object.Top             =   80
+         Object.Width           =   1665
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Times New Roman"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Pazienti in elenco:"
+      EndProperty
    EndProperty
 End
 Attribute VB_Name = "rptDialisiMensiliPazienti"

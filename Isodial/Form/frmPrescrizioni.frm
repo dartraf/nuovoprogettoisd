@@ -3,8 +3,8 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Begin VB.Form frmPrescrizioni 
    BorderStyle     =   4  'Fixed ToolWindow
-   Caption         =   "Gestione Ricette"
-   ClientHeight    =   6990
+   Caption         =   " GESTIONE RICETTE"
+   ClientHeight    =   7350
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   12210
@@ -12,9 +12,261 @@ Begin VB.Form frmPrescrizioni
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   6990
+   ScaleHeight     =   7350
    ScaleWidth      =   12210
    ShowInTaskbar   =   0   'False
+   Begin VB.Frame fraPrestazioni 
+      Caption         =   "Prestazioni"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   1815
+      Left            =   120
+      TabIndex        =   39
+      Top             =   4770
+      Width           =   12015
+      Begin VB.CommandButton cmdInserisci 
+         Caption         =   "&Inserisci prescrizione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   520
+         Left            =   9720
+         TabIndex        =   21
+         Top             =   1220
+         Width           =   2055
+      End
+      Begin VB.CommandButton cmdElimina 
+         Caption         =   "&Elimina prescrizione"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   520
+         Left            =   7440
+         TabIndex        =   20
+         Top             =   1220
+         Width           =   1935
+      End
+      Begin VB.ComboBox cboCodici 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   240
+         Sorted          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   18
+         Top             =   720
+         Visible         =   0   'False
+         Width           =   1095
+      End
+      Begin VB.ComboBox cboPrescrizioni 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   960
+         Sorted          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   19
+         Top             =   720
+         Visible         =   0   'False
+         Width           =   5535
+      End
+      Begin VB.TextBox txtAppo 
+         BeginProperty DataFormat 
+            Type            =   0
+            Format          =   "0"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1040
+            SubFormatType   =   0
+         EndProperty
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   6480
+         MaxLength       =   2
+         TabIndex        =   43
+         Top             =   720
+         Visible         =   0   'False
+         Width           =   360
+      End
+      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
+         Height          =   975
+         Left            =   120
+         TabIndex        =   32
+         Top             =   250
+         Width           =   11775
+         _ExtentX        =   20770
+         _ExtentY        =   1720
+         _Version        =   393216
+         Cols            =   9
+         FixedCols       =   0
+         ScrollTrack     =   -1  'True
+         ScrollBars      =   2
+         MousePointer    =   15
+         FormatString    =   $"frmPrescrizioni.frx":0000
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         MouseIcon       =   "frmPrescrizioni.frx":00B8
+      End
+      Begin VB.Label lblImpegnate 
+         Alignment       =   2  'Center
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   240
+         Left            =   3720
+         TabIndex        =   64
+         Top             =   1320
+         Width           =   315
+      End
+      Begin VB.Label Label5 
+         AutoSize        =   -1  'True
+         Caption         =   "- Impegnabili"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   240
+         Left            =   4200
+         TabIndex        =   63
+         Top             =   1320
+         Width           =   1365
+      End
+      Begin VB.Label Label4 
+         Caption         =   "- Impegnate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   240
+         Left            =   2400
+         TabIndex        =   62
+         Top             =   1320
+         Width           =   1395
+      End
+      Begin VB.Label lblSedute 
+         Alignment       =   2  'Center
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   240
+         Left            =   2040
+         TabIndex        =   61
+         Top             =   1320
+         Width           =   315
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Sedute Registrate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   240
+         Left            =   120
+         TabIndex        =   60
+         Top             =   1320
+         Width           =   1935
+      End
+      Begin VB.Label lblImpegnabili 
+         Alignment       =   2  'Center
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   240
+         Left            =   5760
+         TabIndex        =   59
+         Top             =   1320
+         Width           =   495
+      End
+   End
    Begin VB.Frame Frame1 
       Height          =   855
       Left            =   120
@@ -26,7 +278,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   450
          Index           =   0
          Left            =   360
-         Picture         =   "frmPrescrizioni.frx":0000
+         Picture         =   "frmPrescrizioni.frx":0212
          Style           =   1  'Graphical
          TabIndex        =   0
          ToolTipText     =   "Seleziona il paziente"
@@ -146,13 +398,23 @@ Begin VB.Form frmPrescrizioni
       End
    End
    Begin VB.Frame Frame3 
-      Height          =   2200
+      Caption         =   "Dati Ricetta"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   1845
       Left            =   120
       TabIndex        =   33
-      Top             =   720
+      Top             =   840
       Width           =   12015
       Begin VB.CheckBox chkPresenzaBarCode 
-         Alignment       =   1  'Right Justify
          Caption         =   "Barcode Cod.Fisc. su ricetta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -164,9 +426,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   5520
+         Left            =   4560
          TabIndex        =   12
-         Top             =   1800
+         Top             =   1416
          Width           =   3615
       End
       Begin VB.ComboBox cboAnno 
@@ -180,9 +442,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmPrescrizioni.frx":0459
+         ItemData        =   "frmPrescrizioni.frx":066B
          Left            =   5520
-         List            =   "frmPrescrizioni.frx":045B
+         List            =   "frmPrescrizioni.frx":066D
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   240
@@ -200,15 +462,16 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   315
-         ItemData        =   "frmPrescrizioni.frx":045D
+         ItemData        =   "frmPrescrizioni.frx":066F
          Left            =   2280
-         List            =   "frmPrescrizioni.frx":045F
+         List            =   "frmPrescrizioni.frx":0671
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Top             =   240
          Width           =   2175
       End
       Begin VB.TextBox txtProgressivoAnnuale 
+         Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -219,11 +482,11 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7680
+         Left            =   8600
          MaxLength       =   4
          TabIndex        =   7
-         Top             =   1034
-         Width           =   735
+         Top             =   652
+         Width           =   615
       End
       Begin VB.CheckBox chkStampaPC 
          Caption         =   "Stampa PC"
@@ -237,13 +500,14 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   9360
+         Left            =   8640
          TabIndex        =   5
-         Top             =   652
+         Top             =   1416
          Value           =   1  'Checked
          Width           =   1695
       End
       Begin VB.TextBox txtProgressivoRicetta 
+         Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -254,13 +518,14 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7680
+         Left            =   6240
          MaxLength       =   5
          TabIndex        =   4
          Top             =   652
-         Width           =   735
+         Width           =   615
       End
       Begin VB.TextBox txtMazzettaPrimo 
+         Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -271,13 +536,14 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7710
+         Left            =   10560
          MaxLength       =   3
          TabIndex        =   9
-         Top             =   1416
+         Top             =   652
          Width           =   615
       End
       Begin VB.TextBox txtMazzettaSecondo 
+         Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -288,11 +554,11 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   8565
+         Left            =   11320
          MaxLength       =   5
          TabIndex        =   10
-         Top             =   1416
-         Width           =   720
+         Top             =   652
+         Width           =   615
       End
       Begin VB.ComboBox cboTipoPrescrizione 
          BeginProperty Font 
@@ -305,12 +571,12 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmPrescrizioni.frx":0461
-         Left            =   2280
-         List            =   "frmPrescrizioni.frx":0471
+         ItemData        =   "frmPrescrizioni.frx":0673
+         Left            =   6720
+         List            =   "frmPrescrizioni.frx":0683
          Style           =   2  'Dropdown List
          TabIndex        =   11
-         Top             =   1800
+         Top             =   1034
          Width           =   1215
       End
       Begin VB.TextBox txtNumeroRicetta 
@@ -377,7 +643,7 @@ Begin VB.Form frmPrescrizioni
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Num. mazzetta"
+         Caption         =   "N°Mazzetta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -389,14 +655,14 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   10
-         Left            =   5550
+         Left            =   9350
          TabIndex        =   68
-         Top             =   1416
-         Width           =   1515
+         Top             =   652
+         Width           =   1170
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Progressivo ricetta"
+         Caption         =   "N°Progr.Ricetta"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -408,14 +674,14 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   9
-         Left            =   5550
+         Left            =   4560
          TabIndex        =   67
          Top             =   652
-         Width           =   1980
+         Width           =   1620
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Progressivo interno"
+         Caption         =   "N°Progr.Interno"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -427,10 +693,10 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   5550
+         Left            =   6960
          TabIndex        =   66
-         Top             =   1034
-         Width           =   2040
+         Top             =   652
+         Width           =   1590
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -485,9 +751,9 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   11
-         Left            =   8385
+         Left            =   11220
          TabIndex        =   45
-         Top             =   1416
+         Top             =   652
          Width           =   90
       End
       Begin VB.Label Label1 
@@ -504,9 +770,9 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   120
+         Left            =   4560
          TabIndex        =   44
-         Top             =   1800
+         Top             =   1034
          Width           =   2085
       End
       Begin VB.Label Label1 
@@ -549,21 +815,32 @@ Begin VB.Form frmPrescrizioni
       End
    End
    Begin VB.Frame Frame2 
+      Caption         =   "Medico Prescrittore"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
       Height          =   1000
       Left            =   120
       TabIndex        =   35
-      Top             =   2760
+      Top             =   2670
       Width           =   12015
       Begin VB.CommandButton cmdTrova 
          BackColor       =   &H00C0C0C0&
          Height          =   450
          Index           =   1
          Left            =   360
-         Picture         =   "frmPrescrizioni.frx":0497
+         Picture         =   "frmPrescrizioni.frx":06A9
          Style           =   1  'Graphical
          TabIndex        =   13
          ToolTipText     =   "Seleziona il medico"
-         Top             =   240
+         Top             =   360
          Width           =   450
       End
       Begin VB.Label lblCognomeMedico 
@@ -579,9 +856,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2280
+         Left            =   2040
          TabIndex        =   58
-         Top             =   240
+         Top             =   480
          Width           =   3255
       End
       Begin VB.Label lblNomeMedico 
@@ -597,9 +874,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   7800
+         Left            =   6240
          TabIndex        =   57
-         Top             =   240
+         Top             =   480
          Width           =   3135
       End
       Begin VB.Label lblCodiceTimbroMedico 
@@ -615,9 +892,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   3120
+         Left            =   10800
          TabIndex        =   56
-         Top             =   600
+         Top             =   480
          Width           =   975
       End
       Begin VB.Label Label1 
@@ -634,9 +911,9 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   13
-         Left            =   1080
+         Left            =   960
          TabIndex        =   47
-         Top             =   240
+         Top             =   480
          Width           =   1005
       End
       Begin VB.Label Label1 
@@ -653,14 +930,14 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          Height          =   240
          Index           =   33
-         Left            =   6960
+         Left            =   5520
          TabIndex        =   37
-         Top             =   240
+         Top             =   480
          Width           =   630
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Codice regionale"
+         Caption         =   "Codice Regionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -670,19 +947,31 @@ Begin VB.Form frmPrescrizioni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   240
+         Height          =   480
          Index           =   37
-         Left            =   1080
+         Left            =   9600
          TabIndex        =   36
-         Top             =   600
-         Width           =   1800
+         Top             =   360
+         Width           =   1170
+         WordWrap        =   -1  'True
       End
    End
    Begin VB.Frame Frame4 
-      Height          =   1000
+      Caption         =   "Tipologia Esenzione"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   1125
       Left            =   120
       TabIndex        =   38
-      Top             =   3600
+      Top             =   3660
       Width           =   12015
       Begin VB.ComboBox cboTipoErogazione 
          BeginProperty Font 
@@ -698,7 +987,7 @@ Begin VB.Form frmPrescrizioni
          Left            =   4080
          Style           =   2  'Dropdown List
          TabIndex        =   17
-         Top             =   600
+         Top             =   720
          Width           =   5055
       End
       Begin VB.CheckBox chkEsenzioneDoppia 
@@ -715,7 +1004,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   255
          Left            =   6000
          TabIndex        =   16
-         Top             =   250
+         Top             =   375
          Width           =   3615
       End
       Begin VB.ComboBox cboEsenzione 
@@ -733,7 +1022,7 @@ Begin VB.Form frmPrescrizioni
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   14
-         Top             =   240
+         Top             =   360
          Width           =   1335
       End
       Begin VB.CheckBox chkEsenteReddito 
@@ -750,7 +1039,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   255
          Left            =   3360
          TabIndex        =   15
-         Top             =   240
+         Top             =   360
          Width           =   2535
       End
       Begin VB.Label Label1 
@@ -769,7 +1058,7 @@ Begin VB.Form frmPrescrizioni
          Index           =   14
          Left            =   120
          TabIndex        =   65
-         Top             =   600
+         Top             =   720
          Width           =   3840
       End
       Begin VB.Label Label1 
@@ -788,441 +1077,21 @@ Begin VB.Form frmPrescrizioni
          Index           =   5
          Left            =   120
          TabIndex        =   41
-         Top             =   250
+         Top             =   375
          Width           =   1095
       End
    End
-   Begin VB.Frame fraPrestazioni 
-      Height          =   1815
-      Left            =   120
-      TabIndex        =   39
-      Top             =   4440
-      Width           =   12015
-      Begin VB.CommandButton cmdInserisci 
-         Caption         =   "&Inserisci prescrizione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   520
-         Left            =   9720
-         TabIndex        =   21
-         Top             =   1220
-         Width           =   2055
-      End
-      Begin VB.CommandButton cmdElimina 
-         Caption         =   "&Elimina prescrizione"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   520
-         Left            =   7440
-         TabIndex        =   20
-         Top             =   1220
-         Width           =   1935
-      End
-      Begin VB.ComboBox cboCodici 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Left            =   240
-         Sorted          =   -1  'True
-         Style           =   2  'Dropdown List
-         TabIndex        =   18
-         Top             =   720
-         Visible         =   0   'False
-         Width           =   1095
-      End
-      Begin VB.ComboBox cboPrescrizioni 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Left            =   960
-         Sorted          =   -1  'True
-         Style           =   2  'Dropdown List
-         TabIndex        =   19
-         Top             =   720
-         Visible         =   0   'False
-         Width           =   5535
-      End
-      Begin VB.TextBox txtAppo 
-         BeginProperty DataFormat 
-            Type            =   0
-            Format          =   "0"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1040
-            SubFormatType   =   0
-         EndProperty
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6480
-         MaxLength       =   2
-         TabIndex        =   43
-         Top             =   720
-         Visible         =   0   'False
-         Width           =   360
-      End
-      Begin MSFlexGridLib.MSFlexGrid flxGriglia 
-         Height          =   975
-         Left            =   120
-         TabIndex        =   32
-         Top             =   240
-         Width           =   11775
-         _ExtentX        =   20770
-         _ExtentY        =   1720
-         _Version        =   393216
-         Cols            =   9
-         FixedCols       =   0
-         ScrollTrack     =   -1  'True
-         ScrollBars      =   2
-         MousePointer    =   15
-         FormatString    =   $"frmPrescrizioni.frx":08F0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         MouseIcon       =   "frmPrescrizioni.frx":09A8
-      End
-      Begin VB.Label lblImpegnate 
-         Alignment       =   2  'Center
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   240
-         Left            =   3720
-         TabIndex        =   64
-         Top             =   1320
-         Width           =   315
-      End
-      Begin VB.Label Label5 
-         AutoSize        =   -1  'True
-         Caption         =   "- Impegnabili"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   240
-         Left            =   4200
-         TabIndex        =   63
-         Top             =   1320
-         Width           =   1365
-      End
-      Begin VB.Label Label4 
-         Caption         =   "- Impegnate"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   240
-         Left            =   2400
-         TabIndex        =   62
-         Top             =   1320
-         Width           =   1395
-      End
-      Begin VB.Label lblSedute 
-         Alignment       =   2  'Center
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   240
-         Left            =   2040
-         TabIndex        =   61
-         Top             =   1320
-         Width           =   315
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Sedute Registrate"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   240
-         Left            =   120
-         TabIndex        =   60
-         Top             =   1320
-         Width           =   1935
-      End
-      Begin VB.Label lblImpegnabili 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   240
-         Left            =   5760
-         TabIndex        =   59
-         Top             =   1320
-         Width           =   795
-      End
-   End
-   Begin VB.Frame fraPazientiEsteri 
-      Height          =   1450
-      Left            =   120
-      TabIndex        =   70
-      Top             =   4440
-      Width           =   12015
-      Begin VB.TextBox txtNumeroIdentificazioneTessera 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3360
-         MaxLength       =   20
-         TabIndex        =   31
-         TabStop         =   0   'False
-         Top             =   1005
-         Width           =   2535
-      End
-      Begin VB.TextBox txtNumeroIdentificazionePersonale 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   9600
-         MaxLength       =   20
-         TabIndex        =   30
-         TabStop         =   0   'False
-         Top             =   650
-         Width           =   2175
-      End
-      Begin VB.TextBox txtCodiceIstituzioneCompetente 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   3360
-         MaxLength       =   28
-         TabIndex        =   29
-         TabStop         =   0   'False
-         Top             =   650
-         Width           =   2535
-      End
-      Begin VB.ComboBox cboTipoRicetta 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   315
-         Left            =   1800
-         Style           =   2  'Dropdown List
-         TabIndex        =   28
-         Top             =   240
-         Width           =   6615
-      End
-      Begin DataTimeBox.uDataTimeBox oData 
-         Height          =   375
-         Index           =   2
-         Left            =   9600
-         TabIndex        =   76
-         Top             =   960
-         Width           =   2100
-         _ExtentX        =   3704
-         _ExtentY        =   661
-         DataBox         =   -1  'True
-         TimeBox         =   0   'False
-         VisibleElenca   =   0   'False
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Data Scadenza Tessera Europea"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   19
-         Left            =   6000
-         TabIndex        =   75
-         Top             =   1035
-         Width           =   3480
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Num. Identificazione Tessera"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   18
-         Left            =   120
-         TabIndex        =   74
-         Top             =   1005
-         Width           =   3030
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Num. Identificazione Personale"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   17
-         Left            =   6000
-         TabIndex        =   73
-         Top             =   650
-         Width           =   3225
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Codice Istituzione Competente"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   16
-         Left            =   120
-         TabIndex        =   72
-         Top             =   650
-         Width           =   3150
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         Caption         =   "Tipo ricetta"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   15
-         Left            =   120
-         TabIndex        =   71
-         Top             =   240
-         Width           =   1200
-      End
+   Begin VB.Timer Timer1 
+      Enabled         =   0   'False
+      Interval        =   500
+      Left            =   0
+      Top             =   240
    End
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
       TabIndex        =   40
-      Top             =   6120
+      Top             =   6480
       Width           =   12015
       Begin VB.CommandButton cmdCancellaRicetta 
          Caption         =   "&Cancella"
@@ -1328,6 +1197,203 @@ Begin VB.Form frmPrescrizioni
          Width           =   2415
       End
    End
+   Begin VB.Frame fraPazientiEsteri 
+      Caption         =   "Tipologia Ricetta"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C00000&
+      Height          =   1575
+      Left            =   120
+      TabIndex        =   70
+      Top             =   4770
+      Width           =   12015
+      Begin VB.TextBox txtNumeroIdentificazioneTessera 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3360
+         MaxLength       =   20
+         TabIndex        =   31
+         TabStop         =   0   'False
+         Top             =   1125
+         Width           =   2535
+      End
+      Begin VB.TextBox txtNumeroIdentificazionePersonale 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   9600
+         MaxLength       =   20
+         TabIndex        =   30
+         TabStop         =   0   'False
+         Top             =   765
+         Width           =   2175
+      End
+      Begin VB.TextBox txtCodiceIstituzioneCompetente 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Left            =   3360
+         MaxLength       =   28
+         TabIndex        =   29
+         TabStop         =   0   'False
+         Top             =   765
+         Width           =   2535
+      End
+      Begin VB.ComboBox cboTipoRicetta 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   1800
+         Style           =   2  'Dropdown List
+         TabIndex        =   28
+         Top             =   360
+         Width           =   6615
+      End
+      Begin DataTimeBox.uDataTimeBox oData 
+         Height          =   375
+         Index           =   2
+         Left            =   9600
+         TabIndex        =   76
+         Top             =   1080
+         Width           =   2100
+         _ExtentX        =   3704
+         _ExtentY        =   661
+         DataBox         =   -1  'True
+         TimeBox         =   0   'False
+         VisibleElenca   =   0   'False
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Data Scadenza Tessera Europea"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   19
+         Left            =   6000
+         TabIndex        =   75
+         Top             =   1155
+         Width           =   3480
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Num. Identificazione Tessera"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   18
+         Left            =   120
+         TabIndex        =   74
+         Top             =   1125
+         Width           =   3030
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Num. Identificazione Personale"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   17
+         Left            =   6000
+         TabIndex        =   73
+         Top             =   765
+         Width           =   3225
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Codice Istituzione Competente"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   16
+         Left            =   120
+         TabIndex        =   72
+         Top             =   765
+         Width           =   3150
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         Caption         =   "Tipo ricetta"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   240
+         Index           =   15
+         Left            =   120
+         TabIndex        =   71
+         Top             =   360
+         Width           =   1200
+      End
+   End
 End
 Attribute VB_Name = "frmPrescrizioni"
 Attribute VB_GlobalNameSpace = False
@@ -1367,7 +1433,7 @@ Dim intPazientiKey As Integer
 Dim intMedicoKey As Integer
 Dim blnPazienteEstero As Boolean
 Dim ControlloCodiceFiscalePazienteEstero As String
-
+Dim MImpegnabili As Integer
 
 Private Sub Form_Activate()
     If Not RidisponiForms(Me) Then Exit Sub
@@ -1390,6 +1456,7 @@ Private Sub Form_Activate()
 End Sub
 
 Private Sub Form_Load()
+    MImpegnabili = 0
     Dim i As Integer
     Dim intTop As Single
     Dim intLeft As Single
@@ -1541,9 +1608,9 @@ Private Sub CalcolaTotaliSeduteDialisi()
              "          MESE=" & cboMese.ListIndex + 1
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not IsNull(rsDataset("TOTALE")) Then
-        impegnate = rsDataset("TOTALE")
+        impegnate = rsDataset("TOTALE") + MImpegnabili
     Else
-        impegnate = 0
+        impegnate = 0 + MImpegnabili
     End If
     rsDataset.Close
     
@@ -1551,8 +1618,25 @@ Private Sub CalcolaTotaliSeduteDialisi()
     
     lblSedute = registrate
     lblImpegnate = impegnate
+    If impegnabili > 0 Then
+        lblImpegnabili.ToolTipText = " PRESCRIZIONI MANCANTI "
+        Timer1.Enabled = True
+    ElseIf impegnabili < 0 Then
+        lblImpegnabili.ToolTipText = " SEDUTE NON REGISTRATE "
+        Timer1.Enabled = True
+    End If
     lblImpegnabili = impegnabili
        
+End Sub
+
+Private Sub Timer1_Timer()
+    If lblImpegnabili.ForeColor = vbRed Then
+       lblImpegnabili.ForeColor = vbBlack
+       lblImpegnabili.BackColor = vbRed
+    Else
+       lblImpegnabili.ForeColor = vbRed
+       lblImpegnabili.BackColor = vbBlack
+    End If
 End Sub
 
 '' Carica l'intera ricetta
@@ -1654,6 +1738,9 @@ End Sub
 
 '' Pulisce la scheda
 Private Sub Pulisci()
+    lblImpegnabili.BackColor = &H8000000F
+    lblImpegnabili.ForeColor = vbRed
+    MImpegnabili = 0
     modifica = False
     stoPulendo = True
     keyId = 0
@@ -2095,6 +2182,8 @@ Private Sub cmdInserisci_Click()
         Call ColoraFlx(flxGriglia, flxGriglia.Cols - 1)
         laData = Day(date) & "/" & 10 & "/" & Year(date)
         Call CaricaPso
+        MImpegnabili = MImpegnabili + tInput.v_valori(2)
+        Call CalcolaTotaliSeduteDialisi
     End If
     
     Set rsDataset = Nothing
@@ -2229,6 +2318,7 @@ End Sub
 '' Elimina la prescrizione
 Private Sub cmdElimina_Click()
     Dim rsDataset As New Recordset
+    Dim EliminaImpegnabili As Integer
     
     If flxGriglia.Row = 0 Then
         MsgBox "Selezionare la prescrizione da eliminare", vbCritical, "Attenzione"
@@ -2247,11 +2337,14 @@ Private Sub cmdElimina_Click()
         If flxGriglia.Rows = 2 Then
             flxGriglia.Rows = 1
         Else
+            EliminaImpegnabili = flxGriglia.TextMatrix(flxGriglia.Row, 3)
             flxGriglia.RemoveItem (flxGriglia.Row)
         End If
         vRow = 0
         flxGriglia.Row = 0
     End If
+    MImpegnabili = MImpegnabili - EliminaImpegnabili
+    Call CalcolaTotaliSeduteDialisi
 End Sub
 
 Private Sub cmdNuovaRicetta_Click()
@@ -2286,12 +2379,17 @@ End Sub
 
 Private Sub cmdTrova_Click(Index As Integer)
     ' pulisce per evitare problemi
+    Timer1.Enabled = False
+    lblImpegnabili.BackColor = &H8000000F
+    lblImpegnabili.ToolTipText = ""
+    
     If Index = 0 Then
         Call Pulisci
         tTrova.Tipo = tpPAZIENTE
     Else
         tTrova.Tipo = tpMEDICOBASE
     End If
+    
     tTrova.condizione = ""
     tTrova.condStato = ""
     Unload frmTrova
@@ -2419,6 +2517,11 @@ End Sub
 
 '' Se cambia il mese ricarica le mazzette
 Private Sub cboMese_Click()
+    Timer1.Enabled = False
+    lblImpegnabili.ToolTipText = ""
+    lblImpegnabili.BackColor = &H8000000F
+    lblImpegnabili.ForeColor = vbRed
+    
     Dim mazzetta1 As Integer
     Dim mazzetta2 As Integer
     
@@ -2440,6 +2543,10 @@ End Sub
 
 '' Se cambia l'anno ricarica i progressivi
 Private Sub cboAnno_Click()
+    Timer1.Enabled = False
+    lblImpegnabili.ToolTipText = ""
+    lblImpegnabili.BackColor = &H8000000F
+    lblImpegnabili.ForeColor = vbRed
     If stoCaricando Or stoPulendo Then Exit Sub
     Call SettaProgressivi
     Call CalcolaTotaliSeduteDialisi
@@ -2603,7 +2710,7 @@ Private Sub CaricaPaziente()
         blnPazienteEstero = True
         fraPazientiEsteri.Visible = True
         fraPazientiEsteri.Enabled = True
-        fraPrestazioni.Top = fraPazientiEsteri.Top + fraPazientiEsteri.Height - 100
+        fraPrestazioni.Top = fraPazientiEsteri.Top + fraPazientiEsteri.Height - 20
         fraPrestazioni.ZOrder 1
         fraPulsanti.Top = fraPrestazioni.Top + fraPrestazioni.Height - 100
         fraPulsanti.ZOrder 1
@@ -2642,11 +2749,15 @@ Private Sub txtAppo_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtAppo_LostFocus()
-    If txtAppo <> "" Then
+    Dim OldImpegnabili As Integer
+        If txtAppo <> "" Then
         If txtAppo > 0 And txtAppo < 99 Then
+            OldImpegnabili = flxGriglia.TextMatrix(vRow, 3)
             flxGriglia.TextMatrix(vRow, 3) = txtAppo.Text
             ' ricalcola il totale complessivo
             flxGriglia.TextMatrix(flxGriglia.Row, 5) = Format(flxGriglia.TextMatrix(vRow, 3) * CSng(VirgolaOrPunto(flxGriglia.TextMatrix(vRow, 4), ".")), "####.00")
+            MImpegnabili = MImpegnabili + txtAppo.Text - OldImpegnabili
+            Call CalcolaTotaliSeduteDialisi
             Call SalvaModifiche
         Else
             MsgBox "Inserire un valore compreso tra 1 e 99", vbCritical, "Attenzione"

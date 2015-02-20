@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "Tabctl32.ocx"
 Begin VB.Form frmNote 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Note di Rilascio"
@@ -57,23 +57,44 @@ Begin VB.Form frmNote
       Tab(0).Control(11).Enabled=   0   'False
       Tab(0).Control(12)=   "Label10(7)"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).ControlCount=   13
+      Tab(0).Control(13)=   "Label29"
+      Tab(0).Control(13).Enabled=   0   'False
+      Tab(0).Control(14)=   "Label10(8)"
+      Tab(0).Control(14).Enabled=   0   'False
+      Tab(0).Control(15)=   "Label10(9)"
+      Tab(0).Control(15).Enabled=   0   'False
+      Tab(0).Control(16)=   "Label30"
+      Tab(0).Control(16).Enabled=   0   'False
+      Tab(0).ControlCount=   17
       TabCaption(1)   =   "Versione 3.6.5"
       TabPicture(1)   =   "frmNote.frx":0326
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Label18"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Label17"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "Label16"
+      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "Label4(5)"
+      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "Label15"
+      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "Label14"
+      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "Label4(3)"
+      Tab(1).Control(6).Enabled=   0   'False
       Tab(1).Control(7)=   "Label8(0)"
+      Tab(1).Control(7).Enabled=   0   'False
       Tab(1).Control(8)=   "Label13"
+      Tab(1).Control(8).Enabled=   0   'False
       Tab(1).Control(9)=   "Label10(1)"
+      Tab(1).Control(9).Enabled=   0   'False
       Tab(1).Control(10)=   "Label12"
+      Tab(1).Control(10).Enabled=   0   'False
       Tab(1).Control(11)=   "Label11"
+      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).Control(12)=   "Label10(0)"
+      Tab(1).Control(12).Enabled=   0   'False
       Tab(1).ControlCount=   13
       TabCaption(2)   =   "Versione 3.6.4"
       TabPicture(2)   =   "frmNote.frx":0342
@@ -116,6 +137,80 @@ Begin VB.Form frmNote
       Tab(3).Control(17)=   "Label10(11)"
       Tab(3).Control(18)=   "Label10(10)"
       Tab(3).ControlCount=   19
+      Begin VB.Label Label30 
+         Caption         =   "-GESTIONE RICETTE-"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   63
+         Top             =   5440
+         Width           =   4335
+      End
+      Begin VB.Label Label10 
+         Caption         =   "Implementato il calcolo in tempo reale delle sedute/prestazioni impegnabili/impegnate"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   255
+         Index           =   9
+         Left            =   120
+         TabIndex        =   62
+         Top             =   5680
+         Width           =   7455
+      End
+      Begin VB.Label Label10 
+         Caption         =   "Attivato il modulo di gestione delle fatture elettroniche"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   255
+         Index           =   8
+         Left            =   120
+         TabIndex        =   61
+         Top             =   5100
+         Width           =   7095
+      End
+      Begin VB.Label Label29 
+         Caption         =   "-FATTURA ELETTRONICA-"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   60
+         Top             =   4860
+         Width           =   4335
+      End
       Begin VB.Label Label10 
          Caption         =   "Aggiunta nuova opzione ""Visualizza Dialisi Mensili Pazienti"""
          BeginProperty Font 

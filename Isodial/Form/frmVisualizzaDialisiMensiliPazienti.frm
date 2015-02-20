@@ -3,15 +3,15 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmVisualizzaDialisiMensiliPazienti 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Visualizza dialisi mensili pazienti"
-   ClientHeight    =   5985
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   9825
+   ClientHeight    =   5988
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   9120
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5985
-   ScaleWidth      =   9825
+   ScaleHeight     =   5988
+   ScaleWidth      =   9120
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
@@ -19,11 +19,11 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Left            =   120
       TabIndex        =   3
       Top             =   0
-      Width           =   9612
+      Width           =   8892
       Begin VB.ComboBox cboMeseFianle 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -32,7 +32,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          EndProperty
          Height          =   288
          ItemData        =   "frmVisualizzaDialisiMensiliPazienti.frx":0000
-         Left            =   4200
+         Left            =   4440
          List            =   "frmVisualizzaDialisiMensiliPazienti.frx":0028
          Style           =   2  'Dropdown List
          TabIndex        =   8
@@ -42,7 +42,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Begin VB.ComboBox cboAnno 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -51,7 +51,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          EndProperty
          Height          =   288
          ItemData        =   "frmVisualizzaDialisiMensiliPazienti.frx":0096
-         Left            =   6960
+         Left            =   7440
          List            =   "frmVisualizzaDialisiMensiliPazienti.frx":0098
          Style           =   2  'Dropdown List
          TabIndex        =   7
@@ -61,7 +61,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Begin VB.ComboBox cboMeseInziale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -82,7 +82,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Al mese:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -91,7 +91,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   3240
+         Left            =   3480
          TabIndex        =   11
          Top             =   264
          Width           =   840
@@ -101,7 +101,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Dal mese:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -120,7 +120,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Anno:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -129,7 +129,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   6240
+         Left            =   6720
          TabIndex        =   6
          Top             =   264
          Width           =   600
@@ -138,7 +138,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
    Begin VB.Frame fraListaMain 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -149,15 +149,15 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Left            =   120
       TabIndex        =   4
       Top             =   600
-      Width           =   9612
+      Width           =   8892
       Begin MSFlexGridLib.MSFlexGrid flxGriglia 
          Height          =   4212
          Left            =   120
          TabIndex        =   9
          Top             =   240
-         Width           =   9372
-         _ExtentX        =   16536
-         _ExtentY        =   7435
+         Width           =   8652
+         _ExtentX        =   15261
+         _ExtentY        =   7430
          _Version        =   393216
          Cols            =   14
          ScrollTrack     =   -1  'True
@@ -165,7 +165,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          FormatString    =   $"frmVisualizzaDialisiMensiliPazienti.frx":0130
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -177,7 +177,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
    Begin VB.Frame fraAzioni 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -188,12 +188,12 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
       Left            =   120
       TabIndex        =   5
       Top             =   5040
-      Width           =   9612
+      Width           =   8892
       Begin VB.CommandButton cmdElabora 
          Caption         =   "&Elabora"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -201,16 +201,16 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   5040
+         Left            =   4920
          TabIndex        =   14
          Top             =   240
-         Width           =   1455
+         Width           =   1100
       End
       Begin VB.CommandButton cmdStampa 
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -218,17 +218,17 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   6600
+         Left            =   6240
          TabIndex        =   1
          Top             =   240
-         Width           =   1455
+         Width           =   1100
       End
       Begin VB.CommandButton cmdChiudi 
          Caption         =   "&Chiudi"
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -236,15 +236,15 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   492
-         Left            =   8160
+         Left            =   7560
          TabIndex        =   2
          Top             =   240
-         Width           =   1215
+         Width           =   1100
       End
       Begin VB.Label lblTotalePazienti 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -252,18 +252,18 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00C00000&
-         Height          =   285
+         Height          =   288
          Left            =   4320
          TabIndex        =   16
          Top             =   360
-         Width           =   375
+         Width           =   372
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
          Caption         =   "Pazienti in Elenco:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -271,10 +271,10 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   2380
+         Left            =   2376
          TabIndex        =   15
-         Top             =   350
-         Width           =   1920
+         Top             =   348
+         Width           =   1800
          WordWrap        =   -1  'True
       End
       Begin VB.Label Label2 
@@ -282,7 +282,7 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
          Caption         =   "Totale Dialisi:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -290,17 +290,17 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   200
+         Left            =   204
          TabIndex        =   13
-         Top             =   350
-         Width           =   1500
+         Top             =   348
+         Width           =   1368
          WordWrap        =   -1  'True
       End
       Begin VB.Label lblTotaleDialisi 
          AutoSize        =   -1  'True
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -308,11 +308,11 @@ Begin VB.Form frmVisualizzaDialisiMensiliPazienti
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H000000FF&
-         Height          =   285
-         Left            =   1730
+         Height          =   288
+         Left            =   1680
          TabIndex        =   12
          Top             =   360
-         Width           =   500
+         Width           =   504
       End
    End
 End

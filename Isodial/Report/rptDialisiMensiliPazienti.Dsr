@@ -1,19 +1,19 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti 
    Caption         =   "Mostra Dialisi Mensili per Paziente"
-   ClientHeight    =   11010
-   ClientLeft      =   195
-   ClientTop       =   510
+   ClientHeight    =   8676
+   ClientLeft      =   192
+   ClientTop       =   516
    ClientWidth     =   15240
    StartUpPosition =   3  'Windows Default
    _ExtentX        =   26882
-   _ExtentY        =   19420
+   _ExtentY        =   19410
    _Version        =   393216
    _DesignerVersion=   100688210
    ReportWidth     =   10767
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -49,7 +49,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   495
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   21.75
+            Size            =   21.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -69,7 +69,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -88,7 +88,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -126,7 +126,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -144,7 +144,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -179,7 +179,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   336
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -197,7 +197,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   228
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -215,7 +215,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   1212
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -233,7 +233,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   228
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -251,7 +251,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -270,7 +270,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -289,7 +289,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -308,7 +308,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -327,7 +327,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -346,7 +346,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -365,7 +365,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -384,7 +384,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -403,7 +403,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -422,7 +422,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -441,7 +441,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -460,7 +460,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   270
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -479,7 +479,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -498,7 +498,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   280
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   14.25
+            Size            =   14.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -522,7 +522,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -549,7 +549,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -585,7 +585,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -613,7 +613,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -641,7 +641,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -669,7 +669,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -697,7 +697,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -725,7 +725,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -753,7 +753,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -781,7 +781,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -809,7 +809,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -837,7 +837,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -865,7 +865,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -893,7 +893,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   252
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -928,7 +928,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -947,7 +947,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -966,7 +966,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -985,7 +985,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1004,7 +1004,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   465
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1024,7 +1024,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblDialisiTotali"
-         Object.Left            =   9620
+         Object.Left            =   9550
          Object.Top             =   60
          Object.Width           =   600
          Object.Height          =   240
@@ -1037,18 +1037,19 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         Alignment       =   2
       EndProperty
       ItemType1       =   3
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label1"
-         Object.Left            =   8300
+         Object.Left            =   8350
          Object.Top             =   80
          Object.Width           =   1300
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1062,7 +1063,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblPazienti"
-         Object.Left            =   1785
+         Object.Left            =   1830
          Object.Top             =   60
          Object.Width           =   600
          Object.Height          =   240
@@ -1086,7 +1087,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptDialisiMensiliPazienti
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
-            Size            =   11.25
+            Size            =   11.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

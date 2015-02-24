@@ -841,8 +841,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptManutenzioneApparati
       BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtNumeroDocumento"
-         Object.Left            =   10885
-         Object.Width           =   690
+         Object.Left            =   10772
+         Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"

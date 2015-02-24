@@ -537,7 +537,7 @@ Private Sub cmdStampaManutenzioneApparato_Click()
                 "       NEW adVarChar(11) AS DATA_RICHIESTA_MANUTENZIONE, " & _
                 "       NEW adVarChar(11) AS DATA_EFFETTIVA_MANUTENZIONE, " & _
                 "       NEW adLongVarChar AS DESCRIZIONE_MANUTENZIONE, " & _
-                "       NEW adVarChar(5) AS NUMERO_DOCUMENTO, " & _
+                "       NEW adVarChar(10) AS NUMERO_DOCUMENTO, " & _
                 "       NEW adLongVarChar AS DETTAGLI_INTERVENTO "
                 
         

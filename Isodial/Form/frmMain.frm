@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Object = "{5B6D0C10-C25A-4015-8142-215041993551}#4.0#0"; "ACPRibbon.ocx"
 Begin VB.MDIForm frmMain 
    BackColor       =   &H8000000F&
@@ -1186,10 +1186,7 @@ Private Sub StampaRegistroApparati()
     Dim KeyApparato As Integer
     Dim DataUltimaManOrdFunz As String
     Dim DataUltimaManOrdSic As String
-    
-    DataUltimaManOrdFunz = "--"
-    DataUltimaManOrdSic = "--"
-                
+                 
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(50) AS TIPO_APPARATO, " & _
                 "       NEW adVarChar(50) AS MODELLO, " & _
@@ -1201,10 +1198,10 @@ Private Sub StampaRegistroApparati()
                 "       NEW adVarChar(11) AS DATA_COLLAUDO, " & _
                 "       NEW adVarChar(11) AS DATA_DISMISSIONE, " & _
                 "       NEW adVarChar(11) AS DATA_ROTTAMAZIONE, " & _
-                "       NEW adVarChar(11) AS DATA_ULTIMAREVSIC, " & _
                 "       NEW adVarChar(11) AS DATA_ULTIMAREVFUN, " & _
-                "       NEW adVarChar(11) AS PROXREVSIC, " & _
-                "       NEW adVarChar(11) AS PROXREVFUN "
+                "       NEW adVarChar(11) AS DATA_ULTIMAREVSIC, " & _
+                "       NEW adVarChar(11) AS PROXREVFUN, " & _
+                "       NEW adVarChar(11) AS PROXREVSIC "
                 
         
     ' apre la connessione per lo shape
@@ -1220,21 +1217,23 @@ Private Sub StampaRegistroApparati()
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         With rsMain
             Do While Not rsDataset.EOF
+                DataUltimaManOrdFunz = "--"
+                DataUltimaManOrdSic = "--"
                 KeyApparato = rsDataset("KEY")
                 'cerca ultima manutenzione ordinaria funzionale
-                rsManutenziona.Open "SELECT TOP 1 DATA_EFFETTIVA_MANUTENZIONE FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " AND (TIPO_MANUTENZIONE='ORD. FUNZ.' OR TIPO_MANUTENZIONE='ORD. FUN. SIC.') ORDER BY DATA_EFFETTIVA_MANUTENZIONE DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                rsManutenziona.Open "SELECT TOP 1 DATA_EFFETTIVA_MANUTENZIONE FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " AND (TIPO_MANUTENZIONE='ORD. FUNZ.' OR MID(TIPO_MANUTENZIONE,6,3)='FUN') ORDER BY DATA_EFFETTIVA_MANUTENZIONE DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
                 If Not rsManutenziona.EOF Then
                     DataUltimaManOrdFunz = rsManutenziona("DATA_EFFETTIVA_MANUTENZIONE")
                 End If
                 rsManutenziona.Close
                 
                 'cerca ultima manutenzione ordinaria sicurezza
-                rsManutenziona.Open "SELECT TOP 1 DATA_EFFETTIVA_MANUTENZIONE FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " AND (TIPO_MANUTENZIONE='ORD. SIC.' OR TIPO_MANUTENZIONE='ORD. FUN. SIC.') ORDER BY DATA_EFFETTIVA_MANUTENZIONE DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                rsManutenziona.Open "SELECT TOP 1 DATA_EFFETTIVA_MANUTENZIONE FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " AND (TIPO_MANUTENZIONE='ORD. SICUR.' OR MID(TIPO_MANUTENZIONE,11,3) ='SIC') ORDER BY DATA_EFFETTIVA_MANUTENZIONE DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
                 If Not rsManutenziona.EOF Then
                     DataUltimaManOrdSic = rsManutenziona("DATA_EFFETTIVA_MANUTENZIONE")
                 End If
                 rsManutenziona.Close
-                
+
                 .AddNew
                 .Fields("TIPO_APPARATO") = rsDataset("TIPO_APPARATO")
                 .Fields("MODELLO") = rsDataset("MODELLO")
@@ -1246,13 +1245,10 @@ Private Sub StampaRegistroApparati()
                 .Fields("DATA_COLLAUDO") = rsDataset("DATA_COLLAUDO") & ""
                 .Fields("DATA_DISMISSIONE") = rsDataset("DATA_DISMISSIONE") & ""
                 .Fields("DATA_ROTTAMAZIONE") = rsDataset("DATA_ROTTAMAZIONE") & ""
-                .Fields("DATA_ULTIMAREVSIC") = DataUltimaManOrdFunz & ""
-                .Fields("DATA_ULTIMAREVFUN") = DataUltimaManOrdSic & ""
-                .Fields("PROXREVSIC") = rsDataset("PROXREVSIC") & ""
+                .Fields("DATA_ULTIMAREVFUN") = DataUltimaManOrdFunz & ""
+                .Fields("DATA_ULTIMAREVSIC") = DataUltimaManOrdSic & ""
                 .Fields("PROXREVFUN") = rsDataset("PROXREVFUN") & ""
-                
-                DataUltimaManOrdFunz = "--"
-                DataUltimaManOrdSic = "--"
+                .Fields("PROXREVSIC") = rsDataset("PROXREVSIC") & ""
                 rsDataset.MoveNext
             Loop
         End With
@@ -1263,7 +1259,7 @@ Private Sub StampaRegistroApparati()
     Set rptRegistroApparati.DataSource = rsMain
     rptRegistroApparati.Orientation = rptOrientLandscape
     rptRegistroApparati.TopMargin = 0
-    rptRegistroApparati.BottomMargin = 1000
+    rptRegistroApparati.BottomMargin = 800
     rptRegistroApparati.RightMargin = 0
     rptRegistroApparati.LeftMargin = 0
     'rptRegistroApparati.Sections("Intestazione").Controls("lblElenco").Caption = TipoElenco
@@ -2434,7 +2430,7 @@ Public Sub SubClassMenuXP()
 
     Set MenuEvents = New CEvents
     Set objMenuEx = New cMenuEx
-    Call objMenuEx.Install(Me.hWnd, App.path & "\" & Me.Name, ImageList1, 2, MenuEvents)
+    Call objMenuEx.Install(Me.hWnd, App.Path & "\" & Me.Name, ImageList1, 2, MenuEvents)
 
 End Sub
 
@@ -2444,5 +2440,5 @@ Public Sub MenuDesigner()
 End Sub
 
 Private Sub mnuVisualizzaDailisiMensiliPazienti_Click()
-    frmVisualizzaDialisiMensiliPazienti.Show 1
+   ' frmVisualizzaDialisiMensiliPazienti.Show 1
 End Sub

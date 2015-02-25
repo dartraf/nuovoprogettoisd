@@ -342,7 +342,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Name            =   "Label3"
          Object.Left            =   11130
          Object.Top             =   2722
-         Object.Width           =   1020
+         Object.Width           =   1080
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -353,7 +353,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Ultima Verifica Sic."
+         Object.Caption         =   "Ultima Verifica Fun."
          Alignment       =   2
       EndProperty
       ItemType18      =   3
@@ -362,7 +362,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
          Name            =   "Label8"
          Object.Left            =   12246
          Object.Top             =   2722
-         Object.Width           =   1020
+         Object.Width           =   1080
          Object.Height          =   570
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Times New Roman"
@@ -373,7 +373,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Prossima Verifica Sic."
+         Object.Caption         =   "Prossima Verifica Fun."
          Alignment       =   2
       EndProperty
       ItemType19      =   3
@@ -393,7 +393,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Ultima Verifica Fun."
+         Object.Caption         =   "Ultima Verifica Sic."
          Alignment       =   2
       EndProperty
       ItemType20      =   3
@@ -413,7 +413,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Object.Caption         =   "Prossima Verifica Fun."
+         Object.Caption         =   "Prossima Verifica Sic."
          Alignment       =   2
       EndProperty
       ItemType21      =   3
@@ -439,7 +439,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "corpo"
-      Object.Height          =   435
+      Object.Height          =   450
       NumControls     =   14
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -550,7 +550,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataProssimaSicurezza"
-         Object.Left            =   12246
+         Object.Left            =   14564
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -577,7 +577,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataUltimaFunzionale"
-         Object.Left            =   13380
+         Object.Left            =   11130
          Object.Width           =   1080
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -766,7 +766,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       BeginProperty Item12 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataUltimaSicurezza"
-         Object.Left            =   11130
+         Object.Left            =   13380
          Object.Width           =   1020
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -793,7 +793,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRegistroApparati
       BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txtDataProssimaFunzionale"
-         Object.Left            =   14564
+         Object.Left            =   12246
          Object.Width           =   1080
          Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1043,10 +1043,10 @@ Private Sub DataReport_Initialize()
             .Item("txtDataCollaudo").DataField = "DATA_COLLAUDO"
             .Item("txtDataDismissione").DataField = "DATA_DISMISSIONE"
             .Item("txtDataRottamazione").DataField = "DATA_ROTTAMAZIONE"
-            .Item("txtDataUltimaSicurezza").DataField = "DATA_ULTIMAREVSIC"
-            .Item("txtDataProssimaSicurezza").DataField = "PROXREVSIC"
             .Item("txtDataUltimaFunzionale").DataField = "DATA_ULTIMAREVFUN"
             .Item("txtDataProssimaFunzionale").DataField = "PROXREVFUN"
+            .Item("txtDataUltimaSicurezza").DataField = "DATA_ULTIMAREVSIC"
+            .Item("txtDataProssimaSicurezza").DataField = "PROXREVSIC"
          End With
     End With
 

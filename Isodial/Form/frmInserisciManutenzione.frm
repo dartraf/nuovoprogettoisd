@@ -566,9 +566,15 @@ Private Sub CalcoloProxRevFun()
 
     Set rsDataRevisioneFunzionale = New Recordset
     rsDataRevisioneFunzionale.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-        
-    If oDataEffettivaManutenzione(1).data > rsDataRevisioneFunzionale("DATA_COLLAUDO") Then
-        ProxRevFun = rsDataRevisioneFunzionale("DATA_COLLAUDO")
+    
+    Dim data1 As Date
+    Dim data2 As Date
+    
+    data1 = DateValue(Year(oDataEffettivaManutenzione(1).data) & "/" & Month(oDataEffettivaManutenzione(1).data) & "/" & Day(oDataEffettivaManutenzione(1).data))
+    data2 = DateValue(Year(rsDataRevisioneFunzionale("PROXREVFUN")) & "/" & Month(rsDataRevisioneFunzionale("PROXREVFUN")) & "/" & Day(rsDataRevisioneFunzionale("PROXREVFUN")))
+
+    If data1 >= data2 Then
+        ProxRevFun = rsDataRevisioneFunzionale("PROXREVFUN")
             
             Select Case rsDataRevisioneFunzionale("FUNZIONALITA")
                 Case Is = 0
@@ -609,8 +615,14 @@ Private Sub CalcoloProxRevSic()
     Set rsDataRevisioneSicurezza = New Recordset
     rsDataRevisioneSicurezza.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
         
-    If oDataEffettivaManutenzione(1).data > rsDataRevisioneSicurezza("DATA_COLLAUDO") Then
-        ProxRevSic = rsDataRevisioneSicurezza("DATA_COLLAUDO")
+    Dim data1 As Date
+    Dim data2 As Date
+    
+    data1 = DateValue(Year(oDataEffettivaManutenzione(1).data) & "/" & Month(oDataEffettivaManutenzione(1).data) & "/" & Day(oDataEffettivaManutenzione(1).data))
+    data2 = DateValue(Year(rsDataRevisioneSicurezza("PROXREVSIC")) & "/" & Month(rsDataRevisioneSicurezza("PROXREVSIC")) & "/" & Day(rsDataRevisioneSicurezza("PROXREVSIC")))
+
+    If data1 >= data2 Then
+        ProxRevSic = rsDataRevisioneSicurezza("PROXREVSIC")
             
             Select Case rsDataRevisioneSicurezza("SICUREZZA")
                 Case Is = 0
@@ -761,11 +773,11 @@ Private Sub Form_Load()
             lblDescrizioneManutenzione(1).Caption = "Descrizione Manutenzione"
             If Selezionato = True Then
                 Call CaricaManutenzione
-            Else
+'            Else
             'Se non è selezionata nessuna manutenzione
             'si trova nella fase di inserimento e
             'precompila il campo ScadenzaManutenzione con la data di sistema
-                oDataScadenzaManutenzione(1).data = date
+'             oDataScadenzaManutenzione(1).data = date
             End If
             
     End Select

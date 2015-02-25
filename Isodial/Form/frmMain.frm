@@ -345,7 +345,7 @@ Begin VB.MDIForm frmMain
             AutoSize        =   1
             Object.Width           =   2999
             MinWidth        =   2999
-            TextSave        =   "19/02/2015"
+            TextSave        =   "25/02/2015"
          EndProperty
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1182,7 +1182,14 @@ Private Sub StampaRegistroApparati()
     Dim cnConn As Connection        ' connessione per lo shape
     Dim rsMain As Recordset         ' recordset padre per lo shape
     Dim rsDataset As Recordset
+    Dim rsManutenziona As Recordset
+    Dim KeyApparato As Integer
+    Dim DataUltimaManOrdFunz As String
+    Dim DataUltimaManOrdSic As String
     
+    DataUltimaManOrdFunz = "--"
+    DataUltimaManOrdSic = "--"
+                
     SQLString = "SHAPE APPEND " & _
                 "       NEW adVarChar(50) AS TIPO_APPARATO, " & _
                 "       NEW adVarChar(50) AS MODELLO, " & _
@@ -1194,6 +1201,8 @@ Private Sub StampaRegistroApparati()
                 "       NEW adVarChar(11) AS DATA_COLLAUDO, " & _
                 "       NEW adVarChar(11) AS DATA_DISMISSIONE, " & _
                 "       NEW adVarChar(11) AS DATA_ROTTAMAZIONE, " & _
+                "       NEW adVarChar(11) AS DATA_ULTIMAREVSIC, " & _
+                "       NEW adVarChar(11) AS DATA_ULTIMAREVFUN, " & _
                 "       NEW adVarChar(11) AS PROXREVSIC, " & _
                 "       NEW adVarChar(11) AS PROXREVFUN "
                 
@@ -1205,11 +1214,27 @@ Private Sub StampaRegistroApparati()
     rsMain.Open SQLString, cnConn, adOpenStatic, adLockOptimistic
     
     Set rsDataset = New Recordset
+    Set rsManutenziona = New Recordset
     
     rsDataset.Open "SELECT * FROM APPARATI ORDER BY NUMERO_INVENTARIO", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
         With rsMain
             Do While Not rsDataset.EOF
+                KeyApparato = rsDataset("KEY")
+                'cerca ultima manutenzione ordinaria funzionale
+                rsManutenziona.Open "SELECT TOP 1 DATA_EFFETTIVA_MANUTENZIONE FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " AND (TIPO_MANUTENZIONE='ORD. FUNZ.' OR TIPO_MANUTENZIONE='ORD. FUN. SIC.') ORDER BY DATA_EFFETTIVA_MANUTENZIONE DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                If Not rsManutenziona.EOF Then
+                    DataUltimaManOrdFunz = rsManutenziona("DATA_EFFETTIVA_MANUTENZIONE")
+                End If
+                rsManutenziona.Close
+                
+                'cerca ultima manutenzione ordinaria sicurezza
+                rsManutenziona.Open "SELECT TOP 1 DATA_EFFETTIVA_MANUTENZIONE FROM MANUTENZIONE_APPARATI WHERE CODICE_APPARATO= " & KeyApparato & " AND (TIPO_MANUTENZIONE='ORD. SIC.' OR TIPO_MANUTENZIONE='ORD. FUN. SIC.') ORDER BY DATA_EFFETTIVA_MANUTENZIONE DESC", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+                If Not rsManutenziona.EOF Then
+                    DataUltimaManOrdSic = rsManutenziona("DATA_EFFETTIVA_MANUTENZIONE")
+                End If
+                rsManutenziona.Close
+                
                 .AddNew
                 .Fields("TIPO_APPARATO") = rsDataset("TIPO_APPARATO")
                 .Fields("MODELLO") = rsDataset("MODELLO")
@@ -1221,8 +1246,13 @@ Private Sub StampaRegistroApparati()
                 .Fields("DATA_COLLAUDO") = rsDataset("DATA_COLLAUDO") & ""
                 .Fields("DATA_DISMISSIONE") = rsDataset("DATA_DISMISSIONE") & ""
                 .Fields("DATA_ROTTAMAZIONE") = rsDataset("DATA_ROTTAMAZIONE") & ""
+                .Fields("DATA_ULTIMAREVSIC") = DataUltimaManOrdFunz & ""
+                .Fields("DATA_ULTIMAREVFUN") = DataUltimaManOrdSic & ""
                 .Fields("PROXREVSIC") = rsDataset("PROXREVSIC") & ""
                 .Fields("PROXREVFUN") = rsDataset("PROXREVFUN") & ""
+                
+                DataUltimaManOrdFunz = "--"
+                DataUltimaManOrdSic = "--"
                 rsDataset.MoveNext
             Loop
         End With

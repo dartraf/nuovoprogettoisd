@@ -606,6 +606,14 @@ Private Sub StampaFogliViaggio()
             Set rptFogliViaggio.DataSource = rsMain
             rptFogliViaggio.RightMargin = rptFogliViaggio.RightMargin / 3
             
+            ' Gli passo da qui i valori del campo m° Fax
+            ' per evitare che carichi il valore precedente dopo una modifica
+            rptFogliViaggio.Sections("intestazione").Controls.Item("lblAltro").Caption = structIntestazione.sIndirizzo & " - " & structIntestazione.sCap & " " & structIntestazione.sCitta & " " & structIntestazione.sProv & vbCrLf & _
+            "TEL: " & structIntestazione.sTelefono & "   FAX: " & structIntestazione.sFax & vbCrLf & _
+            "P. Iva: " & structIntestazione.sIva & "   Cod. Fiscale: " & structIntestazione.sCodiceFiscale & vbCrLf & _
+            "E-mail: " & structIntestazione.sMail & vbCrLf & _
+            "Sito web: " & structIntestazione.sSitoWeb
+            
             rptFogliViaggio.Sections("pie").Controls.Item("lblLuogo").Caption = structIntestazione.sCitta & " lì, " & GetUltimoGiorno(cboMese.ListIndex + 1, cboAnno.Text)
             
             If structIntestazione.sCodiceSTS = CODICESTS_S_LUCA Then

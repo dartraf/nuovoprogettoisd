@@ -443,7 +443,10 @@ Private Sub cmdMemorizza_Click()
 Dim v_Nomi() As Variant
 Dim v_Val() As Variant
 Dim numKey As Integer
-               
+ 
+Dim data1 As Date
+Dim data2 As Date
+              
     Set rsManutenzione = New Recordset
     
     If tTabellaManutenzione = tpMANUNTENZIONESTRAORDINARIA Then
@@ -484,7 +487,14 @@ Dim numKey As Integer
             MsgBox "Inserire la Descrizione della Manutenzione", vbInformation, "Informazione"
             Exit Sub
         End If
-
+        
+        data1 = DateValue(Year(oDataScadenzaManutenzione(1).data) & "/" & Month(oDataScadenzaManutenzione(1).data) & "/" & Day(oDataScadenzaManutenzione(1).data))
+        data2 = DateValue(Year(oDataEffettivaManutenzione(1).data) & "/" & Month(oDataEffettivaManutenzione(1).data) & "/" & Day(oDataEffettivaManutenzione(1).data))
+        If data1 > data2 Then
+             If MsgBox("La data di EFFETTIVA MANUTENZIONE è antecedente la data prevista per la MANUTENZIONE ORDINARIA." & Chr(13) & "- TRATTASI DI ANTICIPO ? -", vbQuestion + vbYesNo + vbDefaultButton2, "Informazione") = vbNo Then
+                Exit Sub
+             End If
+        End If
     End If
             
     If SelezionatoManutenzione = False Then
@@ -566,15 +576,13 @@ Private Sub CalcoloProxRevFun()
 
     Set rsDataRevisioneFunzionale = New Recordset
     rsDataRevisioneFunzionale.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-    
-    Dim data1 As Date
-    Dim data2 As Date
-    
-    data1 = DateValue(Year(oDataEffettivaManutenzione(1).data) & "/" & Month(oDataEffettivaManutenzione(1).data) & "/" & Day(oDataEffettivaManutenzione(1).data))
-    data2 = DateValue(Year(rsDataRevisioneFunzionale("PROXREVFUN")) & "/" & Month(rsDataRevisioneFunzionale("PROXREVFUN")) & "/" & Day(rsDataRevisioneFunzionale("PROXREVFUN")))
 
-    If data1 >= data2 Then
-        ProxRevFun = rsDataRevisioneFunzionale("PROXREVFUN")
+'   VarType = 1 'se il campo è null VarType assume valore 1
+    If VarType(rsDataRevisioneFunzionale("PROXREVFUN")) = 1 Then
+        Exit Sub
+    End If
+    
+    ProxRevFun = rsDataRevisioneFunzionale("PROXREVFUN")
             
             Select Case rsDataRevisioneFunzionale("FUNZIONALITA")
                 Case Is = 0
@@ -603,8 +611,6 @@ Private Sub CalcoloProxRevFun()
         rsDataRevisioneFunzionale("LETTO") = False
         rsDataRevisioneFunzionale.Update
         
-    End If
-        
     Set rsDataRevisioneFunzionale = Nothing
 
 End Sub
@@ -614,15 +620,13 @@ Private Sub CalcoloProxRevSic()
 
     Set rsDataRevisioneSicurezza = New Recordset
     rsDataRevisioneSicurezza.Open "SELECT * FROM APPARATI WHERE KEY=" & KeyApparato, cnPrinc, adOpenKeyset, adLockPessimistic, adCmdText
-        
-    Dim data1 As Date
-    Dim data2 As Date
-    
-    data1 = DateValue(Year(oDataEffettivaManutenzione(1).data) & "/" & Month(oDataEffettivaManutenzione(1).data) & "/" & Day(oDataEffettivaManutenzione(1).data))
-    data2 = DateValue(Year(rsDataRevisioneSicurezza("PROXREVSIC")) & "/" & Month(rsDataRevisioneSicurezza("PROXREVSIC")) & "/" & Day(rsDataRevisioneSicurezza("PROXREVSIC")))
 
-    If data1 >= data2 Then
-        ProxRevSic = rsDataRevisioneSicurezza("PROXREVSIC")
+'   VarType = 1 'se il campo è null VarType assume valore 1
+    If VarType(rsDataRevisioneSicurezza("PROXREVSIC")) = 1 Then
+        Exit Sub
+    End If
+     
+       ProxRevSic = rsDataRevisioneSicurezza("PROXREVSIC")
             
             Select Case rsDataRevisioneSicurezza("SICUREZZA")
                 Case Is = 0
@@ -650,9 +654,7 @@ Private Sub CalcoloProxRevSic()
         rsDataRevisioneSicurezza("PROXREVSIC") = ProxRevSic
         rsDataRevisioneSicurezza("LETTO") = False
         rsDataRevisioneSicurezza.Update
-        
-    End If
-        
+       
     Set rsDataRevisioneSicurezza = Nothing
 
 End Sub

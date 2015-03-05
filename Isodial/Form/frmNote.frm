@@ -65,78 +65,119 @@ Begin VB.Form frmNote
       Tab(0).Control(15).Enabled=   0   'False
       Tab(0).Control(16)=   "Label30"
       Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).ControlCount=   17
+      Tab(0).Control(17)=   "Label31"
+      Tab(0).Control(17).Enabled=   0   'False
+      Tab(0).Control(18)=   "Label10(15)"
+      Tab(0).Control(18).Enabled=   0   'False
+      Tab(0).ControlCount=   19
       TabCaption(1)   =   "Versione 3.6.5"
       TabPicture(1)   =   "frmNote.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label18"
+      Tab(1).Control(0)=   "Label10(0)"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Label17"
+      Tab(1).Control(1)=   "Label11"
       Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "Label16"
+      Tab(1).Control(2)=   "Label12"
       Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).Control(3)=   "Label4(5)"
+      Tab(1).Control(3)=   "Label10(1)"
       Tab(1).Control(3).Enabled=   0   'False
-      Tab(1).Control(4)=   "Label15"
+      Tab(1).Control(4)=   "Label13"
       Tab(1).Control(4).Enabled=   0   'False
-      Tab(1).Control(5)=   "Label14"
+      Tab(1).Control(5)=   "Label8(0)"
       Tab(1).Control(5).Enabled=   0   'False
       Tab(1).Control(6)=   "Label4(3)"
       Tab(1).Control(6).Enabled=   0   'False
-      Tab(1).Control(7)=   "Label8(0)"
+      Tab(1).Control(7)=   "Label14"
       Tab(1).Control(7).Enabled=   0   'False
-      Tab(1).Control(8)=   "Label13"
+      Tab(1).Control(8)=   "Label15"
       Tab(1).Control(8).Enabled=   0   'False
-      Tab(1).Control(9)=   "Label10(1)"
+      Tab(1).Control(9)=   "Label4(5)"
       Tab(1).Control(9).Enabled=   0   'False
-      Tab(1).Control(10)=   "Label12"
+      Tab(1).Control(10)=   "Label16"
       Tab(1).Control(10).Enabled=   0   'False
-      Tab(1).Control(11)=   "Label11"
+      Tab(1).Control(11)=   "Label17"
       Tab(1).Control(11).Enabled=   0   'False
-      Tab(1).Control(12)=   "Label10(0)"
+      Tab(1).Control(12)=   "Label18"
       Tab(1).Control(12).Enabled=   0   'False
       Tab(1).ControlCount=   13
       TabCaption(2)   =   "Versione 3.6.4"
       TabPicture(2)   =   "frmNote.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label28"
-      Tab(2).Control(1)=   "Label10(6)"
-      Tab(2).Control(2)=   "Label27"
-      Tab(2).Control(3)=   "Label8(1)"
-      Tab(2).Control(4)=   "Label26"
-      Tab(2).Control(5)=   "Label25"
-      Tab(2).Control(6)=   "Label4(2)"
-      Tab(2).Control(7)=   "Label24"
-      Tab(2).Control(8)=   "Label23"
-      Tab(2).Control(9)=   "Label22"
-      Tab(2).Control(10)=   "Label21"
-      Tab(2).Control(11)=   "Label10(5)"
-      Tab(2).Control(12)=   "Label20"
-      Tab(2).Control(13)=   "Label10(4)"
+      Tab(2).Control(0)=   "Label10(4)"
+      Tab(2).Control(1)=   "Label20"
+      Tab(2).Control(2)=   "Label10(5)"
+      Tab(2).Control(3)=   "Label21"
+      Tab(2).Control(4)=   "Label22"
+      Tab(2).Control(5)=   "Label23"
+      Tab(2).Control(6)=   "Label24"
+      Tab(2).Control(7)=   "Label4(2)"
+      Tab(2).Control(8)=   "Label25"
+      Tab(2).Control(9)=   "Label26"
+      Tab(2).Control(10)=   "Label8(1)"
+      Tab(2).Control(11)=   "Label27"
+      Tab(2).Control(12)=   "Label10(6)"
+      Tab(2).Control(13)=   "Label28"
       Tab(2).ControlCount=   14
       TabCaption(3)   =   "Versione 3.6.3"
       TabPicture(3)   =   "frmNote.frx":035E
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Label44"
-      Tab(3).Control(1)=   "Label10(14)"
-      Tab(3).Control(2)=   "Label43"
-      Tab(3).Control(3)=   "Label8(3)"
-      Tab(3).Control(4)=   "Label42"
-      Tab(3).Control(5)=   "Label41"
-      Tab(3).Control(6)=   "Label4(4)"
-      Tab(3).Control(7)=   "Label40"
-      Tab(3).Control(8)=   "Label39"
+      Tab(3).Control(0)=   "Label10(10)"
+      Tab(3).Control(1)=   "Label10(11)"
+      Tab(3).Control(2)=   "Label33"
+      Tab(3).Control(3)=   "Label34"
+      Tab(3).Control(4)=   "Label35"
+      Tab(3).Control(5)=   "Label10(12)"
+      Tab(3).Control(6)=   "Label36"
+      Tab(3).Control(7)=   "Label10(13)"
+      Tab(3).Control(8)=   "Label37"
       Tab(3).Control(9)=   "Label38"
-      Tab(3).Control(10)=   "Label37"
-      Tab(3).Control(11)=   "Label10(13)"
-      Tab(3).Control(12)=   "Label36"
-      Tab(3).Control(13)=   "Label10(12)"
-      Tab(3).Control(14)=   "Label35"
-      Tab(3).Control(15)=   "Label34"
-      Tab(3).Control(16)=   "Label33"
-      Tab(3).Control(17)=   "Label10(11)"
-      Tab(3).Control(18)=   "Label10(10)"
+      Tab(3).Control(10)=   "Label39"
+      Tab(3).Control(11)=   "Label40"
+      Tab(3).Control(12)=   "Label4(4)"
+      Tab(3).Control(13)=   "Label41"
+      Tab(3).Control(14)=   "Label42"
+      Tab(3).Control(15)=   "Label8(3)"
+      Tab(3).Control(16)=   "Label43"
+      Tab(3).Control(17)=   "Label10(14)"
+      Tab(3).Control(18)=   "Label44"
       Tab(3).ControlCount=   19
+      Begin VB.Label Label10 
+         Caption         =   "Aggiunto il campo EMAIL CERTIFICATA per indicare la PEC"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00C00000&
+         Height          =   255
+         Index           =   15
+         Left            =   120
+         TabIndex        =   65
+         Top             =   3540
+         Width           =   7455
+      End
+      Begin VB.Label Label31 
+         Caption         =   "-INTESTAZIONE CENTRO -"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   64
+         Top             =   3320
+         Width           =   4335
+      End
       Begin VB.Label Label30 
          Caption         =   "-GESTIONE RICETTE-"
          BeginProperty Font 
@@ -152,7 +193,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   63
-         Top             =   5440
+         Top             =   5490
          Width           =   4335
       End
       Begin VB.Label Label10 
@@ -171,7 +212,7 @@ Begin VB.Form frmNote
          Index           =   9
          Left            =   120
          TabIndex        =   62
-         Top             =   5680
+         Top             =   5710
          Width           =   7455
       End
       Begin VB.Label Label10 
@@ -190,7 +231,7 @@ Begin VB.Form frmNote
          Index           =   8
          Left            =   120
          TabIndex        =   61
-         Top             =   5100
+         Top             =   5210
          Width           =   7095
       End
       Begin VB.Label Label29 
@@ -208,7 +249,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   60
-         Top             =   4860
+         Top             =   4950
          Width           =   4335
       End
       Begin VB.Label Label10 
@@ -227,7 +268,7 @@ Begin VB.Form frmNote
          Index           =   7
          Left            =   120
          TabIndex        =   59
-         Top             =   4485
+         Top             =   4630
          Width           =   5295
       End
       Begin VB.Label Label2 
@@ -245,7 +286,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   58
-         Top             =   4230
+         Top             =   4390
          Width           =   4935
       End
       Begin VB.Label Label10 
@@ -264,7 +305,7 @@ Begin VB.Form frmNote
          Index           =   3
          Left            =   120
          TabIndex        =   57
-         Top             =   3020
+         Top             =   2840
          Width           =   6495
       End
       Begin VB.Label Label19 
@@ -1145,7 +1186,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   9
-         Top             =   3580
+         Top             =   3850
          Width           =   4935
       End
       Begin VB.Label Label10 
@@ -1164,7 +1205,7 @@ Begin VB.Form frmNote
          Index           =   2
          Left            =   120
          TabIndex        =   8
-         Top             =   3860
+         Top             =   4100
          Width           =   7095
       End
       Begin VB.Label Label7 
@@ -1182,7 +1223,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   7
-         Top             =   2560
+         Top             =   2360
          Width           =   3375
       End
       Begin VB.Label Label8 
@@ -1201,7 +1242,7 @@ Begin VB.Form frmNote
          Index           =   2
          Left            =   120
          TabIndex        =   6
-         Top             =   2805
+         Top             =   2600
          Width           =   3015
       End
       Begin VB.Label Label5 
@@ -1219,7 +1260,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   5
-         Top             =   1725
+         Top             =   1600
          Width           =   3975
       End
       Begin VB.Label Label6 
@@ -1237,7 +1278,7 @@ Begin VB.Form frmNote
          Height          =   375
          Left            =   120
          TabIndex        =   4
-         Top             =   1980
+         Top             =   1850
          Width           =   7095
       End
       Begin VB.Label Label4 
@@ -1256,7 +1297,7 @@ Begin VB.Form frmNote
          Index           =   0
          Left            =   120
          TabIndex        =   3
-         Top             =   1320
+         Top             =   1280
          Width           =   7455
       End
       Begin VB.Label Label3 
@@ -1274,7 +1315,7 @@ Begin VB.Form frmNote
          Height          =   255
          Left            =   120
          TabIndex        =   2
-         Top             =   1080
+         Top             =   1030
          Width           =   2775
       End
       Begin VB.Label Label1 

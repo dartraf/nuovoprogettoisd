@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form frmStampaFattureRiepilogo 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Stampa Riepilogo per Impegnative"
@@ -2932,8 +2932,8 @@ Private Sub fattelettr_Click()
     
     'crea 2° elemento e nodi
     Set nodo2 = doc.createElement("ContattiTrasmittente")
-       ' nodo2.appendChild CreaNodo("Telefono", "0000000")
-        nodo2.appendChild CreaNodo("Email", rsDataset("MAIL"))
+        nodo2.appendChild CreaNodo("Telefono", rsDataset("TELEFONO"))
+        nodo2.appendChild CreaNodo("Email", rsDataset("MAIL_CERTIFICATA"))
         'aggiunge al 1° elemento l'elemento i nodi del 2° elemento
         nodo1.appendChild nodo2
     

@@ -269,7 +269,6 @@ Begin VB.Form frmStampaFattureRiepilogo
       Width           =   5295
       Begin VB.CommandButton ControllaFE 
          Caption         =   "C&ontrolla Fatt.EL."
-         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -280,7 +279,7 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   1960
+         Left            =   1970
          TabIndex        =   20
          Top             =   240
          Visible         =   0   'False
@@ -288,7 +287,6 @@ Begin VB.Form frmStampaFattureRiepilogo
       End
       Begin VB.CommandButton VisualizzaFE 
          Caption         =   "&Visualizza Fatt.EL."
-         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -299,11 +297,11 @@ Begin VB.Form frmStampaFattureRiepilogo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   980
+         Left            =   960
          TabIndex        =   19
          Top             =   240
          Visible         =   0   'False
-         Width           =   970
+         Width           =   1000
       End
       Begin VB.CommandButton fattelettr 
          Caption         =   "&Fattura Elettr."
@@ -386,7 +384,7 @@ Private Sub ControllaFE_Click()
     'Apre nel browser il link per il controllo della FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hWnd, "open", "http://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=controlla_fattura", vbNullString, vbNullString, 1)
+    ret = ShellExecute(Me.hwnd, "open", "http://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=controlla_fattura", vbNullString, vbNullString, 1)
     If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
 End Sub
 
@@ -2933,7 +2931,10 @@ Private Sub fattelettr_Click()
     'crea 2° elemento e nodi
     Set nodo2 = doc.createElement("ContattiTrasmittente")
         nodo2.appendChild CreaNodo("Telefono", rsDataset("TELEFONO"))
-        nodo2.appendChild CreaNodo("Email", rsDataset("MAIL_CERTIFICATA"))
+        If rsDataset("MAIL_CERTIFICATA") <> "" Then
+            nodo2.appendChild CreaNodo("Email", rsDataset("MAIL_CERTIFICATA"))
+        End If
+                
         'aggiunge al 1° elemento l'elemento i nodi del 2° elemento
         nodo1.appendChild nodo2
     
@@ -3293,12 +3294,12 @@ Private Sub fattelettr_Click()
     ' Copia il file XML dalla cartella FE al percorso selezionato
     ' Call FileCopyEx(structApri.pathExe & "\*.xsl", txtPercorso & "\*.xsl")
     Call FileCopyEx(structApri.pathExe & "\FE\" & NameExtXML, txtPercorso & "\" & NameExtXML)
-    
+
     'Visualizza nel browser la fattura dal file XML della cartella FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
-    If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
+    ret = ShellExecute(Me.hwnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
+    'If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
 
 End Sub
 

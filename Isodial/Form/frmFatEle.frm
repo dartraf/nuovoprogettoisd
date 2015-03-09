@@ -2,21 +2,21 @@ VERSION 5.00
 Begin VB.Form frmFatEle 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Fattura Elettronica"
-   ClientHeight    =   10200
+   ClientHeight    =   9825
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   7920
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   10200
+   ScaleHeight     =   9825
    ScaleWidth      =   7920
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame4 
-      Height          =   1095
+      Height          =   735
       Left            =   120
-      TabIndex        =   59
+      TabIndex        =   58
       Top             =   8160
       Width           =   7695
       Begin VB.TextBox txtBolloFattura 
@@ -31,28 +31,11 @@ Begin VB.Form frmFatEle
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5880
+         Left            =   1800
          MaxLength       =   4
-         TabIndex        =   28
-         Top             =   240
-         Width           =   612
-      End
-      Begin VB.TextBox txtAutorizzazioneBollo 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   2040
-         MaxLength       =   14
          TabIndex        =   27
          Top             =   240
-         Width           =   1815
+         Width           =   612
       End
       Begin VB.Label lblProgrInvio 
          Caption         =   "N° Progressivo Invio"
@@ -67,27 +50,10 @@ Begin VB.Form frmFatEle
          EndProperty
          ForeColor       =   &H8000000D&
          Height          =   255
-         Left            =   120
-         TabIndex        =   62
-         Top             =   720
+         Left            =   3960
+         TabIndex        =   60
+         Top             =   270
          Width           =   2895
-      End
-      Begin VB.Label lblAutorizzazione 
-         Caption         =   "N° Autorizzazione Bollo Virtuale "
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   495
-         Left            =   120
-         TabIndex        =   61
-         Top             =   140
-         Width           =   1935
       End
       Begin VB.Label Label1 
          Caption         =   "Bollo su Fattura"
@@ -100,19 +66,19 @@ Begin VB.Form frmFatEle
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   312
+         Height          =   315
          Index           =   22
-         Left            =   4200
-         TabIndex        =   60
+         Left            =   120
+         TabIndex        =   59
          Top             =   240
-         Width           =   1692
+         Width           =   1695
       End
    End
    Begin VB.Frame fraPulsanti 
       Height          =   855
       Left            =   120
-      TabIndex        =   53
-      Top             =   9240
+      TabIndex        =   52
+      Top             =   8880
       Width           =   7695
       Begin VB.CommandButton cmdMemorizza 
          Caption         =   "&Memorizza"
@@ -128,7 +94,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   5070
-         TabIndex        =   73
+         TabIndex        =   71
          Top             =   240
          Width           =   1380
       End
@@ -146,7 +112,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   6480
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   240
          Width           =   1140
       End
@@ -163,12 +129,12 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   495
          Left            =   3360
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   240
          Width           =   1695
       End
       Begin VB.Label Label2 
-         Caption         =   "Tutti i campi vanno valorizzati"
+         Caption         =   "Vanno valorizzati tutti i campi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -181,7 +147,7 @@ Begin VB.Form frmFatEle
          ForeColor       =   &H000000FF&
          Height          =   375
          Left            =   120
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   360
          Width           =   3135
       End
@@ -200,7 +166,7 @@ Begin VB.Form frmFatEle
       ForeColor       =   &H00FF0000&
       Height          =   1455
       Left            =   120
-      TabIndex        =   47
+      TabIndex        =   46
       Top             =   6720
       Width           =   7695
       Begin VB.TextBox txtIbanNum 
@@ -343,7 +309,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   28
          Left            =   120
-         TabIndex        =   49
+         TabIndex        =   48
          Top             =   960
          Width           =   540
       End
@@ -362,7 +328,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   27
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   480
          Width           =   1545
       End
@@ -381,7 +347,7 @@ Begin VB.Form frmFatEle
       ForeColor       =   &H00FF0000&
       Height          =   2415
       Left            =   120
-      TabIndex        =   38
+      TabIndex        =   37
       Top             =   4320
       Width           =   7695
       Begin VB.ComboBox cboProvCommittente 
@@ -398,7 +364,7 @@ Begin VB.Form frmFatEle
          Height          =   315
          Left            =   5880
          Style           =   2  'Dropdown List
-         TabIndex        =   72
+         TabIndex        =   70
          Top             =   1440
          Width           =   804
       End
@@ -545,7 +511,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   255
          Left            =   4800
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   480
          Width           =   1935
       End
@@ -564,7 +530,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   21
          Left            =   120
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   990
          Width           =   870
       End
@@ -583,7 +549,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   20
          Left            =   5160
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   990
          Width           =   465
       End
@@ -602,7 +568,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   19
          Left            =   120
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   1440
          Width           =   480
       End
@@ -621,7 +587,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   18
          Left            =   5160
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   1440
          Width           =   555
       End
@@ -640,7 +606,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   17
          Left            =   120
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   1920
          Width           =   600
       End
@@ -657,7 +623,7 @@ Begin VB.Form frmFatEle
          Height          =   435
          Index           =   16
          Left            =   120
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   4470
          Width           =   1200
       End
@@ -675,7 +641,7 @@ Begin VB.Form frmFatEle
          Height          =   435
          Index           =   15
          Left            =   120
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   360
          Width           =   1080
       End
@@ -694,7 +660,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   9
          Left            =   5280
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   1920
          Width           =   420
       End
@@ -729,7 +695,7 @@ Begin VB.Form frmFatEle
          Height          =   315
          Left            =   6240
          Style           =   2  'Dropdown List
-         TabIndex        =   71
+         TabIndex        =   69
          Top             =   1248
          Width           =   804
       End
@@ -746,7 +712,7 @@ Begin VB.Form frmFatEle
          Height          =   285
          Left            =   1920
          MaxLength       =   40
-         TabIndex        =   69
+         TabIndex        =   67
          Top             =   2160
          Width           =   3015
       End
@@ -772,7 +738,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1920
-         TabIndex        =   64
+         TabIndex        =   62
          Top             =   3360
          Width           =   1572
          Begin VB.OptionButton srlno 
@@ -788,7 +754,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   720
-            TabIndex        =   66
+            TabIndex        =   64
             Top             =   80
             Width           =   615
          End
@@ -805,7 +771,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   0
-            TabIndex        =   65
+            TabIndex        =   63
             Top             =   80
             Width           =   615
          End
@@ -814,7 +780,7 @@ Begin VB.Form frmFatEle
          BorderStyle     =   0  'None
          Height          =   372
          Left            =   1680
-         TabIndex        =   63
+         TabIndex        =   61
          Top             =   3000
          Width           =   1932
          Begin VB.OptionButton Liquidaz_no 
@@ -830,7 +796,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   960
-            TabIndex        =   68
+            TabIndex        =   66
             Top             =   80
             Width           =   615
          End
@@ -847,7 +813,7 @@ Begin VB.Form frmFatEle
             EndProperty
             Height          =   255
             Left            =   240
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   80
             Width           =   615
          End
@@ -1058,7 +1024,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   10
          Left            =   120
-         TabIndex        =   70
+         TabIndex        =   68
          Top             =   2160
          Width           =   600
       End
@@ -1075,7 +1041,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   252
          Left            =   3936
-         TabIndex        =   58
+         TabIndex        =   57
          Top             =   3840
          Width           =   1668
       End
@@ -1092,7 +1058,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   252
          Left            =   108
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   3084
          Width           =   1692
       End
@@ -1109,7 +1075,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   252
          Left            =   108
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   3432
          Width           =   732
       End
@@ -1128,7 +1094,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   6
          Left            =   96
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   3840
          Width           =   1740
       End
@@ -1147,7 +1113,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   5
          Left            =   120
-         TabIndex        =   51
+         TabIndex        =   50
          Top             =   2664
          Width           =   780
       End
@@ -1166,7 +1132,7 @@ Begin VB.Form frmFatEle
          Height          =   480
          Index           =   0
          Left            =   4740
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   2580
          Width           =   1908
          WordWrap        =   -1  'True
@@ -1186,7 +1152,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   1
          Left            =   100
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   780
          Width           =   870
       End
@@ -1205,7 +1171,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   2
          Left            =   5700
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   780
          Width           =   465
       End
@@ -1224,7 +1190,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   3
          Left            =   100
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   1250
          Width           =   855
       End
@@ -1243,7 +1209,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   4
          Left            =   5640
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   1250
          Width           =   555
       End
@@ -1262,7 +1228,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   7
          Left            =   100
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   1700
          Width           =   1500
       End
@@ -1281,7 +1247,7 @@ Begin VB.Form frmFatEle
          Height          =   240
          Index           =   8
          Left            =   4680
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   1700
          Width           =   600
       End
@@ -1299,7 +1265,7 @@ Begin VB.Form frmFatEle
          Height          =   435
          Index           =   14
          Left            =   100
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   250
          Width           =   1785
       End
@@ -1383,8 +1349,8 @@ Dim nome As String
     ElseIf txtIbanNum(3).Text = "" Then
         nome = "IBAN"
         
-    ElseIf txtAutorizzazioneBollo.Text = "" Then
-        nome = "AUTORIZZAZIONE BOLLO"
+ '   ElseIf txtAutorizzazioneBollo.Text = "" Then
+ '       nome = "AUTORIZZAZIONE BOLLO"
     ElseIf txtBolloFattura.Text = "" Then
         nome = "BOLLO SU FATTURA"
     Else
@@ -1403,10 +1369,10 @@ Private Sub chkSocioUnico_GotFocus()
 End Sub
 
 Private Sub cmdMemorizza_Click()
-    If Len(txtAutorizzazioneBollo.Text) < 14 Then
-        MsgBox "Il N° di AUTORIZZAZIONE BOLLO VIRTUALE NON può essere inferiore a 14 cifre", vbInformation, "ATTENZIONE!!!"
-        Exit Sub
-    End If
+'    If Len(txtAutorizzazioneBollo.Text) < 14 Then
+'        MsgBox "Il N° di AUTORIZZAZIONE BOLLO VIRTUALE NON può essere inferiore a 14 cifre", vbInformation, "ATTENZIONE!!!"
+'        Exit Sub
+'    End If
     If Completo Then
         Call MemorizzaIntestazione
         Call MemorizzaFattura
@@ -1475,8 +1441,8 @@ Private Sub MemorizzaFattura()
     Call SuperUcase(Me)
     
     strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
-    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "NUMERO_AUTORIZZAZIONE", "IMPORTO_BOLLO") ', "PROGR_INVIO")
-    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), cboProvCommittente.Text, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtAutorizzazioneBollo, txtBolloFattura) ', txtProgrInvio)
+    v_nome = Array("KEY", "CODICE_ASL", "COD_DESTINATARIO", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "IMPORTO_BOLLO") ', "PROGR_INVIO")
+    v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtCodiceDestinatario, txtIndirizzoFattura, txtCapFattura, cboComune.ItemData(cboComune.ListIndex), cboProvCommittente.Text, txtPartitaIvaFattura, txtCodFiscaleFattura, txtIntestatario, strIban, txtBolloFattura) ', txtProgrInvio)
         
     Set rsDataset = New Recordset
     rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1594,23 +1560,35 @@ Dim strSql As String
     Set rsDataset = New Recordset
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
-        cboAsl.ListIndex = GetCboListIndex(rsDataset("ASLKEY"), cboAsl)
+        If IsNull(rsDataset("ASLKEY")) Then
+        Else
+            cboAsl.ListIndex = GetCboListIndex(rsDataset("ASLKEY"), cboAsl)
+        End If
+        
         txtCodiceDestinatario = rsDataset("COD_DESTINATARIO") & ""
-        txtIndirizzoFattura = rsDataset("INDIRIZZO")
-        txtCapFattura = rsDataset("CAP")
-        cboComune.ListIndex = GetCboListIndex(rsDataset("COMUNIKEY"), cboComune)
-        cboProvCommittente.Text = rsDataset("PROV") & ""
-        txtPartitaIvaFattura = rsDataset("P_IVA")
-        txtCodFiscaleFattura = rsDataset("CODICE_FISCALE")
-        txtIntestatario = rsDataset("INTESTATARIO_CC")
-        strIban = rsDataset("IBAN")
+        txtIndirizzoFattura = rsDataset("INDIRIZZO") & ""
+        txtCapFattura = rsDataset("CAP") & ""
+        
+        If IsNull(rsDataset("COMUNIKEY")) Then
+        Else
+            cboComune.ListIndex = GetCboListIndex(rsDataset("COMUNIKEY"), cboComune)
+        End If
+        
+        If IsNull(rsDataset("PROV")) Then
+        Else
+            cboProvCommittente.Text = rsDataset("PROV")
+        End If
+        
+        txtPartitaIvaFattura = rsDataset("P_IVA") & ""
+        txtCodFiscaleFattura = rsDataset("CODICE_FISCALE") & ""
+        txtIntestatario = rsDataset("INTESTATARIO_CC") & ""
+        strIban = rsDataset("IBAN") & ""
         txtIbanAlfa(0) = Mid(strIban, 1, 2)
         txtIbanNum(0) = Mid(strIban, 3, 2)
         txtIbanAlfa(1) = Mid(strIban, 5, 1)
         txtIbanNum(1) = Mid(strIban, 6, 5)
         txtIbanNum(2) = Mid(strIban, 11, 5)
         txtIbanNum(3) = Mid(strIban, 16, 12)
-        txtAutorizzazioneBollo = rsDataset("NUMERO_AUTORIZZAZIONE")
         txtBolloFattura = VirgolaOrPunto(rsDataset("IMPORTO_BOLLO"), ",") & ""
 '        If VarType(rsDataset("PROGR_INVIO")) = 1 Then 'se il campo è null VarType assume valore 1
 '            txtProgrInvio = 1
@@ -1654,17 +1632,29 @@ Private Sub srlsi_Click()
     chkSocioPiu.Enabled = True
 End Sub
 
-Private Sub txtAutorizzazioneBollo_GotFocus()
-    txtAutorizzazioneBollo.BackColor = colArancione
-End Sub
+'Private Sub Bollo_Assolto_Si_Click()
+'    chkSocioUnico.Enabled = True
+'    chkSocioPiu.Enabled = True
+'End Sub
 
-Private Sub txtAutorizzazioneBollo_LostFocus()
-    txtAutorizzazioneBollo.BackColor = vbWhite
-    If Len(txtAutorizzazioneBollo.Text) < 14 Then
-        MsgBox "Il N° di AUTORIZZAZIONE BOLLO VIRTUALE NON può essere inferiore a 14 cifre/caratteri", vbInformation, "ATTENZIONE!!!"
-        txtAutorizzazioneBollo.SetFocus
-    End If
-End Sub
+'Private Sub Bollo_Assolto_No_Click()
+'    chkSocioUnico.Enabled = False
+'    chkSocioPiu.Enabled = False
+'    chkSocioUnico.Value = Unchecked
+'    chkSocioPiu.Value = Unchecked
+'End Sub
+
+'Private Sub txtAutorizzazioneBollo_GotFocus()
+'    txtAutorizzazioneBollo.BackColor = colArancione
+'End Sub
+
+'Private Sub txtAutorizzazioneBollo_LostFocus()
+'    txtAutorizzazioneBollo.BackColor = vbWhite
+'    If Len(txtAutorizzazioneBollo.Text) < 14 Then
+'        MsgBox "Il N° di AUTORIZZAZIONE BOLLO VIRTUALE NON può essere inferiore a 14 cifre/caratteri", vbInformation, "ATTENZIONE!!!"
+'        txtAutorizzazioneBollo.SetFocus
+'    End If
+'End Sub
 
 Private Sub txtBolloFattura_Change()
     If lettera = "." Or lettera = "" Then Exit Sub

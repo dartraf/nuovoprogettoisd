@@ -828,22 +828,32 @@ Private Sub Form_Load()
     Set rsDataset = New Recordset
     rsDataset.Open strSql, cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If Not (rsDataset.EOF And rsDataset.BOF) Then
-        cboAsl.ListIndex = GetCboListIndex(rsDataset("ASLKEY"), cboAsl)
-        txtIndirizzo = rsDataset("INDIRIZZO")
-        txtCap = rsDataset("CAP")
-        cboComune.ListIndex = GetCboListIndex(rsDataset("COMUNIKEY"), cboComune)
-        txtProv = rsDataset("PROV")
-        txtIva = rsDataset("P_IVA")
-        txtCodiceFiscale = rsDataset("CODICE_FISCALE")
-        txtAutorizzazione = rsDataset("NUMERO_AUTORIZZAZIONE")
-        txtDicitura = rsDataset("DICITURA")
-        txtImportoTicket.Text = rsDataset("TICKET")
-        txtQuotaAggiuntiva.Text = rsDataset("QUOTA_AGGIUNTIVA")
-        txtQuotaNazionale.Text = rsDataset("QUOTA_NAZIONALE")
-        txtIntestatario = rsDataset("INTESTATARIO_CC")
-        txtRimborsoSpeseViaggio.Text = rsDataset("RIMBORSO_SPESE_VIAGGIO")
-        txtImportoBollo.Text = rsDataset("IMPORTO_BOLLO")
-        strIban = rsDataset("IBAN")
+
+        If IsNull(rsDataset("ASLKEY")) Then
+        Else
+            cboAsl.ListIndex = GetCboListIndex(rsDataset("ASLKEY"), cboAsl)
+        End If
+        
+        txtIndirizzo = rsDataset("INDIRIZZO") & ""
+        txtCap = rsDataset("CAP") & ""
+        
+        If IsNull(rsDataset("COMUNIKEY")) Then
+        Else
+            cboComune.ListIndex = GetCboListIndex(rsDataset("COMUNIKEY"), cboComune)
+        End If
+               
+        txtProv = rsDataset("PROV") & ""
+        txtIva = rsDataset("P_IVA") & ""
+        txtCodiceFiscale = rsDataset("CODICE_FISCALE") & ""
+        txtAutorizzazione = rsDataset("NUMERO_AUTORIZZAZIONE") & ""
+        txtDicitura = rsDataset("DICITURA") & ""
+        txtImportoTicket.Text = rsDataset("TICKET") & ""
+        txtQuotaAggiuntiva.Text = rsDataset("QUOTA_AGGIUNTIVA") & ""
+        txtQuotaNazionale.Text = rsDataset("QUOTA_NAZIONALE") & ""
+        txtIntestatario = rsDataset("INTESTATARIO_CC") & ""
+        txtRimborsoSpeseViaggio.Text = rsDataset("RIMBORSO_SPESE_VIAGGIO") & ""
+        txtImportoBollo.Text = rsDataset("IMPORTO_BOLLO") & ""
+        strIban = rsDataset("IBAN") & ""
         txtIbanAlfa(0) = Mid(strIban, 1, 2)
         txtIbanNum(0) = Mid(strIban, 3, 2)
         txtIbanAlfa(1) = Mid(strIban, 5, 1)

@@ -659,7 +659,17 @@ Private Sub ValidaRicette()
 End Sub
 
 Private Sub cmdGenera_Click()
-    If structIntestazione.sCodiceSTS = CODICESTS_MOSCATI Or structIntestazione.sCodiceSTS = CODICESTS_GAMMADIAL Or structIntestazione.sCodiceSTS = CODICESTS_CGA Or structIntestazione.sCodiceSTS = CODICESTS_DIALIFE Or structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or structIntestazione.sCodiceSTS = CODICESTS_SBIAGIO Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRON Or structIntestazione.sCodiceSTS = CODICESTS_DELTA Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or structIntestazione.sCodiceSTS = CODICESTS_LA_PECCERELLA Or structIntestazione.sCodiceSTS = CODICESTS_SANNIOMEDICA Or structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or structIntestazione.sCodiceSTS = CODICESTS_HELIOS Then
+    If structIntestazione.sCodiceSTS = CODICESTS_MOSCATI Or structIntestazione.sCodiceSTS = CODICESTS_GAMMADIAL Or _
+    structIntestazione.sCodiceSTS = CODICESTS_CGA Or structIntestazione.sCodiceSTS = CODICESTS_DIALIFE Or _
+    structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or _
+    structIntestazione.sCodiceSTS = CODICESTS_SBIAGIO Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRON Or _
+    structIntestazione.sCodiceSTS = CODICESTS_DELTA Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or _
+    structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or _
+    structIntestazione.sCodiceSTS = CODICESTS_LA_PECCERELLA Or structIntestazione.sCodiceSTS = CODICESTS_SANNIOMEDICA Or _
+    structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or _
+    structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_SEAN Or _
+    structIntestazione.sCodiceSTS = CODICESTS_RENART Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRART Or _
+    structIntestazione.sCodiceSTS = CODICESTS_ADEM Then
     Else
         MsgBox "MODULO PER GENERARE I FILE 'C' OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
         Exit Sub

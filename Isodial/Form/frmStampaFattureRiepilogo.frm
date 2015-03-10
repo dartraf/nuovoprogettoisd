@@ -384,7 +384,7 @@ Private Sub ControllaFE_Click()
     'Apre nel browser il link per il controllo della FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hwnd, "open", "http://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=controlla_fattura", vbNullString, vbNullString, 1)
+    ret = ShellExecute(Me.hWnd, "open", "http://sdi.fatturapa.gov.it/SdI2FatturaPAWeb/AccediAlServizioAction.do?pagina=controlla_fattura", vbNullString, vbNullString, 1)
     If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
 End Sub
 
@@ -2772,15 +2772,31 @@ Private Function CreaNodo(nome As String, valore As String) As IXMLDOMNode
 End Function
 
 Private Sub fattelettr_Click()
-        Dim rsDataset As New Recordset
-        rsDataset.Open "SELECT * FROM RICETTE  WHERE (ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
-        If rsDataset.EOF And rsDataset.BOF Then
-            MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, "Genera file XML"
-            rsDataset.Close
-            Exit Sub
-        Else
-            Set rsDataset = Nothing
-        End If
+    If structIntestazione.sCodiceSTS = CODICESTS_MOSCATI Or structIntestazione.sCodiceSTS = CODICESTS_GAMMADIAL Or _
+    structIntestazione.sCodiceSTS = CODICESTS_CGA Or structIntestazione.sCodiceSTS = CODICESTS_DIALIFE Or _
+    structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or _
+    structIntestazione.sCodiceSTS = CODICESTS_SBIAGIO Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRON Or _
+    structIntestazione.sCodiceSTS = CODICESTS_DELTA Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or _
+    structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or _
+    structIntestazione.sCodiceSTS = CODICESTS_LA_PECCERELLA Or structIntestazione.sCodiceSTS = CODICESTS_SANNIOMEDICA Or _
+    structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or _
+    structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_SEAN Or _
+    structIntestazione.sCodiceSTS = CODICESTS_RENART Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRART Or _
+    structIntestazione.sCodiceSTS = CODICESTS_ADEM Or structIntestazione.sCodiceSTS = CODICESTS_S_LUCA Then
+    Else
+        MsgBox "MODULO PER GENERARE LA FATTURA ELETTRONICA OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
+        Exit Sub
+    End If
+
+    Dim rsDataset As New Recordset
+    rsDataset.Open "SELECT * FROM RICETTE  WHERE (ANNO=" & cboAnno.Text & " AND MESE=" & cboMese.ListIndex + 1 & ")", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
+    If rsDataset.EOF And rsDataset.BOF Then
+        MsgBox "Nessuna ricetta per il mese di " & cboMese.Text, vbInformation, "Genera file XML"
+        rsDataset.Close
+        Exit Sub
+    Else
+        Set rsDataset = Nothing
+    End If
  
     If Completo = False Then          ' controlla che ci sia il n° della fattura
         Exit Sub
@@ -3298,7 +3314,7 @@ Private Sub fattelettr_Click()
     'Visualizza nel browser la fattura dal file XML della cartella FE
     'SHOW_SHOWNORMAL = 1
     'SHOW_SHOWMAXIMIZED = 3
-    ret = ShellExecute(Me.hwnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
+    ret = ShellExecute(Me.hWnd, "open", structApri.pathExe & "\FE\" & NameExtXML, vbNullString, vbNullString, 1)
     'If ret < 32 Then MsgBox "Si è verificato un errore aprendo il browser di default", vbCritical, "ATTENZIONE!!!"
 
 End Sub

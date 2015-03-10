@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "Tabctl32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form frmRimborsiSpese 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Rimborsi Spese"
@@ -53,13 +53,13 @@ Begin VB.Form frmRimborsiSpese
       TabCaption(1)   =   "Stampa per Distretti"
       TabPicture(1)   =   "frmRimborsiSpese.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1(0)"
+      Tab(1).Control(0)=   "cboDa"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Label1(4)"
+      Tab(1).Control(1)=   "cboA"
       Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "cboA"
+      Tab(1).Control(2)=   "Label1(4)"
       Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).Control(3)=   "cboDa"
+      Tab(1).Control(3)=   "Label1(0)"
       Tab(1).Control(3).Enabled=   0   'False
       Tab(1).ControlCount=   4
       Begin VB.CommandButton cmdTrova 
@@ -706,7 +706,9 @@ Private Sub cmdChiudi_Click()
 End Sub
 
 Private Sub cmdRielabora_Click()
-   If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
+   If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or _
+    structIntestazione.sCodiceSTS = CODICESTS_SEAN Or structIntestazione.sCodiceSTS = CODICESTS_RENART Or _
+    structIntestazione.sCodiceSTS = CODICESTS_NEPHRART Or structIntestazione.sCodiceSTS = CODICESTS_ADEM Then
    Else
        MsgBox "MODULO DI STAMPA OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
        Exit Sub
@@ -745,7 +747,7 @@ Private Sub cmdRielabora_Click()
             End If
             
             Do While Not rsDataset.EOF
-                If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Then
+                If structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_ADEM Then
                     Call StampaRimborsoSpese(rsDataset("KEY"), cboAnno.Text, cboMese.ListIndex + 1, False)
                     Call StampaRimborsoSpeseTrasporto(rsDataset("KEY"))
                     Call StampaDichiarazioneResponsabilita(rsDataset("KEY"), cboAnno.Text, cboMese.ListIndex + 1)
@@ -753,6 +755,11 @@ Private Sub cmdRielabora_Click()
                 ElseIf structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Then
                     Call StampaRimborsoSpeseTrasportoBartoli(rsDataset("KEY"))
                     Call StampaDichiarazioneResponsabilita_Bartoli(rsDataset("KEY"))
+                ElseIf structIntestazione.sCodiceSTS = CODICESTS_SEAN Or structIntestazione.sCodiceSTS = CODICESTS_RENART Or _
+                      structIntestazione.sCodiceSTS = CODICESTS_NEPHRART Then
+                    Call StampaRimborsoSpese(rsDataset("KEY"), cboAnno.Text, cboMese.ListIndex + 1, False)
+                    Call StampaDichiarazioneResponsabilita(rsDataset("KEY"), cboAnno.Text, cboMese.ListIndex + 1)
+                    Call StampaFoglioViaggioHelios(rsDataset("KEY"), False)
                 End If
                 rsDataset.MoveNext
                 frmBarra.prgBar.Value = frmBarra.prgBar.Value + 1

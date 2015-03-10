@@ -53,6 +53,10 @@ Public Const CODICESTS_SANNIOMEDICA As String = "AD0137"
 Public Const CODICESTS_SANT_ANDREA As String = "AD0082"     'CASERTA
 Public Const CODICESTS_HELIOS As String = "AD0089"
 Public Const CODICESTS_SODAV As String = "AD0078"
+Public Const CODICESTS_SEAN As String = "AD0079"
+Public Const CODICESTS_RENART As String = "AD0086"
+Public Const CODICESTS_NEPHRART As String = "AD0091"
+Public Const CODICESTS_ADEM As String = "AD0090"
 
 Public Const CODICESTS_SM2 As String = "000SM2"             'POTENZA
 Public Const CODICESTS_S_LUCA As String = "420000"          'SIRACUSA

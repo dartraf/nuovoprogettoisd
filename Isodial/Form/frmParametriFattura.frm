@@ -4,21 +4,21 @@ Begin VB.Form frmParametriFattura
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Parametri Fattura"
    ClientHeight    =   8880
-   ClientLeft      =   45
-   ClientTop       =   315
-   ClientWidth     =   8025
+   ClientLeft      =   48
+   ClientTop       =   312
+   ClientWidth     =   8028
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   8880
-   ScaleWidth      =   8025
+   ScaleWidth      =   8028
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
       Caption         =   "Intestazione Fattura"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -30,10 +30,30 @@ Begin VB.Form frmParametriFattura
       TabIndex        =   24
       Top             =   120
       Width           =   7815
+      Begin VB.ComboBox cboProv 
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   7.8
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   288
+         ItemData        =   "frmParametriFattura.frx":0000
+         Left            =   6000
+         List            =   "frmParametriFattura.frx":0002
+         Style           =   2  'Dropdown List
+         TabIndex        =   5
+         Top             =   1440
+         Width           =   735
+      End
       Begin VB.TextBox txtCodiceFiscale 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -50,7 +70,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtAutorizzazione 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -67,7 +87,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.ComboBox cboComune 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -76,6 +96,7 @@ Begin VB.Form frmParametriFattura
          EndProperty
          Height          =   315
          Left            =   1320
+         Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   4
          Top             =   1440
@@ -84,7 +105,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.ComboBox cboAsl 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -101,7 +122,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIva 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -115,27 +136,10 @@ Begin VB.Form frmParametriFattura
          Top             =   1920
          Width           =   2295
       End
-      Begin VB.TextBox txtProv 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   285
-         Left            =   6000
-         MaxLength       =   2
-         TabIndex        =   5
-         Top             =   1440
-         Width           =   735
-      End
       Begin VB.TextBox txtCap 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -152,7 +156,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIndirizzo 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -171,7 +175,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "C.F."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -180,7 +184,7 @@ Begin VB.Form frmParametriFattura
          EndProperty
          Height          =   240
          Index           =   10
-         Left            =   5400
+         Left            =   5352
          TabIndex        =   42
          Top             =   1920
          Width           =   420
@@ -189,7 +193,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "N° Autorizzazione Bollo Virtuale "
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -206,7 +210,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "ASL a cui fatturare"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -223,7 +227,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.Label Label1 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -242,7 +246,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "P. Iva"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -261,7 +265,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Prov."
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -270,17 +274,17 @@ Begin VB.Form frmParametriFattura
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   5280
+         Left            =   5350
          TabIndex        =   28
          Top             =   1440
          Width           =   555
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Città"
+         Caption         =   "Comune"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -292,14 +296,14 @@ Begin VB.Form frmParametriFattura
          Left            =   120
          TabIndex        =   27
          Top             =   1440
-         Width           =   480
+         Width           =   804
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "CAP"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -308,7 +312,7 @@ Begin VB.Form frmParametriFattura
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   5280
+         Left            =   5350
          TabIndex        =   26
          Top             =   990
          Width           =   465
@@ -318,7 +322,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Indirizzo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -337,7 +341,7 @@ Begin VB.Form frmParametriFattura
       Caption         =   "Importi"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -355,8 +359,8 @@ Begin VB.Form frmParametriFattura
          TabIndex        =   17
          Top             =   480
          Width           =   1095
-         _ExtentX        =   2143
-         _ExtentY        =   503
+         _ExtentX        =   2138
+         _ExtentY        =   508
          IsMultiLine     =   0   'False
          OnlyNumber      =   -1  'True
          IsPossibleSpacing=   0   'False
@@ -369,8 +373,8 @@ Begin VB.Form frmParametriFattura
          TabIndex        =   18
          Top             =   480
          Width           =   1095
-         _ExtentX        =   2143
-         _ExtentY        =   503
+         _ExtentX        =   2138
+         _ExtentY        =   508
          IsMultiLine     =   0   'False
          OnlyNumber      =   -1  'True
          IsPossibleSpacing=   0   'False
@@ -383,8 +387,8 @@ Begin VB.Form frmParametriFattura
          TabIndex        =   19
          Top             =   960
          Width           =   1095
-         _ExtentX        =   2143
-         _ExtentY        =   503
+         _ExtentX        =   2138
+         _ExtentY        =   508
          IsMultiLine     =   0   'False
          OnlyNumber      =   -1  'True
          IsPossibleSpacing=   0   'False
@@ -397,8 +401,8 @@ Begin VB.Form frmParametriFattura
          TabIndex        =   20
          Top             =   960
          Width           =   1095
-         _ExtentX        =   2143
-         _ExtentY        =   503
+         _ExtentX        =   2138
+         _ExtentY        =   508
          IsMultiLine     =   0   'False
          OnlyNumber      =   -1  'True
          IsPossibleSpacing=   0   'False
@@ -411,8 +415,8 @@ Begin VB.Form frmParametriFattura
          TabIndex        =   21
          Top             =   1440
          Width           =   1095
-         _ExtentX        =   2143
-         _ExtentY        =   503
+         _ExtentX        =   2138
+         _ExtentY        =   508
          IsMultiLine     =   0   'False
          OnlyNumber      =   -1  'True
          IsPossibleSpacing=   0   'False
@@ -423,7 +427,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Bollo su Fattura"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -441,7 +445,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Quota Nazionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -459,7 +463,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Rimborso spese viaggi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -477,7 +481,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Quota Regionale"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -496,7 +500,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Ticket"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -521,7 +525,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "&Memorizza"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -539,7 +543,7 @@ Begin VB.Form frmParametriFattura
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -557,7 +561,7 @@ Begin VB.Form frmParametriFattura
       Caption         =   "Coordinate Bonifico Bancario"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -572,7 +576,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIntestatario 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -589,7 +593,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIbanNum 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -607,7 +611,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIbanNum 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -625,7 +629,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIbanNum 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -643,7 +647,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIbanAlfa 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -661,7 +665,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIbanAlfa 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -679,7 +683,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtIbanNum 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -699,7 +703,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "Intestatario c/c"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -718,7 +722,7 @@ Begin VB.Form frmParametriFattura
          Caption         =   "IBAN"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -737,7 +741,7 @@ Begin VB.Form frmParametriFattura
       Caption         =   "Dicitura da stampare in fattura"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   12
+         Size            =   10.8
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -752,7 +756,7 @@ Begin VB.Form frmParametriFattura
       Begin VB.TextBox txtDicitura 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.8
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -804,7 +808,7 @@ Private Sub Form_Load()
     
     Call RicaricaComboBox("ASL", "NOME", cboAsl)
     Call RicaricaComboBox("COMUNI", "NOME", cboComune)
-    
+    Call RicaricaComboBox("SIGLE_PROVINCIE", "NOME", cboProv)
     
     rsDatasetControllo.Open "SELECT CODICE_ASL FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDatasetControllo("CODICE_ASL") = 5 Then
@@ -841,8 +845,13 @@ Private Sub Form_Load()
         Else
             cboComune.ListIndex = GetCboListIndex(rsDataset("COMUNIKEY"), cboComune)
         End If
+        
+        If IsNull(rsDataset("PROV") = "") Then
+            cboProv.ListIndex = -1
+        Else
+            cboProv.Text = rsDataset("PROV") & ""
+        End If
                
-        txtProv = rsDataset("PROV") & ""
         txtIva = rsDataset("P_IVA") & ""
         txtCodiceFiscale = rsDataset("CODICE_FISCALE") & ""
         txtAutorizzazione = rsDataset("NUMERO_AUTORIZZAZIONE") & ""
@@ -879,7 +888,7 @@ Private Function Completo() As Boolean
         nome = "CAP"
     ElseIf cboComune.ListIndex = -1 Then
         nome = "CITTA'"
-    ElseIf txtProv = "" Then
+    ElseIf cboProv.Text = "" Then
         nome = "PROVINCIA"
     ElseIf txtIva = "" Then
         nome = "PARTITA IVA"
@@ -943,7 +952,7 @@ Private Sub cmdMemorizza_Click()
     
         strIban = txtIbanAlfa(0) & txtIbanNum(0) & txtIbanAlfa(1) & txtIbanNum(1) & txtIbanNum(2) & txtIbanNum(3)
         v_nome = Array("KEY", "CODICE_ASL", "INDIRIZZO", "CAP", "CODICE_COMUNE", "PROV", "P_IVA", "CODICE_FISCALE", "INTESTATARIO_CC", "IBAN", "DICITURA", "TICKET", "QUOTA_AGGIUNTIVA", "QUOTA_NAZIONALE", "RIMBORSO_SPESE_VIAGGIO", "NUMERO_AUTORIZZAZIONE", "IMPORTO_BOLLO")
-        v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtIndirizzo, txtCap, cboComune.ItemData(cboComune.ListIndex), txtProv, txtIva, txtCodiceFiscale, txtIntestatario, strIban, txtDicitura, txtImportoTicket.GetDecimal, txtQuotaAggiuntiva.GetDecimal, txtQuotaNazionale.GetDecimal, txtRimborsoSpeseViaggio.GetDecimal, txtAutorizzazione, txtImportoBollo.GetDecimal)
+        v_Val = Array(1, cboAsl.ItemData(cboAsl.ListIndex), txtIndirizzo, txtCap, cboComune.ItemData(cboComune.ListIndex), cboProv.Text, txtIva, txtCodiceFiscale, txtIntestatario, strIban, txtDicitura, txtImportoTicket.GetDecimal, txtQuotaAggiuntiva.GetDecimal, txtQuotaNazionale.GetDecimal, txtRimborsoSpeseViaggio.GetDecimal, txtAutorizzazione, txtImportoBollo.GetDecimal)
         
         Set rsDataset = New Recordset
         rsDataset.Open "INTESTAZIONE_FATTURA", cnPrinc, adOpenKeyset, adLockPessimistic, adCmdTable
@@ -1008,14 +1017,6 @@ End Sub
 
 Private Sub txtDicitura_LostFocus()
     txtDicitura.BackColor = vbWhite
-End Sub
-
-Private Sub txtProv_GotFocus()
-    txtProv.BackColor = colArancione
-End Sub
-
-Private Sub txtProv_LostFocus()
-    txtProv.BackColor = vbWhite
 End Sub
 
 Private Sub txtIbanNum_KeyPress(Index As Integer, KeyAscii As Integer)

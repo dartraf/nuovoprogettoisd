@@ -555,7 +555,7 @@ Begin VB.Form frmFatEle
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
-         Caption         =   "Città"
+         Caption         =   "Comune"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -570,7 +570,7 @@ Begin VB.Form frmFatEle
          Left            =   120
          TabIndex        =   43
          Top             =   1440
-         Width           =   480
+         Width           =   855
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True

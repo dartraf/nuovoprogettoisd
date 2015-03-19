@@ -155,7 +155,7 @@ Begin VB.Form frmPrescrizioni
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         MouseIcon       =   "frmPrescrizioni.frx":00B8
+         MouseIcon       =   "frmPrescrizioni.frx":00C2
       End
       Begin VB.Label lblImpegnate 
          Alignment       =   2  'Center
@@ -278,7 +278,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   450
          Index           =   0
          Left            =   360
-         Picture         =   "frmPrescrizioni.frx":0212
+         Picture         =   "frmPrescrizioni.frx":021C
          Style           =   1  'Graphical
          TabIndex        =   0
          ToolTipText     =   "Seleziona il paziente"
@@ -442,9 +442,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmPrescrizioni.frx":066B
+         ItemData        =   "frmPrescrizioni.frx":0675
          Left            =   5520
-         List            =   "frmPrescrizioni.frx":066D
+         List            =   "frmPrescrizioni.frx":0677
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   240
@@ -462,9 +462,9 @@ Begin VB.Form frmPrescrizioni
          EndProperty
          ForeColor       =   &H000000FF&
          Height          =   315
-         ItemData        =   "frmPrescrizioni.frx":066F
+         ItemData        =   "frmPrescrizioni.frx":0679
          Left            =   2280
-         List            =   "frmPrescrizioni.frx":0671
+         List            =   "frmPrescrizioni.frx":067B
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Top             =   240
@@ -571,9 +571,9 @@ Begin VB.Form frmPrescrizioni
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         ItemData        =   "frmPrescrizioni.frx":0673
+         ItemData        =   "frmPrescrizioni.frx":067D
          Left            =   6720
-         List            =   "frmPrescrizioni.frx":0683
+         List            =   "frmPrescrizioni.frx":068D
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Top             =   1034
@@ -836,7 +836,7 @@ Begin VB.Form frmPrescrizioni
          Height          =   450
          Index           =   1
          Left            =   360
-         Picture         =   "frmPrescrizioni.frx":06A9
+         Picture         =   "frmPrescrizioni.frx":06B3
          Style           =   1  'Graphical
          TabIndex        =   13
          ToolTipText     =   "Seleziona il medico"

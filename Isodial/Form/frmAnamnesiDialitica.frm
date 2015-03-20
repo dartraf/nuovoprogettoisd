@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "Tabctl32.ocx"
 Object = "{AAFB789A-EB36-45DC-A196-1802D8AA28C9}#3.0#0"; "DataTimeBox.ocx"
 Object = "{EB7F7146-0A68-4457-8036-5793F0EB1EB8}#31.0#0"; "SuperTextBox.ocx"
 Begin VB.Form frmAnamnesiDialitica 
@@ -155,6 +155,7 @@ Begin VB.Form frmAnamnesiDialitica
       _ExtentX        =   21167
       _ExtentY        =   7646
       _Version        =   393216
+      Tab             =   1
       TabHeight       =   520
       ForeColor       =   255
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -168,148 +169,124 @@ Begin VB.Form frmAnamnesiDialitica
       EndProperty
       TabCaption(0)   =   "Scheda 1"
       TabPicture(0)   =   "frmAnamnesiDialitica.frx":0459
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Label1(25)"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Label1(24)"
-      Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "Label1(23)"
-      Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "Label1(22)"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "Label1(19)"
-      Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "Label1(18)"
-      Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "Label1(10)"
-      Tab(0).Control(6).Enabled=   0   'False
-      Tab(0).Control(7)=   "Label1(9)"
-      Tab(0).Control(7).Enabled=   0   'False
-      Tab(0).Control(8)=   "Label1(8)"
-      Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "Label1(7)"
-      Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "Label1(6)"
-      Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "Label1(5)"
-      Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "Label1(4)"
-      Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "Label1(2)"
-      Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "Label1(20)"
-      Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "Label1(21)"
-      Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "Label1(33)"
-      Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "Label1(17)"
-      Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "Label1(27)"
-      Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "Label1(36)"
-      Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "Label1(37)"
-      Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "Label1(38)"
-      Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "Label1(39)"
-      Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "oData(2)"
-      Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "oData(1)"
-      Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "oData(0)"
-      Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "picElenca(2)"
-      Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "cboTipoLinee"
-      Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "picElenca(1)"
-      Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "picElenca(0)"
-      Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "cboTipoFiltro"
-      Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "chkDiuresiResidua"
-      Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "txtPotassio"
-      Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "cboTipoDialisi"
-      Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "cboAccesso"
-      Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "txtSedeAccesso"
-      Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "txtPesoSecco"
-      Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "txtQuantita"
-      Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "txtAumentoPond"
-      Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "txtOre"
-      Tab(0).Control(39).Enabled=   0   'False
-      Tab(0).Control(40)=   "txtMinuti"
-      Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "txtBicarbonato"
-      Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).Control(42)=   "txtCalcio"
-      Tab(0).Control(42).Enabled=   0   'False
-      Tab(0).Control(43)=   "cboTipoAgo(0)"
-      Tab(0).Control(43).Enabled=   0   'False
-      Tab(0).Control(44)=   "cboTipoAgo(1)"
-      Tab(0).Control(44).Enabled=   0   'False
-      Tab(0).Control(45)=   "txtGlucosio"
-      Tab(0).Control(45).Enabled=   0   'False
-      Tab(0).Control(46)=   "txtSodio"
-      Tab(0).Control(46).Enabled=   0   'False
-      Tab(0).Control(47)=   "picCaricaPesoSecco"
-      Tab(0).Control(47).Enabled=   0   'False
-      Tab(0).Control(48)=   "cboCodicePrestaione"
-      Tab(0).Control(48).Enabled=   0   'False
-      Tab(0).Control(49)=   "txtRitmoDialitico"
-      Tab(0).Control(49).Enabled=   0   'False
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "txtRitmoDialitico"
+      Tab(0).Control(1)=   "cboCodicePrestaione"
+      Tab(0).Control(2)=   "picCaricaPesoSecco"
+      Tab(0).Control(3)=   "txtSodio"
+      Tab(0).Control(4)=   "txtGlucosio"
+      Tab(0).Control(5)=   "cboTipoAgo(1)"
+      Tab(0).Control(6)=   "cboTipoAgo(0)"
+      Tab(0).Control(7)=   "txtCalcio"
+      Tab(0).Control(8)=   "txtBicarbonato"
+      Tab(0).Control(9)=   "txtMinuti"
+      Tab(0).Control(10)=   "txtOre"
+      Tab(0).Control(11)=   "txtAumentoPond"
+      Tab(0).Control(12)=   "txtQuantita"
+      Tab(0).Control(13)=   "txtPesoSecco"
+      Tab(0).Control(14)=   "txtSedeAccesso"
+      Tab(0).Control(15)=   "cboAccesso"
+      Tab(0).Control(16)=   "cboTipoDialisi"
+      Tab(0).Control(17)=   "txtPotassio"
+      Tab(0).Control(18)=   "chkDiuresiResidua"
+      Tab(0).Control(19)=   "cboTipoFiltro"
+      Tab(0).Control(20)=   "picElenca(0)"
+      Tab(0).Control(21)=   "picElenca(1)"
+      Tab(0).Control(22)=   "cboTipoLinee"
+      Tab(0).Control(23)=   "picElenca(2)"
+      Tab(0).Control(24)=   "oData(0)"
+      Tab(0).Control(25)=   "oData(1)"
+      Tab(0).Control(26)=   "oData(2)"
+      Tab(0).Control(27)=   "Label1(39)"
+      Tab(0).Control(28)=   "Label1(38)"
+      Tab(0).Control(29)=   "Label1(37)"
+      Tab(0).Control(30)=   "Label1(36)"
+      Tab(0).Control(31)=   "Label1(27)"
+      Tab(0).Control(32)=   "Label1(17)"
+      Tab(0).Control(33)=   "Label1(33)"
+      Tab(0).Control(34)=   "Label1(21)"
+      Tab(0).Control(35)=   "Label1(20)"
+      Tab(0).Control(36)=   "Label1(2)"
+      Tab(0).Control(37)=   "Label1(4)"
+      Tab(0).Control(38)=   "Label1(5)"
+      Tab(0).Control(39)=   "Label1(6)"
+      Tab(0).Control(40)=   "Label1(7)"
+      Tab(0).Control(41)=   "Label1(8)"
+      Tab(0).Control(42)=   "Label1(9)"
+      Tab(0).Control(43)=   "Label1(10)"
+      Tab(0).Control(44)=   "Label1(18)"
+      Tab(0).Control(45)=   "Label1(19)"
+      Tab(0).Control(46)=   "Label1(22)"
+      Tab(0).Control(47)=   "Label1(23)"
+      Tab(0).Control(48)=   "Label1(24)"
+      Tab(0).Control(49)=   "Label1(25)"
       Tab(0).ControlCount=   50
       TabCaption(1)   =   "Scheda 2"
       TabPicture(1)   =   "frmAnamnesiDialitica.frx":0475
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cboUnit‡ValoreInfusionale"
-      Tab(1).Control(1)=   "cboDosiUnitaMisura"
-      Tab(1).Control(2)=   "txtFlussoSangue"
-      Tab(1).Control(3)=   "txtSolInfCc"
-      Tab(1).Control(4)=   "cboCartuccia"
-      Tab(1).Control(5)=   "cboSolInfusionale"
-      Tab(1).Control(6)=   "cboSolDialitica"
-      Tab(1).Control(7)=   "txtFlusso"
-      Tab(1).Control(8)=   "cboAnticoagulante(0)"
-      Tab(1).Control(9)=   "cboAnticoagulante(1)"
-      Tab(1).Control(10)=   "txtDose(0)"
-      Tab(1).Control(11)=   "txtDose(1)"
-      Tab(1).Control(12)=   "txtDose(2)"
-      Tab(1).Control(13)=   "txtDose(3)"
-      Tab(1).Control(14)=   "Label1(35)"
-      Tab(1).Control(15)=   "Label1(31)"
-      Tab(1).Control(16)=   "Label1(30)"
-      Tab(1).Control(17)=   "Label1(29)"
-      Tab(1).Control(18)=   "Label1(28)"
-      Tab(1).Control(19)=   "Label1(26)"
-      Tab(1).Control(20)=   "Label1(11)"
-      Tab(1).Control(21)=   "Label1(12)"
-      Tab(1).Control(22)=   "Label1(13)"
-      Tab(1).Control(23)=   "Label1(14)"
-      Tab(1).Control(24)=   "Label1(15)"
-      Tab(1).Control(25)=   "Label1(16)"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "Label1(16)"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Label1(15)"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "Label1(14)"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "Label1(13)"
+      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(4)=   "Label1(12)"
+      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(5)=   "Label1(11)"
+      Tab(1).Control(5).Enabled=   0   'False
+      Tab(1).Control(6)=   "Label1(26)"
+      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(7)=   "Label1(28)"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "Label1(29)"
+      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(9)=   "Label1(30)"
+      Tab(1).Control(9).Enabled=   0   'False
+      Tab(1).Control(10)=   "Label1(31)"
+      Tab(1).Control(10).Enabled=   0   'False
+      Tab(1).Control(11)=   "Label1(35)"
+      Tab(1).Control(11).Enabled=   0   'False
+      Tab(1).Control(12)=   "txtDose(3)"
+      Tab(1).Control(12).Enabled=   0   'False
+      Tab(1).Control(13)=   "txtDose(2)"
+      Tab(1).Control(13).Enabled=   0   'False
+      Tab(1).Control(14)=   "txtDose(1)"
+      Tab(1).Control(14).Enabled=   0   'False
+      Tab(1).Control(15)=   "txtDose(0)"
+      Tab(1).Control(15).Enabled=   0   'False
+      Tab(1).Control(16)=   "cboAnticoagulante(1)"
+      Tab(1).Control(16).Enabled=   0   'False
+      Tab(1).Control(17)=   "cboAnticoagulante(0)"
+      Tab(1).Control(17).Enabled=   0   'False
+      Tab(1).Control(18)=   "txtFlusso"
+      Tab(1).Control(18).Enabled=   0   'False
+      Tab(1).Control(19)=   "cboSolDialitica"
+      Tab(1).Control(19).Enabled=   0   'False
+      Tab(1).Control(20)=   "cboSolInfusionale"
+      Tab(1).Control(20).Enabled=   0   'False
+      Tab(1).Control(21)=   "cboCartuccia"
+      Tab(1).Control(21).Enabled=   0   'False
+      Tab(1).Control(22)=   "txtSolInfCc"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "txtFlussoSangue"
+      Tab(1).Control(23).Enabled=   0   'False
+      Tab(1).Control(24)=   "cboDosiUnitaMisura"
+      Tab(1).Control(24).Enabled=   0   'False
+      Tab(1).Control(25)=   "cboUnit‡ValoreInfusionale"
+      Tab(1).Control(25).Enabled=   0   'False
       Tab(1).ControlCount=   26
       TabCaption(2)   =   "Scheda 3"
       TabPicture(2)   =   "frmAnamnesiDialitica.frx":0491
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "cmdEliminaEpo"
-      Tab(2).Control(1)=   "txtNote"
-      Tab(2).Control(2)=   "txtUI"
+      Tab(2).Control(0)=   "Label1(32)"
+      Tab(2).Control(1)=   "lblUnitaMisura"
+      Tab(2).Control(2)=   "Label1(34)"
       Tab(2).Control(3)=   "cboEPO"
-      Tab(2).Control(4)=   "Label1(34)"
-      Tab(2).Control(5)=   "lblUnitaMisura"
-      Tab(2).Control(6)=   "Label1(32)"
+      Tab(2).Control(4)=   "txtUI"
+      Tab(2).Control(5)=   "txtNote"
+      Tab(2).Control(6)=   "cmdEliminaEpo"
       Tab(2).ControlCount=   7
       Begin VB.TextBox txtRitmoDialitico 
          Alignment       =   2  'Center
@@ -333,7 +310,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   285
-         Left            =   3900
+         Left            =   -71100
          MaxLength       =   1
          TabIndex        =   96
          Top             =   480
@@ -351,7 +328,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":04AD
-         Left            =   -65160
+         Left            =   9840
          List            =   "frmAnamnesiDialitica.frx":04B7
          Style           =   2  'Dropdown List
          TabIndex        =   95
@@ -370,7 +347,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":04C3
-         Left            =   9840
+         Left            =   -65160
          List            =   "frmAnamnesiDialitica.frx":04C5
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -382,7 +359,7 @@ Begin VB.Form frmAnamnesiDialitica
          AutoSize        =   -1  'True
          BorderStyle     =   0  'None
          Height          =   360
-         Left            =   6480
+         Left            =   -68520
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   87
@@ -392,7 +369,7 @@ Begin VB.Form frmAnamnesiDialitica
       End
       Begin SuperTextBox.uSuperTextBox txtSodio 
          Height          =   285
-         Left            =   2880
+         Left            =   -72120
          TabIndex        =   88
          Top             =   3840
          Width           =   615
@@ -416,7 +393,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   8280
+         Left            =   -66720
          MaxLength       =   5
          TabIndex        =   15
          Top             =   3840
@@ -434,7 +411,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":04C7
-         Left            =   -71760
+         Left            =   3240
          List            =   "frmAnamnesiDialitica.frx":04D1
          Style           =   2  'Dropdown List
          TabIndex        =   20
@@ -453,7 +430,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   9960
+         Left            =   -65040
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   9
@@ -473,7 +450,7 @@ Begin VB.Form frmAnamnesiDialitica
          Height          =   315
          Index           =   0
          ItemData        =   "frmAnamnesiDialitica.frx":04DD
-         Left            =   7080
+         Left            =   -67920
          List            =   "frmAnamnesiDialitica.frx":04DF
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -510,7 +487,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -67320
+         Left            =   7680
          MaxLength       =   5
          TabIndex        =   26
          Top             =   2400
@@ -528,7 +505,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   6840
+         Left            =   -68160
          MaxLength       =   5
          TabIndex        =   14
          Top             =   3840
@@ -546,7 +523,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5655
+         Left            =   -69345
          MaxLength       =   5
          TabIndex        =   13
          Top             =   3840
@@ -564,7 +541,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   11040
+         Left            =   -63960
          MaxLength       =   2
          TabIndex        =   17
          Top             =   3840
@@ -582,7 +559,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   9840
+         Left            =   -65160
          MaxLength       =   1
          TabIndex        =   16
          Top             =   3840
@@ -600,7 +577,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -64560
+         Left            =   10440
          MaxLength       =   4
          TabIndex        =   29
          Top             =   3390
@@ -617,7 +594,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   -72480
+         Left            =   2520
          Sorted          =   -1  'True
          TabIndex        =   30
          Top             =   3840
@@ -634,7 +611,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   -72480
+         Left            =   2520
          Sorted          =   -1  'True
          TabIndex        =   28
          Top             =   3360
@@ -651,7 +628,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   -72480
+         Left            =   2520
          Sorted          =   -1  'True
          TabIndex        =   27
          Top             =   2880
@@ -669,7 +646,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72000
+         Left            =   3000
          MaxLength       =   5
          TabIndex        =   25
          Top             =   2400
@@ -743,7 +720,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          Index           =   0
-         Left            =   -72480
+         Left            =   2520
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   18
@@ -762,7 +739,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          Index           =   1
-         Left            =   -72480
+         Left            =   2520
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   23
@@ -782,7 +759,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   285
          Index           =   0
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   6
          TabIndex        =   19
          Top             =   960
@@ -801,7 +778,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   285
          Index           =   1
-         Left            =   -68160
+         Left            =   6840
          MaxLength       =   6
          TabIndex        =   21
          Top             =   960
@@ -820,7 +797,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   285
          Index           =   2
-         Left            =   -65160
+         Left            =   9840
          MaxLength       =   6
          TabIndex        =   22
          Top             =   960
@@ -839,7 +816,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   285
          Index           =   3
-         Left            =   -72480
+         Left            =   2520
          MaxLength       =   6
          TabIndex        =   24
          Top             =   1920
@@ -857,7 +834,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10920
+         Left            =   -64080
          MaxLength       =   4
          TabIndex        =   2
          Top             =   480
@@ -875,7 +852,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   10920
+         Left            =   -64080
          MaxLength       =   4
          TabIndex        =   4
          Top             =   960
@@ -893,7 +870,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2400
+         Left            =   -72600
          MaxLength       =   5
          TabIndex        =   3
          Top             =   960
@@ -910,7 +887,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2400
+         Left            =   -72600
          MaxLength       =   92
          TabIndex        =   10
          Top             =   2880
@@ -927,7 +904,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2400
+         Left            =   -72600
          Sorted          =   -1  'True
          TabIndex        =   7
          Top             =   2400
@@ -944,7 +921,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2400
+         Left            =   -72600
          Sorted          =   -1  'True
          TabIndex        =   11
          Top             =   3360
@@ -962,7 +939,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   4080
+         Left            =   -70920
          MaxLength       =   5
          TabIndex        =   12
          Top             =   3840
@@ -980,7 +957,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   4800
+         Left            =   -70200
          TabIndex        =   1
          Top             =   480
          Width           =   2175
@@ -997,7 +974,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   315
          ItemData        =   "frmAnamnesiDialitica.frx":051A
-         Left            =   2400
+         Left            =   -72600
          List            =   "frmAnamnesiDialitica.frx":051C
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -1010,7 +987,7 @@ Begin VB.Form frmAnamnesiDialitica
          BorderStyle     =   0  'None
          Height          =   360
          Index           =   0
-         Left            =   3105
+         Left            =   -71895
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   51
@@ -1023,7 +1000,7 @@ Begin VB.Form frmAnamnesiDialitica
          BorderStyle     =   0  'None
          Height          =   360
          Index           =   1
-         Left            =   6240
+         Left            =   -68760
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   52
@@ -1042,7 +1019,7 @@ Begin VB.Form frmAnamnesiDialitica
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   2400
+         Left            =   -72600
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   6
@@ -1054,7 +1031,7 @@ Begin VB.Form frmAnamnesiDialitica
          BorderStyle     =   0  'None
          Height          =   360
          Index           =   2
-         Left            =   6240
+         Left            =   -68760
          ScaleHeight     =   360
          ScaleWidth      =   360
          TabIndex        =   53
@@ -1065,7 +1042,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   0
-         Left            =   4680
+         Left            =   -70320
          TabIndex        =   89
          Top             =   960
          Width           =   2100
@@ -1078,7 +1055,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   1
-         Left            =   9600
+         Left            =   -65400
          TabIndex        =   90
          Top             =   1440
          Width           =   2100
@@ -1091,7 +1068,7 @@ Begin VB.Form frmAnamnesiDialitica
       Begin DataTimeBox.uDataTimeBox oData 
          Height          =   375
          Index           =   2
-         Left            =   9600
+         Left            =   -65400
          TabIndex        =   91
          Top             =   1920
          Width           =   2100
@@ -1115,7 +1092,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   39
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   94
          Top             =   480
          Width           =   3555
@@ -1134,7 +1111,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   38
-         Left            =   7680
+         Left            =   -67320
          TabIndex        =   93
          Top             =   3360
          Width           =   2040
@@ -1153,7 +1130,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   37
-         Left            =   7680
+         Left            =   -67320
          TabIndex        =   86
          Top             =   3855
          Width           =   480
@@ -1172,7 +1149,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   36
-         Left            =   6360
+         Left            =   -68640
          TabIndex        =   39
          Top             =   2440
          Width           =   705
@@ -1191,7 +1168,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   27
-         Left            =   9240
+         Left            =   -65760
          TabIndex        =   38
          Top             =   2440
          Width           =   705
@@ -1210,7 +1187,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   35
-         Left            =   -70200
+         Left            =   4800
          TabIndex        =   78
          Top             =   2400
          Width           =   2805
@@ -1229,7 +1206,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   17
-         Left            =   6480
+         Left            =   -68520
          TabIndex        =   77
          Top             =   3840
          Width           =   300
@@ -1248,7 +1225,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   33
-         Left            =   4920
+         Left            =   -70080
          TabIndex        =   76
          Top             =   3855
          Width           =   690
@@ -1267,7 +1244,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   21
-         Left            =   10320
+         Left            =   -64680
          TabIndex        =   75
          Top             =   3840
          Width           =   615
@@ -1286,7 +1263,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   20
-         Left            =   9360
+         Left            =   -65640
          TabIndex        =   74
          Top             =   3840
          Width           =   390
@@ -1305,7 +1282,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   31
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   73
          Top             =   3870
          Width           =   990
@@ -1324,7 +1301,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   30
-         Left            =   -65880
+         Left            =   9120
          TabIndex        =   72
          Top             =   3390
          Width           =   675
@@ -1343,7 +1320,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   29
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   71
          Top             =   3390
          Width           =   2220
@@ -1362,7 +1339,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   28
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   70
          Top             =   2895
          Width           =   1950
@@ -1381,7 +1358,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   26
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   69
          Top             =   2400
          Width           =   2670
@@ -1455,7 +1432,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   11
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   65
          Top             =   480
          Width           =   1560
@@ -1474,7 +1451,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   12
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   64
          Top             =   960
          Width           =   1365
@@ -1493,7 +1470,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   13
-         Left            =   -70080
+         Left            =   4920
          TabIndex        =   63
          Top             =   960
          Width           =   1725
@@ -1512,7 +1489,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   14
-         Left            =   -66600
+         Left            =   8400
          TabIndex        =   62
          Top             =   960
          Width           =   1275
@@ -1531,7 +1508,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   15
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   61
          Top             =   1470
          Width           =   2100
@@ -1550,7 +1527,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   16
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   60
          Top             =   1935
          Width           =   570
@@ -1569,7 +1546,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   9120
+         Left            =   -65880
          TabIndex        =   44
          Top             =   960
          Width           =   1725
@@ -1588,7 +1565,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   43
          Top             =   960
          Width           =   1995
@@ -1607,7 +1584,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   5
-         Left            =   7440
+         Left            =   -67560
          TabIndex        =   50
          Top             =   480
          Width           =   3360
@@ -1626,7 +1603,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   6
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   46
          Top             =   1440
          Width           =   1335
@@ -1645,7 +1622,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   7
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   42
          Top             =   2430
          Width           =   2040
@@ -1664,7 +1641,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   8
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   59
          Top             =   2880
          Width           =   1785
@@ -1683,7 +1660,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   9
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   58
          Top             =   3360
          Width           =   1470
@@ -1702,7 +1679,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   10
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   57
          Top             =   3840
          Width           =   1410
@@ -1721,7 +1698,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   18
-         Left            =   2400
+         Left            =   -72600
          TabIndex        =   56
          Top             =   3840
          Width           =   435
@@ -1740,7 +1717,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   19
-         Left            =   3720
+         Left            =   -71280
          TabIndex        =   55
          Top             =   3840
          Width           =   270
@@ -1759,7 +1736,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   22
-         Left            =   3840
+         Left            =   -71160
          TabIndex        =   45
          Top             =   1005
          Width           =   720
@@ -1778,7 +1755,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   23
-         Left            =   8775
+         Left            =   -66225
          TabIndex        =   47
          Top             =   1485
          Width           =   720
@@ -1797,7 +1774,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   24
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   49
          Top             =   1920
          Width           =   1320
@@ -1816,7 +1793,7 @@ Begin VB.Form frmAnamnesiDialitica
          EndProperty
          Height          =   240
          Index           =   25
-         Left            =   8775
+         Left            =   -66225
          TabIndex        =   48
          Top             =   1965
          Width           =   720
@@ -2236,24 +2213,24 @@ Private Function Completo() As Boolean
         MsgBox "Selezionare il paziente", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
-    If cboTipoFiltro.ListIndex = -1 Then
-        MsgBox "Selezionare il tipo di filtro", vbCritical, "ATTENZIONE!!!"
-        Exit Function
-    End If
     If txtPesoSecco = "" Then
         MsgBox "Inserire il peso secco", vbCritical, "ATTENZIONE!!!"
-        Exit Function
-    End If
-    If cboTipoLinee.ListIndex = -1 Then
-        MsgBox "Inserire il tipo di linee", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If oData(0).data = "" Then
         MsgBox "Inserire la data del peso secco", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
+    If cboTipoFiltro.ListIndex = -1 Then
+        MsgBox "Selezionare il tipo di filtro", vbCritical, "ATTENZIONE!!!"
+        Exit Function
+    End If
     If oData(1).data = "" Then
         MsgBox "Inserire la data del tipo di filtro", vbCritical, "ATTENZIONE!!!"
+        Exit Function
+    End If
+    If cboTipoLinee.ListIndex = -1 Then
+        MsgBox "Inserire il tipo di linee", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     If oData(2).data = "" Then
@@ -2264,8 +2241,16 @@ Private Function Completo() As Boolean
         MsgBox "Inserire il tipo di accesso vascolare", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
-    If cboDosiUnitaMisura.ListIndex = -1 Then
-        MsgBox "Selezionare l'unit‡ di misura delle dosi dell'anticoagulante", vbCritical, "ATTENZIONE!!!"
+    If cboTipoAgo(0).ListIndex = -1 Then
+        MsgBox "Inserire il tipo di ago arterioso", vbCritical, "ATTENZIONE!!!"
+        Exit Function
+    End If
+    If cboTipoAgo(1).ListIndex = -1 Then
+        MsgBox "Inserire il tipo di ago venoso", vbCritical, "ATTENZIONE!!!"
+        Exit Function
+    End If
+    If cboTipoDialisi.ListIndex = -1 Then
+        MsgBox "Inserire il tipo di dialisi", vbCritical, "ATTENZIONE!!!"
         Exit Function
     End If
     Completo = True

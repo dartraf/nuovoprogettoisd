@@ -134,7 +134,7 @@ Begin VB.Form frmFatEle
          Width           =   1695
       End
       Begin VB.Label Label2 
-         Caption         =   "Vanno valorizzati tutti i campi"
+         Caption         =   "Vanno compilati tutti i campi"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -476,6 +476,7 @@ Begin VB.Form frmFatEle
          EndProperty
          Height          =   288
          Left            =   1320
+         Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   17
          Top             =   1440

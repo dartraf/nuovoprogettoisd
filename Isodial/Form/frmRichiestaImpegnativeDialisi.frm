@@ -1,13 +1,13 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{892E8F6D-4FB0-4046-9D7A-C6882F0F0CEB}#2.0#0"; "WheelCatcher.ocx"
 Begin VB.Form frmRichiestaImpegnativeDialisi 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Richiesta Impegnative Dialisi"
    ClientHeight    =   6960
-   ClientLeft      =   48
-   ClientTop       =   312
+   ClientLeft      =   45
+   ClientTop       =   315
    ClientWidth     =   7320
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       Begin VB.ComboBox cboAnno 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -56,7 +56,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       Begin VB.ComboBox cboMese 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -77,7 +77,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "Anno"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -95,7 +95,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "Mese"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -113,7 +113,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "Data di Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -134,7 +134,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -157,7 +157,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       Begin VB.ComboBox cboStato 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -178,7 +178,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "Stampa tutti i pazienti"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -207,7 +207,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -225,7 +225,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -243,7 +243,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "Cognome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -262,7 +262,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -288,7 +288,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "&Stampa"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -299,6 +299,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Left            =   2520
          TabIndex        =   26
          Top             =   190
+         Visible         =   0   'False
          Width           =   1140
       End
       Begin VB.CommandButton cmdEsci 
@@ -306,7 +307,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -323,7 +324,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Caption         =   "&Stampa Impegnative"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -344,8 +345,8 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       Top             =   3600
       Visible         =   0   'False
       Width           =   7335
-      _ExtentX        =   12933
-      _ExtentY        =   656
+      _ExtentX        =   12938
+      _ExtentY        =   661
       _Version        =   393216
       Appearance      =   0
       Max             =   70
@@ -368,7 +369,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       Begin VB.ComboBox cboPrestazioni 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -388,7 +389,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -405,7 +406,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
       Begin VB.ComboBox cboCodici 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   7.8
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -427,8 +428,8 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          TabIndex        =   20
          Top             =   240
          Width           =   6855
-         _ExtentX        =   12086
-         _ExtentY        =   6583
+         _ExtentX        =   12091
+         _ExtentY        =   6588
          _Version        =   393216
          Cols            =   4
          FixedCols       =   0
@@ -437,7 +438,7 @@ Begin VB.Form frmRichiestaImpegnativeDialisi
          FormatString    =   "| Paziente                                                       | N° Dialisi      | Cod. Prestaz.          "
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

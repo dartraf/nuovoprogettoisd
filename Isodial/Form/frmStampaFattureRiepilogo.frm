@@ -394,6 +394,9 @@ Private Sub Form_Load()
     Me.Left = 10
     Select Case tStampeRiepilogo
         Case tpFATTURA
+            If structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or structIntestazione.sCodiceSTS = CODICESTS_DELTA Then
+                cmdStampa.Visible = False
+            End If
             Me.Caption = "Stampa Fattura"
             fraNumFattura.Top = fraPulsanti.Top
             fraNumFattura.Left = fraPulsanti.Left
@@ -2699,7 +2702,6 @@ Private Sub SceltaFattura()
     ' se asl di caserta, avellino o benevento stampa fattura 1
     ' se asl na1 e na3sud stampa fattura 2
     ' Asl Napoli 2 Nord codice asl 5
-    
     Dim rsDataset As New Recordset
     rsDataset.Open "SELECT CODICE_ASL FROM INTESTAZIONE_STAMPA", cnPrinc, adOpenForwardOnly, adLockReadOnly, adCmdText
     If rsDataset("CODICE_ASL") = 5 Then
@@ -2774,15 +2776,17 @@ End Function
 Private Sub fattelettr_Click()
     If structIntestazione.sCodiceSTS = CODICESTS_MOSCATI Or structIntestazione.sCodiceSTS = CODICESTS_GAMMADIAL Or _
     structIntestazione.sCodiceSTS = CODICESTS_CGA Or structIntestazione.sCodiceSTS = CODICESTS_DIALIFE Or _
-    structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST Or _
+    structIntestazione.sCodiceSTS = CODICESTS_CAMPANO Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or _
     structIntestazione.sCodiceSTS = CODICESTS_SBIAGIO Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRON Or _
-    structIntestazione.sCodiceSTS = CODICESTS_DELTA Or structIntestazione.sCodiceSTS = CODICESTS_POGGIOMARINO Or _
     structIntestazione.sCodiceSTS = CODICESTS_EM_IRPINA Or structIntestazione.sCodiceSTS = CODICESTS_BARTOLI Or _
     structIntestazione.sCodiceSTS = CODICESTS_LA_PECCERELLA Or structIntestazione.sCodiceSTS = CODICESTS_SANNIOMEDICA Or _
     structIntestazione.sCodiceSTS = CODICESTS_SANT_ANDREA Or structIntestazione.sCodiceSTS = CODICESTS_SODAV Or _
     structIntestazione.sCodiceSTS = CODICESTS_HELIOS Or structIntestazione.sCodiceSTS = CODICESTS_SEAN Or _
     structIntestazione.sCodiceSTS = CODICESTS_RENART Or structIntestazione.sCodiceSTS = CODICESTS_NEPHRART Or _
     structIntestazione.sCodiceSTS = CODICESTS_ADEM Or structIntestazione.sCodiceSTS = CODICESTS_S_LUCA Then
+    ' Or structIntestazione.sCodiceSTS = CODICESTS_DIALGEST
+    ' structIntestazione.sCodiceSTS = CODICESTS_DELTA
+
     Else
         MsgBox "MODULO PER GENERARE LA FATTURA ELETTRONICA OPZIONALE ATTIVABILE A RICHIESTA", vbInformation, "INFORMAZIONE"
         Exit Sub
